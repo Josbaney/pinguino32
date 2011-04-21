@@ -1,0 +1,1441 @@
+gplink-0.13.7 beta
+Copyright (c) 1998-2005 gputils project
+Listing File Generated: 3-23-2011  14:48:30
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           ;--------------------------------------------------------
+                                           ; File Created by SDCC : free open source ANSI-C Compiler
+                                           ; Version 2.9.0 #5416 (Aug  9 2009) (UNIX)
+                                           ; This file was generated Wed Mar 23 14:48:30 2011
+                                           ;--------------------------------------------------------
+                                           ; PIC16 port for the Microchip 16-bit core micros
+                                           ;--------------------------------------------------------
+                                           	list	p=18f2550
+                                           
+                                           	radix dec
+                                           
+                                           ;--------------------------------------------------------
+                                           ; public variables in this module
+                                           ;--------------------------------------------------------
+                                           	global _preloadL
+                                           	global _preloadH
+                                           	global _intCountLimit
+                                           	global _intCount
+                                           	global _I2C_master
+                                           	global _I2C_slave
+                                           	global _I2C_init
+                                           	global _I2C_interrupt
+                                           	global _I2C_send
+                                           	global _I2C_get
+                                           	global _I2C_writechar
+                                           	global _I2C_readchar
+                                           	global _intUsed
+                                           	global _detachInterrupt
+                                           	global _int_init
+                                           	global _int_start
+                                           	global _int_stop
+                                           	global _userhighinterrupt
+                                           	global _userinterrupt
+                                           	global _I2C_OnRequest
+                                           	global _IC2_OnReceive
+                                           	global _epap_in
+                                           	global _epap_out
+                                           	global _epapin_init
+                                           	global _epapout_init
+                                           	global _setup
+                                           	global _loop
+                                           	global _pinguino_main
+                                           	global _high_priority_isr
+                                           	global _low_priority_isr
+                                           
+                                           ;--------------------------------------------------------
+                                           ; extern variables in this module
+                                           ;--------------------------------------------------------
+                                           	extern _SPPDATAbits
+                                           	extern _SPPCFGbits
+                                           	extern _SPPEPSbits
+                                           	extern _SPPCONbits
+                                           	extern _UFRMLbits
+                                           	extern _UFRMHbits
+                                           	extern _UIRbits
+                                           	extern _UIEbits
+                                           	extern _UEIRbits
+                                           	extern _UEIEbits
+                                           	extern _USTATbits
+                                           	extern _UCONbits
+                                           	extern _UADDRbits
+                                           	extern _UCFGbits
+                                           	extern _UEP0bits
+                                           	extern _UEP1bits
+                                           	extern _UEP2bits
+                                           	extern _UEP3bits
+                                           	extern _UEP4bits
+                                           	extern _UEP5bits
+                                           	extern _UEP6bits
+                                           	extern _UEP7bits
+                                           	extern _UEP8bits
+                                           	extern _UEP9bits
+                                           	extern _UEP10bits
+                                           	extern _UEP11bits
+                                           	extern _UEP12bits
+                                           	extern _UEP13bits
+                                           	extern _UEP14bits
+                                           	extern _UEP15bits
+                                           	extern _PORTAbits
+                                           	extern _PORTBbits
+                                           	extern _PORTCbits
+                                           	extern _PORTDbits
+                                           	extern _PORTEbits
+                                           	extern _LATAbits
+                                           	extern _LATBbits
+                                           	extern _LATCbits
+                                           	extern _LATDbits
+                                           	extern _LATEbits
+                                           	extern _TRISAbits
+                                           	extern _TRISBbits
+                                           	extern _TRISCbits
+                                           	extern _TRISDbits
+                                           	extern _TRISEbits
+                                           	extern _OSCTUNEbits
+                                           	extern _PIE1bits
+                                           	extern _PIR1bits
+                                           	extern _IPR1bits
+                                           	extern _PIE2bits
+                                           	extern _PIR2bits
+                                           	extern _IPR2bits
+                                           	extern _EECON1bits
+                                           	extern _RCSTAbits
+                                           	extern _TXSTAbits
+                                           	extern _T3CONbits
+                                           	extern _CMCONbits
+                                           	extern _CVRCONbits
+                                           	extern _ECCP1ASbits
+                                           	extern _ECCP1DELbits
+                                           	extern _BAUDCONbits
+                                           	extern _CCP2CONbits
+                                           	extern _CCP1CONbits
+                                           	extern _ADCON2bits
+                                           	extern _ADCON1bits
+                                           	extern _ADCON0bits
+                                           	extern _SSPCON2bits
+                                           	extern _SSPCON1bits
+                                           	extern _SSPSTATbits
+                                           	extern _T2CONbits
+                                           	extern _T1CONbits
+                                           	extern _RCONbits
+                                           	extern _WDTCONbits
+                                           	extern _HLVDCONbits
+                                           	extern _OSCCONbits
+                                           	extern _T0CONbits
+                                           	extern _STATUSbits
+                                           	extern _FSR2Hbits
+                                           	extern _BSRbits
+                                           	extern _FSR1Hbits
+                                           	extern _FSR0Hbits
+                                           	extern _INTCON3bits
+                                           	extern _INTCON2bits
+                                           	extern _INTCONbits
+                                           	extern _TBLPTRUbits
+                                           	extern _PCLATHbits
+                                           	extern _PCLATUbits
+                                           	extern _STKPTRbits
+                                           	extern _TOSUbits
+                                           	extern _usb_device_state
+                                           	extern _usb_active_cfg
+                                           	extern _usb_active_alt_setting
+                                           	extern _SPPDATA
+                                           	extern _SPPCFG
+                                           	extern _SPPEPS
+                                           	extern _SPPCON
+                                           	extern _UFRML
+                                           	extern _UFRMH
+                                           	extern _UIR
+                                           	extern _UIE
+                                           	extern _UEIR
+                                           	extern _UEIE
+                                           	extern _USTAT
+                                           	extern _UCON
+                                           	extern _UADDR
+                                           	extern _UCFG
+                                           	extern _UEP0
+                                           	extern _UEP1
+                                           	extern _UEP2
+                                           	extern _UEP3
+                                           	extern _UEP4
+                                           	extern _UEP5
+                                           	extern _UEP6
+                                           	extern _UEP7
+                                           	extern _UEP8
+                                           	extern _UEP9
+                                           	extern _UEP10
+                                           	extern _UEP11
+                                           	extern _UEP12
+                                           	extern _UEP13
+                                           	extern _UEP14
+                                           	extern _UEP15
+                                           	extern _PORTA
+                                           	extern _PORTB
+                                           	extern _PORTC
+                                           	extern _PORTD
+                                           	extern _PORTE
+                                           	extern _LATA
+                                           	extern _LATB
+                                           	extern _LATC
+                                           	extern _LATD
+                                           	extern _LATE
+                                           	extern _TRISA
+                                           	extern _TRISB
+                                           	extern _TRISC
+                                           	extern _TRISD
+                                           	extern _TRISE
+                                           	extern _OSCTUNE
+                                           	extern _PIE1
+                                           	extern _PIR1
+                                           	extern _IPR1
+                                           	extern _PIE2
+                                           	extern _PIR2
+                                           	extern _IPR2
+                                           	extern _EECON1
+                                           	extern _EECON2
+                                           	extern _EEDATA
+                                           	extern _EEADR
+                                           	extern _RCSTA
+                                           	extern _TXSTA
+                                           	extern _TXREG
+                                           	extern _RCREG
+                                           	extern _SPBRG
+                                           	extern _SPBRGH
+                                           	extern _T3CON
+                                           	extern _TMR3L
+                                           	extern _TMR3H
+                                           	extern _CMCON
+                                           	extern _CVRCON
+                                           	extern _ECCP1AS
+                                           	extern _ECCP1DEL
+                                           	extern _BAUDCON
+                                           	extern _CCP2CON
+                                           	extern _CCPR2L
+                                           	extern _CCPR2H
+                                           	extern _CCP1CON
+                                           	extern _CCPR1L
+                                           	extern _CCPR1H
+                                           	extern _ADCON2
+                                           	extern _ADCON1
+                                           	extern _ADCON0
+                                           	extern _ADRESL
+                                           	extern _ADRESH
+                                           	extern _SSPCON2
+                                           	extern _SSPCON1
+                                           	extern _SSPSTAT
+                                           	extern _SSPADD
+                                           	extern _SSPBUF
+                                           	extern _T2CON
+                                           	extern _PR2
+                                           	extern _TMR2
+                                           	extern _T1CON
+                                           	extern _TMR1L
+                                           	extern _TMR1H
+                                           	extern _RCON
+                                           	extern _WDTCON
+                                           	extern _HLVDCON
+                                           	extern _OSCCON
+                                           	extern _T0CON
+                                           	extern _TMR0L
+                                           	extern _TMR0H
+                                           	extern _STATUS
+                                           	extern _FSR2L
+                                           	extern _FSR2H
+                                           	extern _PLUSW2
+                                           	extern _PREINC2
+                                           	extern _POSTDEC2
+                                           	extern _POSTINC2
+                                           	extern _INDF2
+                                           	extern _BSR
+                                           	extern _FSR1L
+                                           	extern _FSR1H
+                                           	extern _PLUSW1
+                                           	extern _PREINC1
+                                           	extern _POSTDEC1
+                                           	extern _POSTINC1
+                                           	extern _INDF1
+                                           	extern _WREG
+                                           	extern _FSR0L
+                                           	extern _FSR0H
+                                           	extern _PLUSW0
+                                           	extern _PREINC0
+                                           	extern _POSTDEC0
+                                           	extern _POSTINC0
+                                           	extern _INDF0
+                                           	extern _INTCON3
+                                           	extern _INTCON2
+                                           	extern _INTCON
+                                           	extern _PRODL
+                                           	extern _PRODH
+                                           	extern _TABLAT
+                                           	extern _TBLPTRL
+                                           	extern _TBLPTRH
+                                           	extern _TBLPTRU
+                                           	extern _PCL
+                                           	extern _PCLATH
+                                           	extern _PCLATU
+                                           	extern _STKPTR
+                                           	extern _TOSL
+                                           	extern _TOSH
+                                           	extern _TOSU
+                                           ;--------------------------------------------------------
+                                           ;	Equates to used internal registers
+                                           ;--------------------------------------------------------
+                                           STATUS	equ	0xfd8
+                                           PCL	equ	0xff9
+                                           PCLATH	equ	0xffa
+                                           PCLATU	equ	0xffb
+                                           INTCON	equ	0xff2
+                                           WREG	equ	0xfe8
+                                           BSR	equ	0xfe0
+                                           TOSL	equ	0xffd
+                                           TOSH	equ	0xffe
+                                           TOSU	equ	0xfff
+                                           FSR0L	equ	0xfe9
+                                           FSR0H	equ	0xfea
+                                           FSR1L	equ	0xfe1
+                                           FSR2L	equ	0xfd9
+                                           INDF0	equ	0xfef
+                                           POSTDEC1	equ	0xfe5
+                                           PREINC1	equ	0xfe4
+                                           PLUSW2	equ	0xfdb
+                                           PRODL	equ	0xff3
+                                           PRODH	equ	0xff4
+                                           
+                                           
+                                           ; Internal registers
+                                           .registers	udata_ovr	0x0000
+                                           r0x00	res	1
+                                           r0x01	res	1
+                                           r0x02	res	1
+                                           r0x03	res	1
+                                           r0x04	res	1
+                                           r0x05	res	1
+                                           
+                                           udata_main_0	udata
+                                           _intFunction	res	60
+                                           
+                                           udata_main_1	udata
+                                           _intCount	res	8
+                                           
+                                           udata_main_2	udata
+                                           _intCountLimit	res	8
+                                           
+                                           udata_main_3	udata
+                                           _preloadH	res	4
+                                           
+                                           udata_main_4	udata
+                                           _preloadL	res	4
+                                           
+                                           udata_main_5	udata
+                                           __i2c_onRequest_function	res	3
+                                           
+                                           udata_main_6	udata
+                                           __i2c_onReceive_function	res	3
+                                           
+                                           udata_main_7	udata
+                                           _intUsed	res	20
+                                           
+                                           ;--------------------------------------------------------
+                                           ; global & static initialisations
+                                           ;--------------------------------------------------------
+                                           ; ; Starting pCode block
+                                           S_main__high_priority_isr	code	0X002020
+                                           _high_priority_isr:
+                                           ;	.line	121; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	void high_priority_isr(void) interrupt
+002020   cfe8     movff	0xfe8, 0xfe5       	MOVFF	WREG, POSTDEC1
+002022   ffe5
+002024   cfd8     movff	0xfd8, 0xfe5       	MOVFF	STATUS, POSTDEC1
+002026   ffe5
+002028   cfe0     movff	0xfe0, 0xfe5       	MOVFF	BSR, POSTDEC1
+00202a   ffe5
+00202c   cff3     movff	0xff3, 0xfe5       	MOVFF	PRODL, POSTDEC1
+00202e   ffe5
+002030   cff4     movff	0xff4, 0xfe5       	MOVFF	PRODH, POSTDEC1
+002032   ffe5
+002034   cfe9     movff	0xfe9, 0xfe5       	MOVFF	FSR0L, POSTDEC1
+002036   ffe5
+002038   cfea     movff	0xfea, 0xfe5       	MOVFF	FSR0H, POSTDEC1
+00203a   ffe5
+00203c   cffa     movff	0xffa, 0xfe5       	MOVFF	PCLATH, POSTDEC1
+00203e   ffe5
+002040   cffb     movff	0xffb, 0xfe5       	MOVFF	PCLATU, POSTDEC1
+002042   ffe5
+                                           ;	.line	172; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	I2C_interrupt();
+002044   ec7a     call	0x26f4, 0           	CALL	_I2C_interrupt
+002046   f013
+002048   cfe4     movff	0xfe4, 0xffb       	MOVFF	PREINC1, PCLATU
+00204a   fffb
+00204c   cfe4     movff	0xfe4, 0xffa       	MOVFF	PREINC1, PCLATH
+00204e   fffa
+002050   cfe4     movff	0xfe4, 0xfea       	MOVFF	PREINC1, FSR0H
+002052   ffea
+002054   cfe4     movff	0xfe4, 0xfe9       	MOVFF	PREINC1, FSR0L
+002056   ffe9
+002058   cfe4     movff	0xfe4, 0xff4       	MOVFF	PREINC1, PRODH
+00205a   fff4
+00205c   cfe4     movff	0xfe4, 0xff3       	MOVFF	PREINC1, PRODL
+00205e   fff3
+002060   cfe4     movff	0xfe4, 0xfe0       	MOVFF	PREINC1, BSR
+002062   ffe0
+002064   cfe4     movff	0xfe4, 0xfd8       	MOVFF	PREINC1, STATUS
+002066   ffd8
+002068   cfe4     movff	0xfe4, 0xfe8       	MOVFF	PREINC1, WREG
+00206a   ffe8
+00206c   0010     retfie	0                 	RETFIE	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__low_priority_isr	code	0X004000
+                                           _low_priority_isr:
+                                           ;	.line	185; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	void low_priority_isr(void) interrupt
+004000   cfe8     movff	0xfe8, 0xfe5       	MOVFF	WREG, POSTDEC1
+004002   ffe5
+004004   cfd8     movff	0xfd8, 0xfe5       	MOVFF	STATUS, POSTDEC1
+004006   ffe5
+004008   cfe0     movff	0xfe0, 0xfe5       	MOVFF	BSR, POSTDEC1
+00400a   ffe5
+00400c   cff3     movff	0xff3, 0xfe5       	MOVFF	PRODL, POSTDEC1
+00400e   ffe5
+004010   cff4     movff	0xff4, 0xfe5       	MOVFF	PRODH, POSTDEC1
+004012   ffe5
+004014   cfe9     movff	0xfe9, 0xfe5       	MOVFF	FSR0L, POSTDEC1
+004016   ffe5
+004018   cfea     movff	0xfea, 0xfe5       	MOVFF	FSR0H, POSTDEC1
+00401a   ffe5
+00401c   cffa     movff	0xffa, 0xfe5       	MOVFF	PCLATH, POSTDEC1
+00401e   ffe5
+004020   cffb     movff	0xffb, 0xfe5       	MOVFF	PCLATU, POSTDEC1
+004022   ffe5
+                                           ;	.line	188; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	userinterrupt();
+004024   ec0d     call	0x201a, 0           	CALL	_userinterrupt
+004026   f010
+004028   cfe4     movff	0xfe4, 0xffb       	MOVFF	PREINC1, PCLATU
+00402a   fffb
+00402c   cfe4     movff	0xfe4, 0xffa       	MOVFF	PREINC1, PCLATH
+00402e   fffa
+004030   cfe4     movff	0xfe4, 0xfea       	MOVFF	PREINC1, FSR0H
+004032   ffea
+004034   cfe4     movff	0xfe4, 0xfe9       	MOVFF	PREINC1, FSR0L
+004036   ffe9
+004038   cfe4     movff	0xfe4, 0xff4       	MOVFF	PREINC1, PRODH
+00403a   fff4
+00403c   cfe4     movff	0xfe4, 0xff3       	MOVFF	PREINC1, PRODL
+00403e   fff3
+004040   cfe4     movff	0xfe4, 0xfe0       	MOVFF	PREINC1, BSR
+004042   ffe0
+004044   cfe4     movff	0xfe4, 0xfd8       	MOVFF	PREINC1, STATUS
+004046   ffd8
+004048   cfe4     movff	0xfe4, 0xfe8       	MOVFF	PREINC1, WREG
+00404a   ffe8
+00404c   0010     retfie	0                 	RETFIE	
+                                           
+                                           ; I code from now on!
+                                           ; ; Starting pCode block
+                                           S_main__pinguino_main	code
+                                           _pinguino_main:
+                                           ;	.line	53; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	PIE1 = 0;
+0028a6   6a9d     clrf	0x9d, 0             	CLRF	_PIE1
+                                           ;	.line	54; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	PIE2 = 0;
+0028a8   6aa0     clrf	0xa0, 0             	CLRF	_PIE2
+                                           ;	.line	55; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	ADCON1 = 0b00001111;				// AN0 to AN12 Digital I/O
+0028aa   0e0f     movlw	0xf                	MOVLW	0x0f
+0028ac   6ec1     movwf	0xc1, 0            	MOVWF	_ADCON1
+                                           ;	.line	58; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	int_init();							// Disable all interrupts
+0028ae   ec20     call	0x2840, 0           	CALL	_int_init
+0028b0   f014
+                                           ;	.line	67; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	setup();
+0028b2   ec6d     call	0x28da, 0           	CALL	_setup
+0028b4   f014
+                                           ;	.line	70; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	int_start();							// Enable all timers interrupts
+0028b6   ecb6     call	0x296c, 0           	CALL	_int_start
+0028b8   f014
+                                           _00369_DS_:
+                                           ;	.line	115; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	loop();
+0028ba   ecaf     call	0x295e, 0           	CALL	_loop
+0028bc   f014
+0028be   d7fd     bra	0x28ba               	BRA	_00369_DS_
+0028c0   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__loop	code
+                                           _loop:
+                                           ;	.line	8; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/user.c	}
+00295e   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__setup	code
+                                           _setup:
+                                           ;	.line	3; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/user.c	I2C_slave(0x1234);
+0028da   0e12     movlw	0x12               	MOVLW	0x12
+0028dc   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0028de   0e34     movlw	0x34               	MOVLW	0x34
+0028e0   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0028e2   ecd1     call	0x27a2, 0           	CALL	_I2C_slave
+0028e4   f013
+0028e6   0e02     movlw	0x2                	MOVLW	0x02
+0028e8   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+0028ea   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__epapout_init	code
+                                           _epapout_init:
+                                           ;	.line	41; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	void epapout_init() { return; }
+002960   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__epapin_init	code
+                                           _epapin_init:
+                                           ;	.line	40; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	void epapin_init() { return; }
+002962   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__epap_out	code
+                                           _epap_out:
+                                           ;	.line	39; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	void epap_out() { return; }
+002964   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__epap_in	code
+                                           _epap_in:
+                                           ;	.line	38; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/source/main.c	void epap_in() { return; }
+002966   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_sendID	code
+                                           _I2C_sendID:
+                                           ;	.line	383; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	static void I2C_sendID(u16 DeviceID, u8 r_w)
+0024a0   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+0024a2   ffe5
+0024a4   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+0024a6   ffd9
+0024a8   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+0024aa   ffe5
+0024ac   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+0024ae   ffe5
+0024b0   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+0024b2   ffe5
+0024b4   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+0024b6   ffe5
+0024b8   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+0024ba   ffe5
+0024bc   c005     movff	0x5, 0xfe5         	MOVFF	r0x05, POSTDEC1
+0024be   ffe5
+0024c0   0e02     movlw	0x2                	MOVLW	0x02
+0024c2   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+0024c4   f000
+0024c6   0e03     movlw	0x3                	MOVLW	0x03
+0024c8   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+0024ca   f001
+0024cc   0e04     movlw	0x4                	MOVLW	0x04
+0024ce   cfdb     movff	0xfdb, 0x2         	MOVFF	PLUSW2, r0x02
+0024d0   f002
+                                           ;	.line	387; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	if (DeviceID > 0x00FF)
+0024d2   0e01     movlw	0x1                	MOVLW	0x01
+0024d4   5c01     subwf	0x1, 0, 0          	SUBWF	r0x01, W
+0024d6   e102     bnz	0x24dc               	BNZ	_00318_DS_
+0024d8   0e00     movlw	0                  	MOVLW	0x00
+0024da   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+                                           _00318_DS_:
+0024dc   e328     bnc	0x252e               	BNC	_00310_DS_
+                                           ;	.line	389; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	temp = (DeviceID >> 7) & 0x06;	// set A9 and A8 to temp.bit2 and temp.bit1
+0024de   3400     rlcf	0, 0, 0             	RLCF	r0x00, W
+0024e0   3401     rlcf	0x1, 0, 0           	RLCF	r0x01, W
+0024e2   6e03     movwf	0x3, 0             	MOVWF	r0x03
+0024e4   0e06     movlw	0x6                	MOVLW	0x06
+0024e6   1603     andwf	0x3, 0x1, 0        	ANDWF	r0x03, F
+                                           ;	.line	390; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	temp = temp | 0xF0 | r_w;			// set DeviceID address Hi format = 11110(A9A8)(R/W)
+0024e8   0ef0     movlw	0xf0               	MOVLW	0xf0
+0024ea   1003     iorwf	0x3, 0, 0          	IORWF	r0x03, W
+                                           ; #	MOVWF	r0x04
+                                           ; #	MOVF	r0x02, W
+                                           ; #	IORWF	r0x04, W
+0024ec   1002     iorwf	0x2, 0, 0          	IORWF	r0x02, W
+0024ee   6e03     movwf	0x3, 0             	MOVWF	r0x03
+                                           ;	.line	391; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_start();
+0024f0   eca3     call	0x2946, 0           	CALL	_I2C_start
+0024f2   f014
+                                           ;	.line	392; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	if (I2C_writechar(temp) != 1)
+0024f4   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+0024f6   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0024f8   ecf0     call	0x27e0, 0           	CALL	_I2C_writechar
+0024fa   f013
+0024fc   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+0024fe   0a01     xorlw	0x1                	XORLW	0x01
+002500   e030     bz	0x2562                	BZ	_00312_DS_
+                                           _00299_DS_:
+                                           ;	.line	395; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_restart();
+002502   ec9b     call	0x2936, 0           	CALL	_I2C_restart
+002504   f014
+                                           ;	.line	396; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	} while ( I2C_writechar(temp) != 1);
+002506   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+002508   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+00250a   ecf0     call	0x27e0, 0           	CALL	_I2C_writechar
+00250c   f013
+00250e   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+002510   0a01     xorlw	0x1                	XORLW	0x01
+002512   e1f7     bnz	0x2502               	BNZ	_00299_DS_
+                                           ;	.line	397; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	temp = (DeviceID << 1 & 0xFE) | r_w;
+002514   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002516   6e04     movwf	0x4, 0             	MOVWF	r0x04
+002518   4404     rlncf	0x4, 0, 0          	RLNCF	r0x04, W
+00251a   0bfe     andlw	0xfe               	ANDLW	0xfe
+00251c   6e05     movwf	0x5, 0             	MOVWF	r0x05
+00251e   0efe     movlw	0xfe               	MOVLW	0xfe
+002520   1405     andwf	0x5, 0, 0          	ANDWF	r0x05, W
+                                           ; #	MOVWF	r0x04
+                                           ; #	MOVF	r0x02, W
+                                           ; #	IORWF	r0x04, W
+002522   1002     iorwf	0x2, 0, 0          	IORWF	r0x02, W
+                                           ; #	MOVWF	r0x03
+                                           ; #	MOVF	r0x03, W
+                                           ;	.line	398; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_writechar(temp);
+002524   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002526   ecf0     call	0x27e0, 0           	CALL	_I2C_writechar
+002528   f013
+00252a   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+00252c   d01a     bra	0x2562               	BRA	_00312_DS_
+                                           _00310_DS_:
+                                           ;	.line	403; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	temp = DeviceID << 1 & 0xFE;
+00252e   4400     rlncf	0, 0, 0            	RLNCF	r0x00, W
+002530   0bfe     andlw	0xfe               	ANDLW	0xfe
+002532   6e01     movwf	0x1, 0             	MOVWF	r0x01
+002534   0efe     movlw	0xfe               	MOVLW	0xfe
+002536   1401     andwf	0x1, 0, 0          	ANDWF	r0x01, W
+002538   6e03     movwf	0x3, 0             	MOVWF	r0x03
+                                           ;	.line	404; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	temp = temp | r_w;
+00253a   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+00253c   1203     iorwf	0x3, 0x1, 0        	IORWF	r0x03, F
+                                           ;	.line	405; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_start();
+00253e   eca3     call	0x2946, 0           	CALL	_I2C_start
+002540   f014
+                                           ;	.line	406; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	if (I2C_writechar(temp) != 1)
+002542   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+002544   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002546   ecf0     call	0x27e0, 0           	CALL	_I2C_writechar
+002548   f013
+00254a   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+00254c   0a01     xorlw	0x1                	XORLW	0x01
+00254e   e009     bz	0x2562                	BZ	_00312_DS_
+                                           _00304_DS_:
+                                           ;	.line	409; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_restart();
+002550   ec9b     call	0x2936, 0           	CALL	_I2C_restart
+002552   f014
+                                           ;	.line	410; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	} while (I2C_writechar(temp) != 1);
+002554   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+002556   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002558   ecf0     call	0x27e0, 0           	CALL	_I2C_writechar
+00255a   f013
+00255c   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+00255e   0a01     xorlw	0x1                	XORLW	0x01
+002560   e1f7     bnz	0x2550               	BNZ	_00304_DS_
+                                           _00312_DS_:
+002562   cfe4     movff	0xfe4, 0x5         	MOVFF	PREINC1, r0x05
+002564   f005
+002566   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+002568   f004
+00256a   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+00256c   f003
+00256e   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002570   f002
+002572   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002574   f001
+002576   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+002578   f000
+00257a   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+00257c   ffd9
+00257e   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_sendAck	code
+                                           _I2C_sendAck:
+                                           ;	.line	344; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2bits.ACKDT = 0;
+002918   9ac5     bcf	0xc5, 0x5, 0         	BCF	_SSPCON2bits, 5
+                                           ;	.line	345; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2bits.ACKEN = 1;
+00291a   88c5     bsf	0xc5, 0x4, 0         	BSF	_SSPCON2bits, 4
+                                           ;	.line	346; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_wait();
+00291c   eca7     call	0x294e, 0           	CALL	_I2C_wait
+00291e   f014
+002920   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_sendNack	code
+                                           _I2C_sendNack:
+                                           ;	.line	332; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2bits.ACKDT = 1;
+002922   8ac5     bsf	0xc5, 0x5, 0         	BSF	_SSPCON2bits, 5
+                                           ;	.line	333; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2bits.ACKEN = 1;
+002924   88c5     bsf	0xc5, 0x4, 0         	BSF	_SSPCON2bits, 4
+                                           ;	.line	334; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_wait();
+002926   eca7     call	0x294e, 0           	CALL	_I2C_wait
+002928   f014
+00292a   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_readAbort	code
+                                           _I2C_readAbort:
+                                           ;	.line	320; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON1bits.WCOL = 0;
+00290c   9ec6     bcf	0xc6, 0x7, 0         	BCF	_SSPCON1bits, 7
+                                           ;	.line	321; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_stop();
+00290e   ec9f     call	0x293e, 0           	CALL	_I2C_stop
+002910   f014
+                                           ;	.line	322; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_wait();  
+002912   eca7     call	0x294e, 0           	CALL	_I2C_wait
+002914   f014
+002916   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_waitAck	code
+                                           _I2C_waitAck:
+                                           ;	.line	302; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	static u8 I2C_waitAck()
+002814   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002816   ffe5
+002818   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+00281a   ffe5
+                                           ;	.line	305; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	while(SSPCON2bits.ACKSTAT == 1) 
+00281c   6a00     clrf	0, 0                	CLRF	r0x00
+                                           _00270_DS_:
+00281e   6a01     clrf	0x1, 0              	CLRF	r0x01
+002820   bcc5     btfsc	0xc5, 0x6, 0       	BTFSC	_SSPCON2bits, 6
+002822   2a01     incf	0x1, 0x1, 0         	INCF	r0x01, F
+002824   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+002826   0a01     xorlw	0x1                	XORLW	0x01
+002828   e105     bnz	0x2834               	BNZ	_00272_DS_
+                                           ;	.line	307; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	i++;
+00282a   2a00     incf	0, 0x1, 0           	INCF	r0x00, F
+                                           ;	.line	308; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	if(i==0) return -1;
+00282c   5000     movf	0, 0, 0             	MOVF	r0x00, W
+00282e   e1f7     bnz	0x281e               	BNZ	_00270_DS_
+002830   68e8     setf	0xe8, 0             	SETF	WREG
+002832   d001     bra	0x2836               	BRA	_00273_DS_
+                                           _00272_DS_:
+                                           ;	.line	310; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	return 0;
+002834   6ae8     clrf	0xe8, 0             	CLRF	WREG
+                                           _00273_DS_:
+002836   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002838   f001
+00283a   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+00283c   f000
+00283e   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_readchar	code
+                                           _I2C_readchar:
+                                           ;	.line	292; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2bits.RCEN = 1;
+00292c   86c5     bsf	0xc5, 0x3, 0         	BSF	_SSPCON2bits, 3
+                                           ;	.line	293; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_wait();
+00292e   eca7     call	0x294e, 0           	CALL	_I2C_wait
+002930   f014
+                                           ;	.line	294; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	return (SSPBUF);
+002932   50c9     movf	0xc9, 0, 0          	MOVF	_SSPBUF, W
+002934   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_writechar	code
+                                           _I2C_writechar:
+                                           ;	.line	278; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	u8 I2C_writechar(u8 byte)
+0027e0   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+0027e2   ffe5
+0027e4   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+0027e6   ffd9
+0027e8   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+0027ea   ffe5
+0027ec   0e02     movlw	0x2                	MOVLW	0x02
+0027ee   cfdb     movff	0xfdb, 0xfc9       	MOVFF	PLUSW2, _SSPBUF
+0027f0   ffc9
+                                           ;	.line	281; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_wait();
+0027f2   eca7     call	0x294e, 0           	CALL	_I2C_wait
+0027f4   f014
+                                           ;	.line	282; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	return (!SSPCON2bits.ACKSTAT);
+0027f6   6a00     clrf	0, 0                	CLRF	r0x00
+0027f8   bcc5     btfsc	0xc5, 0x6, 0       	BTFSC	_SSPCON2bits, 6
+0027fa   2a00     incf	0, 0x1, 0           	INCF	r0x00, F
+0027fc   5000     movf	0, 0, 0             	MOVF	r0x00, W
+0027fe   80d8     bsf	0xd8, 0, 0           	BSF	STATUS, 0
+002800   66e8     tstfsz	0xe8, 0           	TSTFSZ	WREG
+002802   90d8     bcf	0xd8, 0, 0           	BCF	STATUS, 0
+002804   6a00     clrf	0, 0                	CLRF	r0x00
+002806   3600     rlcf	0, 0x1, 0           	RLCF	r0x00, F
+002808   5000     movf	0, 0, 0             	MOVF	r0x00, W
+00280a   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+00280c   f000
+00280e   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+002810   ffd9
+002812   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_restart	code
+                                           _I2C_restart:
+                                           ;	.line	267; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2bits.RSEN=1;
+002936   82c5     bsf	0xc5, 0x1, 0         	BSF	_SSPCON2bits, 1
+                                           ;	.line	268; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_wait();
+002938   eca7     call	0x294e, 0           	CALL	_I2C_wait
+00293a   f014
+00293c   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_stop	code
+                                           _I2C_stop:
+                                           ;	.line	256; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2bits.PEN = 1;
+00293e   84c5     bsf	0xc5, 0x2, 0         	BSF	_SSPCON2bits, 2
+                                           ;	.line	257; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_wait();
+002940   eca7     call	0x294e, 0           	CALL	_I2C_wait
+002942   f014
+002944   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_start	code
+                                           _I2C_start:
+                                           ;	.line	245; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2bits.SEN = 1;
+002946   80c5     bsf	0xc5, 0, 0           	BSF	_SSPCON2bits, 0
+                                           ;	.line	246; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_wait();
+002948   eca7     call	0x294e, 0           	CALL	_I2C_wait
+00294a   f014
+00294c   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_wait	code
+                                           _I2C_wait:
+                                           _00235_DS_:
+                                           ;	.line	234; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	while (PIR1bits.SSPIF == 0);
+00294e   a69e     btfss	0x9e, 0x3, 0       	BTFSS	_PIR1bits, 3
+002950   d7fe     bra	0x294e               	BRA	_00235_DS_
+                                           ;	.line	235; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	PIR1bits.SSPIF = 0;
+002952   969e     bcf	0x9e, 0x3, 0         	BCF	_PIR1bits, 3
+002954   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_get	code
+                                           _I2C_get:
+                                           ;	.line	212; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	u8 I2C_get(u8 address)
+002692   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002694   ffe5
+002696   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+002698   ffd9
+00269a   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+00269c   ffe5
+00269e   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+0026a0   ffe5
+0026a2   0e02     movlw	0x2                	MOVLW	0x02
+0026a4   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+0026a6   f000
+                                           ;	.line	216; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_sendID(address, I2C_READ);
+0026a8   c000     movff	0, 0x1             	MOVFF	r0x00, r0x01
+0026aa   f001
+0026ac   0e01     movlw	0x1                	MOVLW	0x01
+0026ae   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0026b0   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+0026b2   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+0026b4   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0026b6   ec50     call	0x24a0, 0           	CALL	_I2C_sendID
+0026b8   f012
+0026ba   0e03     movlw	0x3                	MOVLW	0x03
+0026bc   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+                                           ;	.line	219; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_restart();
+0026be   ec9b     call	0x2936, 0           	CALL	_I2C_restart
+0026c0   f014
+                                           ;	.line	220; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	if (I2C_writechar(address) == 0) return (0);
+0026c2   5000     movf	0, 0, 0             	MOVF	r0x00, W
+0026c4   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0026c6   ecf0     call	0x27e0, 0           	CALL	_I2C_writechar
+0026c8   f013
+0026ca   6e00     movwf	0, 0               	MOVWF	r0x00
+0026cc   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+0026ce   5000     movf	0, 0, 0             	MOVF	r0x00, W
+0026d0   e102     bnz	0x26d6               	BNZ	_00229_DS_
+0026d2   6ae8     clrf	0xe8, 0             	CLRF	WREG
+0026d4   d008     bra	0x26e6               	BRA	_00230_DS_
+                                           _00229_DS_:
+                                           ;	.line	221; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	byte = I2C_readchar();
+0026d6   ec96     call	0x292c, 0           	CALL	_I2C_readchar
+0026d8   f014
+0026da   6e00     movwf	0, 0               	MOVWF	r0x00
+                                           ;	.line	222; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_sendNack();
+0026dc   ec91     call	0x2922, 0           	CALL	_I2C_sendNack
+0026de   f014
+                                           ;	.line	223; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_stop();
+0026e0   ec9f     call	0x293e, 0           	CALL	_I2C_stop
+0026e2   f014
+                                           ;	.line	224; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	return (byte);
+0026e4   5000     movf	0, 0, 0             	MOVF	r0x00, W
+                                           _00230_DS_:
+0026e6   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+0026e8   f001
+0026ea   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+0026ec   f000
+0026ee   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+0026f0   ffd9
+0026f2   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_send	code
+                                           _I2C_send:
+                                           ;	.line	197; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	u8 I2C_send(u8 address, u8 byte)
+00274e   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002750   ffe5
+002752   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+002754   ffd9
+002756   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002758   ffe5
+00275a   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+00275c   ffe5
+00275e   0e02     movlw	0x2                	MOVLW	0x02
+002760   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+002762   f000
+002764   0e03     movlw	0x3                	MOVLW	0x03
+002766   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+002768   f001
+                                           ;	.line	199; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_sendID(address, I2C_WRITE);
+00276a   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+00276c   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+00276e   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002770   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002772   ec50     call	0x24a0, 0           	CALL	_I2C_sendID
+002774   f012
+002776   0e03     movlw	0x3                	MOVLW	0x03
+002778   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+                                           ;	.line	202; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	if (I2C_writechar(byte) == 0) return (0);
+00277a   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+00277c   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+00277e   ecf0     call	0x27e0, 0           	CALL	_I2C_writechar
+002780   f013
+002782   6e00     movwf	0, 0               	MOVWF	r0x00
+002784   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+002786   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002788   e102     bnz	0x278e               	BNZ	_00222_DS_
+00278a   6ae8     clrf	0xe8, 0             	CLRF	WREG
+00278c   d003     bra	0x2794               	BRA	_00223_DS_
+                                           _00222_DS_:
+                                           ;	.line	203; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_stop();
+00278e   ec9f     call	0x293e, 0           	CALL	_I2C_stop
+002790   f014
+                                           ;	.line	204; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	return (1);
+002792   0e01     movlw	0x1                	MOVLW	0x01
+                                           _00223_DS_:
+002794   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002796   f001
+002798   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+00279a   f000
+00279c   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+00279e   ffd9
+0027a0   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_interrupt	code
+                                           _I2C_interrupt:
+                                           ;	.line	182; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	if (PIR1bits.SSPIF)
+0026f4   a69e     btfss	0x9e, 0x3, 0       	BTFSS	_PIR1bits, 3
+0026f6   d02a     bra	0x274c               	BRA	_00211_DS_
+                                           ;	.line	184; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	PIR1bits.SSPIF = 0;
+0026f8   969e     bcf	0x9e, 0x3, 0         	BCF	_PIR1bits, 3
+                                           ;	.line	185; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	if (SSPSTATbits.R_W)
+0026fa   a4c7     btfss	0xc7, 0x2, 0       	BTFSS	_SSPSTATbits, 2
+0026fc   d014     bra	0x2726               	BRA	_00207_DS_
+                                           ;	.line	186; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	_i2c_onRequest_function();
+0026fe   cff2     movff	0xff2, 0xfe5       	MOVFF	INTCON, POSTDEC1
+002700   ffe5
+002702   9ef2     bcf	0xf2, 0x7, 0         	BCF	INTCON, 7
+002704   0005     push                     	PUSH	
+002706   0e24     movlw	0x24               	MOVLW	LOW(_00215_DS_)
+002708   6efd     movwf	0xfd, 0            	MOVWF	TOSL
+00270a   0e27     movlw	0x27               	MOVLW	HIGH(_00215_DS_)
+00270c   6efe     movwf	0xfe, 0            	MOVWF	TOSH
+00270e   0e00     movlw	0                  	MOVLW	UPPER(_00215_DS_)
+002710   6eff     movwf	0xff, 0            	MOVWF	TOSU
+002712   50e4     movf	0xe4, 0, 0          	MOVF	PREINC1, W
+002714   6ef2     movwf	0xf2, 0            	MOVWF	INTCON
+002716   c26a     movff	0x26a, 0xffb       	MOVFF	(__i2c_onRequest_function + 2), PCLATU
+002718   fffb
+00271a   c269     movff	0x269, 0xffa       	MOVFF	(__i2c_onRequest_function + 1), PCLATH
+00271c   fffa
+00271e   0102     movlb	0x2                	BANKSEL	__i2c_onRequest_function
+002720   5168     movf	0x68, 0, 0x1        	MOVF	__i2c_onRequest_function, W, B
+002722   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00215_DS_:
+002724   d013     bra	0x274c               	BRA	_00211_DS_
+                                           _00207_DS_:
+                                           ;	.line	188; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	_i2c_onReceive_function();
+002726   cff2     movff	0xff2, 0xfe5       	MOVFF	INTCON, POSTDEC1
+002728   ffe5
+00272a   9ef2     bcf	0xf2, 0x7, 0         	BCF	INTCON, 7
+00272c   0005     push                     	PUSH	
+00272e   0e4c     movlw	0x4c               	MOVLW	LOW(_00216_DS_)
+002730   6efd     movwf	0xfd, 0            	MOVWF	TOSL
+002732   0e27     movlw	0x27               	MOVLW	HIGH(_00216_DS_)
+002734   6efe     movwf	0xfe, 0            	MOVWF	TOSH
+002736   0e00     movlw	0                  	MOVLW	UPPER(_00216_DS_)
+002738   6eff     movwf	0xff, 0            	MOVWF	TOSU
+00273a   50e4     movf	0xe4, 0, 0          	MOVF	PREINC1, W
+00273c   6ef2     movwf	0xf2, 0            	MOVWF	INTCON
+00273e   c26d     movff	0x26d, 0xffb       	MOVFF	(__i2c_onReceive_function + 2), PCLATU
+002740   fffb
+002742   c26c     movff	0x26c, 0xffa       	MOVFF	(__i2c_onReceive_function + 1), PCLATH
+002744   fffa
+002746   0102     movlb	0x2                	BANKSEL	__i2c_onReceive_function
+002748   516b     movf	0x6b, 0, 0x1        	MOVF	__i2c_onReceive_function, W, B
+00274a   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00216_DS_:
+                                           _00211_DS_:
+00274c   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__IC2_OnReceive	code
+                                           _IC2_OnReceive:
+                                           ;	.line	170; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	void IC2_OnReceive(stdout func)
+002866   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002868   ffe5
+00286a   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+00286c   ffd9
+00286e   0e02     movlw	0x2                	MOVLW	0x02
+002870   cfdb     movff	0xfdb, 0x26b       	MOVFF	PLUSW2, __i2c_onReceive_function
+002872   f26b
+002874   0e03     movlw	0x3                	MOVLW	0x03
+002876   cfdb     movff	0xfdb, 0x26c       	MOVFF	PLUSW2, (__i2c_onReceive_function + 1)
+002878   f26c
+00287a   0e04     movlw	0x4                	MOVLW	0x04
+00287c   cfdb     movff	0xfdb, 0x26d       	MOVFF	PLUSW2, (__i2c_onReceive_function + 2)
+00287e   f26d
+                                           ;	.line	172; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	_i2c_onReceive_function = func;
+002880   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+002882   ffd9
+002884   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_OnRequest	code
+                                           _I2C_OnRequest:
+                                           ;	.line	160; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	void I2C_OnRequest(stdout func)
+002886   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002888   ffe5
+00288a   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+00288c   ffd9
+00288e   0e02     movlw	0x2                	MOVLW	0x02
+002890   cfdb     movff	0xfdb, 0x268       	MOVFF	PLUSW2, __i2c_onRequest_function
+002892   f268
+002894   0e03     movlw	0x3                	MOVLW	0x03
+002896   cfdb     movff	0xfdb, 0x269       	MOVFF	PLUSW2, (__i2c_onRequest_function + 1)
+002898   f269
+00289a   0e04     movlw	0x4                	MOVLW	0x04
+00289c   cfdb     movff	0xfdb, 0x26a       	MOVFF	PLUSW2, (__i2c_onRequest_function + 2)
+00289e   f26a
+                                           ;	.line	162; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	_i2c_onRequest_function = func;
+0028a0   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+0028a2   ffd9
+0028a4   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_init	code
+                                           _I2C_init:
+                                           ;	.line	118; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	void I2C_init(u8 mode, u16 sspadd)
+002618   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+00261a   ffe5
+00261c   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+00261e   ffd9
+002620   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002622   ffe5
+002624   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+002626   ffe5
+002628   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+00262a   ffe5
+00262c   0e02     movlw	0x2                	MOVLW	0x02
+00262e   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+002630   f000
+002632   0e03     movlw	0x3                	MOVLW	0x03
+002634   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+002636   f001
+002638   0e04     movlw	0x4                	MOVLW	0x04
+00263a   cfdb     movff	0xfdb, 0x2         	MOVFF	PLUSW2, r0x02
+00263c   f002
+                                           ;	.line	121; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	TRISBbits.TRISB0 = INPUT;			// SDA = INPUT
+00263e   8093     bsf	0x93, 0, 0           	BSF	_TRISBbits, 0
+                                           ;	.line	122; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	TRISBbits.TRISB1 = INPUT;			// SCL = INPUT
+002640   8293     bsf	0x93, 0x1, 0         	BSF	_TRISBbits, 1
+                                           ;	.line	123; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	switch (mode)
+002642   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002644   0a01     xorlw	0x1                	XORLW	0x01
+002646   e10a     bnz	0x265c               	BNZ	_00179_DS_
+                                           ;	.line	126; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	intUsed[INT_SSP] = INT_USED;
+002648   0e01     movlw	0x1                	MOVLW	0x01
+00264a   0102     movlb	0x2                	BANKSEL	(_intUsed + 19)
+00264c   6f4f     movwf	0x4f, 0x1          	MOVWF	(_intUsed + 19), B
+                                           ;	.line	128; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	INTCONbits.PEIE=1;
+00264e   8cf2     bsf	0xf2, 0x6, 0         	BSF	_INTCONbits, 6
+                                           ;	.line	129; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	INTCONbits.GIE=1;
+002650   8ef2     bsf	0xf2, 0x7, 0         	BSF	_INTCONbits, 7
+                                           ;	.line	130; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON1 = 0b00101110;		// Slave mode,  7-bit address with Start and Stop bit interrupts enabled
+002652   0e2e     movlw	0x2e               	MOVLW	0x2e
+002654   6ec6     movwf	0xc6, 0            	MOVWF	_SSPCON1
+                                           ;	.line	133; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPADD = sspadd;				// Slave 7-bit address
+002656   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+002658   6ec8     movwf	0xc8, 0            	MOVWF	_SSPADD
+                                           ;	.line	136; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	break;
+00265a   d00f     bra	0x267a               	BRA	_00183_DS_
+                                           _00179_DS_:
+                                           ;	.line	138; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON1 = 0b00101000;		// Master Mode, clock = FOSC/(4 * (SSPADD + 1))
+00265c   0e28     movlw	0x28               	MOVLW	0x28
+00265e   6ec6     movwf	0xc6, 0            	MOVWF	_SSPCON1
+                                           ;	.line	139; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	switch (sspadd)
+002660   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+002662   0a01     xorlw	0x1                	XORLW	0x01
+002664   e102     bnz	0x266a               	BNZ	_00190_DS_
+002666   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+002668   e001     bz	0x266c                	BZ	_00191_DS_
+                                           _00190_DS_:
+00266a   d003     bra	0x2672               	BRA	_00181_DS_
+                                           _00191_DS_:
+                                           ;	.line	142; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPSTAT = 0b00000000;		// Slew Mode On
+00266c   6ac7     clrf	0xc7, 0             	CLRF	_SSPSTAT
+                                           ;	.line	143; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPADD = 119;					// 100kHz = FOSC/(4 * (SSPADD + 1))
+00266e   0e77     movlw	0x77               	MOVLW	0x77
+002670   6ec8     movwf	0xc8, 0            	MOVWF	_SSPADD
+                                           _00181_DS_:
+                                           ;	.line	146; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPSTAT = 0b10000000;		// Slew Mode Off
+002672   0e80     movlw	0x80               	MOVLW	0x80
+002674   6ec7     movwf	0xc7, 0            	MOVWF	_SSPSTAT
+                                           ;	.line	147; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPADD = 29;					// 400kHz = FOSC/(4 * (SSPADD + 1))
+002676   0e1d     movlw	0x1d               	MOVLW	0x1d
+002678   6ec8     movwf	0xc8, 0            	MOVWF	_SSPADD
+                                           _00183_DS_:
+                                           ;	.line	150; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	SSPCON2 = 0;
+00267a   6ac5     clrf	0xc5, 0             	CLRF	_SSPCON2
+                                           ;	.line	151; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	PIR1bits.SSPIF = 0;
+00267c   969e     bcf	0x9e, 0x3, 0         	BCF	_PIR1bits, 3
+                                           ;	.line	152; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	PIR2bits.BCLIF = 0;
+00267e   96a1     bcf	0xa1, 0x3, 0         	BCF	_PIR2bits, 3
+002680   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002682   f002
+002684   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002686   f001
+002688   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+00268a   f000
+00268c   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+00268e   ffd9
+002690   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_slave	code
+                                           _I2C_slave:
+                                           ;	.line	102; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	void I2C_slave(u16 DeviceID)   
+0027a2   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+0027a4   ffe5
+0027a6   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+0027a8   ffd9
+0027aa   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+0027ac   ffe5
+0027ae   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+0027b0   ffe5
+0027b2   0e02     movlw	0x2                	MOVLW	0x02
+0027b4   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+0027b6   f000
+0027b8   0e03     movlw	0x3                	MOVLW	0x03
+0027ba   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+0027bc   f001
+                                           ;	.line	104; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_init(I2C_SLAVE_MODE, DeviceID);
+0027be   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+0027c0   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0027c2   5000     movf	0, 0, 0             	MOVF	r0x00, W
+0027c4   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0027c6   0e01     movlw	0x1                	MOVLW	0x01
+0027c8   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0027ca   ec0c     call	0x2618, 0           	CALL	_I2C_init
+0027cc   f013
+0027ce   0e03     movlw	0x3                	MOVLW	0x03
+0027d0   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+0027d2   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+0027d4   f001
+0027d6   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+0027d8   f000
+0027da   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+0027dc   ffd9
+0027de   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__I2C_master	code
+                                           _I2C_master:
+                                           ;	.line	99; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/pinguinoi2c.c	I2C_init(I2C_MASTER_MODE, I2C_SLEW_OFF);
+0028ec   0e00     movlw	0                  	MOVLW	0x00
+0028ee   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+0028f0   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+0028f2   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+0028f4   ec0c     call	0x2618, 0           	CALL	_I2C_init
+0028f6   f013
+0028f8   0e03     movlw	0x3                	MOVLW	0x03
+0028fa   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+0028fc   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__userinterrupt	code
+                                           _userinterrupt:
+                                           ;	.line	1130; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	int_start();
+00201a   ecb6     call	0x296c, 0           	CALL	_int_start
+00201c   f014
+00201e   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__userhighinterrupt	code
+                                           _userhighinterrupt:
+                                           ;	.line	956; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	}
+002968   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__int_stop	code
+                                           _int_stop:
+                                           ;	.line	346; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	}
+00296a   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__int_start	code
+                                           _int_start:
+                                           ;	.line	320; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	}
+00296c   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__int_init	code
+                                           _int_init:
+                                           ;	.line	284; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	void int_init()
+002840   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002842   ffe5
+                                           ;	.line	288; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	RCONbits.IPEN = 1;					// Enable HP/LP interrupts
+002844   8ed0     bsf	0xd0, 0x7, 0         	BSF	_RCONbits, 7
+                                           ;	.line	289; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	INTCONbits.GIEH = 1;				// Enable HP interrupts
+002846   8ef2     bsf	0xf2, 0x7, 0         	BSF	_INTCONbits, 7
+                                           ;	.line	290; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	INTCONbits.GIEL = 1;				// Enable LP interrupts
+002848   8cf2     bsf	0xf2, 0x6, 0         	BSF	_INTCONbits, 6
+                                           ;	.line	292; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	for (i = 0; i < INT_NUM; i++)		// Disable all interrupts
+00284a   6a00     clrf	0, 0                	CLRF	r0x00
+                                           _00134_DS_:
+00284c   0e14     movlw	0x14               	MOVLW	0x14
+00284e   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+002850   e207     bc	0x2860                	BC	_00138_DS_
+                                           ;	.line	293; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	detachInterrupt(i);
+002852   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002854   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002856   ecc5     call	0x238a, 0           	CALL	_detachInterrupt
+002858   f011
+00285a   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+                                           ;	.line	292; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	for (i = 0; i < INT_NUM; i++)		// Disable all interrupts
+00285c   2a00     incf	0, 0x1, 0           	INCF	r0x00, F
+00285e   d7f6     bra	0x284c               	BRA	_00134_DS_
+                                           _00138_DS_:
+002860   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+002862   f000
+002864   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__detachInterrupt	code
+                                           _detachInterrupt:
+                                           ;	.line	206; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	void detachInterrupt(u8 inter)
+00238a   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+00238c   ffe5
+00238e   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+002390   ffd9
+002392   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002394   ffe5
+002396   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+002398   ffe5
+00239a   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+00239c   ffe5
+00239e   0e02     movlw	0x2                	MOVLW	0x02
+0023a0   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+0023a2   f000
+                                           ;	.line	208; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	intUsed[inter] = INT_NOT_USED;	// This interrupt is no longer used
+0023a4   0e3c     movlw	0x3c               	MOVLW	LOW(_intUsed)
+0023a6   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+0023a8   6e01     movwf	0x1, 0             	MOVWF	r0x01
+0023aa   6a02     clrf	0x2, 0              	CLRF	r0x02
+0023ac   0e02     movlw	0x2                	MOVLW	HIGH(_intUsed)
+0023ae   2202     addwfc	0x2, 0x1, 0       	ADDWFC	r0x02, F
+0023b0   c001     movff	0x1, 0xfe9         	MOVFF	r0x01, FSR0L
+0023b2   ffe9
+0023b4   c002     movff	0x2, 0xfea         	MOVFF	r0x02, FSR0H
+0023b6   ffea
+0023b8   6aef     clrf	0xef, 0             	CLRF	INDF0
+                                           ;	.line	210; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	switch(inter)
+0023ba   0e13     movlw	0x13               	MOVLW	0x13
+0023bc   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+0023be   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+0023c0   d066     bra	0x248e               	BRA	_00125_DS_
+0023c2   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+0023c4   ffe5
+0023c6   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+0023c8   ffe5
+0023ca   6a04     clrf	0x4, 0              	CLRF	r0x04
+0023cc   3400     rlcf	0, 0, 0             	RLCF	r0x00, W
+0023ce   3604     rlcf	0x4, 0x1, 0         	RLCF	r0x04, F
+0023d0   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+0023d2   3604     rlcf	0x4, 0x1, 0         	RLCF	r0x04, F
+0023d4   0bfc     andlw	0xfc               	ANDLW	0xfc
+0023d6   6e03     movwf	0x3, 0             	MOVWF	r0x03
+0023d8   0e00     movlw	0                  	MOVLW	UPPER(_00129_DS_)
+0023da   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+0023dc   0e23     movlw	0x23               	MOVLW	HIGH(_00129_DS_)
+0023de   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+0023e0   0ef8     movlw	0xf8               	MOVLW	LOW(_00129_DS_)
+0023e2   2603     addwf	0x3, 0x1, 0        	ADDWF	r0x03, F
+0023e4   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+0023e6   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+0023e8   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+0023ea   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+0023ec   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+0023ee   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+0023f0   f004
+0023f2   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+0023f4   f003
+0023f6   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00129_DS_:
+0023f8   ef28     goto	0x2450              	GOTO	_00108_DS_
+0023fa   f012
+0023fc   ef2a     goto	0x2454              	GOTO	_00109_DS_
+0023fe   f012
+002400   ef2c     goto	0x2458              	GOTO	_00110_DS_
+002402   f012
+002404   ef2e     goto	0x245c              	GOTO	_00111_DS_
+002406   f012
+002408   ef22     goto	0x2444              	GOTO	_00105_DS_
+00240a   f012
+00240c   ef24     goto	0x2448              	GOTO	_00106_DS_
+00240e   f012
+002410   ef26     goto	0x244c              	GOTO	_00107_DS_
+002412   f012
+002414   ef30     goto	0x2460              	GOTO	_00112_DS_
+002416   f012
+002418   ef3a     goto	0x2474              	GOTO	_00117_DS_
+00241a   f012
+00241c   ef3c     goto	0x2478              	GOTO	_00118_DS_
+00241e   f012
+002420   ef40     goto	0x2480              	GOTO	_00120_DS_
+002422   f012
+002424   ef36     goto	0x246c              	GOTO	_00115_DS_
+002426   f012
+002428   ef38     goto	0x2470              	GOTO	_00116_DS_
+00242a   f012
+00242c   ef34     goto	0x2468              	GOTO	_00114_DS_
+00242e   f012
+002430   ef3e     goto	0x247c              	GOTO	_00119_DS_
+002432   f012
+002434   ef42     goto	0x2484              	GOTO	_00121_DS_
+002436   f012
+002438   ef46     goto	0x248c              	GOTO	_00123_DS_
+00243a   f012
+00243c   ef44     goto	0x2488              	GOTO	_00122_DS_
+00243e   f012
+002440   ef32     goto	0x2464              	GOTO	_00113_DS_
+002442   f012
+                                           _00105_DS_:
+                                           ;	.line	213; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	INTCONbits.INT0IE = INT_DISABLE;
+002444   98f2     bcf	0xf2, 0x4, 0         	BCF	_INTCONbits, 4
+                                           ;	.line	214; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002446   d023     bra	0x248e               	BRA	_00125_DS_
+                                           _00106_DS_:
+                                           ;	.line	216; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	INTCON3bits.INT1IE = INT_DISABLE;
+002448   96f0     bcf	0xf0, 0x3, 0         	BCF	_INTCON3bits, 3
+                                           ;	.line	217; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00244a   d021     bra	0x248e               	BRA	_00125_DS_
+                                           _00107_DS_:
+                                           ;	.line	219; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	INTCON3bits.INT2IE = INT_DISABLE;
+00244c   98f0     bcf	0xf0, 0x4, 0         	BCF	_INTCON3bits, 4
+                                           ;	.line	220; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00244e   d01f     bra	0x248e               	BRA	_00125_DS_
+                                           _00108_DS_:
+                                           ;	.line	222; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	INTCONbits.TMR0IE = INT_DISABLE;
+002450   9af2     bcf	0xf2, 0x5, 0         	BCF	_INTCONbits, 5
+                                           ;	.line	223; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002452   d01d     bra	0x248e               	BRA	_00125_DS_
+                                           _00109_DS_:
+                                           ;	.line	225; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE1bits.TMR1IE = INT_DISABLE;
+002454   909d     bcf	0x9d, 0, 0           	BCF	_PIE1bits, 0
+                                           ;	.line	226; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002456   d01b     bra	0x248e               	BRA	_00125_DS_
+                                           _00110_DS_:
+                                           ;	.line	228; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE1bits.TMR2IE = INT_DISABLE;
+002458   929d     bcf	0x9d, 0x1, 0         	BCF	_PIE1bits, 1
+                                           ;	.line	229; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00245a   d019     bra	0x248e               	BRA	_00125_DS_
+                                           _00111_DS_:
+                                           ;	.line	231; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE2bits.TMR3IE = INT_DISABLE;
+00245c   92a0     bcf	0xa0, 0x1, 0         	BCF	_PIE2bits, 1
+                                           ;	.line	232; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00245e   d017     bra	0x248e               	BRA	_00125_DS_
+                                           _00112_DS_:
+                                           ;	.line	234; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	INTCONbits.RBIE = INT_DISABLE;
+002460   96f2     bcf	0xf2, 0x3, 0         	BCF	_INTCONbits, 3
+                                           ;	.line	235; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002462   d015     bra	0x248e               	BRA	_00125_DS_
+                                           _00113_DS_:
+                                           ;	.line	237; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE2bits.USBIE = INT_DISABLE;
+002464   9aa0     bcf	0xa0, 0x5, 0         	BCF	_PIE2bits, 5
+                                           ;	.line	238; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002466   d013     bra	0x248e               	BRA	_00125_DS_
+                                           _00114_DS_:
+                                           ;	.line	240; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE1bits.ADIE = INT_DISABLE;
+002468   9c9d     bcf	0x9d, 0x6, 0         	BCF	_PIE1bits, 6
+                                           ;	.line	241; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00246a   d011     bra	0x248e               	BRA	_00125_DS_
+                                           _00115_DS_:
+                                           ;	.line	243; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE1bits.RCIE = INT_DISABLE;
+00246c   9a9d     bcf	0x9d, 0x5, 0         	BCF	_PIE1bits, 5
+                                           ;	.line	244; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00246e   d00f     bra	0x248e               	BRA	_00125_DS_
+                                           _00116_DS_:
+                                           ;	.line	246; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE1bits.TXIE = INT_DISABLE;
+002470   989d     bcf	0x9d, 0x4, 0         	BCF	_PIE1bits, 4
+                                           ;	.line	247; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002472   d00d     bra	0x248e               	BRA	_00125_DS_
+                                           _00117_DS_:
+                                           ;	.line	249; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE1bits.CCP1IE = INT_DISABLE;
+002474   949d     bcf	0x9d, 0x2, 0         	BCF	_PIE1bits, 2
+                                           ;	.line	250; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002476   d00b     bra	0x248e               	BRA	_00125_DS_
+                                           _00118_DS_:
+                                           ;	.line	252; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE2bits.CCP2IE = INT_DISABLE;
+002478   90a0     bcf	0xa0, 0, 0           	BCF	_PIE2bits, 0
+                                           ;	.line	253; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00247a   d009     bra	0x248e               	BRA	_00125_DS_
+                                           _00119_DS_:
+                                           ;	.line	255; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE2bits.OSCFIE = INT_DISABLE;
+00247c   9ea0     bcf	0xa0, 0x7, 0         	BCF	_PIE2bits, 7
+                                           ;	.line	256; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00247e   d007     bra	0x248e               	BRA	_00125_DS_
+                                           _00120_DS_:
+                                           ;	.line	258; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE2bits.CMIE = INT_DISABLE;
+002480   9ca0     bcf	0xa0, 0x6, 0         	BCF	_PIE2bits, 6
+                                           ;	.line	259; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002482   d005     bra	0x248e               	BRA	_00125_DS_
+                                           _00121_DS_:
+                                           ;	.line	261; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE2bits.EEIE = INT_DISABLE;
+002484   98a0     bcf	0xa0, 0x4, 0         	BCF	_PIE2bits, 4
+                                           ;	.line	262; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+002486   d003     bra	0x248e               	BRA	_00125_DS_
+                                           _00122_DS_:
+                                           ;	.line	264; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE2bits.BCLIE = INT_DISABLE;
+002488   96a0     bcf	0xa0, 0x3, 0         	BCF	_PIE2bits, 3
+                                           ;	.line	265; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	break;
+00248a   d001     bra	0x248e               	BRA	_00125_DS_
+                                           _00123_DS_:
+                                           ;	.line	267; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	PIE2bits.HLVDIE = INT_DISABLE;
+00248c   94a0     bcf	0xa0, 0x2, 0         	BCF	_PIE2bits, 2
+                                           _00125_DS_:
+                                           ;	.line	274; /home/regis/Hobbies/Electronique/Projets/PinguinoIDE/X/branches/pic32/C32/linux/tools/bin/../share/sdcc/include/pic16/interrupt.c	}
+00248e   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002490   f002
+002492   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002494   f001
+002496   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+002498   f000
+00249a   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+00249c   ffd9
+00249e   0012     return	0                 	RETURN	
+                                           
+                                           
+                                           
+                                           ; Statistics:
+                                           ; code size:	 1472 (0x05c0) bytes ( 1.12%)
+                                           ;           	  736 (0x02e0) words
+                                           ; udata size:	  110 (0x006e) bytes ( 6.14%)
+                                           ; access size:	    6 (0x0006) bytes
+                                           
+                                           
+                                           	end

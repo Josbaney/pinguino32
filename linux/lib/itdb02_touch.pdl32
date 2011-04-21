@@ -1,0 +1,7 @@
+myTouch ITDB02_Touch#include <itdb02_touch.c>
+myTouch.InitTouch InitTouch#include <itdb02_touch.c>
+myTouch.read read#include <itdb02_touch.c>
+myTouch.dataAvailable dataAvailable#include <itdb02_touch.c>
+myTouch.getX getX#include <itdb02_touch.c>
+myTouch.getY getY#include <itdb02_touch.c>
+myTouch.setPrecision setPrecision#include <itdb02_touch.c>

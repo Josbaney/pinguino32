@@ -1,0 +1,6 @@
+Pinguino Beta 9-05
+Welcome to Pinguino Beta 9-05
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/user.c:24: warning 112: function 'usbsendint' implicit declaration
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/user.c:24: error 101: too many parameters 
+
+error while compiling file examples/usb/usbpuredata.pde

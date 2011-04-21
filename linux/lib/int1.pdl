@@ -1,0 +1,27 @@
+Int.detach detachInterrupt#include <interrupt.c>
+Int.init int_init#include <interrupt.c>
+OnTimer0 OnTimer0#include <interrupt.c>
+OnTimer1 OnTimer1#include <interrupt.c>
+OnTimer2 OnTimer2#include <interrupt.c>
+OnTimer3 OnTimer3#include <interrupt.c>
+OnCounter0 OnCounter0#include <interrupt.c>
+OnCounter1 OnCounter1#include <interrupt.c>
+OnCounter3 OnCounter3#include <interrupt.c>
+OnChangePin0 OnChangePin0#include <interrupt.c>
+OnChangePin1 OnChangePin1#include <interrupt.c>
+OnChangePin2 OnChangePin2#include <interrupt.c>
+OnChangePin4to7 OnChangePin4to7#include <interrupt.c>
+OnCompare1 OnCompare1#include <interrupt.c>
+OnCompare2 OnCompare2#include <interrupt.c>
+OnCompareAll OnCompareAll#include <interrupt.c>
+OnEvent OnEvent#include <interrupt.c>
+OnSerialRX OnSerialRX#include <interrupt.c>
+OnSerialTX OnSerialTX#include <interrupt.c>
+OnADC OnADC#include <interrupt.c>
+OnOscFailed OnOscFailed#include <interrupt.c>
+OnEeprom OnEeprom#include <interrupt.c>
+OnLowVoltage OnLowVoltage#include <interrupt.c>
+OnBusCol OnBusCol#include <interrupt.c>
+OnUSB OnUSB#include <interrupt.c>
+OnParallel OnParallel#include <interrupt.c>
+

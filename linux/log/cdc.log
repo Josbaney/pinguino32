@@ -1,0 +1,9 @@
+Pinguino Beta 9-05
+Welcome to Pinguino Beta 9-05
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/tools/bin/../share/sdcc/include/pic16/stdio.h:96: error 91: extern definition for 'stdout' mismatches with declaration.
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/tools/bin/../share/sdcc/include/pic16/stdlib.c:31: error 177: previously defined here
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/tools/bin/../share/sdcc/include/pic16/stdio.h:104: error 91: extern definition for 'printf' mismatches with declaration.
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/tools/bin/../share/sdcc/include/pic16/stdlib.c:245: error 177: previously defined here
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/tools/bin/../share/sdcc/include/pic16/stdio.h:112: error 91: extern definition for 'putchar' mismatches with declaration.
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/tools/bin/../share/sdcc/include/pic16/stdlib.c:32: error 177: previously defined here
+

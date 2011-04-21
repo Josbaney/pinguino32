@@ -1,0 +1,9 @@
+Pinguino Beta 9-05
+Welcome to Pinguino Beta 9-05
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/user.c:98: error 78: incompatible types
+from type 'unsigned-int [16] '
+to type 'unsigned-char near* '
+/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/user.c:106: error 78: incompatible types
+from type 'unsigned-int [16] '
+to type 'unsigned-char near* '
+

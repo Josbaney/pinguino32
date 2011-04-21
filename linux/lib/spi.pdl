@@ -1,0 +1,4 @@
+SPI.init SPI_init#include <spi.c>
+SPI.write SPI_write#include <spi.c>
+SPI.read SPI_read#include <spi.c>
+SPI.printf SPI_printf#include <spi.c>

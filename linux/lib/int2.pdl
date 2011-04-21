@@ -1,0 +1,24 @@
+OnTimer0 OnTimer0#define TMR0INT
+OnTimer1 OnTimer1#define TMR1INT
+OnTimer2 OnTimer2#define TMR2INT
+OnTimer3 OnTimer3#define TMR3INT
+OnCounter0 OnCounter0#define CNTR0INT
+OnCounter1 OnCounter1#define CNTR1INT
+OnCounter3 OnCounter3#define CNTR3INT
+OnChangePin0 OnChangePin0#define INT0INT
+OnChangePin1 OnChangePin1#define INT1INT
+OnChangePin2 OnChangePin2#define INT2INT
+OnChangePin4to7 OnChangePin4to7#define RBINT
+OnCompare1 OnCompare1#define CMP1INT
+OnCompare2 OnCompare2#define CMP2INT
+OnCompareAll OnCompareAll#define CMINT
+OnSerialRX OnSerialRX#define RCINT
+OnSerialTX OnSerialTX#define TXINT
+OnADC OnADC#define ADINT
+OnOscFailed OnOscFailed#define OSCFINT
+OnEeprom OnEeprom#define EEINT
+OnLowVoltage OnLowVoltage#define HLVDINT
+OnBusCol OnBusCol#define BCLINT
+OnUSB OnUSB#define USBINT
+OnParallel OnParallel#define SSPINT
+
