@@ -1,0 +1,2865 @@
+gplink-0.13.6 alpha
+Copyright (c) 1998-2005 gputils project
+Listing File Generated: 4-10-2011  11:13:21
+ 
+ 
+Address  Value    Disassembly              Source
+-------  -----    -----------              ------
+                                           ;--------------------------------------------------------
+                                           ; File Created by SDCC : free open source ANSI-C Compiler
+                                           ; Version 2.9.7 #5938 (Aug 21 2010) (MINGW32)
+                                           ; This file was generated Sun Apr 10 11:13:21 2011
+                                           ;--------------------------------------------------------
+                                           ; PIC16 port for the Microchip 16-bit core micros
+                                           ;--------------------------------------------------------
+                                           	list	p=18f2550
+                                           
+                                           	radix dec
+                                           
+                                           ;--------------------------------------------------------
+                                           ; public variables in this module
+                                           ;--------------------------------------------------------
+                                           	global _intUsed
+                                           	global _intCount
+                                           	global _intCountLimit
+                                           	global _preloadH
+                                           	global _preloadL
+                                           	global _digitalwrite
+                                           	global _digitalread
+                                           	global _pinmode
+                                           	global _toggle
+                                           	global _detachInterrupt
+                                           	global _int_init
+                                           	global _int_start
+                                           	global _int_stop
+                                           	global _OnTimer0
+                                           	global _OnTimer1
+                                           	global _OnTimer2
+                                           	global _OnTimer3
+                                           	global _userhighinterrupt
+                                           	global _userinterrupt
+                                           	global _epap_in
+                                           	global _epap_out
+                                           	global _epapin_init
+                                           	global _epapout_init
+                                           	global _blink0
+                                           	global _blink1
+                                           	global _blink2
+                                           	global _blink3
+                                           	global _setup
+                                           	global _loop
+                                           	global _pinguino_main
+                                           	global _high_priority_isr
+                                           	global _low_priority_isr
+                                           	global _mask
+                                           	global _port
+                                           
+                                           ;--------------------------------------------------------
+                                           ; extern variables in this module
+                                           ;--------------------------------------------------------
+                                           	extern _SPPDATAbits
+                                           	extern _SPPCFGbits
+                                           	extern _SPPEPSbits
+                                           	extern _SPPCONbits
+                                           	extern _UFRMLbits
+                                           	extern _UFRMHbits
+                                           	extern _UIRbits
+                                           	extern _UIEbits
+                                           	extern _UEIRbits
+                                           	extern _UEIEbits
+                                           	extern _USTATbits
+                                           	extern _UCONbits
+                                           	extern _UADDRbits
+                                           	extern _UCFGbits
+                                           	extern _UEP0bits
+                                           	extern _UEP1bits
+                                           	extern _UEP2bits
+                                           	extern _UEP3bits
+                                           	extern _UEP4bits
+                                           	extern _UEP5bits
+                                           	extern _UEP6bits
+                                           	extern _UEP7bits
+                                           	extern _UEP8bits
+                                           	extern _UEP9bits
+                                           	extern _UEP10bits
+                                           	extern _UEP11bits
+                                           	extern _UEP12bits
+                                           	extern _UEP13bits
+                                           	extern _UEP14bits
+                                           	extern _UEP15bits
+                                           	extern _PORTAbits
+                                           	extern _PORTBbits
+                                           	extern _PORTCbits
+                                           	extern _PORTDbits
+                                           	extern _PORTEbits
+                                           	extern _LATAbits
+                                           	extern _LATBbits
+                                           	extern _LATCbits
+                                           	extern _LATDbits
+                                           	extern _LATEbits
+                                           	extern _TRISAbits
+                                           	extern _TRISBbits
+                                           	extern _TRISCbits
+                                           	extern _TRISDbits
+                                           	extern _TRISEbits
+                                           	extern _OSCTUNEbits
+                                           	extern _PIE1bits
+                                           	extern _PIR1bits
+                                           	extern _IPR1bits
+                                           	extern _PIE2bits
+                                           	extern _PIR2bits
+                                           	extern _IPR2bits
+                                           	extern _EECON1bits
+                                           	extern _RCSTAbits
+                                           	extern _TXSTAbits
+                                           	extern _T3CONbits
+                                           	extern _CMCONbits
+                                           	extern _CVRCONbits
+                                           	extern _ECCP1ASbits
+                                           	extern _ECCP1DELbits
+                                           	extern _BAUDCONbits
+                                           	extern _CCP2CONbits
+                                           	extern _CCP1CONbits
+                                           	extern _ADCON2bits
+                                           	extern _ADCON1bits
+                                           	extern _ADCON0bits
+                                           	extern _SSPCON2bits
+                                           	extern _SSPCON1bits
+                                           	extern _SSPSTATbits
+                                           	extern _T2CONbits
+                                           	extern _T1CONbits
+                                           	extern _RCONbits
+                                           	extern _WDTCONbits
+                                           	extern _HLVDCONbits
+                                           	extern _OSCCONbits
+                                           	extern _T0CONbits
+                                           	extern _STATUSbits
+                                           	extern _FSR2Hbits
+                                           	extern _BSRbits
+                                           	extern _FSR1Hbits
+                                           	extern _FSR0Hbits
+                                           	extern _INTCON3bits
+                                           	extern _INTCON2bits
+                                           	extern _INTCONbits
+                                           	extern _TBLPTRUbits
+                                           	extern _PCLATHbits
+                                           	extern _PCLATUbits
+                                           	extern _STKPTRbits
+                                           	extern _TOSUbits
+                                           	extern _usb_device_state
+                                           	extern _usb_active_cfg
+                                           	extern _usb_active_alt_setting
+                                           	extern _SPPDATA
+                                           	extern _SPPCFG
+                                           	extern _SPPEPS
+                                           	extern _SPPCON
+                                           	extern _UFRML
+                                           	extern _UFRMH
+                                           	extern _UIR
+                                           	extern _UIE
+                                           	extern _UEIR
+                                           	extern _UEIE
+                                           	extern _USTAT
+                                           	extern _UCON
+                                           	extern _UADDR
+                                           	extern _UCFG
+                                           	extern _UEP0
+                                           	extern _UEP1
+                                           	extern _UEP2
+                                           	extern _UEP3
+                                           	extern _UEP4
+                                           	extern _UEP5
+                                           	extern _UEP6
+                                           	extern _UEP7
+                                           	extern _UEP8
+                                           	extern _UEP9
+                                           	extern _UEP10
+                                           	extern _UEP11
+                                           	extern _UEP12
+                                           	extern _UEP13
+                                           	extern _UEP14
+                                           	extern _UEP15
+                                           	extern _PORTA
+                                           	extern _PORTB
+                                           	extern _PORTC
+                                           	extern _PORTD
+                                           	extern _PORTE
+                                           	extern _LATA
+                                           	extern _LATB
+                                           	extern _LATC
+                                           	extern _LATD
+                                           	extern _LATE
+                                           	extern _TRISA
+                                           	extern _TRISB
+                                           	extern _TRISC
+                                           	extern _TRISD
+                                           	extern _TRISE
+                                           	extern _OSCTUNE
+                                           	extern _PIE1
+                                           	extern _PIR1
+                                           	extern _IPR1
+                                           	extern _PIE2
+                                           	extern _PIR2
+                                           	extern _IPR2
+                                           	extern _EECON1
+                                           	extern _EECON2
+                                           	extern _EEDATA
+                                           	extern _EEADR
+                                           	extern _RCSTA
+                                           	extern _TXSTA
+                                           	extern _TXREG
+                                           	extern _RCREG
+                                           	extern _SPBRG
+                                           	extern _SPBRGH
+                                           	extern _T3CON
+                                           	extern _TMR3L
+                                           	extern _TMR3H
+                                           	extern _CMCON
+                                           	extern _CVRCON
+                                           	extern _ECCP1AS
+                                           	extern _ECCP1DEL
+                                           	extern _BAUDCON
+                                           	extern _CCP2CON
+                                           	extern _CCPR2L
+                                           	extern _CCPR2H
+                                           	extern _CCP1CON
+                                           	extern _CCPR1L
+                                           	extern _CCPR1H
+                                           	extern _ADCON2
+                                           	extern _ADCON1
+                                           	extern _ADCON0
+                                           	extern _ADRESL
+                                           	extern _ADRESH
+                                           	extern _SSPCON2
+                                           	extern _SSPCON1
+                                           	extern _SSPSTAT
+                                           	extern _SSPADD
+                                           	extern _SSPBUF
+                                           	extern _T2CON
+                                           	extern _PR2
+                                           	extern _TMR2
+                                           	extern _T1CON
+                                           	extern _TMR1L
+                                           	extern _TMR1H
+                                           	extern _RCON
+                                           	extern _WDTCON
+                                           	extern _HLVDCON
+                                           	extern _OSCCON
+                                           	extern _T0CON
+                                           	extern _TMR0L
+                                           	extern _TMR0H
+                                           	extern _STATUS
+                                           	extern _FSR2L
+                                           	extern _FSR2H
+                                           	extern _PLUSW2
+                                           	extern _PREINC2
+                                           	extern _POSTDEC2
+                                           	extern _POSTINC2
+                                           	extern _INDF2
+                                           	extern _BSR
+                                           	extern _FSR1L
+                                           	extern _FSR1H
+                                           	extern _PLUSW1
+                                           	extern _PREINC1
+                                           	extern _POSTDEC1
+                                           	extern _POSTINC1
+                                           	extern _INDF1
+                                           	extern _WREG
+                                           	extern _FSR0L
+                                           	extern _FSR0H
+                                           	extern _PLUSW0
+                                           	extern _PREINC0
+                                           	extern _POSTDEC0
+                                           	extern _POSTINC0
+                                           	extern _INDF0
+                                           	extern _INTCON3
+                                           	extern _INTCON2
+                                           	extern _INTCON
+                                           	extern _PRODL
+                                           	extern _PRODH
+                                           	extern _TABLAT
+                                           	extern _TBLPTRL
+                                           	extern _TBLPTRH
+                                           	extern _TBLPTRU
+                                           	extern _PCL
+                                           	extern _PCLATH
+                                           	extern _PCLATU
+                                           	extern _STKPTR
+                                           	extern _TOSL
+                                           	extern _TOSH
+                                           	extern _TOSU
+                                           	extern __mulint
+                                           ;--------------------------------------------------------
+                                           ;	Equates to used internal registers
+                                           ;--------------------------------------------------------
+                                           STATUS	equ	0xfd8
+                                           PCL	equ	0xff9
+                                           PCLATH	equ	0xffa
+                                           PCLATU	equ	0xffb
+                                           INTCON	equ	0xff2
+                                           WREG	equ	0xfe8
+                                           BSR	equ	0xfe0
+                                           TOSL	equ	0xffd
+                                           TOSH	equ	0xffe
+                                           TOSU	equ	0xfff
+                                           TBLPTRL	equ	0xff6
+                                           TBLPTRH	equ	0xff7
+                                           TBLPTRU	equ	0xff8
+                                           TABLAT	equ	0xff5
+                                           FSR0L	equ	0xfe9
+                                           FSR0H	equ	0xfea
+                                           FSR1L	equ	0xfe1
+                                           FSR2L	equ	0xfd9
+                                           INDF0	equ	0xfef
+                                           POSTDEC1	equ	0xfe5
+                                           PREINC1	equ	0xfe4
+                                           PLUSW2	equ	0xfdb
+                                           PRODL	equ	0xff3
+                                           PRODH	equ	0xff4
+                                           
+                                           
+                                           ; Internal registers
+                                           .registers	udata_ovr	0x0000
+                                           r0x00	res	1
+                                           r0x01	res	1
+                                           r0x02	res	1
+                                           r0x03	res	1
+                                           r0x04	res	1
+                                           r0x05	res	1
+                                           r0x06	res	1
+                                           r0x07	res	1
+                                           r0x08	res	1
+                                           r0x09	res	1
+                                           
+                                           udata_main_0	udata
+                                           _intUsed	res	20
+                                           
+                                           udata_main_1	udata
+                                           _intCount	res	8
+                                           
+                                           udata_main_2	udata
+                                           _intCountLimit	res	8
+                                           
+                                           udata_main_3	udata
+                                           _preloadH	res	4
+                                           
+                                           udata_main_4	udata
+                                           _preloadL	res	4
+                                           
+                                           udata_main_5	udata
+                                           _intFunction	res	60
+                                           
+                                           ;--------------------------------------------------------
+                                           ; global & static initialisations
+                                           ;--------------------------------------------------------
+                                           ; ; Starting pCode block
+                                           S_main__high_priority_isr	code	0X002020
+                                           _high_priority_isr:
+                                           ;	.line	121; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	void high_priority_isr(void) interrupt
+002020   cfe8     movff	0xfe8, 0xfe5       	MOVFF	WREG, POSTDEC1
+002022   ffe5
+002024   cfd8     movff	0xfd8, 0xfe5       	MOVFF	STATUS, POSTDEC1
+002026   ffe5
+002028   cfe0     movff	0xfe0, 0xfe5       	MOVFF	BSR, POSTDEC1
+00202a   ffe5
+00202c   cff3     movff	0xff3, 0xfe5       	MOVFF	PRODL, POSTDEC1
+00202e   ffe5
+002030   cff4     movff	0xff4, 0xfe5       	MOVFF	PRODH, POSTDEC1
+002032   ffe5
+002034   cfe9     movff	0xfe9, 0xfe5       	MOVFF	FSR0L, POSTDEC1
+002036   ffe5
+002038   cfea     movff	0xfea, 0xfe5       	MOVFF	FSR0H, POSTDEC1
+00203a   ffe5
+00203c   cffa     movff	0xffa, 0xfe5       	MOVFF	PCLATH, POSTDEC1
+00203e   ffe5
+002040   cffb     movff	0xffb, 0xfe5       	MOVFF	PCLATU, POSTDEC1
+002042   ffe5
+                                           ;	.line	182; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	}
+002044   cfe4     movff	0xfe4, 0xffb       	MOVFF	PREINC1, PCLATU
+002046   fffb
+002048   cfe4     movff	0xfe4, 0xffa       	MOVFF	PREINC1, PCLATH
+00204a   fffa
+00204c   cfe4     movff	0xfe4, 0xfea       	MOVFF	PREINC1, FSR0H
+00204e   ffea
+002050   cfe4     movff	0xfe4, 0xfe9       	MOVFF	PREINC1, FSR0L
+002052   ffe9
+002054   cfe4     movff	0xfe4, 0xff4       	MOVFF	PREINC1, PRODH
+002056   fff4
+002058   cfe4     movff	0xfe4, 0xff3       	MOVFF	PREINC1, PRODL
+00205a   fff3
+00205c   cfe4     movff	0xfe4, 0xfe0       	MOVFF	PREINC1, BSR
+00205e   ffe0
+002060   cfe4     movff	0xfe4, 0xfd8       	MOVFF	PREINC1, STATUS
+002062   ffd8
+002064   cfe4     movff	0xfe4, 0xfe8       	MOVFF	PREINC1, WREG
+002066   ffe8
+002068   0010     retfie	0                 	RETFIE	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__low_priority_isr	code	0X004000
+                                           _low_priority_isr:
+                                           ;	.line	185; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	void low_priority_isr(void) interrupt
+004000   cfe8     movff	0xfe8, 0xfe5       	MOVFF	WREG, POSTDEC1
+004002   ffe5
+004004   cfd8     movff	0xfd8, 0xfe5       	MOVFF	STATUS, POSTDEC1
+004006   ffe5
+004008   cfe0     movff	0xfe0, 0xfe5       	MOVFF	BSR, POSTDEC1
+00400a   ffe5
+00400c   cff3     movff	0xff3, 0xfe5       	MOVFF	PRODL, POSTDEC1
+00400e   ffe5
+004010   cff4     movff	0xff4, 0xfe5       	MOVFF	PRODH, POSTDEC1
+004012   ffe5
+004014   cfe9     movff	0xfe9, 0xfe5       	MOVFF	FSR0L, POSTDEC1
+004016   ffe5
+004018   cfea     movff	0xfea, 0xfe5       	MOVFF	FSR0H, POSTDEC1
+00401a   ffe5
+00401c   cffa     movff	0xffa, 0xfe5       	MOVFF	PCLATH, POSTDEC1
+00401e   ffe5
+004020   cffb     movff	0xffb, 0xfe5       	MOVFF	PCLATU, POSTDEC1
+004022   ffe5
+                                           ;	.line	188; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	userinterrupt();
+004024   ecd5     call	0x23aa, 0           	CALL	_userinterrupt
+004026   f011
+004028   cfe4     movff	0xfe4, 0xffb       	MOVFF	PREINC1, PCLATU
+00402a   fffb
+00402c   cfe4     movff	0xfe4, 0xffa       	MOVFF	PREINC1, PCLATH
+00402e   fffa
+004030   cfe4     movff	0xfe4, 0xfea       	MOVFF	PREINC1, FSR0H
+004032   ffea
+004034   cfe4     movff	0xfe4, 0xfe9       	MOVFF	PREINC1, FSR0L
+004036   ffe9
+004038   cfe4     movff	0xfe4, 0xff4       	MOVFF	PREINC1, PRODH
+00403a   fff4
+00403c   cfe4     movff	0xfe4, 0xff3       	MOVFF	PREINC1, PRODL
+00403e   fff3
+004040   cfe4     movff	0xfe4, 0xfe0       	MOVFF	PREINC1, BSR
+004042   ffe0
+004044   cfe4     movff	0xfe4, 0xfd8       	MOVFF	PREINC1, STATUS
+004046   ffd8
+004048   cfe4     movff	0xfe4, 0xfe8       	MOVFF	PREINC1, WREG
+00404a   ffe8
+00404c   0010     retfie	0                 	RETFIE	
+                                           
+                                           ; I code from now on!
+                                           ; ; Starting pCode block
+                                           S_main__pinguino_main	code
+                                           _pinguino_main:
+                                           ;	.line	53; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	PIE1 = 0;
+0032c4   6a9d     clrf	0x9d, 0             	CLRF	_PIE1
+                                           ;	.line	54; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	PIE2 = 0;
+0032c6   6aa0     clrf	0xa0, 0             	CLRF	_PIE2
+                                           ;	.line	55; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	ADCON1 = 0b00001111;				// AN0 to AN12 Digital I/O
+0032c8   0e0f     movlw	0xf                	MOVLW	0x0f
+0032ca   6ec1     movwf	0xc1, 0            	MOVWF	_ADCON1
+                                           ;	.line	58; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	int_init();							// Disable all interrupts
+0032cc   ec4f     call	0x329e, 0           	CALL	_int_init
+0032ce   f019
+                                           ;	.line	67; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	setup();
+0032d0   ecde     call	0x31bc, 0           	CALL	_setup
+0032d2   f018
+                                           ;	.line	70; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	int_start();							// Enable all timers interrupts
+0032d4   eca0     call	0x3340, 0           	CALL	_int_start
+0032d6   f019
+                                           _00412_DS_:
+                                           ;	.line	115; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	loop();
+0032d8   eca6     call	0x334c, 0           	CALL	_loop
+0032da   f019
+0032dc   d7fd     bra	0x32d8               	BRA	_00412_DS_
+0032de   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__loop	code
+                                           _loop:
+                                           ;	.line	43; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	ERROR: no line number 43 in file C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c
+00334c   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__setup	code
+                                           _setup:
+                                           ;	.line	29; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	//
+0031bc   0ef0     movlw	0xf0               	MOVLW	0xf0
+0031be   168a     andwf	0x8a, 0x1, 0       	ANDWF	_LATB, F
+                                           ;	.line	30; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	TRISB &= 0b11110000;
+0031c0   1681     andwf	0x81, 0x1, 0       	ANDWF	_PORTB, F
+                                           ;	.line	33; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	OnTimer1(blink1, INT_MILLISEC, 500);	// Use Timer1 to toggle pin 0 every 500 ms
+0031c2   1693     andwf	0x93, 0x1, 0       	ANDWF	_TRISB, F
+                                           ;	.line	35; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	OnTimer3(blink3, INT_MILLISEC, 500);	// Use Timer3 to toggle pin 0 every 500 ms
+0031c4   0e01     movlw	0x1                	MOVLW	0x01
+0031c6   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031c8   0ef4     movlw	0xf4               	MOVLW	0xf4
+0031ca   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031cc   0e02     movlw	0x2                	MOVLW	0x02
+0031ce   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031d0   0e00     movlw	0                  	MOVLW	UPPER(_blink0)
+0031d2   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031d4   0e33     movlw	0x33               	MOVLW	HIGH(_blink0)
+0031d6   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031d8   0e2a     movlw	0x2a               	MOVLW	LOW(_blink0)
+0031da   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031dc   ec70     call	0x2ee0, 0           	CALL	_OnTimer0
+0031de   f017
+0031e0   0e06     movlw	0x6                	MOVLW	0x06
+0031e2   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+                                           ;	.line	36; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	}
+0031e4   0e01     movlw	0x1                	MOVLW	0x01
+0031e6   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031e8   0ef4     movlw	0xf4               	MOVLW	0xf4
+0031ea   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031ec   0e02     movlw	0x2                	MOVLW	0x02
+0031ee   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031f0   0e00     movlw	0                  	MOVLW	UPPER(_blink1)
+0031f2   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031f4   0e33     movlw	0x33               	MOVLW	HIGH(_blink1)
+0031f6   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031f8   0e1e     movlw	0x1e               	MOVLW	LOW(_blink1)
+0031fa   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0031fc   ec24     call	0x2c48, 0           	CALL	_OnTimer1
+0031fe   f016
+003200   0e06     movlw	0x6                	MOVLW	0x06
+003202   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+                                           ;	.line	37; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	
+003204   0e01     movlw	0x1                	MOVLW	0x01
+003206   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003208   0ef4     movlw	0xf4               	MOVLW	0xf4
+00320a   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+00320c   0e02     movlw	0x2                	MOVLW	0x02
+00320e   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003210   0e00     movlw	0                  	MOVLW	UPPER(_blink2)
+003212   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003214   0e33     movlw	0x33               	MOVLW	HIGH(_blink2)
+003216   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003218   0e12     movlw	0x12               	MOVLW	LOW(_blink2)
+00321a   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+00321c   ecce     call	0x2d9c, 0           	CALL	_OnTimer2
+00321e   f016
+003220   0e06     movlw	0x6                	MOVLW	0x06
+003222   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+                                           ;	.line	38; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	void loop()
+003224   0e01     movlw	0x1                	MOVLW	0x01
+003226   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003228   0ef4     movlw	0xf4               	MOVLW	0xf4
+00322a   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+00322c   0e02     movlw	0x2                	MOVLW	0x02
+00322e   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003230   0e00     movlw	0                  	MOVLW	UPPER(_blink3)
+003232   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003234   0e33     movlw	0x33               	MOVLW	HIGH(_blink3)
+003236   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003238   0e06     movlw	0x6                	MOVLW	LOW(_blink3)
+00323a   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+00323c   ec7a     call	0x2af4, 0           	CALL	_OnTimer3
+00323e   f015
+003240   0e06     movlw	0x6                	MOVLW	0x06
+003242   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+003244   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__blink3	code
+                                           _blink3:
+                                           ;	.line	23; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	
+003306   0e03     movlw	0x3                	MOVLW	0x03
+003308   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+00330a   ec23     call	0x3246, 0           	CALL	_toggle
+00330c   f019
+00330e   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+003310   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__blink2	code
+                                           _blink2:
+                                           ;	.line	22; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	void blink3() {	toggle(LED3); }
+003312   0e02     movlw	0x2                	MOVLW	0x02
+003314   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003316   ec23     call	0x3246, 0           	CALL	_toggle
+003318   f019
+00331a   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+00331c   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__blink1	code
+                                           _blink1:
+                                           ;	.line	21; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	void blink2() {	toggle(LED2); }
+00331e   0e01     movlw	0x1                	MOVLW	0x01
+003320   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003322   ec23     call	0x3246, 0           	CALL	_toggle
+003324   f019
+003326   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+003328   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__blink0	code
+                                           _blink0:
+                                           ;	.line	20; C:\Users\jpm\Documents\pinguino32x_windows\source\/user.c	void blink1() {	toggle(LED1); }
+00332a   0e00     movlw	0                  	MOVLW	0x00
+00332c   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+00332e   ec23     call	0x3246, 0           	CALL	_toggle
+003330   f019
+003332   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+003334   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__epapout_init	code
+                                           _epapout_init:
+                                           ;	.line	41; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	void epapout_init() { return; }
+00334e   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__epapin_init	code
+                                           _epapin_init:
+                                           ;	.line	40; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	void epapin_init() { return; }
+003350   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__epap_out	code
+                                           _epap_out:
+                                           ;	.line	39; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	void epap_out() { return; }
+003352   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__epap_in	code
+                                           _epap_in:
+                                           ;	.line	38; C:\Users\jpm\Documents\pinguino32x_windows\source\main.c	void epap_in() { return; }
+003354   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__userinterrupt	code
+                                           _userinterrupt:
+                                           ;	.line	968; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	void userinterrupt()
+0023aa   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+0023ac   ffe5
+0023ae   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+0023b0   ffe5
+0023b2   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+0023b4   ffe5
+0023b6   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+0023b8   ffe5
+                                           ;	.line	992; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (INTCONbits.TMR0IE && INTCONbits.TMR0IF)
+0023ba   aaf2     btfss	0xf2, 0x5, 0       	BTFSS	_INTCONbits, 5
+0023bc   d039     bra	0x2430               	BRA	_00318_DS_
+0023be   a4f2     btfss	0xf2, 0x2, 0       	BTFSS	_INTCONbits, 2
+0023c0   d037     bra	0x2430               	BRA	_00318_DS_
+                                           ;	.line	994; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T0CONbits.TMR0ON = OFF;
+0023c2   9ed5     bcf	0xd5, 0x7, 0         	BCF	_T0CONbits, 7
+                                           ;	.line	995; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR0H = preloadH[INT_TMR0];
+0023c4   c260     movff	0x260, 0xfd7       	MOVFF	_preloadH, _TMR0H
+0023c6   ffd7
+                                           ;	.line	996; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR0L = preloadL[INT_TMR0];
+0023c8   c264     movff	0x264, 0xfd6       	MOVFF	_preloadL, _TMR0L
+0023ca   ffd6
+                                           ;	.line	997; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCONbits.TMR0IF = 0;
+0023cc   94f2     bcf	0xf2, 0x2, 0         	BCF	_INTCONbits, 2
+                                           ;	.line	998; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (intCount[INT_TMR0]++ >= intCountLimit[INT_TMR0])
+0023ce   c250     movff	0x250, 0           	MOVFF	_intCount, r0x00
+0023d0   f000
+0023d2   c251     movff	0x251, 0x1         	MOVFF	(_intCount + 1), r0x01
+0023d4   f001
+0023d6   5000     movf	0, 0, 0             	MOVF	r0x00, W
+0023d8   0f01     addlw	0x1                	ADDLW	0x01
+0023da   6e02     movwf	0x2, 0             	MOVWF	r0x02
+0023dc   0e00     movlw	0                  	MOVLW	0x00
+0023de   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0023e0   6e03     movwf	0x3, 0             	MOVWF	r0x03
+0023e2   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+0023e4   0102     movlb	0x2                	BANKSEL	_intCount
+0023e6   6f50     movwf	0x50, 0x1          	MOVWF	_intCount, B
+0023e8   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+                                           ; removed redundant BANKSEL
+0023ea   6f51     movwf	0x51, 0x1          	MOVWF	(_intCount + 1), B
+0023ec   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 1)
+0023ee   5159     movf	0x59, 0, 0x1        	MOVF	(_intCountLimit + 1), W, B
+0023f0   5c01     subwf	0x1, 0, 0          	SUBWF	r0x01, W
+0023f2   e102     bnz	0x23f8               	BNZ	_00349_DS_
+                                           ; removed redundant BANKSEL
+0023f4   5158     movf	0x58, 0, 0x1        	MOVF	_intCountLimit, W, B
+0023f6   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+                                           _00349_DS_:
+0023f8   e31b     bnc	0x2430               	BNC	_00318_DS_
+0023fa   0102     movlb	0x2                	BANKSEL	_intCount
+                                           ;	.line	1000; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCount[INT_TMR0] = 0;
+0023fc   6b50     clrf	0x50, 0x1           	CLRF	_intCount, B
+                                           ; removed redundant BANKSEL
+0023fe   6b51     clrf	0x51, 0x1           	CLRF	(_intCount + 1), B
+                                           ;	.line	1001; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intFunction[INT_TMR0]();
+002400   c200     movff	0x200, 0           	MOVFF	_intFunction, r0x00
+002402   f000
+002404   c201     movff	0x201, 0x1         	MOVFF	(_intFunction + 1), r0x01
+002406   f001
+002408   c202     movff	0x202, 0x2         	MOVFF	(_intFunction + 2), r0x02
+00240a   f002
+00240c   cff2     movff	0xff2, 0xfe5       	MOVFF	INTCON, POSTDEC1
+00240e   ffe5
+002410   9ef2     bcf	0xf2, 0x7, 0         	BCF	INTCON, 7
+002412   0005     push                     	PUSH	
+002414   0e30     movlw	0x30               	MOVLW	LOW(_00350_DS_)
+002416   6efd     movwf	0xfd, 0            	MOVWF	TOSL
+002418   0e24     movlw	0x24               	MOVLW	HIGH(_00350_DS_)
+00241a   6efe     movwf	0xfe, 0            	MOVWF	TOSH
+00241c   0e00     movlw	0                  	MOVLW	UPPER(_00350_DS_)
+00241e   6eff     movwf	0xff, 0            	MOVWF	TOSU
+002420   50e4     movf	0xe4, 0, 0          	MOVF	PREINC1, W
+002422   6ef2     movwf	0xf2, 0            	MOVWF	INTCON
+002424   c002     movff	0x2, 0xffb         	MOVFF	r0x02, PCLATU
+002426   fffb
+002428   c001     movff	0x1, 0xffa         	MOVFF	r0x01, PCLATH
+00242a   fffa
+00242c   5000     movf	0, 0, 0             	MOVF	r0x00, W
+00242e   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00350_DS_:
+                                           _00318_DS_:
+                                           ;	.line	1006; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (PIE1bits.TMR1IE && PIR1bits.TMR1IF)
+002430   a09d     btfss	0x9d, 0, 0         	BTFSS	_PIE1bits, 0
+002432   d039     bra	0x24a6               	BRA	_00323_DS_
+002434   a09e     btfss	0x9e, 0, 0         	BTFSS	_PIR1bits, 0
+002436   d037     bra	0x24a6               	BRA	_00323_DS_
+                                           ;	.line	1008; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T1CONbits.TMR1ON = OFF;
+002438   90cd     bcf	0xcd, 0, 0           	BCF	_T1CONbits, 0
+                                           ;	.line	1009; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR1H = preloadH[INT_TMR1];
+00243a   c261     movff	0x261, 0xfcf       	MOVFF	(_preloadH + 1), _TMR1H
+00243c   ffcf
+                                           ;	.line	1010; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR1L = preloadL[INT_TMR1];
+00243e   c265     movff	0x265, 0xfce       	MOVFF	(_preloadL + 1), _TMR1L
+002440   ffce
+                                           ;	.line	1011; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIR1bits.TMR1IF = 0;
+002442   909e     bcf	0x9e, 0, 0           	BCF	_PIR1bits, 0
+                                           ;	.line	1012; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (intCount[INT_TMR1]++ >= intCountLimit[INT_TMR1])
+002444   c252     movff	0x252, 0           	MOVFF	(_intCount + 2), r0x00
+002446   f000
+002448   c253     movff	0x253, 0x1         	MOVFF	(_intCount + 3), r0x01
+00244a   f001
+00244c   5000     movf	0, 0, 0             	MOVF	r0x00, W
+00244e   0f01     addlw	0x1                	ADDLW	0x01
+002450   6e02     movwf	0x2, 0             	MOVWF	r0x02
+002452   0e00     movlw	0                  	MOVLW	0x00
+002454   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+002456   6e03     movwf	0x3, 0             	MOVWF	r0x03
+002458   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+00245a   0102     movlb	0x2                	BANKSEL	(_intCount + 2)
+00245c   6f52     movwf	0x52, 0x1          	MOVWF	(_intCount + 2), B
+00245e   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+                                           ; removed redundant BANKSEL
+002460   6f53     movwf	0x53, 0x1          	MOVWF	(_intCount + 3), B
+002462   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 3)
+002464   515b     movf	0x5b, 0, 0x1        	MOVF	(_intCountLimit + 3), W, B
+002466   5c01     subwf	0x1, 0, 0          	SUBWF	r0x01, W
+002468   e102     bnz	0x246e               	BNZ	_00351_DS_
+                                           ; removed redundant BANKSEL
+00246a   515a     movf	0x5a, 0, 0x1        	MOVF	(_intCountLimit + 2), W, B
+00246c   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+                                           _00351_DS_:
+00246e   e31b     bnc	0x24a6               	BNC	_00323_DS_
+002470   0102     movlb	0x2                	BANKSEL	(_intCount + 2)
+                                           ;	.line	1014; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCount[INT_TMR1] = 0;
+002472   6b52     clrf	0x52, 0x1           	CLRF	(_intCount + 2), B
+                                           ; removed redundant BANKSEL
+002474   6b53     clrf	0x53, 0x1           	CLRF	(_intCount + 3), B
+                                           ;	.line	1015; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intFunction[INT_TMR1]();
+002476   c203     movff	0x203, 0           	MOVFF	(_intFunction + 3), r0x00
+002478   f000
+00247a   c204     movff	0x204, 0x1         	MOVFF	(_intFunction + 4), r0x01
+00247c   f001
+00247e   c205     movff	0x205, 0x2         	MOVFF	(_intFunction + 5), r0x02
+002480   f002
+002482   cff2     movff	0xff2, 0xfe5       	MOVFF	INTCON, POSTDEC1
+002484   ffe5
+002486   9ef2     bcf	0xf2, 0x7, 0         	BCF	INTCON, 7
+002488   0005     push                     	PUSH	
+00248a   0ea6     movlw	0xa6               	MOVLW	LOW(_00352_DS_)
+00248c   6efd     movwf	0xfd, 0            	MOVWF	TOSL
+00248e   0e24     movlw	0x24               	MOVLW	HIGH(_00352_DS_)
+002490   6efe     movwf	0xfe, 0            	MOVWF	TOSH
+002492   0e00     movlw	0                  	MOVLW	UPPER(_00352_DS_)
+002494   6eff     movwf	0xff, 0            	MOVWF	TOSU
+002496   50e4     movf	0xe4, 0, 0          	MOVF	PREINC1, W
+002498   6ef2     movwf	0xf2, 0            	MOVWF	INTCON
+00249a   c002     movff	0x2, 0xffb         	MOVFF	r0x02, PCLATU
+00249c   fffb
+00249e   c001     movff	0x1, 0xffa         	MOVFF	r0x01, PCLATH
+0024a0   fffa
+0024a2   5000     movf	0, 0, 0             	MOVF	r0x00, W
+0024a4   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00352_DS_:
+                                           _00323_DS_:
+                                           ;	.line	1020; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (PIE1bits.TMR2IE && PIR1bits.TMR2IF)
+0024a6   a29d     btfss	0x9d, 0x1, 0       	BTFSS	_PIE1bits, 1
+0024a8   d035     bra	0x2514               	BRA	_00328_DS_
+0024aa   a29e     btfss	0x9e, 0x1, 0       	BTFSS	_PIR1bits, 1
+0024ac   d033     bra	0x2514               	BRA	_00328_DS_
+                                           ;	.line	1022; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T2CONbits.TMR2ON = OFF;
+0024ae   94ca     bcf	0xca, 0x2, 0         	BCF	_T2CONbits, 2
+                                           ;	.line	1023; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIR1bits.TMR2IF = 0;
+0024b0   929e     bcf	0x9e, 0x1, 0         	BCF	_PIR1bits, 1
+                                           ;	.line	1024; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (intCount[INT_TMR2]++ >= intCountLimit[INT_TMR2])
+0024b2   c254     movff	0x254, 0           	MOVFF	(_intCount + 4), r0x00
+0024b4   f000
+0024b6   c255     movff	0x255, 0x1         	MOVFF	(_intCount + 5), r0x01
+0024b8   f001
+0024ba   5000     movf	0, 0, 0             	MOVF	r0x00, W
+0024bc   0f01     addlw	0x1                	ADDLW	0x01
+0024be   6e02     movwf	0x2, 0             	MOVWF	r0x02
+0024c0   0e00     movlw	0                  	MOVLW	0x00
+0024c2   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0024c4   6e03     movwf	0x3, 0             	MOVWF	r0x03
+0024c6   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+0024c8   0102     movlb	0x2                	BANKSEL	(_intCount + 4)
+0024ca   6f54     movwf	0x54, 0x1          	MOVWF	(_intCount + 4), B
+0024cc   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+                                           ; removed redundant BANKSEL
+0024ce   6f55     movwf	0x55, 0x1          	MOVWF	(_intCount + 5), B
+0024d0   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 5)
+0024d2   515d     movf	0x5d, 0, 0x1        	MOVF	(_intCountLimit + 5), W, B
+0024d4   5c01     subwf	0x1, 0, 0          	SUBWF	r0x01, W
+0024d6   e102     bnz	0x24dc               	BNZ	_00353_DS_
+                                           ; removed redundant BANKSEL
+0024d8   515c     movf	0x5c, 0, 0x1        	MOVF	(_intCountLimit + 4), W, B
+0024da   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+                                           _00353_DS_:
+0024dc   e31b     bnc	0x2514               	BNC	_00328_DS_
+0024de   0102     movlb	0x2                	BANKSEL	(_intCount + 4)
+                                           ;	.line	1026; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCount[INT_TMR2] = 0;
+0024e0   6b54     clrf	0x54, 0x1           	CLRF	(_intCount + 4), B
+                                           ; removed redundant BANKSEL
+0024e2   6b55     clrf	0x55, 0x1           	CLRF	(_intCount + 5), B
+                                           ;	.line	1027; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intFunction[INT_TMR2]();
+0024e4   c206     movff	0x206, 0           	MOVFF	(_intFunction + 6), r0x00
+0024e6   f000
+0024e8   c207     movff	0x207, 0x1         	MOVFF	(_intFunction + 7), r0x01
+0024ea   f001
+0024ec   c208     movff	0x208, 0x2         	MOVFF	(_intFunction + 8), r0x02
+0024ee   f002
+0024f0   cff2     movff	0xff2, 0xfe5       	MOVFF	INTCON, POSTDEC1
+0024f2   ffe5
+0024f4   9ef2     bcf	0xf2, 0x7, 0         	BCF	INTCON, 7
+0024f6   0005     push                     	PUSH	
+0024f8   0e14     movlw	0x14               	MOVLW	LOW(_00354_DS_)
+0024fa   6efd     movwf	0xfd, 0            	MOVWF	TOSL
+0024fc   0e25     movlw	0x25               	MOVLW	HIGH(_00354_DS_)
+0024fe   6efe     movwf	0xfe, 0            	MOVWF	TOSH
+002500   0e00     movlw	0                  	MOVLW	UPPER(_00354_DS_)
+002502   6eff     movwf	0xff, 0            	MOVWF	TOSU
+002504   50e4     movf	0xe4, 0, 0          	MOVF	PREINC1, W
+002506   6ef2     movwf	0xf2, 0            	MOVWF	INTCON
+002508   c002     movff	0x2, 0xffb         	MOVFF	r0x02, PCLATU
+00250a   fffb
+00250c   c001     movff	0x1, 0xffa         	MOVFF	r0x01, PCLATH
+00250e   fffa
+002510   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002512   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00354_DS_:
+                                           _00328_DS_:
+                                           ;	.line	1033; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (PIE2bits.TMR3IE && PIR2bits.TMR3IF)
+002514   a2a0     btfss	0xa0, 0x1, 0       	BTFSS	_PIE2bits, 1
+002516   d039     bra	0x258a               	BRA	_00333_DS_
+002518   a2a1     btfss	0xa1, 0x1, 0       	BTFSS	_PIR2bits, 1
+00251a   d037     bra	0x258a               	BRA	_00333_DS_
+                                           ;	.line	1035; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T3CONbits.TMR3ON = OFF;
+00251c   90b1     bcf	0xb1, 0, 0           	BCF	_T3CONbits, 0
+                                           ;	.line	1036; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR3H = preloadH[INT_TMR3];
+00251e   c263     movff	0x263, 0xfb3       	MOVFF	(_preloadH + 3), _TMR3H
+002520   ffb3
+                                           ;	.line	1037; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR3L = preloadL[INT_TMR3];
+002522   c267     movff	0x267, 0xfb2       	MOVFF	(_preloadL + 3), _TMR3L
+002524   ffb2
+                                           ;	.line	1038; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIR2bits.TMR3IF = 0;
+002526   92a1     bcf	0xa1, 0x1, 0         	BCF	_PIR2bits, 1
+                                           ;	.line	1039; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (intCount[INT_TMR3]++ >= intCountLimit[INT_TMR3])
+002528   c256     movff	0x256, 0           	MOVFF	(_intCount + 6), r0x00
+00252a   f000
+00252c   c257     movff	0x257, 0x1         	MOVFF	(_intCount + 7), r0x01
+00252e   f001
+002530   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002532   0f01     addlw	0x1                	ADDLW	0x01
+002534   6e02     movwf	0x2, 0             	MOVWF	r0x02
+002536   0e00     movlw	0                  	MOVLW	0x00
+002538   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+00253a   6e03     movwf	0x3, 0             	MOVWF	r0x03
+00253c   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+00253e   0102     movlb	0x2                	BANKSEL	(_intCount + 6)
+002540   6f56     movwf	0x56, 0x1          	MOVWF	(_intCount + 6), B
+002542   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+                                           ; removed redundant BANKSEL
+002544   6f57     movwf	0x57, 0x1          	MOVWF	(_intCount + 7), B
+002546   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 7)
+002548   515f     movf	0x5f, 0, 0x1        	MOVF	(_intCountLimit + 7), W, B
+00254a   5c01     subwf	0x1, 0, 0          	SUBWF	r0x01, W
+00254c   e102     bnz	0x2552               	BNZ	_00355_DS_
+                                           ; removed redundant BANKSEL
+00254e   515e     movf	0x5e, 0, 0x1        	MOVF	(_intCountLimit + 6), W, B
+002550   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+                                           _00355_DS_:
+002552   e31b     bnc	0x258a               	BNC	_00333_DS_
+002554   0102     movlb	0x2                	BANKSEL	(_intCount + 6)
+                                           ;	.line	1041; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCount[INT_TMR3] = 0;
+002556   6b56     clrf	0x56, 0x1           	CLRF	(_intCount + 6), B
+                                           ; removed redundant BANKSEL
+002558   6b57     clrf	0x57, 0x1           	CLRF	(_intCount + 7), B
+                                           ;	.line	1042; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intFunction[INT_TMR3]();
+00255a   c209     movff	0x209, 0           	MOVFF	(_intFunction + 9), r0x00
+00255c   f000
+00255e   c20a     movff	0x20a, 0x1         	MOVFF	(_intFunction + 10), r0x01
+002560   f001
+002562   c20b     movff	0x20b, 0x2         	MOVFF	(_intFunction + 11), r0x02
+002564   f002
+002566   cff2     movff	0xff2, 0xfe5       	MOVFF	INTCON, POSTDEC1
+002568   ffe5
+00256a   9ef2     bcf	0xf2, 0x7, 0         	BCF	INTCON, 7
+00256c   0005     push                     	PUSH	
+00256e   0e8a     movlw	0x8a               	MOVLW	LOW(_00356_DS_)
+002570   6efd     movwf	0xfd, 0            	MOVWF	TOSL
+002572   0e25     movlw	0x25               	MOVLW	HIGH(_00356_DS_)
+002574   6efe     movwf	0xfe, 0            	MOVWF	TOSH
+002576   0e00     movlw	0                  	MOVLW	UPPER(_00356_DS_)
+002578   6eff     movwf	0xff, 0            	MOVWF	TOSU
+00257a   50e4     movf	0xe4, 0, 0          	MOVF	PREINC1, W
+00257c   6ef2     movwf	0xf2, 0            	MOVWF	INTCON
+00257e   c002     movff	0x2, 0xffb         	MOVFF	r0x02, PCLATU
+002580   fffb
+002582   c001     movff	0x1, 0xffa         	MOVFF	r0x01, PCLATH
+002584   fffa
+002586   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002588   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00356_DS_:
+                                           _00333_DS_:
+                                           ;	.line	1132; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	int_start();
+00258a   eca0     call	0x3340, 0           	CALL	_int_start
+00258c   f019
+00258e   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+002590   f003
+002592   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002594   f002
+002596   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002598   f001
+00259a   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+00259c   f000
+00259e   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__userhighinterrupt	code
+                                           _userhighinterrupt:
+                                           ;	.line	958; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	}
+003356   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__OnTimer3	code
+                                           _OnTimer3:
+                                           ;	.line	517; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	void OnTimer3(callback func, u8 timediv, u16 delay)
+002af4   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002af6   ffe5
+002af8   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+002afa   ffd9
+002afc   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002afe   ffe5
+002b00   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+002b02   ffe5
+002b04   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+002b06   ffe5
+002b08   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+002b0a   ffe5
+002b0c   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+002b0e   ffe5
+002b10   c005     movff	0x5, 0xfe5         	MOVFF	r0x05, POSTDEC1
+002b12   ffe5
+002b14   c006     movff	0x6, 0xfe5         	MOVFF	r0x06, POSTDEC1
+002b16   ffe5
+002b18   0e02     movlw	0x2                	MOVLW	0x02
+002b1a   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+002b1c   f000
+002b1e   0e03     movlw	0x3                	MOVLW	0x03
+002b20   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+002b22   f001
+002b24   0e04     movlw	0x4                	MOVLW	0x04
+002b26   cfdb     movff	0xfdb, 0x2         	MOVFF	PLUSW2, r0x02
+002b28   f002
+002b2a   0e05     movlw	0x5                	MOVLW	0x05
+002b2c   cfdb     movff	0xfdb, 0x3         	MOVFF	PLUSW2, r0x03
+002b2e   f003
+002b30   0e06     movlw	0x6                	MOVLW	0x06
+002b32   cfdb     movff	0xfdb, 0x4         	MOVFF	PLUSW2, r0x04
+002b34   f004
+002b36   0e07     movlw	0x7                	MOVLW	0x07
+002b38   cfdb     movff	0xfdb, 0x5         	MOVFF	PLUSW2, r0x05
+002b3a   f005
+                                           ;	.line	519; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	u8 _t3con = 0;
+002b3c   6a06     clrf	0x6, 0              	CLRF	r0x06
+002b3e   0102     movlb	0x2                	BANKSEL	(_intUsed + 3)
+                                           ;	.line	521; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (intUsed[INT_TMR3] == INT_NOT_USED)
+002b40   513f     movf	0x3f, 0, 0x1        	MOVF	(_intUsed + 3), W, B
+002b42   a4d8     btfss	0xd8, 0x2, 0       	BTFSS	STATUS, 2
+002b44   d070     bra	0x2c26               	BRA	_00298_DS_
+                                           ;	.line	523; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intUsed[INT_TMR3] = INT_USED;
+002b46   0e01     movlw	0x1                	MOVLW	0x01
+                                           ; removed redundant BANKSEL
+002b48   6f3f     movwf	0x3f, 0x1          	MOVWF	(_intUsed + 3), B
+002b4a   0102     movlb	0x2                	BANKSEL	(_intCount + 6)
+                                           ;	.line	524; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCount[INT_TMR3] = 0;
+002b4c   6b56     clrf	0x56, 0x1           	CLRF	(_intCount + 6), B
+                                           ; removed redundant BANKSEL
+002b4e   6b57     clrf	0x57, 0x1           	CLRF	(_intCount + 7), B
+                                           ;	.line	525; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCountLimit[INT_TMR3] = delay;
+002b50   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002b52   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 6)
+002b54   6f5e     movwf	0x5e, 0x1          	MOVWF	(_intCountLimit + 6), B
+002b56   5005     movf	0x5, 0, 0           	MOVF	r0x05, W
+                                           ; removed redundant BANKSEL
+002b58   6f5f     movwf	0x5f, 0x1          	MOVWF	(_intCountLimit + 7), B
+                                           ;	.line	526; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intFunction[INT_TMR3] = func;
+002b5a   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002b5c   0102     movlb	0x2                	BANKSEL	(_intFunction + 9)
+002b5e   6f09     movwf	0x9, 0x1           	MOVWF	(_intFunction + 9), B
+002b60   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+                                           ; removed redundant BANKSEL
+002b62   6f0a     movwf	0xa, 0x1           	MOVWF	(_intFunction + 10), B
+002b64   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+                                           ; removed redundant BANKSEL
+002b66   6f0b     movwf	0xb, 0x1           	MOVWF	(_intFunction + 11), B
+                                           ;	.line	528; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	switch(timediv)
+002b68   0e01     movlw	0x1                	MOVLW	0x01
+002b6a   5c03     subwf	0x3, 0, 0          	SUBWF	r0x03, W
+002b6c   a0d8     btfss	0xd8, 0, 0         	BTFSS	STATUS, 0
+002b6e   d052     bra	0x2c14               	BRA	_00295_DS_
+002b70   0e04     movlw	0x4                	MOVLW	0x04
+002b72   5c03     subwf	0x3, 0, 0          	SUBWF	r0x03, W
+002b74   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002b76   d04e     bra	0x2c14               	BRA	_00295_DS_
+002b78   0603     decf	0x3, 0x1, 0         	DECF	r0x03, F
+002b7a   c007     movff	0x7, 0xfe5         	MOVFF	r0x07, POSTDEC1
+002b7c   ffe5
+002b7e   c008     movff	0x8, 0xfe5         	MOVFF	r0x08, POSTDEC1
+002b80   ffe5
+002b82   6a08     clrf	0x8, 0              	CLRF	r0x08
+002b84   3403     rlcf	0x3, 0, 0           	RLCF	r0x03, W
+002b86   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+002b88   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+002b8a   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+002b8c   0bfc     andlw	0xfc               	ANDLW	0xfc
+002b8e   6e07     movwf	0x7, 0             	MOVWF	r0x07
+002b90   0e00     movlw	0                  	MOVLW	UPPER(_00305_DS_)
+002b92   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+002b94   0e2b     movlw	0x2b               	MOVLW	HIGH(_00305_DS_)
+002b96   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+002b98   0eb0     movlw	0xb0               	MOVLW	LOW(_00305_DS_)
+002b9a   2607     addwf	0x7, 0x1, 0        	ADDWF	r0x07, F
+002b9c   5008     movf	0x8, 0, 0           	MOVF	r0x08, W
+002b9e   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+002ba0   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002ba2   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+002ba4   5007     movf	0x7, 0, 0           	MOVF	r0x07, W
+002ba6   cfe4     movff	0xfe4, 0x8         	MOVFF	PREINC1, r0x08
+002ba8   f008
+002baa   cfe4     movff	0xfe4, 0x7         	MOVFF	PREINC1, r0x07
+002bac   f007
+002bae   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00305_DS_:
+002bb0   efde     goto	0x2bbc              	GOTO	_00292_DS_
+002bb2   f015
+002bb4   efe6     goto	0x2bcc              	GOTO	_00293_DS_
+002bb6   f015
+002bb8   efef     goto	0x2bde              	GOTO	_00294_DS_
+002bba   f015
+                                           _00292_DS_:
+002bbc   0102     movlb	0x2                	BANKSEL	(_preloadH + 3)
+                                           ;	.line	532; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR3] = high8(0xFFFF - 12);
+002bbe   6963     setf	0x63, 0x1           	SETF	(_preloadH + 3), B
+                                           ;	.line	533; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR3] =  low8(0xFFFF - 12);
+002bc0   0ef3     movlw	0xf3               	MOVLW	0xf3
+002bc2   0102     movlb	0x2                	BANKSEL	(_preloadL + 3)
+002bc4   6f67     movwf	0x67, 0x1          	MOVWF	(_preloadL + 3), B
+                                           ;	.line	534; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t3con = T3_OFF & T3_16BIT & T3_PS_1_1 & T3_INT_CLK;
+002bc6   0ecc     movlw	0xcc               	MOVLW	0xcc
+002bc8   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           ;	.line	535; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+002bca   d024     bra	0x2c14               	BRA	_00295_DS_
+                                           _00293_DS_:
+                                           ;	.line	539; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR3] = high8(0xFFFF - 1500);
+002bcc   0efa     movlw	0xfa               	MOVLW	0xfa
+002bce   0102     movlb	0x2                	BANKSEL	(_preloadH + 3)
+002bd0   6f63     movwf	0x63, 0x1          	MOVWF	(_preloadH + 3), B
+                                           ;	.line	540; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR3] =  low8(0xFFFF - 1500);
+002bd2   0e23     movlw	0x23               	MOVLW	0x23
+002bd4   0102     movlb	0x2                	BANKSEL	(_preloadL + 3)
+002bd6   6f67     movwf	0x67, 0x1          	MOVWF	(_preloadL + 3), B
+                                           ;	.line	541; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t3con = T3_OFF & T3_16BIT & T3_PS_1_8 & T3_INT_CLK;
+002bd8   0efc     movlw	0xfc               	MOVLW	0xfc
+002bda   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           ;	.line	542; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+002bdc   d01b     bra	0x2c14               	BRA	_00295_DS_
+                                           _00294_DS_:
+                                           ;	.line	547; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR3] = high8(0xFFFF - 60000);
+002bde   0e15     movlw	0x15               	MOVLW	0x15
+002be0   0102     movlb	0x2                	BANKSEL	(_preloadH + 3)
+002be2   6f63     movwf	0x63, 0x1          	MOVWF	(_preloadH + 3), B
+                                           ;	.line	548; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR3] =  low8(0xFFFF - 60000);
+002be4   0e9f     movlw	0x9f               	MOVLW	0x9f
+002be6   0102     movlb	0x2                	BANKSEL	(_preloadL + 3)
+002be8   6f67     movwf	0x67, 0x1          	MOVWF	(_preloadL + 3), B
+                                           ;	.line	549; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCountLimit[INT_TMR3] = delay * 25;
+002bea   5005     movf	0x5, 0, 0           	MOVF	r0x05, W
+002bec   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002bee   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002bf0   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002bf2   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+002bf4   0e19     movlw	0x19               	MOVLW	0x19
+002bf6   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002bf8   ec27     call	0x4e, 0             	CALL	__mulint
+002bfa   f000
+002bfc   6e00     movwf	0, 0               	MOVWF	r0x00
+002bfe   cff3     movff	0xff3, 0x1         	MOVFF	PRODL, r0x01
+002c00   f001
+002c02   0e04     movlw	0x4                	MOVLW	0x04
+002c04   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+002c06   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002c08   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 6)
+002c0a   6f5e     movwf	0x5e, 0x1          	MOVWF	(_intCountLimit + 6), B
+002c0c   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+                                           ; removed redundant BANKSEL
+002c0e   6f5f     movwf	0x5f, 0x1          	MOVWF	(_intCountLimit + 7), B
+                                           ;	.line	550; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t3con = T3_OFF & T3_16BIT & T3_PS_1_8 & T3_INT_CLK;
+002c10   0efc     movlw	0xfc               	MOVLW	0xfc
+002c12   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           _00295_DS_:
+                                           ;	.line	554; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	IPR2bits.TMR3IP = INT_LOW_PRIORITY;
+002c14   92a2     bcf	0xa2, 0x1, 0         	BCF	_IPR2bits, 1
+                                           ;	.line	555; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.TMR3IE = INT_ENABLE;
+002c16   82a0     bsf	0xa0, 0x1, 0         	BSF	_PIE2bits, 1
+                                           ;	.line	556; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIR2bits.TMR3IF = 0;
+002c18   92a1     bcf	0xa1, 0x1, 0         	BCF	_PIR2bits, 1
+                                           ;	.line	557; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR3H = preloadH[INT_TMR3];
+002c1a   c263     movff	0x263, 0xfb3       	MOVFF	(_preloadH + 3), _TMR3H
+002c1c   ffb3
+                                           ;	.line	558; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR3L = preloadL[INT_TMR3];
+002c1e   c267     movff	0x267, 0xfb2       	MOVFF	(_preloadL + 3), _TMR3L
+002c20   ffb2
+                                           ;	.line	559; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T3CON = _t3con;
+002c22   c006     movff	0x6, 0xfb1         	MOVFF	r0x06, _T3CON
+002c24   ffb1
+                                           _00298_DS_:
+002c26   cfe4     movff	0xfe4, 0x6         	MOVFF	PREINC1, r0x06
+002c28   f006
+002c2a   cfe4     movff	0xfe4, 0x5         	MOVFF	PREINC1, r0x05
+002c2c   f005
+002c2e   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+002c30   f004
+002c32   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+002c34   f003
+002c36   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002c38   f002
+002c3a   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002c3c   f001
+002c3e   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+002c40   f000
+002c42   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+002c44   ffd9
+002c46   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__OnTimer2	code
+                                           _OnTimer2:
+                                           ;	.line	466; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	void OnTimer2(callback func, u8 timediv, u16 delay)
+002d9c   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002d9e   ffe5
+002da0   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+002da2   ffd9
+002da4   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002da6   ffe5
+002da8   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+002daa   ffe5
+002dac   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+002dae   ffe5
+002db0   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+002db2   ffe5
+002db4   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+002db6   ffe5
+002db8   c005     movff	0x5, 0xfe5         	MOVFF	r0x05, POSTDEC1
+002dba   ffe5
+002dbc   c006     movff	0x6, 0xfe5         	MOVFF	r0x06, POSTDEC1
+002dbe   ffe5
+002dc0   c007     movff	0x7, 0xfe5         	MOVFF	r0x07, POSTDEC1
+002dc2   ffe5
+002dc4   0e02     movlw	0x2                	MOVLW	0x02
+002dc6   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+002dc8   f000
+002dca   0e03     movlw	0x3                	MOVLW	0x03
+002dcc   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+002dce   f001
+002dd0   0e04     movlw	0x4                	MOVLW	0x04
+002dd2   cfdb     movff	0xfdb, 0x2         	MOVFF	PLUSW2, r0x02
+002dd4   f002
+002dd6   0e05     movlw	0x5                	MOVLW	0x05
+002dd8   cfdb     movff	0xfdb, 0x3         	MOVFF	PLUSW2, r0x03
+002dda   f003
+002ddc   0e06     movlw	0x6                	MOVLW	0x06
+002dde   cfdb     movff	0xfdb, 0x4         	MOVFF	PLUSW2, r0x04
+002de0   f004
+002de2   0e07     movlw	0x7                	MOVLW	0x07
+002de4   cfdb     movff	0xfdb, 0x5         	MOVFF	PLUSW2, r0x05
+002de6   f005
+                                           ;	.line	468; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	u8 _t2con = 0;
+002de8   6a06     clrf	0x6, 0              	CLRF	r0x06
+                                           ;	.line	469; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	u8 _pr2 = 0;
+002dea   6a07     clrf	0x7, 0              	CLRF	r0x07
+002dec   0102     movlb	0x2                	BANKSEL	(_intUsed + 2)
+                                           ;	.line	471; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (intUsed[INT_TMR2] == INT_NOT_USED)
+002dee   513e     movf	0x3e, 0, 0x1        	MOVF	(_intUsed + 2), W, B
+002df0   a4d8     btfss	0xd8, 0x2, 0       	BTFSS	STATUS, 2
+002df2   d063     bra	0x2eba               	BRA	_00280_DS_
+                                           ;	.line	473; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intUsed[INT_TMR2] = INT_USED;
+002df4   0e01     movlw	0x1                	MOVLW	0x01
+                                           ; removed redundant BANKSEL
+002df6   6f3e     movwf	0x3e, 0x1          	MOVWF	(_intUsed + 2), B
+002df8   0102     movlb	0x2                	BANKSEL	(_intCount + 4)
+                                           ;	.line	474; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCount[INT_TMR2] = 0;
+002dfa   6b54     clrf	0x54, 0x1           	CLRF	(_intCount + 4), B
+                                           ; removed redundant BANKSEL
+002dfc   6b55     clrf	0x55, 0x1           	CLRF	(_intCount + 5), B
+                                           ;	.line	475; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCountLimit[INT_TMR2] = delay;
+002dfe   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002e00   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 4)
+002e02   6f5c     movwf	0x5c, 0x1          	MOVWF	(_intCountLimit + 4), B
+002e04   5005     movf	0x5, 0, 0           	MOVF	r0x05, W
+                                           ; removed redundant BANKSEL
+002e06   6f5d     movwf	0x5d, 0x1          	MOVWF	(_intCountLimit + 5), B
+                                           ;	.line	476; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intFunction[INT_TMR2] = func;
+002e08   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002e0a   0102     movlb	0x2                	BANKSEL	(_intFunction + 6)
+002e0c   6f06     movwf	0x6, 0x1           	MOVWF	(_intFunction + 6), B
+002e0e   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+                                           ; removed redundant BANKSEL
+002e10   6f07     movwf	0x7, 0x1           	MOVWF	(_intFunction + 7), B
+002e12   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+                                           ; removed redundant BANKSEL
+002e14   6f08     movwf	0x8, 0x1           	MOVWF	(_intFunction + 8), B
+                                           ;	.line	479; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	switch(timediv)
+002e16   0e01     movlw	0x1                	MOVLW	0x01
+002e18   5c03     subwf	0x3, 0, 0          	SUBWF	r0x03, W
+002e1a   a0d8     btfss	0xd8, 0, 0         	BTFSS	STATUS, 0
+002e1c   d047     bra	0x2eac               	BRA	_00277_DS_
+002e1e   0e04     movlw	0x4                	MOVLW	0x04
+002e20   5c03     subwf	0x3, 0, 0          	SUBWF	r0x03, W
+002e22   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002e24   d043     bra	0x2eac               	BRA	_00277_DS_
+002e26   0603     decf	0x3, 0x1, 0         	DECF	r0x03, F
+002e28   c008     movff	0x8, 0xfe5         	MOVFF	r0x08, POSTDEC1
+002e2a   ffe5
+002e2c   c009     movff	0x9, 0xfe5         	MOVFF	r0x09, POSTDEC1
+002e2e   ffe5
+002e30   6a09     clrf	0x9, 0              	CLRF	r0x09
+002e32   3403     rlcf	0x3, 0, 0           	RLCF	r0x03, W
+002e34   3609     rlcf	0x9, 0x1, 0         	RLCF	r0x09, F
+002e36   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+002e38   3609     rlcf	0x9, 0x1, 0         	RLCF	r0x09, F
+002e3a   0bfc     andlw	0xfc               	ANDLW	0xfc
+002e3c   6e08     movwf	0x8, 0             	MOVWF	r0x08
+002e3e   0e00     movlw	0                  	MOVLW	UPPER(_00287_DS_)
+002e40   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+002e42   0e2e     movlw	0x2e               	MOVLW	HIGH(_00287_DS_)
+002e44   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+002e46   0e5e     movlw	0x5e               	MOVLW	LOW(_00287_DS_)
+002e48   2608     addwf	0x8, 0x1, 0        	ADDWF	r0x08, F
+002e4a   5009     movf	0x9, 0, 0           	MOVF	r0x09, W
+002e4c   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+002e4e   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002e50   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+002e52   5008     movf	0x8, 0, 0           	MOVF	r0x08, W
+002e54   cfe4     movff	0xfe4, 0x9         	MOVFF	PREINC1, r0x09
+002e56   f009
+002e58   cfe4     movff	0xfe4, 0x8         	MOVFF	PREINC1, r0x08
+002e5a   f008
+002e5c   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00287_DS_:
+002e5e   ef35     goto	0x2e6a              	GOTO	_00274_DS_
+002e60   f017
+002e62   ef3a     goto	0x2e74              	GOTO	_00275_DS_
+002e64   f017
+002e66   ef3f     goto	0x2e7e              	GOTO	_00276_DS_
+002e68   f017
+                                           _00274_DS_:
+                                           ;	.line	483; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_pr2 = 12;
+002e6a   0e0c     movlw	0xc                	MOVLW	0x0c
+002e6c   6e07     movwf	0x7, 0             	MOVWF	r0x07
+                                           ;	.line	484; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t2con = T2_OFF & T2_PS_1_1 & T2_POST_1_1;
+002e6e   0e08     movlw	0x8                	MOVLW	0x08
+002e70   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           ;	.line	485; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+002e72   d01c     bra	0x2eac               	BRA	_00277_DS_
+                                           _00275_DS_:
+                                           ;	.line	489; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_pr2 = 50;
+002e74   0e32     movlw	0x32               	MOVLW	0x32
+002e76   6e07     movwf	0x7, 0             	MOVWF	r0x07
+                                           ;	.line	490; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t2con = T2_OFF & T2_POST_1_15 & T2_PS_1_16;
+002e78   0eeb     movlw	0xeb               	MOVLW	0xeb
+002e7a   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           ;	.line	491; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+002e7c   d017     bra	0x2eac               	BRA	_00277_DS_
+                                           _00276_DS_:
+                                           ;	.line	495; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_pr2 = 250;
+002e7e   0efa     movlw	0xfa               	MOVLW	0xfa
+002e80   6e07     movwf	0x7, 0             	MOVWF	r0x07
+                                           ;	.line	496; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCountLimit[INT_TMR2] = delay * 200;
+002e82   5005     movf	0x5, 0, 0           	MOVF	r0x05, W
+002e84   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002e86   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002e88   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002e8a   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+002e8c   0ec8     movlw	0xc8               	MOVLW	0xc8
+002e8e   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002e90   ec27     call	0x4e, 0             	CALL	__mulint
+002e92   f000
+002e94   6e00     movwf	0, 0               	MOVWF	r0x00
+002e96   cff3     movff	0xff3, 0x1         	MOVFF	PRODL, r0x01
+002e98   f001
+002e9a   0e04     movlw	0x4                	MOVLW	0x04
+002e9c   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+002e9e   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002ea0   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 4)
+002ea2   6f5c     movwf	0x5c, 0x1          	MOVWF	(_intCountLimit + 4), B
+002ea4   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+                                           ; removed redundant BANKSEL
+002ea6   6f5d     movwf	0x5d, 0x1          	MOVWF	(_intCountLimit + 5), B
+                                           ;	.line	497; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t2con = T2_OFF & T2_POST_1_15 & T2_PS_1_16;
+002ea8   0eeb     movlw	0xeb               	MOVLW	0xeb
+002eaa   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           _00277_DS_:
+                                           ;	.line	501; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	IPR1bits.TMR2IP = INT_LOW_PRIORITY;
+002eac   929f     bcf	0x9f, 0x1, 0         	BCF	_IPR1bits, 1
+                                           ;	.line	502; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE1bits.TMR2IE = INT_ENABLE;
+002eae   829d     bsf	0x9d, 0x1, 0         	BSF	_PIE1bits, 1
+                                           ;	.line	503; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIR1bits.TMR2IF = 0;
+002eb0   929e     bcf	0x9e, 0x1, 0         	BCF	_PIR1bits, 1
+                                           ;	.line	504; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PR2 = _pr2;	// Timer2 Match value
+002eb2   c007     movff	0x7, 0xfcb         	MOVFF	r0x07, _PR2
+002eb4   ffcb
+                                           ;	.line	505; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T2CON = _t2con;
+002eb6   c006     movff	0x6, 0xfca         	MOVFF	r0x06, _T2CON
+002eb8   ffca
+                                           _00280_DS_:
+002eba   cfe4     movff	0xfe4, 0x7         	MOVFF	PREINC1, r0x07
+002ebc   f007
+002ebe   cfe4     movff	0xfe4, 0x6         	MOVFF	PREINC1, r0x06
+002ec0   f006
+002ec2   cfe4     movff	0xfe4, 0x5         	MOVFF	PREINC1, r0x05
+002ec4   f005
+002ec6   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+002ec8   f004
+002eca   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+002ecc   f003
+002ece   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002ed0   f002
+002ed2   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002ed4   f001
+002ed6   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+002ed8   f000
+002eda   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+002edc   ffd9
+002ede   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__OnTimer1	code
+                                           _OnTimer1:
+                                           ;	.line	412; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	void OnTimer1(callback func, u8 timediv, u16 delay)
+002c48   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002c4a   ffe5
+002c4c   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+002c4e   ffd9
+002c50   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002c52   ffe5
+002c54   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+002c56   ffe5
+002c58   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+002c5a   ffe5
+002c5c   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+002c5e   ffe5
+002c60   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+002c62   ffe5
+002c64   c005     movff	0x5, 0xfe5         	MOVFF	r0x05, POSTDEC1
+002c66   ffe5
+002c68   c006     movff	0x6, 0xfe5         	MOVFF	r0x06, POSTDEC1
+002c6a   ffe5
+002c6c   0e02     movlw	0x2                	MOVLW	0x02
+002c6e   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+002c70   f000
+002c72   0e03     movlw	0x3                	MOVLW	0x03
+002c74   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+002c76   f001
+002c78   0e04     movlw	0x4                	MOVLW	0x04
+002c7a   cfdb     movff	0xfdb, 0x2         	MOVFF	PLUSW2, r0x02
+002c7c   f002
+002c7e   0e05     movlw	0x5                	MOVLW	0x05
+002c80   cfdb     movff	0xfdb, 0x3         	MOVFF	PLUSW2, r0x03
+002c82   f003
+002c84   0e06     movlw	0x6                	MOVLW	0x06
+002c86   cfdb     movff	0xfdb, 0x4         	MOVFF	PLUSW2, r0x04
+002c88   f004
+002c8a   0e07     movlw	0x7                	MOVLW	0x07
+002c8c   cfdb     movff	0xfdb, 0x5         	MOVFF	PLUSW2, r0x05
+002c8e   f005
+                                           ;	.line	414; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	u8 _t1con = 0;
+002c90   6a06     clrf	0x6, 0              	CLRF	r0x06
+002c92   0102     movlb	0x2                	BANKSEL	(_intUsed + 1)
+                                           ;	.line	416; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (intUsed[INT_TMR1] == INT_NOT_USED)
+002c94   513d     movf	0x3d, 0, 0x1        	MOVF	(_intUsed + 1), W, B
+002c96   a4d8     btfss	0xd8, 0x2, 0       	BTFSS	STATUS, 2
+002c98   d070     bra	0x2d7a               	BRA	_00262_DS_
+                                           ;	.line	418; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intUsed[INT_TMR1] = INT_USED;
+002c9a   0e01     movlw	0x1                	MOVLW	0x01
+                                           ; removed redundant BANKSEL
+002c9c   6f3d     movwf	0x3d, 0x1          	MOVWF	(_intUsed + 1), B
+002c9e   0102     movlb	0x2                	BANKSEL	(_intCount + 2)
+                                           ;	.line	419; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCount[INT_TMR1] = 0;
+002ca0   6b52     clrf	0x52, 0x1           	CLRF	(_intCount + 2), B
+                                           ; removed redundant BANKSEL
+002ca2   6b53     clrf	0x53, 0x1           	CLRF	(_intCount + 3), B
+                                           ;	.line	420; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCountLimit[INT_TMR1] = delay;
+002ca4   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002ca6   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 2)
+002ca8   6f5a     movwf	0x5a, 0x1          	MOVWF	(_intCountLimit + 2), B
+002caa   5005     movf	0x5, 0, 0           	MOVF	r0x05, W
+                                           ; removed redundant BANKSEL
+002cac   6f5b     movwf	0x5b, 0x1          	MOVWF	(_intCountLimit + 3), B
+                                           ;	.line	421; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intFunction[INT_TMR1] = func;
+002cae   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002cb0   0102     movlb	0x2                	BANKSEL	(_intFunction + 3)
+002cb2   6f03     movwf	0x3, 0x1           	MOVWF	(_intFunction + 3), B
+002cb4   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+                                           ; removed redundant BANKSEL
+002cb6   6f04     movwf	0x4, 0x1           	MOVWF	(_intFunction + 4), B
+002cb8   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+                                           ; removed redundant BANKSEL
+002cba   6f05     movwf	0x5, 0x1           	MOVWF	(_intFunction + 5), B
+                                           ;	.line	423; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	switch(timediv)
+002cbc   0e01     movlw	0x1                	MOVLW	0x01
+002cbe   5c03     subwf	0x3, 0, 0          	SUBWF	r0x03, W
+002cc0   a0d8     btfss	0xd8, 0, 0         	BTFSS	STATUS, 0
+002cc2   d052     bra	0x2d68               	BRA	_00259_DS_
+002cc4   0e04     movlw	0x4                	MOVLW	0x04
+002cc6   5c03     subwf	0x3, 0, 0          	SUBWF	r0x03, W
+002cc8   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002cca   d04e     bra	0x2d68               	BRA	_00259_DS_
+002ccc   0603     decf	0x3, 0x1, 0         	DECF	r0x03, F
+002cce   c007     movff	0x7, 0xfe5         	MOVFF	r0x07, POSTDEC1
+002cd0   ffe5
+002cd2   c008     movff	0x8, 0xfe5         	MOVFF	r0x08, POSTDEC1
+002cd4   ffe5
+002cd6   6a08     clrf	0x8, 0              	CLRF	r0x08
+002cd8   3403     rlcf	0x3, 0, 0           	RLCF	r0x03, W
+002cda   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+002cdc   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+002cde   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+002ce0   0bfc     andlw	0xfc               	ANDLW	0xfc
+002ce2   6e07     movwf	0x7, 0             	MOVWF	r0x07
+002ce4   0e00     movlw	0                  	MOVLW	UPPER(_00269_DS_)
+002ce6   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+002ce8   0e2d     movlw	0x2d               	MOVLW	HIGH(_00269_DS_)
+002cea   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+002cec   0e04     movlw	0x4                	MOVLW	LOW(_00269_DS_)
+002cee   2607     addwf	0x7, 0x1, 0        	ADDWF	r0x07, F
+002cf0   5008     movf	0x8, 0, 0           	MOVF	r0x08, W
+002cf2   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+002cf4   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002cf6   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+002cf8   5007     movf	0x7, 0, 0           	MOVF	r0x07, W
+002cfa   cfe4     movff	0xfe4, 0x8         	MOVFF	PREINC1, r0x08
+002cfc   f008
+002cfe   cfe4     movff	0xfe4, 0x7         	MOVFF	PREINC1, r0x07
+002d00   f007
+002d02   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00269_DS_:
+002d04   ef88     goto	0x2d10              	GOTO	_00256_DS_
+002d06   f016
+002d08   ef90     goto	0x2d20              	GOTO	_00257_DS_
+002d0a   f016
+002d0c   ef99     goto	0x2d32              	GOTO	_00258_DS_
+002d0e   f016
+                                           _00256_DS_:
+002d10   0102     movlb	0x2                	BANKSEL	(_preloadH + 1)
+                                           ;	.line	427; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR1] = high8(0xFFFF - 12);
+002d12   6961     setf	0x61, 0x1           	SETF	(_preloadH + 1), B
+                                           ;	.line	428; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR1] =  low8(0xFFFF - 12);
+002d14   0ef3     movlw	0xf3               	MOVLW	0xf3
+002d16   0102     movlb	0x2                	BANKSEL	(_preloadL + 1)
+002d18   6f65     movwf	0x65, 0x1          	MOVWF	(_preloadL + 1), B
+                                           ;	.line	429; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t1con = T1_OFF & T1_16BIT & T1_PS_1_1 & T1_RUN_FROM_ANOTHER & T1_OSC_OFF & T1_SYNC_EXT_OFF & T1_SOURCE_INT;
+002d1a   0e84     movlw	0x84               	MOVLW	0x84
+002d1c   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           ;	.line	430; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+002d1e   d024     bra	0x2d68               	BRA	_00259_DS_
+                                           _00257_DS_:
+                                           ;	.line	434; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR1] = high8(0xFFFF - 1500);
+002d20   0efa     movlw	0xfa               	MOVLW	0xfa
+002d22   0102     movlb	0x2                	BANKSEL	(_preloadH + 1)
+002d24   6f61     movwf	0x61, 0x1          	MOVWF	(_preloadH + 1), B
+                                           ;	.line	435; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR1] =  low8(0xFFFF - 1500);
+002d26   0e23     movlw	0x23               	MOVLW	0x23
+002d28   0102     movlb	0x2                	BANKSEL	(_preloadL + 1)
+002d2a   6f65     movwf	0x65, 0x1          	MOVWF	(_preloadL + 1), B
+                                           ;	.line	436; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t1con = T1_OFF & T1_16BIT & T1_PS_1_8 & T1_RUN_FROM_ANOTHER & T1_OSC_OFF & T1_SYNC_EXT_OFF & T1_SOURCE_INT;
+002d2c   0eb4     movlw	0xb4               	MOVLW	0xb4
+002d2e   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           ;	.line	437; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+002d30   d01b     bra	0x2d68               	BRA	_00259_DS_
+                                           _00258_DS_:
+                                           ;	.line	442; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR1] = high8(0xFFFF - 60000); // 62500
+002d32   0e15     movlw	0x15               	MOVLW	0x15
+002d34   0102     movlb	0x2                	BANKSEL	(_preloadH + 1)
+002d36   6f61     movwf	0x61, 0x1          	MOVWF	(_preloadH + 1), B
+                                           ;	.line	443; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR1] =  low8(0xFFFF - 60000);
+002d38   0e9f     movlw	0x9f               	MOVLW	0x9f
+002d3a   0102     movlb	0x2                	BANKSEL	(_preloadL + 1)
+002d3c   6f65     movwf	0x65, 0x1          	MOVWF	(_preloadL + 1), B
+                                           ;	.line	444; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCountLimit[INT_TMR1] = delay * 25;
+002d3e   5005     movf	0x5, 0, 0           	MOVF	r0x05, W
+002d40   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002d42   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002d44   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002d46   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+002d48   0e19     movlw	0x19               	MOVLW	0x19
+002d4a   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+002d4c   ec27     call	0x4e, 0             	CALL	__mulint
+002d4e   f000
+002d50   6e00     movwf	0, 0               	MOVWF	r0x00
+002d52   cff3     movff	0xff3, 0x1         	MOVFF	PRODL, r0x01
+002d54   f001
+002d56   0e04     movlw	0x4                	MOVLW	0x04
+002d58   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+002d5a   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002d5c   0102     movlb	0x2                	BANKSEL	(_intCountLimit + 2)
+002d5e   6f5a     movwf	0x5a, 0x1          	MOVWF	(_intCountLimit + 2), B
+002d60   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+                                           ; removed redundant BANKSEL
+002d62   6f5b     movwf	0x5b, 0x1          	MOVWF	(_intCountLimit + 3), B
+                                           ;	.line	445; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t1con = T1_OFF & T1_16BIT & T1_PS_1_8 & T1_RUN_FROM_ANOTHER & T1_OSC_OFF & T1_SYNC_EXT_OFF & T1_SOURCE_INT;
+002d64   0eb4     movlw	0xb4               	MOVLW	0xb4
+002d66   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           _00259_DS_:
+                                           ;	.line	449; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	IPR1bits.TMR1IP = INT_LOW_PRIORITY;
+002d68   909f     bcf	0x9f, 0, 0           	BCF	_IPR1bits, 0
+                                           ;	.line	450; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE1bits.TMR1IE = INT_ENABLE;
+002d6a   809d     bsf	0x9d, 0, 0           	BSF	_PIE1bits, 0
+                                           ;	.line	451; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIR1bits.TMR1IF = 0;
+002d6c   909e     bcf	0x9e, 0, 0           	BCF	_PIR1bits, 0
+                                           ;	.line	452; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR1H = preloadH[INT_TMR1];
+002d6e   c261     movff	0x261, 0xfcf       	MOVFF	(_preloadH + 1), _TMR1H
+002d70   ffcf
+                                           ;	.line	453; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR1L = preloadL[INT_TMR1];
+002d72   c265     movff	0x265, 0xfce       	MOVFF	(_preloadL + 1), _TMR1L
+002d74   ffce
+                                           ;	.line	454; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T1CON = _t1con;
+002d76   c006     movff	0x6, 0xfcd         	MOVFF	r0x06, _T1CON
+002d78   ffcd
+                                           _00262_DS_:
+002d7a   cfe4     movff	0xfe4, 0x6         	MOVFF	PREINC1, r0x06
+002d7c   f006
+002d7e   cfe4     movff	0xfe4, 0x5         	MOVFF	PREINC1, r0x05
+002d80   f005
+002d82   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+002d84   f004
+002d86   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+002d88   f003
+002d8a   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002d8c   f002
+002d8e   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002d90   f001
+002d92   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+002d94   f000
+002d96   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+002d98   ffd9
+002d9a   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__OnTimer0	code
+                                           _OnTimer0:
+                                           ;	.line	360; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	void OnTimer0(callback func, u8 timediv, u16 delay)
+002ee0   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002ee2   ffe5
+002ee4   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+002ee6   ffd9
+002ee8   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002eea   ffe5
+002eec   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+002eee   ffe5
+002ef0   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+002ef2   ffe5
+002ef4   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+002ef6   ffe5
+002ef8   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+002efa   ffe5
+002efc   c005     movff	0x5, 0xfe5         	MOVFF	r0x05, POSTDEC1
+002efe   ffe5
+002f00   c006     movff	0x6, 0xfe5         	MOVFF	r0x06, POSTDEC1
+002f02   ffe5
+002f04   0e02     movlw	0x2                	MOVLW	0x02
+002f06   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+002f08   f000
+002f0a   0e03     movlw	0x3                	MOVLW	0x03
+002f0c   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+002f0e   f001
+002f10   0e04     movlw	0x4                	MOVLW	0x04
+002f12   cfdb     movff	0xfdb, 0x2         	MOVFF	PLUSW2, r0x02
+002f14   f002
+002f16   0e05     movlw	0x5                	MOVLW	0x05
+002f18   cfdb     movff	0xfdb, 0x3         	MOVFF	PLUSW2, r0x03
+002f1a   f003
+002f1c   0e06     movlw	0x6                	MOVLW	0x06
+002f1e   cfdb     movff	0xfdb, 0x4         	MOVFF	PLUSW2, r0x04
+002f20   f004
+002f22   0e07     movlw	0x7                	MOVLW	0x07
+002f24   cfdb     movff	0xfdb, 0x5         	MOVFF	PLUSW2, r0x05
+002f26   f005
+                                           ;	.line	362; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	u8 _t0con = 0;
+002f28   6a06     clrf	0x6, 0              	CLRF	r0x06
+002f2a   0102     movlb	0x2                	BANKSEL	_intUsed
+                                           ;	.line	364; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	if (intUsed[INT_TMR0] == INT_NOT_USED)
+002f2c   513c     movf	0x3c, 0, 0x1        	MOVF	_intUsed, W, B
+002f2e   a4d8     btfss	0xd8, 0x2, 0       	BTFSS	STATUS, 2
+002f30   d05d     bra	0x2fec               	BRA	_00244_DS_
+                                           ;	.line	366; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intUsed[INT_TMR0] = INT_USED;
+002f32   0e01     movlw	0x1                	MOVLW	0x01
+                                           ; removed redundant BANKSEL
+002f34   6f3c     movwf	0x3c, 0x1          	MOVWF	_intUsed, B
+002f36   0102     movlb	0x2                	BANKSEL	_intCount
+                                           ;	.line	367; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCount[INT_TMR0] = 0;
+002f38   6b50     clrf	0x50, 0x1           	CLRF	_intCount, B
+                                           ; removed redundant BANKSEL
+002f3a   6b51     clrf	0x51, 0x1           	CLRF	(_intCount + 1), B
+                                           ;	.line	368; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intCountLimit[INT_TMR0] = delay;
+002f3c   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002f3e   0102     movlb	0x2                	BANKSEL	_intCountLimit
+002f40   6f58     movwf	0x58, 0x1          	MOVWF	_intCountLimit, B
+002f42   5005     movf	0x5, 0, 0           	MOVF	r0x05, W
+                                           ; removed redundant BANKSEL
+002f44   6f59     movwf	0x59, 0x1          	MOVWF	(_intCountLimit + 1), B
+                                           ;	.line	369; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intFunction[INT_TMR0] = func;
+002f46   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002f48   0102     movlb	0x2                	BANKSEL	_intFunction
+002f4a   6f00     movwf	0, 0x1             	MOVWF	_intFunction, B
+002f4c   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+                                           ; removed redundant BANKSEL
+002f4e   6f01     movwf	0x1, 0x1           	MOVWF	(_intFunction + 1), B
+002f50   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+                                           ; removed redundant BANKSEL
+002f52   6f02     movwf	0x2, 0x1           	MOVWF	(_intFunction + 2), B
+                                           ;	.line	371; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	switch(timediv)
+002f54   0e01     movlw	0x1                	MOVLW	0x01
+002f56   5c03     subwf	0x3, 0, 0          	SUBWF	r0x03, W
+002f58   a0d8     btfss	0xd8, 0, 0         	BTFSS	STATUS, 0
+002f5a   d03f     bra	0x2fda               	BRA	_00241_DS_
+002f5c   0e04     movlw	0x4                	MOVLW	0x04
+002f5e   5c03     subwf	0x3, 0, 0          	SUBWF	r0x03, W
+002f60   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002f62   d03b     bra	0x2fda               	BRA	_00241_DS_
+002f64   0603     decf	0x3, 0x1, 0         	DECF	r0x03, F
+002f66   c007     movff	0x7, 0xfe5         	MOVFF	r0x07, POSTDEC1
+002f68   ffe5
+002f6a   c008     movff	0x8, 0xfe5         	MOVFF	r0x08, POSTDEC1
+002f6c   ffe5
+002f6e   6a08     clrf	0x8, 0              	CLRF	r0x08
+002f70   3403     rlcf	0x3, 0, 0           	RLCF	r0x03, W
+002f72   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+002f74   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+002f76   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+002f78   0bfc     andlw	0xfc               	ANDLW	0xfc
+002f7a   6e07     movwf	0x7, 0             	MOVWF	r0x07
+002f7c   0e00     movlw	0                  	MOVLW	UPPER(_00251_DS_)
+002f7e   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+002f80   0e2f     movlw	0x2f               	MOVLW	HIGH(_00251_DS_)
+002f82   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+002f84   0e9c     movlw	0x9c               	MOVLW	LOW(_00251_DS_)
+002f86   2607     addwf	0x7, 0x1, 0        	ADDWF	r0x07, F
+002f88   5008     movf	0x8, 0, 0           	MOVF	r0x08, W
+002f8a   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+002f8c   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002f8e   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+002f90   5007     movf	0x7, 0, 0           	MOVF	r0x07, W
+002f92   cfe4     movff	0xfe4, 0x8         	MOVFF	PREINC1, r0x08
+002f94   f008
+002f96   cfe4     movff	0xfe4, 0x7         	MOVFF	PREINC1, r0x07
+002f98   f007
+002f9a   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00251_DS_:
+002f9c   efd4     goto	0x2fa8              	GOTO	_00238_DS_
+002f9e   f017
+002fa0   efdc     goto	0x2fb8              	GOTO	_00239_DS_
+002fa2   f017
+002fa4   efe5     goto	0x2fca              	GOTO	_00240_DS_
+002fa6   f017
+                                           _00238_DS_:
+002fa8   0102     movlb	0x2                	BANKSEL	_preloadH
+                                           ;	.line	375; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR0] = high8(0xFFFF - 12);
+002faa   6960     setf	0x60, 0x1           	SETF	_preloadH, B
+                                           ;	.line	376; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR0] =  low8(0xFFFF - 12);
+002fac   0ef3     movlw	0xf3               	MOVLW	0xf3
+002fae   0102     movlb	0x2                	BANKSEL	_preloadL
+002fb0   6f64     movwf	0x64, 0x1          	MOVWF	_preloadL, B
+                                           ;	.line	377; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t0con = T0_OFF & T0_16BIT & T0_CLK & T0_PS_OFF;
+002fb2   0e1f     movlw	0x1f               	MOVLW	0x1f
+002fb4   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           ;	.line	378; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+002fb6   d011     bra	0x2fda               	BRA	_00241_DS_
+                                           _00239_DS_:
+                                           ;	.line	382; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR0] = high8(0xFFFF - 1500);
+002fb8   0efa     movlw	0xfa               	MOVLW	0xfa
+002fba   0102     movlb	0x2                	BANKSEL	_preloadH
+002fbc   6f60     movwf	0x60, 0x1          	MOVWF	_preloadH, B
+                                           ;	.line	383; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR0] =  low8(0xFFFF - 1500);
+002fbe   0e23     movlw	0x23               	MOVLW	0x23
+002fc0   0102     movlb	0x2                	BANKSEL	_preloadL
+002fc2   6f64     movwf	0x64, 0x1          	MOVWF	_preloadL, B
+                                           ;	.line	384; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t0con = T0_OFF & T0_16BIT & T0_CLK & T0_PS_ON & T0_PS_1_8;
+002fc4   0e12     movlw	0x12               	MOVLW	0x12
+002fc6   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           ;	.line	385; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+002fc8   d008     bra	0x2fda               	BRA	_00241_DS_
+                                           _00240_DS_:
+                                           ;	.line	389; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadH[INT_TMR0] = high8(0xFFFF - 46875);
+002fca   0e48     movlw	0x48               	MOVLW	0x48
+002fcc   0102     movlb	0x2                	BANKSEL	_preloadH
+002fce   6f60     movwf	0x60, 0x1          	MOVWF	_preloadH, B
+                                           ;	.line	390; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	preloadL[INT_TMR0] =  low8(0xFFFF - 46875);
+002fd0   0ee4     movlw	0xe4               	MOVLW	0xe4
+002fd2   0102     movlb	0x2                	BANKSEL	_preloadL
+002fd4   6f64     movwf	0x64, 0x1          	MOVWF	_preloadL, B
+                                           ;	.line	391; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	_t0con = T0_OFF & T0_16BIT & T0_CLK & T0_PS_ON & T0_PS_1_256;
+002fd6   0e17     movlw	0x17               	MOVLW	0x17
+002fd8   6e06     movwf	0x6, 0             	MOVWF	r0x06
+                                           _00241_DS_:
+                                           ;	.line	395; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCON2bits.TMR0IP = INT_LOW_PRIORITY;
+002fda   94f1     bcf	0xf1, 0x2, 0         	BCF	_INTCON2bits, 2
+                                           ;	.line	396; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCONbits.TMR0IE = INT_ENABLE;
+002fdc   8af2     bsf	0xf2, 0x5, 0         	BSF	_INTCONbits, 5
+                                           ;	.line	397; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCONbits.TMR0IF = 0;
+002fde   94f2     bcf	0xf2, 0x2, 0         	BCF	_INTCONbits, 2
+                                           ;	.line	398; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR0H = preloadH[INT_TMR0];
+002fe0   c260     movff	0x260, 0xfd7       	MOVFF	_preloadH, _TMR0H
+002fe2   ffd7
+                                           ;	.line	399; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	TMR0L = preloadL[INT_TMR0];
+002fe4   c264     movff	0x264, 0xfd6       	MOVFF	_preloadL, _TMR0L
+002fe6   ffd6
+                                           ;	.line	400; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T0CON = _t0con;
+002fe8   c006     movff	0x6, 0xfd5         	MOVFF	r0x06, _T0CON
+002fea   ffd5
+                                           _00244_DS_:
+002fec   cfe4     movff	0xfe4, 0x6         	MOVFF	PREINC1, r0x06
+002fee   f006
+002ff0   cfe4     movff	0xfe4, 0x5         	MOVFF	PREINC1, r0x05
+002ff2   f005
+002ff4   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+002ff6   f004
+002ff8   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+002ffa   f003
+002ffc   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002ffe   f002
+003000   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+003002   f001
+003004   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+003006   f000
+003008   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+00300a   ffd9
+00300c   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__int_stop	code
+                                           _int_stop:
+                                           ;	.line	333; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T0CONbits.TMR0ON = OFF;
+003336   9ed5     bcf	0xd5, 0x7, 0         	BCF	_T0CONbits, 7
+                                           ;	.line	337; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T1CONbits.TMR1ON = OFF;
+003338   90cd     bcf	0xcd, 0, 0           	BCF	_T1CONbits, 0
+                                           ;	.line	341; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T2CONbits.TMR2ON = OFF;
+00333a   94ca     bcf	0xca, 0x2, 0         	BCF	_T2CONbits, 2
+                                           ;	.line	345; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T3CONbits.TMR3ON = OFF;
+00333c   90b1     bcf	0xb1, 0, 0           	BCF	_T3CONbits, 0
+00333e   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__int_start	code
+                                           _int_start:
+                                           ;	.line	307; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T0CONbits.TMR0ON = ON;
+003340   8ed5     bsf	0xd5, 0x7, 0         	BSF	_T0CONbits, 7
+                                           ;	.line	311; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T1CONbits.TMR1ON = ON;
+003342   80cd     bsf	0xcd, 0, 0           	BSF	_T1CONbits, 0
+                                           ;	.line	315; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T2CONbits.TMR2ON = ON;
+003344   84ca     bsf	0xca, 0x2, 0         	BSF	_T2CONbits, 2
+                                           ;	.line	319; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	T3CONbits.TMR3ON = ON;
+003346   80b1     bsf	0xb1, 0, 0           	BSF	_T3CONbits, 0
+003348   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__int_init	code
+                                           _int_init:
+                                           ;	.line	285; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	void int_init()
+00329e   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+0032a0   ffe5
+                                           ;	.line	289; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	RCONbits.IPEN = 1;					// Enable HP/LP interrupts
+0032a2   8ed0     bsf	0xd0, 0x7, 0         	BSF	_RCONbits, 7
+                                           ;	.line	290; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCONbits.GIEH = 1;				// Enable HP interrupts
+0032a4   8ef2     bsf	0xf2, 0x7, 0         	BSF	_INTCONbits, 7
+                                           ;	.line	291; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCONbits.GIEL = 1;				// Enable LP interrupts
+0032a6   8cf2     bsf	0xf2, 0x6, 0         	BSF	_INTCONbits, 6
+                                           ;	.line	293; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	for (i = 0; i < INT_NUM; i++)		// Disable all interrupts
+0032a8   6a00     clrf	0, 0                	CLRF	r0x00
+                                           _00214_DS_:
+0032aa   0e14     movlw	0x14               	MOVLW	0x14
+0032ac   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+0032ae   e207     bc	0x32be                	BC	_00218_DS_
+                                           ;	.line	294; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	detachInterrupt(i);
+0032b0   5000     movf	0, 0, 0             	MOVF	r0x00, W
+0032b2   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+0032b4   ec07     call	0x300e, 0           	CALL	_detachInterrupt
+0032b6   f018
+0032b8   2ae1     incf	0xe1, 0x1, 0        	INCF	FSR1L, F
+                                           ;	.line	293; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	for (i = 0; i < INT_NUM; i++)		// Disable all interrupts
+0032ba   2a00     incf	0, 0x1, 0           	INCF	r0x00, F
+0032bc   d7f6     bra	0x32aa               	BRA	_00214_DS_
+                                           _00218_DS_:
+0032be   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+0032c0   f000
+0032c2   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__detachInterrupt	code
+                                           _detachInterrupt:
+                                           ;	.line	207; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	void detachInterrupt(u8 inter)
+00300e   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+003010   ffe5
+003012   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+003014   ffd9
+003016   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+003018   ffe5
+00301a   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+00301c   ffe5
+00301e   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+003020   ffe5
+003022   0e02     movlw	0x2                	MOVLW	0x02
+003024   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+003026   f000
+                                           ;	.line	209; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	intUsed[inter] = INT_NOT_USED;	// This interrupt is no longer used
+003028   0e3c     movlw	0x3c               	MOVLW	LOW(_intUsed)
+00302a   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+00302c   6e01     movwf	0x1, 0             	MOVWF	r0x01
+00302e   6a02     clrf	0x2, 0              	CLRF	r0x02
+003030   0e02     movlw	0x2                	MOVLW	HIGH(_intUsed)
+003032   2202     addwfc	0x2, 0x1, 0       	ADDWFC	r0x02, F
+003034   c001     movff	0x1, 0xfe9         	MOVFF	r0x01, FSR0L
+003036   ffe9
+003038   c002     movff	0x2, 0xfea         	MOVFF	r0x02, FSR0H
+00303a   ffea
+00303c   6aef     clrf	0xef, 0             	CLRF	INDF0
+                                           ;	.line	211; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	switch(inter)
+00303e   0e13     movlw	0x13               	MOVLW	0x13
+003040   5c00     subwf	0, 0, 0            	SUBWF	r0x00, W
+003042   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+003044   d066     bra	0x3112               	BRA	_00205_DS_
+003046   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+003048   ffe5
+00304a   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+00304c   ffe5
+00304e   6a04     clrf	0x4, 0              	CLRF	r0x04
+003050   3400     rlcf	0, 0, 0             	RLCF	r0x00, W
+003052   3604     rlcf	0x4, 0x1, 0         	RLCF	r0x04, F
+003054   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+003056   3604     rlcf	0x4, 0x1, 0         	RLCF	r0x04, F
+003058   0bfc     andlw	0xfc               	ANDLW	0xfc
+00305a   6e03     movwf	0x3, 0             	MOVWF	r0x03
+00305c   0e00     movlw	0                  	MOVLW	UPPER(_00209_DS_)
+00305e   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+003060   0e30     movlw	0x30               	MOVLW	HIGH(_00209_DS_)
+003062   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+003064   0e7c     movlw	0x7c               	MOVLW	LOW(_00209_DS_)
+003066   2603     addwf	0x3, 0x1, 0        	ADDWF	r0x03, F
+003068   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+00306a   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+00306c   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+00306e   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+003070   5003     movf	0x3, 0, 0           	MOVF	r0x03, W
+003072   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+003074   f004
+003076   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+003078   f003
+00307a   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00209_DS_:
+00307c   ef6a     goto	0x30d4              	GOTO	_00188_DS_
+00307e   f018
+003080   ef6c     goto	0x30d8              	GOTO	_00189_DS_
+003082   f018
+003084   ef6e     goto	0x30dc              	GOTO	_00190_DS_
+003086   f018
+003088   ef70     goto	0x30e0              	GOTO	_00191_DS_
+00308a   f018
+00308c   ef64     goto	0x30c8              	GOTO	_00185_DS_
+00308e   f018
+003090   ef66     goto	0x30cc              	GOTO	_00186_DS_
+003092   f018
+003094   ef68     goto	0x30d0              	GOTO	_00187_DS_
+003096   f018
+003098   ef72     goto	0x30e4              	GOTO	_00192_DS_
+00309a   f018
+00309c   ef7c     goto	0x30f8              	GOTO	_00197_DS_
+00309e   f018
+0030a0   ef7e     goto	0x30fc              	GOTO	_00198_DS_
+0030a2   f018
+0030a4   ef82     goto	0x3104              	GOTO	_00200_DS_
+0030a6   f018
+0030a8   ef78     goto	0x30f0              	GOTO	_00195_DS_
+0030aa   f018
+0030ac   ef7a     goto	0x30f4              	GOTO	_00196_DS_
+0030ae   f018
+0030b0   ef76     goto	0x30ec              	GOTO	_00194_DS_
+0030b2   f018
+0030b4   ef80     goto	0x3100              	GOTO	_00199_DS_
+0030b6   f018
+0030b8   ef84     goto	0x3108              	GOTO	_00201_DS_
+0030ba   f018
+0030bc   ef88     goto	0x3110              	GOTO	_00203_DS_
+0030be   f018
+0030c0   ef86     goto	0x310c              	GOTO	_00202_DS_
+0030c2   f018
+0030c4   ef74     goto	0x30e8              	GOTO	_00193_DS_
+0030c6   f018
+                                           _00185_DS_:
+                                           ;	.line	214; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCONbits.INT0IE = INT_DISABLE;
+0030c8   98f2     bcf	0xf2, 0x4, 0         	BCF	_INTCONbits, 4
+                                           ;	.line	215; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030ca   d023     bra	0x3112               	BRA	_00205_DS_
+                                           _00186_DS_:
+                                           ;	.line	217; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCON3bits.INT1IE = INT_DISABLE;
+0030cc   96f0     bcf	0xf0, 0x3, 0         	BCF	_INTCON3bits, 3
+                                           ;	.line	218; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030ce   d021     bra	0x3112               	BRA	_00205_DS_
+                                           _00187_DS_:
+                                           ;	.line	220; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCON3bits.INT2IE = INT_DISABLE;
+0030d0   98f0     bcf	0xf0, 0x4, 0         	BCF	_INTCON3bits, 4
+                                           ;	.line	221; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030d2   d01f     bra	0x3112               	BRA	_00205_DS_
+                                           _00188_DS_:
+                                           ;	.line	223; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCONbits.TMR0IE = INT_DISABLE;
+0030d4   9af2     bcf	0xf2, 0x5, 0         	BCF	_INTCONbits, 5
+                                           ;	.line	224; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030d6   d01d     bra	0x3112               	BRA	_00205_DS_
+                                           _00189_DS_:
+                                           ;	.line	226; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE1bits.TMR1IE = INT_DISABLE;
+0030d8   909d     bcf	0x9d, 0, 0           	BCF	_PIE1bits, 0
+                                           ;	.line	227; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030da   d01b     bra	0x3112               	BRA	_00205_DS_
+                                           _00190_DS_:
+                                           ;	.line	229; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE1bits.TMR2IE = INT_DISABLE;
+0030dc   929d     bcf	0x9d, 0x1, 0         	BCF	_PIE1bits, 1
+                                           ;	.line	230; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030de   d019     bra	0x3112               	BRA	_00205_DS_
+                                           _00191_DS_:
+                                           ;	.line	232; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.TMR3IE = INT_DISABLE;
+0030e0   92a0     bcf	0xa0, 0x1, 0         	BCF	_PIE2bits, 1
+                                           ;	.line	233; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030e2   d017     bra	0x3112               	BRA	_00205_DS_
+                                           _00192_DS_:
+                                           ;	.line	235; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	INTCONbits.RBIE = INT_DISABLE;
+0030e4   96f2     bcf	0xf2, 0x3, 0         	BCF	_INTCONbits, 3
+                                           ;	.line	236; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030e6   d015     bra	0x3112               	BRA	_00205_DS_
+                                           _00193_DS_:
+                                           ;	.line	238; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.USBIE = INT_DISABLE;
+0030e8   9aa0     bcf	0xa0, 0x5, 0         	BCF	_PIE2bits, 5
+                                           ;	.line	239; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030ea   d013     bra	0x3112               	BRA	_00205_DS_
+                                           _00194_DS_:
+                                           ;	.line	241; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE1bits.ADIE = INT_DISABLE;
+0030ec   9c9d     bcf	0x9d, 0x6, 0         	BCF	_PIE1bits, 6
+                                           ;	.line	242; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030ee   d011     bra	0x3112               	BRA	_00205_DS_
+                                           _00195_DS_:
+                                           ;	.line	244; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE1bits.RCIE = INT_DISABLE;
+0030f0   9a9d     bcf	0x9d, 0x5, 0         	BCF	_PIE1bits, 5
+                                           ;	.line	245; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030f2   d00f     bra	0x3112               	BRA	_00205_DS_
+                                           _00196_DS_:
+                                           ;	.line	247; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE1bits.TXIE = INT_DISABLE;
+0030f4   989d     bcf	0x9d, 0x4, 0         	BCF	_PIE1bits, 4
+                                           ;	.line	248; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030f6   d00d     bra	0x3112               	BRA	_00205_DS_
+                                           _00197_DS_:
+                                           ;	.line	250; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE1bits.CCP1IE = INT_DISABLE;
+0030f8   949d     bcf	0x9d, 0x2, 0         	BCF	_PIE1bits, 2
+                                           ;	.line	251; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030fa   d00b     bra	0x3112               	BRA	_00205_DS_
+                                           _00198_DS_:
+                                           ;	.line	253; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.CCP2IE = INT_DISABLE;
+0030fc   90a0     bcf	0xa0, 0, 0           	BCF	_PIE2bits, 0
+                                           ;	.line	254; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+0030fe   d009     bra	0x3112               	BRA	_00205_DS_
+                                           _00199_DS_:
+                                           ;	.line	256; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.OSCFIE = INT_DISABLE;
+003100   9ea0     bcf	0xa0, 0x7, 0         	BCF	_PIE2bits, 7
+                                           ;	.line	257; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+003102   d007     bra	0x3112               	BRA	_00205_DS_
+                                           _00200_DS_:
+                                           ;	.line	259; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.CMIE = INT_DISABLE;
+003104   9ca0     bcf	0xa0, 0x6, 0         	BCF	_PIE2bits, 6
+                                           ;	.line	260; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+003106   d005     bra	0x3112               	BRA	_00205_DS_
+                                           _00201_DS_:
+                                           ;	.line	262; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.EEIE = INT_DISABLE;
+003108   98a0     bcf	0xa0, 0x4, 0         	BCF	_PIE2bits, 4
+                                           ;	.line	263; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+00310a   d003     bra	0x3112               	BRA	_00205_DS_
+                                           _00202_DS_:
+                                           ;	.line	265; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.BCLIE = INT_DISABLE;
+00310c   96a0     bcf	0xa0, 0x3, 0         	BCF	_PIE2bits, 3
+                                           ;	.line	266; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	break;
+00310e   d001     bra	0x3112               	BRA	_00205_DS_
+                                           _00203_DS_:
+                                           ;	.line	268; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	PIE2bits.HLVDIE = INT_DISABLE;
+003110   94a0     bcf	0xa0, 0x2, 0         	BCF	_PIE2bits, 2
+                                           _00205_DS_:
+                                           ;	.line	275; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/interrupt.c	}
+003112   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+003114   f002
+003116   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+003118   f001
+00311a   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+00311c   f000
+00311e   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+003120   ffd9
+003122   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__toggle	code
+                                           _toggle:
+                                           ;	.line	93; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	void toggle(u8 pin)
+003246   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+003248   ffe5
+00324a   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+00324c   ffd9
+00324e   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+003250   ffe5
+003252   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+003254   ffe5
+003256   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+003258   ffe5
+00325a   0e02     movlw	0x2                	MOVLW	0x02
+00325c   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+00325e   f000
+                                           ;	.line	96; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	val = digitalread(pin);
+003260   6a01     clrf	0x1, 0              	CLRF	r0x01
+003262   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+003264   5000     movf	0, 0, 0             	MOVF	r0x00, W
+003266   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003268   ecc6     call	0x298c, 0           	CALL	_digitalread
+00326a   f014
+00326c   6e02     movwf	0x2, 0             	MOVWF	r0x02
+00326e   0e02     movlw	0x2                	MOVLW	0x02
+003270   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+                                           ;	.line	97; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	digitalwrite(pin, val^1);
+003272   0e01     movlw	0x1                	MOVLW	0x01
+003274   1a02     xorwf	0x2, 0x1, 0        	XORWF	r0x02, F
+003276   6ae5     clrf	0xe5, 0             	CLRF	POSTDEC1
+003278   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+00327a   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+00327c   5001     movf	0x1, 0, 0           	MOVF	r0x01, W
+00327e   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003280   5000     movf	0, 0, 0             	MOVF	r0x00, W
+003282   6ee5     movwf	0xe5, 0            	MOVWF	POSTDEC1
+003284   eccb     call	0x2796, 0           	CALL	_digitalwrite
+003286   f013
+003288   0e04     movlw	0x4                	MOVLW	0x04
+00328a   26e1     addwf	0xe1, 0x1, 0       	ADDWF	FSR1L, F
+00328c   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+00328e   f002
+003290   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+003292   f001
+003294   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+003296   f000
+003298   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+00329a   ffd9
+00329c   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__pinmode	code
+                                           _pinmode:
+                                           ;	.line	69; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	void pinmode(int input, int state)
+0025a0   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+0025a2   ffe5
+0025a4   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+0025a6   ffd9
+0025a8   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+0025aa   ffe5
+0025ac   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+0025ae   ffe5
+0025b0   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+0025b2   ffe5
+0025b4   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+0025b6   ffe5
+0025b8   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+0025ba   ffe5
+0025bc   c005     movff	0x5, 0xfe5         	MOVFF	r0x05, POSTDEC1
+0025be   ffe5
+0025c0   c006     movff	0x6, 0xfe5         	MOVFF	r0x06, POSTDEC1
+0025c2   ffe5
+0025c4   0e02     movlw	0x2                	MOVLW	0x02
+0025c6   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+0025c8   f000
+0025ca   0e03     movlw	0x3                	MOVLW	0x03
+0025cc   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+0025ce   f001
+0025d0   0e04     movlw	0x4                	MOVLW	0x04
+0025d2   cfdb     movff	0xfdb, 0x2         	MOVFF	PLUSW2, r0x02
+0025d4   f002
+0025d6   0e05     movlw	0x5                	MOVLW	0x05
+0025d8   cfdb     movff	0xfdb, 0x3         	MOVFF	PLUSW2, r0x03
+0025da   f003
+                                           ;	.line	71; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	switch (port[input])
+0025dc   0e98     movlw	0x98               	MOVLW	LOW(_port)
+0025de   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+0025e0   6e04     movwf	0x4, 0             	MOVWF	r0x04
+0025e2   0e23     movlw	0x23               	MOVLW	HIGH(_port)
+0025e4   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0025e6   6e05     movwf	0x5, 0             	MOVWF	r0x05
+0025e8   6a06     clrf	0x6, 0              	CLRF	r0x06
+0025ea   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+0025ec   6806     setf	0x6, 0              	SETF	r0x06
+0025ee   0e00     movlw	0                  	MOVLW	UPPER(_port)
+0025f0   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+0025f2   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+0025f4   fff6
+0025f6   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+0025f8   fff7
+0025fa   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+0025fc   fff8
+0025fe   0009     tblrd	*+                 	TBLRD*+	
+002600   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+002602   f004
+002604   0e03     movlw	0x3                	MOVLW	0x03
+002606   5c04     subwf	0x4, 0, 0          	SUBWF	r0x04, W
+002608   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+00260a   d0b4     bra	0x2774               	BRA	_00168_DS_
+00260c   c007     movff	0x7, 0xfe5         	MOVFF	r0x07, POSTDEC1
+00260e   ffe5
+002610   c008     movff	0x8, 0xfe5         	MOVFF	r0x08, POSTDEC1
+002612   ffe5
+002614   6a08     clrf	0x8, 0              	CLRF	r0x08
+002616   3404     rlcf	0x4, 0, 0           	RLCF	r0x04, W
+002618   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+00261a   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+00261c   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+00261e   0bfc     andlw	0xfc               	ANDLW	0xfc
+002620   6e07     movwf	0x7, 0             	MOVWF	r0x07
+002622   0e00     movlw	0                  	MOVLW	UPPER(_00175_DS_)
+002624   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+002626   0e26     movlw	0x26               	MOVLW	HIGH(_00175_DS_)
+002628   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+00262a   0e42     movlw	0x42               	MOVLW	LOW(_00175_DS_)
+00262c   2607     addwf	0x7, 0x1, 0        	ADDWF	r0x07, F
+00262e   5008     movf	0x8, 0, 0           	MOVF	r0x08, W
+002630   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+002632   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002634   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+002636   5007     movf	0x7, 0, 0           	MOVF	r0x07, W
+002638   cfe4     movff	0xfe4, 0x8         	MOVFF	PREINC1, r0x08
+00263a   f008
+00263c   cfe4     movff	0xfe4, 0x7         	MOVFF	PREINC1, r0x07
+00263e   f007
+002640   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00175_DS_:
+002642   ef27     goto	0x264e              	GOTO	_00155_DS_
+002644   f013
+002646   ef59     goto	0x26b2              	GOTO	_00159_DS_
+002648   f013
+00264a   ef8b     goto	0x2716              	GOTO	_00163_DS_
+00264c   f013
+                                           _00155_DS_:
+                                           ;	.line	73; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 0: if (state) TRISB=TRISB | mask[input];
+00264e   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+002650   1003     iorwf	0x3, 0, 0          	IORWF	r0x03, W
+002652   e017     bz	0x2682                	BZ	_00157_DS_
+002654   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+002656   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+002658   6e04     movwf	0x4, 0             	MOVWF	r0x04
+00265a   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+00265c   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+00265e   6e05     movwf	0x5, 0             	MOVWF	r0x05
+002660   6a06     clrf	0x6, 0              	CLRF	r0x06
+002662   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+002664   6806     setf	0x6, 0              	SETF	r0x06
+002666   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+002668   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+00266a   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+00266c   fff6
+00266e   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+002670   fff7
+002672   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+002674   fff8
+002676   0009     tblrd	*+                 	TBLRD*+	
+002678   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+00267a   f004
+00267c   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+00267e   1293     iorwf	0x93, 0x1, 0       	IORWF	_TRISB, F
+002680   d079     bra	0x2774               	BRA	_00168_DS_
+                                           _00157_DS_:
+                                           ;	.line	74; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else TRISB=TRISB & (255-mask[input]);
+002682   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+002684   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+002686   6e04     movwf	0x4, 0             	MOVWF	r0x04
+002688   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+00268a   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+00268c   6e05     movwf	0x5, 0             	MOVWF	r0x05
+00268e   6a06     clrf	0x6, 0              	CLRF	r0x06
+002690   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+002692   6806     setf	0x6, 0              	SETF	r0x06
+002694   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+002696   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+002698   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+00269a   fff6
+00269c   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+00269e   fff7
+0026a0   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+0026a2   fff8
+0026a4   0009     tblrd	*+                 	TBLRD*+	
+0026a6   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+0026a8   f004
+0026aa   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+0026ac   08ff     sublw	0xff               	SUBLW	0xff
+                                           ; #	MOVWF	r0x04
+                                           ; #	MOVF	r0x04, W
+0026ae   1693     andwf	0x93, 0x1, 0       	ANDWF	_TRISB, F
+                                           ;	.line	75; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	break;
+0026b0   d061     bra	0x2774               	BRA	_00168_DS_
+                                           _00159_DS_:
+                                           ;	.line	76; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 1: if (state) TRISC=TRISC | mask[input];
+0026b2   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+0026b4   1003     iorwf	0x3, 0, 0          	IORWF	r0x03, W
+0026b6   e017     bz	0x26e6                	BZ	_00161_DS_
+0026b8   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+0026ba   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+0026bc   6e04     movwf	0x4, 0             	MOVWF	r0x04
+0026be   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+0026c0   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0026c2   6e05     movwf	0x5, 0             	MOVWF	r0x05
+0026c4   6a06     clrf	0x6, 0              	CLRF	r0x06
+0026c6   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+0026c8   6806     setf	0x6, 0              	SETF	r0x06
+0026ca   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+0026cc   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+0026ce   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+0026d0   fff6
+0026d2   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+0026d4   fff7
+0026d6   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+0026d8   fff8
+0026da   0009     tblrd	*+                 	TBLRD*+	
+0026dc   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+0026de   f004
+0026e0   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+0026e2   1294     iorwf	0x94, 0x1, 0       	IORWF	_TRISC, F
+0026e4   d047     bra	0x2774               	BRA	_00168_DS_
+                                           _00161_DS_:
+                                           ;	.line	77; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else TRISC=TRISC & (255-mask[input]);
+0026e6   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+0026e8   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+0026ea   6e04     movwf	0x4, 0             	MOVWF	r0x04
+0026ec   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+0026ee   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0026f0   6e05     movwf	0x5, 0             	MOVWF	r0x05
+0026f2   6a06     clrf	0x6, 0              	CLRF	r0x06
+0026f4   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+0026f6   6806     setf	0x6, 0              	SETF	r0x06
+0026f8   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+0026fa   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+0026fc   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+0026fe   fff6
+002700   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+002702   fff7
+002704   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+002706   fff8
+002708   0009     tblrd	*+                 	TBLRD*+	
+00270a   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+00270c   f004
+00270e   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002710   08ff     sublw	0xff               	SUBLW	0xff
+                                           ; #	MOVWF	r0x04
+                                           ; #	MOVF	r0x04, W
+002712   1694     andwf	0x94, 0x1, 0       	ANDWF	_TRISC, F
+                                           ;	.line	78; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	break;
+002714   d02f     bra	0x2774               	BRA	_00168_DS_
+                                           _00163_DS_:
+                                           ;	.line	79; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 2: if (state) TRISA=TRISA | mask[input];
+002716   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+002718   1003     iorwf	0x3, 0, 0          	IORWF	r0x03, W
+00271a   e017     bz	0x274a                	BZ	_00165_DS_
+00271c   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+00271e   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+002720   6e02     movwf	0x2, 0             	MOVWF	r0x02
+002722   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+002724   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+002726   6e03     movwf	0x3, 0             	MOVWF	r0x03
+002728   6a04     clrf	0x4, 0              	CLRF	r0x04
+00272a   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+00272c   6804     setf	0x4, 0              	SETF	r0x04
+00272e   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+002730   2204     addwfc	0x4, 0x1, 0       	ADDWFC	r0x04, F
+002732   c002     movff	0x2, 0xff6         	MOVFF	r0x02, TBLPTRL
+002734   fff6
+002736   c003     movff	0x3, 0xff7         	MOVFF	r0x03, TBLPTRH
+002738   fff7
+00273a   c004     movff	0x4, 0xff8         	MOVFF	r0x04, TBLPTRU
+00273c   fff8
+00273e   0009     tblrd	*+                 	TBLRD*+	
+002740   cff5     movff	0xff5, 0x2         	MOVFF	TABLAT, r0x02
+002742   f002
+002744   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+002746   1292     iorwf	0x92, 0x1, 0       	IORWF	_TRISA, F
+002748   d015     bra	0x2774               	BRA	_00168_DS_
+                                           _00165_DS_:
+                                           ;	.line	80; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else TRISA=TRISA & (255-mask[input]);
+00274a   6a02     clrf	0x2, 0              	CLRF	r0x02
+00274c   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+00274e   6802     setf	0x2, 0              	SETF	r0x02
+002750   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+002752   2600     addwf	0, 0x1, 0          	ADDWF	r0x00, F
+002754   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+002756   2201     addwfc	0x1, 0x1, 0       	ADDWFC	r0x01, F
+002758   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+00275a   2202     addwfc	0x2, 0x1, 0       	ADDWFC	r0x02, F
+00275c   c000     movff	0, 0xff6           	MOVFF	r0x00, TBLPTRL
+00275e   fff6
+002760   c001     movff	0x1, 0xff7         	MOVFF	r0x01, TBLPTRH
+002762   fff7
+002764   c002     movff	0x2, 0xff8         	MOVFF	r0x02, TBLPTRU
+002766   fff8
+002768   0009     tblrd	*+                 	TBLRD*+	
+00276a   cff5     movff	0xff5, 0           	MOVFF	TABLAT, r0x00
+00276c   f000
+00276e   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002770   08ff     sublw	0xff               	SUBLW	0xff
+                                           ; #	MOVWF	r0x00
+                                           ; #	MOVF	r0x00, W
+002772   1692     andwf	0x92, 0x1, 0       	ANDWF	_TRISA, F
+                                           _00168_DS_:
+                                           ;	.line	90; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	}
+002774   cfe4     movff	0xfe4, 0x6         	MOVFF	PREINC1, r0x06
+002776   f006
+002778   cfe4     movff	0xfe4, 0x5         	MOVFF	PREINC1, r0x05
+00277a   f005
+00277c   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+00277e   f004
+002780   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+002782   f003
+002784   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002786   f002
+002788   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+00278a   f001
+00278c   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+00278e   f000
+002790   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+002792   ffd9
+002794   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__digitalread	code
+                                           _digitalread:
+                                           ;	.line	44; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	int digitalread(int input)
+00298c   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+00298e   ffe5
+002990   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+002992   ffd9
+002994   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+002996   ffe5
+002998   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+00299a   ffe5
+00299c   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+00299e   ffe5
+0029a0   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+0029a2   ffe5
+0029a4   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+0029a6   ffe5
+0029a8   0e02     movlw	0x2                	MOVLW	0x02
+0029aa   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+0029ac   f000
+0029ae   0e03     movlw	0x3                	MOVLW	0x03
+0029b0   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+0029b2   f001
+                                           ;	.line	46; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	switch (port[input])
+0029b4   0e98     movlw	0x98               	MOVLW	LOW(_port)
+0029b6   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+0029b8   6e02     movwf	0x2, 0             	MOVWF	r0x02
+0029ba   0e23     movlw	0x23               	MOVLW	HIGH(_port)
+0029bc   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0029be   6e03     movwf	0x3, 0             	MOVWF	r0x03
+0029c0   6a04     clrf	0x4, 0              	CLRF	r0x04
+0029c2   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+0029c4   6804     setf	0x4, 0              	SETF	r0x04
+0029c6   0e00     movlw	0                  	MOVLW	UPPER(_port)
+0029c8   2204     addwfc	0x4, 0x1, 0       	ADDWFC	r0x04, F
+0029ca   c002     movff	0x2, 0xff6         	MOVFF	r0x02, TBLPTRL
+0029cc   fff6
+0029ce   c003     movff	0x3, 0xff7         	MOVFF	r0x03, TBLPTRH
+0029d0   fff7
+0029d2   c004     movff	0x4, 0xff8         	MOVFF	r0x04, TBLPTRU
+0029d4   fff8
+0029d6   0009     tblrd	*+                 	TBLRD*+	
+0029d8   cff5     movff	0xff5, 0x2         	MOVFF	TABLAT, r0x02
+0029da   f002
+0029dc   0e03     movlw	0x3                	MOVLW	0x03
+0029de   5c02     subwf	0x2, 0, 0          	SUBWF	r0x02, W
+0029e0   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+0029e2   d079     bra	0x2ad6               	BRA	_00142_DS_
+0029e4   c005     movff	0x5, 0xfe5         	MOVFF	r0x05, POSTDEC1
+0029e6   ffe5
+0029e8   c006     movff	0x6, 0xfe5         	MOVFF	r0x06, POSTDEC1
+0029ea   ffe5
+0029ec   6a06     clrf	0x6, 0              	CLRF	r0x06
+0029ee   3402     rlcf	0x2, 0, 0           	RLCF	r0x02, W
+0029f0   3606     rlcf	0x6, 0x1, 0         	RLCF	r0x06, F
+0029f2   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+0029f4   3606     rlcf	0x6, 0x1, 0         	RLCF	r0x06, F
+0029f6   0bfc     andlw	0xfc               	ANDLW	0xfc
+0029f8   6e05     movwf	0x5, 0             	MOVWF	r0x05
+0029fa   0e00     movlw	0                  	MOVLW	UPPER(_00150_DS_)
+0029fc   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+0029fe   0e2a     movlw	0x2a               	MOVLW	HIGH(_00150_DS_)
+002a00   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+002a02   0e1a     movlw	0x1a               	MOVLW	LOW(_00150_DS_)
+002a04   2605     addwf	0x5, 0x1, 0        	ADDWF	r0x05, F
+002a06   5006     movf	0x6, 0, 0           	MOVF	r0x06, W
+002a08   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+002a0a   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002a0c   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+002a0e   5005     movf	0x5, 0, 0           	MOVF	r0x05, W
+002a10   cfe4     movff	0xfe4, 0x6         	MOVFF	PREINC1, r0x06
+002a12   f006
+002a14   cfe4     movff	0xfe4, 0x5         	MOVFF	PREINC1, r0x05
+002a16   f005
+002a18   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00150_DS_:
+002a1a   ef13     goto	0x2a26              	GOTO	_00130_DS_
+002a1c   f015
+002a1e   ef31     goto	0x2a62              	GOTO	_00134_DS_
+002a20   f015
+002a22   ef4f     goto	0x2a9e              	GOTO	_00138_DS_
+002a24   f015
+                                           _00130_DS_:
+                                           ;	.line	48; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 0: if ((PORTB & mask[input])!=0) return (1);
+002a26   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+002a28   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+002a2a   6e02     movwf	0x2, 0             	MOVWF	r0x02
+002a2c   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+002a2e   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+002a30   6e03     movwf	0x3, 0             	MOVWF	r0x03
+002a32   6a04     clrf	0x4, 0              	CLRF	r0x04
+002a34   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+002a36   6804     setf	0x4, 0              	SETF	r0x04
+002a38   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+002a3a   2204     addwfc	0x4, 0x1, 0       	ADDWFC	r0x04, F
+002a3c   c002     movff	0x2, 0xff6         	MOVFF	r0x02, TBLPTRL
+002a3e   fff6
+002a40   c003     movff	0x3, 0xff7         	MOVFF	r0x03, TBLPTRH
+002a42   fff7
+002a44   c004     movff	0x4, 0xff8         	MOVFF	r0x04, TBLPTRU
+002a46   fff8
+002a48   0009     tblrd	*+                 	TBLRD*+	
+002a4a   cff5     movff	0xff5, 0x2         	MOVFF	TABLAT, r0x02
+002a4c   f002
+002a4e   5081     movf	0x81, 0, 0          	MOVF	_PORTB, W
+002a50   1602     andwf	0x2, 0x1, 0        	ANDWF	r0x02, F
+002a52   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+002a54   e003     bz	0x2a5c                	BZ	_00132_DS_
+002a56   6af3     clrf	0xf3, 0             	CLRF	PRODL
+002a58   0e01     movlw	0x1                	MOVLW	0x01
+002a5a   d03f     bra	0x2ada               	BRA	_00143_DS_
+                                           _00132_DS_:
+                                           ;	.line	49; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else return (0);
+002a5c   6af3     clrf	0xf3, 0             	CLRF	PRODL
+002a5e   6ae8     clrf	0xe8, 0             	CLRF	WREG
+002a60   d03c     bra	0x2ada               	BRA	_00143_DS_
+                                           _00134_DS_:
+                                           ;	.line	51; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 1: if ((PORTC & mask[input])!=0) return (1);
+002a62   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+002a64   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+002a66   6e02     movwf	0x2, 0             	MOVWF	r0x02
+002a68   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+002a6a   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+002a6c   6e03     movwf	0x3, 0             	MOVWF	r0x03
+002a6e   6a04     clrf	0x4, 0              	CLRF	r0x04
+002a70   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+002a72   6804     setf	0x4, 0              	SETF	r0x04
+002a74   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+002a76   2204     addwfc	0x4, 0x1, 0       	ADDWFC	r0x04, F
+002a78   c002     movff	0x2, 0xff6         	MOVFF	r0x02, TBLPTRL
+002a7a   fff6
+002a7c   c003     movff	0x3, 0xff7         	MOVFF	r0x03, TBLPTRH
+002a7e   fff7
+002a80   c004     movff	0x4, 0xff8         	MOVFF	r0x04, TBLPTRU
+002a82   fff8
+002a84   0009     tblrd	*+                 	TBLRD*+	
+002a86   cff5     movff	0xff5, 0x2         	MOVFF	TABLAT, r0x02
+002a88   f002
+002a8a   5082     movf	0x82, 0, 0          	MOVF	_PORTC, W
+002a8c   1602     andwf	0x2, 0x1, 0        	ANDWF	r0x02, F
+002a8e   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+002a90   e003     bz	0x2a98                	BZ	_00136_DS_
+002a92   6af3     clrf	0xf3, 0             	CLRF	PRODL
+002a94   0e01     movlw	0x1                	MOVLW	0x01
+002a96   d021     bra	0x2ada               	BRA	_00143_DS_
+                                           _00136_DS_:
+                                           ;	.line	52; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else return (0);
+002a98   6af3     clrf	0xf3, 0             	CLRF	PRODL
+002a9a   6ae8     clrf	0xe8, 0             	CLRF	WREG
+002a9c   d01e     bra	0x2ada               	BRA	_00143_DS_
+                                           _00138_DS_:
+                                           ;	.line	54; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 2: if ((PORTA & mask[input])!=0) return (1);
+002a9e   6a02     clrf	0x2, 0              	CLRF	r0x02
+002aa0   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+002aa2   6802     setf	0x2, 0              	SETF	r0x02
+002aa4   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+002aa6   2600     addwf	0, 0x1, 0          	ADDWF	r0x00, F
+002aa8   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+002aaa   2201     addwfc	0x1, 0x1, 0       	ADDWFC	r0x01, F
+002aac   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+002aae   2202     addwfc	0x2, 0x1, 0       	ADDWFC	r0x02, F
+002ab0   c000     movff	0, 0xff6           	MOVFF	r0x00, TBLPTRL
+002ab2   fff6
+002ab4   c001     movff	0x1, 0xff7         	MOVFF	r0x01, TBLPTRH
+002ab6   fff7
+002ab8   c002     movff	0x2, 0xff8         	MOVFF	r0x02, TBLPTRU
+002aba   fff8
+002abc   0009     tblrd	*+                 	TBLRD*+	
+002abe   cff5     movff	0xff5, 0           	MOVFF	TABLAT, r0x00
+002ac0   f000
+002ac2   5080     movf	0x80, 0, 0          	MOVF	_PORTA, W
+002ac4   1600     andwf	0, 0x1, 0          	ANDWF	r0x00, F
+002ac6   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002ac8   e003     bz	0x2ad0                	BZ	_00140_DS_
+002aca   6af3     clrf	0xf3, 0             	CLRF	PRODL
+002acc   0e01     movlw	0x1                	MOVLW	0x01
+002ace   d005     bra	0x2ada               	BRA	_00143_DS_
+                                           _00140_DS_:
+                                           ;	.line	55; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else return (0);
+002ad0   6af3     clrf	0xf3, 0             	CLRF	PRODL
+002ad2   6ae8     clrf	0xe8, 0             	CLRF	WREG
+002ad4   d002     bra	0x2ada               	BRA	_00143_DS_
+                                           _00142_DS_:
+                                           ;	.line	66; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	return (0);
+002ad6   6af3     clrf	0xf3, 0             	CLRF	PRODL
+002ad8   6ae8     clrf	0xe8, 0             	CLRF	WREG
+                                           _00143_DS_:
+002ada   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+002adc   f004
+002ade   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+002ae0   f003
+002ae2   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+002ae4   f002
+002ae6   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002ae8   f001
+002aea   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+002aec   f000
+002aee   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+002af0   ffd9
+002af2   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block
+                                           S_main__digitalwrite	code
+                                           _digitalwrite:
+                                           ;	.line	20; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	void digitalwrite(int output,int state)
+002796   cfd9     movff	0xfd9, 0xfe5       	MOVFF	FSR2L, POSTDEC1
+002798   ffe5
+00279a   cfe1     movff	0xfe1, 0xfd9       	MOVFF	FSR1L, FSR2L
+00279c   ffd9
+00279e   c000     movff	0, 0xfe5           	MOVFF	r0x00, POSTDEC1
+0027a0   ffe5
+0027a2   c001     movff	0x1, 0xfe5         	MOVFF	r0x01, POSTDEC1
+0027a4   ffe5
+0027a6   c002     movff	0x2, 0xfe5         	MOVFF	r0x02, POSTDEC1
+0027a8   ffe5
+0027aa   c003     movff	0x3, 0xfe5         	MOVFF	r0x03, POSTDEC1
+0027ac   ffe5
+0027ae   c004     movff	0x4, 0xfe5         	MOVFF	r0x04, POSTDEC1
+0027b0   ffe5
+0027b2   c005     movff	0x5, 0xfe5         	MOVFF	r0x05, POSTDEC1
+0027b4   ffe5
+0027b6   c006     movff	0x6, 0xfe5         	MOVFF	r0x06, POSTDEC1
+0027b8   ffe5
+0027ba   0e02     movlw	0x2                	MOVLW	0x02
+0027bc   cfdb     movff	0xfdb, 0           	MOVFF	PLUSW2, r0x00
+0027be   f000
+0027c0   0e03     movlw	0x3                	MOVLW	0x03
+0027c2   cfdb     movff	0xfdb, 0x1         	MOVFF	PLUSW2, r0x01
+0027c4   f001
+0027c6   0e04     movlw	0x4                	MOVLW	0x04
+0027c8   cfdb     movff	0xfdb, 0x2         	MOVFF	PLUSW2, r0x02
+0027ca   f002
+0027cc   0e05     movlw	0x5                	MOVLW	0x05
+0027ce   cfdb     movff	0xfdb, 0x3         	MOVFF	PLUSW2, r0x03
+0027d0   f003
+                                           ;	.line	22; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	switch (port[output])
+0027d2   0e98     movlw	0x98               	MOVLW	LOW(_port)
+0027d4   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+0027d6   6e04     movwf	0x4, 0             	MOVWF	r0x04
+0027d8   0e23     movlw	0x23               	MOVLW	HIGH(_port)
+0027da   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0027dc   6e05     movwf	0x5, 0             	MOVWF	r0x05
+0027de   6a06     clrf	0x6, 0              	CLRF	r0x06
+0027e0   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+0027e2   6806     setf	0x6, 0              	SETF	r0x06
+0027e4   0e00     movlw	0                  	MOVLW	UPPER(_port)
+0027e6   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+0027e8   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+0027ea   fff6
+0027ec   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+0027ee   fff7
+0027f0   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+0027f2   fff8
+0027f4   0009     tblrd	*+                 	TBLRD*+	
+0027f6   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+0027f8   f004
+0027fa   0e03     movlw	0x3                	MOVLW	0x03
+0027fc   5c04     subwf	0x4, 0, 0          	SUBWF	r0x04, W
+0027fe   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+002800   d0b4     bra	0x296a               	BRA	_00118_DS_
+002802   c007     movff	0x7, 0xfe5         	MOVFF	r0x07, POSTDEC1
+002804   ffe5
+002806   c008     movff	0x8, 0xfe5         	MOVFF	r0x08, POSTDEC1
+002808   ffe5
+00280a   6a08     clrf	0x8, 0              	CLRF	r0x08
+00280c   3404     rlcf	0x4, 0, 0           	RLCF	r0x04, W
+00280e   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+002810   34e8     rlcf	0xe8, 0, 0          	RLCF	WREG, W
+002812   3608     rlcf	0x8, 0x1, 0         	RLCF	r0x08, F
+002814   0bfc     andlw	0xfc               	ANDLW	0xfc
+002816   6e07     movwf	0x7, 0             	MOVWF	r0x07
+002818   0e00     movlw	0                  	MOVLW	UPPER(_00125_DS_)
+00281a   6efb     movwf	0xfb, 0            	MOVWF	PCLATU
+00281c   0e28     movlw	0x28               	MOVLW	HIGH(_00125_DS_)
+00281e   6efa     movwf	0xfa, 0            	MOVWF	PCLATH
+002820   0e38     movlw	0x38               	MOVLW	LOW(_00125_DS_)
+002822   2607     addwf	0x7, 0x1, 0        	ADDWF	r0x07, F
+002824   5008     movf	0x8, 0, 0           	MOVF	r0x08, W
+002826   22fa     addwfc	0xfa, 0x1, 0      	ADDWFC	PCLATH, F
+002828   b0d8     btfsc	0xd8, 0, 0         	BTFSC	STATUS, 0
+00282a   2afb     incf	0xfb, 0x1, 0        	INCF	PCLATU, F
+00282c   5007     movf	0x7, 0, 0           	MOVF	r0x07, W
+00282e   cfe4     movff	0xfe4, 0x8         	MOVFF	PREINC1, r0x08
+002830   f008
+002832   cfe4     movff	0xfe4, 0x7         	MOVFF	PREINC1, r0x07
+002834   f007
+002836   6ef9     movwf	0xf9, 0            	MOVWF	PCL
+                                           _00125_DS_:
+002838   ef22     goto	0x2844              	GOTO	_00105_DS_
+00283a   f014
+00283c   ef54     goto	0x28a8              	GOTO	_00109_DS_
+00283e   f014
+002840   ef86     goto	0x290c              	GOTO	_00113_DS_
+002842   f014
+                                           _00105_DS_:
+                                           ;	.line	24; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 0: if (state) PORTB=PORTB | mask[output]; 
+002844   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+002846   1003     iorwf	0x3, 0, 0          	IORWF	r0x03, W
+002848   e017     bz	0x2878                	BZ	_00107_DS_
+00284a   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+00284c   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+00284e   6e04     movwf	0x4, 0             	MOVWF	r0x04
+002850   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+002852   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+002854   6e05     movwf	0x5, 0             	MOVWF	r0x05
+002856   6a06     clrf	0x6, 0              	CLRF	r0x06
+002858   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+00285a   6806     setf	0x6, 0              	SETF	r0x06
+00285c   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+00285e   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+002860   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+002862   fff6
+002864   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+002866   fff7
+002868   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+00286a   fff8
+00286c   0009     tblrd	*+                 	TBLRD*+	
+00286e   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+002870   f004
+002872   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002874   1281     iorwf	0x81, 0x1, 0       	IORWF	_PORTB, F
+002876   d079     bra	0x296a               	BRA	_00118_DS_
+                                           _00107_DS_:
+                                           ;	.line	25; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else PORTB=PORTB & (255-mask[output]);
+002878   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+00287a   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+00287c   6e04     movwf	0x4, 0             	MOVWF	r0x04
+00287e   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+002880   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+002882   6e05     movwf	0x5, 0             	MOVWF	r0x05
+002884   6a06     clrf	0x6, 0              	CLRF	r0x06
+002886   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+002888   6806     setf	0x6, 0              	SETF	r0x06
+00288a   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+00288c   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+00288e   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+002890   fff6
+002892   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+002894   fff7
+002896   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+002898   fff8
+00289a   0009     tblrd	*+                 	TBLRD*+	
+00289c   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+00289e   f004
+0028a0   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+0028a2   08ff     sublw	0xff               	SUBLW	0xff
+                                           ; #	MOVWF	r0x04
+                                           ; #	MOVF	r0x04, W
+0028a4   1681     andwf	0x81, 0x1, 0       	ANDWF	_PORTB, F
+                                           ;	.line	26; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	break;
+0028a6   d061     bra	0x296a               	BRA	_00118_DS_
+                                           _00109_DS_:
+                                           ;	.line	27; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 1: if (state) PORTC=PORTC | mask[output];
+0028a8   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+0028aa   1003     iorwf	0x3, 0, 0          	IORWF	r0x03, W
+0028ac   e017     bz	0x28dc                	BZ	_00111_DS_
+0028ae   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+0028b0   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+0028b2   6e04     movwf	0x4, 0             	MOVWF	r0x04
+0028b4   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+0028b6   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0028b8   6e05     movwf	0x5, 0             	MOVWF	r0x05
+0028ba   6a06     clrf	0x6, 0              	CLRF	r0x06
+0028bc   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+0028be   6806     setf	0x6, 0              	SETF	r0x06
+0028c0   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+0028c2   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+0028c4   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+0028c6   fff6
+0028c8   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+0028ca   fff7
+0028cc   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+0028ce   fff8
+0028d0   0009     tblrd	*+                 	TBLRD*+	
+0028d2   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+0028d4   f004
+0028d6   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+0028d8   1282     iorwf	0x82, 0x1, 0       	IORWF	_PORTC, F
+0028da   d047     bra	0x296a               	BRA	_00118_DS_
+                                           _00111_DS_:
+                                           ;	.line	28; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else PORTC=PORTC & (255-mask[output]);
+0028dc   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+0028de   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+0028e0   6e04     movwf	0x4, 0             	MOVWF	r0x04
+0028e2   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+0028e4   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+0028e6   6e05     movwf	0x5, 0             	MOVWF	r0x05
+0028e8   6a06     clrf	0x6, 0              	CLRF	r0x06
+0028ea   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+0028ec   6806     setf	0x6, 0              	SETF	r0x06
+0028ee   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+0028f0   2206     addwfc	0x6, 0x1, 0       	ADDWFC	r0x06, F
+0028f2   c004     movff	0x4, 0xff6         	MOVFF	r0x04, TBLPTRL
+0028f4   fff6
+0028f6   c005     movff	0x5, 0xff7         	MOVFF	r0x05, TBLPTRH
+0028f8   fff7
+0028fa   c006     movff	0x6, 0xff8         	MOVFF	r0x06, TBLPTRU
+0028fc   fff8
+0028fe   0009     tblrd	*+                 	TBLRD*+	
+002900   cff5     movff	0xff5, 0x4         	MOVFF	TABLAT, r0x04
+002902   f004
+002904   5004     movf	0x4, 0, 0           	MOVF	r0x04, W
+002906   08ff     sublw	0xff               	SUBLW	0xff
+                                           ; #	MOVWF	r0x04
+                                           ; #	MOVF	r0x04, W
+002908   1682     andwf	0x82, 0x1, 0       	ANDWF	_PORTC, F
+                                           ;	.line	29; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	break;
+00290a   d02f     bra	0x296a               	BRA	_00118_DS_
+                                           _00113_DS_:
+                                           ;	.line	30; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	case 2: if (state) PORTA=PORTA | mask[output];
+00290c   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+00290e   1003     iorwf	0x3, 0, 0          	IORWF	r0x03, W
+002910   e017     bz	0x2940                	BZ	_00115_DS_
+002912   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+002914   2400     addwf	0, 0, 0            	ADDWF	r0x00, W
+002916   6e02     movwf	0x2, 0             	MOVWF	r0x02
+002918   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+00291a   2001     addwfc	0x1, 0, 0         	ADDWFC	r0x01, W
+00291c   6e03     movwf	0x3, 0             	MOVWF	r0x03
+00291e   6a04     clrf	0x4, 0              	CLRF	r0x04
+002920   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+002922   6804     setf	0x4, 0              	SETF	r0x04
+002924   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+002926   2204     addwfc	0x4, 0x1, 0       	ADDWFC	r0x04, F
+002928   c002     movff	0x2, 0xff6         	MOVFF	r0x02, TBLPTRL
+00292a   fff6
+00292c   c003     movff	0x3, 0xff7         	MOVFF	r0x03, TBLPTRH
+00292e   fff7
+002930   c004     movff	0x4, 0xff8         	MOVFF	r0x04, TBLPTRU
+002932   fff8
+002934   0009     tblrd	*+                 	TBLRD*+	
+002936   cff5     movff	0xff5, 0x2         	MOVFF	TABLAT, r0x02
+002938   f002
+00293a   5002     movf	0x2, 0, 0           	MOVF	r0x02, W
+00293c   1280     iorwf	0x80, 0x1, 0       	IORWF	_PORTA, F
+00293e   d015     bra	0x296a               	BRA	_00118_DS_
+                                           _00115_DS_:
+                                           ;	.line	31; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	else PORTA=PORTA & (255-mask[output]);
+002940   6a02     clrf	0x2, 0              	CLRF	r0x02
+002942   be01     btfsc	0x1, 0x7, 0        	BTFSC	r0x01, 7
+002944   6802     setf	0x2, 0              	SETF	r0x02
+002946   0e86     movlw	0x86               	MOVLW	LOW(_mask)
+002948   2600     addwf	0, 0x1, 0          	ADDWF	r0x00, F
+00294a   0e23     movlw	0x23               	MOVLW	HIGH(_mask)
+00294c   2201     addwfc	0x1, 0x1, 0       	ADDWFC	r0x01, F
+00294e   0e00     movlw	0                  	MOVLW	UPPER(_mask)
+002950   2202     addwfc	0x2, 0x1, 0       	ADDWFC	r0x02, F
+002952   c000     movff	0, 0xff6           	MOVFF	r0x00, TBLPTRL
+002954   fff6
+002956   c001     movff	0x1, 0xff7         	MOVFF	r0x01, TBLPTRH
+002958   fff7
+00295a   c002     movff	0x2, 0xff8         	MOVFF	r0x02, TBLPTRU
+00295c   fff8
+00295e   0009     tblrd	*+                 	TBLRD*+	
+002960   cff5     movff	0xff5, 0           	MOVFF	TABLAT, r0x00
+002962   f000
+002964   5000     movf	0, 0, 0             	MOVF	r0x00, W
+002966   08ff     sublw	0xff               	SUBLW	0xff
+                                           ; #	MOVWF	r0x00
+                                           ; #	MOVF	r0x00, W
+002968   1680     andwf	0x80, 0x1, 0       	ANDWF	_PORTA, F
+                                           _00118_DS_:
+                                           ;	.line	41; C:/Users/jpm/Documents/pinguino32x_windows/tools/bin/../include/pic16/digitalw.c	}
+00296a   cfe4     movff	0xfe4, 0x6         	MOVFF	PREINC1, r0x06
+00296c   f006
+00296e   cfe4     movff	0xfe4, 0x5         	MOVFF	PREINC1, r0x05
+002970   f005
+002972   cfe4     movff	0xfe4, 0x4         	MOVFF	PREINC1, r0x04
+002974   f004
+002976   cfe4     movff	0xfe4, 0x3         	MOVFF	PREINC1, r0x03
+002978   f003
+00297a   cfe4     movff	0xfe4, 0x2         	MOVFF	PREINC1, r0x02
+00297c   f002
+00297e   cfe4     movff	0xfe4, 0x1         	MOVFF	PREINC1, r0x01
+002980   f001
+002982   cfe4     movff	0xfe4, 0           	MOVFF	PREINC1, r0x00
+002984   f000
+002986   cfe4     movff	0xfe4, 0xfd9       	MOVFF	PREINC1, FSR2L
+002988   ffd9
+00298a   0012     return	0                 	RETURN	
+                                           
+                                           ; ; Starting pCode block for Ival
+                                           	code
+                                           _mask:
+002386   0201     mulwf	0x1, 0             	DB	0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x40, 0x80, 0x01, 0x02
+002388   0804     sublw	0x4                
+00238a   2010     addwfc	0x10, 0, 0        
+00238c   8040     bsf	0x40, 0, 0           
+00238e   8040     bsf	0x40, 0, 0           
+002390   0201     mulwf	0x1, 0             
+002392   0104     movlb	0x4                	DB	0x04, 0x01, 0x02, 0x04, 0x08, 0x20
+002394   0402     decf	0x2, 0, 0           
+002396   2008     addwfc	0x8, 0, 0         
+                                           ; ; Starting pCode block for Ival
+                                           _port:
+002398   0000     nop                      	DB	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01
+00239a   0000     nop                      
+00239c   0000     nop                      
+00239e   0000     nop                      
+0023a0   0101     movlb	0x1                
+0023a2   0101     movlb	0x1                
+0023a4   0201     mulwf	0x1, 0             	DB	0x01, 0x02, 0x02, 0x02, 0x02, 0x02
+0023a6   0202     mulwf	0x2, 0             
+0023a8   0202     mulwf	0x2, 0             
+                                           
+                                           
+                                           ; Statistics:
+                                           ; code size:	 3984 (0x0f90) bytes ( 3.04%)
+                                           ;           	 1992 (0x07c8) words
+                                           ; udata size:	  104 (0x0068) bytes ( 5.80%)
+                                           ; access size:	   10 (0x000a) bytes
+                                           
+                                           
+                                           	end
