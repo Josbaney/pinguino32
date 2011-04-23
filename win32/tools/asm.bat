@@ -1,1 +1,0 @@
-%1\gpasm.exe -Dpic18f2550 -D__18f2550 -c %2\main.asm -o %2\main.o

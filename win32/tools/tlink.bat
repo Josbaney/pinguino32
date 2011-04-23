@@ -1,1 +1,0 @@
-.\bin\gplink.exe -o ..\source\main.hex -I..\tools\bin\lib\pic16 ..\lib\libpuf.lib ..\tools\bin\lib\pic16\libio18f2550.lib ..\tools\bin\lib\pic16\libc18f.lib ..\tools\bin\lib\pic16\libm18f.lib ..\tools\bin\lib\pic16\pic18f2550.lib -w -s..\lkr\18f2550.lkr ..\obj\application_iface.o ..\obj\usb_descriptors.o libsdcc.lib ..\source\main.o 
