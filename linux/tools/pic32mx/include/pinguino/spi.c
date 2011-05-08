@@ -33,45 +33,53 @@
 #ifndef __SPI_C
 #define __SPI_C
 
-#ifndef SPIx  //Use SPI port 1, see PIC32 Datasheet
-#define SPIx 1
+#ifndef SPIx  		//Use SPI port 1, see PIC32 Datasheet
+#define SPIx 2		// default SPI port is 2 ( 32MX440F256H has only one SPI port )
 #endif
+
+#if defined(UBW32_460) || defined(EMPEROR460)
 
 #if SPIx == 1
 #define BUFFER		SPI1BUF
-#define STATBIT		SPI1STATbits.SPIRBF
+#define STATRX  	SPI1STATbits.SPIRBF	// receive buffer full
+#define STATTX		SPI1STATbits.SPITBE	// transmit buffer full
 #define SPICONF		SPI1CON
 #define CLKSPD		SPI1BRG
 #endif
 
+#endif
+
 #if SPIx == 2
 #define BUFFER		SPI2BUF
-#define STATBIT		SPI2STATbits.SPIRBF
+#define STATRX  	SPI2STATbits.SPIRBF	// receive buffer full
+#define STATTX		SPI2STATbits.SPITBE	// transmit buffer full
 #define SPICONF		SPI2CON
 #define CLKSPD		SPI2BRG
 #define	PULLUPS		0xF00 //Use CNPUE = PULLUPS for enable internal pullups 8,9,10,11
-#endif
+#endif 
 
 //Only 795 boards have SPI3 and SPI4
 #if defined(UBW32_795) || defined(EMPEROR795)
 
 #if SPIx == 3
-#define BUFFER		SPI2ABUF
-#define STATBIT		SPI2ASTATbits.SPIRBF
-#define SPICONF		SPI2ACON
-#define CLKSPD		SPI2ABRG
-#endif
-
-#if SPIx == 4
 #define BUFFER		SPI3ABUF
-#define STATBIT		SPI3ASTATbits.SPIRBF
+#define STATRX  	SPI3ASTATbits.SPIRBF	// receive buffer full
+#define STATTX		SPI3ASTATbits.SPITBE	// transmit buffer full
 #define SPICONF		SPI3ACON
 #define CLKSPD		SPI3ABRG
 #endif
 
+#if SPIx == 4
+#define BUFFER		SPI4ABUF
+#define STATRX  	SPI4ASTATbits.SPIRBF	// receive buffer full
+#define STATTX		SPI4ASTATbits.SPITBE	// transmit buffer full
+#define SPICONF		SPI4ACON
+#define CLKSPD		SPI4ABRG
+#endif
+
 #endif
 /** 
- * 0x8120,		   SPI->ON/CKE->1/CKP->0/8 bit Master
+ * 0x8220,		   SPI->ON/CKE->1/CKP->0/8 bit Master 0x8120
  * 159,            Fpb / (2 * (SPIxBRG + 1)  :.  80M / (2 * (149 +1)) = 250KHz
  */
 void InitSPI(int speed, int clk){
@@ -80,21 +88,23 @@ void InitSPI(int speed, int clk){
 }
 
 void InitSPI0(){
-	SPICONF = 0x8120;
+	SPICONF=0;
+	SPICONF = 0x8220;
+	SPI2STATCLR=0x40;
 	CLKSPD  = 159;
 }
 
 unsigned char WriteSPI( unsigned char data_out )
 {
 	BUFFER = data_out;				// write byte to SSPBUF register
-	while( !STATBIT );	        	// wait until bus cycle complete
-	return (SSPBUF);				// return response data
+	while( !STATTX );	        	// wait until bus cycle complete
+	return (BUFFER);				// return response data
 }
 
 unsigned char ReadSPI( void )
 {
 	BUFFER = 0xFF;				// initiate bus cycle
-	while ( !STATBIT );			// wait until cycle complete
+	while ( !STATRX );			// wait until cycle complete
 	return ( BUFFER );			// return with byte read
 }
 

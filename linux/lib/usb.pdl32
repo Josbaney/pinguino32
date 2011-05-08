@@ -1,0 +1,4 @@
+CDC.print CDCputs#include <__cdc.c>|/obj/non-free/usb/libcdc.a
+CDC.read CDCgets#include <__cdc.c>|/obj/non-free/usb/libcdc.a
+
+

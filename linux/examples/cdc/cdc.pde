@@ -5,7 +5,7 @@
 void setup()
 {
 Serial.begin(9600);
-Serial.print("Hello");
+Serial.printf("Hello");
 }
 
 
@@ -23,7 +23,7 @@ receivedbyte=CDC.read(rxstr);
 rxstr[receivedbyte]=0; // to make received character(s) a string
 if (receivedbyte>0)
 	for (i=0;i<receivedbyte;i++)
-		Serial.print(rxstr);
+		Serial.printf(rxstr);
 
 /*
 // send a string to the USB uart
@@ -39,6 +39,6 @@ if (Serial.available())
 	{
 	serstr[0]=Serial.read();
 	CDC.print(txstr,7);
-	PORTAbits.RA4=1;
+	//PORTAbits.RA4=1;
 	}	
 }

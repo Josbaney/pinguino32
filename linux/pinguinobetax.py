@@ -113,6 +113,7 @@ class Pinguino(wx.Frame):
     o2hname=""
     processor32=""
     compiler_name=""
+    linkdirective=""            # path for libraries added to the link 
         
 # ------------------------------------------------------------------------------
 # id
@@ -764,9 +765,23 @@ class Pinguino(wx.Frame):
                 for line in libfile:
                     if line!="\n":                      
                         instruction=line[0:line.find(" ")]
-                        cnvinstruction=line[line.find(" ")+1:line.find("#")]
-                        libpath=line[line.find("#")+1:len(line)]    
-                        self.libinstructions.append([instruction,cnvinstruction,libpath])
+                        if line.find("|")!=-1:
+                            libpath=line[line.find("|")+1:line.find("\n")]
+                            if line.find("#")!=-1:
+                                libheader=line[line.find("#")+1:line.find("|")]
+                                cnvinstruction=line[line.find(" ")+1:line.find("#")]
+                            else:
+                                libheader=""
+                                cnvinstruction=line[line.find(" ")+1:line.find("|")]
+                        else:
+                            if line.find("#")!=-1:
+                                libheader=line[line.find("#")+1:len(line)] 
+                                libpath="" 
+                                cnvinstruction=line[line.find(" ")+1:line.find("#")]
+                            else:
+                                libheader=""  
+                                cnvinstruction=line[line.find(" ")+1:line.find("\n")]
+                        self.libinstructions.append([instruction,cnvinstruction,libheader,libpath])
                         self.regobject.append(re.compile(r"(^|[' ']|['=']|['{']|[',']|[\t]|['(']|['!'])"+str(instruction)+"[ ]*\("))
                 libfile.close()
         if len(self.libinstructions)!=0:    
@@ -800,6 +815,7 @@ class Pinguino(wx.Frame):
             self.displaymsg("8 bits board\n",0)
         else:
             self.displaymsg("32 bits board\n",0)
+        self.linkdirective=""                            # reset the link directive    
         self.editor.SaveDirect()
         filename=self.editor.GetPath()
         filename,extension=os.path.splitext(filename)
@@ -1088,7 +1104,14 @@ class Pinguino(wx.Frame):
                 fichier.close()
                 return(0)
         fichier.close()
-        return(1)         
+        return(1)
+    
+    def notinlink(self,chaine):
+        """ verify linked object file """
+        if self.linkdirective.find(sys.path[0]+chaine)!=-1:
+            return 0
+        else:
+            return 1
 
     def replaceword(self,ligne):
         """ convert used langage in C langage """
@@ -1110,8 +1133,12 @@ class Pinguino(wx.Frame):
             #pattern="(^|[' ']|['=']|['{']|[',']|[\t]|['(']|['!'])"+str(self.libinstructions[i][0])+"[ ]*\("
             if re.search(self.regobject[i],line):
                 line=line.replace(str(self.libinstructions[i][0]),str(self.libinstructions[i][1]))
-                if self.notindefine("#"+str(self.libinstructions[i][2]))==1:
-                    self.adddefine("#"+str(self.libinstructions[i][2]))        
+                if self.libinstructions[i][2]!="":
+                    if self.notindefine("#"+str(self.libinstructions[i][2]))==1:
+                        self.adddefine("#"+str(self.libinstructions[i][2]))
+                if self.libinstructions[i][3]!="":
+                    if self.notinlink(sys.path[0]+self.libinstructions[i][3]):
+                        self.linkdirective=self.linkdirective+" \".."+self.libinstructions[i][3]+"\""        
         return line
         
     def compile(self, filename):
@@ -1236,6 +1263,7 @@ class Pinguino(wx.Frame):
                               "O2H="+self.Pinguino32XFolder+'/bin/'+self.o2hname,
                               "PROCESSOR="+self.processor32,
                               "DEVTOOL="+self.devtool,
+                              "LINKLIB="+self.linkdirective,
                               "SOURCE="+sys.path[0].replace(" ","\\ ")],                                                
                               stdout=fichier,stderr=STDOUT)
             if self.compiler_name!="Invalid":                

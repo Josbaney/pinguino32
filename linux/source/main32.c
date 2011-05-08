@@ -41,6 +41,9 @@ int main(void)
     #endif
     #ifdef __PWM__
     	pwm_init();
+    #endif
+    #ifdef __USBCDC
+    	init_CDC();
     #endif    
 	setup();
 	while (1)
