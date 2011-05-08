@@ -48,6 +48,9 @@ int main(void)
 	setup();
 	while (1)
 	{
+	    #ifdef __USBCDC
+    		CDCTxService();
+    	#endif    
 		loop();
 	}
 	return(0);    

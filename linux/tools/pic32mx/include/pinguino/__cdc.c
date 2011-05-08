@@ -149,7 +149,7 @@ byte CDCgets(char *buffer)
 {
 	unsigned char receivedchar;
 	
-	receivedchar=getsUSBUSART(*buffer, 64);
+	receivedchar=getsUSBUSART(buffer, 64);
 	return receivedchar;
 }
 

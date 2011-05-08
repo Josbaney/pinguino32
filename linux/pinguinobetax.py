@@ -1252,6 +1252,7 @@ class Pinguino(wx.Frame):
                               "O2H="+self.Pinguino32XFolder+'/bin/'+self.o2hname,
                               "PROCESSOR="+self.processor32,
                               "DEVTOOL="+self.devtool,
+                              "LINKLIB="+self.linkdirective,
                               "SOURCE="+sys.path[0].replace(" ","\\ ")],                                                
                               stdout=fichier,stderr=STDOUT)
             elif self.compiler_name=="Pinguino":

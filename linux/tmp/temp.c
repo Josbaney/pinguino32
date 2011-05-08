@@ -1,4 +1,3 @@
-//
 
 void setup()
 {
@@ -11,8 +10,11 @@ unsigned char length;
 void loop()
 {
 Delayms(10);
-length=getsUSBUSART(chaine,64);
+length=CDCgets(chaine);
 if (length!=0) serial1printf("longueur=%d\n\r",length);
-if (length>0) CDCputs(chaine,length);
+if (length>0) 
+	{
+	CDCputs(chaine,length);
+	}
 }
 
