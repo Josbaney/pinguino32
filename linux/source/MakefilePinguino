@@ -17,7 +17,7 @@ build:
 link:
 		$(CC) $(ELF_FLAGS) -D $(BOARD) -Wl,-Map=output.map -I "../tools/pic32mx/include/" -I "../tools/pic32mx/include/pinguino/" \
         -I "../tools/pic32mx/include/non-free/" -I "../obj/non-free/" -I $(PDE) \
-        -o main32.elf main32.c "../obj/non-free/crt0.S" "../obj/non-free/processor.o" $(LINKFILE) -lgcc
+        -o main32.elf main32.c "../obj/non-free/crt0.S" "../obj/non-free/processor.o" "../obj/non-free/usb/libcdc.a" $(LINKFILE) -lgcc -lc -lm
 		$(OBJC) -O ihex main32.elf main32.hex
 		#This remove wrong routine
 		grep --binary --invert-match '^:040000059D006000FA' main32.hex > temp

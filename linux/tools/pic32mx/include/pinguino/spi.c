@@ -39,7 +39,7 @@
 
 #if defined(UBW32_460) || defined(EMPEROR460)
 
-#if SPIx == 1
+#if (SPIx == 1)
 #define BUFFER		SPI1BUF
 #define STATRX  	SPI1STATbits.SPIRBF	// receive buffer full
 #define STATTX		SPI1STATbits.SPITBE	// transmit buffer full
@@ -49,7 +49,7 @@
 
 #endif
 
-#if SPIx == 2
+#if (SPIx == 2)
 #define BUFFER		SPI2BUF
 #define STATRX  	SPI2STATbits.SPIRBF	// receive buffer full
 #define STATTX		SPI2STATbits.SPITBE	// transmit buffer full
@@ -61,7 +61,7 @@
 //Only 795 boards have SPI3 and SPI4
 #if defined(UBW32_795) || defined(EMPEROR795)
 
-#if SPIx == 3
+#if (SPIx == 3)
 #define BUFFER		SPI3ABUF
 #define STATRX  	SPI3ASTATbits.SPIRBF	// receive buffer full
 #define STATTX		SPI3ASTATbits.SPITBE	// transmit buffer full
@@ -69,7 +69,7 @@
 #define CLKSPD		SPI3ABRG
 #endif
 
-#if SPIx == 4
+#if (SPIx == 4)
 #define BUFFER		SPI4ABUF
 #define STATRX  	SPI4ASTATbits.SPIRBF	// receive buffer full
 #define STATTX		SPI4ASTATbits.SPITBE	// transmit buffer full
@@ -89,21 +89,24 @@ void InitSPI(int speed, int clk){
 
 void InitSPI0(){
 	SPICONF=0;
-	SPICONF = 0x8220;
+	BUFFER=0xFF;
 	SPI2STATCLR=0x40;
-	CLKSPD  = 159;
+	CLKSPD  = 200;
+	SPICONF = 0x8220;
 }
 
-unsigned char WriteSPI( unsigned char data_out )
+unsigned int WriteSPI( unsigned int data_out )
 {
 	BUFFER = data_out;				// write byte to SSPBUF register
 	while( !STATTX );	        	// wait until bus cycle complete
-	return (BUFFER);				// return response data
+	return(BUFFER);
 }
 
-unsigned char ReadSPI( void )
+unsigned int ReadSPI( void )
 {
-	BUFFER = 0xFF;				// initiate bus cycle
+	unsigned char temp;
+	
+	BUFFER=0x00;
 	while ( !STATRX );			// wait until cycle complete
 	return ( BUFFER );			// return with byte read
 }
