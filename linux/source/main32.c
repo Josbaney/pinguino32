@@ -22,7 +22,6 @@
 
 #include <system.c>
 #include "../tmp/define.h"
-#include <newlib.c>
 
 #include "user.c"
 
@@ -33,8 +32,7 @@ int main(void)
 		TRISDbits.TRISD10=1;	        // because PORTB is shared with SCL on Olimex board
 	#endif	
 	SystemConfig(80000000);	                // default clock frequency is 80Mhz
-	SetPeripheralClock(0);					// peripheral clock is 80 Mhz
-	AD1PCFG = 0xFFFF;	                	// All pins of PORTB as digital IOs
+	AD1PCFG = 0xFFFF;	                // All pins of PORTB as digital IOs
 	#ifdef __ANALOG__
 		analog_init();
     #endif
@@ -58,3 +56,10 @@ int main(void)
 	return(0);    
 }
 
+#ifndef __SERIAL_C
+void SerialInterrupt(){};
+#endif
+
+#ifndef __MILLIS__
+void Tmr2Interrupt(){};
+#endif
