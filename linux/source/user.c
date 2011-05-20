@@ -1,8 +1,6 @@
 //
 //
-
-char caractere;
-char chaine[5]={'T','E','S','T',0};
+//
 
 void setup()
 {
@@ -11,12 +9,20 @@ serial1init(9600);
 
 void loop()
 {
-if (millis()%1000==0) serial1printf("TEST\n\r");
-if (serial1available()) {
-					 serial1printf("caractere");
-					 caractere=serial1read();
-					 serial1printf(chaine);
-					 serial1printf("%d",caractere);
-					 }
+unsigned char random_number;
+u8 chaine[20];
+u8 caractere;
+
+
+random_number=rand();
+printf("This is a random number %02X\n\r",random_number);
+
+if (serial1available()) 
+	{
+	caractere=serial1read();
+	CDCputs(&caractere,1);
+	}
+if (CDCgets(chaine)!=0) CDCputs("CARACTERE",9);
+Delayms(50);
 }
 

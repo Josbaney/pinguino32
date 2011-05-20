@@ -22,6 +22,7 @@
 
 #include <system.c>
 #include "../tmp/define.h"
+#include <newlib.c>
 
 #include "user.c"
 

@@ -134,7 +134,7 @@ void init_CDC()
 {
 	USBDeviceInit();
 	USBDeviceAttach();
-	Delayms(500);
+	Delayms(1000);
 }
 
 // CDC puts function
