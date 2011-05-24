@@ -398,7 +398,7 @@ u8 SerialAvailable(u8 port)
 	SerialRead : Get char
 	--------------------------------------------------------------------------*/
 
-u8 SerialRead(u8 port)
+int SerialRead(u8 port)
 {
 	u8 c = 0;
 
@@ -410,15 +410,17 @@ u8 SerialRead(u8 port)
 				c = UART1SerialBuffer[UART1rpointer++];
 				if (UART1rpointer == SERIALBUFFERLENGTH)
 					UART1rpointer=1;
+				return(c);
 				break;
 			case UART2:
 				c = UART2SerialBuffer[UART2rpointer++];
 				if (UART2rpointer == SERIALBUFFERLENGTH)
 					UART2rpointer=1;
+				return(c);
 				break;
 		}
 	}
-	return(c);
+	return(-1);
 }
 
 /*	----------------------------------------------------------------------------

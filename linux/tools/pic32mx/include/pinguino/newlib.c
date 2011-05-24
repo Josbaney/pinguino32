@@ -24,8 +24,8 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	--------------------------------------------------------------------------*/
 
-#include <__cdc.c>
 #include <serial.c>
+
 // TODO include LCD lib, serial lib for UART2 etc.....
 
 
@@ -52,13 +52,7 @@ unsigned char *sbrk(int nbbytes)
 // else return -1
 
 int open(const char *name, int flags, int mode)
-{
-if (!strcmp(name,"CDC")) 
-	{
-		init_CDC(); 
-		return(2);
-	}
-	
+{	
 if (!strcmp(name,"SERIAL1")) 
 	{
 		SerialConfigure(UART1, UART_ENABLE,	UART_RX_TX_ENABLED,	9600);
@@ -115,7 +109,24 @@ int lseek(int file, int ptr, int dir)
 // failed return -1
 
 int read(int file, char *ptr, int len){
-	return 0;
+	int caractere=0;
+	int nbchar=0;
+	
+	switch (file)
+	{
+		case 0: while (caractere!=-1)		// stdin
+					{
+						caractere=SerialRead(UART1);
+						if (caractere!=-1)
+							{
+								*ptr++=caractere;
+								nbchar++;
+							}
+					}
+				if (nbchar!=0) return(nbchar);
+				else return(-1);
+				break;
+			}
 }
 
 // write
@@ -126,9 +137,13 @@ int read(int file, char *ptr, int len){
 int write(int file, char *ptr, int len)
 {
 	int todo;
-	if (file==1)
-		{
-		for (todo = 0; todo < len; todo++) SerialUART1WriteChar(*ptr++);
-		return len;
+	SerialUART1WriteChar(file+0x30);
+	switch (file)
+	{
+		case 1: for (todo = 0; todo < len; todo++) SerialUART1WriteChar(*ptr++);	// stdout
+				return len;
+				break;
+		default: return(-1);
+				 break;	
 		}
 }

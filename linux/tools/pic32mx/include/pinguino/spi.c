@@ -4,7 +4,7 @@
 	PURPOSE:		Serial Peripheral Interface functions
 	PROGRAMER:		Marcus Fazzi <anunakin@gmail.com>
 	FIRST RELEASE:	16 mar. 2011
-	LAST RELEASE:	18 mar. 2011
+	LAST RELEASE:	24 may. 2011
 	----------------------------------------------------------------------------
 	TODO : 
 	----------------------------------------------------------------------------
@@ -30,6 +30,9 @@
  *  
  *  MX440 and MX460 have only 2 SPI ports
  */
+
+// 24 may. 2011 fixed a bug in writeSPI, RX int flag must be called even for write jp.mandon
+
 #ifndef __SPI_C
 #define __SPI_C
 
@@ -88,24 +91,19 @@ void InitSPI(int speed, int clk){
 }
 
 void InitSPI0(){
-	SPICONF=0;
-	BUFFER=0xFF;
-	SPI2STATCLR=0x40;
-	CLKSPD  = 200;
-	SPICONF = 0x8220;
+	SPICONF=0x8120;
+	CLKSPD=149;
 }
 
 unsigned int WriteSPI( unsigned int data_out )
 {
-	BUFFER = data_out;				// write byte to SSPBUF register
-	while( !STATTX );	        	// wait until bus cycle complete
-	return(BUFFER);
+	BUFFER = data_out; 	// write to buffer for TX
+	while( !STATRX); 	// wait for transfer complete
+	return BUFFER;
 }
 
 unsigned int ReadSPI( void )
 {
-	unsigned char temp;
-	
 	BUFFER=0x00;
 	while ( !STATRX );			// wait until cycle complete
 	return ( BUFFER );			// return with byte read
