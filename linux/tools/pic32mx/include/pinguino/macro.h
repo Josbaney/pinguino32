@@ -35,6 +35,9 @@
 	
 	#define bit(b) \
 		(1 << (b))
+		
+	#define TestBit(byte,n) \
+	    ((byte&(1<<n))!=0)
 
 	/// MATH
 

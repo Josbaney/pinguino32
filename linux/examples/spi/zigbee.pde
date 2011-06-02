@@ -165,11 +165,11 @@ void loop()
 	unsigned char reponse;
 	unsigned char i;
 	
-	Serial.print("SPI with MRF24J40MA\r\n");
+	Serial.printf("SPI with MRF24J40MA\r\n");
 	init_zigbee();
 	
 	short_write(EADR0,0x7f);
 	reponse=short_read(EADR0);
-	Serial.print(reponse,HEX);
+	Serial.printf("%02X",reponse);
 	while(1);
 }	

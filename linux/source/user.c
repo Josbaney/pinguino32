@@ -1,73 +1,32 @@
-#define RESET 	8
-#define CS 		10
-#define CLK		13
-#define SDI		12
-#define SDO		11
+//
+//
+//
 
-#define EADR0 0x05
-#define EADR1 0x06
+#define channel 20					// channel must be selected between 11 and 26
+#define PAN_ID 0xFEAA				// personal area network number ( between 0 and 65535 )
+#define Short_Address 0x0002		// Address of the module ( between 0 and 65535 )
 
-
-
-void init_zigbee()
-{
-	digitalwrite(RESET,0);
-	digitalwrite(CS,1);
-	digitalwrite(CLK,0);
-	digitalwrite(SDO,0);
-	digitalwrite(RESET,1);
-	Delayms(100);
-}
-
-void short_write(byte address,byte value)
-{
-	address=((address<<1)&0x7F)|1;
-	digitalwrite(CS,0);
-	WriteSPI(address);
-	WriteSPI(value);
-	digitalwrite(CS,1);
-}
-
-unsigned int short_read(unsigned char address)
-{
-byte response;
-	address=(address<<1)&0x7E;
-	digitalwrite(CS,0);
-	WriteSPI(address);
-	response=ReadSPI();
-	digitalwrite(CS,1);
-	return(response);
-}
+unsigned char rxdata[128];			// 128 is the max length
 
 void setup()
 {
-	pinmode(CS,OUTPUT); digitalwrite(CS,HIGH);
-	pinmode(SDI,INPUT);
-	pinmode(SDO,OUTPUT);
-	pinmode(CLK,OUTPUT);
-	pinmode(RESET,OUTPUT);	
-	
-	init_zigbee();
-	
-	serial1init(9600);
-	serial1printf("BONJOUR\n\r");
-
-	InitSPI0();
-
+serial1init(9600);
+init_zigbee(channel,PAN_ID,Short_Address);
 }
-
 
 void loop()
 {
- byte i;
- unsigned int reponse;
-	
-	short_write(EADR0,0x23);
-	for (i=0;i<20;i++)
+unsigned char length;
+
+length=ZIGgets(rxdata);
+if (length>0)
 		{
-		reponse=short_read(i);
-		serial1printf("%02X ",reponse);
+		serial1printf("Source PAN ID:%04X\n\r",ZIGsrcpan);
+		serial1printf("Destination PAN ID:%04X\n\r",ZIGdestpan);
+		serial1printf("Source address:%04X\n\r",ZIGsrcadd);
+		serial1printf("Destination address:%04X\n\r",ZIGdestadd);
+		serial1printf(rxdata);
+		serial1printf("\n\r");
 		}
-	serial1printf("\n\r");
 }
 

@@ -1,10 +1,4 @@
 
 
-
-
-
-#include <delay.c>
-#include <digitalw.c>
+#include <__zigbee.c>
 #include <pinguinoserial.c>
-#include <spi.c>
-#include <spi.c>

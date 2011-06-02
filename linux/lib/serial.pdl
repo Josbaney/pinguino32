@@ -8,4 +8,4 @@ Serial.read serial_read#include <uart18f2550.c>
 Serial.getkey serial_getkey#include <uart18f2550.c>
 Serial.getstring serial_getstring#include <uart18f2550.c>
 Serial.flush serial_flush#include <uart18f2550.c>
-
+Serial.write serial_putchar#include <uart18f2550.c>

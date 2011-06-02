@@ -45,7 +45,7 @@ int main(void)
     #endif
     #ifdef __USBCDC
     	init_CDC();
-    #endif    
+    #endif
 	setup();
 	while (1)
 	{
@@ -58,9 +58,9 @@ int main(void)
 }
 
 #ifndef __SERIAL_C
-void SerialInterrupt(){};
+void SerialInterrupt(){}
 #endif
 
 #ifndef __MILLIS__
-void Tmr2Interrupt(){};
+void Tmr2Interrupt(){}
 #endif
