@@ -4,7 +4,7 @@
 	PURPOSE:			One wire driver to use with DS18B20 digital temperature sensor.
 	PROGRAMER:		regis blanchot <rblanchot@gmail.com>
 	FIRST RELEASE:	28 sept. 2010
-	LAST RELEASE:	14 jan. 2011
+	LAST RELEASE:	02 june. 2011
 	----------------------------------------------------------------------------
 	this file is based on Maxim AN162 and Microchip AN1199
 	----------------------------------------------------------------------------
@@ -25,6 +25,8 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	--------------------------------------------------------------------------*/
 
+	// fixed a bug in decimal part of the measure jp.mandon 02 june. 2011
+	
 #ifndef __DS18B20_C
 	#define __DS18B20_C
 
@@ -184,11 +186,7 @@
 		t->integer = temp_lsb >> 4;			// fractional part is removed, it remains only integer part
 		t->integer |= (temp_msb << 4);		// integer part from temp_msb is added
 	
-		t->fraction = 0;					// fractional part (
-		if (BitRead(temp_lsb, 0)) t->fraction +=  625;
-		if (BitRead(temp_lsb, 1)) t->fraction += 1250;
-		if (BitRead(temp_lsb, 2)) t->fraction += 2500;
-		if (BitRead(temp_lsb, 3)) t->fraction += 5000;
+		t->fraction=(temp_lsb&0x0F)*625;
 		t->fraction /= 100;					// two digits after decimal 
 
 		return TRUE;

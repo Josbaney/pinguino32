@@ -30,7 +30,7 @@
 
 	//#include <typedef.h>
 	#include <macro.h>
-	#include <arduinodelay.c>
+	#include <delay.c>
 	#include <digitalw.c>
 
 	// private
