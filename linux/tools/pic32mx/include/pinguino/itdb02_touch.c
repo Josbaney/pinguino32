@@ -114,8 +114,7 @@ unsigned int touch_ReadData()
 	return(data);
 }
 
-void read()
-{
+void touch_read() {
 	unsigned long tx=0;
 	unsigned long ty=0;
 	int i;

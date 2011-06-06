@@ -21,8 +21,9 @@
 	 */
 	typedef unsigned char		byte;
 	typedef unsigned char		bool;
-	typedef unsigned char		boolean;	
-	typedef unsigned int		word;	
+	typedef unsigned char		boolean;
+    typedef unsigned char       uchar;
+	typedef unsigned int		word;
 	typedef signed char 		int8_t;
 	typedef unsigned char 		uint8_t;
 	typedef int 				int16_t;

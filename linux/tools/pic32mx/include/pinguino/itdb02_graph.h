@@ -86,7 +86,7 @@
 #define LCD_CMD_CLR		PORTECLR
 #define LCD_SET_OUT		TRISECLR
 
-//Pins 43 44 45 and 47 (emeperor) (RE4,5,6 and RE7) look on digitalw.c for pinmasks and ports
+//Pins for Emperor Board are: 54 47 45 and 44 (emeperor) (RE0, 4,5 and RE6) look on digitalw.c for pinmasks and ports
 //Using inline/defines is a bit more fast and use less RAM and Flash, then use digitalw.c pinMode/pinmask array
 #define LCD_RS 			0x1
 #define LCD_WR 			0x10

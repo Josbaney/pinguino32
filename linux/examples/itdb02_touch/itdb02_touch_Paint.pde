@@ -17,10 +17,10 @@
 //Pinguino
 #include "pinguino.c"
 
-#define LED1 BLUELED
-#define LED2 REDLED
+//#define LED1 BLUELED
+//#define LED2 REDLED
 
-#define USERBT USERBUTTON
+//#define USERBT USERBUTTON
 
 //tool color
 u8 rR=0, rG=0, rB=0;
@@ -176,11 +176,11 @@ void drawTool(int x, int y, u8 mode){
 void setup()
 {
   myTouch(56,57,58,59,60); //clk, cs, din, dout, irq
-  myGLCD.InitLCD(LANDSCAPE);
-  myGLCD.fillScr(255,255,255);
-
   myTouch.InitTouch(LANDSCAPE);
   myTouch.setPrecision(PREC_MEDIUM);
+  
+  myGLCD.InitLCD(LANDSCAPE);
+  //myGLCD.fillScr(255,255,255);
 
   pinMode(LED1, OUTPUT);  //white button
   pinMode(LED2, OUTPUT);  //green button
