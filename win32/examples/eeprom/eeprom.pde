@@ -1,3 +1,5 @@
+// only for Pinguino 8 bits board
+
 #include <eepromlib.c>
 
 unsigned char answer;

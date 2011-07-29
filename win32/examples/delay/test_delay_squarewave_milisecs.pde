@@ -2,6 +2,7 @@
 // Modify the value of pulsewidth, and check 
 // the square wave at user pin 0 with specified width.
 // by Jesús Carmona Esteban
+// only for Pinguino 8 bits board
 
 unsigned int pulsewidth=2;
 

@@ -1,6 +1,7 @@
 // Use timer 3 as a counter with external input
 // Jean-Pierre Mandon 2010
 // a 4,7k pull-up resistor is wired on pin 10
+// only for Pinguino 8 bits boards
 
 unsigned int counts=0;
 

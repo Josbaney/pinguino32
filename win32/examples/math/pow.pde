@@ -19,7 +19,7 @@ j=2;
 result=powf(i,j);
 if ((result>2024.0)&&(result<2025.0)) 
 	{
-	Serial.print("OK");
-	Serial.print("\n\r");
+	Serial.printf("OK");
+	Serial.printf("\n\r");
 	}
 }

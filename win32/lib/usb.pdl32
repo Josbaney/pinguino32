@@ -1,0 +1,5 @@
+CDC.init init_CDC#include <__cdc.c>
+CDC.print CDCputs#include <__cdc.c>
+CDC.read CDCgets#include <__cdc.c>
+
+

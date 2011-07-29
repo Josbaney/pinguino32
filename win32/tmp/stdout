@@ -1,2 +1,2 @@
 
-C:\Users\jpm\Documents\pinguino32x_windows_rev149>C:\Users\jpm\Documents\pinguinocompiler32Windows\bin\mips-objcopy.exe -O ihex C:\Users\jpm\Documents\pinguino32x_windows_rev149\source\main32.elf C:\Users\jpm\Documents\pinguino32x_windows_rev149\source\main32.hex  
+C:\Users\jpm\Documents\Pinguino\win32\examples\zigbee>C:\Users\jpm\Documents\pinguinocompiler32Windows\bin\mips-objcopy.exe -O ihex C:\Users\jpm\Documents\Pinguino\win32\source\main32.elf C:\Users\jpm\Documents\Pinguino\win32\source\main32.hex  

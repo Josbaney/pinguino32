@@ -40,7 +40,7 @@ void loop()
 		temp[1] = t.integer;		// t.integer  is unsigned  char (1 byte)
 		temp[2] = high8(t.fraction);	// t.fraction is unsigned int (2 bytes)
 		temp[3] = low8(t.fraction);
-		usbsend(temp, 4);			// send 4-bit temp on usb bus
+		USB.send(temp, 4);			// send 4-bit temp on usb bus
 		RUNLED = RUNLED ^ 1;		// blinked led for visual debug
 		Delayms(1000);			// wait for 1 sec. before next reading
 	}
