@@ -1,0 +1,1 @@
+%1 -v -nostdlib -lgcc -I %2\tools\pic32mx\lkr\ -T %2\tools\pic32mx\lkr\procdefs1.ld -T %2\tools\pic32mx\lkr\elf32pic32mx1.x %2\source\main32.o -o %2\source\main32.elf -lc -lm -lgcc
