@@ -1,4 +1,3 @@
-SPI.init() InitSPI0#include <spi.c>
-SPI.init InitSPI#include <spi.c>
+SPI.init InitSPI0#include <spi.c>
 SPI.write WriteSPI#include <spi.c>
 SPI.read ReadSPI#include <spi.c>

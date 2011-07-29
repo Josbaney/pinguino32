@@ -1,7 +1,6 @@
 // Test blink with Pinguino
 // jean-pierre MANDON 2008
 
-
 int led1;						// led1 is an integer ( Pin )
 int led2;						// led2 is an integer ( Pin )
 int tempo;					// tempo is an integer

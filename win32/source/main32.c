@@ -18,11 +18,11 @@
     License along with this library; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 -------------------------------------------------------------------------*/
-
-#include <p32xxxx.h>
+#include <proc/p32xxxx.h>
 
 #include <system.c>
 #include "../tmp/define.h"
+#include <newlib.c>
 
 #include "user.c"
 
@@ -42,12 +42,25 @@ int main(void)
     #endif
     #ifdef __PWM__
     	pwm_init();
+    #endif
+    #ifdef __USBCDC
+    	init_CDC();
     #endif    
 	setup();
 	while (1)
 	{
+	    #ifdef __USBCDC
+    		CDCTxService();
+    	#endif    
 		loop();
 	}
 	return(0);    
 }
 
+#ifndef __SERIAL_C
+void SerialInterrupt(){};
+#endif
+
+#ifndef __MILLIS__
+void Tmr2Interrupt(){};
+#endif

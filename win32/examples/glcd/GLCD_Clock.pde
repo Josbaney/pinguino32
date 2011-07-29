@@ -1,4 +1,3 @@
-
 //Yellow LED
 #define DEBUG_LED 58
 
@@ -17,7 +16,6 @@
 
 //Bitmap
 #include <Pinguino.h>   		// bitmap  
-#include <math.h>
 
 //global vars
 u8 counter = 0;

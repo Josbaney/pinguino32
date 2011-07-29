@@ -1,3 +1,4 @@
+Serial.begin() serial_begin(9600)#include <uart18f2550.c>
 Serial.begin serial_begin#include <uart18f2550.c>
 Serial.init serial_begin#include <uart18f2550.c>
 Serial.print serial_write#include <uart18f2550.c>

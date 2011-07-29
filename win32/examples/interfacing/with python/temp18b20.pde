@@ -1,7 +1,7 @@
 /*	-----------------------------------------------------------------------
 	Pinguino example to read ds18b20 1wire temperature sensor
 	Result is sent on usb bus and can be read with temp18b20.py
-	author		RÃ©gis Blanchot
+	author		Régis Blanchot
 	first release	14/09/2010
 	last update	06/10/2010
 	IDE			Pinguino b9.2

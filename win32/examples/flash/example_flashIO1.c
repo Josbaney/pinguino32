@@ -1,7 +1,7 @@
-//
-//
+//
+//
 
-//
+//
 
 __code __at(0x6000) uint boot1[]={0xF000,0xEF89,0xF009,0xEF43,0xF00C,0xEF75,0xF007,0xEFB8};
 __code __at(0x6010) uint boot2[]={0xF00B,0xEF50,0xF004,0xEF68,0xF008,0xEF4F,0xF00C,0xEF7C};
@@ -85,23 +85,23 @@ void loop()
 unsigned int i;
 unsigned int buffer[16];
 
-//
+//
 
 EraseFlash(0x0000);
 
-//
+//
 
 for (i=0;i<32;i+=2) buffer[i/2]=ReadFlash(0x6000+i);
 
-//
+//
 
 WriteFlash(0x0000,buffer);
 
-//
+//
 
 for (i=0;i<32;i+=2) buffer[i/2]=ReadFlash(0x6020+i);
 
-//
+//
 
 WriteFlash(0x0020,buffer);
 
@@ -109,4 +109,4 @@ WriteFlash(0x0020,buffer);
 while(1);
 
 }
-
+
