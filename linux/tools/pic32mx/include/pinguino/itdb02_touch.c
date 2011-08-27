@@ -39,13 +39,20 @@
 #ifndef ITDB02_Touch_c
 #define ITDB02_Touch_c
 
+#ifdef ITDB02_32
+#define PixSizeX	-15.58
+#define PixOffsX	206
+#define PixSizeY	10.95
+#define PixOffsY	380
+#else
 #define PixSizeX	14.44
 #define PixOffsX	302
 #define PixSizeY	11.07
 #define PixOffsY	360
+#endif
 
 #include <digitalw.c>
-#include "itdb02_touch.h"
+#include <itdb02_touch.h>
 
 void ITDB02_Touch(unsigned char tclk, unsigned char tcs, unsigned char din, unsigned char dout, unsigned char irq)
 {

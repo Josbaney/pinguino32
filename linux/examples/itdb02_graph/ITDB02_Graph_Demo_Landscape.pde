@@ -11,10 +11,10 @@
 // This program requires the ITDB02_Graph (8bit mode).
 //
 //
+
 #include "pinguino32X.c"
 
-void setup()
-{
+void setup(){
   srand(127);
   //Setup the LCD
   myGLCD.InitLCD(LANDSCAPE);
@@ -22,6 +22,7 @@ void setup()
 
 int rnd(int num) {
 	return (int)(rand()%num);
+	//return num;
 }
 
 void loop()
@@ -34,7 +35,8 @@ void loop()
   //Show pinguino logo! YEAH!
   myGLCD.fillScr(255, 255, 255);
   myGLCD.drawBitmap (5, 50, 313, 132, pinguino32X, 1);
-  delay(5000);
+
+  delay(3000);
   
 // Clear the screen and draw the frame
   myGLCD.clrScr();

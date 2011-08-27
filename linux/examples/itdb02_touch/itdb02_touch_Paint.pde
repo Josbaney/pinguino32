@@ -1,6 +1,6 @@
 /*
  * ITDB02_Touch_Paint(C)2011 Marcus Fazzi
- * blog: http://vivaphp.net
+ * blog: http://fazzi.eng.br
  *
  * This program is a quick demo of how to use the library.
  *
@@ -180,7 +180,6 @@ void setup()
   myTouch.setPrecision(PREC_MEDIUM);
   
   myGLCD.InitLCD(LANDSCAPE);
-  //myGLCD.fillScr(255,255,255);
 
   pinMode(LED1, OUTPUT);  //white button
   pinMode(LED2, OUTPUT);  //green button
