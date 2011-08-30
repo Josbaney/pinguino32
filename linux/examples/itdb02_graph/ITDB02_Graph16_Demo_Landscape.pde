@@ -47,7 +47,7 @@ void loop()
   myGLCD16.fillRect(0, 226, 319, 239);
   myGLCD16.setColor(255, 255, 255);
   myGLCD16.setBackColor(255, 0, 0);
-  myGLCD16.print("*** ITDB02 - 240x320 Color Display ***", CENTER, 1, 0);
+  myGLCD16.print("*** ITDB02 - 320x240 Color Display ***", CENTER, 1, 0);
   //myGLCD16.setColor(255, 128, 128);
   myGLCD16.setColor(255,255,0);
   myGLCD16.setBackColor(64, 64, 64);

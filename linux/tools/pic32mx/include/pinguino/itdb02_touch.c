@@ -33,17 +33,29 @@
 			 1.1  - Oct   7 2010  - Fixed incompatibility with ITDB02-3.2
 			 1.2  - Oct  12 2010  - Added support for ITDB02-3.2WC
 			 1.2.1- Mar  11 2011  - Port to Pinguino32X (PIC32) by Marcus Fazzi
+             1.2.2- Aug  29 2011  - Support for ITDB02 3.2" widescreen
 
 */
 
 #ifndef ITDB02_Touch_c
 #define ITDB02_Touch_c
 
+//Use ITDB02_Touch_Calibration.pde to setup this values, for best results.
+//ITDB02 3.2" Display 320x240
 #ifdef ITDB02_32
 #define PixSizeX	-15.58
 #define PixOffsX	206
 #define PixSizeY	10.95
 #define PixOffsY	380
+
+//ITDB02 3.2" widescreen Display 400x240
+#elif defined ITDB02_32w
+#define PixSizeX	-14.41
+#define PixOffsX	323
+#define PixSizeY	-9
+#define PixOffsY	155
+
+//ITDB02 2.4" Display 320x240
 #else
 #define PixSizeX	14.44
 #define PixOffsX	302
