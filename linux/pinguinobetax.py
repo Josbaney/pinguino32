@@ -183,6 +183,22 @@ class Pinguino(wx.Frame):
             self.Centre()
 
         loc = locale.getdefaultlocale()[0][0:2]
+        # ----------------------------------------------------------------------
+        # By Wagner de Queiroz (pt_BR Language Check)  
+        # 2010-Mar,01
+        # Begin
+        # ----------------------------------------------------------------------       
+        if loc == "pt":
+             loc = locale.getdefaultlocale()[0][0:5]
+             print loc
+        if loc != "pt_BR":
+             loc = locale.getdefaultlocale()[0][0:2]              
+             print loc
+        # ----------------------------------------------------------------------
+        # By Wagner de Queiroz (pt_BR Language Check)  
+        # 2010-Mar,01
+        # END
+        # ----------------------------------------------------------------------                    
         self.lang = gettext.translation('pinguino', sys.path[0]+'/locale', languages=[loc], fallback=True)
         _=self.lang.ugettext
         
@@ -749,6 +765,7 @@ class Pinguino(wx.Frame):
         info.AddTranslator('Marin Purgar Croatian')
         info.AddTranslator('Wim Heirman Dutch')
         info.AddTranslator('Vasile Guta Ciucur Romanian')
+        info.AddTranslator('Wagner de Queiroz, Brazilian portuguese')
         wx.AboutBox(info)  
             
     def readlib(self):
