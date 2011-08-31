@@ -6,7 +6,7 @@
 	--------------------------------------------------------------------------*/
 
 #ifndef __HARDWARE_C
-	#define __HARDWARE_C
+#define __HARDWARE_C
 
 	#include "const.h"
 	#include "typedef.h"
@@ -15,15 +15,15 @@
 
 #if defined(UBW32_460) || defined(UBW32_795)
 	// UBW32 built-in leds
-    #define LED1		1//PORTEbits.RE2	// white led
-    #define LED2		2//PORTEbits.RE1	// red led
-	#define LED3		3//PORTEbits.RE0	// yellow led
-	#define LED4        4//PORTEbits.RE3	// green led	
+    #define LED1		1 //PORTEbits.RE2	// white led
+    #define LED2		2 //PORTEbits.RE1	// red led
+	#define LED3		3 //PORTEbits.RE0	// yellow led
+	#define LED4        4 //PORTEbits.RE3	// green led	
 
-	#define WHITELED	1//PORTEbits.RE2	// white led
-	#define GREENLED    2//PORTEbits.RE3	// green led	
-	#define YELLOWLED	3//PORTEbits.RE0	// yellow led
-	#define REDLED		4//PORTEbits.RE1	// red led
+	#define WHITELED	1 //PORTEbits.RE2	// white led
+	#define GREENLED    2 //PORTEbits.RE3	// green led	
+	#define YELLOWLED	3 //PORTEbits.RE0	// yellow led
+	#define REDLED		4 //PORTEbits.RE1	// red led
 
 	// UBW32 built-in buttons
 	#define PROGBUTTON  68	// pin 43 = PORTEbits.RE7 = prog button
@@ -31,14 +31,14 @@
     
 #elif defined(EMPEROR460) || defined(EMPEROR795)
 	// EMPEROR built-in leds
-	#define LED1		1//PORTEbits.RE2	// white led
-	#define LED2		2//PORTEbits.RE3	// red led
+	#define LED1		1 //PORTEbits.RE2	// white led
+	#define LED2		2 //PORTEbits.RE3	// red led
 
-    #define BLUELED	    1//PORTEbits.RE2	// blue led
-	#define REDLED		2//PORTEbits.RE3	// red led
+    #define BLUELED	    1 //PORTEbits.RE2	// blue led
+	#define REDLED		2 //PORTEbits.RE3	// red led
 
 	// UBW32 built-in buttons
-    #define USERBUTTON  68	// pin 44 = PORTEbits.RE7 = user button
+    #define USERBUTTON  43	//PORTEbits.RE7 = user button
 #endif
 
 /*	----------------------------------------------------------------------------
