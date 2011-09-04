@@ -1,1 +1,0 @@
-%1 -EL -c -march=24kc -msoft-float -D__PIC32MX__ -D%3 -D%4 -I%5 -I%2\tools\pic32mx\include\pinguino\ -I%2\tools\pic32mx\include\ -I%2\tools\pic32mx\include\non-free\ %2\source\main32.c -o %2\source\main32.o 

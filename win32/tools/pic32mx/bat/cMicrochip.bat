@@ -1,1 +1,0 @@
-%1 %2\source\main32.c -D%3 -D%4 -I%2\tools\pic32mx\include\pinguino\ -o %2\source\main32.o 

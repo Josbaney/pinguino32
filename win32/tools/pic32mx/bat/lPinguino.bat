@@ -1,1 +1,0 @@
-%1 -EL -march=24kc -nostdlib -lgcc -I%2\tools\pic32mx\ -I%2\tools\pic32mx\lkr\ -T %2\tools\pic32mx\lkr\procdefs.ld -T %2\tools\pic32mx\lkr\elf32pic32mx.x %2\source\main32.o -o %2\source\main32.elf %2\obj\non-free\processor.o %2\obj\non-free\usb\libcdc.a %2\obj\non-free\crt0.S %2\source\ISRwrapper.S -lgcc -lc -lm -lgcc
