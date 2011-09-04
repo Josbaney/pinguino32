@@ -1,5 +1,0 @@
-MMC.init MMC_init#include<mmc.c>
-MMC.response MMC_response#include<mmc.c>
-MMC.readblock MMC_read_block#include<mmc.c>
-MMC.writeblock MMC_write_block#include<mmc.c>
-MMC.getstatus MMC_get_status#include<mmc.c>

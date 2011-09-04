@@ -1,8 +1,0 @@
-Pinguino Beta 9-05
-Welcome to Pinguino Beta 9-05
-/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/user.c:6: error 0: Duplicate symbol 'byte', symbol IGNORED
-/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/../tmp/define.h:16: error 177: previously defined here
-/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/user.c:6: error 51: typedef/enum 'byte' duplicate. Previous definiton Ignored
-/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/user.c:31: error 20: Undefined identifier 'Serial'
-/home/mandon/programmation/pinguino developpement/pinguino_beta9-05_linux/source/user.c:31: error 25: Structure/Union expected left of '.->'
-
