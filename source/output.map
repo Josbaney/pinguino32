@@ -1,0 +1,1480 @@
+Archive member included because of file (symbol)
+
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                              /tmp/cc8WKUJ8.o (USBDeviceInit)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+                              /tmp/cc8WKUJ8.o (USBCheckCDCRequest)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+                              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o) (device_dsc)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+                              /tmp/cc8WKUJ8.o (atoi)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+                              /tmp/cc8WKUJ8.o (__ctype_ptr__)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+                              /tmp/cc8WKUJ8.o (free)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o) (_malloc_r)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+                              /tmp/cc8WKUJ8.o (memcmp)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+                              /tmp/cc8WKUJ8.o (memcpy)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+                              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o) (__malloc_lock)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+                              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o) (_sbrk_r)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+                              /tmp/cc8WKUJ8.o (strchr)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+                              /tmp/cc8WKUJ8.o (strcmp)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+                              /tmp/cc8WKUJ8.o (strlen)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+                              /tmp/cc8WKUJ8.o (strncmp)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+                              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o) (_strtol_r)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+                              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o) (_free_r)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+                              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o) (_impure_ptr)
+/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+                              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o) (errno)
+
+Allocating common symbols
+Common symbol       size              file
+
+gosub_stack         0x28              /tmp/cc8WKUJ8.o
+for_stack_ptr       0x4               /tmp/cc8WKUJ8.o
+for_stack           0x30              /tmp/cc8WKUJ8.o
+D                   0x4               /tmp/cc8WKUJ8.o
+pDst                0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+program             0x4               /tmp/cc8WKUJ8.o
+control_signal_bitmap
+                    0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+BDT                 0x60              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+CtrlTrfData         0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+errno               0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+USBDeviceState      0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+controlTransferState
+                    0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+cdc_tx_len          0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+UART2rpointer       0x4               /tmp/cc8WKUJ8.o
+USBInMaxPacketSize  0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+pCDCSrc             0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+cdc_data_tx         0x40              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+string              0x28              /tmp/cc8WKUJ8.o
+ptr                 0x4               /tmp/cc8WKUJ8.o
+inPipes             0x10              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+pBDTEntryIn         0xc               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+debug               0x4               /tmp/cc8WKUJ8.o
+heap_ptr            0x4               /tmp/cc8WKUJ8.o
+CDCDataOutHandle    0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+UART2wpointer       0x4               /tmp/cc8WKUJ8.o
+cdc_rx_len          0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ended               0x4               /tmp/cc8WKUJ8.o
+UART2SerialBuffer   0x80              /tmp/cc8WKUJ8.o
+line_coding         0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+filename            0x28              /tmp/cc8WKUJ8.o
+FError              0x1               /tmp/cc8WKUJ8.o
+BaudRateGen         0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+pBDTEntryOut        0xc               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+CDCDataInHandle     0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+BothEP0OutUOWNsSet  0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+cdc_data_rx         0x40              /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+mem                 0x4               /tmp/cc8WKUJ8.o
+cdc_notice          0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+pBDTEntryEP0OutNext
+                    0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+nextptr             0x4               /tmp/cc8WKUJ8.o
+variables           0x1a              /tmp/cc8WKUJ8.o
+cdc_trf_state       0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+SetupPkt            0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+pCDCDst             0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+cdc_mem_type        0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+UART1rpointer       0x4               /tmp/cc8WKUJ8.o
+UART1SerialBuffer   0x80              /tmp/cc8WKUJ8.o
+shortPacketStatus   0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+pBDTEntryEP0OutCurrent
+                    0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+USBActiveConfiguration
+                    0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+RemoteWakeup        0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+USTATcopy           0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+USBInData           0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+USBAlternateInterface
+                    0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+outPipes            0xb               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+dummy_encapsulated_cmd_response
+                    0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+gosub_stack_ptr     0x4               /tmp/cc8WKUJ8.o
+program_ptr         0x4               /tmp/cc8WKUJ8.o
+UART1wpointer       0x4               /tmp/cc8WKUJ8.o
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .reginfo       0x0000000000000000       0x18 /tmp/cc8WKUJ8.o
+ .reginfo       0x0000000000000000       0x18 /tmp/ccdpn31j.o
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/processor.o
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .reginfo       0x0000000000000000       0x18 /tmp/ccVCEPmv.o
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+kseg0_program_mem 0x000000009d006a00 0x000000000007a600 xr
+kseg0_boot_mem   0x000000009d006490 0x0000000000000970
+exception_mem    0x000000009d005000 0x0000000000001000
+kseg1_boot_mem   0x000000009d006000 0x0000000000000490
+debug_exec_mem   0x00000000bfc02000 0x0000000000000ff0
+config3          0x00000000bfc02ff0 0x0000000000000004
+config2          0x00000000bfc02ff4 0x0000000000000004
+config1          0x00000000bfc02ff8 0x0000000000000004
+config0          0x00000000bfc02ffc 0x0000000000000004
+boot_software_key 0x00000000a0000000 0x0000000000000004
+kseg1_data_mem   0x00000000a0000004 0x0000000000007ffc w !x
+sfrs             0x00000000bf800000 0x0000000000100000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+                0x0000000000002000                _min_heap_size = 0x2000
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libm.a
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/libgcc.a
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a
+LOAD /tmp/cc8WKUJ8.o
+LOAD /tmp/ccdpn31j.o
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/processor.o
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libadb.a
+LOAD /tmp/ccVCEPmv.o
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libm.a
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/libgcc.a
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/libgcc.a
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/libgcc.a
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+                0x00000000bf882030                BMXDUPBA = 0xbf882030
+                0x00000000bf882010                BMXDKPBA = 0xbf882010
+                0x00000000bf882020                BMXDUDBA = 0xbf882020
+                0x0000000000000001                PROVIDE (_vector_spacing, 0x1)
+                0x000000009d005000                _ebase_address = 0x9d005000
+                0x000000009d006000                _RESET_ADDR = 0x9d006000
+                0x000000009d006380                _BEV_EXCPT_ADDR = 0x9d006380
+                0x000000009d006480                _DBG_EXCPT_ADDR = 0x9d006480
+                0x00000000bfc02000                _DBG_CODE_ADDR = 0xbfc02000
+                0x000000009d005180                _GEN_EXCPT_ADDR = (_ebase_address + 0x180)
+
+.boot_software_key_sec
+ *(.boot_software_key_sec)
+
+.config_BFC02FF0
+ *(.config_BFC02FF0)
+
+.config_BFC02FF4
+ *(.config_BFC02FF4)
+
+.config_BFC02FF8
+ *(.config_BFC02FF8)
+
+.config_BFC02FFC
+ *(.config_BFC02FFC)
+                0x0000000000000400                PROVIDE (_min_stack_size, 0x400)
+                0x0000000000000000                PROVIDE (_min_heap_size, 0x0)
+
+.reset          0x000000009d006000       0x10
+ *(.reset)
+ .reset         0x000000009d006000       0x10 /tmp/ccdpn31j.o
+                0x000000009d006000                _reset
+
+.bev_excpt      0x000000009d006380        0x4
+ *(.bev_handler)
+ .bev_handler   0x000000009d006380        0x4 /tmp/ccdpn31j.o
+
+.dbg_excpt      0x000000009d006480        0x0
+                0x000000009d006480                . = (. + DEFINED (_DEBUGGER)?0x8:0x0)
+
+.dbg_code       0x00000000bfc02000        0x0
+                0x00000000bfc02000                . = (. + DEFINED (_DEBUGGER)?0xff0:0x0)
+
+.app_excpt      0x000000009d005180        0x4
+ *(.gen_handler)
+ .gen_handler   0x000000009d005180        0x4 /tmp/ccdpn31j.o
+
+.vector_0       0x000000009d005200        0x0
+ *(.vector_0)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_0) <= (_vector_spacing << 0x5))), function at exception vector 0 too large)
+
+.vector_1       0x000000009d005220        0x0
+ *(.vector_1)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_1) <= (_vector_spacing << 0x5))), function at exception vector 1 too large)
+
+.vector_2       0x000000009d005240        0x0
+ *(.vector_2)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_2) <= (_vector_spacing << 0x5))), function at exception vector 2 too large)
+
+.vector_3       0x000000009d005260        0x0
+ *(.vector_3)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_3) <= (_vector_spacing << 0x5))), function at exception vector 3 too large)
+
+.vector_4       0x000000009d005280        0x0
+ *(.vector_4)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_4) <= (_vector_spacing << 0x5))), function at exception vector 4 too large)
+
+.vector_5       0x000000009d0052a0        0x0
+ *(.vector_5)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_5) <= (_vector_spacing << 0x5))), function at exception vector 5 too large)
+
+.vector_6       0x000000009d0052c0        0x0
+ *(.vector_6)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_6) <= (_vector_spacing << 0x5))), function at exception vector 6 too large)
+
+.vector_7       0x000000009d0052e0        0x0
+ *(.vector_7)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_7) <= (_vector_spacing << 0x5))), function at exception vector 7 too large)
+
+.vector_8       0x000000009d005300        0xc
+ *(.vector_8)
+ .vector_8      0x000000009d005300        0xc /tmp/ccVCEPmv.o
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_8) <= (_vector_spacing << 0x5))), function at exception vector 8 too large)
+
+.vector_9       0x000000009d005320        0x0
+ *(.vector_9)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_9) <= (_vector_spacing << 0x5))), function at exception vector 9 too large)
+
+.vector_10      0x000000009d005340        0x0
+ *(.vector_10)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_10) <= (_vector_spacing << 0x5))), function at exception vector 10 too large)
+
+.vector_11      0x000000009d005360        0x0
+ *(.vector_11)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_11) <= (_vector_spacing << 0x5))), function at exception vector 11 too large)
+
+.vector_12      0x000000009d005380        0x0
+ *(.vector_12)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_12) <= (_vector_spacing << 0x5))), function at exception vector 12 too large)
+
+.vector_13      0x000000009d0053a0        0x0
+ *(.vector_13)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_13) <= (_vector_spacing << 0x5))), function at exception vector 13 too large)
+
+.vector_14      0x000000009d0053c0        0x0
+ *(.vector_14)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_14) <= (_vector_spacing << 0x5))), function at exception vector 14 too large)
+
+.vector_15      0x000000009d0053e0        0x0
+ *(.vector_15)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_15) <= (_vector_spacing << 0x5))), function at exception vector 15 too large)
+
+.vector_16      0x000000009d005400        0x0
+ *(.vector_16)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_16) <= (_vector_spacing << 0x5))), function at exception vector 16 too large)
+
+.vector_17      0x000000009d005420        0x0
+ *(.vector_17)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_17) <= (_vector_spacing << 0x5))), function at exception vector 17 too large)
+
+.vector_18      0x000000009d005440        0x0
+ *(.vector_18)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_18) <= (_vector_spacing << 0x5))), function at exception vector 18 too large)
+
+.vector_19      0x000000009d005460        0x0
+ *(.vector_19)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_19) <= (_vector_spacing << 0x5))), function at exception vector 19 too large)
+
+.vector_20      0x000000009d005480        0x0
+ *(.vector_20)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_20) <= (_vector_spacing << 0x5))), function at exception vector 20 too large)
+
+.vector_21      0x000000009d0054a0        0x0
+ *(.vector_21)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_21) <= (_vector_spacing << 0x5))), function at exception vector 21 too large)
+
+.vector_22      0x000000009d0054c0        0x0
+ *(.vector_22)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_22) <= (_vector_spacing << 0x5))), function at exception vector 22 too large)
+
+.vector_23      0x000000009d0054e0        0x0
+ *(.vector_23)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_23) <= (_vector_spacing << 0x5))), function at exception vector 23 too large)
+
+.vector_24      0x000000009d005500        0xc
+ *(.vector_24)
+ .vector_24     0x000000009d005500        0xc /tmp/ccVCEPmv.o
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_24) <= (_vector_spacing << 0x5))), function at exception vector 24 too large)
+
+.vector_25      0x000000009d005520        0x0
+ *(.vector_25)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_25) <= (_vector_spacing << 0x5))), function at exception vector 25 too large)
+
+.vector_26      0x000000009d005540        0x0
+ *(.vector_26)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_26) <= (_vector_spacing << 0x5))), function at exception vector 26 too large)
+
+.vector_27      0x000000009d005560        0x0
+ *(.vector_27)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_27) <= (_vector_spacing << 0x5))), function at exception vector 27 too large)
+
+.vector_28      0x000000009d005580        0x0
+ *(.vector_28)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_28) <= (_vector_spacing << 0x5))), function at exception vector 28 too large)
+
+.vector_29      0x000000009d0055a0        0x0
+ *(.vector_29)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_29) <= (_vector_spacing << 0x5))), function at exception vector 29 too large)
+
+.vector_30      0x000000009d0055c0        0x0
+ *(.vector_30)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_30) <= (_vector_spacing << 0x5))), function at exception vector 30 too large)
+
+.vector_31      0x000000009d0055e0        0x0
+ *(.vector_31)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_31) <= (_vector_spacing << 0x5))), function at exception vector 31 too large)
+
+.vector_32      0x000000009d005600        0xc
+ *(.vector_32)
+ .vector_32     0x000000009d005600        0xc /tmp/ccVCEPmv.o
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_32) <= (_vector_spacing << 0x5))), function at exception vector 32 too large)
+
+.vector_33      0x000000009d005620        0x0
+ *(.vector_33)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_33) <= (_vector_spacing << 0x5))), function at exception vector 33 too large)
+
+.vector_34      0x000000009d005640        0x0
+ *(.vector_34)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_34) <= (_vector_spacing << 0x5))), function at exception vector 34 too large)
+
+.vector_35      0x000000009d005660        0xc
+ *(.vector_35)
+ .vector_35     0x000000009d005660        0xc /tmp/ccVCEPmv.o
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_35) <= (_vector_spacing << 0x5))), function at exception vector 35 too large)
+
+.vector_36      0x000000009d005680        0x0
+ *(.vector_36)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_36) <= (_vector_spacing << 0x5))), function at exception vector 36 too large)
+
+.vector_37      0x000000009d0056a0        0x0
+ *(.vector_37)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_37) <= (_vector_spacing << 0x5))), function at exception vector 37 too large)
+
+.vector_38      0x000000009d0056c0        0x0
+ *(.vector_38)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_38) <= (_vector_spacing << 0x5))), function at exception vector 38 too large)
+
+.vector_39      0x000000009d0056e0        0x0
+ *(.vector_39)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_39) <= (_vector_spacing << 0x5))), function at exception vector 39 too large)
+
+.vector_40      0x000000009d005700        0x0
+ *(.vector_40)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_40) <= (_vector_spacing << 0x5))), function at exception vector 40 too large)
+
+.vector_41      0x000000009d005720        0x0
+ *(.vector_41)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_41) <= (_vector_spacing << 0x5))), function at exception vector 41 too large)
+
+.vector_42      0x000000009d005740        0x0
+ *(.vector_42)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_42) <= (_vector_spacing << 0x5))), function at exception vector 42 too large)
+
+.vector_43      0x000000009d005760        0x0
+ *(.vector_43)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_43) <= (_vector_spacing << 0x5))), function at exception vector 43 too large)
+
+.vector_44      0x000000009d005780        0x0
+ *(.vector_44)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_44) <= (_vector_spacing << 0x5))), function at exception vector 44 too large)
+
+.vector_45      0x000000009d0057a0        0x8
+ *(.vector_45)
+ .vector_45     0x000000009d0057a0        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_45) <= (_vector_spacing << 0x5))), function at exception vector 45 too large)
+
+.vector_46      0x000000009d0057c0        0x0
+ *(.vector_46)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_46) <= (_vector_spacing << 0x5))), function at exception vector 46 too large)
+
+.vector_47      0x000000009d0057e0        0x0
+ *(.vector_47)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_47) <= (_vector_spacing << 0x5))), function at exception vector 47 too large)
+
+.vector_48      0x000000009d005800        0x0
+ *(.vector_48)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_48) <= (_vector_spacing << 0x5))), function at exception vector 48 too large)
+
+.vector_49      0x000000009d005820        0x0
+ *(.vector_49)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_49) <= (_vector_spacing << 0x5))), function at exception vector 49 too large)
+
+.vector_50      0x000000009d005840        0x0
+ *(.vector_50)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_50) <= (_vector_spacing << 0x5))), function at exception vector 50 too large)
+
+.vector_51      0x000000009d005860        0x0
+ *(.vector_51)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_51) <= (_vector_spacing << 0x5))), function at exception vector 51 too large)
+
+.vector_52      0x000000009d005880        0x0
+ *(.vector_52)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_52) <= (_vector_spacing << 0x5))), function at exception vector 52 too large)
+
+.vector_53      0x000000009d0058a0        0x0
+ *(.vector_53)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_53) <= (_vector_spacing << 0x5))), function at exception vector 53 too large)
+
+.vector_54      0x000000009d0058c0        0x0
+ *(.vector_54)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_54) <= (_vector_spacing << 0x5))), function at exception vector 54 too large)
+
+.vector_55      0x000000009d0058e0        0x0
+ *(.vector_55)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_55) <= (_vector_spacing << 0x5))), function at exception vector 55 too large)
+
+.vector_56      0x000000009d005900        0x0
+ *(.vector_56)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_56) <= (_vector_spacing << 0x5))), function at exception vector 56 too large)
+
+.vector_57      0x000000009d005920        0x0
+ *(.vector_57)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_57) <= (_vector_spacing << 0x5))), function at exception vector 57 too large)
+
+.vector_58      0x000000009d005940        0x0
+ *(.vector_58)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_58) <= (_vector_spacing << 0x5))), function at exception vector 58 too large)
+
+.vector_59      0x000000009d005960        0x0
+ *(.vector_59)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_59) <= (_vector_spacing << 0x5))), function at exception vector 59 too large)
+
+.vector_60      0x000000009d005980        0x0
+ *(.vector_60)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_60) <= (_vector_spacing << 0x5))), function at exception vector 60 too large)
+
+.vector_61      0x000000009d0059a0        0x0
+ *(.vector_61)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_61) <= (_vector_spacing << 0x5))), function at exception vector 61 too large)
+
+.vector_62      0x000000009d0059c0        0x0
+ *(.vector_62)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_62) <= (_vector_spacing << 0x5))), function at exception vector 62 too large)
+
+.vector_63      0x000000009d0059e0        0x0
+ *(.vector_63)
+                0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_63) <= (_vector_spacing << 0x5))), function at exception vector 63 too large)
+
+.startup        0x000000009d006490      0x1bc
+ *(.startup)
+ .startup       0x000000009d006490      0x1bc /tmp/ccdpn31j.o
+
+.text           0x000000009d006a00     0xc048
+                0x000000009d006a00                _text_begin = .
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x000000009d006a00        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .text          0x000000009d006a00      0x124 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .text          0x000000009d006b24     0x70c0 /tmp/cc8WKUJ8.o
+                0x000000009d007130                RTCC_OutputDisable
+                0x000000009d007148                SerialUART1WriteChar
+                0x000000009d00716c                SerialUART2WriteChar
+                0x000000009d007190                SystemUnlock
+                0x000000009d0071b8                SystemLock
+                0x000000009d0071d0                Reset
+                0x000000009d00720c                GetSystemClock
+                0x000000009d0072a0                GetPeripheralClock
+                0x000000009d0072cc                SetFlashWaitStates
+                0x000000009d00733c                SetSystemClock
+                0x000000009d00757c                SetPeripheralClock
+                0x000000009d0075c0                SystemConfig
+                0x000000009d007638                GetCP0Count
+                0x000000009d007640                SetCP0Count
+                0x000000009d007650                IntSetVectorPriority
+                0x000000009d0077a8                IntGetVectorPriority
+                0x000000009d0077fc                IntGetVectorSubPriority
+                0x000000009d007850                IntClearFlag
+                0x000000009d0078a4                IntGetFlag
+                0x000000009d0078f0                IntEnable
+                0x000000009d00793c                IntDisable
+                0x000000009d007990                IntGetInterruptVectorNumber
+                0x000000009d0079a0                IntGetInterruptVectorPriority
+                0x000000009d0079b0                IntDisableInterrupts
+                0x000000009d0079bc                IntEnableInterrupts
+                0x000000009d0079c8                IntRestoreInterrupts
+                0x000000009d0079d8                IntSetEBASE
+                0x000000009d0079e8                IntConfigureSystem
+                0x000000009d007a84                Delayus
+                0x000000009d007b18                Delayms
+                0x000000009d007b50                pprintf
+                0x000000009d007b5c                psprintf
+                0x000000009d007b7c                INTEnableSystemMultiVectoredInt
+                0x000000009d007b84                INTEnableInterrupts
+                0x000000009d007b8c                mySetLineCodingHandler
+                0x000000009d007b94                USER_USB_CALLBACK_EVENT_HANDLER
+                0x000000009d007bc0                CDC_init
+                0x000000009d007be8                CDCputs
+                0x000000009d007c60                CDCgets
+                0x000000009d007c68                CDCwrite
+                0x000000009d007c74                CDCprintf
+                0x000000009d007cc8                CDCprint
+                0x000000009d007da0                CDCprintln
+                0x000000009d007dd0                CDCgetkey
+                0x000000009d007e00                CDCgetstring
+                0x000000009d007e90                bin2bcd
+                0x000000009d007ec0                bcd2bin
+                0x000000009d007edc                RTCC_ConvertTime
+                0x000000009d007f44                RTCC_ConvertDate
+                0x000000009d007fcc                RTCC_SetWriteEnable
+                0x000000009d00800c                RTCC_SetWriteDisable
+                0x000000009d00804c                RTCC_GetWriteEnable
+                0x000000009d00805c                RTCC_Enable
+                0x000000009d0080e8                RTCC_Disable
+                0x000000009d008174                RTCC_GetEnable
+                0x000000009d008184                RTCC_GetClockStatus
+                0x000000009d0081d0                RTCC_StartClock
+                0x000000009d00821c                RTCC_StopClock
+                0x000000009d008260                RTCC_init
+                0x000000009d0082d0                RTCC_Shutdown
+                0x000000009d008378                RTCC_SetTime
+                0x000000009d008454                RTCC_GetTime
+                0x000000009d008474                RTCC_SetDate
+                0x000000009d00851c                RTCC_GetDate
+                0x000000009d00853c                RTCC_SetTimeDate
+                0x000000009d0085ec                RTCC_GetTimeDate
+                0x000000009d008624                RTCC_SetCalibration
+                0x000000009d0086c4                RTCC_GetCalibration
+                0x000000009d0086d4                RTCC_Open
+                0x000000009d008774                RTCC_SetAlarmEnable
+                0x000000009d0087e0                RTCC_AlarmDisable
+                0x000000009d0087e8                RTCC_AlarmEnable
+                0x000000009d0087f0                RTCC_GetAlarmEnable
+                0x000000009d008814                RTCC_SetChimeEnable
+                0x000000009d00885c                RTCC_ChimeEnable
+                0x000000009d008888                RTCC_ChimeDisable
+                0x000000009d0088b0                RTCC_GetChimeEnable
+                0x000000009d0088d4                RTCC_SetAlarmRepeat
+                0x000000009d0088fc                RTCC_AlarmRepeatEveryHalfSecond
+                0x000000009d008924                RTCC_AlarmRepeatEverySecond
+                0x000000009d008950                RTCC_AlarmRepeatEveryTenSeconds
+                0x000000009d00897c                RTCC_AlarmRepeatEveryMinute
+                0x000000009d0089a8                RTCC_AlarmRepeatEveryTenMinutes
+                0x000000009d0089d4                RTCC_AlarmRepeatEveryHour
+                0x000000009d008a00                RTCC_AlarmRepeatEveryDay
+                0x000000009d008a2c                RTCC_AlarmRepeatEveryWeek
+                0x000000009d008a58                RTCC_AlarmRepeatEveryMonth
+                0x000000009d008a84                RTCC_AlarmRepeatEveryYear
+                0x000000009d008ab0                RTCC_GetAlarmRepeat
+                0x000000009d008ad4                RTCC_SetAlarmRepeatCount
+                0x000000009d008af8                RTCC_GetAlarmRepeatCount
+                0x000000009d008b1c                RTCC_SetAlarmTime
+                0x000000009d008b48                RTCC_GetAlarmTime
+                0x000000009d008b5c                RTCC_SetAlarmDate
+                0x000000009d008b88                RTCC_GetAlarmDate
+                0x000000009d008b9c                RTCC_SetAlarmTimeDate
+                0x000000009d008bd0                RTCC_GetAlarmTimeDate
+                0x000000009d008bec                RTCC_SetSync
+                0x000000009d008c20                RTCC_GetSync
+                0x000000009d008c30                RTCC_SetAlarmSync
+                0x000000009d008c64                RTCC_GetAlarmSync
+                0x000000009d008c74                RTCC_GetHalfSecond
+                0x000000009d008c84                RTCC_SecondsPulseOutput
+                0x000000009d008ca0                RTCC_AlarmPulseOutput
+                0x000000009d008cb8                RTCC_SetAlarmInitialPulse
+                0x000000009d008d48                RTCC_AlarmInitialPulseHigh
+                0x000000009d008d50                RTCC_AlarmInitialPulseLow
+                0x000000009d008d58                RTCC_GetAlarmInitialPulse
+                0x000000009d008d68                RTCC_AlarmInitialPulseToggle
+                0x000000009d008d8c                RTCC_SetOutputEnable
+                0x000000009d008dc0                RTCC_OutputEnable
+                0x000000009d008ddc                RTCC_GetOutputEnable
+                0x000000009d008dec                RTCC_SetAlarmIntEnable
+                0x000000009d008e38                RTCC_AlarmIntEnable
+                0x000000009d008e40                RTCC_AlarmIntDisable
+                0x000000009d008e48                OnRTCC
+                0x000000009d008e50                RTCCInterrupt
+                0x000000009d008e88                pinmode
+                0x000000009d009048                digitalwrite
+                0x000000009d009208                digitalread
+                0x000000009d009324                toggle
+                0x000000009d009358                initSD
+                0x000000009d0093c8                writeSPI
+                0x000000009d0093f4                sendSDCmd
+                0x000000009d0094f0                initMedia
+                0x000000009d009664                readSECTOR
+                0x000000009d009794                writeSECTOR
+                0x000000009d0098f4                getCD
+                0x000000009d0098fc                getWP
+                0x000000009d009904                mount
+                0x000000009d009b50                unmount
+                0x000000009d009b58                readDIR
+                0x000000009d009b78                writeDIR
+                0x000000009d009b90                findDIR
+                0x000000009d009cfc                newDIR
+                0x000000009d009df4                readFAT
+                0x000000009d009e8c                writeFAT
+                0x000000009d009f5c                nextFAT
+                0x000000009d00a020                newFAT
+                0x000000009d00a0e0                writeDATA
+                0x000000009d00a10c                readDATA
+                0x000000009d00a140                fopenM
+                0x000000009d00a610                freadM
+                0x000000009d00a814                fcloseM
+                0x000000009d00a93c                fwriteM
+                0x000000009d00aa94                listTYPE
+                0x000000009d00acd8                singlechar
+                0x000000009d00ae08                get_name_token
+                0x000000009d00ae78                tokenizer_token
+                0x000000009d00ae80                tokenizer_num
+                0x000000009d00ae88                tokenizer_string
+                0x000000009d00af38                tokenizer_finished
+                0x000000009d00af60                tokenizer_variable_num
+                0x000000009d00af70                pbasic_printf
+                0x000000009d00afb0                pbasic_error
+                0x000000009d00b008                tokenizer_error_print
+                0x000000009d00b038                pbasic_debug
+                0x000000009d00b0ac                pbasic_get_line_number
+                0x000000009d00b140                pbasic_get_line
+                0x000000009d00b1b0                pbasic_get_command
+                0x000000009d00b27c                pbasic_init
+                0x000000009d00b3d4                get_next_token
+                0x000000009d00b590                tokenizer_init
+                0x000000009d00b5b4                tokenizer_next
+                0x000000009d00b664                pbasic_exit
+                0x000000009d00b694                pbasic_accept
+                0x000000009d00b6d8                end_statement
+                0x000000009d00b6fc                toggle_statement
+                0x000000009d00b748                pin_statement
+                0x000000009d00b7bc                setpin_statement
+                0x000000009d00b830                pause_statement
+                0x000000009d00b938                rem_statement
+                0x000000009d00b98c                cmd_help
+                0x000000009d00ba74                cmd_delete
+                0x000000009d00ba98                cmd_edit
+                0x000000009d00bacc                cmd_memory
+                0x000000009d00bb08                cmd_debug
+                0x000000009d00bb84                cmd_list
+                0x000000009d00bc48                cmd_reset
+                0x000000009d00bca0                cmd_save
+                0x000000009d00bed8                cmd_dir
+                0x000000009d00bf6c                pbasic_varfactor
+                0x000000009d00c004                pbasic_expr
+                0x000000009d00c10c                pbasic_factor
+                0x000000009d00c1a4                pbasic_term
+                0x000000009d00c2ac                let_statement
+                0x000000009d00c34c                print_statement
+                0x000000009d00c4a4                for_statement
+                0x000000009d00c5c0                pbasic_relation
+                0x000000009d00c6ac                pbasic_jump_linenum
+                0x000000009d00c750                return_statement
+                0x000000009d00c7a4                gosub_statement
+                0x000000009d00c83c                goto_statement
+                0x000000009d00c864                next_statement
+                0x000000009d00c9a0                pbasic_finished
+                0x000000009d00c9d8                pbasic_set_variable
+                0x000000009d00ca00                pbasic_get_variable
+                0x000000009d00ca2c                pbasic_free
+                0x000000009d00ca70                cmd_new
+                0x000000009d00caac                cmd_load
+                0x000000009d00cd24                pbasic_statement
+                0x000000009d00ceb8                pbasic_line_statement
+                0x000000009d00ceec                cmd_run
+                0x000000009d00cf88                pbasic
+                0x000000009d00cfc0                pbasic_autorun
+                0x000000009d00cff4                if_statement
+                0x000000009d00d0b4                SerialSetDataRate
+                0x000000009d00d178                SerialGetDataRate
+                0x000000009d00d258                SerialEnable
+                0x000000009d00d294                SerialSetLineControl
+                0x000000009d00d2d0                SerialFlush
+                0x000000009d00d304                SerialPinConfigure
+                0x000000009d00d368                SerialIntConfigure
+                0x000000009d00d3f0                SerialConfigure
+                0x000000009d00d580                SerialPrintf
+                0x000000009d00d5e8                SerialAvailable
+                0x000000009d00d62c                SerialRead
+                0x000000009d00d6c8                SerialGetKey
+                0x000000009d00d73c                SerialGetString
+                0x000000009d00d7d4                SerialGetDataBuffer
+                0x000000009d00d8a0                Serial1Interrupt
+                0x000000009d00d8f4                Serial2Interrupt
+                0x000000009d00d948                sbrk
+                0x000000009d00d964                open
+                0x000000009d00d9f8                close
+                0x000000009d00da00                fstat
+                0x000000009d00da08                isatty
+                0x000000009d00da10                lseek
+                0x000000009d00da18                read
+                0x000000009d00daa0                write
+                0x000000009d00db54                setup
+                0x000000009d00db5c                loop
+                0x000000009d00db64                main
+                0x000000009d00dbd8                Tmr2Interrupt
+ .text          0x000000009d00dbe4       0x14 /tmp/ccdpn31j.o
+ .text          0x000000009d00dbf8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/processor.o
+ .text          0x000000009d00dbf8     0x29cc /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                0x000000009d00dbf8                USBDeviceInit
+                0x000000009d00deb0                _USB1Interrupt
+                0x000000009d00e330                USBStallHandler
+                0x000000009d00e3fc                USBSuspend
+                0x000000009d00e454                USBWakeFromSuspend
+                0x000000009d00e4b0                USBCtrlEPService
+                0x000000009d00e610                USBCtrlTrfSetupHandler
+                0x000000009d00e6b4                USBCtrlTrfOutHandler
+                0x000000009d00e788                USBCtrlTrfInHandler
+                0x000000009d00e920                USBPrepareForNextSetupTrf
+                0x000000009d00ea04                USBCheckStdRequest
+                0x000000009d00ebe0                USBStdFeatureReqHandler
+                0x000000009d00ee48                USBStdGetDscHandler
+                0x000000009d00efe4                USBStdGetStatusHandler
+                0x000000009d00f1b8                USBCtrlEPServiceComplete
+                0x000000009d00f614                USBCtrlTrfTxService
+                0x000000009d00f7e8                USBCtrlTrfRxService
+                0x000000009d00fb00                USBStdSetCfgHandler
+                0x000000009d00fc94                USBConfigureEndpoint
+                0x000000009d00fd78                USBEnableEndpoint
+                0x000000009d00fe1c                USBStallEndpoint
+                0x000000009d00fffc                USBTransferOnePacket
+                0x000000009d010258                USBCancelIO
+                0x000000009d01049c                USBDeviceDetach
+                0x000000009d0104d0                USBDeviceAttach
+ .text          0x000000009d0105c4      0x864 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+                0x000000009d0105c4                USBCheckCDCRequest
+                0x000000009d0107fc                CDCInitEP
+                0x000000009d010888                getsUSBUSART
+                0x000000009d0109a0                putUSBUSART
+                0x000000009d010a1c                putsUSBUSART
+                0x000000009d010b00                putrsUSBUSART
+                0x000000009d010be0                CDCTxService
+ .text          0x000000009d010e28        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .text          0x000000009d010e28      0x430 /tmp/ccVCEPmv.o
+                0x000000009d010e28                vector_8_ISR_wrapper
+                0x000000009d010f34                vector_24_ISR_wrapper
+                0x000000009d011040                vector_32_ISR_wrapper
+                0x000000009d01114c                vector_35_ISR_wrapper
+ .text          0x000000009d011258       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+                0x000000009d011258                _atoi_r
+                0x000000009d011264                atoi
+ .text          0x000000009d011270        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .text          0x000000009d011270       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+                0x000000009d011270                free
+                0x000000009d011280                malloc
+ .text          0x000000009d011290      0x854 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                0x000000009d011290                _malloc_r
+ .text          0x000000009d011ae4       0xa4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+                0x000000009d011ae4                memcmp
+ .text          0x000000009d011b88      0x194 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+                0x000000009d011b88                memcpy
+ .text          0x000000009d011d1c       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+                0x000000009d011d1c                __malloc_lock
+                0x000000009d011d24                __malloc_unlock
+ .text          0x000000009d011d2c       0x58 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+                0x000000009d011d2c                _sbrk_r
+ .text          0x000000009d011d84      0x218 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+                0x000000009d011d84                strchr
+ .text          0x000000009d011f9c       0x88 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+                0x000000009d011f9c                strcmp
+ .text          0x000000009d012024       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+                0x000000009d012024                strlen
+ .text          0x000000009d01203c      0x120 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+                0x000000009d01203c                strncmp
+ .text          0x000000009d01215c      0x224 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+                0x000000009d01215c                _strtol_r
+                0x000000009d012364                strtol
+ .text          0x000000009d012380      0x418 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+                0x000000009d012380                _malloc_trim_r
+                0x000000009d0124a4                _free_r
+ .text          0x000000009d012798        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .text          0x000000009d012798      0x258 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+                0x000000009d012798                _wrapup_reent
+                0x000000009d012860                cleanup_glue
+                0x000000009d0128a4                _reclaim_reent
+ .text          0x000000009d0129f0       0x58 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+ .text          0x000000009d012a48        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ *(.text.*personality*)
+ *(.gnu.warning)
+ *(.mips16.fn.*)
+ *(.mips16.call.*)
+                0x000000009d012a48                _text_end = .
+
+.init           0x000000009d012a48       0x38
+ .init          0x000000009d012a48        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+                0x000000009d012a48                _init
+ .init          0x000000009d012a50       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .init          0x000000009d012a60       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+ .init          0x000000009d012a70       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+
+.fini           0x000000009d012a80       0x28
+ .fini          0x000000009d012a80        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+                0x000000009d012a80                _fini
+ .fini          0x000000009d012a88       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .fini          0x000000009d012a98       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+
+.rodata         0x000000009d012aa8     0x19e8
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x000000009d012aa8     0x118a /tmp/cc8WKUJ8.o
+                                       0x11b8 (size before relaxing)
+ *fill*         0x000000009d013c32        0x2 00
+ .rodata        0x000000009d013c34      0x444 /tmp/cc8WKUJ8.o
+                0x000000009d013db0                portmask
+                0x000000009d013e30                pinmask
+                0x000000009d013eb0                keywords
+ .rodata        0x000000009d014078       0x30 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .rodata        0x000000009d0140a8       0x8c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .rodata        0x000000009d014134       0xd4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+                0x000000009d014134                device_dsc
+                0x000000009d014148                configDescriptor1
+                0x000000009d01418c                sd000
+                0x000000009d014190                sd001
+                0x000000009d0141c4                sd002
+                0x000000009d0141f8                USB_CD_Ptr
+                0x000000009d0141fc                USB_SD_Ptr
+ .rodata        0x000000009d014208      0x284 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+                0x000000009d014208                _ctype_
+ .rodata.str1.4
+                0x000000009d01448c        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ *(.rodata1)
+                0x000000009d014490                . = ALIGN (0x4)
+
+.sdata2         0x000000009d014490        0x0
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x000000009d014490                . = ALIGN (0x4)
+
+.sbss2          0x000000009d014490        0x0
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+                0x000000009d014490                . = ALIGN (0x4)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x000000009d014490        0x4
+ *(.eh_frame)
+ .eh_frame      0x000000009d014490        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .eh_frame      0x000000009d014490        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+
+.rel.dyn        0x000000009d014494        0x0
+ .rel.dyn       0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+
+.dbg_data       0x00000000a0000004        0x0
+                0x00000000a0000004                . = (. + DEFINED (_DEBUGGER)?0x200:0x0)
+
+.data           0x00000000a0000008      0x808 load address 0x000000009d014494
+                0x00000000a0000008                _data_begin = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .data          0x00000000a0000008        0x0 /tmp/cc8WKUJ8.o
+ .data          0x00000000a0000008        0x0 /tmp/ccdpn31j.o
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/processor.o
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .data          0x00000000a0000008        0x0 /tmp/ccVCEPmv.o
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .data          0x00000000a0000008      0x408 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a0000008                __malloc_av_
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .data          0x00000000a0000410      0x400 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .data          0x00000000a0000810        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .data          0x00000000a0000810        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+ .data          0x00000000a0000810        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ *(.gnu.linkonce.d.*personality*)
+ *(.data1)
+                0x000000009d014494                _data_image_begin = LOADADDR (.data)
+
+.ctors          0x00000000a0000810        0x8 load address 0x000000009d014c9c
+ .ctors         0x00000000a0000810        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .ctors         0x00000000a0000814        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+
+.dtors          0x00000000a0000818        0x8 load address 0x000000009d014ca4
+ .dtors         0x00000000a0000818        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .dtors         0x00000000a000081c        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+                0x00000000a000081c                __DTOR_END__
+
+.jcr            0x00000000a0000820        0x4 load address 0x000000009d014cac
+ .jcr           0x00000000a0000820        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .jcr           0x00000000a0000820        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+
+.eh_frame
+ *(.eh_frame)
+                0x00000000a0008820                _gp = (ALIGN (0x10) + 0x7ff0)
+
+.got
+ *(.got.plt)
+ *(.got)
+
+.sdata          0x00000000a0000824       0x20 load address 0x000000009d014cb0
+                0x00000000a0000824                _sdata_begin = .
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x00000000a0000824        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+                0x00000000a0000824                __dso_handle
+ .sdata         0x00000000a0000828        0x4 /tmp/cc8WKUJ8.o
+                0x00000000a0000828                autorun
+ .sdata         0x00000000a000082c        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+                0x00000000a000082c                __ctype_ptr
+                0x00000000a0000830                __ctype_ptr__
+ .sdata         0x00000000a0000834        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a0000834                __malloc_trim_threshold
+                0x00000000a0000838                __malloc_sbrk_base
+ .sdata         0x00000000a000083c        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+                0x00000000a000083c                _impure_ptr
+                0x00000000a0000840                _global_impure_ptr
+                0x00000000a0000844                _sdata_end = .
+
+.lit8
+ *(.lit8)
+
+.lit4
+ *(.lit4)
+                0x00000000a0000844                . = ALIGN (0x4)
+                0x00000000a0000844                _data_end = .
+                0x00000000a0000844                _bss_begin = .
+
+.sbss           0x00000000a0000844       0xe4 load address 0x000000009d014cd0
+                0x00000000a0000844                _sbss_begin = .
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x00000000a0000844        0xc /tmp/cc8WKUJ8.o
+                0x00000000a0000844                current_token
+ .sbss          0x00000000a0000850        0xc /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a0000850                __malloc_top_pad
+                0x00000000a0000854                __malloc_max_sbrked_mem
+                0x00000000a0000858                __malloc_max_total_mem
+ *(.scommon)
+ .scommon       0x00000000a000085c       0x40 /tmp/cc8WKUJ8.o
+                0x00000000a000085c                for_stack_ptr
+                0x00000000a0000860                D
+                0x00000000a0000864                program
+                0x00000000a0000868                UART2rpointer
+                0x00000000a000086c                ptr
+                0x00000000a0000870                debug
+                0x00000000a0000874                heap_ptr
+                0x00000000a0000878                UART2wpointer
+                0x00000000a000087c                ended
+                0x00000000a0000880                FError
+                0x00000000a0000884                mem
+                0x00000000a0000888                nextptr
+                0x00000000a000088c                UART1rpointer
+                0x00000000a0000890                gosub_stack_ptr
+                0x00000000a0000894                program_ptr
+                0x00000000a0000898                UART1wpointer
+ .scommon       0x00000000a000089c       0x45 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                0x00000000a000089c                pDst
+                0x00000000a00008a0                CtrlTrfData
+                0x00000000a00008a8                USBDeviceState
+                0x00000000a00008ac                controlTransferState
+                0x00000000a00008b0                USBInMaxPacketSize
+                0x00000000a00008b4                BothEP0OutUOWNsSet
+                0x00000000a00008b8                pBDTEntryEP0OutNext
+                0x00000000a00008bc                SetupPkt
+                0x00000000a00008c4                shortPacketStatus
+                0x00000000a00008c8                pBDTEntryEP0OutCurrent
+                0x00000000a00008cc                USBActiveConfiguration
+                0x00000000a00008d0                RemoteWakeup
+                0x00000000a00008d4                USTATcopy
+                0x00000000a00008d8                USBInData
+                0x00000000a00008e0                USBAlternateInterface
+ *fill*         0x00000000a00008e1        0x3 00
+ .scommon       0x00000000a00008e4       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+                0x00000000a00008e4                control_signal_bitmap
+                0x00000000a00008e8                cdc_tx_len
+                0x00000000a00008ec                pCDCSrc
+                0x00000000a00008f0                CDCDataOutHandle
+                0x00000000a00008f4                cdc_rx_len
+                0x00000000a00008f8                line_coding
+                0x00000000a0000900                BaudRateGen
+                0x00000000a0000904                CDCDataInHandle
+                0x00000000a0000908                cdc_notice
+                0x00000000a0000910                cdc_trf_state
+                0x00000000a0000914                pCDCDst
+                0x00000000a0000918                cdc_mem_type
+                0x00000000a000091c                dummy_encapsulated_cmd_response
+ .scommon       0x00000000a0000924        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+                0x00000000a0000924                errno
+                0x00000000a0000928                _sbss_end = .
+
+.bss            0x00000000a0000a00      0x514 load address 0x000000009d014cd0
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000a0000a00        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .bss           0x00000000a0000a00       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .bss           0x00000000a0000a20       0xa0 /tmp/cc8WKUJ8.o
+ .bss           0x00000000a0000ac0        0x0 /tmp/ccdpn31j.o
+ .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/processor.o
+ .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .bss           0x00000000a0000ac0        0x0 /tmp/ccVCEPmv.o
+ .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .bss           0x00000000a0000ac0       0x28 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a0000ac0                __malloc_current_mallinfo
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+ .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ *(COMMON)
+ COMMON         0x00000000a0000ae8      0x1c4 /tmp/cc8WKUJ8.o
+                0x00000000a0000ae8                gosub_stack
+                0x00000000a0000b10                for_stack
+                0x00000000a0000b40                string
+                0x00000000a0000b68                UART2SerialBuffer
+                0x00000000a0000be8                filename
+                0x00000000a0000c10                variables
+                0x00000000a0000c2c                UART1SerialBuffer
+ *fill*         0x00000000a0000cac      0x154 00
+ COMMON         0x00000000a0000e00       0x93 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                0x00000000a0000e00                BDT
+                0x00000000a0000e60                inPipes
+                0x00000000a0000e70                pBDTEntryIn
+                0x00000000a0000e7c                pBDTEntryOut
+                0x00000000a0000e88                outPipes
+ *fill*         0x00000000a0000e93        0x1 00
+ COMMON         0x00000000a0000e94       0x80 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+                0x00000000a0000e94                cdc_data_tx
+                0x00000000a0000ed4                cdc_data_rx
+                0x00000000a0000f14                . = ALIGN (0x4)
+                0x00000000a0000f14                . = ALIGN (0x4)
+                0x00000000a0000f14                _end = .
+                0x00000000a0000f14                _bss_end = .
+
+.heap           0x00000000a0000f14     0x2000 load address 0x000000009d014cd0
+                0x00000000a0000f14                _heap = .
+                0x00000000a0002f14                . = (. + _min_heap_size)
+ *fill*         0x00000000a0000f14     0x2000 00
+
+.stack          0x00000000a0002f14      0x400 load address 0x000000009d014cd0
+                0x00000000a0002f14                _splim = .
+                0x00000000a0002f14                _SPLIM = .
+                0x00000000a0003314                . = (. + _min_stack_size)
+ *fill*         0x00000000a0002f14      0x400 00
+
+.ramfunc        0x00000000a0003800        0x0 load address 0x000000009d014cd0
+                0x00000000a0003800                _ramfunc_begin = .
+ *(.ramfunc .ramfunc.*)
+                0x00000000a0003800                . = ALIGN (0x4)
+                0x00000000a0003800                _ramfunc_end = .
+                0x000000009d014cd0                _ramfunc_image_begin = LOADADDR (.ramfunc)
+                0x0000000000000000                _ramfunc_length = SIZEOF (.ramfunc)
+                0x00000000000037fc                _bmxdkpba_address = (_ramfunc_begin - ORIGIN (kseg1_data_mem))
+                0x0000000000007ffc                _bmxdudba_address = 0x7ffc
+                0x0000000000007ffc                _bmxdupba_address = 0x7ffc
+                0x00000000a0008000                _stack = (_ramfunc_length > 0x0)?(_ramfunc_begin - 0x4):(ORIGIN (kseg1_data_mem) + 0x7ffc)
+                0x0000000000000001                ASSERT (((_min_stack_size + _min_heap_size) <= (_stack - _heap)), Not enough space to allocate both stack and heap.  Reduce heap and/or stack size.)
+
+.pdr            0x0000000000000000     0x2580
+ *(.pdr)
+ .pdr           0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .pdr           0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .pdr           0x0000000000000000     0x1da0 /tmp/cc8WKUJ8.o
+ .pdr           0x0000000000001da0       0xa0 /tmp/ccdpn31j.o
+ .pdr           0x0000000000001e40        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/processor.o
+ .pdr           0x0000000000001e40      0x340 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .pdr           0x0000000000002180       0xe0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .pdr           0x0000000000002260        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .pdr           0x0000000000002260       0x80 /tmp/ccVCEPmv.o
+ .pdr           0x00000000000022e0       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .pdr           0x0000000000002320        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .pdr           0x0000000000002320       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .pdr           0x0000000000002360       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .pdr           0x0000000000002380       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .pdr           0x00000000000023a0       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .pdr           0x00000000000023c0       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .pdr           0x0000000000002400       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .pdr           0x0000000000002420       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .pdr           0x0000000000002440       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .pdr           0x0000000000002460       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .pdr           0x0000000000002480       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .pdr           0x00000000000024a0       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .pdr           0x00000000000024e0       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .pdr           0x0000000000002520        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .pdr           0x0000000000002520       0x60 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .pdr           0x0000000000002580        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+ .pdr           0x0000000000002580        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+
+.reginfo        0x0000000000000000       0x18
+ *(.reginfo)
+ .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .mdebug.abi32  0x0000000000000000        0x0 /tmp/cc8WKUJ8.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+ .gnu.attributes
+                0x0000000000000010       0x10 /tmp/cc8WKUJ8.o
+ .gnu.attributes
+                0x0000000000000020       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .gnu.attributes
+                0x0000000000000030       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .gnu.attributes
+                0x0000000000000040       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .gnu.attributes
+                0x0000000000000050       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .gnu.attributes
+                0x0000000000000060       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .gnu.attributes
+                0x0000000000000070       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .gnu.attributes
+                0x0000000000000080       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .gnu.attributes
+                0x0000000000000090       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .gnu.attributes
+                0x00000000000000a0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .gnu.attributes
+                0x00000000000000b0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .gnu.attributes
+                0x00000000000000c0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .gnu.attributes
+                0x00000000000000d0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .gnu.attributes
+                0x00000000000000e0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .gnu.attributes
+                0x00000000000000f0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .gnu.attributes
+                0x0000000000000100       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .gnu.attributes
+                0x0000000000000110       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .gnu.attributes
+                0x0000000000000120       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+
+.comment        0x0000000000000000      0x23b
+ *(.comment)
+ .comment       0x0000000000000000       0x2b /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+                                         0x2c (size before relaxing)
+ .comment       0x0000000000000000       0x2c /tmp/cc8WKUJ8.o
+ .comment       0x000000000000002b       0x50 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .comment       0x000000000000007b       0x50 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .comment       0x00000000000000cb       0x50 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .comment       0x000000000000011b       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .comment       0x000000000000012d       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .comment       0x000000000000013f       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .comment       0x0000000000000151       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .comment       0x0000000000000163       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .comment       0x0000000000000175       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .comment       0x0000000000000187       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .comment       0x0000000000000199       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .comment       0x00000000000001ab       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .comment       0x00000000000001bd       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .comment       0x00000000000001cf       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .comment       0x00000000000001e1       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .comment       0x00000000000001f3       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .comment       0x0000000000000205       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .comment       0x0000000000000217       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .comment       0x0000000000000229       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .comment       0x0000000000000000       0x2c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x1f0
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .debug_aranges
+                0x0000000000000028       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_aranges
+                0x0000000000000048       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_aranges
+                0x0000000000000068       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_aranges
+                0x0000000000000088       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_aranges
+                0x00000000000000a8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_aranges
+                0x00000000000000c8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_aranges
+                0x00000000000000e8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_aranges
+                0x0000000000000108       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .debug_aranges
+                0x0000000000000128       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_aranges
+                0x0000000000000148       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .debug_aranges
+                0x0000000000000168       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_aranges
+                0x0000000000000188       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .debug_aranges
+                0x00000000000001a8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .debug_aranges
+                0x00000000000001c8       0x28 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+
+.debug_pubnames
+                0x0000000000000000      0x32a
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000       0x27 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_pubnames
+                0x0000000000000027       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_pubnames
+                0x0000000000000067       0x26 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_pubnames
+                0x000000000000008d       0xce /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_pubnames
+                0x000000000000015b       0x1d /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_pubnames
+                0x0000000000000178       0x1d /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_pubnames
+                0x0000000000000195       0x38 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_pubnames
+                0x00000000000001cd       0x1e /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_pubnames
+                0x00000000000001eb       0x1d /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .debug_pubnames
+                0x0000000000000208       0x1d /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_pubnames
+                0x0000000000000225       0x1e /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .debug_pubnames
+                0x0000000000000243       0x2b /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_pubnames
+                0x000000000000026e       0x31 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .debug_pubnames
+                0x000000000000029f       0x39 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .debug_pubnames
+                0x00000000000002d8       0x52 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+
+.debug_info     0x0000000000000000     0x64ad
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0xb0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .debug_info    0x00000000000000b0      0x975 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_info    0x0000000000000a25       0xae /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_info    0x0000000000000ad3      0x983 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_info    0x0000000000001456      0xce1 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_info    0x0000000000002137      0x115 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_info    0x000000000000224c      0x196 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_info    0x00000000000023e2      0x96c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_info    0x0000000000002d4e      0x975 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_info    0x00000000000036c3      0x114 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .debug_info    0x00000000000037d7      0x127 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_info    0x00000000000038fe       0x76 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_info    0x0000000000003974       0xf1 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .debug_info    0x0000000000003a65      0xa35 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_info    0x000000000000449a      0xbde /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .debug_info    0x0000000000005078      0x94a /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .debug_info    0x00000000000059c2      0xa3b /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .debug_info    0x00000000000063fd       0xb0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+
+.debug_abbrev   0x0000000000000000     0x1365
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .debug_abbrev  0x0000000000000012      0x185 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_abbrev  0x0000000000000197       0x6a /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_abbrev  0x0000000000000201      0x196 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_abbrev  0x0000000000000397      0x222 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_abbrev  0x00000000000005b9       0x88 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x0000000000000641       0xc8 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x0000000000000709      0x176 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_abbrev  0x000000000000087f      0x19a /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_abbrev  0x0000000000000a19       0x99 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .debug_abbrev  0x0000000000000ab2       0xa6 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_abbrev  0x0000000000000b58       0x33 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_abbrev  0x0000000000000b8b       0x99 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .debug_abbrev  0x0000000000000c24      0x201 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_abbrev  0x0000000000000e25      0x1e8 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .debug_abbrev  0x000000000000100d      0x160 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .debug_abbrev  0x000000000000116d      0x1e6 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .debug_abbrev  0x0000000000001353       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+
+.debug_line     0x0000000000000000     0x1008
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0x69 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .debug_line    0x0000000000000069       0xec /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_line    0x0000000000000155       0x5b /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_line    0x00000000000001b0       0xf0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_line    0x00000000000002a0      0x246 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_line    0x00000000000004e6       0xbd /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_line    0x00000000000005a3       0xf7 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_line    0x000000000000069a       0xec /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_line    0x0000000000000786       0xf0 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_line    0x0000000000000876       0xaf /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .debug_line    0x0000000000000925       0x8e /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_line    0x00000000000009b3       0x1d /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_line    0x00000000000009d0       0xca /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .debug_line    0x0000000000000a9a      0x183 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_line    0x0000000000000c1d      0x175 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .debug_line    0x0000000000000d92       0xda /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+ .debug_line    0x0000000000000e6c      0x131 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .debug_line    0x0000000000000f9d       0x6b /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+
+.debug_frame    0x0000000000000000      0x284
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x30 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_frame   0x0000000000000030       0x30 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_frame   0x0000000000000060       0x38 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_frame   0x0000000000000098       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00000000000000b8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_frame   0x00000000000000d8       0x30 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000000108       0x2c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_frame   0x0000000000000134       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .debug_frame   0x0000000000000154       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_frame   0x0000000000000174       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .debug_frame   0x0000000000000194       0x38 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_frame   0x00000000000001cc       0x4c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .debug_frame   0x0000000000000218       0x6c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+
+.debug_str      0x0000000000000000      0xc58
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x452 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+                                        0x4bd (size before relaxing)
+ .debug_str     0x0000000000000452       0xa5 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+                                         0xb9 (size before relaxing)
+ .debug_str     0x00000000000004f7       0x54 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+                                        0x4dd (size before relaxing)
+ .debug_str     0x000000000000054b      0x209 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                                        0x6b2 (size before relaxing)
+ .debug_str     0x0000000000000754       0x83 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+                                        0x122 (size before relaxing)
+ .debug_str     0x00000000000007d7       0xe2 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+                                        0x113 (size before relaxing)
+ .debug_str     0x00000000000008b9       0x6e /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+                                        0x4e4 (size before relaxing)
+ .debug_str     0x0000000000000927       0x90 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+                                        0x4cc (size before relaxing)
+ .debug_str     0x00000000000009b7       0x55 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+                                        0x12d (size before relaxing)
+ .debug_str     0x0000000000000a0c       0x51 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+                                        0x12f (size before relaxing)
+ .debug_str     0x0000000000000a5d       0x45 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strlen.o)
+                                        0x123 (size before relaxing)
+ .debug_str     0x0000000000000aa2       0x45 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+                                        0x124 (size before relaxing)
+ .debug_str     0x0000000000000ae7       0x67 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+                                        0x501 (size before relaxing)
+ .debug_str     0x0000000000000b4e       0x3c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+                                        0x604 (size before relaxing)
+ .debug_str     0x0000000000000b8a       0x5a /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+                                        0x4db (size before relaxing)
+ .debug_str     0x0000000000000be4       0x74 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+                                        0x500 (size before relaxing)
+
+.debug_loc      0x0000000000000000     0x1785
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x39 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_loc     0x0000000000000039       0x3c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_loc     0x0000000000000075      0x7f4 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_loc     0x0000000000000869      0x16c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_loc     0x00000000000009d5      0x2c5 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_loc     0x0000000000000c9a       0x5b /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_loc     0x0000000000000cf5      0x12d /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strchr.o)
+ .debug_loc     0x0000000000000e22       0xf6 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_loc     0x0000000000000f18       0x3c /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strncmp.o)
+ .debug_loc     0x0000000000000f54      0x232 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_loc     0x0000000000001186      0x418 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
+ .debug_loc     0x000000000000159e      0x1e7 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(/home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main32.elf elf32-littlemips)
+
+.debug_ranges   0x0000000000000000       0xd8
+ .debug_ranges  0x0000000000000000       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .debug_ranges  0x0000000000000020       0x80 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_ranges  0x00000000000000a0       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_ranges  0x00000000000000b8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o

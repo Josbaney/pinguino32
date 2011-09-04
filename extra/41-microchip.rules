@@ -1,0 +1,16 @@
+# sudo cp 41-microchip.rules /etc/udev/rules.d/
+# sudo groupadd microchip
+# sudo usermod -a -G microchip $USER
+#
+# Pinguino (PIC18F)
+ATTR{idVendor}=="04d8", ATTR{idProduct}=="feaa", MODE="0660",GROUP="plugdev"
+#
+# UBW32/Pinguino32X (PIC32MX)
+ATTR{idVendor}=="04d8", ATTR{idProduct}=="003c", MODE="0660",GROUP="plugdev"
+#
+# Pickit 2
+ATTR{idVendor}=="04d8", ATTR{idProduct}=="0033", MODE="0660",GROUP="plugdev"
+#
+# Pickit 3
+ATTR{idVendor}=="04d8", ATTR{idProduct}=="900a", MODE="0660",GROUP="plugdev"
+

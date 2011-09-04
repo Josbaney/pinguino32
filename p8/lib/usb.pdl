@@ -1,0 +1,12 @@
+CDC.puts CDCputs#include <__cdc.c>
+CDC.write CDCwrite#include <__cdc.c>
+CDC.print CDCprint#include <__cdc.c>
+CDC.println CDCprintln#include <__cdc.c>
+CDC.printf CDCprintf#include <__cdc.c>
+CDC.read CDCgets#include <__cdc.c>
+CDC.getKey CDCgetkey#include <__cdc.c>
+CDC.getString CDCgetstring#include <__cdc.c>
+USB.read usbread#define __USB__
+USB.send usbsend#define __USB__
+USB.sendint usbsendint#define __USB__
+USB.available usbavailable#define __USB__

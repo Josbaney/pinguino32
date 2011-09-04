@@ -1,0 +1,13 @@
+FATFS FATFS#include <sd/pff.c>
+SD.init disk_initialize#include <sd/diskio.c>
+SD.readSector disk_readp#include <sd/diskio.c>
+SD.writeSector disk_writep#include <sd/diskio.c>
+SD.mount pf_mount#include <sd/pff.c>
+SD.unmount pf_unmount#include <sd/pff.c>
+SD.open pf_open#include <sd/pff.c>
+SD.read pf_read#include <sd/pff.c>
+SD.write pf_write#include <sd/pff.c>
+SD.lseek pf_lseek#include <sd/pff.c>
+SD.opendir pf_opendir#include <sd/pff.c>
+SD.readdir pf_readdir#include <sd/pff.c>
+

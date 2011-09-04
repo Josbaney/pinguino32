@@ -1,0 +1,116 @@
+# ------------------------------------------------------------------------------
+# Makefile.linux \ 32-bit Pinguino
+# Regis Blanchot <rblanchot@gmail.com> 
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# directories
+# ------------------------------------------------------------------------------
+# HOME, PDEDIR, PROC & BOARD are defined in pinguinobetax.py
+
+
+OSDIR			=	linux
+SRCDIR		=	$(HOME)/source
+P32DIR		=	$(HOME)/p32
+P32CORE		=	$(HOME)/$(OSDIR)/p32
+BINDIR		=	$(P32CORE)/bin
+INCDIR		=	$(P32DIR)/include
+LKRDIR		=	$(P32DIR)/lkr
+OBJDIR		=	$(P32DIR)/obj/non-free
+
+INCLUDEDIRS	=	-I$(INCDIR)/non-free\
+					-I$(INCDIR)/pinguino/basics\
+					-I$(INCDIR)/pinguino/libraries\
+					-I$(LKRDIR)\
+					-I$(PDEDIR)\
+					-I$(OBJDIR)
+
+#					-I$(P32DIR)/bin/$(OSDIR)/mips-elf/include\
+#					-I$(SRCDIR)\
+#					-I$(OBJDIR)/usb
+
+LIBDIRS		=	-L$(OBJDIR)/usb
+
+# ------------------------------------------------------------------------------
+# commands
+# ------------------------------------------------------------------------------
+
+CC				=	$(BINDIR)/mips-elf-gcc
+OBJC			=	$(BINDIR)/mips-elf-objcopy
+LIBS			=	-lm -lgcc -lc
+#CC				=	$(BINDIR)/mips-elf-g++
+#LIBS			=	-lstdc++ -lm -lgcc -lc
+RM				=	rm -f -v
+CP				=	cp
+MV				=	mv
+
+# ------------------------------------------------------------------------------
+# flags
+# ------------------------------------------------------------------------------
+
+#					-O2 -EL -march=24kc\
+#					-c\
+#					-x c++
+#					-x c
+#					-pedantic -Wall\
+#					-std=c99 
+
+CFLAGS		=	-fdollars-in-identifiers $(INCLUDEDIRS)
+
+LDFLAGS		=	$(LIBDIRS) $(LIBS)
+
+ELF_FLAGS	=	-O2 -EL -march=24kc\
+					-msoft-float\
+					-Wl,--defsym,_min_heap_size=8192\
+					-Wl,-Map=$(SRCDIR)/output.map\
+					-D __PIC32MX__ -D __$(PROC)__ -D $(BOARD)\
+					-T$(LKRDIR)/procdefs.ld \
+					-T$(LKRDIR)/elf32pic32mx.x
+
+#-------------------------------------------------------------------------------
+#	rules
+#-------------------------------------------------------------------------------
+
+all: clean copy link exec correct
+
+clean:
+	#----------------------------------------------------------------------------
+	#	clean
+	#----------------------------------------------------------------------------
+	$(RM) $(SRCDIR)/main32.o
+	$(RM) $(SRCDIR)/main32.elf
+	$(RM) $(SRCDIR)/main32.hex
+	$(RM) $(OBJDIR)/processor.o
+
+copy:
+	#----------------------------------------------------------------------------
+	#	copy
+	#----------------------------------------------------------------------------
+	cp $(OBJDIR)/$(PROC).o $(OBJDIR)/processor.o
+
+link:
+	#----------------------------------------------------------------------------
+	#	link
+	#----------------------------------------------------------------------------
+	$(CC) $(ELF_FLAGS) $(LDFLAGS) $(CFLAGS) -o $(SRCDIR)/main32.elf $(SRCDIR)/main32.c\
+		$(OBJDIR)/crt0.S\
+		$(OBJDIR)/processor.o\
+		$(OBJDIR)/usb/libcdc.a\
+		$(OBJDIR)/usb/libadb.a\
+		$(LKRDIR)/ISRwrapper.S\
+		$(INCDIR)/non-free/p32xxxx.h\
+		-lm -lgcc -lc
+
+exec:
+	#----------------------------------------------------------------------------
+	#	exec
+	#----------------------------------------------------------------------------
+	$(OBJC) -O ihex $(SRCDIR)/main32.elf $(SRCDIR)/main32.hex
+
+correct:
+	#----------------------------------------------------------------------------
+	#	correct
+	#----------------------------------------------------------------------------
+	grep --binary --invert-match '^:040000059D006000FA' $(SRCDIR)/main32.hex > $(SRCDIR)/temp.hex
+	mv $(SRCDIR)/temp.hex $(SRCDIR)/main32.hex      
+
