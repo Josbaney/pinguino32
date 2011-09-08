@@ -51,7 +51,7 @@
 
 	void 	ITDB02_Touch(unsigned char tclk, unsigned char tcs, unsigned char tdin, unsigned char dout, unsigned char irq);
 	void	InitTouch(unsigned char orientation);
-	void	read();
+	void	touch_read();
 	unsigned char	dataAvailable();
 	int		getX();
 	int		getY();

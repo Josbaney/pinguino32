@@ -49,16 +49,18 @@
 			 
 			 2.6  - Mar  08 2011  - Fixed a bug in printNumF when the number to be printed
 									was (-)0.something
+             
+             2.6  - Jun  09 2011  - Support ITDB02 16bit bus version, PORTD on PIC32 has 16 pins! ;-)
 
 */
 
-#ifndef ITDB02_Graph_c
-#define ITDB02_Graph_c
+#ifndef ITDB02_Graph16_c
+#define ITDB02_Graph16_c
 
-//TouchScreen using 2.4" wide display pre-calibrated
-#define ITDB02_24
+//TouchScreen using 3.2" display pre-calibrated
+#define ITDB02_32
 
-#include <itdb02/itdb02_graph.h>
+#include <itdb02/itdb02_graph16.h>
 #include <delay.c>
 
 #include <itdb02/SmallFont.c>
@@ -67,35 +69,36 @@
 #include <itdb02/BigFont.c>
 #endif
 
-void LCD_Writ_Bus(int VH,int VL){
-  LCD_DATA_BUS = VH;
+void LCD_Writ_Bus(int data)
+{
+  LCD_DATA_BUS = data;
   fastWriteLow(LCD_WR);
   fastWriteHigh(LCD_WR);
-  LCD_DATA_BUS = VL;
+  /*LCD_DATA_BUS = VL;
   fastWriteLow(LCD_WR);
-  fastWriteHigh(LCD_WR);
+  fastWriteHigh(LCD_WR);*/
 }
 
-void LCD_Write_COM(int VH,int VL) {   
+void LCD_Write_COM(int data){   
   fastWriteLow(LCD_RS);
-  LCD_Writ_Bus(VH,VL);
+  LCD_Writ_Bus(data);
 }
 
-void LCD_Write_DATA(int VH,int VL){
+void LCD_Write_DATA(int data){
   fastWriteHigh(LCD_RS);
-  LCD_Writ_Bus(VH,VL);
+  LCD_Writ_Bus(data);
 }
 
 void InitLCD(char orientation){
   orient=orientation;
   
-  LCD_DATA_DIR = 0x00;  //Output for All pins on DATA BUS
+  LCD_DATA_DIR = 0x0000;  //Output for All pins on DATA BUS
 
   //Pin Mode for Control Pins!
-  setMode(LCD_RS);
-  setMode(LCD_WR);
-  setMode(LCD_CS);
-  setMode(LCD_REST);
+  fastSetOutputMode(LCD_RS);
+  fastSetOutputMode(LCD_WR);
+  fastSetOutputMode(LCD_CS);
+  fastSetOutputMode(LCD_REST);
 
   fastWriteHigh(LCD_REST);
   Delayms(5); 
@@ -106,116 +109,152 @@ void InitLCD(char orientation){
 
   fastWriteLow(LCD_CS);  
   //************* Start Initial Sequence **********//
-  LCD_Write_COM(0x00,0xE5); 
-  LCD_Write_DATA(0x78,0xF0); // set SRAM internal timing
-  LCD_Write_COM(0x00,0x01); 
-  LCD_Write_DATA(0x01,0x00); // set SS and SM bit
-  LCD_Write_COM(0x00,0x02); 
-  LCD_Write_DATA(0x07,0x00); // set 1 line inversion
-  LCD_Write_COM(0x00,0x03); 
-  LCD_Write_DATA(0x10,0x30); // set GRAM write direction and BGR=1.
-  LCD_Write_COM(0x00,0x04); 
-  LCD_Write_DATA(0x00,0x00); // Resize register
-  LCD_Write_COM(0x00,0x08); 
-  LCD_Write_DATA(0x02,0x07); // set the back porch and front porch
-  LCD_Write_COM(0x00,0x09); 
-  LCD_Write_DATA(0x00,0x00); // set non-display area refresh cycle ISC[3:0]
-  LCD_Write_COM(0x00,0x0A); 
-  LCD_Write_DATA(0x00,0x00); // FMARK function
-  LCD_Write_COM(0x00,0x0C); 
-  LCD_Write_DATA(0x00,0x00); // RGB interface setting
-  LCD_Write_COM(0x00,0x0D); 
-  LCD_Write_DATA(0x00,0x00); // Frame marker Position
-  LCD_Write_COM(0x00,0x0F); 
-  LCD_Write_DATA(0x00,0x00); // RGB interface polarity
-  //*************Power On sequence ****************//
-  LCD_Write_COM(0x00,0x10); 
-  LCD_Write_DATA(0x00,0x00); // SAP, BT[3:0], AP, DSTB, SLP, STB
-  LCD_Write_COM(0x00,0x11); 
-  LCD_Write_DATA(0x00,0x07); // DC1[2:0], DC0[2:0], VC[2:0]
-  LCD_Write_COM(0x00,0x12); 
-  LCD_Write_DATA(0x00,0x00); // VREG1OUT voltage
-  LCD_Write_COM(0x00,0x13); 
-  LCD_Write_DATA(0x00,0x00); // VDV[4:0] for VCOM amplitude
-  LCD_Write_COM(0x00,0x07); 
-  LCD_Write_DATA(0x00,0x01);
-  Delayms(50); // Dis-charge capacitor power voltage
-  LCD_Write_COM(0x00,0x10); 
-  LCD_Write_DATA(0x10,0x90); // 1490//SAP, BT[3:0], AP, DSTB, SLP, STB
-  LCD_Write_COM(0x00,0x11); 
-  LCD_Write_DATA(0x02,0x27); // DC1[2:0], DC0[2:0], VC[2:0]
-  Delayms(50); // Delay 50ms
-  LCD_Write_COM(0x00,0x12); 
-  LCD_Write_DATA(0x00,0x1F); //001C// Internal reference voltage= Vci;
-  Delayms(50); // Delay 50ms
-  LCD_Write_COM(0x00,0x13); 
-  LCD_Write_DATA(0x15,0x00); //0x1000//1400   Set VDV[4:0] for VCOM amplitude  1A00
-  LCD_Write_COM(0x00,0x29); 
-  LCD_Write_DATA(0x00,0x27); //0x0012 //001a  Set VCM[5:0] for VCOMH  //0x0025  0034
-  LCD_Write_COM(0x00,0x2B); 
-  LCD_Write_DATA(0x00,0x0D); // Set Frame Rate   000C
-  Delayms(50); // Delay 50ms
-  LCD_Write_COM(0x00,0x20); 
-  LCD_Write_DATA(0x00,0x00); // GRAM horizontal Address
-  LCD_Write_COM(0x00,0x21); 
-  LCD_Write_DATA(0x00,0x00); // GRAM Vertical Address
-  // ----------- Adjust the Gamma Curve ----------//
-  LCD_Write_COM(0x00,0x30); 
-  LCD_Write_DATA(0x00,0x00);
-  LCD_Write_COM(0x00,0x31); 
-  LCD_Write_DATA(0x07,0x07);
-  LCD_Write_COM(0x00,0x32); 
-  LCD_Write_DATA(0x03,0x07);
-  LCD_Write_COM(0x00,0x35); 
-  LCD_Write_DATA(0x02,0x00);
-  LCD_Write_COM(0x00,0x36); 
-  LCD_Write_DATA(0x00,0x08);//0207
-  LCD_Write_COM(0x00,0x37); 
-  LCD_Write_DATA(0x00,0x04);//0306
-  LCD_Write_COM(0x00,0x38); 
-  LCD_Write_DATA(0x00,0x00);//0102
-  LCD_Write_COM(0x00,0x39); 
-  LCD_Write_DATA(0x07,0x07);//0707
-  LCD_Write_COM(0x00,0x3C); 
-  LCD_Write_DATA(0x00,0x02);//0702
-  LCD_Write_COM(0x00,0x3D); 
-  LCD_Write_DATA(0x1D,0x04);//1604
-
-    //------------------ Set GRAM area ---------------//
-  LCD_Write_COM(0x00,0x50); 
-  LCD_Write_DATA(0x00,0x00); // Horizontal GRAM Start Address
-  LCD_Write_COM(0x00,0x51); 
-  LCD_Write_DATA(0x00,0xEF); // Horizontal GRAM End Address
-  LCD_Write_COM(0x00,0x52); 
-  LCD_Write_DATA(0x00,0x00); // Vertical GRAM Start Address
-  LCD_Write_COM(0x00,0x53); 
-  LCD_Write_DATA(0x01,0x3F); // Vertical GRAM Start Address
-  LCD_Write_COM(0x00,0x60); 
-  LCD_Write_DATA(0xA7,0x00); // Gate Scan Line
-  LCD_Write_COM(0x00,0x61); 
-  LCD_Write_DATA(0x00,0x01); // NDL,VLE, REV
-  LCD_Write_COM(0x00,0x6A); 
-  LCD_Write_DATA(0x00,0x00); // set scrolling line
-  //-------------- Partial Display Control ---------//
-  LCD_Write_COM(0x00,0x80); 
-  LCD_Write_DATA(0x00,0x00);
-  LCD_Write_COM(0x00,0x81); 
-  LCD_Write_DATA(0x00,0x00);
-  LCD_Write_COM(0x00,0x82); 
-  LCD_Write_DATA(0x00,0x00);
-  LCD_Write_COM(0x00,0x83); 
-  LCD_Write_DATA(0x00,0x00);
-  LCD_Write_COM(0x00,0x84); 
-  LCD_Write_DATA(0x00,0x00);
-  LCD_Write_COM(0x00,0x85); 
-  LCD_Write_DATA(0x00,0x00);
-  //-------------- Panel Control -------------------//
-  LCD_Write_COM(0x00,0x90); 
-  LCD_Write_DATA(0x00,0x10);
-  LCD_Write_COM(0x00,0x92); 
-  LCD_Write_DATA(0x06,0x00);
-  LCD_Write_COM(0x00,0x07); 
-  LCD_Write_DATA(0x01,0x33); 
+  //4x3 Aspect Display Size 319
+  LCD_Write_COM(0x0046); 
+  LCD_Write_DATA(0x00A4);
+  LCD_Write_COM(0x0047); 
+  LCD_Write_DATA(0x0053);
+  LCD_Write_COM(0x0048); 
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x0049); 
+  LCD_Write_DATA(0x0044); 
+  LCD_Write_COM(0x004a); 
+  LCD_Write_DATA(0x0004);
+  LCD_Write_COM(0x004b); 
+  LCD_Write_DATA(0x0067);
+  LCD_Write_COM(0x004c); 
+  LCD_Write_DATA(0x0033);
+  LCD_Write_COM(0x004d); 
+  LCD_Write_DATA(0x0077);
+  LCD_Write_COM(0x004e); 
+  LCD_Write_DATA(0x0012);
+  LCD_Write_COM(0x004f); 
+  LCD_Write_DATA(0x004c);
+  LCD_Write_COM(0x0050); 
+  LCD_Write_DATA(0x0046);
+  LCD_Write_COM(0x0051); 
+  LCD_Write_DATA(0x0044);
+  
+  //240x320 window setting
+  LCD_Write_COM(0x0002); // Column address start2
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x0003); // Column address start1
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x0004); // Column address end2
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x0005); // Column address end1
+  LCD_Write_DATA(0x00ef);
+  LCD_Write_COM(0x0006); // Row address start2
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x0007); // Row address start1
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x0008); // Row address end2
+  LCD_Write_DATA(0x0001);
+  LCD_Write_COM(0x0009); // Row address end1
+  LCD_Write_DATA(0x003f);
+  
+  // Display Setting
+  LCD_Write_COM(0x0001); // IDMON=0, INVON=1, NORON=1, PTLON=0
+  LCD_Write_DATA(0x0006);
+  LCD_Write_COM(0x0016); // MY=0, MX=0, MV=0, ML=1, BGR=0, TEON=0   0048
+  LCD_Write_DATA(0x00C8);
+  LCD_Write_COM(0x0023); // N_DC=1001 0101
+  LCD_Write_DATA(0x0095);
+  LCD_Write_COM(0x0024); // PI_DC=1001 0101
+  LCD_Write_DATA(0x0095);
+  LCD_Write_COM(0x0025); // I_DC=1111 1111
+  LCD_Write_DATA(0x00FF);
+  
+  LCD_Write_COM(0x0027); // N_BP=0000 0010
+  LCD_Write_DATA(0x0002);
+  LCD_Write_COM(0x0028); // N_FP=0000 0010
+  LCD_Write_DATA(0x0002);
+  LCD_Write_COM(0x0029); // PI_BP=0000 0010
+  LCD_Write_DATA(0x0002);
+  LCD_Write_COM(0x002a); // PI_FP=0000 0010
+  LCD_Write_DATA(0x0002);
+  LCD_Write_COM(0x002C); // I_BP=0000 0010
+  LCD_Write_DATA(0x0002);
+  LCD_Write_COM(0x002d); // I_FP=0000 0010
+  LCD_Write_DATA(0x0002);
+  
+  LCD_Write_COM(0x003a); // N_RTN=0000, N_NW=001    0001
+  LCD_Write_DATA(0x0001);
+  LCD_Write_COM(0x003b); // P_RTN=0000, P_NW=001
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x003c); // I_RTN=1111, I_NW=000
+  LCD_Write_DATA(0x00f0);
+  LCD_Write_COM(0x003d); // DIV=00
+  LCD_Write_DATA(0x0000);
+  Delayms(1);
+  LCD_Write_COM(0x0035); // EQS=38h
+  LCD_Write_DATA(0x0038);
+  LCD_Write_COM(0x0036); // EQP=78h
+  LCD_Write_DATA(0x0078);
+  LCD_Write_COM(0x003E); // SON=38h
+  LCD_Write_DATA(0x0038);
+  LCD_Write_COM(0x0040); // GDON=0Fh
+  LCD_Write_DATA(0x000F);
+  LCD_Write_COM(0x0041); // GDOFF
+  LCD_Write_DATA(0x00F0);
+  
+  // Power Supply Setting
+  LCD_Write_COM(0x0019); // CADJ=0100, CUADJ=100, OSD_EN=1 ,60Hz
+  LCD_Write_DATA(0x0049);
+  LCD_Write_COM(0x0093); // RADJ=1111, 100%
+  LCD_Write_DATA(0x000F);
+  Delayms(1);
+  LCD_Write_COM(0x0020); // BT=0100
+  LCD_Write_DATA(0x0040);
+  LCD_Write_COM(0x001D); // VC1=111   0007
+  LCD_Write_DATA(0x0007);
+  LCD_Write_COM(0x001E); // VC3=000
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x001F); // VRH=0011
+  LCD_Write_DATA(0x0004);
+  
+  //VCOM SETTING
+  LCD_Write_COM(0x0044); // VCM=101 0000  4D
+  LCD_Write_DATA(0x004D);
+  LCD_Write_COM(0x0045); // VDV=1 0001   0011
+  LCD_Write_DATA(0x000E);
+  Delayms(1);
+  LCD_Write_COM(0x001C); // AP=100
+  LCD_Write_DATA(0x0004);
+  Delayms(2);
+  
+  LCD_Write_COM(0x001B); // GASENB=0, PON=0, DK=1, XDK=0, VLCD_TRI=0, STB=0
+  LCD_Write_DATA(0x0018);
+  Delayms(1);
+  LCD_Write_COM(0x001B); // GASENB=0, PON=1, DK=0, XDK=0, VLCD_TRI=0, STB=0
+  LCD_Write_DATA(0x0010);
+  Delayms(1);
+  LCD_Write_COM(0x0043); //set VCOMG=1
+  LCD_Write_DATA(0x0080);
+  Delayms(2);
+  LCD_Write_COM(0x0090); // SAP=0111 1111
+  LCD_Write_DATA(0x007F);
+  LCD_Write_COM(0x0026); //GON=0, DTE=0, D=01
+  LCD_Write_DATA(0x0004);
+  Delayms(1);
+  LCD_Write_COM(0x0026); //GON=1, DTE=0, D=01
+  LCD_Write_DATA(0x0024);
+  LCD_Write_COM(0x0026); //GON=1, DTE=0, D=11
+  LCD_Write_DATA(0x002C);
+  Delayms(1);
+  LCD_Write_COM(0x0026); //GON=1, DTE=1, D=11
+  LCD_Write_DATA(0x003C);
+  Delayms(1);
+  
+  // INTERNAL REGISTER SETTING
+  LCD_Write_COM(0x0057); // TEST_Mode=1: into TEST mod
+  LCD_Write_DATA(0x0002);
+  LCD_Write_COM(0x0095); // SET DISPLAY CLOCK AND PUMPING CLOCK TO SYNCHRONIZE
+  LCD_Write_DATA(0x0001);
+  LCD_Write_COM(0x0057); // TEST_Mode=0: exit TEST mode
+  LCD_Write_DATA(0x0000);
+  LCD_Write_COM(0x0022); 
+  
   fastWriteHigh(LCD_CS);
 
   setColor(255, 255, 255);
@@ -223,11 +262,11 @@ void InitLCD(char orientation){
   fsize = FONT_SMALL;
 }
 
-void setXY(int x1, int y1, int x2, int y2){
+void setXY(int x1, int y1, int x2, int y2)
+{
 	int tmp;
 
-	if (orient==LANDSCAPE)
-	{
+	if (orient==LANDSCAPE) {
 		tmp=x1;
 		x1=y1;
 		y1=319-tmp;
@@ -239,22 +278,30 @@ void setXY(int x1, int y1, int x2, int y2){
 		y2=tmp;
 	}
 
-	LCD_Write_COM(0x00,0x20);
-	LCD_Write_DATA(x1>>8,x1);    
-	LCD_Write_COM(0x00,0x21);
-	LCD_Write_DATA(y1>>8,y1);   
-	LCD_Write_COM(0x00,0x50);
-	LCD_Write_DATA(x1>>8,x1);   
-	LCD_Write_COM(0x00,0x52);
-	LCD_Write_DATA(y1>>8,y1);   
-	LCD_Write_COM(0x00,0x51);
-	LCD_Write_DATA(x2>>8,x2);  
-	LCD_Write_COM(0x00,0x53);
-	LCD_Write_DATA(y2>>8,y2);   
-	LCD_Write_COM(0x00,0x22);           				 
+//TO-DO Parei aqui, falta ver no datasheet!
+	LCD_Write_COM(0x02);
+	LCD_Write_DATA(x1>>8);    
+	LCD_Write_COM(0x03);
+	LCD_Write_DATA(x1);   
+	LCD_Write_COM(0x04);
+	LCD_Write_DATA(x2>>8);   
+	LCD_Write_COM(0x05);
+	LCD_Write_DATA(x2);
+      
+	LCD_Write_COM(0x06);
+	LCD_Write_DATA(y1>>8);    
+	LCD_Write_COM(0x07);
+	LCD_Write_DATA(y1);   
+	LCD_Write_COM(0x08);
+	LCD_Write_DATA(y2>>8);   
+	LCD_Write_COM(0x09);
+	LCD_Write_DATA(y2);
+    
+    LCD_Write_COM(0x0022); 				 
 }
 
-void drawRect(int x1, int y1, int x2, int y2){
+void drawRect(int x1, int y1, int x2, int y2)
+{
 	int tmp;
 
 	if (x1>x2)
@@ -358,7 +405,7 @@ void fillRoundRect(int x1, int y1, int x2, int y2){
 
 	if ((x2-x1)>4 && (y2-y1)>4)
 	{
-		for (i=0; i<((y2-y1)/2)+1; i++)
+		for (i=0; i<=((y2-y1)/2)+1; i++)
 		{
 			switch(i)
 			{
@@ -428,11 +475,12 @@ void clrScr(){
 		setXY(0,0,239,319);
 	else
 		setXY(0,0,319,239);
-	for (i=0; i<76800; i++)
-	{
-		setPixel(0,0,0);
+    
+    fastWriteHigh(LCD_RS);
+	for (i=0; i<76800; i++){
+		LCD_Writ_Bus(0);
 	}
-	fastWriteHigh(LCD_CS); 
+	fastWriteHigh(LCD_CS);
 }
 
 void fillScr(char r, char g, char b){
@@ -443,9 +491,11 @@ void fillScr(char r, char g, char b){
 		setXY(0,0,239,319);
 	else
 		setXY(0,0,319,239);
-	for (i=0; i<76800; i++)
-	{
-		setPixel (r, g, b);
+        
+    fastWriteHigh(LCD_RS);    
+	for (i=0; i<76800; i++)	{
+		//setPixel(r, g, b);
+        LCD_Writ_Bus(((r & 0xF8)<<8) + ((g & 0xFC)<<3) + ((b & 0xF8)>>3));
 	}
 	fastWriteHigh(LCD_CS); 
 }
@@ -463,10 +513,11 @@ void setBackColor(unsigned char r, unsigned char g, unsigned char b){
 }
 
 void setPixel(int r,int g,int b){
-	LCD_Write_DATA(((r&248)|g>>5),((g&28)<<3|b>>3));
+	LCD_Write_DATA(((r & 0xF8)<<8) + ((g & 0xFC)<<3) + ((b & 0xF8)>>3));
 }
 
-void drawPixel(int x, int y){
+void drawPixel(int x, int y)
+{
 	fastWriteLow(LCD_CS);  
 	setXY(x, y, x, y);
 	setPixel(fcolorr, fcolorg, fcolorb);
@@ -477,7 +528,8 @@ void drawPixel(int x, int y){
 	fastWriteHigh(LCD_CS);  
 }
 
-void drawLine(int x1, int y1, int x2, int y2){
+void drawLine(int x1, int y1, int x2, int y2)
+{
 	int tmp, i;
 	double delta, tx, ty;
 	double m, b, dx, dy;
@@ -490,7 +542,6 @@ void drawLine(int x1, int y1, int x2, int y2){
 		y1=y2;
 		y2=tmp;
 	}
-    
     if (((y2-y1)<0)){
 		tmp=x1;
 		x1=x2;
@@ -501,8 +552,7 @@ void drawLine(int x1, int y1, int x2, int y2){
 	}
 
 	if (y1==y2){
-		if (x1>x2)
-		{
+		if (x1>x2){
 			tmp=x1;
 			x1=x2;
 			x2=tmp;
@@ -518,70 +568,81 @@ void drawLine(int x1, int y1, int x2, int y2){
 		drawVLine(x1, y1, y2-y1);
 	}
 	else if (abs(x2-x1)>abs(y2-y1)){
-		delta=(double)(y2-y1)/(x2-x1);
+        
+        fastWriteLow(LCD_CS);
+        
+		delta=(double)(y2-y1)/(double)(x2-x1);
 		ty=(double)y1;
-		if (x1>x2) {
+        
+		if (x1>x2){
             for (i=x1; i>=x2; i--){
-                drawPixel(i,(int)(ty+0.5));
-        		ty=ty-delta;
+                setXY(i, (int)(ty+0.5), i, (int)(ty+0.5));
+                LCD_Write_DATA(((fcolorr & 0xF8)<<8) + ((fcolorg & 0xFC)<<3) + ((fcolorb & 0xF8)>>3));
+                ty=ty-delta;
             }
         }
         else{
             for (i=x1; i<=x2; i++){
-                drawPixel(i,(int)(ty+0.5));
+                setXY(i, (int)(ty+0.5), i, (int)(ty+0.5));
+                LCD_Write_DATA(((fcolorr & 0xF8)<<8) + ((fcolorg & 0xFC)<<3) + ((fcolorb & 0xF8)>>3));
         		ty=ty+delta;
             }
         }
+        fastWriteHigh(LCD_CS);
 	}
 	else{
-		delta=(double)(x2-x1)/(y2-y1);
+        fastWriteLow(LCD_CS);
+        
+		delta=(double)(x2-x1)/(double)(y2-y1);
 		tx=(double)x1;
         if (y1>y2) {
             for (i=y2+1; i>y1; i--){
-                drawPixel((int)(tx+0.5), i);
-    		    tx=tx+delta;
-        		}
-        }
-        else {
-        	for (i=y1; i<y2+1; i++){
-                drawPixel((int)(tx+0.5), i);
-    		    tx=tx+delta;
+                setXY((int)(tx+0.5), i, (int)(tx+0.5), i);
+                LCD_Write_DATA(((fcolorr & 0xF8)<<8) + ((fcolorg & 0xFC)<<3) + ((fcolorb & 0xF8)>>3));
+                tx=tx+delta;
             }
         }
+        else{
+            for (i=y1; i<y2+1; i++){
+                setXY((int)(tx+0.5), i, (int)(tx+0.5), i);
+                LCD_Write_DATA(((fcolorr & 0xF8)<<8) + ((fcolorg & 0xFC)<<3) + ((fcolorb & 0xF8)>>3));
+                tx=tx+delta;
+            }
+        }
+        fastWriteHigh(LCD_CS);
 	}
 
-	if (orient==PORTRAIT){
+	if (orient==PORTRAIT)
 		setXY(0,0,239,319);
-    }
-	else{
+	else
 		setXY(0,0,319,239);
-    }
 }
 
-void drawHLine(int x, int y, int l){
+void drawHLine(int x, int y, int l)
+{
 	int i;
 	
 	fastWriteLow(LCD_CS);  
 	setXY(x, y, x+l, y);
-	for (i=0; i<l+1; i++)
-	{
-		setPixel(fcolorr, fcolorg, fcolorb);
+	for (i=0; i<l+1; i++){
+		fastSetPixel(fcolorr, fcolorg, fcolorb);
 	}
 	fastWriteHigh(LCD_CS);  
 }
 
-void drawVLine(int x, int y, int l){
+void drawVLine(int x, int y, int l)
+{
 	int i;
-	fastWriteLow(LCD_CS);  
+	fastWriteLow(LCD_CS);
 	setXY(x, y, x, y+l);
-	for (i=0; i<l; i++)
-	{
-		setPixel(fcolorr, fcolorg, fcolorb);
+	for (i=0; i<l; i++) {
+		fastSetPixel(fcolorr, fcolorg, fcolorb);
 	}
 	fastWriteHigh(LCD_CS);  
 }
 
-void printChar(char c, int x, int y){
+void printChar(char c, int x, int y)
+{
 	unsigned char i,j,ch;
 	unsigned int temp; 
 
@@ -601,11 +662,11 @@ void printChar(char c, int x, int y){
 				{   
 					if((ch&(1<<(7-i)))!=0)   
 					{
-						setPixel(fcolorr, fcolorg, fcolorb);
+						fastSetPixel(fcolorr, fcolorg, fcolorb);
 					} 
 					else
 					{
-						setPixel(bcolorr, bcolorg, bcolorb);
+						fastSetPixel(bcolorr, bcolorg, bcolorb);
 					}   
 				}
 				temp++;
@@ -623,11 +684,11 @@ void printChar(char c, int x, int y){
 				{   
 					if((ch&(1<<i))!=0)   
 					{
-						setPixel(fcolorr, fcolorg, fcolorb);
+						fastSetPixel(fcolorr, fcolorg, fcolorb);
 					} 
 					else
 					{
-						setPixel(bcolorr, bcolorg, bcolorb);
+						fastSetPixel(bcolorr, bcolorg, bcolorb);
 					}   
 				}
 				temp++;
@@ -635,7 +696,8 @@ void printChar(char c, int x, int y){
 		}
 	}
 #ifndef _NO_BIG_FONT_
-	else {
+	else
+	{
 		if (orient==PORTRAIT)
 		{
 			setXY(x,y,x+15,y+15);
@@ -648,11 +710,11 @@ void printChar(char c, int x, int y){
 				{   
 					if((ch&(1<<(7-i)))!=0)   
 					{
-						setPixel(fcolorr, fcolorg, fcolorb);
+						fastSetPixel(fcolorr, fcolorg, fcolorb);
 					} 
 					else
 					{
-						setPixel(bcolorr, bcolorg, bcolorb);
+						fastSetPixel(bcolorr, bcolorg, bcolorb);
 					}   
 				}
 				temp++;
@@ -669,11 +731,11 @@ void printChar(char c, int x, int y){
 				{   
 					if((ch&(1<<i))!=0)   
 					{
-						setPixel(fcolorr, fcolorg, fcolorb);
+						fastSetPixel(fcolorr, fcolorg, fcolorb);
 					} 
 					else
 					{
-						setPixel(bcolorr, bcolorg, bcolorb);
+						fastSetPixel(bcolorr, bcolorg, bcolorb);
 					}   
 				}
 				ch=(BigFont[temp]);
@@ -681,11 +743,11 @@ void printChar(char c, int x, int y){
 				{   
 					if((ch&(1<<i))!=0)   
 					{
-						setPixel(fcolorr, fcolorg, fcolorb);
+						fastSetPixel(fcolorr, fcolorg, fcolorb);
 					} 
 					else
 					{
-						setPixel(bcolorr, bcolorg, bcolorb);
+						fastSetPixel(bcolorr, bcolorg, bcolorb);
 					}   
 				}
 				temp+=2;
@@ -696,7 +758,8 @@ void printChar(char c, int x, int y){
 	fastWriteHigh(LCD_CS);
 }
 
-void rotateChar(char c, int x, int y, int pos, int deg){
+void rotateChar(char c, int x, int y, int pos, int deg)
+{
 	char i,j,ch;
 	unsigned int temp;
 	int newx,newy;
@@ -719,18 +782,19 @@ void rotateChar(char c, int x, int y, int pos, int deg){
 				
 				if((ch&(1<<(7-i)))!=0)   
 				{
-					setPixel(fcolorr, fcolorg, fcolorb);
+					fastSetPixel(fcolorr, fcolorg, fcolorb);
 				} 
 				else  
 				{
-					setPixel(bcolorr, bcolorg, bcolorb);
+					fastSetPixel(bcolorr, bcolorg, bcolorb);
 				}   
 			}
 			temp++;
 		}
 	}
 #ifndef _NO_BIG_FONT_
-	else{
+	else
+	{
 		temp=((c-32)*32); 
 		for(j=0;j<16;j++) 
 		{
@@ -744,11 +808,11 @@ void rotateChar(char c, int x, int y, int pos, int deg){
 				
 				if((ch&(1<<(7-i)))!=0)   
 				{
-					setPixel(fcolorr, fcolorg, fcolorb);
+					fastSetPixel(fcolorr, fcolorg, fcolorb);
 				} 
 				else  
 				{
-					setPixel(bcolorr, bcolorg, bcolorb);
+					fastSetPixel(bcolorr, bcolorg, bcolorb);
 				}   
 			}
 			temp++;
@@ -762,11 +826,11 @@ void rotateChar(char c, int x, int y, int pos, int deg){
 				
 				if((ch&(1<<(15-i)))!=0)   
 				{
-					setPixel(fcolorr, fcolorg, fcolorb);
+					fastSetPixel(fcolorr, fcolorg, fcolorb);
 				} 
 				else  
 				{
-					setPixel(bcolorr, bcolorg, bcolorb);
+					fastSetPixel(bcolorr, bcolorg, bcolorb);
 				}   
 			}
 			temp++;
@@ -776,7 +840,8 @@ void rotateChar(char c, int x, int y, int pos, int deg){
 	fastWriteHigh(LCD_CS);
 }
 
-void itdb_print(char *st, int x, int y, int deg){
+void itdb_print(char *st, int x, int y, int deg)
+{
 	int stl, i;
 
 	stl = strlen(st);
@@ -823,7 +888,8 @@ void itdb_print(char *st, int x, int y, int deg){
 			rotateChar(*st++, x, y, i, deg);
 }
 
-void printNumI(long num, int x, int y){
+void printNumI(long num, int x, int y)
+{
   char buf[25];
   char st[27];
   unsigned char neg=0;
@@ -865,7 +931,8 @@ void printNumI(long num, int x, int y){
   itdb_print(st,x,y,0);
 }
 
-void printNumF(double num, char dec, int x, int y){
+void printNumF(double num, char dec, int x, int y)
+{
   char buf[25];
   char st[27];
   unsigned char neg=0;
@@ -940,7 +1007,8 @@ void fontSize(char size)
 #endif
 }
 
-void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale){
+void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale)
+{
 	unsigned int col;
 	int tx, ty, tc, tsx, tsy;
 
@@ -953,7 +1021,7 @@ void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale){
 			for (tc=0; tc<(sx*sy); tc++)
 			{
 				col=(unsigned int)(data[tc]);
-				LCD_Write_DATA(col>>8,col & 0xff);
+				LCD_Write_DATA(col);
 			}
 			fastWriteHigh(LCD_CS);  
 		}
@@ -966,7 +1034,7 @@ void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale){
 				for (tx=sx; tx>=0; tx--)
 				{
 					col=(unsigned int)(data[(ty*sx)+tx]);
-					LCD_Write_DATA(col>>8,col & 0xff);
+					LCD_Write_DATA(col);
 				}
 			}
 			fastWriteHigh(LCD_CS);  
@@ -985,7 +1053,7 @@ void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale){
 					{
 						col=(unsigned int)(data[(ty*sx)+tx]);
 						for (tsx=0; tsx<scale; tsx++)
-							LCD_Write_DATA(col>>8,col & 0xff);
+							LCD_Write_DATA(col);
 					}
 			}
 			fastWriteHigh(LCD_CS);  
@@ -1002,7 +1070,7 @@ void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale){
 					{
 						col=(unsigned int)(data[(ty*sx)+tx]);
 						for (tsx=0; tsx<scale; tsx++)
-							LCD_Write_DATA(col>>8,col & 0xff);
+							LCD_Write_DATA(col);
 					}
 				}
 			}
@@ -1011,7 +1079,8 @@ void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale){
 	}
 }
 
-void drawBitmapR(int x, int y, int sx, int sy, unsigned int* data, int deg, int rox, int roy){
+void drawBitmapR(int x, int y, int sx, int sy, unsigned int* data, int deg, int rox, int roy)
+{
 	unsigned int col;
 	int tx, ty, newx, newy;
 	char r, g, b;
@@ -1026,95 +1095,15 @@ void drawBitmapR(int x, int y, int sx, int sy, unsigned int* data, int deg, int 
 			for (tx=0; tx<sx; tx++)
 			{
 				col=(unsigned int)(data[(ty*sx)+tx]);
-				r=(col & 0xF800)>>8;
-				g=(((col & 0x7e0)>>5)<<2);
-				b=(col & 0x1F)<<3;
-
-				setColor(r,g,b);
 
 				newx=x+rox+(((tx-rox)*cos(radian))-((ty-roy)*sin(radian)));
 				newy=y+roy+(((ty-roy)*cos(radian))+((tx-rox)*sin(radian)));
-
-				drawPixel(newx, newy);
+                
+                setXY(newx, newy, newx, newy);
+				
+                fastWriteData(col);
 			}
 	}
 }
 
-#ifdef _ENABLE_tinyFAT_INTEGRATION_
-unsigned int loadBitmap(int x, int y, int sx, int sy, char *filename){
-	int res;
-	int cx, cy, cp;
-	unsigned int temp, result;
-	char r,g,b;
-	int i;
-
-	res=openFile(filename, FILEMODE_BINARY);
-	if (res==NO_ERROR)
-	{
-		fastWriteLow(LCD_CS);  
-		cx=0;
-		cy=0;
-		result=512;
-		if (orient==PORTRAIT)
-		{
-			setXY(x, y, x+sx-1, y+sy-1);
-		}
-		while (result==512)
-		{
-			result=readBinary();
-			switch(result)
-			{
-				case ERROR_WRONG_FILEMODE:
-					return ERROR_WRONG_FILEMODE;
-					break;
-				case ERROR_NO_FILE_OPEN:
-					return ERROR_NO_FILE_OPEN;
-					break;
-				default:
-					if (orient==PORTRAIT)
-					{
-						for (i=0; i<result; i+=2)
-							LCD_Write_DATA(buffer[i],buffer[i+1]);
-					}
-					else
-					{
-						cp=0;
-						while (cp<result)
-						{
-							if (((result-cp)/2)<(sx-cx))
-							{
-								setXY(x+cx, y+cy, x+cx+((result-cp)/2)-1, y+cy);
-								for (i=(result-cp)-2; i>=0; i-=2)
-									LCD_Write_DATA(buffer[cp+i],buffer[cp+i+1]);
-								cx+=((result-cp)/2);
-								cp=result;
-							}
-							else
-							{
-								setXY(x+cx, y+cy, x+sx-1, y+cy);
-								for (i=sx-cx-1; i>=0; i--)
-									LCD_Write_DATA(buffer[cp+(i*2)],buffer[cp+(i*2)+1]);
-								cp+=(sx-cx)*2;
-								cx=0;
-								cy++;
-							}
-						}
-					}
-					break;
-			}              
-		}
-		closeFile();
-		if (orient==PORTRAIT)
-			setXY(0,0,239,319);
-		else
-			setXY(0,0,319,239);
-		fastWriteHigh(LCD_CS);  
-		return 0;
-	}
-	else
-	{
-		return res;
-	}
-}
-#endif
 #endif

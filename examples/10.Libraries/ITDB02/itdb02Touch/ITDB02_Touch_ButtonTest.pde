@@ -18,7 +18,9 @@ char stLast[20]="";
 
 void setup()
 {
-  myTouch(11,12,13,14,15);
+  //myTouch(11,12,13,14,15);
+  myTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+  
 // Initial setup
   myGLCD.InitLCD(LANDSCAPE);
   myGLCD.clrScr();

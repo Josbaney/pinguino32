@@ -142,7 +142,7 @@ void done()
   myGLCD.print("To use the new calibration", LEFT, 50, 0);
   myGLCD.print("settings you must edit the", LEFT, 62, 0);
   myGLCD.setColor(160, 160, 255);
-  myGLCD.print("itdb02_touch.cpp", LEFT, 74, 0);
+  myGLCD.print("itdb02_touch.c", LEFT, 74, 0);
   myGLCD.setColor(255, 255, 255);
   myGLCD.print("file and", 136, 74, 0);
   myGLCD.print("change the following values.", LEFT, 86, 0);
