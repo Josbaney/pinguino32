@@ -113,26 +113,43 @@
 //Fast way on set a pin as OUTPUT
 #define fastSetOutputMode(_pin_) (LCD_SET_OUT = _pin_)
 
+//Fast delay, new compiler is faster and we need it
+#define fastDelay(){ \
+     asm("nop"); \
+}
+
 //Fast way for drive pixels
 #define fastSetPixel(_r_,_g_,_b_) { \
     fastWriteHigh(LCD_RS); \
+    fastDelay(); \
     LCD_DATA_BUS = (((_r_ & 0xF8)<<8) + ((_g_ & 0xFC)<<3) + ((_b_ & 0xF8)>>3)); \
+    fastDelay(); \
     fastWriteLow(LCD_WR); \
+    fastDelay(); \
     fastWriteHigh(LCD_WR); \
+    fastDelay(); \
 }
 
 #define fastWriteData(_data_) { \
     fastWriteHigh(LCD_RS); \
+    fastDelay(); \
     LCD_DATA_BUS = _data_; \
+    fastDelay(); \
     fastWriteLow(LCD_WR); \
+    fastDelay(); \
     fastWriteHigh(LCD_WR); \
+    fastDelay(); \
 }
 
 #define fastWriteCom(_data_) { \
     fastWriteLow(LCD_RS); \
+    fastDelay(); \
     LCD_DATA_BUS = _data_; \
+    fastDelay(); \
     fastWriteLow(LCD_WR); \
+    fastDelay(); \
     fastWriteHigh(LCD_WR); \
+    fastDelay(); \
 }
 
 struct _current_font

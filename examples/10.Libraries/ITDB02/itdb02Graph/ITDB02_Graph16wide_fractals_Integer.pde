@@ -1,13 +1,12 @@
 /* 
- * Simple Mandelbrot set renderer for Arduino vs. chipKIT benchmarking
- * w/floating-point math, via www.hackaday.com.  This example uses the
- * 4D Systems uLCD-144(SGC) serial display module, wired as follows:
+ * Simple Mandelbrot set renderer for Pinguino32X
+ * w/o floating-point math, via www.hackaday.com.
  */
- 
+
 //Pinguino Logo
 #include "pinguino.c"
 
-#define LED 49					//Emperor blue led is pin 49, see hardware.c file
+#define LED 			49		 //Emperor blue led is pin 49, see const.h file
 
 #define BITS         12     //Fractional resolution
 #define BIT1         11     //BITS - 1
@@ -26,12 +25,14 @@
 
 void setup(){
     pinMode(LED,OUTPUT);   // Pinguino Emperor blue status LED
+    pinMode(REDLED,OUTPUT);
+    
     digitalWrite(LED,LOW); // LED off
 
     //Starts ITDB02 display
     myGLCD16w.InitLCD(LANDSCAPE);
     
-    myTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+    myTouch.setTouch(56,57,58,59,60); //clk, cs, din, dout, irq
     myTouch.InitTouch(LANDSCAPE);
     myTouch.setPrecision(PREC_MEDIUM);
   
@@ -101,9 +102,9 @@ void loop(){
   myGLCD16w.printNumI(elapsedTime, 5, 5);
   myGLCD16w.print("ms", 70, 5, 0);
   
-  UBW32LedToggle(REDLED);
+  toggle(REDLED);
   //Wait for touch and go!
   while(!myTouch.dataAvailable());
 
-  UBW32LedToggle(REDLED);
+  toggle(REDLED);
 }

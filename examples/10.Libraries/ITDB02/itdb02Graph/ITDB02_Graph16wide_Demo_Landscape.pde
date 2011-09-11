@@ -15,7 +15,7 @@
 #include "pinguino32X.c"
 
 void setup(){
-  srand(127);
+  //srand(127);
   //Setup the LCD
   myGLCD16w.InitLCD(LANDSCAPE);
 }
@@ -31,6 +31,7 @@ void loop()
   int x, x2;
   int y, y2;
   int r, i;
+  int temp;
 
   //Show pinguino logo! YEAH!
   myGLCD16w.fillScr(255, 255, 255);
@@ -72,23 +73,23 @@ void loop()
 // Draw sin-, cos- and tan-lines  
   myGLCD16w.setColor(0,255,255);
   myGLCD16w.print("Sin", 5, 15, 0);
-  for (i=1; i<398; i++)
-  {
-    myGLCD16w.drawPixel(i,119+(sin(((i*1.13)*3.14)/180)*95));
+  for (i=1; i<398; i++){
+    temp = (int)(sin(((i*1.13)*3.14)/180)*95);
+    myGLCD16w.drawPixel(i,119+temp);
   }
   
   myGLCD16w.setColor(255,0,0);
   myGLCD16w.print("Cos", 5, 27, 0);
-  for (i=1; i<398; i++)
-  {
-    myGLCD16w.drawPixel(i,119+(cos(((i*1.13)*3.14)/180)*95));
+  for (i=1; i<398; i++){
+    temp = (int)(cos(((i*1.13)*3.14)/180)*95);
+    myGLCD16w.drawPixel(i,119+temp);
   }
 
   myGLCD16w.setColor(255,255,0);
   myGLCD16w.print("Tan", 5, 39, 0);
-  for (i=1; i<398; i++)
-  {
-    myGLCD16w.drawPixel(i,119+(tan(((i*1.13)*3.14)/180)));
+  for (i=1; i<398; i++){
+    temp = (int)(tan(((i*1.13)*3.14)/180));
+    myGLCD16w.drawPixel(i,119+temp);
   }
 
   delay(2000);
@@ -109,8 +110,7 @@ void loop()
     x++;
     if (x==399)
       x=1;
-    if (i>399)
-    {
+    if (i>399){
       if ((x==159)||(buf[x-1]==119))
         myGLCD16w.setColor(0,0,255);
       else
@@ -118,7 +118,7 @@ void loop()
       myGLCD16w.drawPixel(x,buf[x-1]);
     }
     myGLCD16w.setColor(0,255,255);
-    y=119+(sin(((i*1.1)*3.14)/180)*(90-(i / 100)));
+    y=119+(int)(sin(((i*1.1)*3.14)/180)*(90-(i / 100)));
     myGLCD16w.drawPixel(x,y);
     buf[x-1]=y;
   }

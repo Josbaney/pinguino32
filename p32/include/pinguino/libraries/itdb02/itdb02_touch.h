@@ -41,28 +41,28 @@
 #define PORTRAIT	0
 #define LANDSCAPE	1
 
-#define PREC_LOW		1
-#define PREC_MEDIUM		2
-#define PREC_HI			3
+#define PREC_LOW	1
+#define PREC_MEDIUM	2
+#define PREC_HI		3
 #define PREC_EXTREME	4
 
 //	public:
-	unsigned int	TP_X ,TP_Y;
+	int		TP_X ,TP_Y;
 
-	void 	ITDB02_Touch(unsigned char tclk, unsigned char tcs, unsigned char tdin, unsigned char dout, unsigned char irq);
-	void	InitTouch(unsigned char orientation);
-	void	touch_read();
-	unsigned char	dataAvailable();
-	int		getX();
-	int		getY();
-	void	setPrecision(unsigned char precision);
+	void 		touch_setTouch(unsigned char tclk, unsigned char tcs, unsigned char tdin, unsigned char dout, unsigned char irq);
+	void		touch_initTouch(unsigned char orientation);
+	void		touch_read();
+	unsigned char	touch_dataAvailable();
+	int		touch_getX();
+	int		touch_getY();
+	void		touch_setPrecision(unsigned char precision);
 
 //    private:
 	unsigned char	T_CLK, T_CS, T_DIN, T_DOUT, T_IRQ;
 	unsigned char	orient_t;
 	unsigned char	prec;
 
-	void	touch_WriteData(unsigned char data);
+	void		touch_WriteData(unsigned char data);
 	unsigned int	touch_ReadData();
 
 #endif

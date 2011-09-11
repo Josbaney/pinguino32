@@ -13,11 +13,6 @@
  * Tested with Emperor board
  */
 
-#include <hardware.c>
-
-//Pinguino 32X logo!
-//#include "pinguino32X.c"
-
 //Pinguino
 #include "pinguino.c"
 
@@ -172,16 +167,14 @@ void drawTool(int x, int y, u8 mode){
 	}
 }
 
-void setup() {
-  myTouch(56,57,58,59,60); //clk, cs, din, dout, irq
-  myTouch.InitTouch(LANDSCAPE);
+void setup() {  
+  myGLCD16w.InitLCD(LANDSCAPE);
+ 
+  //Setup touch
+  myTouch.setTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+  myTouch.InitTouch(LANDSCAPE );
   myTouch.setPrecision(PREC_MEDIUM);
   
-  myGLCD16w.InitLCD(LANDSCAPE);
-
-  pinMode(LED1, OUTPUT);  //white button
-  pinMode(LED2, OUTPUT);  //green button
-
   //Show pinguino logo! YEAH!
   myGLCD16w.fillScr(255, 255, 255);
   myGLCD16w.drawBitmap (45, 50, 174, 132, pinguino, 1);
@@ -191,7 +184,7 @@ void setup() {
   myGLCD16w.setBackColor(255,255,255);
   myGLCD16w.print("Pinguino32X ITDB02", 60, 180, 0);
   myGLCD16w.print("Paint by Fazzi", 80, 200, 0);
-  delay(5000);
+  delay(2000);
 
   drawAquarela();
   //Draw tool
@@ -202,7 +195,9 @@ void setup() {
   myGLCD16w.setColor(255,255,255);
   myGLCD16w.fillRect(41,0,399,239);
   
-  UBW32LedToggle(REDLED);
+  pinMode(REDLED, OUTPUT);
+  pinMode(BLUELED, OUTPUT);  
+  toggle(REDLED);
 }
 
 void loop() {
@@ -214,8 +209,7 @@ void loop() {
 			myGLCD16w.drawBitmap (100, 40, 174, 132, pinguino, 1);
 		}
 	
-		if(myTouch.dataAvailable())
-		{
+		if(myTouch.dataAvailable()) {
 			myTouch.read();
 			x = myTouch.getX();
 			y = myTouch.getY();
@@ -325,7 +319,7 @@ void loop() {
 					
 					drawTool(x,y,0);
 					//touched LED!
-					UBW32LedToggle(BLUELED);
+					//toggle(BLUELED);
 					
 					analogWrite(77,512);
 					
@@ -336,15 +330,16 @@ void loop() {
 				myGLCD16w.setColor(rR,rG,rB);
 				myGLCD16w.fillRect(0,218,40,240);				
 				myGLCD16w.setColor(255-rR,255-rG,255-rB);
-				myGLCD16w.setBackColor(rR,rG,rB);
-				myGLCD16w.print("X=   ", 0, 218, 0);
-				myGLCD16w.printNumI(x, 14, 218);
-				myGLCD16w.print("Y=   ", 0, 230, 0);
-				myGLCD16w.printNumI(y, 14, 230);
+				
 			}
+			myGLCD16w.setBackColor(rR,rG,rB);
+			myGLCD16w.print("X=   ", 0, 218, 0);
+			myGLCD16w.printNumI(x, 14, 218);
+			myGLCD16w.print("Y=   ", 0, 230, 0);
+			myGLCD16w.printNumI(y, 14, 230);
 		}
     //run LED!
-	 UBW32LedToggle(REDLED);
+    //toggle(REDLED);
     }
 }
 

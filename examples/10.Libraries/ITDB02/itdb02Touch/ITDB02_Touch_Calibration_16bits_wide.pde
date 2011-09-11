@@ -15,9 +15,8 @@ int ox, oy;
 
 void setup()
 {
-  myTouch(56,57,58,59,60);
-  
   myGLCD16w.InitLCD(PORTRAIT);
+  myTouch.setTouch(56,57,58,59,60);
   myGLCD16w.clrScr();
 
   myTouch.InitTouch(PORTRAIT);

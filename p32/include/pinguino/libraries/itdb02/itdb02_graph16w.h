@@ -83,14 +83,14 @@
 //Pinguino32X, UBW32, EMPEROR and Minimum boards
 #if defined(UBW32_460) || defined(UBW32_795) || defined(EMPEROR460) || defined(EMPEROR795)
 
-#define LCD_DATA_DIR 	TRISD		//Data Direction Register for Data Port
-#define LCD_DATA_BUS 	PORTD		//Data Bus
+#define LCD_DATA_DIR 		TRISD		//Data Direction Register for Data Port
+#define LCD_DATA_BUS 		PORTD		//Data Bus
 
 #define LCD_CMD_SET		PORTESET
 #define LCD_CMD_CLR		PORTECLR
 #define LCD_SET_OUT		TRISECLR
 
-//Pins for Emperor Board are: 54 47 45 and 44 (emeperor) (RE0, 4,5 and RE6) look on digitalw.c for pinmasks and ports
+//Pins for Emperor Board are: 54 47 45 and 44 (emperor) (RE0, 4,5 and RE6) look on digitalw.c for pinmasks and ports
 //Using inline/defines is a bit more fast and use less RAM and Flash, then use digitalw.c pinMode/pinmask array
 #define LCD_RS 			0x1
 #define LCD_WR 			0x10
@@ -99,8 +99,8 @@
 
 #else
 //TODO: Test on OLIMEX boards <<<< NOT IMPLEMENTED >>>>
-#define LCD_DATA_DIR 	TRISA		//Data Direction Register for Data Port
-#define LCD_DATA_BUS 	PORTA		//Data Bus
+#define LCD_DATA_DIR 		TRISA		//Data Direction Register for Data Port
+#define LCD_DATA_BUS 		PORTA		//Data Bus
 #define LCD_CMD_SET		PORTDSET
 #define LCD_CMD_CLR		PORTDCLR
 
@@ -113,30 +113,46 @@
 //Fast way on set a pin as OUTPUT
 #define fastSetOutputMode(_pin_) (LCD_SET_OUT = _pin_)
 
+//Fast delay, new compiler is faster and we need it
+#define fastDelay(){ \
+     asm("nop"); \
+}
+
 //Fast way for drive pixels
 #define fastSetPixel(_r_,_g_,_b_) { \
     fastWriteHigh(LCD_RS); \
+    fastDelay(); \
     LCD_DATA_BUS = (((_r_ & 0xF8)<<8) + ((_g_ & 0xFC)<<3) + ((_b_ & 0xF8)>>3)); \
+    fastDelay(); \
     fastWriteLow(LCD_WR); \
+    fastDelay(); \
     fastWriteHigh(LCD_WR); \
+    fastDelay(); \
 }
 
 #define fastWriteData(_data_) { \
     fastWriteHigh(LCD_RS); \
+    fastDelay(); \
     LCD_DATA_BUS = _data_; \
+    fastDelay(); \
     fastWriteLow(LCD_WR); \
+    fastDelay(); \
     fastWriteHigh(LCD_WR); \
+    fastDelay(); \
 }
 
 #define fastWriteCom(_data_) { \
     fastWriteLow(LCD_RS); \
+    fastDelay(); \
     LCD_DATA_BUS = _data_; \
+    fastDelay(); \
     fastWriteLow(LCD_WR); \
+    fastDelay(); \
     fastWriteHigh(LCD_WR); \
+    fastDelay(); \
 }
 
-struct _current_font
-{
+struct _current_font {
 	uint8_t* font;
 	uint8_t x_size;
 	uint8_t y_size;

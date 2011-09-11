@@ -63,6 +63,7 @@
 #include <itdb02/itdb02_graph16w.h>
 #include <delay.c>
 #include <math.h>
+#include <string.h>
 
 #include <itdb02/SmallFont.c>
 
@@ -73,8 +74,12 @@
 void LCD_Writ_Bus(int data)
 {
   LCD_DATA_BUS = data;
+  fastDelay();
   fastWriteLow(LCD_WR);
+  fastDelay();
   fastWriteHigh(LCD_WR);
+  fastDelay();
+  fastDelay();
   /*LCD_DATA_BUS = VL;
   fastWriteLow(LCD_WR);
   fastWriteHigh(LCD_WR);*/
@@ -82,12 +87,18 @@ void LCD_Writ_Bus(int data)
 
 void LCD_Write_COM(int data){   
   fastWriteLow(LCD_RS);
+  fastDelay();
   LCD_Writ_Bus(data);
+  fastDelay();
+  fastDelay();
 }
 
 void LCD_Write_DATA(int data){
   fastWriteHigh(LCD_RS);
+  fastDelay();
   LCD_Writ_Bus(data);
+  fastDelay();
+  fastDelay();
 }
 
 void InitLCD(char orientation){
@@ -185,29 +196,29 @@ void setXY(int x1, int y1, int x2, int y2){
 	int tmp;
 
 	if (orient==LANDSCAPE) {
-		tmp=x1;
-		x1=y1;
-		y1=399-tmp;
-		tmp=x2;
-		x2=y2;
-		y2=399-tmp;
-		tmp=y1;
-		y1=y2;
-		y2=tmp;
+	    tmp=x1;
+	    x1=y1;
+	    y1=399-tmp;
+	    tmp=x2;
+	    x2=y2;
+	    y2=399-tmp;
+	    tmp=y1;
+	    y1=y2;
+	    y2=tmp;
 	}
 
 //TO-DO Parei aqui, falta ver no datasheet!
     LCD_Write_COM(0x002a);
     LCD_Write_DATA(x1>>8);
-  	LCD_Write_DATA(x1);
-  	LCD_Write_DATA(x2>>8);
-  	LCD_Write_DATA(x2);
-  	LCD_Write_COM(0x002b);
-  	LCD_Write_DATA(y1>>8);
-  	LCD_Write_DATA(y1);
-  	LCD_Write_DATA(y2>>8);
-  	LCD_Write_DATA(y2);
-  	LCD_Write_COM(0x002c); 
+    LCD_Write_DATA(x1);
+    LCD_Write_DATA(x2>>8);
+    LCD_Write_DATA(x2);
+    LCD_Write_COM(0x002b);
+    LCD_Write_DATA(y1>>8);
+    LCD_Write_DATA(y1);
+    LCD_Write_DATA(y2>>8);
+    LCD_Write_DATA(y2);
+    LCD_Write_COM(0x002c); 
 }
 
 void drawRect(int x1, int y1, int x2, int y2)
@@ -431,11 +442,11 @@ void drawPixel(int x, int y)
 	fastWriteLow(LCD_CS);  
 	setXY(x, y, x, y);
 	//setPixel(fcolorr, fcolorg, fcolorb);
-    LCD_Write_DATA(((fcolorr & 0xF8)<<8) + ((fcolorg & 0xFC)<<3) + ((fcolorb & 0xF8)>>3));
+	LCD_Write_DATA(((fcolorr & 0xF8)<<8) + ((fcolorg & 0xFC)<<3) + ((fcolorb & 0xF8)>>3));
 	if (orient==PORTRAIT)
-		setXY(0,0,239,399);
+	    setXY(0,0,239,399);
 	else
-		setXY(0,0,399,239);
+	    setXY(0,0,399,239);
 	fastWriteHigh(LCD_CS);  
 }
 
@@ -686,8 +697,8 @@ void rotateChar(char c, int x, int y, int pos, int deg)
 			ch=(SmallFont[temp]); 
 			for(i=0;i<8;i++)
 			{   
-				newx=x+(((i+(pos*8))*cos(radian))-((j)*sin(radian)));
-				newy=y+(((j)*cos(radian))+((i+(pos*8))*sin(radian)));
+				newx=x+(((i+(pos*8))*cosf(radian))-((j)*sinf(radian)));
+				newy=y+(((j)*cosf(radian))+((i+(pos*8))*sinf(radian)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -712,8 +723,8 @@ void rotateChar(char c, int x, int y, int pos, int deg)
 			ch=(BigFont[temp]); 
 			for(i=0;i<8;i++)
 			{   
-				newx=x+(((i+(pos*16))*cos(radian))-((j)*sin(radian)));
-				newy=y+(((j)*cos(radian))+((i+(pos*16))*sin(radian)));
+				newx=x+(((i+(pos*16))*cosf(radian))-((j)*sinf(radian)));
+				newy=y+(((j)*cosf(radian))+((i+(pos*16))*sinf(radian)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -730,8 +741,8 @@ void rotateChar(char c, int x, int y, int pos, int deg)
 			ch=(BigFont[temp]); 
 			for(i=8;i<16;i++)
 			{   
-				newx=x+(((i+(pos*16))*cos(radian))-((j)*sin(radian)));
-				newy=y+(((j)*cos(radian))+((i+(pos*16))*sin(radian)));
+				newx=x+(((i+(pos*16))*cosf(radian))-((j)*sinf(radian)));
+				newy=y+(((j)*cosf(radian))+((i+(pos*16))*sinf(radian)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -990,31 +1001,26 @@ void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale)
 	}
 }
 
-void drawBitmapR(int x, int y, int sx, int sy, unsigned int* data, int deg, int rox, int roy)
-{
-	unsigned int col;
-	int tx, ty, newx, newy;
-	char r, g, b;
-	double radian;
-	radian=deg*0.0175;  
+void drawBitmapR(int x, int y, int sx, int sy, unsigned int* data, int deg, int rox, int roy){
+    unsigned int col;
+    int tx, ty, newx, newy;
+    char r, g, b;
+    double radian;
+    radian=deg*0.0175;  
 
-	if (deg==0)
-		drawBitmap(x, y, sx, sy, data, 1);
-	else
-	{
-		for (ty=0; ty<sy; ty++)
-			for (tx=0; tx<sx; tx++)
-			{
-				col=(unsigned int)(data[(ty*sx)+tx]);
-
-				newx=x+rox+(((tx-rox)*cos(radian))-((ty-roy)*sin(radian)));
-				newy=y+roy+(((ty-roy)*cos(radian))+((tx-rox)*sin(radian)));
-                
-                setXY(newx, newy, newx, newy);
-				
-                fastWriteData(col);
-			}
+    if (deg==0)
+	    drawBitmap(x, y, sx, sy, data, 1);
+    else {
+	for (ty=0; ty<sy; ty++){
+	    for (tx=0; tx<sx; tx++){
+		col=(unsigned int)(data[(ty*sx)+tx]);
+		newx=x+rox+(((tx-rox)*cosf(radian))-((ty-roy)*sinf(radian)));
+		newy=y+roy+(((ty-roy)*cosf(radian))+((tx-rox)*sinf(radian)));
+		setXY(newx, newy, newx, newy);
+		fastWriteData(col);
+	    }
 	}
+    }
 }
 
 #endif

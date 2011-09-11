@@ -1,7 +1,6 @@
 /* 
- * Simple Mandelbrot set renderer for Arduino vs. chipKIT benchmarking
- * w/floating-point math, via www.hackaday.com.  This example uses the
- * 4D Systems uLCD-144(SGC) serial display module, wired as follows:
+ * Simple Mandelbrot set renderer for Pinguino32X
+ * w/floating-point math, via www.hackaday.com.
  */
  
 //Pinguino Logo

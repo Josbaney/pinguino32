@@ -43,31 +43,31 @@
 //Use ITDB02_Touch_Calibration.pde to setup this values, for best results.
 //ITDB02 3.2" Display 320x240
 #ifdef ITDB02_32
-#define PixSizeX	-15.58
+#define PixSizeX	-16 //-15.58
 #define PixOffsX	206
-#define PixSizeY	10.95
+#define PixSizeY	11 //10.95
 #define PixOffsY	380
 
 //ITDB02 3.2" widescreen Display 400x240
 #elif defined ITDB02_32w
-#define PixSizeX	-14.41
+#define PixSizeX	-14 //-14.41
 #define PixOffsX	323
 #define PixSizeY	-9
 #define PixOffsY	155
 
 //ITDB02 2.4" Display 320x240
 #else
-#define PixSizeX	14.44
+#define PixSizeX	14 //14.44
 #define PixOffsX	302
-#define PixSizeY	11.07
+#define PixSizeY	11 //11.07
 #define PixOffsY	360
 #endif
 
+#include <itdb02/itdb02_touch.h>
 #include <digitalw.c>
-#include <itdb02_touch.h>
-
-void ITDB02_Touch(unsigned char tclk, unsigned char tcs, unsigned char din, unsigned char dout, unsigned char irq)
-{
+//myTouch.setTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+//		   A6,G0,G1,F1,F0
+void touch_setTouch(unsigned char tclk, unsigned char tcs, unsigned char din, unsigned char dout, unsigned char irq){
     T_CLK = tclk;
     T_CS  = tcs;
     T_DIN = din;
@@ -75,9 +75,8 @@ void ITDB02_Touch(unsigned char tclk, unsigned char tcs, unsigned char din, unsi
     T_IRQ = irq;
 }
 
-void InitTouch(unsigned char orient_tation)
-{
-	orient_t = orient_tation;
+void touch_initTouch(unsigned char orient_tation){
+    orient_t = orient_tation;
 
     pinmode(T_CLK,  OUTPUT);
     pinmode(T_CS,   OUTPUT);
@@ -85,163 +84,146 @@ void InitTouch(unsigned char orient_tation)
     pinmode(T_DOUT, INPUT);
     pinmode(T_IRQ,  INPUT);
 
-	digitalwrite(T_CS,  HIGH);
-	digitalwrite(T_CLK, HIGH);
-	digitalwrite(T_DIN, HIGH);
-	digitalwrite(T_CLK, HIGH);
+    digitalwrite(T_CS,  HIGH);
+    digitalwrite(T_CLK, HIGH);
+    digitalwrite(T_DIN, HIGH);
+    digitalwrite(T_CLK, HIGH);
 }
 
-void touch_WriteData(unsigned char data)
-{
-	unsigned char temp;
-	unsigned char nop;
-	unsigned char count;
+void touch_writeData(unsigned char data){
+    unsigned char temp;
+    unsigned char nop;
+    unsigned char count;
 
-	temp=data;
-	digitalwrite(T_CLK,LOW);
-
-	for(count=0; count<8; count++)
-	{
-		if(temp & 0x80)
-			digitalwrite(T_DIN, HIGH);
-		else
-			digitalwrite(T_DIN, LOW);
-		temp = temp << 1; 
-		digitalwrite(T_CLK, LOW);                
-		nop++;
-		digitalwrite(T_CLK, HIGH);
-		nop++;
-	}
-}
-
-unsigned int touch_ReadData()
-{
-	unsigned char nop;
-	unsigned int data = 0;
-	unsigned char count;
+    temp=data;
+    digitalwrite(T_CLK,LOW);
+    
+    for(count=0; count<8; count++) {
+	if(temp & 0x80)
+		digitalwrite(T_DIN, HIGH);
+	else
+		digitalwrite(T_DIN, LOW);
 	
-	for(count=0; count<12; count++)
-	{
-		data <<= 1;
-		digitalwrite(T_CLK, HIGH);               
-		nop++;
-		digitalwrite(T_CLK, LOW);
-		nop++;
-		if (digitalread(T_DOUT))
-			data++;
-	}
-	return(data);
+	temp = temp << 1; 
+	digitalwrite(T_CLK, LOW);	
+	nop++;
+	digitalwrite(T_CLK, HIGH);	
+	nop++;
+    }
+}
+
+unsigned int touch_readData(){
+    unsigned char nop;
+    unsigned int data = 0;
+    unsigned char count;
+    
+    for(count=0; count<12; count++) {
+	data <<= 1;
+	digitalwrite(T_CLK, HIGH);	          
+	nop++;
+	digitalwrite(T_CLK, LOW);	
+	nop++;
+	if (digitalread(T_DOUT))
+	    data++;
+    }
+    return(data);
 }
 
 void touch_read() {
-	unsigned long tx=0;
-	unsigned long ty=0;
-	int i;
-	
-	digitalwrite(T_CS,LOW);                    
+    unsigned long tx=0;
+    unsigned long ty=0;
+    int i;
+    
+    digitalwrite(T_CS,LOW);
+                  
+    for (i=0; i<prec; i++){
+	touch_writeData(0x90);        
+	digitalwrite(T_CLK,HIGH);
+	digitalwrite(T_CLK,LOW);	
+	ty+=touch_readData();
+	touch_writeData(0xD0);      
+	digitalwrite(T_CLK,HIGH);	
+	digitalwrite(T_CLK,LOW);
+	tx+=touch_readData();
+    }
 
-	for (i=0; i<prec; i++)
-	{
-		touch_WriteData(0x90);        
-		digitalwrite(T_CLK,HIGH);
-		digitalwrite(T_CLK,LOW); 
-		ty+=touch_ReadData();
-
-		touch_WriteData(0xD0);      
-		digitalwrite(T_CLK,HIGH);
-		digitalwrite(T_CLK,LOW);
-		tx+=touch_ReadData();
-	}
-
-	digitalwrite(T_CS,HIGH);
-
-	TP_X=tx/prec;
-	TP_Y=ty/prec;
+    digitalwrite(T_CS,HIGH);
+    
+    TP_X=tx/prec;
+    TP_Y=ty/prec;
 }
 
-unsigned char dataAvailable()
-{
+unsigned char touch_dataAvailable(){
   unsigned char avail;
   avail = !digitalread(T_IRQ);
   return avail;
 }
 
-int getX()
-{
-	int value;
+int touch_getX(){
+    int value;
 
-	if (orient_t == PORTRAIT)
-	{
-		if (PixSizeX>=0)
-		{
-			value = 240-((TP_X-PixOffsX)/PixSizeX);
-		}
-		else
-		{
-			value = (TP_X-PixOffsX)/-(PixSizeX);
-		}
-	}
+    if (orient_t == PORTRAIT) {
+	    if (PixSizeX>=0) {
+		value = (240-(TP_X-PixOffsX)/PixSizeX);
+	    }
+	    else {
+		value = ((TP_X-PixOffsX)/-(PixSizeX));
+	    }
+    }
+    else {
+	if (PixSizeY<0)
+	    value = (400-(TP_Y-PixOffsY)/-PixSizeY);
 	else
-	{
-		if (PixSizeY<0)
-			value = 400-((TP_Y-PixOffsY)/-PixSizeY);
-		else
-			value = ((TP_Y-PixOffsY)/PixSizeY);
-	}
+	    value = ((TP_Y-PixOffsY)/PixSizeY);
+    }
 
-	if (value < 0)
-		value = 0;
-	return value;
+    if (value < 0)
+	value = 0;
+	
+    return value;
 }
 
-int getY()
-{
-	int value;
+int touch_getY(){
+    int value;
 
-	if (orient_t == PORTRAIT)
-	{
-		if (PixSizeY<0)
-			value = ((TP_Y-PixOffsY)/-PixSizeY);
-		else
-			value = 320-((TP_Y-PixOffsY)/PixSizeY);
+    if (orient_t == PORTRAIT){
+	    if (PixSizeY<0)
+		    value = ((TP_Y-PixOffsY)/-PixSizeY);
+	    else
+		    value = (320-(TP_Y-PixOffsY)/PixSizeY);
+    }
+    else{
+	if (PixSizeX>=0){
+	    value = (240-(TP_X-PixOffsX)/PixSizeX);
 	}
-	else
-	{
-		if (PixSizeX>=0)
-		{
-			value = 240-((TP_X-PixOffsX)/PixSizeX);
-		}
-		else
-		{
-			value = (TP_X-PixOffsX)/-(PixSizeX);
-		}
+	else{
+	    value = ((TP_X-PixOffsX)/-(PixSizeX));
 	}
+    }
 
-	if (value < 0)
-		value = 0;
-	return value;  
+    if (value < 0)
+	    value = 0;
+    return value;  
 }
 
-void setPrecision(unsigned char precision)
-{
-	switch (precision)
-	{
-		case PREC_LOW:
-			prec=1;
-			break;
-		case PREC_MEDIUM:
-			prec=10;
-			break;
-		case PREC_HI:
-			prec=25;
-			break;
-		case PREC_EXTREME:
-			prec=100;
-			break;
-		default:
-			prec=10;
-			break;
-	}
+void touch_setPrecision(unsigned char precision){
+    switch (precision){
+	case PREC_LOW:
+	    prec=1;
+	    break;
+	case PREC_MEDIUM:
+	    prec=10;
+	    break;
+	case PREC_HI:
+	    prec=25;
+	    break;
+	case PREC_EXTREME:
+	    prec=100;
+	    break;
+	default:
+	    prec=10;
+	    break;
+    }
 }
 
 #endif
