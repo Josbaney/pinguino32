@@ -94,8 +94,8 @@ import sys
 import os
 import time
 
-print
-fichier = open(os.path.join(sys.path[0].replace(" ","\\ ")+'/Pinguino.log'), 'w+')
+#fichier = open(os.path.join(sys.path[0].replace(" ","\\ ")+'/Pinguino.log'), 'w+')
+fichier = open(os.path.join(sys.path[0]+'/Pinguino.log'), 'w+')
 fichier.writelines('Pinguino started at '+str(time.asctime( time.localtime(time.time()))+'\n' ))
 
 try:
@@ -214,7 +214,8 @@ pinguino_version="x.2"
 # pathes
 # ------------------------------------------------------------------------------
 
-HOME_DIR		= sys.path[0].replace(" ","\\ ")					# for path with spaces
+#HOME_DIR		= sys.path[0].replace(" ","\\ ")					# for path with spaces
+HOME_DIR	= sys.path[0]
 THEME_DIR	= os.path.join(HOME_DIR, 'theme')
 SOURCE_DIR	= os.path.join(HOME_DIR, 'source')
 LOCALE_DIR	= os.path.join(HOME_DIR, 'locale')
@@ -1488,40 +1489,40 @@ class Pinguino(wx.Frame):
 			fichier = open(os.path.join(SOURCE_DIR, 'stdout'), 'w+')
 			if arch==8:
 				sortie=Popen([os.path.join(HOME_DIR, self.osdir, 'p8', 'bin', self.c8),\
-						"-o" + os.path.join(SOURCE_DIR, 'main.hex'),\
+						"-o" + os.path.join(SOURCE_DIR.replace(" ","\\ "), 'main.hex'),\
 						"--denable-peeps",\
 						"--obanksel=9",\
 						"--opt-code-size",\
 						"--optimize-cmp",\
 						"--optimize-df",\
 						"--no-crt",\
-						"-Wl-s" + os.path.join(P8_DIR, 'lkr', proc + '.lkr') + ",-m",\
+						"-Wl-s" + os.path.join(P8_DIR.replace(" ","\\ "), 'lkr', proc + '.lkr') + ",-m",\
 						"-mpic16",\
 						"-p" + proc,\
-						"-L" + os.path.join(P8_DIR, 'share', 'sdcc', 'lib', 'pic16'),\
-						"-I" + os.path.join(P8_DIR, 'share', 'sdcc', 'include', 'pic16'),\
-						"-I" + os.path.join(P8_DIR, 'include'),\
-						"-I" + os.path.join(P8_DIR, 'include', 'non-free'),\
-						"-I" + os.path.join(P8_DIR, 'include', 'pinguino'),\
-						"-I" + os.path.join(P8_DIR, 'include', 'pinguino', 'basics'),\
-						"-I" + os.path.join(P8_DIR, 'include', 'pinguino', 'libraries'),\
+						"-L" + os.path.join(P8_DIR.replace(" ","\\ "), 'share', 'sdcc', 'lib', 'pic16'),\
+						"-I" + os.path.join(P8_DIR.replace(" ","\\ "), 'share', 'sdcc', 'include', 'pic16'),\
+						"-I" + os.path.join(P8_DIR.replace(" ","\\ "), 'include'),\
+						"-I" + os.path.join(P8_DIR.replace(" ","\\ "), 'include', 'non-free'),\
+						"-I" + os.path.join(P8_DIR.replace(" ","\\ "), 'include', 'pinguino'),\
+						"-I" + os.path.join(P8_DIR.replace(" ","\\ "), 'include', 'pinguino', 'basics'),\
+						"-I" + os.path.join(P8_DIR.replace(" ","\\ "), 'include', 'pinguino', 'libraries'),\
 						'-llibio' + proc + '.lib',\
-						"-l" + os.path.join(P8_DIR, 'share', 'sdcc', 'lib', 'pic16', 'libpuf.lib'),\
-						"-l" + os.path.join(P8_DIR, 'share', 'sdcc', 'lib', 'pic16', 'libc18f.lib'),\
-						"-l" + os.path.join(P8_DIR, 'share', 'sdcc', 'lib', 'pic16', 'libm18f.lib'),\
-						"-l" + os.path.join(P8_DIR, 'share', 'sdcc', 'lib', 'pic16', 'libsdcc.lib'),\
-						os.path.join(P8_DIR, 'obj', 'application_iface.o'),\
-						os.path.join(P8_DIR, 'obj', 'usb_descriptors.o'),\
-						os.path.join(P8_DIR, 'obj', 'crt0ipinguino.o'),\
-						os.path.join(SOURCE_DIR, 'main.o')],\
+						"-l" + os.path.join(P8_DIR.replace(" ","\\ "), 'share', 'sdcc', 'lib', 'pic16', 'libpuf.lib'),\
+						"-l" + os.path.join(P8_DIR.replace(" ","\\ "), 'share', 'sdcc', 'lib', 'pic16', 'libc18f.lib'),\
+						"-l" + os.path.join(P8_DIR.replace(" ","\\ "), 'share', 'sdcc', 'lib', 'pic16', 'libm18f.lib'),\
+						"-l" + os.path.join(P8_DIR.replace(" ","\\ "), 'share', 'sdcc', 'lib', 'pic16', 'libsdcc.lib'),\
+						os.path.join(P8_DIR.replace(" ","\\ "), 'obj', 'application_iface.o'),\
+						os.path.join(P8_DIR.replace(" ","\\ "), 'obj', 'usb_descriptors.o'),\
+						os.path.join(P8_DIR.replace(" ","\\ "), 'obj', 'crt0ipinguino.o'),\
+						os.path.join(SOURCE_DIR.replace(" ","\\ "), 'main.o')],\
 						stdout=fichier, stderr=STDOUT)
 			else:
 				# "PDEDIR=" + os.path.dirname(self.editor.GetPath()),\
 				# can't be used with Command Line version since editor isn't used
 				sortie=Popen([self.make,\
 						"--makefile=" + os.path.join(SOURCE_DIR, 'Makefile.'+self.osdir),\
-						"HOME=" + HOME_DIR,\
-						"PDEDIR=" + os.path.dirname(filename),\
+						"HOME=" + HOME_DIR.replace(" ","\\ "),\
+						"PDEDIR=" + os.path.dirname(filename).replace(" ","\\ "),\
 						"PROC=" + proc,\
 						"BOARD=" + board],\
 						stdout=fichier, stderr=STDOUT)
