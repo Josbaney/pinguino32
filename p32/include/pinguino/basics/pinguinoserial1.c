@@ -43,6 +43,7 @@ void serial1printf(char *fmt, ...)
 	va_end(args);
 }
 
+/*
 void serial1print(char *fmt,...)
 {
 	va_list args;
@@ -71,6 +72,7 @@ void serial1print(char *fmt,...)
 	}
 	va_end(args);
 }
+*/
 
 void serial1println(char *fmt,...)
 {
