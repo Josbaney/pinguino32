@@ -60,19 +60,19 @@
 //TouchScreen using 3.2" wide display pre-calibrated
 #define ITDB02_32w
 
+//include <serial.c>
 #include <itdb02/itdb02_graph16w.h>
-#include <delay.c>
-#include <math.h>
+#include <integer_math.c>
+
 #include <string.h>
+#include <delay.c>
 
 #include <itdb02/SmallFont.c>
-
 #ifndef _NO_BIG_FONT_
 #include <itdb02/BigFont.c>
 #endif
 
-void LCD_Writ_Bus(int data)
-{
+void LCD_Writ_Bus(int data){
   LCD_DATA_BUS = data;
   fastDelay();
   fastWriteLow(LCD_WR);
@@ -127,19 +127,19 @@ void InitLCD(char orientation){
   LCD_Write_DATA(0x0020);
   LCD_Write_COM(0x0011); //Exit Sleep
   Delayms(100);
-  LCD_Write_COM(0x00D1);
+  LCD_Write_COM(0x00D1); //VCOM Control
   LCD_Write_DATA(0x0000);
   LCD_Write_DATA(0x0071);
   LCD_Write_DATA(0x0019);
-  LCD_Write_COM(0x00D0);
+  LCD_Write_COM(0x00D0); //Power_Setting
   LCD_Write_DATA(0x0007);
   LCD_Write_DATA(0x0001);
   LCD_Write_DATA(0x0008);
-  LCD_Write_COM(0x0036);
+  LCD_Write_COM(0x0036); //Set_address_mode
   LCD_Write_DATA(0x0048);
-  LCD_Write_COM(0x003A);
+  LCD_Write_COM(0x003A); //Set_pixel_format
   LCD_Write_DATA(0x0005);
-  LCD_Write_COM(0x00C1);
+  LCD_Write_COM(0x00C1); //Display_Timing_Setting for Normal/Partial Mode
   LCD_Write_DATA(0x0010);
   LCD_Write_DATA(0x0010);
   LCD_Write_DATA(0x0002);
@@ -152,7 +152,7 @@ void InitLCD(char orientation){
   LCD_Write_DATA(0x0001);
   LCD_Write_DATA(0x0002);
   LCD_Write_COM(0x00C5); //Set frame rate
-  LCD_Write_DATA(0x0004);
+  LCD_Write_DATA(0x0004);//4 => 72Hz (Default)
   LCD_Write_COM(0x00D2); //power setting
   LCD_Write_DATA(0x0001);
   LCD_Write_DATA(0x0044);
@@ -172,12 +172,12 @@ void InitLCD(char orientation){
   LCD_Write_DATA(0x0008);
   LCD_Write_DATA(0x0080);
   LCD_Write_DATA(0x0000);
-  LCD_Write_COM(0x002A); 
+  LCD_Write_COM(0x002A); //Set_column_address
   LCD_Write_DATA(0x0000);
   LCD_Write_DATA(0x0000);
   LCD_Write_DATA(0x0000);
   LCD_Write_DATA(0x00eF);
-  LCD_Write_COM(0x002B); 
+  LCD_Write_COM(0x002B); //Set_page_address
   LCD_Write_DATA(0x0000);
   LCD_Write_DATA(0x0000);
   LCD_Write_DATA(0x0001);
@@ -208,17 +208,17 @@ void setXY(int x1, int y1, int x2, int y2){
 	}
 
 //TO-DO Parei aqui, falta ver no datasheet!
-    LCD_Write_COM(0x002a);
+    LCD_Write_COM(0x002a); //Set_column_address
     LCD_Write_DATA(x1>>8);
     LCD_Write_DATA(x1);
     LCD_Write_DATA(x2>>8);
     LCD_Write_DATA(x2);
-    LCD_Write_COM(0x002b);
+    LCD_Write_COM(0x002b); //Set_page_address
     LCD_Write_DATA(y1>>8);
     LCD_Write_DATA(y1);
     LCD_Write_DATA(y2>>8);
     LCD_Write_DATA(y2);
-    LCD_Write_COM(0x002c); 
+    LCD_Write_COM(0x002c); //Write_memory_start
 }
 
 void drawRect(int x1, int y1, int x2, int y2)
@@ -563,8 +563,7 @@ void drawVLine(int x, int y, int l)
 	fastWriteHigh(LCD_CS);  
 }
 
-void printChar(char c, int x, int y)
-{
+void printChar(char c, int x, int y){
 	unsigned char i,j,ch;
 	unsigned int temp; 
 
@@ -685,8 +684,8 @@ void rotateChar(char c, int x, int y, int pos, int deg)
 	char i,j,ch;
 	unsigned int temp;
 	int newx,newy;
-	double radian;
-	radian=deg*0.0175;  
+	//double radian;
+	//radian=deg*0.0175;  
 
 	fastWriteLow(LCD_CS);   
 	if (fsize==FONT_SMALL)
@@ -697,8 +696,8 @@ void rotateChar(char c, int x, int y, int pos, int deg)
 			ch=(SmallFont[temp]); 
 			for(i=0;i<8;i++)
 			{   
-				newx=x+(((i+(pos*8))*cosf(radian))-((j)*sinf(radian)));
-				newy=y+(((j)*cosf(radian))+((i+(pos*8))*sinf(radian)));
+				newx=x+(((i+(pos*8))*cosi(deg))-((j)*sini(deg)));
+				newy=y+(((j)*cosi(deg))+((i+(pos*8))*sini(deg)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -723,8 +722,8 @@ void rotateChar(char c, int x, int y, int pos, int deg)
 			ch=(BigFont[temp]); 
 			for(i=0;i<8;i++)
 			{   
-				newx=x+(((i+(pos*16))*cosf(radian))-((j)*sinf(radian)));
-				newy=y+(((j)*cosf(radian))+((i+(pos*16))*sinf(radian)));
+				newx=x+(((i+(pos*16))*cosi(deg))-((j)*sini(deg)));
+				newy=y+(((j)*cosi(deg))+((i+(pos*16))*sini(deg)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -741,8 +740,8 @@ void rotateChar(char c, int x, int y, int pos, int deg)
 			ch=(BigFont[temp]); 
 			for(i=8;i<16;i++)
 			{   
-				newx=x+(((i+(pos*16))*cosf(radian))-((j)*sinf(radian)));
-				newy=y+(((j)*cosf(radian))+((i+(pos*16))*sinf(radian)));
+				newx=x+(((i+(pos*16))*cosi(deg))-((j)*sini(deg)));
+				newy=y+(((j)*cosi(deg))+((i+(pos*16))*sini(deg)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -883,10 +882,9 @@ void printNumF(double num, char dec, int x, int y)
 	  if (dec>5)
 		dec=5;
 	  
-	  inum=(long)(num*pow(10,dec));
+	  inum=(long)(num*powf(10,dec));
 	  
-	  while (inum>0)
-	  {
+	  while (inum>0) {
 		buf[c]=48+(inum % 10);
 		c++;
 		inum=(inum-(inum % 10))/10;
@@ -1004,18 +1002,22 @@ void drawBitmap(int x, int y, int sx, int sy, unsigned int* data, int scale)
 void drawBitmapR(int x, int y, int sx, int sy, unsigned int* data, int deg, int rox, int roy){
     unsigned int col;
     int tx, ty, newx, newy;
-    char r, g, b;
-    double radian;
-    radian=deg*0.0175;  
-
+    //char r, g, b;
+    //float vrad = 0;        
+    //vrad=deg*0.0174533;
+    
+    //vals = (int)(100000*sini(deg));
+    
+    //SerialPrintf(COM, "x: sini(%d)= %d\r\n", deg, vals);
+    
     if (deg==0)
 	    drawBitmap(x, y, sx, sy, data, 1);
     else {
 	for (ty=0; ty<sy; ty++){
 	    for (tx=0; tx<sx; tx++){
 		col=(unsigned int)(data[(ty*sx)+tx]);
-		newx=x+rox+(((tx-rox)*cosf(radian))-((ty-roy)*sinf(radian)));
-		newy=y+roy+(((ty-roy)*cosf(radian))+((tx-rox)*sinf(radian)));
+		newx=x+rox+((tx-rox)*cosi(deg)-(ty-roy)*sini(deg));
+		newy=y+roy+((ty-roy)*cosi(deg)+(tx-rox)*sini(deg));
 		setXY(newx, newy, newx, newy);
 		fastWriteData(col);
 	    }

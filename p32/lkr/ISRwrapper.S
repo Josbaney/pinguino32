@@ -129,15 +129,21 @@ vector_\_XX\()_ISR_wrapper:
 # Create wrappers for ISRs used in a specific application.
 
 	ISR_wrapper	8,Tmr2Interrupt		# TIMER 2
-#if defined(UBW32_460) || defined(EMPEROR460)
+#if defined(UBW32_460) || defined(EMPEROR460) || defined(UBW32_795) || defined(EMPEROR795)
 	#if (SPIx == 1)
-	ISR_wrapper	23,SPIxInterrupt		# SPI 1
+	ISR_wrapper	23,SPIxInterrupt	# SPI 1
 	#endif
 #endif
 	#if (SPIx == 2)
-	ISR_wrapper	31,SPIxInterrupt		# SPI 2
+	ISR_wrapper	31,SPIxInterrupt	# SPI 2
 	#endif
 	ISR_wrapper	24,Serial1Interrupt	# UART 1
 	ISR_wrapper	32,Serial2Interrupt	# UART 2
-	ISR_wrapper	35,RTCCInterrupt		# RTCC
+	ISR_wrapper	35,RTCCInterrupt	# RTCC
 
+#if defined(UBW32_795) || defined(EMPEROR795)	
+	ISR_wrapper 31,Serial3Interrupt # UART 3
+	ISR_wrapper 49,Serial4Interrupt # UART 4
+	ISR_wrapper 51,Serial5Interrupt # UART 5
+	ISR_wrapper 50,Serial6Interrupt # UART 6
+#endif

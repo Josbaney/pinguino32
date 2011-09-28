@@ -3,18 +3,22 @@
 	pc side : gtkterm --port /dev/ttyACM0 or cat /dev/ttyACM0
 */
 
-char chaine[64];		// unsigned char
+char* chaine;		// unsigned char
 u8 length;
 
 void setup()
 {
-	Serial.begin(9600);
+	chaine = (char*) malloc(64 * sizeof(char*));
+	Serial.Configure(UART1, UART_ENABLE, UART_RX_TX_ENABLED, 9600);
+	IntEnable(INT_USB);	
+	
 }
 
 void loop()
 {
 	delay(100);
-	length=CDC.read(chaine,64);
-	if (length !=0) Serial.printf("longueur=%d\n\r",length);
-	if (length > 0) CDC.print(chaine,length);
+	chaine = CDC.getString();
+	length = strlen(chaine) - 1;
+	if (length !=0) Serial.Printf(UART1, "length=%d\n\r",length);
+	if (length > 0) CDC.printf("> %s %c", chaine, 10);
 }

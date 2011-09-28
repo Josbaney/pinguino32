@@ -17,6 +17,8 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+    
+    * 2011-09-22  Added UART3 support, Marcus Fazzi <anunakin@gmail.org>
 -------------------------------------------------------------------------*/
 
 #include <p32xxxx.h>			// always in first place to avoid conflict with const.h ON
@@ -34,12 +36,12 @@ int main()
 {
 	#ifdef PIC32_PINGUINO
 	TRISDbits.TRISD9=1;			// because PORTB is shared with SDA on Olimex board
-	TRISDbits.TRISD10=1;			// because PORTB is shared with SCL on Olimex board
+	TRISDbits.TRISD10=1;		// because PORTB is shared with SCL on Olimex board
 	#endif	
 
-	SystemConfig(80000000);			// default clock frequency is 80Mhz
-											// default peripheral freq. is 10MHz (cf. system.c)
-	AD1PCFG = 0xFFFF;					// All pins of PORTB as digital IOs
+	SystemConfig(80000000);		// default clock frequency is 80Mhz
+								// default peripheral freq. is 10MHz (cf. system.c)
+	AD1PCFG = 0xFFFF;			// All pins of PORTB as digital IOs
 
 	#ifdef __ANALOG__
 	analog_init();
@@ -84,6 +86,31 @@ void Serial2Interrupt(void)
 {
 	Nop();    
 }
+#else
+#ifndef ENABLE_UART3
+void Serial3Interrupt(void)
+{
+	Nop();
+}
+#endif
+#ifndef ENABLE_UART4
+void Serial4Interrupt(void)
+{
+	Nop();
+}
+#endif
+#ifndef ENABLE_UART5
+void Serial5Interrupt(void)
+{
+	Nop();
+}
+#endif
+#ifndef ENABLE_UART6
+void Serial6Interrupt(void)
+{
+	Nop();
+}
+#endif
 #endif
 
 #ifndef __MILLIS__

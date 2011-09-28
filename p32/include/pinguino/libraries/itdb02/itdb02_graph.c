@@ -59,6 +59,9 @@
 #define ITDB02_24
 
 #include <itdb02/itdb02_graph.h>
+#include <integer_math.c>
+
+#include <string.h>
 #include <delay.c>
 
 #include <itdb02/SmallFont.c>
@@ -700,8 +703,8 @@ void rotateChar(char c, int x, int y, int pos, int deg){
 	char i,j,ch;
 	unsigned int temp;
 	int newx,newy;
-	double radian;
-	radian=deg*0.0175;  
+	//double radian;
+	//radian=deg*0.0175;  
 
 	fastWriteLow(LCD_CS);   
 	if (fsize==FONT_SMALL)
@@ -712,8 +715,8 @@ void rotateChar(char c, int x, int y, int pos, int deg){
 			ch=(SmallFont[temp]); 
 			for(i=0;i<8;i++)
 			{   
-				newx=x+(((i+(pos*8))*cos(radian))-((j)*sin(radian)));
-				newy=y+(((j)*cos(radian))+((i+(pos*8))*sin(radian)));
+				newx=x+(((i+(pos*8))*cosi(deg))-((j)*sini(deg)));
+				newy=y+(((j)*cosi(deg))+((i+(pos*8))*sini(deg)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -737,8 +740,8 @@ void rotateChar(char c, int x, int y, int pos, int deg){
 			ch=(BigFont[temp]); 
 			for(i=0;i<8;i++)
 			{   
-				newx=x+(((i+(pos*16))*cos(radian))-((j)*sin(radian)));
-				newy=y+(((j)*cos(radian))+((i+(pos*16))*sin(radian)));
+				newx=x+(((i+(pos*16))*cosi(deg))-((j)*sini(deg)));
+				newy=y+(((j)*cosi(deg))+((i+(pos*16))*sini(deg)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -755,8 +758,8 @@ void rotateChar(char c, int x, int y, int pos, int deg){
 			ch=(BigFont[temp]); 
 			for(i=8;i<16;i++)
 			{   
-				newx=x+(((i+(pos*16))*cos(radian))-((j)*sin(radian)));
-				newy=y+(((j)*cos(radian))+((i+(pos*16))*sin(radian)));
+				newx=x+(((i+(pos*16))*cosi(deg))-((j)*sini(deg)));
+				newy=y+(((j)*cosi(deg))+((i+(pos*16))*sini(deg)));
 
 				setXY(newx,newy,newx+1,newy+1);
 				
@@ -894,7 +897,7 @@ void printNumF(double num, char dec, int x, int y){
 	  if (dec>5)
 		dec=5;
 	  
-	  inum=(long)(num*pow(10,dec));
+	  inum=(long)(num*powi(10,dec));
 	  
 	  while (inum>0)
 	  {
@@ -1015,8 +1018,8 @@ void drawBitmapR(int x, int y, int sx, int sy, unsigned int* data, int deg, int 
 	unsigned int col;
 	int tx, ty, newx, newy;
 	char r, g, b;
-	double radian;
-	radian=deg*0.0175;  
+	//double radian;
+	//radian=deg*0.0175;  
 
 	if (deg==0)
 		drawBitmap(x, y, sx, sy, data, 1);
@@ -1032,8 +1035,8 @@ void drawBitmapR(int x, int y, int sx, int sy, unsigned int* data, int deg, int 
 
 				setColor(r,g,b);
 
-				newx=x+rox+(((tx-rox)*cos(radian))-((ty-roy)*sin(radian)));
-				newy=y+roy+(((ty-roy)*cos(radian))+((tx-rox)*sin(radian)));
+				newx=x+rox+(((tx-rox)*cosi(deg))-((ty-roy)*sini(deg)));
+				newy=y+roy+(((ty-roy)*cosi(deg))+((tx-rox)*sini(deg)));
 
 				drawPixel(newx, newy);
 			}

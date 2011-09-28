@@ -2,9 +2,12 @@
 	FILE:				interrupt.c
 	PROJECT:			pinguino32X
 	PURPOSE:			interrupts management
-	PROGRAMER:		regis blanchot <rblanchot@gmail.com>
-	FIRST RELEASE:	16 nov. 2010
-	LAST RELEASE:	17 nov. 2010
+	PROGRAMER:			regis blanchot <rblanchot@gmail.com>
+	
+	- UART3/4/5/6 for PIC32MX795 support Marcus Fazzi <anunakin@gmail.com>	
+	
+	FIRST RELEASE:		16 nov. 2010
+	LAST RELEASE:		23 set. 2011
 	----------------------------------------------------------------------------
 	CHANGELOG:
 	[xx-xx-xx][name][comment]
@@ -25,7 +28,7 @@
 	--------------------------------------------------------------------------*/
 
 #ifndef __INTERRUPT_C
-	#define __INTERRUPT_C
+#define __INTERRUPT_C
 
 	#include <p32xxxx.h>
 	#include <typedef.h>
@@ -37,41 +40,45 @@
 
 	// INTERRUPT ENABLE/DISABLE
 	#define INT_ENABLED						1
-	#define INT_DISABLED						0
+	#define INT_DISABLED					0
 
 	// INTERRUPT VECTOR LOCATION
 	#define INT_CORE_TIMER_VECTOR			0
-	#define INT_CORE_SOFTWARE0_VECTOR	1
-	#define INT_CORE_SOFTWARE1_VECTOR	2
+	#define INT_CORE_SOFTWARE0_VECTOR		1
+	#define INT_CORE_SOFTWARE1_VECTOR		2
 	#define INT_EXTERNAL0_VECTOR			3
 	#define INT_TIMER1_VECTOR				4
-	#define INT_INPUT_CAPTURE1_VECTOR	5  
-	#define INT_OUTPUT_COMPARE1_VECTOR	6   
+	#define INT_INPUT_CAPTURE1_VECTOR		5  
+	#define INT_OUTPUT_COMPARE1_VECTOR		6   
 	#define INT_EXTERNAL1_VECTOR			7          
 	#define INT_TIMER2_VECTOR				8   
-	#define INT_INPUT_CAPTURE2_VECTOR	9  
-	#define INT_OUTPUT_COMPARE2_VECTOR	10   
+	#define INT_INPUT_CAPTURE2_VECTOR		9  
+	#define INT_OUTPUT_COMPARE2_VECTOR		10   
 	#define INT_EXTERNAL2_VECTOR			11          
 	#define INT_TIMER3_VECTOR				12   
-	#define INT_INPUT_CAPTURE3_VECTOR	13  
-	#define INT_OUTPUT_COMPARE3_VECTOR	14   
+	#define INT_INPUT_CAPTURE3_VECTOR		13  
+	#define INT_OUTPUT_COMPARE3_VECTOR		14   
 	#define INT_EXTERNAL3_VECTOR			15          
 	#define INT_TIMER4_VECTOR				16   
-	#define INT_INPUT_CAPTURE4_VECTOR	17  
-	#define INT_OUTPUT_COMPARE4_VECTOR	18   
+	#define INT_INPUT_CAPTURE4_VECTOR		17  
+	#define INT_OUTPUT_COMPARE4_VECTOR		18   
 	#define INT_EXTERNAL4_VECTOR			19          
 	#define INT_TIMER5_VECTOR				20   
-	#define INT_INPUT_CAPTURE5_VECTOR	21  
-	#define INT_OUTPUT_COMPARE5_VECTOR	22   
+	#define INT_INPUT_CAPTURE5_VECTOR		21  
+	#define INT_OUTPUT_COMPARE5_VECTOR		22   
 	#define INT_SPI1_VECTOR					23    
 	#define INT_UART1_VECTOR				24    
 	#define INT_I2C1_VECTOR					25   
 	#define INT_INPUT_CHANGE_VECTOR			26    
 	#define INT_ADC1_CONVERT_DONE_VECTOR	27          
 	#define INT_PARALLEL_MASTER_PORT_VECTOR	28  
-	#define INT_COMPARATOR1_VECTOR		29          
-	#define INT_COMPARATOR2_VECTOR		30          
+	#define INT_COMPARATOR1_VECTOR			29          
+	#define INT_COMPARATOR2_VECTOR			30          
+#ifdef ENABLE_UART3
+	#define INT_UART3_VECTOR			    31
+#else
 	#define INT_SPI2_VECTOR					31
+#endif
 	#define INT_UART2_VECTOR				32
 	#define INT_I2C2_VECTOR					33
 	#define INT_FSCM_VECTOR					34
@@ -82,6 +89,19 @@
 	#define INT_DMA3_VECTOR					39
 	#define INT_FCE_VECTOR					44
 	#define INT_USB_VECTOR					45
+//PIC32MX795
+	#define INT_CAN1_VECTOR					46
+	#define INT_CAN2_VECTOR					47
+	#define INT_ETH_VECTOR					48
+#ifdef ENABLE_UART4
+	#define INT_UART4_VECTOR			    49
+#endif
+#ifdef ENABLE_UART6
+	#define INT_UART6_VECTOR			    50
+#endif
+#ifdef ENABLE_UART5
+	#define INT_UART5_VECTOR			    51
+#endif
 
 	// IRQ NUMBER = INTERRUPT NUMBER (IFSx, IECx and IPSx registers)
 	#define INT_CORE_TIMER					0
@@ -90,25 +110,25 @@
 	#define INT_EXTERNAL0					3
 	#define INT_TIMER1						4
 	#define INT_INPUT_CAPTURE1				5
-	#define INT_OUTPUT_COMPARE1			6
+	#define INT_OUTPUT_COMPARE1				6
 	#define INT_EXTERNAL1					7
 	#define INT_TIMER2						8
 	#define INT_INPUT_CAPTURE2				9
-	#define INT_OUTPUT_COMPARE2			10
+	#define INT_OUTPUT_COMPARE2				10
 	#define INT_EXTERNAL2					11
 	#define INT_TIMER3						12
 	#define INT_INPUT_CAPTURE3				13
-	#define INT_OUTPUT_COMPARE3			14
+	#define INT_OUTPUT_COMPARE3				14
 	#define INT_EXTERNAL3					15
 	#define INT_TIMER4						16
 	#define INT_INPUT_CAPTURE4				17
-	#define INT_OUTPUT_COMPARE4			18
+	#define INT_OUTPUT_COMPARE4				18
 	#define INT_EXTERNAL4					19
 	#define INT_TIMER5						20
 	#define INT_INPUT_CAPTURE5				21
-	#define INT_OUTPUT_COMPARE5			22
+	#define INT_OUTPUT_COMPARE5				22
 	#define INT_SPI1_FAULT					23 
-	#define INT_SPI1_TRANSFER_DONE		24 
+	#define INT_SPI1_TRANSFER_DONE			24 
 	#define INT_SPI1_RECEIVE_DONE			25
 	#define INT_UART1_ERROR					26 
 	#define INT_UART1_RECEIVER				27
@@ -121,24 +141,47 @@
 	#define INT_PARALLEL_MASTER_PORT		34
 	#define INT_COMPARATOR1					35
 	#define INT_COMPARATOR2					36
+#ifdef ENABLE_UART3
+	#define INT_UART3_ERROR					37
+	#define INT_UART3_RECEIVER				38
+	#define INT_UART3_TRANSMITTER			39
+#else
 	#define INT_SPI2_FAULT					37 
-	#define INT_SPI2_TRANSFER_DONE		38 
+	#define INT_SPI2_TRANSFER_DONE			38 
 	#define INT_SPI2_RECEIVE_DONE			39
+#endif
 	#define INT_UART2_ERROR					40 
 	#define INT_UART2_RECEIVER				41 
-	#define INT_UART2_TRANSMITTER			42 
+	#define INT_UART2_TRANSMITTER			42
 	#define INT_I2C2_BUS_COLLISION_EVENT	43 
 	#define INT_I2C2_SLAVE_EVENT			44 
 	#define INT_I2C2_MASTER_EVENT			45 
-	#define INT_FAIL_SAFE_CLOCK_MONITOR	46
-	#define INT_REAL_TIME_CLOCK			47
+	#define INT_FAIL_SAFE_CLOCK_MONITOR		46
+	#define INT_REAL_TIME_CLOCK				47
 	#define INT_DMA_CHANNEL_0				48 
 	#define INT_DMA_CHANNEL_1				49 
 	#define INT_DMA_CHANNEL_2				50 
 	#define INT_DMA_CHANNEL_3				51 
-	#define INT_FLASH_CONTROL_EVENT		56
+	#define INT_FLASH_CONTROL_EVENT			56
 	#define INT_USB							57
-
+	#define INT_CAN1						58
+	#define INT_CAN2						59
+	#define INT_ETH							60
+#ifdef ENABLE_UART4
+	#define INT_UART4_ERROR					67
+	#define INT_UART4_RECEIVER				68
+	#define INT_UART4_TRANSMITTER			69
+#endif
+#ifdef ENABLE_UART6
+	#define INT_UART6_ERROR					70
+	#define INT_UART6_RECEIVER				71
+	#define INT_UART6_TRANSMITTER			72
+#endif
+#ifdef ENABLE_UART5
+	#define INT_UART5_ERROR					73
+	#define INT_UART5_RECEIVER				74
+	#define INT_UART5_TRANSMITTER			75
+#endif
 /*	----------------------------------------------------------------------------
 	Interrupt Natural Priority
 	----------------------------------------------------------------------------
@@ -153,6 +196,7 @@
 	// IPCx: INTERRUPT PRIORITY CONTROL REGISTER
 	#define INT_UART1_ALL_PRIORITY		0x0000001F	// disable all UART1 interrupts
 	#define INT_UART2_ALL_PRIORITY		0x0000001F	// disable all UART2 interrupts
+	#define INT_UART3_ALL_PRIORITY		0x0000001F	// disable all UART3 interrupts
 	#define INT_PRIORITY_7				0b111
 	#define INT_PRIORITY_6				0b110
 	#define INT_PRIORITY_5				0b101
@@ -221,15 +265,47 @@
 	#define UART2_ERROR_INT_ENABLE		0x00000100
 	#define UART2_ALL_INTERRUPT			0x00000700
 /*	--------------------------------------------------------------------------*/
+#ifdef ENABLE_UART3
+	#define UART3_TX_INT_ENABLE			0x00000080
+	#define UART3_RX_INT_ENABLE			0x00000040
+	#define UART3_ERROR_INT_ENABLE		0x00000020
+	#define UART3_ALL_INTERRUPT			0x000000E0
+#else
 	#define SPI2RX_INT_ENABLE			0x00000080
 	#define SPI2TX_INT_ENABLE			0x00000040
 	#define SPI2E_INT_ENABLE			0x00000020
+#endif
 	#define CMP2_INT_ENABLE				0x00000010
 	#define CMP1_INT_ENABLE				0x00000008
 	#define PMP_INT_ENABLE				0x00000004
 	#define AD1_INT_ENABLE				0x00000002
 	#define CN_INT_ENABLE				0x00000001
+//PIC32MX795
+//if defined(UBW32_795) || defined(EMPEROR795)
+	#define CAN1_INT_ENABLE				0x04000000
+	#define CAN2_INT_ENABLE				0x08000000
+	#define ETH_INT_ENABLE				0x10000000
 
+//IEC2
+#ifdef ENABLE_UART4
+	#define UART4_TX_INT_ENABLE			0x00000020
+	#define UART4_RX_INT_ENABLE			0x00000010
+	#define UART4_ERROR_INT_ENABLE		0x00000008
+	#define UART4_ALL_INTERRUPT			0x00000038
+#endif
+#ifdef ENABLE_UART5
+	#define UART5_TX_INT_ENABLE			0x00000800
+	#define UART5_RX_INT_ENABLE			0x00000400
+	#define UART5_ERROR_INT_ENABLE		0x00000200
+	#define UART5_ALL_INTERRUPT			0x00000E00
+#endif
+#ifdef ENABLE_UART6
+	#define UART6_TX_INT_ENABLE			0x00000100
+	#define UART6_RX_INT_ENABLE			0x00000080
+	#define UART6_ERROR_INT_ENABLE		0x00000040
+	#define UART6_ALL_INTERRUPT			0x000001C0
+#endif
+//endif
 /*	----------------------------------------------------------------------------
 	IntSetPriority
 	----------------------------------------------------------------------------
@@ -303,9 +379,9 @@ void IntSetVectorPriority(u8 vector, u8 pri, u8 sub)
 			break;
 #if defined(UBW32_460) || defined(EMPEROR460)
 		case INT_SPI1_VECTOR:
-			IFS0bits.SPI1EIF = 0;
+			IFS0bits.SPI1EIF  = 0;
 			IFS0bits.SPI1TXIF = 0;
-			IFS0bits.SPI1RXIF  = 0;
+			IFS0bits.SPI1RXIF = 0;
 			IPC5bits.SPI1IP = pri;
 			IPC5bits.SPI1IS = sub;
 			break;  
@@ -328,7 +404,16 @@ void IntSetVectorPriority(u8 vector, u8 pri, u8 sub)
 		case INT_COMPARATOR1_VECTOR:
 			break;         
 		case INT_COMPARATOR2_VECTOR:
-			break;        
+			break;
+#ifdef ENABLE_UART3
+		case INT_UART3_VECTOR:
+			IFS1bits.U2ATXIF = 0;
+			IFS1bits.U2ARXIF = 0;
+			IFS1bits.U2AEIF  = 0;
+			IPC7bits.U2AIP = pri;
+			IPC7bits.U2AIS = sub;
+			break;
+#else     
 		case INT_SPI2_VECTOR:
 			IFS1bits.SPI2EIF = 0;
 			IFS1bits.SPI2TXIF = 0;
@@ -336,6 +421,7 @@ void IntSetVectorPriority(u8 vector, u8 pri, u8 sub)
 			IPC7bits.SPI2IP = pri;
 			IPC7bits.SPI2IS = sub;
 			break;
+#endif
 		case INT_UART2_VECTOR:
 			IFS1bits.U2TXIF = 0;
 			IFS1bits.U2RXIF = 0;
@@ -364,6 +450,39 @@ void IntSetVectorPriority(u8 vector, u8 pri, u8 sub)
 			break;
 		case INT_USB_VECTOR:
 			break;
+		case INT_CAN1_VECTOR:
+			break;
+		case INT_CAN2_VECTOR:
+			break;
+		case INT_ETH_VECTOR:
+			break;
+#ifdef ENABLE_UART4
+		case INT_UART4_VECTOR:
+			IFS2bits.U1BTXIF = 0;
+			IFS2bits.U1BRXIF = 0;
+			IFS2bits.U1BEIF  = 0;
+			IPC12bits.U1BIP = pri;
+			IPC12bits.U1BIS = sub;
+			break;
+#endif
+#ifdef ENABLE_UART5
+		case INT_UART5_VECTOR:
+			IFS2bits.U3BTXIF = 0;
+			IFS2bits.U3BRXIF = 0;
+			IFS2bits.U3BEIF  = 0;
+			IPC12bits.U3BIP = pri;
+			IPC12bits.U3BIS = sub;
+			break;
+#endif
+#ifdef ENABLE_UART6
+		case INT_UART6_VECTOR:
+			IFS2bits.U2BTXIF = 0;
+			IFS2bits.U2BRXIF = 0;
+			IFS2bits.U2BEIF  = 0;
+			IPC12bits.U2BIP = pri;
+			IPC12bits.U2BIS = sub;
+			break;
+#endif
 	}
 }
 
@@ -446,9 +565,15 @@ unsigned int IntGetVectorPriority(u8 vector)
 		case INT_COMPARATOR1_VECTOR:
 			break;         
 		case INT_COMPARATOR2_VECTOR:
-			break;        
+			break;
+#ifdef ENABLE_UART3
+		case INT_UART3_VECTOR:
+			pri = IPC7bits.U2AIP;
+			break;
+#else
 		case INT_SPI2_VECTOR:
 			break;
+#endif
 		case INT_UART2_VECTOR:
 			pri = IPC8bits.U2IP;
 			break;
@@ -471,6 +596,27 @@ unsigned int IntGetVectorPriority(u8 vector)
 			break;
 		case INT_USB_VECTOR:
 			break;
+		case INT_CAN1_VECTOR:
+			break;
+		case INT_CAN2_VECTOR:
+			break;
+		case INT_ETH_VECTOR:
+			break;
+#ifdef ENABLE_UART4
+		case INT_UART4_VECTOR:
+			pri = IPC12bits.U1BIP;
+			break;
+#endif
+#ifdef ENABLE_UART5
+		case INT_UART5_VECTOR:
+			pri = IPC12bits.U3BIP;
+			break;
+#endif
+#ifdef ENABLE_UART6
+		case INT_UART6_VECTOR:
+			pri = IPC12bits.U2BIP;
+			break;
+#endif
 	}
 	return (pri);
 }
@@ -554,9 +700,15 @@ unsigned int IntGetVectorSubPriority(u8 vector)
 		case INT_COMPARATOR1_VECTOR:
 			break;         
 		case INT_COMPARATOR2_VECTOR:
-			break;        
+			break;
+#ifdef ENABLE_UART3
+		case INT_UART3_VECTOR:
+			sub = IPC7bits.U2AIS;
+			break;
+#else
 		case INT_SPI2_VECTOR:
 			break;
+#endif
 		case INT_UART2_VECTOR:
 			sub = IPC8bits.U2IS;
 			break;
@@ -579,6 +731,27 @@ unsigned int IntGetVectorSubPriority(u8 vector)
 			break;
 		case INT_USB_VECTOR:
 			break;
+		case INT_CAN1_VECTOR:
+			break;
+		case INT_CAN2_VECTOR:
+			break;
+		case INT_ETH_VECTOR:
+			break;
+#ifdef ENABLE_UART4
+		case INT_UART4_VECTOR:
+			sub = IPC12bits.U1BIS;
+			break;
+#endif
+#ifdef ENABLE_UART5
+		case INT_UART5_VECTOR:
+			sub = IPC12bits.U3BIS;
+			break;
+#endif
+#ifdef ENABLE_UART6
+		case INT_UART6_VECTOR:
+			sub = IPC12bits.U2BIS;
+			break;
+#endif
 	}
 	return (sub);
 }
@@ -591,7 +764,16 @@ unsigned int IntGetVectorSubPriority(u8 vector)
 
 void IntClearFlag(u8 numinter)
 {
+#if defined(UBW32_795) || defined(EMPEROR795)
+	if (numinter > 63)
+	{
+		numinter -= 64;
+		BitClear(IFS2, numinter);
+	}
+	else if (numinter > 31 && numinter <= 63) 
+#else
 	if (numinter > 31)
+#endif
 	{
 		numinter -= 32;
 		BitClear(IFS1, numinter);
@@ -614,8 +796,17 @@ void IntClearFlag(u8 numinter)
 
 unsigned int IntGetFlag(u8 numinter)
 {
-	if (numinter > 31)
+#if defined(UBW32_795) || defined(EMPEROR795)
+	if (numinter > 63)
 	{
+		numinter -= 64;
+		return BitRead(IFS2, numinter);
+	}
+	else if (numinter > 31 && numinter <= 63)
+#else
+	if (numinter > 31)
+#endif
+	{		
 		numinter -= 32;
 		return BitRead(IFS1, numinter);
 	}
@@ -634,7 +825,16 @@ unsigned int IntGetFlag(u8 numinter)
 
 void IntEnable(u8 numinter)
 {
+#if defined(UBW32_795) || defined(EMPEROR795)
+	if (numinter > 63)
+	{
+		numinter -= 64;
+		BitSet(IFS2, numinter);
+	}
+	else if (numinter > 31 && numinter <= 63) 
+#else
 	if (numinter > 31)
+#endif
 	{
 		numinter -= 32;
 		BitSet(IEC1, numinter);
@@ -654,7 +854,16 @@ void IntEnable(u8 numinter)
 
 void IntDisable(u8 numinter)
 {
+#if defined(UBW32_795) || defined(EMPEROR795)
+	if (numinter > 63)
+	{
+		numinter -= 64;
+		BitClear(IFS2, numinter);
+	}
+	else if (numinter > 31 && numinter <= 63) 
+#else
 	if (numinter > 31)
+#endif
 	{
 		numinter -= 32;
 		BitClear(IEC1, numinter);
@@ -783,8 +992,8 @@ void IntConfigureSystem(u8 mode)
 	asm("di"); // Disable all interrupts
 	temp = _CP0_GET_STATUS(); // Get Status
 	temp |= 0x00400000; // Set BEV bit
-	_CP0_SET_STATUS(temp); // Update Status
-	_CP0_SET_EBASE(0xBD005000); // Set an EBase value of 0xBD005000
+	_CP0_SET_STATUS(temp); // Update Status	
+	_CP0_SET_EBASE(0xBD005000); // Set an EBase value of 0xBD005000	
 	_CP0_SET_INTCTL(0x00000020); // Set the Vector Spacing to non-zero value
 	temp = _CP0_GET_CAUSE(); // Get Cause
 	temp |= 0x00800000; // Set IV

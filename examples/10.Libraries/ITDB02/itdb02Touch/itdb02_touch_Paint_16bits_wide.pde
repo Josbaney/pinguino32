@@ -29,8 +29,7 @@ void setCor(u8 R, u8 G, u8 B){
 }
 
 //16 Colors Aquarela!
-void drawAquarela()
-{
+void drawAquarela(){
    //white
 	myGLCD16w.setColor(255,255,255);
    myGLCD16w.fillRect(0,0, 20,20);
@@ -126,8 +125,7 @@ void drawAquarela()
 }
 
 // Draw a red frame while a button is touched
-void waitForIt(int x1, int y1, int x2, int y2)
-{
+void waitForIt(int x1, int y1, int x2, int y2){
   myGLCD16w.setColor(255,0,0);
   myGLCD16w.drawRoundRect(x1, y1, x2, y2);
   while (myTouch.dataAvailable())

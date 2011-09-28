@@ -15,3 +15,7 @@ Serial.GetDataBuffer SerialGetDataBuffer#include <serial.c>
 Serial.Interrupt SerialInterrupt#include <serial.c>
 Serial.UART1WriteChar SerialUART1WriteChar#include <serial.c>
 Serial.UART2WriteChar SerialUART2WriteChar#include <serial.c>
+Serial.UART3WriteChar SerialUART3WriteChar#include <serial.c>
+Serial.UART4WriteChar SerialUART4WriteChar#include <serial.c>
+Serial.UART5WriteChar SerialUART4WriteChar#include <serial.c>
+Serial.UART6WriteChar SerialUART4WriteChar#include <serial.c>
