@@ -882,7 +882,7 @@ void printNumF(double num, char dec, int x, int y)
 	  if (dec>5)
 		dec=5;
 	  
-	  inum=(long)(num*powf(10,dec));
+	  inum=(long)(num*powi(10,dec));
 	  
 	  while (inum>0) {
 		buf[c]=48+(inum % 10);

@@ -20,3 +20,7 @@ myGLCD16.fontSize fontSize#include <itdb02/itdb02_graph16.c>
 myGLCD16.drawBitmap drawBitmap#include <itdb02/itdb02_graph16.c>
 myGLCD16.drawBitmapR drawBitmapR#include <itdb02/itdb02_graph16.c>
 myGLCD16.loadBitmap loadBitmap#include <itdb02/itdb02_graph16.c>
+myGLCD16.setXY setXY#include <itdb02/itdb02_graph16.c>
+myGLCD16.fastWriteLow fastWriteLow #include <itdb02/itdb02_graph16.c>
+myGLCD16.fastWriteHigh fastWriteHigh #include <itdb02/itdb02_graph16.c>
+myGLCD16.writeData LCD_Write_DATA #include <itdb02/itdb02_graph16.c>
