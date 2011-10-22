@@ -233,6 +233,7 @@ ID_GENERIC4550 = wx.NewId()
 ID_PICUNO_EQUO = wx.NewId()
 ID_FREEJALDUINO = wx.NewId()
 ID_OLIMEX440 = wx.NewId()
+ID_OLIMEX440_OTG = wx.NewId()
 ID_EMPEROR460 = wx.NewId()
 ID_EMPEROR795 = wx.NewId()
 ID_UBW460 = wx.NewId()
@@ -244,20 +245,22 @@ board2 =	{ 'name':"Generic 18F4550",	'arch':8,		'proc':'18f4550',			'board':'PIC
 board3 =	{ 'name':"PICuno Equo",			'arch':8,		'proc':'18f4550',			'board':'PICUNO_EQUO',		'totalspace':0x7fff - 0x2000,	'shortarg':'-p', 'longarg':'--picunoequo' }
 board4 =	{ 'name':"FreeJALduino",		'arch':8,		'proc':'18f2550',			'board':'FREEJALDUINO',		'totalspace':0x7fff - 0x2000,	'shortarg':'-j', 'longarg':'--freejalduino' }
 board5 =	{ 'name':"PIC32 Pinguino",		'arch':32,		'proc':'32MX440F256H',	'board':'PIC32_PINGUINO',	'totalspace':0x40000,			'shortarg':'-o', 'longarg':'--olimex440' }
-board6 =	{ 'name':"Emperor 460",			'arch':32,		'proc':'32MX460F512L',	'board':'EMPEROR460',		'totalspace':0x80000,			'shortarg':'-e', 'longarg':'--emperor460' }
-board7 =	{ 'name':"Emperor 795",			'arch':32,		'proc':'32MX795F512L',	'board':'EMPEROR795',		'totalspace':0x80000,			'shortarg':'-E', 'longarg':'--emperor795' }
-board8 =	{ 'name':"UBW32 460",			'arch':32,		'proc':'32MX460F512L',	'board':'UBW32_460',			'totalspace':0x80000,			'shortarg':'-u', 'longarg':'--ubw460' }
-board9 =	{ 'name':"UBW32 795",			'arch':32,		'proc':'32MX795F512L',	'board':'UBW32_795',			'totalspace':0x80000,			'shortarg':'-U', 'longarg':'--ubw795' }
+board6 =	{ 'name':"PIC32 Pinguino OTG",		'arch':32,		'proc':'32MX440F256H',	'board':'PIC32_PINGUINO_OTG',	'totalspace':0x40000,			'shortarg':'-O', 'longarg':'--olimex440_OTG' }
+board7 =	{ 'name':"Emperor 460",			'arch':32,		'proc':'32MX460F512L',	'board':'EMPEROR460',		'totalspace':0x80000,			'shortarg':'-e', 'longarg':'--emperor460' }
+board8 =	{ 'name':"Emperor 795",			'arch':32,		'proc':'32MX795F512L',	'board':'EMPEROR795',		'totalspace':0x80000,			'shortarg':'-E', 'longarg':'--emperor795' }
+board9 =	{ 'name':"UBW32 460",			'arch':32,		'proc':'32MX460F512L',	'board':'UBW32_460',			'totalspace':0x80000,			'shortarg':'-u', 'longarg':'--ubw460' }
+board10 =	{ 'name':"UBW32 795",			'arch':32,		'proc':'32MX795F512L',	'board':'UBW32_795',			'totalspace':0x80000,			'shortarg':'-U', 'longarg':'--ubw795' }
 
 boardlist = {	ID_GENERIC2550:board1,
 					ID_GENERIC4550:board2,
 					ID_PICUNO_EQUO:board3,
 					ID_FREEJALDUINO:board4,
 					ID_OLIMEX440:board5,
-					ID_EMPEROR460:board6,
-					ID_EMPEROR795:board7,
-					ID_UBW460:board8,
-					ID_UBW795:board9		}
+					ID_OLIMEX440_OTG:board6,
+					ID_EMPEROR460:board7,
+					ID_EMPEROR795:board8,
+					ID_UBW460:board9,
+					ID_UBW795:board10		}
 
 # ------------------------------------------------------------------------------
 # default

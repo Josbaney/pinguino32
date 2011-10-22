@@ -89,7 +89,8 @@ link:
 		$(OBJDIR)\usb\libcdc.a \
 		$(OBJDIR)/usb/libadb.a\
 		$(LKRDIR)\ISRwrapper.S \
-		$(INCDIR)\non-free\p32xxxx.h
+		$(INCDIR)\non-free\p32xxxx.h \
+		-lm -lgcc -lc
 
 exec:
 	$(OBJC) -O ihex $(SRCDIR)\main32.elf $(SRCDIR)\main32.hex
