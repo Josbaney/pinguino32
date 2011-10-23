@@ -13,11 +13,11 @@
 #define DUMMY 0xFF
 
 // I/O pin definitions
-#if defined(PIC32_PINGUINO)
+#if defined(PIC32_PINGUINO) || defined (PIC32_PINGUINO_OTG)
 	// CD and CS are on the same pin (???)
 	// D10 = SS2
-	#define SD_CS		10		// Card Chip Select (SS) is on pin 10 (D10)
-	#define SD_CD		10		// Card Card Detect is on pin 10 (D10)
+	#define SD_CS		8		// Card Chip Select (SS) is on pin 10 (D10)
+	#define SD_CD		8		// Card Card Detect is on pin 10 (D10)
 #endif
 
 // Port Controls (Platform dependent)
@@ -155,12 +155,12 @@ DSTATUS disk_initialize(void)
 	u8 n, cmd, ty, ocr[4];
 	u16 tmr;
 
-	if (digitalread(SD_CD))	return DRES_ERROR;	/* No card in the socket */
+//	if (digitalread(SD_CD))	return STA_NODISK;	/* No card in the socket */
 
 	power_on();												/* Force socket power on */
 	//FCLK_SLOW();
 	SPI_init();
-	SPI_clock(SPI_CLOCK_DIV64);
+	SPI_clock(SPI_PBCLOCK_DIV64);
 
 	for (n = 10; n; n--) SPI_write(DUMMY);			/* Dummy clocks */
 	
@@ -211,7 +211,7 @@ DSTATUS disk_initialize(void)
 		/* Initialization succeded */
 		//FCLK_FAST();
 	 	SPI_init();
-		SPI_clock(SPI_CLOCK_DIV16);
+		SPI_clock(SPI_PBCLOCK_DIV16);
 		return DRES_OK;
 	}
 	else

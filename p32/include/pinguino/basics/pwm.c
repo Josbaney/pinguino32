@@ -51,7 +51,7 @@ void PWM_init(void)
 
 u8 analogwrite(u8 pin, u16 setpoint)
 {
-#if defined(PIC32_PINGUINO)
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
 	switch (pin)
 	{
 		case 2:

@@ -2,9 +2,9 @@
 	FILE:				math.c
 	PROJECT:			pinguino - http://www.pinguino.cc/
 	PURPOSE:			various mathematics functions
-	PROGRAMER:		regis blanchot <rblanchot@gmail.com>
-	FIRST RELEASE:	12 apr. 2011
-	LAST RELEASE:	12 apr. 2011
+	PROGRAMER:			regis blanchot <rblanchot@gmail.com>
+	FIRST RELEASE:		12 apr. 2011
+	LAST RELEASE:		12 sept. 2011
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -30,6 +30,22 @@
 long map(long x, long in_min, long in_max, long out_min, long out_max)
 {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+long bounds(long x, long _min, long _max)
+{
+	long temp;
+	
+	if (_max < _min)
+	{
+		temp = _max;
+		_max = _min;
+		_min = temp;
+	}
+	
+	if (x > _max) return _max;
+	if (x < _min) return _min;
+	return x;
 }
 
 #endif	/* __MATH_C */
