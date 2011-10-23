@@ -30,7 +30,7 @@
 #include <pin.h>
 
 #ifdef __USB__
-#include "../include/usb.h"
+#include <usb.h>
 #include <usb.c>
 #endif
 
