@@ -251,7 +251,7 @@ void CDCprint(const char *fmt, ...)
 //CDC.println
 void CDCprintln(const char *fmt,...)
 {
-	CDCprint(fmt);
+	CDCprintf(fmt);
 	CDCprintf("\n\r");
 }
 

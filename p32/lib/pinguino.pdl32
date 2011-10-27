@@ -11,6 +11,7 @@ analogRead analogRead#include <analog.c>
 randomSeed srand#include <stdlib.h>
 pulseIn pulseIn#include <pulse.c>
 map map#include <math.c>
+bounds bounds#include <math.c>
 dec2bcd dec2bcd#include <bcd.c>
 bcd2dec bcd2dec#include <bcd.c>
 bin2bcd bin2bcd#include <bcd.c>

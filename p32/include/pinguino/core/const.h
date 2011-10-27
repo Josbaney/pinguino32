@@ -1,14 +1,14 @@
 /*	----------------------------------------------------------------------------
- * const.h
- * Régis Blanchot
- * UBW32 and Emperor board revised - Marcus Fazzi SET/2011
- *--------------------------------------------------------------------------*/
+ *	const.h
+ *	Régis Blanchot
+ *	UBW32 and Emperor board revised - Marcus Fazzi SET/2011
+ *	--------------------------------------------------------------------------*/
 
 #ifndef __CONST_H
 	#define __CONST_H
 
 	#ifndef PI
-		#define PI		3.1415926535897932384626433832795
+		#define PI				3.1415926535897932384626433832795
 	#endif
 
 	#ifndef HALF_PI
@@ -16,7 +16,7 @@
 	#endif
 
 	#ifndef TWO_PI
-		#define TWO_PI		6.283185307179586476925286766559
+		#define TWO_PI			6.283185307179586476925286766559
 	#endif
 
 	#ifndef DEG_TO_RAD
@@ -28,7 +28,7 @@
 	#endif
 
 	#ifndef NULL
-		#define NULL		0
+		#define NULL	0
 	#endif
 
 	#ifndef ON
@@ -40,41 +40,41 @@
 	#endif
 
 	#ifndef FALSE
-		#define FALSE		0
+		#define FALSE	0 
 	#endif
 
 	#ifndef TRUE
-		#define TRUE		!FALSE
+		#define TRUE	!FALSE
 	#endif
 
 	//lower case
 
 	#ifndef false
-		#define false		0
+		#define false	0
 	#endif
 
 	#ifndef true 
-		#define true		!false
+		#define true	!false
 	#endif
 
 	#ifndef False
-		#define False		0
+		#define False	0
 	#endif
 
 	#ifndef True 
-		#define True		!False
+		#define True	!False
 	#endif
 
 	#ifndef INPUT
-		#define INPUT		1
+		#define INPUT	1
 	#endif
 
 	#ifndef OUTPUT
-		#define OUTPUT		0
+		#define OUTPUT	0
 	#endif
 
 	#ifndef HIGH
-		#define HIGH		1
+		#define HIGH	1
 	#endif
 
 	#ifndef LOW
@@ -96,7 +96,7 @@
 	//#define or		||	
 
 	#ifndef BYTE
-		#define BYTE		1
+		#define BYTE	1
 	#endif
 
 	#ifndef BIN
@@ -128,21 +128,21 @@
 		#define REDLED			64 //PORTEbits.RE1	// led4
 
 		// UBW32 build-in buttons
-		#define PROGBUTTON		68 //PORTEbits.RE7 = prog button
-		#define USERBUTTON		69 //PORTEbits.RE6 = user button
+		#define PROGBUTTON	68 //PORTEbits.RE7 = prog button
+		#define USERBUTTON	69 //PORTEbits.RE6 = user button
 		 
 	#elif defined(EMPEROR460) || defined(EMPEROR795)
 		// EMPEROR build-in leds
 		#define LED1			49 //PORTEbits.RE2	// blue led
 		#define LED2			48 //PORTEbits.RE3	// red led
 
-		#define BLUELED			49 //pin49 PORTEbits.RE2	// led1
+		#define BLUELED		49 //pin49 PORTEbits.RE2	// led1
 		#define REDLED			48 //pin48 PORTEbits.RE3	// led2
 
 		// UBW32 build-in buttons
-		#define USERBUTTON		43 //PORTEbits.RE7 = user button
+		#define USERBUTTON	43 //PORTEbits.RE7 = user button
 
-	#elif defined(PIC32_PINGUINO)
+	#elif defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
 		// Arduino's digital pins
 		#define D0		0
 		#define D1		1
@@ -151,7 +151,7 @@
 		#define D4		4
 		#define D5		5
 		#define D6		6
-		#define RTCC		6
+		#define RTCC	6
 		#define D7		7
 		#define D8		8
 		#define D9		9

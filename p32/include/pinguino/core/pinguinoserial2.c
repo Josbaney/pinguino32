@@ -43,6 +43,41 @@ void serial2printf(char *fmt, ...)
 	va_end(args);
 }
 
+/*******************************************************************************
+	And For Compatibility Reasons ....
+	16-08-2011: fixed bug in print - Régis Blanchot & Tiew Weng Khai
+*******************************************************************************/
+
+void serial1print(char *fmt,...)
+{
+	va_list ap;
+	unsigned char *s;
+        
+	va_start(ap, fmt);
+	s = va_start(ap, fmt);
+
+	switch (*s)
+	{
+		case DEC:
+			serial_printf("%d",fmt);
+			break;
+		case HEX:
+			serial_printf("%x",fmt);
+			break;
+		case BYTE:
+			serial_printf("%d",fmt);
+			break;
+		case OCT:
+			serial_printf("%o",fmt);
+			break;
+		case BIN:
+			serial_printf("%b",fmt);
+			break;           
+		default:
+			serial_printf(fmt);
+			break;
+	}
+
 /*
 void serial2print(char *fmt,...)
 {
