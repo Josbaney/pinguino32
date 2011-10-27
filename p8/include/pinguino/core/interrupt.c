@@ -374,7 +374,7 @@ void int_stop()
 	--------------------------------------------------------------------------*/
 
 #ifdef TMR0INT
-void OnTimer0(callback func, u8 timediv, u16 delay)
+char OnTimer0(callback func, u8 timediv, u16 delay)
 {
 	u8 _t0con = 0;
 
@@ -415,18 +415,20 @@ void OnTimer0(callback func, u8 timediv, u16 delay)
 		TMR0H = preloadH[INT_TMR0];
 		TMR0L = preloadL[INT_TMR0];
 		T0CON = _t0con;
+		return INT_TMR0;
 	}
 	#ifdef DEBUG
 	else
 	{
 		serial_printf("Error : interrupt TIMER0 is already used !");
+		return false;
 	}
 	#endif
 }
 #endif
 
 #ifdef TMR1INT
-void OnTimer1(callback func, u8 timediv, u16 delay)
+char OnTimer1(callback func, u8 timediv, u16 delay)
 {
 	u8 _t1con = 0;
 
@@ -469,11 +471,13 @@ void OnTimer1(callback func, u8 timediv, u16 delay)
 		TMR1H = preloadH[INT_TMR1];
 		TMR1L = preloadL[INT_TMR1];
 		T1CON = _t1con;
+		return INT_TMR1;
 	}
 	#ifdef DEBUG
 	else
 	{
 		serial_printf("Error : interrupt TIMER1 is already used !");
+		return INT_TMR1;
 	}
 	#endif
 }
@@ -522,7 +526,7 @@ void OnRTC(callback func, u16 delay)
 #endif
 
 #ifdef TMR2INT
-void OnTimer2(callback func, u8 timediv, u16 delay)
+char OnTimer2(callback func, u8 timediv, u16 delay)
 {
 	u8 _t2con = 0;
 	u8 _pr2 = 0;
@@ -562,18 +566,20 @@ void OnTimer2(callback func, u8 timediv, u16 delay)
 		PIR1bits.TMR2IF = 0;
 		PR2 = _pr2;	// Timer2 Match value
 		T2CON = _t2con;
+		return INT_TMR2;
 	}
 	#ifdef DEBUG
 	else
 	{
 		serial_printf("Error : interrupt TIMER2 is already used !");
+		return INT_TMR2;
 	}
 	#endif
 }
 #endif
 
 #ifdef TMR3INT
-void OnTimer3(callback func, u8 timediv, u16 delay)
+char OnTimer3(callback func, u8 timediv, u16 delay)
 {
 	u8 _t3con = 0;
 
@@ -616,11 +622,13 @@ void OnTimer3(callback func, u8 timediv, u16 delay)
 		TMR3H = preloadH[INT_TMR3];
 		TMR3L = preloadL[INT_TMR3];
 		T3CON = _t3con;
+		return INT_TMR3;
 	}
 	#ifdef DEBUG
 	else
 	{
 		serial_printf("Error : interrupt TIMER3 is already used !");
+		return INT_TMR3;
 	}
 	#endif
 }
