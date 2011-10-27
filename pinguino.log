@@ -1,0 +1,14 @@
+Pinguino started at Sun Oct 23 21:32:20 2011
+
+Python version is good (>=2.5)
+System host is GNU/Linux
+8-bit compiler OK.
+32-bit compiler OK.
+wx.python successfully loaded
+wx.aui successfully loaded
+Regex successfully loaded
+Shutil successfully loaded
+Subprocess successfully loaded
+GetText successfully loaded
+Locale successfully loaded
+WebBrowser successfully loaded
