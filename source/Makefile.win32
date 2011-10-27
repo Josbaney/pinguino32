@@ -20,7 +20,7 @@ LKRDIR		=	$(P32DIR)\lkr
 OBJDIR		=	$(P32DIR)\obj\non-free
 
 INCLUDEDIRS	=	-I$(INCDIR)\non-free \
-					-I$(INCDIR)\pinguino\basics \
+					-I$(INCDIR)\pinguino\core \
 					-I$(INCDIR)\pinguino\libraries \
 					-I$(LKRDIR) \
 					-I$(PDEDIR) \
@@ -87,7 +87,7 @@ link:
 		$(OBJDIR)\crt0.S \
 		$(OBJDIR)\processor.o \
 		$(OBJDIR)\usb\libcdc.a \
-		$(OBJDIR)/usb/libadb.a\
+		$(OBJDIR)\usb\libadb.a \
 		$(LKRDIR)\ISRwrapper.S \
 		$(INCDIR)\non-free\p32xxxx.h \
 		-lm -lgcc -lc

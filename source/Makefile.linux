@@ -19,15 +19,11 @@ LKRDIR		=	$(P32DIR)/lkr
 OBJDIR		=	$(P32DIR)/obj/non-free
 
 INCLUDEDIRS	=	-I$(INCDIR)/non-free\
-					-I$(INCDIR)/pinguino/basics\
+					-I$(INCDIR)/pinguino/core\
 					-I$(INCDIR)/pinguino/libraries\
 					-I$(LKRDIR)\
 					-I$(PDEDIR)\
 					-I$(OBJDIR)
-
-#					-I$(P32DIR)/bin/$(OSDIR)/mips-elf/include\
-#					-I$(SRCDIR)\
-#					-I$(OBJDIR)/usb
 
 LIBDIRS		=	-L$(OBJDIR)/usb
 
@@ -48,13 +44,7 @@ MV				=	mv
 # flags
 # ------------------------------------------------------------------------------
 
-#					-O2 -EL -march=24kc\
-#					-c\
-#					-x c++
-#					-x c
-#					-pedantic -Wall\
-#					-std=c99 
-
+#-fdollars-in-identifiers for ISRwrapper.S
 CFLAGS		=	-fdollars-in-identifiers $(INCLUDEDIRS)
 
 LDFLAGS		=	$(LIBDIRS) $(LIBS)
@@ -64,7 +54,7 @@ ELF_FLAGS	=	-O2 -EL -march=24kc\
 					-Wl,--defsym,_min_heap_size=8192\
 					-Wl,-Map=$(SRCDIR)/output.map\
 					-D __PIC32MX__ -D __$(PROC)__ -D $(BOARD)\
-					-T$(LKRDIR)/procdefs.ld \
+					-T$(LKRDIR)/procdefs.ld\
 					-T$(LKRDIR)/elf32pic32mx.x
 
 #-------------------------------------------------------------------------------
@@ -90,7 +80,7 @@ copy:
 
 link:
 	#----------------------------------------------------------------------------
-	#	link
+	#	compile and link
 	#----------------------------------------------------------------------------
 	$(CC) $(ELF_FLAGS) $(LDFLAGS) $(CFLAGS) -o $(SRCDIR)/main32.elf $(SRCDIR)/main32.c\
 		$(OBJDIR)/crt0.S\
@@ -99,7 +89,7 @@ link:
 		$(OBJDIR)/usb/libadb.a\
 		$(LKRDIR)/ISRwrapper.S\
 		$(INCDIR)/non-free/p32xxxx.h\
-		-lm -lgcc -lc
+		$(LIBS)
 
 exec:
 	#----------------------------------------------------------------------------
