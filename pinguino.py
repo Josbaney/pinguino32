@@ -40,9 +40,7 @@
 # check dependencies
 # ------------------------------------------------------------------------------
 
-DEV = False # turn development version off
 from check import *
-c = check(DEV)
 
 # ------------------------------------------------------------------------------
 # current version
@@ -710,15 +708,15 @@ class Pinguino(wx.Frame):
 		self.config.Write('Theme/name', self.theme)
 
 		for b in range(len(boardlist)):
-			#clef = BOARD_DEFAULT_ID + b
 			bid = boardlist[b].id
 			if self.board_menu.IsChecked(bid):
 				self.config.WriteInt('Board', bid)
 
-		for d in range(self.ID_ENDDEBUG - self.ID_DEBUG - 1):
-			did = self.ID_DEBUG + d + 1
-			if self.debug_menu.IsChecked(did):
-				self.config.WriteInt('Debug', did)
+		if DEV:
+			for d in range(self.ID_ENDDEBUG - self.ID_DEBUG - 1):
+				did = self.ID_DEBUG + d + 1
+				if self.debug_menu.IsChecked(did):
+					self.config.WriteInt('Debug', did)
 
 		self.config.Flush()
 
@@ -905,23 +903,34 @@ class Pinguino(wx.Frame):
 			filename = self.editor.GetPath()
 			filename, extension = os.path.splitext(filename)
 			if os.path.exists(filename + ".hex"):
-				#self.displaymsg("",1)
-				#fichier = open(os.path.join(SOURCE_DIR, 'stdout'), 'w+')
-				u = uploader()
-				u.writeHex(self.logwindow, filename + ".hex", self.curBoard)
-				#self.displaymsg(r, 0)
-				"""
-					sortie=Popen([os.path.join(HOME_DIR, self.osdir, 'p32', 'bin', self.u32),
-								"-w",
-								filename+".hex",
-								"-r",
-								"-n"],
-								stdout=fichier, stderr=STDOUT)
-					sortie.communicate()
-					fichier.seek(0)
-					self.displaymsg(fichier.read(),0)
-					fichier.close()
-				"""									  
+				if DEV:
+					u = uploader()
+					u.writeHex(self.logwindow, filename + ".hex", self.curBoard)
+				else:
+					self.displaymsg("",1)
+					fichier = open(os.path.join(SOURCE_DIR, 'stdout'), 'w+')
+					if self.curBoard.arch == 8:
+						if sys.platform == 'win32':
+							sys.argv = ["vascoboot1.3.py",filename+".hex"]
+							execfile(os.path.join(HOME_DIR, self.osdir, 'p8', 'bin', 'vascoboot1.3.py'))
+						else:
+							sortie=Popen([os.path.join(HOME_DIR, self.osdir, 'p8', 'bin', 'docker'),
+										"-v",
+										"04d8",
+										"write",
+										filename+".hex"],
+										stdout=fichier,stderr=STDOUT)
+					else:
+						sortie=Popen([os.path.join(HOME_DIR, self.osdir, 'p32', 'bin', self.u32),
+									"-w",
+									filename+".hex",
+									"-r",
+									"-n"],
+									stdout=fichier, stderr=STDOUT)
+						sortie.communicate()
+						fichier.seek(0)
+						self.displaymsg(fichier.read(),0)
+						fichier.close()
 			else:
 				dlg = wx.MessageDialog(self,
 						self.translate('File must be verified before upload'),

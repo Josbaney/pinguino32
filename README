@@ -7,7 +7,7 @@ This file is free documentation; you have unlimited permission to copy,
 distribute and modify it.
 
 Pinguino is an arduino like environment built in Python.
-It is a complete package with compiler, assembler, linker and bootloader, nothing to install.
+It is a complete package with compiler, assembler, linker and bootloader.
 Pinguino is compatible with arduino/wiring langage.
 
 dependencies:
@@ -16,6 +16,7 @@ Linux
 - libusb
 - python 2.5
 - wxpython 2.8
+
 Windows
 - python 2.5
 - wxpython 2.8

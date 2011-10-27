@@ -11,9 +11,6 @@
 	Pinguino (beta 10)
 	---------------------------------------------------------------------------*/
 
-Bugs :
-- were numerous, can't all write
-
 IDE: (Régis Blanchot & Jean-Pierre Mandon)
 - 32-bit support
 - MIPS-ELF Compiler build from scratch (gcc 4.5.2 / binutils 2.21 / newlib 1.19)

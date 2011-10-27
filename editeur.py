@@ -37,9 +37,9 @@ import codecs
 import wx.stc as stc
 import keyword
 
-faces = { 'times': 'Times New Roman',
+faces = { 'helv' : 'Arial',
+		'times': 'Times New Roman',
 		'mono' : 'Courier New',
-		'helv' : 'Arial',
 		'other': 'Comic Sans MS',
 		'size' : 8,
 		'size2': 8,
