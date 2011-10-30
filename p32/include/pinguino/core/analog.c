@@ -79,7 +79,7 @@ u16 __bufmask[]=   {0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,
 
 void SetAnalog(u8 pin)
 {
-	#if defined(PIC32_PINGUINO)
+	#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
 	if ((pin==4)||(pin==18)) TRISDbits.TRISD9=1;   // analog input 18 is shared with I2C
 	if ((pin==5)||(pin==19)) TRISDbits.TRISD10=1;  // analog input 19 is shared with I2C
 	#endif

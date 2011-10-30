@@ -155,7 +155,43 @@ void pinmode(u8 pin,u8 state)
 				break;
 	}
 }
-				  				  
+
+u8 pinread(u8 pin)
+{
+	u32 reg;
+
+	switch (portmask[pin])
+	{
+		#ifndef __32MX440F256H__
+		case 0:
+			reg = TRISA;
+			break;
+		#endif
+		case 1:
+			reg = TRISB;
+			break;
+		case 2:
+			reg = TRISC;
+			break;
+		case 3:
+			reg = TRISD;
+			break;
+		case 4:
+			reg = TRISE;
+			break;
+		case 5:
+			reg = TRISF;
+			break;
+		case 6:
+			reg = TRISG;
+			break;
+	}
+	if ((reg & pinmask[pin])!=0)
+		return 1;
+	else
+		return 0;
+}
+		  
 void digitalwrite(u8 pin,u8 state)
 {
 	switch (portmask[pin])

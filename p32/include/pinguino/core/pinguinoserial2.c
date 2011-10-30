@@ -46,37 +46,42 @@ void serial2printf(char *fmt, ...)
 /*******************************************************************************
 	And For Compatibility Reasons ....
 	16-08-2011: fixed bug in print - Régis Blanchot & Tiew Weng Khai
+	29-10-2011: fixed uncompatible arg. *s / serial2printf - Régis Blanchot
 *******************************************************************************/
 
-void serial1print(char *fmt,...)
+void serial2print(char *fmt,...)
 {
-	va_list ap;
-	unsigned char *s;
-        
-	va_start(ap, fmt);
-	s = va_start(ap, fmt);
+	//	unsigned char *s;
+	unsigned char s;
+	va_list args;					// list of arguments
 
-	switch (*s)
+	va_start(args, fmt);			// initialize the list
+	// s = va_start(args, fmt);
+	s = (unsigned char) va_arg(args, int);		// get the first variable arg.
+
+	//switch (*s)
+	switch (s)
 	{
 		case DEC:
-			serial_printf("%d",fmt);
+			serial2printf("%d",fmt);
 			break;
 		case HEX:
-			serial_printf("%x",fmt);
+			serial2printf("%x",fmt);
 			break;
 		case BYTE:
-			serial_printf("%d",fmt);
+			serial2printf("%d",fmt);
 			break;
 		case OCT:
-			serial_printf("%o",fmt);
+			serial2printf("%o",fmt);
 			break;
 		case BIN:
-			serial_printf("%b",fmt);
+			serial2printf("%b",fmt);
 			break;           
 		default:
-			serial_printf(fmt);
+			serial2printf(fmt);
 			break;
 	}
+}
 
 /*
 void serial2print(char *fmt,...)
@@ -113,7 +118,7 @@ void serial2print(char *fmt,...)
 void serial2println(char *fmt,...)
 {
 	serial2printf(fmt);
-	serial2printf("\n\r");
+	serial2printf("\r\n");
 }
 
 void serial2write(char c)
