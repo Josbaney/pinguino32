@@ -842,7 +842,7 @@ void rotateChar(char c, int x, int y, int pos, int deg)
 	fastWriteHigh(LCD_CS);
 }
 
-void itdb_print(char *st, int x, int y, int deg)
+void myGLCD16_print(char *st, int x, int y, int deg)
 {
 	int stl, i;
 
@@ -930,7 +930,7 @@ void printNumI(long num, int x, int y)
 	  st[c+neg]=0;
   }
 
-  itdb_print(st,x,y,0);
+  myGLCD16_print(st,x,y,0);
 }
 
 void printNumF(double num, char dec, int x, int y)
@@ -997,7 +997,7 @@ void printNumF(double num, char dec, int x, int y)
 	  st[c2]=0;
   }
 
-  itdb_print(st,x,y,0);
+  myGLCD16_print(st,x,y,0);
 }
 
 void fontSize(char size)

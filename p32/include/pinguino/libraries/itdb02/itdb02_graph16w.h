@@ -173,7 +173,7 @@ void drawCircle(int x, int y, int radius);
 void fillCircle(int x, int y, int radius);
 void setColor(unsigned char r, unsigned char g, unsigned char b);
 void setBackColor(unsigned char r, unsigned char g, unsigned char b);
-void itdb_print(char *st, int x, int y, int deg);
+void myGLCD16w_print(char *st, int x, int y, int deg);
 void printNumI(long num, int x, int y);
 void printNumF(double num, char dec, int x, int y);
 void fontSize(char size);

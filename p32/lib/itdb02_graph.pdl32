@@ -13,7 +13,7 @@ myGLCD.fillRect fillRect#include <itdb02/itdb02_graph.c>
 myGLCD.fillRoundRect fillRoundRect#include <itdb02/itdb02_graph.c>
 myGLCD.drawCircle drawCircle#include <itdb02/itdb02_graph.c>
 myGLCD.fillCircle fillCircle#include <itdb02/itdb02_graph.c>
-myGLCD.print itdb_print#include <itdb02/itdb02_graph.c>
+myGLCD.print myGLCD_print#include <itdb02/itdb02_graph.c>
 myGLCD.printNumI printNumI#include <itdb02/itdb02_graph.c>
 myGLCD.printNumF printNumF#include <itdb02/itdb02_graph.c>
 myGLCD.fontSize fontSize#include <itdb02/itdb02_graph.c>

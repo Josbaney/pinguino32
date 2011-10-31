@@ -13,7 +13,7 @@ myGLCD16w.fillRect fillRect#include <itdb02/itdb02_graph16w.c>
 myGLCD16w.fillRoundRect fillRoundRect#include <itdb02/itdb02_graph16w.c>
 myGLCD16w.drawCircle drawCircle#include <itdb02/itdb02_graph16w.c>
 myGLCD16w.fillCircle fillCircle#include <itdb02/itdb02_graph16w.c>
-myGLCD16w.print itdb_print#include <itdb02/itdb02_graph16w.c>
+myGLCD16w.print myGLCD16w_print#include <itdb02/itdb02_graph16w.c>
 myGLCD16w.printNumI printNumI#include <itdb02/itdb02_graph16w.c>
 myGLCD16w.printNumF printNumF#include <itdb02/itdb02_graph16w.c>
 myGLCD16w.fontSize fontSize#include <itdb02/itdb02_graph16w.c>
