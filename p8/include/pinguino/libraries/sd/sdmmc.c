@@ -11,15 +11,16 @@
 
 #include <system.c>
 #include <digitalw.c>
+#include <pin.h>
 #include <sd/sdmmc.h>
 #include <sd/fileio.h>
 
 // send one byte of data and receive one back at the same time
 unsigned char writeSPI(unsigned char b)
 {
-	SPI2BUF = b;						// write to buffer for TX
-	while(!SPI2STATbits.SPIRBF);	// wait transfer complete
-	return SPI2BUF;					// read the received value
+	SSPBUF = b;						// write to buffer for TX
+	while(!SSPSTATbits.BF);		// wait transfer complete
+	return SSPBUF;					// read the received value
 }	// writeSPI
 
 void initSD(void)
@@ -27,9 +28,16 @@ void initSD(void)
 	digitalwrite(SDCS, HIGH);	// initially keep the SD card disabled
 	pinmode(SDCS, OUTPUT);		// make Card select an output pin
 
-	// init the spi module for a slow (safe) clock speed first
-	SPI2CON = 0x8120;   // ON (0x8000), CKE=1 (0x100), CKP=0, Master mode (0x20)
-	SPI2BRG = (GetPeripheralClock() / (2 * 250000)) - 1;
+	// SPI pin names are declared in pins.h
+	pinmode(SCK, OUTPUT);		// Master Mode : clock is output
+	pinmode(SDI, INPUT);
+	pinmode(SDO, OUTPUT);
+
+	// init the SPI module for a slow (safe) clock speed first
+	SSPCON1bits.CKP = 0;		// Idle state for clock is a low level
+	SSPSTATbits.CKE = 1;		// Transmit occurs on transition from active to Idle clock state
+	SSPCON1 = SSPCON1 & 0b11110010; // SSPM<3:0> = 0010 = SPI Master mode, clock = FOSC/64
+	SSPCON1bits.SSPEN = 1;	// Enables serial port and configures SCK, SDO, SDI and SS as serial port pins;
 }   // initSD
 
 #define readSPI()   writeSPI(0xFF)
@@ -132,9 +140,9 @@ int initMedia(void)
 		return E_INIT_TIMEOUT;  // init timed out 
 
 	// 6. increase speed 
-	SPI2CON = 0;                // disable the SPI2 module
-	SPI2BRG = 0;                // maximum possible baud rate = Fpb/2
-	SPI2CON = 0x8120;           // re-enable the SPI2 module
+	SSPCON1bits.SSPEN = 0;	// Disable SPI
+	SSPCON1 = SSPCON1 & 0b11110000; // SSPM<3:0> = 0000 = SPI Master mode, clock = FOSC/4
+	SSPCON1bits.SSPEN = 1;	// Enable SPI
 
 	return 0;           
 } // init media
@@ -253,11 +261,8 @@ int writeSECTOR(LBA a, char *p)
 //          FALSE card not present
 int getCD(void) 
 {
-#if defined (PIC32_PINGUINO_OTG)
 	return TRUE;
-#else
-	return (SDCD);
-#endif
+	//return (SDCD);
 }
 
 // card Write Protect tab detection switch
@@ -265,11 +270,8 @@ int getCD(void)
 //          FALSE write protection tab OPEN
 int getWP(void)
 {
-#if defined (PIC32_PINGUINO_OTG)
 	return FALSE;
-#else
-	return (SDWP);
-#endif
+	//return (SDWP);
 }
 
 #endif /* __SDMMC_C__ */

@@ -31,7 +31,7 @@
 #include <const.h>
 #include <typedef.h>
 
-#define CRYSTALFREQUENCY	 8000000L	// 8 MHz
+#define CRYSTALFREQUENCY	8000000L	// 8 MHz
 #define CPUCOREMAXFREQUENCY	80000000L	// 80 MHz
 #define FLASHACCESSTIME		50			// 50 ns
 
@@ -256,7 +256,7 @@ void SetPeripheralClock(u8 div)
 void SystemConfig(u32 cpuCoreFrequency)
 {
 	SetSystemClock(cpuCoreFrequency);
-	SetPeripheralClock(PBDIV8);	// PeripheralClock = cpuCoreFrequency / 8
+	SetPeripheralClock(PBDIV2);	// PeripheralClock = cpuCoreFrequency / 2
 	SetFlashWaitStates();
 	DDPCONbits.JTAGEN=0;		// PORTA is used as digital instead of JTAG
 }

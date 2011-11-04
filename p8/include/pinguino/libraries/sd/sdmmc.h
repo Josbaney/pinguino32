@@ -25,15 +25,6 @@ TO CHECK: When using PIC32MX4xx (PIC32-Pinguino), the SPI2 port cannot be chosen
 or the code must be modified to ignore the CD and WD inputs.
 */
 
-// I/O definitions
-#if defined(PIC32_PINGUINO) || defined (PIC32_PINGUINO_OTG)
-	//#define READ_LED			13
-	//#define WRITE_LED			13
-	//#define SDWP				   // Write Protect input 
-	//#define SDCD					// Card Detect input
-	//#define SDCS					8	// D8_MMC_#SS Card Select output
-#endif
-
 // SD card commands
 #define RESET           0 // a.k.a. GO_IDLE (CMD0)
 #define INIT            1 // a.k.a. SEND_OP_COND (CMD1)

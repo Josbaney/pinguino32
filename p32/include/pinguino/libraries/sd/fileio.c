@@ -207,7 +207,25 @@ MEDIA * mount(unsigned char pin)
 void unmount(void)
 { 
 	free(D);
+	SPI2CONCLR = 0x8000;   // SPI2 OFF
 } // unmount
+
+/*	----------------------------------------------------------------------------
+	present   test if a SD card is present
+	--------------------------------------------------------------------------*/
+
+char SD_present(unsigned char pin)
+{
+	if (mount(pin))
+	{
+		unmount();
+		return True;
+	}
+	else
+	{
+		return False;
+	}
+}
 
 /*	----------------------------------------------------------------------------
 	loads current entry sector in file buffer

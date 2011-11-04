@@ -1,4 +1,9 @@
+	#define MAXFILE 32
 
 
-#include <delay.c>
-#include <digitalw.c>
+
+
+#define DEBUG_MODE NODEBUG
+#include <__cdc.c>
+#include <sd/fileio.c>
+#include <typedef.h>

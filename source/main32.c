@@ -18,7 +18,7 @@
     License along with this library; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
     
-    * 2011-09-22  Added UART3 support, Marcus Fazzi <anunakin@gmail.org>
+    * 2011-09-22  Added UART3,4,5,6 support, Marcus Fazzi <anunakin@gmail.org>
 -------------------------------------------------------------------------*/
 
 #include <p32xxxx.h>			// always in first place to avoid conflict with const.h ON
@@ -34,13 +34,13 @@
 
 int main()
 {
-	#ifdef PIC32_PINGUINO
+	#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
 	TRISDbits.TRISD9=1;			// because PORTB is shared with SDA on Olimex board
 	TRISDbits.TRISD10=1;		// because PORTB is shared with SCL on Olimex board
 	#endif	
 
 	SystemConfig(80000000);		// default clock frequency is 80Mhz
-								// default peripheral freq. is 10MHz (cf. system.c)
+								// default peripheral freq. is 40MHz (cf. system.c)
 	AD1PCFG = 0xFFFF;			// All pins of PORTB as digital IOs
 
 	#ifdef __ANALOG__
@@ -111,14 +111,14 @@ void Serial6Interrupt(void)
 	Nop();
 }
 #endif
-#endif
+#endif /* __SERIAL__ */
 
 #ifndef __MILLIS__
 void Tmr2Interrupt(void)
 {
 	Nop();    
 }
-#endif
+#endif /* __MILLIS__ */
 
 #ifndef __SPI__
 /*

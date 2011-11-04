@@ -15,6 +15,7 @@
 // standard C libraries used		
 #include <ctype.h>      		// toupper...
 #include <string.h>     		// memcpy...
+#include <malloc.h>				// malloc, free ...
 
 #include <sd/fileio.h>  	   // file I/O routines 
 #include <sd/sdmmc.c>   	   // sd/mmc card interface
@@ -98,7 +99,7 @@ MEDIA * mount(unsigned char pin)
 	if (buffer == NULL)        // report an error  
 	{   
 		FError = FE_MALLOC_FAILED;
-		free(D);
+		free((unsigned char *)D);
 		return NULL;
 	}
 
@@ -106,7 +107,7 @@ MEDIA * mount(unsigned char pin)
 	if (!readSECTOR(FO_MBR, buffer)) 
 	{
 		FError = FE_CANNOT_READ_MBR;
-		free(D);
+		free((unsigned char *)D);
 		free(buffer);
 		return NULL;
 	}
@@ -116,7 +117,7 @@ MEDIA * mount(unsigned char pin)
 	if ((buffer[FO_SIGN] != 0x55) || (buffer[FO_SIGN +1] != 0xAA))
 	{
 		FError = FE_INVALID_MBR;
-		free(D);
+		free((unsigned char *)D);
 		free(buffer);
 		return NULL;
 	}
@@ -137,7 +138,7 @@ MEDIA * mount(unsigned char pin)
 			break;
 		default:
 			FError = FE_PARTITION_TYPE;
-			free(D);
+			free((unsigned char *)D);
 			free(buffer);
 			return NULL;
 	} // switch
@@ -150,7 +151,7 @@ MEDIA * mount(unsigned char pin)
 	// 10. get the sector loaded (boot record)
 	if (!readSECTOR(firsts, buffer)) 
 	{
-		free(D);
+		free((unsigned char *)D);
 		free(buffer);
 		return NULL;
 	}
@@ -160,7 +161,7 @@ MEDIA * mount(unsigned char pin)
 	if ((buffer[FO_SIGN] != 0x55) ||	(buffer[FO_SIGN +1] != 0xAA))
 	{
 		FError = FE_INVALID_BR;
-		free(D);
+		free((unsigned char *)D);
 		free(buffer);
 		return NULL;
 	}
@@ -206,7 +207,7 @@ MEDIA * mount(unsigned char pin)
 
 void unmount(void)
 { 
-	free(D);
+	free((unsigned char *)D);
 } // unmount
 
 /*	----------------------------------------------------------------------------

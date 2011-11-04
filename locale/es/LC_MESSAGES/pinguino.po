@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PINGUINO Beta7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-14 15:37-0430\n"
-"PO-Revision-Date: 2011-07-14 15:51-0400\n"
-"Last-Translator: Alexis Sanchez <aasanchez@gmail.com>\n"
+"POT-Creation-Date: 2011-10-30 01:10-0400\n"
+"PO-Revision-Date: 2011-10-30 01:14-0400\n"
+"Last-Translator: Alexis Sánchez <aasanchez@gmail.com>\n"
 "Language-Team: Comunidad PingüinoVE <pinguino-internationalization@lists.coactivate.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -20,138 +20,178 @@ msgstr ""
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: VENEZUELA\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /opt/pinguino32/locale/sources\n"
 
-#: pinguinobetax2.py:309
+#: /opt/pinguino32/locale/sources/pinguino.py:231
 msgid "New"
 msgstr "Nuevo"
 
-#: pinguinobetax2.py:311
+#: /opt/pinguino32/locale/sources/pinguino.py:233
 msgid "Open"
 msgstr "Abrir"
 
-#: pinguinobetax2.py:313
+#: /opt/pinguino32/locale/sources/pinguino.py:235
 msgid "Save"
 msgstr "Guardar"
 
-#: pinguinobetax2.py:315
+#: /opt/pinguino32/locale/sources/pinguino.py:237
 msgid "Save as"
 msgstr "Guardar Como"
 
-#: pinguinobetax2.py:317
+#: /opt/pinguino32/locale/sources/pinguino.py:239
 msgid "Close"
 msgstr "Cerrar"
 
-#: pinguinobetax2.py:319
+#: /opt/pinguino32/locale/sources/pinguino.py:241
 msgid "Exit"
 msgstr "Salir"
 
-#: pinguinobetax2.py:324
+#: /opt/pinguino32/locale/sources/pinguino.py:246
 msgid "File"
 msgstr "Archivo"
 
-#: pinguinobetax2.py:328
+#: /opt/pinguino32/locale/sources/pinguino.py:250
 msgid "Undo"
 msgstr "Deshacer"
 
-#: pinguinobetax2.py:330
+#: /opt/pinguino32/locale/sources/pinguino.py:252
 msgid "Redo"
 msgstr "Rehacer"
 
-#: pinguinobetax2.py:333
+#: /opt/pinguino32/locale/sources/pinguino.py:255
 msgid "Find"
 msgstr "Buscar"
 
-#: pinguinobetax2.py:335
+#: /opt/pinguino32/locale/sources/pinguino.py:257
 msgid "Replace"
 msgstr "Reemplazar"
 
-#: pinguinobetax2.py:339
+#: /opt/pinguino32/locale/sources/pinguino.py:261
 msgid "Cut"
 msgstr "Cortar"
 
-#: pinguinobetax2.py:341
+#: /opt/pinguino32/locale/sources/pinguino.py:263
 msgid "Copy"
 msgstr "Copiar"
 
-#: pinguinobetax2.py:343
+#: /opt/pinguino32/locale/sources/pinguino.py:265
 msgid "Paste"
 msgstr "Pegar"
 
-#: pinguinobetax2.py:345
+#: /opt/pinguino32/locale/sources/pinguino.py:267
 msgid "Clear"
 msgstr "Limpiar"
 
-#: pinguinobetax2.py:347
+#: /opt/pinguino32/locale/sources/pinguino.py:269
 msgid "Select all"
 msgstr "Seleccionar Todo"
 
-#: pinguinobetax2.py:349
+#: /opt/pinguino32/locale/sources/pinguino.py:271
 msgid "Edit"
 msgstr "Editar"
 
-#: pinguinobetax2.py:355
-msgid "Debug"
+#: /opt/pinguino32/locale/sources/pinguino.py:279
+msgid "None"
+msgstr "Vacio"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:282
+msgid "USB CDC (Serial Emulation)"
+msgstr "USB CDC (Emulación Serial)"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:285
+msgid "USB Bulk"
+msgstr "USB Bulk"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:288
+msgid "USB HID"
+msgstr "USB HID"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:291
+msgid "USB OTG"
+msgstr "USB OTG"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:299
+msgid "UART1 (Serial 1)"
+msgstr "UART1 (Serial 1)"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:301
+msgid "UART2 (Serial 2)"
+msgstr "UART2 (Serial 2)"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:303
+msgid "Debug mode"
 msgstr "Depurar"
 
-#: pinguinobetax2.py:373
-msgid "Preferences"
-msgstr "Preferencias"
-
-#: pinguinobetax2.py:377
-#: pinguinobetax2.py:378
-#: pinguinobetax2.py:379
-#: pinguinobetax2.py:380
-#: pinguinobetax2.py:381
-#: pinguinobetax2.py:382
-#: pinguinobetax2.py:383
+#: /opt/pinguino32/locale/sources/pinguino.py:314
 msgid "your board"
 msgstr "tu pinguino"
 
-#: pinguinobetax2.py:384
+#: /opt/pinguino32/locale/sources/pinguino.py:315
 msgid "Board"
 msgstr "Pinguino"
 
-#: pinguinobetax2.py:412
+#: /opt/pinguino32/locale/sources/pinguino.py:333
 msgid "Themes"
 msgstr "Temas"
 
-#: pinguinobetax2.py:425
+#: /opt/pinguino32/locale/sources/pinguino.py:340
+msgid "Check last revision"
+msgstr "Verificar ultima versión"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:344
+msgid "Upgrade"
+msgstr "Actualizar"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:347
+msgid "Revision"
+msgstr "Revisión"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:349
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:362
 msgid "Keywords"
 msgstr "Funciones"
 
-#: pinguinobetax2.py:429
+#: /opt/pinguino32/locale/sources/pinguino.py:366
 msgid "Website"
 msgstr "Sito web"
 
-#: pinguinobetax2.py:431
+#: /opt/pinguino32/locale/sources/pinguino.py:368
 msgid "Wiki"
 msgstr "Wiki"
 
-#: pinguinobetax2.py:433
+#: /opt/pinguino32/locale/sources/pinguino.py:370
 msgid "Forum"
 msgstr "Foro"
 
-#: pinguinobetax2.py:435
+#: /opt/pinguino32/locale/sources/pinguino.py:372
 msgid "Blog"
 msgstr "Blog"
 
-#: pinguinobetax2.py:437
+#: /opt/pinguino32/locale/sources/pinguino.py:374
 msgid "Group"
 msgstr "Grupo"
 
-#: pinguinobetax2.py:439
+#: /opt/pinguino32/locale/sources/pinguino.py:376
 msgid "Shop"
 msgstr "Tienda"
 
-#: pinguinobetax2.py:441
+#: /opt/pinguino32/locale/sources/pinguino.py:378
 msgid "About..."
 msgstr "Acerca de..."
 
-#: pinguinobetax2.py:443
+#: /opt/pinguino32/locale/sources/pinguino.py:380
 msgid "Help"
 msgstr "Ayuda"
 
-#: pinguinobetax2.py:493
+#: /opt/pinguino32/locale/sources/pinguino.py:407
+msgid "Output"
+msgstr "Salida"
+
+#: /opt/pinguino32/locale/sources/pinguino.py:430
 msgid "Editor"
 msgstr "Editor"
 

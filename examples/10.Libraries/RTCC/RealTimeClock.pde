@@ -4,7 +4,7 @@
 	PURPOSE: 		Real Time Clock and Calendar functions Demo
 	PROGRAMER:		regis blanchot <rblanchot@gmail.com>
 	BOARD:			PIC32-PINGUINO (OLIMEX)
-						or any other PIC32MX board with external 32.768 kHz clock crystal
+					or any other PIC32MX board with external 32.768 kHz clock crystal
 	FIRST RELEASE:	11 apr. 2011
 	LAST RELEASE:	05 jul. 2011
 	--------------------------------------------------------------------------*/
@@ -14,7 +14,7 @@ char Month[13][5]	= {"","Jan.","Feb.","Mar.","Apr.","Mei.","Jun.","Jul.","Aug.",
 
 void blink1()
 {
-	Toggle(LED1);
+	toggle(LED1);
 }
 
 void setup()
@@ -23,7 +23,7 @@ void setup()
 	u32 Dt  = 0x11123100;	// Saturday (day 0 of the week), 31 Dec. 2011
 	u32 aTm = 0x00000500;	// 00hr, 00 min, 05 sec
 	u32 aDt = 0x12010101;	// Sunday (day 1 of the week), 1st Jan. 2012
-	u16 drift = 200;			// add 200 pulse every minute to adjust time
+	u16 drift = 200;		// add 200 pulse every minute to adjust time
 	
 /**	-----------------------------------------------------------------------------
 	alarm will toggle the built-in led
@@ -64,7 +64,7 @@ void setup()
 	RTCC.chimeEnable();					// enable indefinite repeats
 */
 	/// 2nd option
-	RTCC.chimeDisable();					// disable indefinite repeats
+	RTCC.chimeDisable();				// disable indefinite repeats
 	RTCC.setAlarmRepeat(5);				// repeat alarm 5 times = 5 interrupt events
 	RTCC.alarmRepeatEveryTenSeconds();	// enable repeat rate, every 10 sec (compare only the last digit)
 /**	-----------------------------------------------------------------------------
@@ -74,11 +74,11 @@ void setup()
 	RTCC.secondsPulseOutput();			// select the seconds clock pulse as the function of the RTCC output pin
 	RTCC.alarmInitialPulseLow();		// start Low 
 	//RTCC.alarmInitialPulseHigh();		// start High
-	RTCC.outputEnable();					// enable the Output pin of the RTCC
+	RTCC.outputEnable();				// enable the Output pin of the RTCC
 /**	-----------------------------------------------------------------------------
 	2nd method: alarm interrupt
 	---------------------------------------------------------------------------*/
-	//RTCC.alarmIntEnable();				// enable alarm interrupt
+	//RTCC.alarmIntEnable();			// enable alarm interrupt
 /**	-----------------------------------------------------------------------------
 	enable alarm
 	---------------------------------------------------------------------------*/
@@ -140,8 +140,8 @@ void loop()
 /**	-----------------------------------------------------------------------------
 	alarm output management
 	---------------------------------------------------------------------------*/
-	status = digitalRead(RTCC);	// RTCC pin
-	digitalWrite(LED1, status);	// Led1 reproduce RTCC pin state
+	status = digitalRead(RTCC);			// RTCC pin
+	digitalWrite(LED1, status);			// Led1 reproduce RTCC pin state
 /**	-----------------------------------------------------------------------------
 	alarm interrupt management
 	---------------------------------------------------------------------------*/

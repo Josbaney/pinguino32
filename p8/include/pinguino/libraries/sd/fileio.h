@@ -10,7 +10,7 @@
 #ifndef __FILEIO_H__
 #define __FILEIO_H__
 
-#include "sdmmc.h"
+#include <sd/sdmmc.h>
 
 // FILEIO ERROR CODES
 #define FE_IDE_ERROR	       1   // IDE command execution error

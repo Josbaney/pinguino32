@@ -28,10 +28,11 @@
 #ifndef __SERIAL__
 #define __SERIAL__
 
-#include <printf.c>
+#include <typedef.h>
 #include <system.c>
 #include <interrupt.c>
-#include <typedef.h>
+#include <digitalw.c>
+#include <printf.c>
 
 #define UART1			1
 #define UART2			2
@@ -1023,7 +1024,7 @@ void Serial6Interrupt(void)
 	if (IntGetFlag(INT_UART6_RECEIVER))
 	{
 		SerialGetDataBuffer(UART6);
-		//Toggle(REDLED);			// Toggle LED to indicate UART activity
+		Toggle(REDLED);			// Toggle LED to indicate UART activity
 		IntClearFlag(INT_UART6_RECEIVER);
 	}
 	// Is this an TX interrupt from UART6 ?

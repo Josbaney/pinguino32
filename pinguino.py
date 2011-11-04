@@ -815,8 +815,9 @@ class Pinguino(wx.Frame):
 
 		info.SetIcon(wx.Icon(os.path.join(THEME_DIR, 'logoX.png'), wx.BITMAP_TYPE_PNG))
 		info.SetName('Pinguino')
-		info.SetVersion("rev. " + localRev)
+		info.SetVersion("rev. " + self.localRev)
 		info.SetDescription(description)
+		# LGPL compatibility ?
 		#info.SetCopyright('2008, 2009, 2010, 2011 jean-pierre mandon')
 		info.SetWebSite('http://www.pinguino.cc')
 		info.SetLicence(licence)

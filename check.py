@@ -28,7 +28,13 @@ import time
 
 """ check pinguino dependencies """
 
-DEV = False # turn development version off
+# ------------------------------------------------------------------------------
+# turn development version off
+# !!! use True at your own risc as it could erase your bootloader !!!
+# ------------------------------------------------------------------------------
+
+DEV = False
+
 HOME_DIR	= os.getcwd()
 fichier = open(os.path.join(HOME_DIR, 'pinguino.log'), 'w+') # works with paths with spaces
 fichier.writelines('Pinguino started at ' + str(time.asctime(time.localtime(time.time())) + '\n\n' ))

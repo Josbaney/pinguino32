@@ -63,7 +63,7 @@ ep2_num_bytes_to_send=length;
 prepare_ep2_in();
 }
 
-// this function don't work on OSX
+// this function doesn't work on OSX
 /*
 void usbsendint(int valeur)
 {

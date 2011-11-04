@@ -96,7 +96,7 @@
 	#define LED1	20
 	#define USERLED	20
 
-#else // Generic 18F2550
+#else // Generic 18F2550 or Generic 18F4550
 
 	#define B0 0
 	#define RB0 0

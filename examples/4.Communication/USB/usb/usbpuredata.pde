@@ -19,7 +19,7 @@ if (USB.available())
 		caractere2=USB.read();
 		digitalWrite(caractere1,caractere2);
 		if ((caractere1==0) && (caractere2==1))
-			USB.sendint(i);
+			USB.send(i,2);
 		}
 	}
 }

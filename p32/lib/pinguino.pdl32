@@ -40,4 +40,6 @@ lowByte low8#include <macro.h>
 highByte high8#include <macro.h>
 interrupts interrupts#include <macro.h>
 noInterrupts noInterrupts#include <macro.h>
-
+itoa itoa#include <itoa.c>
+utoa utoa#include <itoa.c>
+ultoa ultoa#include <itoa.c>
