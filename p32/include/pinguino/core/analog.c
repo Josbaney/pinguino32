@@ -4,7 +4,7 @@
 	PURPOSE:		
 	PROGRAMER:		jean-pierre mandon <jp.mandon@gmail.com>
 	FIRST RELEASE:	19 feb. 2011
-	LAST RELEASE:	31 mar. 2011
+	LAST RELEASE:	08 nov. 2011
 	----------------------------------------------------------------------------
 	CHANGELOG:
 	[31-03-11][rblanchot@gamil.com][fixed conditional compilation for board support] 	----------------------------------------------------------------------------
@@ -24,6 +24,7 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	--------------------------------------------------------------------------*/
 
+// 08 nov. 2011 fixed a bug in analogRead ( stop and restart analog converter before sampling )
 
 #ifndef __ANALOG__
 #define __ANALOG__
@@ -105,8 +106,10 @@ void analog_init(void)
 u16 analogRead(u8 pin)
 {
 	
+	AD1CON1bits.ADON = 0;				  // stop analogic converter
 	if (IsDigital(pin)) SetAnalog(pin);	  // set analog
 	AD1CHS=(__bufmask[pin]/4)<<16;		  // select channel
+	AD1CON1bits.ADON = 1;				  // start analogic converter
 	AD1CON1bits.SAMP=1;					  // start sampling
 	while (!AD1CON1bits.DONE);			  // wait for conversion
 	return(ADC1BUF0+(8*(AD1CON2bits.BUFS&0x01))); // return result
