@@ -64,16 +64,16 @@ u8 analogwrite(u8 pin, u16 setpoint)
 			OC1CON|=0x8000;
 			return 1;
 			break;
-		case 0:
-			TRISDCLR=0x02;
-			OC2CON=0;
-			OC2R=setpoint;
-			OC2RS=setpoint;
-			OC2CON=0x000E;
-			OC2CON|=0x8000;
+		case 1:
+			TRISDCLR=0x08;
+			OC4CON=0;
+			OC4R=setpoint;
+			OC4RS=setpoint;
+			OC4CON=0x000E;
+			OC4CON|=0x8000;
 			return 1;
 			break;
-		case 1:
+		case 0:
 			TRISDCLR=0x04;
 			OC3CON=0;
 			OC3R=setpoint;
