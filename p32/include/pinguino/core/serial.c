@@ -489,8 +489,8 @@ void SerialPinConfigure(u8 port)
 			TRISFbits.TRISF2 = INPUT;	// RF2 / U1RX input
 #endif
 #ifdef __32MX440F256H__
-			TRISDbits.TRISD1 = OUTPUT;	// RF8 / U1TX output
-			TRISDbits.TRISD0 = INPUT;	// RF2 / U1RX input
+			TRISDbits.TRISD3 = OUTPUT;	// RD3 / U1TX output
+			TRISDbits.TRISD2 = INPUT;	// RD2 / U1RX input
 #endif			
 			break;
 		case UART2:
