@@ -81,6 +81,7 @@ void serial1print(char *fmt,...)
 			serial1printf(fmt);
 			break;
 	}
+}
 
 /*
 void serial1print(char *fmt,...)
