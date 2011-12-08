@@ -4,7 +4,7 @@ Serial.read SerialRead#include <serial.c>
 Serial.getKey SerialGetKey#include <serial.c>
 Serial.getString SerialGetString#include <serial.c>
 Serial.flush SerialFlush#include <serial.c>
-#Serial.configure SerialConfigure#include <serial.c>
+Serial.configure SerialConfigure#include <serial.c>
 Serial.pinConfigure SerialPinConfigure#include <serial.c>
 Serial.setDataRate SerialSetDataRate#include <serial.c>
 Serial.setLineControl SerialSetLineControl#include <serial.c>
