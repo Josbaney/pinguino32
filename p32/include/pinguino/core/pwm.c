@@ -5,7 +5,7 @@
 	PROGRAMER:		jean-pierre mandon <jp.mandon@gmail.com>
 						regis blanchot <rblanchot@gmail.com>
 	FIRST RELEASE:	20 feb. 2011
-	LAST RELEASE:	14 apr. 2011
+	LAST RELEASE:	08 dec. 2011
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -21,6 +21,11 @@
 	License along with this library; if not, write to the Free Software
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	--------------------------------------------------------------------------*/
+
+// 08 dec. 2011 fixed _pr3_plus1 compute in pwm_set_frequency
+// fixed pwm_set_percent_dutycycle
+// added resolution output to set_frequency function
+// jp.mandon
 
 #ifndef __PWM__
 #define __PWM__
@@ -45,7 +50,7 @@ u32 _t3con;							// shadow value of T3CON
 	
 void PWM_init(void)
 {
-	T3CON|=0x8020;		// timer 3 use a 1:4 prescaler for PWM 20 khz
+	T3CON|=0x8010;		// timer 3 use a 1:4 prescaler for PWM 20 khz
 	PR3=1023;			// resolution is 10 bits ( 0..1023 )
 }
 
@@ -205,10 +210,10 @@ u8 analogwrite(u8 pin, u16 setpoint)
 	then	(PR + 1) = FPB / PWM Frequency / p
 	--------------------------------------------------------------------------*/
 
-void PWM_set_frequency(u32 freq)
+u32  PWM_set_frequency(u32 freq)
 {
 	// PR3+1 calculation
-	_pr3_plus1 = GetPeripheralClock() / 4 / freq;	// FOSC / (4 * PWM Frequency)
+	_pr3_plus1 = GetPeripheralClock() / freq;	// FOSC /  PWM Frequency
 
 	// Timer3 prescaler calculation
 	// PR3 max value is 0xffff, so PR3+1 max value is 0x10000 = 65536
@@ -255,7 +260,9 @@ void PWM_set_frequency(u32 freq)
 			_pr3_plus1 = _pr3_plus1 >> 8;	// divided by 256
 			_t3con = 0b111;					// prescaler is 256
 		}
+		return(_pr3_plus1);
 	}
+	else return 0;
 }
 
 /*	----------------------------------------------------------------------------
@@ -310,8 +317,8 @@ void PWM_set_percent_dutycycle(u8 pin, u8 percent)
 	else if (percent >= 100)
 		duty = _pr3_plus1 - 1;
 	else
-		duty = percent * (_pr3_plus1 / 4) / 25;	// (factor PR2/100)
-	PWM_set_dutycycle(pin, duty << 2);
+		duty=(percent*_pr3_plus1)/100;
+	PWM_set_dutycycle(pin,duty);
 }
 			
 #endif	/* __PWM__ */

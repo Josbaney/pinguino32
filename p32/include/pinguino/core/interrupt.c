@@ -1017,5 +1017,95 @@ void IntConfigureSystem(u8 mode)
 	asm("ei"); // Enable all interrupts
 }
 
+/*
+#define isr_wrapper(vector_number,interrupt_handler) \
+asm volatile (".macro isr_wrapper vector_number:req,interrupt_handler:req\n\t" \
+		 ".section \".vector_&vector_number\",\"ax\",%progbits\n\t" \
+		"j ISR_wrapper_vector_&vector_number\n\t" \
+		"nop\n\t" \
+		".section .text,\"ax\",%progbits\n\t" \
+		".align  2\n\t" \
+		".set    nomips16\n\t" \
+		".globl  ISR_wrapper_vector_&vector_number\n\t" \
+		".type	ISR_wrapper_vector_&vector_number, %function\n\t" \
+		".ent	ISR_wrapper_vector_&vector_number\n\t" \
+		"ISR_wrapper_vector_&vector_number:\n\t" \
+		".frame	$fp,120,$31\n\t"  \
+		".mask	0xc300fffc,-20\n\t" \
+		".fmask	0x00000000,0\n\t" \
+		   ".set	noreorder\n\t" \
+		   ".set	nomacro		   \n\t" \
+		   "rdpgpr	$sp, $sp\n\t" \
+		   "mfc0	$k0, $13\n\t" \
+		   "mfc0	$k1, $14\n\t" \
+		   "addiu	$sp, $sp, -120\n\t" \
+		   "sw	$k1, 116($sp)\n\t" \
+		   "mfc0	$k1, $12\n\t" \
+		   "srl	$k0, $k0, 10\n\t" \
+		   "sw	$k1, 112($sp)\n\t" \
+		   "ins	$k1, $k0, 10, 6\n\t" \
+		   "mflo	$k0\n\t" \
+		   "sw	$k0, 108($sp)\n\t" \
+		   "mfhi	$k0\n\t" \
+		   "sw	$k0, 104($sp)\n\t" \
+		   "ins	$k1, $0, 1, 4\n\t" \
+		   "mtc0	$k1, $12\n\t" \
+		   "sw	$31,100($sp)\n\t" \
+		   "sw	$fp,96($sp)\n\t" \
+		   "sw	$25,92($sp)\n\t" \
+		   "sw	$24,88($sp)\n\t" \
+		   "sw	$15,84($sp)\n\t" \
+		   "sw	$14,80($sp)\n\t" \
+		   "sw	$13,76($sp)\n\t" \
+		   "sw	$12,72($sp)\n\t" \
+		   "sw	$11,68($sp)\n\t" \
+		   "sw	$10,64($sp)\n\t" \
+		   "sw	$9,60($sp)\n\t" \
+		   "sw	$8,56($sp)\n\t" \
+		   "sw	$7,52($sp)\n\t" \
+		   "sw	$6,48($sp)\n\t" \
+		   "sw	$5,44($sp)\n\t" \
+		   "sw	$4,40($sp)\n\t" \
+		   "sw	$3,36($sp)\n\t" \
+		   "sw	$2,32($sp)\n\t" \
+		   "move	$fp,$sp\n\t" \
+		   "jal	&interrupt_handler\n\t" \
+		   "nop\n\t" \
+		   "move	$sp,$fp\n\t" \
+		   "lw	$31,100($sp)\n\t" \
+		   "lw	$fp,96($sp)\n\t" \
+		   "lw	$25,92($sp)\n\t" \
+		   "lw	$24,88($sp)\n\t" \
+		   "lw	$15,84($sp)\n\t" \
+		   "lw	$14,80($sp)\n\t" \
+		   "lw	$13,76($sp)\n\t" \
+		   "lw	$12,72($sp)\n\t" \
+		   "lw	$11,68($sp)\n\t" \
+		   "lw	$10,64($sp)\n\t" \
+		   "lw	$9,60($sp)\n\t" \
+		   "lw	$8,56($sp)\n\t" \
+		   "lw	$7,52($sp)\n\t" \
+		   "lw	$6,48($sp)\n\t" \
+		   "lw	$5,44($sp)\n\t" \
+		   "lw	$4,40($sp)\n\t" \
+		   "lw	$3,36($sp)\n\t" \
+		   "lw	$2,32($sp)\n\t" \
+		   "di\n\t" \
+		   "ehb\n\t" \
+		   "lw	$k0, 108($sp)\n\t" \
+		   "mtlo	$k0\n\t" \
+		   "lw	$k0, 104($sp)\n\t" \
+		   "mthi	$k0\n\t" \
+		   "lw	$k0, 116($sp)\n\t" \
+		   "mtc0	$k0, $14\n\t" \
+		   "lw	$k0, 112($sp)\n\t" \
+		   "addiu	$sp, $sp, 120\n\t" \
+		   "mtc0	$k0, $12\n\t" \
+		   "eret\n\t" \
+		   ".set	macro\n\t" \
+		   ".set	reorder		   \n\t" \
+		   ".end	ISR_wrapper_vector_&vector_number\n\t" \
+		   ".endm" );
+*/		   		   
 #endif	/* __INTERRUPT_C */
 
