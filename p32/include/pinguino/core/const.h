@@ -1,4 +1,4 @@
-/*	----------------------------------------------------------------------------
+le/*	----------------------------------------------------------------------------
  *	const.h
  *	Régis Blanchot
  *	UBW32 and Emperor board revised - Marcus Fazzi SET/2011
@@ -181,10 +181,10 @@
 		#endif
 		// OLIMEX build-in leds
 		#define LED1			13	//PORTGbits.RG6	// green led
-		//#define LED2			49	//PORTDbits.RD1	// yellow led
+		#define LED2			30	//PORTDbits.RD1	// yellow led
 
 		#define GREENLED		13	//PORTGbits.RG6	// led1
-		//#define YELLOWLED		49	//PORTDbits.RD1	// led2
+		#define YELLOWLED		30	//PORTDbits.RD1	// led2
 
 		// UBW32 build-in buttons
 		#define USERBUTTON		2	//PORTDbits.RD0 = user button
