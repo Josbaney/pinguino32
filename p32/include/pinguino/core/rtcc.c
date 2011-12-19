@@ -4,7 +4,7 @@
 	PURPOSE: 		Real Time Clock and Calendar functions
 	PROGRAMER: 		regis blanchot <rblanchot@gmail.com>
 	FIRST RELEASE:	11 apr. 2011
-	LAST RELEASE:	06 jul. 2011
+	LAST RELEASE:	10 dec. 2011
 	----------------------------------------------------------------------------
 	TODO :
 	----------------------------------------------------------------------------
@@ -34,7 +34,7 @@
 
 // RTCC definitions
 
-typedef void (*callback) (void);				// type of: void callback()
+typedef void (*callback) (void);	// type of: void callback()
 static callback intFunction;
 
 // union/structure for read/write of time into the RTCC device
@@ -46,7 +46,7 @@ typedef union
 		unsigned char	sec;		// BCD codification for seconds, 00-59
 		unsigned char	min;		// BCD codification for minutes, 00-59
 		unsigned char	hour;		// BCD codification for hours, 00-24
-	};									// field access
+	};								// field access
 	unsigned char		b[4];		// byte access
 	unsigned short		w[2];		// 16 bits access
 	unsigned long		l;			// 32 bits access
@@ -61,7 +61,7 @@ typedef union
 		unsigned char	mday;		// BCD codification for day of the month, 01-31
 		unsigned char	mon;		// BCD codification for month, 01-12
 		unsigned char	year;		// BCD codification for years, 00-99
-	};									// field access
+	};								// field access
 	unsigned char		b[4];		// byte access
 	unsigned short		w[2];		// 16 bits access
 	unsigned long		l;			// 32 bits access
@@ -70,17 +70,17 @@ typedef union
 // results returned by initialization functions
 typedef enum
 {
-	RTCC_CLK_ON,			// success, clock is running
-	RTCC_SOSC_NRDY,		// SOSC not running
-	RTCC_CLK_NRDY,			// RTCC clock not running
-	RTCC_WR_DSBL,			// WR is disabled
+	RTCC_CLK_ON,					// success, clock is running
+	RTCC_SOSC_NRDY,					// SOSC not running
+	RTCC_CLK_NRDY,					// RTCC clock not running
+	RTCC_WR_DSBL,					// WR is disabled
 }rtccRes;
 
 // Repeat alarm every ...
 #define RTCC_ALARM_EVERY_HALF_SECOND	0b0000
-#define RTCC_ALARM_EVERY_SECOND 			0b0001
+#define RTCC_ALARM_EVERY_SECOND 		0b0001
 #define RTCC_ALARM_EVERY_TEN_SECONDS	0b0010
-#define RTCC_ALARM_EVERY_MINUTE 			0b0011
+#define RTCC_ALARM_EVERY_MINUTE 		0b0011
 #define RTCC_ALARM_EVERY_TEN_MINUTES	0b0100
 #define RTCC_ALARM_EVERY_HOUR 			0b0101
 #define RTCC_ALARM_EVERY_DAY  			0b0110
@@ -374,8 +374,8 @@ void RTCC_SetTimeDate(unsigned long tm, unsigned long dt)
 	RTCCONCLR = 0x8000;			// turn off the RTCC
 	//Delayus(50);
 	while (RTCCON & 0x40);		// wait for clock to be turned off
-	RTCTIME = tm;					// Set time
-	RTCDATE = dt;					// Set date
+	RTCTIME = tm;				// Set time
+	RTCDATE = dt;				// Set date
 	RTCCONSET = 0x8000;			// turn on the RTCC
 	//Delayus(50);
 	while (!(RTCCON & 0x40));	// wait for clock to be turned on
@@ -402,12 +402,16 @@ void RTCC_GetTimeDate(rtccTime* pTm, rtccDate* pDt)
 	adjust RTCC from +511 to -512 clock pulses every one minute
 	0111111111 = Maximum positive adjustment, adds 511 RTC clock pulses every one minute
 	1000000000 = Minimum negative adjustment, subtracts 512 clock pulses every one minute
+ 	10 dec 2011 : bug fixed thanks to Mark Harper
 	---------------------------------------------------------------------------*/
 
 void RTCC_SetCalibration(int cal)
 {
 	rtccTime t0;
-	if (RTCCON & 0x8000)						// if RTCC is ON
+
+	if (cal < -512)	cal = -512;
+	if (cal >  511)	cal =  511;
+	if (RTCCON & 0x8000)					// if RTCC is ON
 	{
 		t0 = RTCC_GetTime();
 		if ((t0.sec & 0xFF) == 00)			// we're at second 00, wait auto-adjust to be performed
@@ -415,7 +419,7 @@ void RTCC_SetCalibration(int cal)
 	}
 	RTCC_SetWriteEnable();
 	RTCCONCLR = 0x03FF0000;					// clear the calibration
-	RTCCONSET = cal;
+	RTCCONbits.CAL = cal;
 	RTCC_SetWriteDisable();
 }
 
