@@ -12,7 +12,8 @@
 #include <system.c>
 #include <digitalw.c>
 #include <sd/sdmmc.h>
-#include <sd/fileio.h>
+#include <sd/diskio.h>
+#include <sd/ff.h>
 
 // send one byte of data and receive one back at the same time
 unsigned char writeSPI(unsigned char b)
@@ -113,28 +114,7 @@ int initMedia(void)
 	// 3. now select the card
 	enableSD();
 
-	// 4. send a single RESET command
-	// Send a CMD0 with CS low to reset the card.
-	r = sendSDCmd(RESET, 0);
-	disableSD();
-	if (r != 1)                // must return Idle
-		return E_COMMAND_ACK;   // comand rejected
-
-	// 5. send repeatedly INIT until Idle terminates
-	for (i=0; i<I_TIMEOUT; i++) 
-	{
-		r = sendSDCmd(INIT, 0);
-		disableSD();
-		if (!r) 
-			break; 
-	} 
-	if (i == I_TIMEOUT)   
-		return E_INIT_TIMEOUT;  // init timed out 
-
-	// 6. increase speed 
-	SPI2CON = 0;                // disable the SPI2 module
-	SPI2BRG = 0;                // maximum possible baud rate = Fpb/2
-	SPI2CON = 0x8120;           // re-enable the SPI2 module
+	//card detection is now in disk_initialize()
 
 	return 0;           
 } // init media

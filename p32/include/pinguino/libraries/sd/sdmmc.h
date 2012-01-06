@@ -52,7 +52,7 @@ or the code must be modified to ignore the CD and WD inputs.
 #define DATA_ACCEPT     0x05
 
 // timeouts
-#define I_TIMEOUT       10000   
+#define I_TIMEOUT       20000   
 #define R_TIMEOUT       25000
 #define W_TIMEOUT       250000
 
@@ -72,7 +72,7 @@ int initMedia(void);   // initializes the SD/MMC memory device
 int getCD();            // check card presence
 int getWP();            // check write protection tab
 
-int readSECTOR(LBA, char *);  // reads a block of data 
+int readSECTOR(LBA, char *);  // reads a block of data
 int writeSECTOR(LBA, char *);  // writes a block of data
 
 #endif /* __SDMMC_H__ */

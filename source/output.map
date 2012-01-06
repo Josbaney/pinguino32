@@ -1,114 +1,109 @@
 Archive member included because of file (symbol)
 
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-                              /tmp/ccz166ys.o (USBDeviceInit)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-                              /tmp/ccz166ys.o (USBCheckCDCRequest)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
-                              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o) (device_dsc)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
-                              /tmp/ccz166ys.o (__ctype_ptr__)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
-                              /tmp/ccz166ys.o (free)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
-                              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o) (_malloc_r)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
-                              /tmp/ccz166ys.o (memcmp)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
-                              /tmp/ccz166ys.o (memcpy)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
-                              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o) (__malloc_lock)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
-                              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o) (_sbrk_r)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
-                              /tmp/ccz166ys.o (strcmp)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
-                              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o) (_free_r)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
-                              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o) (_impure_ptr)
-/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
-                              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o) (errno)
+/home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                              /home/fred/workspace/pinguino32/source/main32.o (USBDeviceInit)
+/home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+                              /home/fred/workspace/pinguino32/source/main32.o (USBCheckCDCRequest)
+/home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+                              /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o) (device_dsc)
+/usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+                              /home/fred/workspace/pinguino32/source/main32.o (malloc)
+/usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+                              /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o) (_malloc_r)
+/usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+                              /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o) (__malloc_lock)
+/usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+                              /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o) (_sbrk_r)
+/usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+                              /home/fred/workspace/pinguino32/source/main32.o (strcmp)
+/usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+                              /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o) (_free_r)
+/usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+                              /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o) (_impure_ptr)
+/usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+                              /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o) (errno)
 
 Allocating common symbols
 Common symbol       size              file
 
-D                   0x4               /tmp/ccz166ys.o
-pDst                0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+pDst                0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
 control_signal_bitmap
-                    0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-BDT                 0x60              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-CtrlTrfData         0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-errno               0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
-USBDeviceState      0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                    0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+BDT                 0x60              /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+CtrlTrfData         0x8               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+errno               0x4               /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+Finfo               0x18              /home/fred/workspace/pinguino32/source/main32.o
+USBDeviceState      0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
 controlTransferState
-                    0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-cdc_tx_len          0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-UART2rpointer       0x4               /tmp/ccz166ys.o
-USBInMaxPacketSize  0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-pCDCSrc             0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-cdc_data_tx         0x40              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-inPipes             0x10              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-pBDTEntryIn         0xc               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-heap_ptr            0x4               /tmp/ccz166ys.o
-CDCDataOutHandle    0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-UART2wpointer       0x4               /tmp/ccz166ys.o
-cdc_rx_len          0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-UART2SerialBuffer   0x80              /tmp/ccz166ys.o
-line_coding         0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-FError              0x1               /tmp/ccz166ys.o
-BaudRateGen         0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-pBDTEntryOut        0xc               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-CDCDataInHandle     0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-BothEP0OutUOWNsSet  0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-cdc_data_rx         0x40              /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-cdc_notice          0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+                    0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+cdc_tx_len          0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+UART2rpointer       0x4               /home/fred/workspace/pinguino32/source/main32.o
+USBInMaxPacketSize  0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+pCDCSrc             0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+cdc_data_tx         0x40              /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+inPipes             0x10              /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+pBDTEntryIn         0xc               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+heap_ptr            0x4               /home/fred/workspace/pinguino32/source/main32.o
+CDCDataOutHandle    0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+UART2wpointer       0x4               /home/fred/workspace/pinguino32/source/main32.o
+cdc_rx_len          0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+UART2SerialBuffer   0x80              /home/fred/workspace/pinguino32/source/main32.o
+line_coding         0x8               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+AccSize             0x4               /home/fred/workspace/pinguino32/source/main32.o
+FError              0x1               /home/fred/workspace/pinguino32/source/main32.o
+Fat                 0x4               /home/fred/workspace/pinguino32/source/main32.o
+BaudRateGen         0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+pBDTEntryOut        0xc               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+CDCDataInHandle     0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+BothEP0OutUOWNsSet  0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+cdc_data_rx         0x40              /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+cdc_notice          0x8               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
 pBDTEntryEP0OutNext
-                    0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-cdc_trf_state       0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-SetupPkt            0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-pCDCDst             0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-cdc_mem_type        0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-UART1rpointer       0x4               /tmp/ccz166ys.o
-UART1SerialBuffer   0x80              /tmp/ccz166ys.o
-shortPacketStatus   0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                    0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+cdc_trf_state       0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+SetupPkt            0x8               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+pCDCDst             0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+cdc_mem_type        0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+UART1rpointer       0x4               /home/fred/workspace/pinguino32/source/main32.o
+AccDirs             0x2               /home/fred/workspace/pinguino32/source/main32.o
+UART1SerialBuffer   0x80              /home/fred/workspace/pinguino32/source/main32.o
+AccFiles            0x2               /home/fred/workspace/pinguino32/source/main32.o
+shortPacketStatus   0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
 pBDTEntryEP0OutCurrent
-                    0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                    0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
 USBActiveConfiguration
-                    0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-RemoteWakeup        0x4               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-SDCS                0x1               /tmp/ccz166ys.o
-USTATcopy           0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-USBInData           0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                    0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+RemoteWakeup        0x4               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+SDCS                0x1               /home/fred/workspace/pinguino32/source/main32.o
+USTATcopy           0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+USBInData           0x8               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
 USBAlternateInterface
-                    0x1               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-outPipes            0xb               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                    0x1               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+outPipes            0xb               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
 dummy_encapsulated_cmd_response
-                    0x8               /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-UART1wpointer       0x4               /tmp/ccz166ys.o
+                    0x8               /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+UART1wpointer       0x4               /home/fred/workspace/pinguino32/source/main32.o
 
 Discarded input sections
 
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .reginfo       0x0000000000000000       0x18 /tmp/ccz166ys.o
- .reginfo       0x0000000000000000       0x18 /tmp/ccYyzOLm.o
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/processor.o
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
- .reginfo       0x0000000000000000       0x18 /tmp/ccvuQt0g.o
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .reginfo       0x0000000000000000       0x18 /home/fred/workspace/pinguino32/source/main32.o
+ .reginfo       0x0000000000000000       0x18 /tmp/cciAHdDS.o
+ .reginfo       0x0000000000000000       0x18 /home/fred/workspace/pinguino32/p32/obj/non-free/32MX440F256H.o
+ .reginfo       0x0000000000000000       0x18 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .reginfo       0x0000000000000000       0x18 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .reginfo       0x0000000000000000       0x18 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .reginfo       0x0000000000000000       0x18 /tmp/ccv9g5FI.o
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/crtn.o
 
 Memory Configuration
 
@@ -129,25 +124,22 @@ sfrs             0x00000000bf800000 0x0000000000100000
 
 Linker script and memory map
 
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/crti.o
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
                 0x0000000000002000                _min_heap_size = 0x2000
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libm.a
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/libgcc.a
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a
-LOAD /tmp/ccz166ys.o
-LOAD /tmp/ccYyzOLm.o
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/processor.o
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libadb.a
-LOAD /tmp/ccvuQt0g.o
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libm.a
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/libgcc.a
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/libgcc.a
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/libgcc.a
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
-LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+LOAD /home/fred/workspace/pinguino32/source/main32.o
+LOAD /tmp/cciAHdDS.o
+LOAD /home/fred/workspace/pinguino32/p32/obj/non-free/32MX440F256H.o
+LOAD /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a
+LOAD /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libadb.a
+LOAD /tmp/ccv9g5FI.o
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libm.a
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/libgcc.a
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/libgcc.a
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/libgcc.a
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+LOAD /usr/lib/gcc/mipsel-elf/4.5.3/crtn.o
                 0x00000000bf882030                BMXDUPBA = 0xbf882030
                 0x00000000bf882010                BMXDKPBA = 0xbf882010
                 0x00000000bf882020                BMXDUDBA = 0xbf882020
@@ -178,12 +170,12 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 .reset          0x000000009d006000       0x10
  *(.reset)
- .reset         0x000000009d006000       0x10 /tmp/ccYyzOLm.o
+ .reset         0x000000009d006000       0x10 /tmp/cciAHdDS.o
                 0x000000009d006000                _reset
 
 .bev_excpt      0x000000009d006380        0x4
  *(.bev_handler)
- .bev_handler   0x000000009d006380        0x4 /tmp/ccYyzOLm.o
+ .bev_handler   0x000000009d006380        0x4 /tmp/cciAHdDS.o
 
 .dbg_excpt      0x000000009d006480        0x0
                 0x000000009d006480                . = (. + DEFINED (_DEBUGGER)?0x8:0x0)
@@ -193,7 +185,7 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 .app_excpt      0x000000009d005180        0x4
  *(.gen_handler)
- .gen_handler   0x000000009d005180        0x4 /tmp/ccYyzOLm.o
+ .gen_handler   0x000000009d005180        0x4 /tmp/cciAHdDS.o
 
 .vector_0       0x000000009d005200        0x0
  *(.vector_0)
@@ -229,7 +221,7 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 .vector_8       0x000000009d005300        0xc
  *(.vector_8)
- .vector_8      0x000000009d005300        0xc /tmp/ccvuQt0g.o
+ .vector_8      0x000000009d005300        0xc /tmp/ccv9g5FI.o
                 0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_8) <= (_vector_spacing << 0x5))), function at exception vector 8 too large)
 
 .vector_9       0x000000009d005320        0x0
@@ -294,7 +286,7 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 .vector_24      0x000000009d005500        0xc
  *(.vector_24)
- .vector_24     0x000000009d005500        0xc /tmp/ccvuQt0g.o
+ .vector_24     0x000000009d005500        0xc /tmp/ccv9g5FI.o
                 0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_24) <= (_vector_spacing << 0x5))), function at exception vector 24 too large)
 
 .vector_25      0x000000009d005520        0x0
@@ -327,7 +319,7 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 .vector_32      0x000000009d005600        0xc
  *(.vector_32)
- .vector_32     0x000000009d005600        0xc /tmp/ccvuQt0g.o
+ .vector_32     0x000000009d005600        0xc /tmp/ccv9g5FI.o
                 0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_32) <= (_vector_spacing << 0x5))), function at exception vector 32 too large)
 
 .vector_33      0x000000009d005620        0x0
@@ -340,7 +332,7 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 .vector_35      0x000000009d005660        0xc
  *(.vector_35)
- .vector_35     0x000000009d005660        0xc /tmp/ccvuQt0g.o
+ .vector_35     0x000000009d005660        0xc /tmp/ccv9g5FI.o
                 0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_35) <= (_vector_spacing << 0x5))), function at exception vector 35 too large)
 
 .vector_36      0x000000009d005680        0x0
@@ -381,7 +373,7 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 .vector_45      0x000000009d0057a0        0x8
  *(.vector_45)
- .vector_45     0x000000009d0057a0        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .vector_45     0x000000009d0057a0        0x8 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
                 0x0000000000000001                ASSERT (((_vector_spacing == 0x0) || (SIZEOF (.vector_45) <= (_vector_spacing << 0x5))), function at exception vector 45 too large)
 
 .vector_46      0x000000009d0057c0        0x0
@@ -458,426 +450,509 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 .startup        0x000000009d006490      0x1bc
  *(.startup)
- .startup       0x000000009d006490      0x1bc /tmp/ccYyzOLm.o
+ .startup       0x000000009d006490      0x1bc /tmp/cciAHdDS.o
 
-.text           0x000000009d006a00     0x882c
+.text           0x000000009d006a00     0xd0a0
                 0x000000009d006a00                _text_begin = .
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x000000009d006a00        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
- .text          0x000000009d006a00      0x124 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .text          0x000000009d006b24     0x3e30 /tmp/ccz166ys.o
-                0x000000009d007130                SerialUART1WriteChar
-                0x000000009d007154                SerialUART2WriteChar
-                0x000000009d007178                SystemUnlock
-                0x000000009d0071a0                SystemLock
-                0x000000009d0071b8                Reset
-                0x000000009d0071f4                GetSystemClock
-                0x000000009d007288                GetPeripheralClock
-                0x000000009d0072b4                SetFlashWaitStates
-                0x000000009d007324                SetSystemClock
-                0x000000009d007564                SetPeripheralClock
-                0x000000009d0075a8                SystemConfig
-                0x000000009d007620                GetCP0Count
-                0x000000009d007628                SetCP0Count
-                0x000000009d007638                IntSetVectorPriority
-                0x000000009d007790                IntGetVectorPriority
-                0x000000009d0077e4                IntGetVectorSubPriority
-                0x000000009d007838                IntClearFlag
-                0x000000009d00788c                IntGetFlag
-                0x000000009d0078d8                IntEnable
-                0x000000009d007924                IntDisable
-                0x000000009d007978                IntGetInterruptVectorNumber
-                0x000000009d007988                IntGetInterruptVectorPriority
-                0x000000009d007998                IntDisableInterrupts
-                0x000000009d0079a4                IntEnableInterrupts
-                0x000000009d0079b0                IntRestoreInterrupts
-                0x000000009d0079c0                IntSetEBASE
-                0x000000009d0079d0                IntConfigureSystem
-                0x000000009d007a6c                Delayus
-                0x000000009d007b00                Delayms
-                0x000000009d007b38                pprintf
-                0x000000009d007b44                psprintf
-                0x000000009d007b64                INTEnableSystemMultiVectoredInt
-                0x000000009d007b6c                INTEnableInterrupts
-                0x000000009d007b74                mySetLineCodingHandler
-                0x000000009d007b7c                USER_USB_CALLBACK_EVENT_HANDLER
-                0x000000009d007ba8                CDC_init
-                0x000000009d007bd0                CDCputs
-                0x000000009d007c48                CDCgets
-                0x000000009d007c50                CDCwrite
-                0x000000009d007c5c                CDCprintf
-                0x000000009d007cb0                CDCprint
-                0x000000009d007d88                CDCprintln
-                0x000000009d007db8                CDCgetkey
-                0x000000009d007de8                CDCgetstring
-                0x000000009d007e78                pinmode
-                0x000000009d008038                digitalwrite
-                0x000000009d0081f8                digitalread
-                0x000000009d008314                toggle
-                0x000000009d008348                writeSPI
-                0x000000009d008374                initSD
-                0x000000009d0083d8                disableSD
-                0x000000009d008418                enableSD
-                0x000000009d008424                sendSDCmd
-                0x000000009d008528                initMedia
-                0x000000009d008614                readSECTOR
-                0x000000009d008730                writeSECTOR
-                0x000000009d00886c                getCD
-                0x000000009d008874                getWP
-                0x000000009d00887c                mount
-                0x000000009d008acc                unmount
-                0x000000009d008ad4                readDIR
-                0x000000009d008af4                writeDIR
-                0x000000009d008b0c                findDIR
-                0x000000009d008c78                newDIR
-                0x000000009d008d70                readFAT
-                0x000000009d008e08                writeFAT
-                0x000000009d008ed8                nextFAT
-                0x000000009d008f9c                newFAT
-                0x000000009d00905c                writeDATA
-                0x000000009d009088                readDATA
-                0x000000009d0090bc                fopenM
-                0x000000009d00958c                fexistsM
-                0x000000009d0095b0                freadM
-                0x000000009d0097b4                fcloseM
-                0x000000009d0098dc                fwriteM
-                0x000000009d009a34                listTYPE
-                0x000000009d009cc4                SerialSetDataRate
-                0x000000009d009d88                SerialGetDataRate
-                0x000000009d009e68                SerialEnable
-                0x000000009d009ea4                SerialSetLineControl
-                0x000000009d009ee0                SerialFlush
-                0x000000009d009f14                SerialPinConfigure
-                0x000000009d009f78                SerialIntConfigure
-                0x000000009d00a000                SerialConfigure
-                0x000000009d00a190                SerialPrintf
-                0x000000009d00a1f8                SerialAvailable
-                0x000000009d00a23c                SerialRead
-                0x000000009d00a2d8                SerialGetKey
-                0x000000009d00a34c                SerialGetString
-                0x000000009d00a3e4                SerialGetDataBuffer
-                0x000000009d00a4b0                Serial1Interrupt
-                0x000000009d00a504                Serial2Interrupt
-                0x000000009d00a558                sbrk
-                0x000000009d00a574                open
-                0x000000009d00a608                close
-                0x000000009d00a610                fstat
-                0x000000009d00a618                isatty
-                0x000000009d00a620                lseek
-                0x000000009d00a628                read
-                0x000000009d00a6b0                write
-                0x000000009d00a764                setup
-                0x000000009d00a76c                loop
-                0x000000009d00a8cc                main
-                0x000000009d00a90c                Serial3Interrupt
-                0x000000009d00a918                Serial4Interrupt
-                0x000000009d00a924                Serial5Interrupt
-                0x000000009d00a930                Serial6Interrupt
-                0x000000009d00a93c                Tmr2Interrupt
-                0x000000009d00a948                RTCCInterrupt
- .text          0x000000009d00a954       0x14 /tmp/ccYyzOLm.o
- .text          0x000000009d00a968        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/processor.o
- .text          0x000000009d00a968     0x29cc /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-                0x000000009d00a968                USBDeviceInit
-                0x000000009d00ac20                _USB1Interrupt
-                0x000000009d00b0a0                USBStallHandler
-                0x000000009d00b16c                USBSuspend
-                0x000000009d00b1c4                USBWakeFromSuspend
-                0x000000009d00b220                USBCtrlEPService
-                0x000000009d00b380                USBCtrlTrfSetupHandler
-                0x000000009d00b424                USBCtrlTrfOutHandler
-                0x000000009d00b4f8                USBCtrlTrfInHandler
-                0x000000009d00b690                USBPrepareForNextSetupTrf
-                0x000000009d00b774                USBCheckStdRequest
-                0x000000009d00b950                USBStdFeatureReqHandler
-                0x000000009d00bbb8                USBStdGetDscHandler
-                0x000000009d00bd54                USBStdGetStatusHandler
-                0x000000009d00bf28                USBCtrlEPServiceComplete
-                0x000000009d00c384                USBCtrlTrfTxService
-                0x000000009d00c558                USBCtrlTrfRxService
-                0x000000009d00c870                USBStdSetCfgHandler
-                0x000000009d00ca04                USBConfigureEndpoint
-                0x000000009d00cae8                USBEnableEndpoint
-                0x000000009d00cb8c                USBStallEndpoint
-                0x000000009d00cd6c                USBTransferOnePacket
-                0x000000009d00cfc8                USBCancelIO
-                0x000000009d00d20c                USBDeviceDetach
-                0x000000009d00d240                USBDeviceAttach
- .text          0x000000009d00d334      0x864 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-                0x000000009d00d334                USBCheckCDCRequest
-                0x000000009d00d56c                CDCInitEP
-                0x000000009d00d5f8                getsUSBUSART
-                0x000000009d00d710                putUSBUSART
-                0x000000009d00d78c                putsUSBUSART
-                0x000000009d00d870                putrsUSBUSART
-                0x000000009d00d950                CDCTxService
- .text          0x000000009d00db98        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
- .text          0x000000009d00db98      0x430 /tmp/ccvuQt0g.o
-                0x000000009d00db98                vector_8_ISR_wrapper
-                0x000000009d00dca4                vector_24_ISR_wrapper
-                0x000000009d00ddb0                vector_32_ISR_wrapper
-                0x000000009d00debc                vector_35_ISR_wrapper
- .text          0x000000009d00dfc8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .text          0x000000009d00dfc8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
-                0x000000009d00dfc8                free
-                0x000000009d00dfd8                malloc
- .text          0x000000009d00dfe8      0x854 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
-                0x000000009d00dfe8                _malloc_r
- .text          0x000000009d00e83c       0xa4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
-                0x000000009d00e83c                memcmp
- .text          0x000000009d00e8e0      0x194 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
-                0x000000009d00e8e0                memcpy
- .text          0x000000009d00ea74       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
-                0x000000009d00ea74                __malloc_lock
-                0x000000009d00ea7c                __malloc_unlock
- .text          0x000000009d00ea84       0x58 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
-                0x000000009d00ea84                _sbrk_r
- .text          0x000000009d00eadc       0x88 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
-                0x000000009d00eadc                strcmp
- .text          0x000000009d00eb64      0x418 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
-                0x000000009d00eb64                _malloc_trim_r
-                0x000000009d00ec88                _free_r
- .text          0x000000009d00ef7c        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .text          0x000000009d00ef7c      0x258 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
-                0x000000009d00ef7c                _wrapup_reent
-                0x000000009d00f044                cleanup_glue
-                0x000000009d00f088                _reclaim_reent
- .text          0x000000009d00f1d4       0x58 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
- .text          0x000000009d00f22c        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ .text          0x000000009d006a00        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crti.o
+ .text          0x000000009d006a00      0x124 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .text          0x000000009d006b24     0x8894 /home/fred/workspace/pinguino32/source/main32.o
+                0x000000009d007134                RTCC_OutputDisable
+                0x000000009d00714c                SerialUART1WriteChar
+                0x000000009d007170                SerialUART2WriteChar
+                0x000000009d0072e0                SystemUnlock
+                0x000000009d007308                SystemLock
+                0x000000009d007320                Reset
+                0x000000009d00735c                GetSystemClock
+                0x000000009d0073f0                GetPeripheralClock
+                0x000000009d00741c                SetFlashWaitStates
+                0x000000009d00748c                SetSystemClock
+                0x000000009d0076cc                SetPeripheralClock
+                0x000000009d007710                SystemConfig
+                0x000000009d007788                GetCP0Count
+                0x000000009d007790                SetCP0Count
+                0x000000009d0077a0                IntSetVectorPriority
+                0x000000009d0078f8                IntGetVectorPriority
+                0x000000009d00794c                IntGetVectorSubPriority
+                0x000000009d0079a0                IntClearFlag
+                0x000000009d0079f4                IntGetFlag
+                0x000000009d007a40                IntEnable
+                0x000000009d007a8c                IntDisable
+                0x000000009d007ae0                IntGetInterruptVectorNumber
+                0x000000009d007af0                IntGetInterruptVectorPriority
+                0x000000009d007b00                IntDisableInterrupts
+                0x000000009d007b0c                IntEnableInterrupts
+                0x000000009d007b18                IntRestoreInterrupts
+                0x000000009d007b28                IntSetEBASE
+                0x000000009d007b38                IntConfigureSystem
+                0x000000009d007bd4                Delayus
+                0x000000009d007f9c                Delayms
+                0x000000009d007fd4                pprintf
+                0x000000009d007fe0                psprintf
+                0x000000009d008000                INTEnableSystemMultiVectoredInt
+                0x000000009d008008                INTEnableInterrupts
+                0x000000009d008010                mySetLineCodingHandler
+                0x000000009d008018                USER_USB_CALLBACK_EVENT_HANDLER
+                0x000000009d008044                CDC_init
+                0x000000009d00806c                CDCputs
+                0x000000009d0080e4                CDCgets
+                0x000000009d0080ec                CDCwrite
+                0x000000009d0080f8                CDCprintf
+                0x000000009d00814c                CDCprint
+                0x000000009d008224                CDCprintln
+                0x000000009d008254                CDCgetkey
+                0x000000009d008284                CDCgetstring
+                0x000000009d008314                pinmode
+                0x000000009d0084d4                pinread
+                0x000000009d0085ec                digitalwrite
+                0x000000009d0087ac                digitalread
+                0x000000009d0088c8                toggle
+                0x000000009d0088fc                writeSPI
+                0x000000009d008928                initSD
+                0x000000009d00898c                disableSD
+                0x000000009d0089cc                enableSD
+                0x000000009d008bec                sendSDCmd
+                0x000000009d008cf0                initMedia
+                0x000000009d008d4c                readSECTOR
+                0x000000009d008e68                writeSECTOR
+                0x000000009d008fa4                getCD
+                0x000000009d008fac                getWP
+                0x000000009d008fb4                clust2sect
+                0x000000009d008fe8                f_mount
+                0x000000009d00901c                bin2bcd
+                0x000000009d00904c                bcd2bin
+                0x000000009d009068                RTCC_ConvertTime
+                0x000000009d0090d0                RTCC_ConvertDate
+                0x000000009d009158                RTCC_SetWriteEnable
+                0x000000009d009198                RTCC_SetWriteDisable
+                0x000000009d0091d8                RTCC_GetWriteEnable
+                0x000000009d0091e8                RTCC_Enable
+                0x000000009d009274                RTCC_Disable
+                0x000000009d009300                RTCC_GetEnable
+                0x000000009d009310                RTCC_GetClockStatus
+                0x000000009d00935c                RTCC_StartClock
+                0x000000009d0093a8                RTCC_StopClock
+                0x000000009d0093ec                RTCC_init
+                0x000000009d00945c                RTCC_Shutdown
+                0x000000009d009504                RTCC_SetTime
+                0x000000009d0095e0                RTCC_GetTime
+                0x000000009d009600                RTCC_SetDate
+                0x000000009d0096a8                RTCC_GetDate
+                0x000000009d0096c8                RTCC_SetTimeDate
+                0x000000009d009778                RTCC_GetTimeDate
+                0x000000009d0097b0                RTCC_SetCalibration
+                0x000000009d009880                RTCC_GetCalibration
+                0x000000009d009890                RTCC_Open
+                0x000000009d009930                RTCC_SetAlarmEnable
+                0x000000009d00999c                RTCC_AlarmDisable
+                0x000000009d0099a4                RTCC_AlarmEnable
+                0x000000009d0099ac                RTCC_GetAlarmEnable
+                0x000000009d0099d0                RTCC_SetChimeEnable
+                0x000000009d009a18                RTCC_ChimeEnable
+                0x000000009d009a44                RTCC_ChimeDisable
+                0x000000009d009a6c                RTCC_GetChimeEnable
+                0x000000009d009a90                RTCC_SetAlarmRepeat
+                0x000000009d009ab8                RTCC_AlarmRepeatEveryHalfSecond
+                0x000000009d009ae0                RTCC_AlarmRepeatEverySecond
+                0x000000009d009b0c                RTCC_AlarmRepeatEveryTenSeconds
+                0x000000009d009b38                RTCC_AlarmRepeatEveryMinute
+                0x000000009d009b64                RTCC_AlarmRepeatEveryTenMinutes
+                0x000000009d009b90                RTCC_AlarmRepeatEveryHour
+                0x000000009d009bbc                RTCC_AlarmRepeatEveryDay
+                0x000000009d009be8                RTCC_AlarmRepeatEveryWeek
+                0x000000009d009c14                RTCC_AlarmRepeatEveryMonth
+                0x000000009d009c40                RTCC_AlarmRepeatEveryYear
+                0x000000009d009c6c                RTCC_GetAlarmRepeat
+                0x000000009d009c90                RTCC_SetAlarmRepeatCount
+                0x000000009d009cb4                RTCC_GetAlarmRepeatCount
+                0x000000009d009cd8                RTCC_SetAlarmTime
+                0x000000009d009d04                RTCC_GetAlarmTime
+                0x000000009d009d18                RTCC_SetAlarmDate
+                0x000000009d009d44                RTCC_GetAlarmDate
+                0x000000009d009d58                RTCC_SetAlarmTimeDate
+                0x000000009d009d8c                RTCC_GetAlarmTimeDate
+                0x000000009d009da8                RTCC_SetSync
+                0x000000009d009ddc                RTCC_GetSync
+                0x000000009d009dec                RTCC_SetAlarmSync
+                0x000000009d009e20                RTCC_GetAlarmSync
+                0x000000009d009e30                RTCC_GetHalfSecond
+                0x000000009d009e40                RTCC_SecondsPulseOutput
+                0x000000009d009e5c                RTCC_AlarmPulseOutput
+                0x000000009d009e74                RTCC_SetAlarmInitialPulse
+                0x000000009d009f04                RTCC_AlarmInitialPulseHigh
+                0x000000009d009f0c                RTCC_AlarmInitialPulseLow
+                0x000000009d009f14                RTCC_GetAlarmInitialPulse
+                0x000000009d009f24                RTCC_AlarmInitialPulseToggle
+                0x000000009d009f48                RTCC_SetOutputEnable
+                0x000000009d009f7c                RTCC_OutputEnable
+                0x000000009d009f98                RTCC_GetOutputEnable
+                0x000000009d009fa8                RTCC_SetAlarmIntEnable
+                0x000000009d009ff4                RTCC_AlarmIntEnable
+                0x000000009d009ffc                RTCC_AlarmIntDisable
+                0x000000009d00a004                OnRTCC
+                0x000000009d00a00c                RTCCInterrupt
+                0x000000009d00a044                disk_initialize
+                0x000000009d00a2dc                disk_status
+                0x000000009d00a2fc                disk_read
+                0x000000009d00a9f8                disk_write
+                0x000000009d00ac98                put_fat
+                0x000000009d00ae94                get_fat
+                0x000000009d00b4a4                f_truncate
+                0x000000009d00bd24                f_stat
+                0x000000009d00bdbc                f_opendir
+                0x000000009d00c02c                f_readdir
+                0x000000009d00c110                f_getfree
+                0x000000009d00c33c                f_lseek
+                0x000000009d00c868                f_write
+                0x000000009d00cc94                f_read
+                0x000000009d00d05c                disk_ioctl
+                0x000000009d00d53c                f_rename
+                0x000000009d00d78c                f_utime
+                0x000000009d00d848                f_chmod
+                0x000000009d00d90c                f_unlink
+                0x000000009d00da7c                disk_timerproc
+                0x000000009d00dac0                get_fattime
+                0x000000009d00db18                f_mkdir
+                0x000000009d00de5c                f_sync
+                0x000000009d00dfc8                f_close
+                0x000000009d00dff4                f_open
+                0x000000009d00e38c                mount
+                0x000000009d00e3e4                unmount
+                0x000000009d00e41c                SD_present
+                0x000000009d00e458                listTYPE
+                0x000000009d00e460                listDir
+                0x000000009d00e5f0                isDirectory
+                0x000000009d00e610                isReadOnly
+                0x000000009d00e630                isHidden
+                0x000000009d00e650                isSystem
+                0x000000009d00e670                isArchive
+                0x000000009d00e690                SerialSetDataRate
+                0x000000009d00e754                SerialGetDataRate
+                0x000000009d00e834                SerialEnable
+                0x000000009d00e870                SerialSetLineControl
+                0x000000009d00e8ac                SerialFlush
+                0x000000009d00e8e0                SerialPinConfigure
+                0x000000009d00e944                SerialIntConfigure
+                0x000000009d00e9cc                SerialConfigure
+                0x000000009d00eb5c                SerialPrintf
+                0x000000009d00ebc4                SerialAvailable
+                0x000000009d00ec08                SerialRead
+                0x000000009d00eca4                SerialGetKey
+                0x000000009d00ed18                SerialGetString
+                0x000000009d00edb0                SerialGetDataBuffer
+                0x000000009d00ee7c                Serial1Interrupt
+                0x000000009d00eed0                Serial2Interrupt
+                0x000000009d00ef24                sbrk
+                0x000000009d00ef40                open
+                0x000000009d00efd4                close
+                0x000000009d00efdc                fstat
+                0x000000009d00efe4                isatty
+                0x000000009d00efec                lseek
+                0x000000009d00eff4                read
+                0x000000009d00f07c                write
+                0x000000009d00f130                setup
+                0x000000009d00f138                loop
+                0x000000009d00f310                main
+                0x000000009d00f37c                Serial3Interrupt
+                0x000000009d00f388                Serial4Interrupt
+                0x000000009d00f394                Serial5Interrupt
+                0x000000009d00f3a0                Serial6Interrupt
+                0x000000009d00f3ac                Tmr2Interrupt
+ .text          0x000000009d00f3b8       0x14 /tmp/cciAHdDS.o
+ .text          0x000000009d00f3cc        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/32MX440F256H.o
+ .text          0x000000009d00f3cc     0x29cc /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                0x000000009d00f3cc                USBDeviceInit
+                0x000000009d00f684                _USB1Interrupt
+                0x000000009d00fb04                USBStallHandler
+                0x000000009d00fbd0                USBSuspend
+                0x000000009d00fc28                USBWakeFromSuspend
+                0x000000009d00fc84                USBCtrlEPService
+                0x000000009d00fde4                USBCtrlTrfSetupHandler
+                0x000000009d00fe88                USBCtrlTrfOutHandler
+                0x000000009d00ff5c                USBCtrlTrfInHandler
+                0x000000009d0100f4                USBPrepareForNextSetupTrf
+                0x000000009d0101d8                USBCheckStdRequest
+                0x000000009d0103b4                USBStdFeatureReqHandler
+                0x000000009d01061c                USBStdGetDscHandler
+                0x000000009d0107b8                USBStdGetStatusHandler
+                0x000000009d01098c                USBCtrlEPServiceComplete
+                0x000000009d010de8                USBCtrlTrfTxService
+                0x000000009d010fbc                USBCtrlTrfRxService
+                0x000000009d0112d4                USBStdSetCfgHandler
+                0x000000009d011468                USBConfigureEndpoint
+                0x000000009d01154c                USBEnableEndpoint
+                0x000000009d0115f0                USBStallEndpoint
+                0x000000009d0117d0                USBTransferOnePacket
+                0x000000009d011a2c                USBCancelIO
+                0x000000009d011c70                USBDeviceDetach
+                0x000000009d011ca4                USBDeviceAttach
+ .text          0x000000009d011d98      0x864 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+                0x000000009d011d98                USBCheckCDCRequest
+                0x000000009d011fd0                CDCInitEP
+                0x000000009d01205c                getsUSBUSART
+                0x000000009d012174                putUSBUSART
+                0x000000009d0121f0                putsUSBUSART
+                0x000000009d0122d4                putrsUSBUSART
+                0x000000009d0123b4                CDCTxService
+ .text          0x000000009d0125fc        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .text          0x000000009d0125fc      0x430 /tmp/ccv9g5FI.o
+                0x000000009d0125fc                vector_8_ISR_wrapper
+                0x000000009d012708                vector_24_ISR_wrapper
+                0x000000009d012814                vector_32_ISR_wrapper
+                0x000000009d012920                vector_35_ISR_wrapper
+ .text          0x000000009d012a2c       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+                0x000000009d012a2c                malloc
+                0x000000009d012a3c                free
+ .text          0x000000009d012a4c      0x860 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+                0x000000009d012a4c                _malloc_r
+ .text          0x000000009d0132ac       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+                0x000000009d0132ac                __malloc_lock
+                0x000000009d0132b4                __malloc_unlock
+ .text          0x000000009d0132bc       0x5c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+                0x000000009d0132bc                _sbrk_r
+ .text          0x000000009d013318       0x94 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+                0x000000009d013318                strcmp
+ .text          0x000000009d0133ac      0x434 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+                0x000000009d0133ac                _malloc_trim_r
+                0x000000009d0134e8                _free_r
+ .text          0x000000009d0137e0        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .text          0x000000009d0137e0      0x268 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+                0x000000009d0137e0                cleanup_glue
+                0x000000009d013824                _reclaim_reent
+                0x000000009d01397c                _wrapup_reent
+ .text          0x000000009d013a48       0x58 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+ .text          0x000000009d013aa0        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtn.o
  *(.text.*personality*)
  *(.gnu.warning)
  *(.mips16.fn.*)
  *(.mips16.call.*)
-                0x000000009d00f22c                _text_end = .
+                0x000000009d013aa0                _text_end = .
 
-.init           0x000000009d00f22c       0x38
- .init          0x000000009d00f22c        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
-                0x000000009d00f22c                _init
- .init          0x000000009d00f234       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .init          0x000000009d00f244       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
- .init          0x000000009d00f254       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+.init           0x000000009d013aa0       0x38
+ .init          0x000000009d013aa0        0x8 /usr/lib/gcc/mipsel-elf/4.5.3/crti.o
+                0x000000009d013aa0                _init
+ .init          0x000000009d013aa8       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .init          0x000000009d013ab8       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+ .init          0x000000009d013ac8       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/crtn.o
 
-.fini           0x000000009d00f264       0x28
- .fini          0x000000009d00f264        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
-                0x000000009d00f264                _fini
- .fini          0x000000009d00f26c       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .fini          0x000000009d00f27c       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+.fini           0x000000009d013ad8       0x28
+ .fini          0x000000009d013ad8        0x8 /usr/lib/gcc/mipsel-elf/4.5.3/crti.o
+                0x000000009d013ad8                _fini
+ .fini          0x000000009d013ae0       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .fini          0x000000009d013af0       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/crtn.o
 
-.rodata         0x000000009d00f28c      0x6a8
+.rodata         0x000000009d013b00      0x4b4
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x000000009d00f28c       0xe0 /tmp/ccz166ys.o
- .rodata        0x000000009d00f36c      0x1b0 /tmp/ccz166ys.o
-                0x000000009d00f41c                portmask
-                0x000000009d00f49c                pinmask
- .rodata        0x000000009d00f51c       0x30 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
- .rodata        0x000000009d00f54c       0x8c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
- .rodata        0x000000009d00f5d8       0xd4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
-                0x000000009d00f5d8                device_dsc
-                0x000000009d00f5ec                configDescriptor1
-                0x000000009d00f630                sd000
-                0x000000009d00f634                sd001
-                0x000000009d00f668                sd002
-                0x000000009d00f69c                USB_CD_Ptr
-                0x000000009d00f6a0                USB_SD_Ptr
- .rodata        0x000000009d00f6ac      0x284 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
-                0x000000009d00f6ac                _ctype_
+                0x000000009d013b00      0x10d /home/fred/workspace/pinguino32/source/main32.o
+                                        0x118 (size before relaxing)
+ *fill*         0x000000009d013c0d        0x3 00
+ .rodata        0x000000009d013c10      0x210 /home/fred/workspace/pinguino32/source/main32.o
+                0x000000009d013d18                portmask
+                0x000000009d013d9c                pinmask
+ .rodata        0x000000009d013e20       0x30 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .rodata        0x000000009d013e50       0x8c /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .rodata        0x000000009d013edc       0xd4 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+                0x000000009d013edc                device_dsc
+                0x000000009d013ef0                configDescriptor1
+                0x000000009d013f34                sd000
+                0x000000009d013f38                sd001
+                0x000000009d013f6c                sd002
+                0x000000009d013fa0                USB_CD_Ptr
+                0x000000009d013fa4                USB_SD_Ptr
  .rodata.str1.4
-                0x000000009d00f930        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
+                0x000000009d013fb0        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
  *(.rodata1)
-                0x000000009d00f934                . = ALIGN (0x4)
+                0x000000009d013fb4                . = ALIGN (0x4)
 
-.sdata2         0x000000009d00f934        0x0
+.sdata2         0x000000009d013fb4        0x0
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x000000009d00f934                . = ALIGN (0x4)
+                0x000000009d013fb4                . = ALIGN (0x4)
 
-.sbss2          0x000000009d00f934        0x0
+.sbss2          0x000000009d013fb4        0x0
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
-                0x000000009d00f934                . = ALIGN (0x4)
+                0x000000009d013fb4                . = ALIGN (0x4)
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x000000009d00f934        0x4
+.eh_frame       0x000000009d013fb4        0x4
  *(.eh_frame)
- .eh_frame      0x000000009d00f934        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .eh_frame      0x000000009d00f934        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+ .eh_frame      0x000000009d013fb4        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .eh_frame      0x000000009d013fb4        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
 
-.rel.dyn        0x000000009d00f938        0x0
- .rel.dyn       0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+.rel.dyn        0x000000009d013fb8        0x0
+ .rel.dyn       0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
 
 .dbg_data       0x00000000a0000004        0x0
                 0x00000000a0000004                . = (. + DEFINED (_DEBUGGER)?0x200:0x0)
 
-.data           0x00000000a0000008      0x808 load address 0x000000009d00f938
+.data           0x00000000a0000008      0x830 load address 0x000000009d013fb8
                 0x00000000a0000008                _data_begin = .
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
- .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .data          0x00000000a0000008        0x0 /tmp/ccz166ys.o
- .data          0x00000000a0000008        0x0 /tmp/ccYyzOLm.o
- .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/processor.o
- .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
- .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
- .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
- .data          0x00000000a0000008        0x0 /tmp/ccvuQt0g.o
- .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .data          0x00000000a0000008        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .data          0x00000000a0000008      0x408 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .data          0x00000000a0000008        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crti.o
+ .data          0x00000000a0000008        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .data          0x00000000a0000008        0x0 /home/fred/workspace/pinguino32/source/main32.o
+ .data          0x00000000a0000008        0x0 /tmp/cciAHdDS.o
+ .data          0x00000000a0000008        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/32MX440F256H.o
+ .data          0x00000000a0000008        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .data          0x00000000a0000008        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .data          0x00000000a0000008        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .data          0x00000000a0000008        0x0 /tmp/ccv9g5FI.o
+ .data          0x00000000a0000008        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .data          0x00000000a0000008      0x408 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
                 0x00000000a0000008                __malloc_av_
- .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .data          0x00000000a0000410        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .data          0x00000000a0000410      0x400 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .data          0x00000000a0000810        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .data          0x00000000a0000810        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
- .data          0x00000000a0000810        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ .data          0x00000000a0000410        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .data          0x00000000a0000410        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .data          0x00000000a0000410        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .data          0x00000000a0000410        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .data          0x00000000a0000410      0x428 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .data          0x00000000a0000838        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+ .data          0x00000000a0000838        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+ .data          0x00000000a0000838        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtn.o
  *(.gnu.linkonce.d.*personality*)
  *(.data1)
-                0x000000009d00f938                _data_image_begin = LOADADDR (.data)
+                0x000000009d013fb8                _data_image_begin = LOADADDR (.data)
 
-.ctors          0x00000000a0000810        0x8 load address 0x000000009d010140
- .ctors         0x00000000a0000810        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .ctors         0x00000000a0000814        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+.ctors          0x00000000a0000838        0x8 load address 0x000000009d0147e8
+ .ctors         0x00000000a0000838        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .ctors         0x00000000a000083c        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
 
-.dtors          0x00000000a0000818        0x8 load address 0x000000009d010148
- .dtors         0x00000000a0000818        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .dtors         0x00000000a000081c        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
-                0x00000000a000081c                __DTOR_END__
+.dtors          0x00000000a0000840        0x8 load address 0x000000009d0147f0
+ .dtors         0x00000000a0000840        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .dtors         0x00000000a0000844        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+                0x00000000a0000844                __DTOR_END__
 
-.jcr            0x00000000a0000820        0x4 load address 0x000000009d010150
- .jcr           0x00000000a0000820        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .jcr           0x00000000a0000820        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+.jcr            0x00000000a0000848        0x4 load address 0x000000009d0147f8
+ .jcr           0x00000000a0000848        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .jcr           0x00000000a0000848        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
 
 .eh_frame
  *(.eh_frame)
-                0x00000000a0008820                _gp = (ALIGN (0x10) + 0x7ff0)
+                0x00000000a0008840                _gp = (ALIGN (0x10) + 0x7ff0)
 
 .got
  *(.got.plt)
  *(.got)
 
-.sdata          0x00000000a0000824       0x1c load address 0x000000009d010154
-                0x00000000a0000824                _sdata_begin = .
+.sdata          0x00000000a000084c       0x18 load address 0x000000009d0147fc
+                0x00000000a000084c                _sdata_begin = .
  *(.sdata .sdata.* .gnu.linkonce.s.*)
- .sdata         0x00000000a0000824        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
-                0x00000000a0000824                __dso_handle
- .sdata         0x00000000a0000828        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
-                0x00000000a0000828                __ctype_ptr
-                0x00000000a000082c                __ctype_ptr__
- .sdata         0x00000000a0000830        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
-                0x00000000a0000830                __malloc_trim_threshold
-                0x00000000a0000834                __malloc_sbrk_base
- .sdata         0x00000000a0000838        0x8 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
-                0x00000000a0000838                _impure_ptr
-                0x00000000a000083c                _global_impure_ptr
-                0x00000000a0000840                _sdata_end = .
+ .sdata         0x00000000a000084c        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+                0x00000000a000084c                __dso_handle
+ .sdata         0x00000000a0000850        0x1 /home/fred/workspace/pinguino32/source/main32.o
+ *fill*         0x00000000a0000851        0x3 00
+ .sdata         0x00000000a0000854        0x8 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a0000854                __malloc_trim_threshold
+                0x00000000a0000858                __malloc_sbrk_base
+ .sdata         0x00000000a000085c        0x8 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+                0x00000000a000085c                _impure_ptr
+                0x00000000a0000860                _global_impure_ptr
+                0x00000000a0000864                _sdata_end = .
 
 .lit8
  *(.lit8)
 
 .lit4
  *(.lit4)
-                0x00000000a0000840                . = ALIGN (0x4)
-                0x00000000a0000840                _data_end = .
-                0x00000000a0000840                _bss_begin = .
+                0x00000000a0000864                . = ALIGN (0x4)
+                0x00000000a0000864                _data_end = .
+                0x00000000a0000864                _bss_begin = .
 
-.sbss           0x00000000a0000840       0xbc load address 0x000000009d010170
-                0x00000000a0000840                _sbss_begin = .
+.sbss           0x00000000a0000864       0xe0 load address 0x000000009d014814
+                0x00000000a0000864                _sbss_begin = .
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
- .sbss          0x00000000a0000840        0x4 /tmp/ccz166ys.o
- .sbss          0x00000000a0000844        0xc /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
-                0x00000000a0000844                __malloc_top_pad
-                0x00000000a0000848                __malloc_max_sbrked_mem
-                0x00000000a000084c                __malloc_max_total_mem
+ .sbss          0x00000000a0000864       0x20 /home/fred/workspace/pinguino32/source/main32.o
+ .sbss          0x00000000a0000884        0xc /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a0000884                __malloc_top_pad
+                0x00000000a0000888                __malloc_max_sbrked_mem
+                0x00000000a000088c                __malloc_max_total_mem
  *(.scommon)
- .scommon       0x00000000a0000850       0x20 /tmp/ccz166ys.o
-                0x00000000a0000850                D
-                0x00000000a0000854                UART2rpointer
-                0x00000000a0000858                heap_ptr
-                0x00000000a000085c                UART2wpointer
-                0x00000000a0000860                FError
-                0x00000000a0000864                UART1rpointer
-                0x00000000a0000868                SDCS
-                0x00000000a000086c                UART1wpointer
- .scommon       0x00000000a0000870       0x45 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
-                0x00000000a0000870                pDst
-                0x00000000a0000874                CtrlTrfData
-                0x00000000a000087c                USBDeviceState
-                0x00000000a0000880                controlTransferState
-                0x00000000a0000884                USBInMaxPacketSize
-                0x00000000a0000888                BothEP0OutUOWNsSet
-                0x00000000a000088c                pBDTEntryEP0OutNext
-                0x00000000a0000890                SetupPkt
-                0x00000000a0000898                shortPacketStatus
-                0x00000000a000089c                pBDTEntryEP0OutCurrent
-                0x00000000a00008a0                USBActiveConfiguration
-                0x00000000a00008a4                RemoteWakeup
-                0x00000000a00008a8                USTATcopy
-                0x00000000a00008ac                USBInData
-                0x00000000a00008b4                USBAlternateInterface
- *fill*         0x00000000a00008b5        0x3 00
- .scommon       0x00000000a00008b8       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
-                0x00000000a00008b8                control_signal_bitmap
-                0x00000000a00008bc                cdc_tx_len
-                0x00000000a00008c0                pCDCSrc
-                0x00000000a00008c4                CDCDataOutHandle
-                0x00000000a00008c8                cdc_rx_len
-                0x00000000a00008cc                line_coding
-                0x00000000a00008d4                BaudRateGen
-                0x00000000a00008d8                CDCDataInHandle
-                0x00000000a00008dc                cdc_notice
-                0x00000000a00008e4                cdc_trf_state
-                0x00000000a00008e8                pCDCDst
-                0x00000000a00008ec                cdc_mem_type
-                0x00000000a00008f0                dummy_encapsulated_cmd_response
- .scommon       0x00000000a00008f8        0x4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
-                0x00000000a00008f8                errno
-                0x00000000a00008fc                _sbss_end = .
+ .scommon       0x00000000a0000890       0x28 /home/fred/workspace/pinguino32/source/main32.o
+                0x00000000a0000890                UART2rpointer
+                0x00000000a0000894                heap_ptr
+                0x00000000a0000898                UART2wpointer
+                0x00000000a000089c                AccSize
+                0x00000000a00008a0                FError
+                0x00000000a00008a4                Fat
+                0x00000000a00008a8                UART1rpointer
+                0x00000000a00008ac                AccDirs
+                0x00000000a00008ae                AccFiles
+                0x00000000a00008b0                SDCS
+                0x00000000a00008b4                UART1wpointer
+ .scommon       0x00000000a00008b8       0x45 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+                0x00000000a00008b8                pDst
+                0x00000000a00008bc                CtrlTrfData
+                0x00000000a00008c4                USBDeviceState
+                0x00000000a00008c8                controlTransferState
+                0x00000000a00008cc                USBInMaxPacketSize
+                0x00000000a00008d0                BothEP0OutUOWNsSet
+                0x00000000a00008d4                pBDTEntryEP0OutNext
+                0x00000000a00008d8                SetupPkt
+                0x00000000a00008e0                shortPacketStatus
+                0x00000000a00008e4                pBDTEntryEP0OutCurrent
+                0x00000000a00008e8                USBActiveConfiguration
+                0x00000000a00008ec                RemoteWakeup
+                0x00000000a00008f0                USTATcopy
+                0x00000000a00008f4                USBInData
+                0x00000000a00008fc                USBAlternateInterface
+ *fill*         0x00000000a00008fd        0x3 00
+ .scommon       0x00000000a0000900       0x40 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+                0x00000000a0000900                control_signal_bitmap
+                0x00000000a0000904                cdc_tx_len
+                0x00000000a0000908                pCDCSrc
+                0x00000000a000090c                CDCDataOutHandle
+                0x00000000a0000910                cdc_rx_len
+                0x00000000a0000914                line_coding
+                0x00000000a000091c                BaudRateGen
+                0x00000000a0000920                CDCDataInHandle
+                0x00000000a0000924                cdc_notice
+                0x00000000a000092c                cdc_trf_state
+                0x00000000a0000930                pCDCDst
+                0x00000000a0000934                cdc_mem_type
+                0x00000000a0000938                dummy_encapsulated_cmd_response
+ .scommon       0x00000000a0000940        0x4 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+                0x00000000a0000940                errno
+                0x00000000a0000944                _sbss_end = .
 
-.bss            0x00000000a0000a00      0x314 load address 0x000000009d010170
+.bss            0x00000000a0000a00      0x314 load address 0x000000009d014a00
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x00000000a0000a00        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
- .bss           0x00000000a0000a00       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .bss           0x00000000a0000a20       0xa0 /tmp/ccz166ys.o
- .bss           0x00000000a0000ac0        0x0 /tmp/ccYyzOLm.o
- .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/processor.o
- .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
- .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
- .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
- .bss           0x00000000a0000ac0        0x0 /tmp/ccvuQt0g.o
- .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .bss           0x00000000a0000ac0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .bss           0x00000000a0000ac0       0x28 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+ .bss           0x00000000a0000a00        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crti.o
+ .bss           0x00000000a0000a00       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .bss           0x00000000a0000a20       0xa0 /home/fred/workspace/pinguino32/source/main32.o
+ .bss           0x00000000a0000ac0        0x0 /tmp/cciAHdDS.o
+ .bss           0x00000000a0000ac0        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/32MX440F256H.o
+ .bss           0x00000000a0000ac0        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .bss           0x00000000a0000ac0        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .bss           0x00000000a0000ac0        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .bss           0x00000000a0000ac0        0x0 /tmp/ccv9g5FI.o
+ .bss           0x00000000a0000ac0        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .bss           0x00000000a0000ac0       0x28 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
                 0x00000000a0000ac0                __malloc_current_mallinfo
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
- .bss           0x00000000a0000ae8        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ .bss           0x00000000a0000ae8        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .bss           0x00000000a0000ae8        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .bss           0x00000000a0000ae8        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .bss           0x00000000a0000ae8        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .bss           0x00000000a0000ae8        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .bss           0x00000000a0000ae8        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+ .bss           0x00000000a0000ae8        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+ .bss           0x00000000a0000ae8        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtn.o
  *(COMMON)
- COMMON         0x00000000a0000ae8      0x100 /tmp/ccz166ys.o
-                0x00000000a0000ae8                UART2SerialBuffer
-                0x00000000a0000b68                UART1SerialBuffer
- *fill*         0x00000000a0000be8       0x18 00
- COMMON         0x00000000a0000c00       0x93 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ COMMON         0x00000000a0000ae8      0x118 /home/fred/workspace/pinguino32/source/main32.o
+                0x00000000a0000ae8                Finfo
+                0x00000000a0000b00                UART2SerialBuffer
+                0x00000000a0000b80                UART1SerialBuffer
+ COMMON         0x00000000a0000c00       0x93 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
                 0x00000000a0000c00                BDT
                 0x00000000a0000c60                inPipes
                 0x00000000a0000c70                pBDTEntryIn
                 0x00000000a0000c7c                pBDTEntryOut
                 0x00000000a0000c88                outPipes
  *fill*         0x00000000a0000c93        0x1 00
- COMMON         0x00000000a0000c94       0x80 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ COMMON         0x00000000a0000c94       0x80 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
                 0x00000000a0000c94                cdc_data_tx
                 0x00000000a0000cd4                cdc_data_rx
                 0x00000000a0000d14                . = ALIGN (0x4)
@@ -885,23 +960,23 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
                 0x00000000a0000d14                _end = .
                 0x00000000a0000d14                _bss_end = .
 
-.heap           0x00000000a0000d14     0x2000 load address 0x000000009d010170
+.heap           0x00000000a0000d14     0x2000
                 0x00000000a0000d14                _heap = .
                 0x00000000a0002d14                . = (. + _min_heap_size)
  *fill*         0x00000000a0000d14     0x2000 00
 
-.stack          0x00000000a0002d14      0x400 load address 0x000000009d010170
+.stack          0x00000000a0002d14      0x400
                 0x00000000a0002d14                _splim = .
                 0x00000000a0002d14                _SPLIM = .
                 0x00000000a0003114                . = (. + _min_stack_size)
  *fill*         0x00000000a0002d14      0x400 00
 
-.ramfunc        0x00000000a0003800        0x0 load address 0x000000009d010170
+.ramfunc        0x00000000a0003800        0x0 load address 0x000000009d014814
                 0x00000000a0003800                _ramfunc_begin = .
  *(.ramfunc .ramfunc.*)
                 0x00000000a0003800                . = ALIGN (0x4)
                 0x00000000a0003800                _ramfunc_end = .
-                0x000000009d010170                _ramfunc_image_begin = LOADADDR (.ramfunc)
+                0x000000009d014814                _ramfunc_image_begin = LOADADDR (.ramfunc)
                 0x0000000000000000                _ramfunc_length = SIZEOF (.ramfunc)
                 0x00000000000037fc                _bmxdkpba_address = (_ramfunc_begin - ORIGIN (kseg1_data_mem))
                 0x0000000000007ffc                _bmxdudba_address = 0x7ffc
@@ -909,34 +984,31 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
                 0x00000000a0008000                _stack = (_ramfunc_length > 0x0)?(_ramfunc_begin - 0x4):(ORIGIN (kseg1_data_mem) + 0x7ffc)
                 0x0000000000000001                ASSERT (((_min_stack_size + _min_heap_size) <= (_stack - _heap)), Not enough space to allocate both stack and heap.  Reduce heap and/or stack size.)
 
-.pdr            0x0000000000000000     0x1500
+.pdr            0x0000000000000000     0x22a0
  *(.pdr)
- .pdr           0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
- .pdr           0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .pdr           0x0000000000000000      0xe00 /tmp/ccz166ys.o
- .pdr           0x0000000000000e00       0xa0 /tmp/ccYyzOLm.o
- .pdr           0x0000000000000ea0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/processor.o
- .pdr           0x0000000000000ea0      0x340 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
- .pdr           0x00000000000011e0       0xe0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
- .pdr           0x00000000000012c0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
- .pdr           0x00000000000012c0       0x80 /tmp/ccvuQt0g.o
- .pdr           0x0000000000001340        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .pdr           0x0000000000001340       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .pdr           0x0000000000001380       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .pdr           0x00000000000013a0       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .pdr           0x00000000000013c0       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .pdr           0x00000000000013e0       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .pdr           0x0000000000001420       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .pdr           0x0000000000001440       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .pdr           0x0000000000001460       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .pdr           0x00000000000014a0        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .pdr           0x00000000000014a0       0x60 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .pdr           0x0000000000001500        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
- .pdr           0x0000000000001500        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ .pdr           0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crti.o
+ .pdr           0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .pdr           0x0000000000000000     0x1be0 /home/fred/workspace/pinguino32/source/main32.o
+ .pdr           0x0000000000001be0       0xa0 /tmp/cciAHdDS.o
+ .pdr           0x0000000000001c80        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/32MX440F256H.o
+ .pdr           0x0000000000001c80      0x340 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .pdr           0x0000000000001fc0       0xe0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .pdr           0x00000000000020a0        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .pdr           0x00000000000020a0       0x80 /tmp/ccv9g5FI.o
+ .pdr           0x0000000000002120       0x40 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .pdr           0x0000000000002160       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .pdr           0x0000000000002180       0x40 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .pdr           0x00000000000021c0       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .pdr           0x00000000000021e0       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .pdr           0x0000000000002200       0x40 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .pdr           0x0000000000002240        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .pdr           0x0000000000002240       0x60 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+ .pdr           0x00000000000022a0        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+ .pdr           0x00000000000022a0        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtn.o
 
 .reginfo        0x0000000000000000       0x18
  *(.reginfo)
- .reginfo       0x0000000000000000       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+ .reginfo       0x0000000000000000       0x18 /usr/lib/gcc/mipsel-elf/4.5.3/crti.o
 
 .stab
  *(.stab)
@@ -956,76 +1028,64 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 .stab.indexstr
  *(.stab.indexstr)
 
+.comment        0x0000000000000000      0x11d
+ *(.comment)
+ .comment       0x0000000000000000       0x2d /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+                                         0x2e (size before relaxing)
+ .comment       0x0000000000000000       0x2e /home/fred/workspace/pinguino32/source/main32.o
+ .comment       0x000000000000002d       0x50 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .comment       0x000000000000007d       0x50 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .comment       0x00000000000000cd       0x50 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+ .comment       0x0000000000000000       0x2e /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
+
 .mdebug.abi32   0x0000000000000000        0x0
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
- .mdebug.abi32  0x0000000000000000        0x0 /tmp/ccz166ys.o
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .mdebug.abi32  0x0000000000000000        0x0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/fred/workspace/pinguino32/source/main32.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_device.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /home/fred/workspace/pinguino32/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+ .mdebug.abi32  0x0000000000000000        0x0 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
 
 .gnu.attributes
                 0x0000000000000000       0x10
  .gnu.attributes
-                0x0000000000000000       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
+                0x0000000000000000       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/crtbegin.o
  .gnu.attributes
-                0x0000000000000010       0x10 /tmp/ccz166ys.o
+                0x0000000000000010       0x10 /home/fred/workspace/pinguino32/source/main32.o
  .gnu.attributes
-                0x0000000000000020       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+                0x0000000000000020       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
  .gnu.attributes
-                0x0000000000000030       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+                0x0000000000000030       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
  .gnu.attributes
-                0x0000000000000040       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000000000000040       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
  .gnu.attributes
-                0x0000000000000050       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+                0x0000000000000050       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
  .gnu.attributes
-                0x0000000000000060       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+                0x0000000000000060       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
  .gnu.attributes
-                0x0000000000000070       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+                0x0000000000000070       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
  .gnu.attributes
-                0x0000000000000080       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+                0x0000000000000080       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
  .gnu.attributes
-                0x0000000000000090       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
+                0x0000000000000090       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
  .gnu.attributes
-                0x00000000000000a0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .gnu.attributes
-                0x00000000000000b0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .gnu.attributes
-                0x00000000000000c0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .gnu.attributes
-                0x00000000000000d0       0x10 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
-
-.comment        0x0000000000000000      0x1e1
- *(.comment)
- .comment       0x0000000000000000       0x2b /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtbegin.o
-                                         0x2c (size before relaxing)
- .comment       0x0000000000000000       0x2c /tmp/ccz166ys.o
- .comment       0x000000000000002b       0x50 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_device.o)
- .comment       0x000000000000007b       0x50 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_function_cdc.o)
- .comment       0x00000000000000cb       0x50 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/p32/obj/non-free/usb/libcdc.a(usb_descriptors.o)
- .comment       0x000000000000011b       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .comment       0x000000000000012d       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .comment       0x000000000000013f       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .comment       0x0000000000000151       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .comment       0x0000000000000163       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .comment       0x0000000000000175       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .comment       0x0000000000000187       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .comment       0x0000000000000199       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .comment       0x00000000000001ab       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .comment       0x00000000000001bd       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .comment       0x00000000000001cf       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .comment       0x0000000000000000       0x2c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtend.o
+                0x00000000000000a0       0x10 /usr/lib/gcc/mipsel-elf/4.5.3/crtend.o
 
 .debug
  *(.debug)
@@ -1039,152 +1099,113 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x170
+.debug_aranges  0x0000000000000000       0xe0
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x28 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
+                0x0000000000000000       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
  .debug_aranges
-                0x0000000000000028       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+                0x0000000000000020       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
  .debug_aranges
-                0x0000000000000048       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000000000000040       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
  .debug_aranges
-                0x0000000000000068       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+                0x0000000000000060       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
  .debug_aranges
-                0x0000000000000088       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+                0x0000000000000080       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
  .debug_aranges
-                0x00000000000000a8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+                0x00000000000000a0       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
  .debug_aranges
-                0x00000000000000c8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .debug_aranges
-                0x00000000000000e8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .debug_aranges
-                0x0000000000000108       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .debug_aranges
-                0x0000000000000128       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .debug_aranges
-                0x0000000000000148       0x28 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+                0x00000000000000c0       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
 
 .debug_pubnames
-                0x0000000000000000      0x29d
+                0x0000000000000000      0x223
  *(.debug_pubnames)
  .debug_pubnames
-                0x0000000000000000       0x40 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
+                0x0000000000000000       0x26 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
  .debug_pubnames
-                0x0000000000000040       0x26 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
+                0x0000000000000026       0xce /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
  .debug_pubnames
-                0x0000000000000066       0xce /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
+                0x00000000000000f4       0x38 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
  .debug_pubnames
-                0x0000000000000134       0x1d /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
+                0x000000000000012c       0x1e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
  .debug_pubnames
-                0x0000000000000151       0x1d /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
+                0x000000000000014a       0x1d /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
  .debug_pubnames
-                0x000000000000016e       0x38 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
+                0x0000000000000167       0x31 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
  .debug_pubnames
-                0x00000000000001a6       0x1e /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
+                0x0000000000000198       0x39 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
  .debug_pubnames
-                0x00000000000001c4       0x1d /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .debug_pubnames
-                0x00000000000001e1       0x31 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .debug_pubnames
-                0x0000000000000212       0x39 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .debug_pubnames
-                0x000000000000024b       0x52 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+                0x00000000000001d1       0x52 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
 
-.debug_info     0x0000000000000000     0x4e88
+.debug_info     0x0000000000000000     0x4b4b
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x0000000000000000       0xb0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
- .debug_info    0x00000000000000b0       0xae /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .debug_info    0x000000000000015e      0x983 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .debug_info    0x0000000000000ae1      0xce1 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .debug_info    0x00000000000017c2      0x115 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .debug_info    0x00000000000018d7      0x196 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .debug_info    0x0000000000001a6d      0x96c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .debug_info    0x00000000000023d9      0x975 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .debug_info    0x0000000000002d4e      0x127 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .debug_info    0x0000000000002e75      0xbde /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .debug_info    0x0000000000003a53      0x94a /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .debug_info    0x000000000000439d      0xa3b /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .debug_info    0x0000000000004dd8       0xb0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ .debug_info    0x0000000000000000      0x9a1 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_info    0x00000000000009a1      0xd67 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_info    0x0000000000001708      0x97c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_info    0x0000000000002084      0x9a8 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_info    0x0000000000002a2c      0x121 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_info    0x0000000000002b4d      0xc3c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .debug_info    0x0000000000003789      0x962 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .debug_info    0x00000000000040eb      0xa60 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
 
-.debug_abbrev   0x0000000000000000      0xe7a
+.debug_abbrev   0x0000000000000000      0xca5
  *(.debug_abbrev)
- .debug_abbrev  0x0000000000000000       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
- .debug_abbrev  0x0000000000000012       0x6a /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .debug_abbrev  0x000000000000007c      0x196 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .debug_abbrev  0x0000000000000212      0x222 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .debug_abbrev  0x0000000000000434       0x88 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .debug_abbrev  0x00000000000004bc       0xc8 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .debug_abbrev  0x0000000000000584      0x176 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .debug_abbrev  0x00000000000006fa      0x19a /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .debug_abbrev  0x0000000000000894       0xa6 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .debug_abbrev  0x000000000000093a      0x1e8 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .debug_abbrev  0x0000000000000b22      0x160 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .debug_abbrev  0x0000000000000c82      0x1e6 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .debug_abbrev  0x0000000000000e68       0x12 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ .debug_abbrev  0x0000000000000000      0x194 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_abbrev  0x0000000000000194      0x231 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_abbrev  0x00000000000003c5      0x177 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_abbrev  0x000000000000053c      0x1ae /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_abbrev  0x00000000000006ea       0x8b /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_abbrev  0x0000000000000775      0x1e8 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .debug_abbrev  0x000000000000095d      0x164 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .debug_abbrev  0x0000000000000ac1      0x1e4 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
 
-.debug_line     0x0000000000000000      0xc03
+.debug_line     0x0000000000000000      0xe5d
  *(.debug_line)
- .debug_line    0x0000000000000000       0x69 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
- .debug_line    0x0000000000000069       0x5b /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
- .debug_line    0x00000000000000c4       0xf0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .debug_line    0x00000000000001b4      0x246 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .debug_line    0x00000000000003fa       0xbd /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .debug_line    0x00000000000004b7       0xf7 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .debug_line    0x00000000000005ae       0xec /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .debug_line    0x000000000000069a       0xf0 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .debug_line    0x000000000000078a       0x8e /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .debug_line    0x0000000000000818      0x175 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .debug_line    0x000000000000098d       0xda /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
- .debug_line    0x0000000000000a67      0x131 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
- .debug_line    0x0000000000000b98       0x6b /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+ .debug_line    0x0000000000000000      0x1a5 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_line    0x00000000000001a5      0x36d /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_line    0x0000000000000512      0x13e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_line    0x0000000000000650      0x1a9 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_line    0x00000000000007f9      0x14b /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_line    0x0000000000000944      0x25f /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .debug_line    0x0000000000000ba3      0x12c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .debug_line    0x0000000000000ccf      0x18e /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
 
-.debug_frame    0x0000000000000000      0x1dc
+.debug_frame    0x0000000000000000      0x198
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x30 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .debug_frame   0x0000000000000030       0x38 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .debug_frame   0x0000000000000068       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .debug_frame   0x0000000000000088       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .debug_frame   0x00000000000000a8       0x30 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
- .debug_frame   0x00000000000000d8       0x2c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .debug_frame   0x0000000000000104       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .debug_frame   0x0000000000000124       0x4c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .debug_frame   0x0000000000000170       0x6c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .debug_frame   0x0000000000000000       0x30 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_frame   0x0000000000000030       0x38 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_frame   0x0000000000000068       0x30 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000000098       0x2c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_frame   0x00000000000000c4       0x20 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_frame   0x00000000000000e4       0x48 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .debug_frame   0x000000000000012c       0x6c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
 
-.debug_str      0x0000000000000000      0xacb
+.debug_str      0x0000000000000000      0x947
  *(.debug_str)
- .debug_str     0x0000000000000000       0xb4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-ctype_.o)
-                                         0xb9 (size before relaxing)
- .debug_str     0x00000000000000b4      0x450 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
-                                        0x4dd (size before relaxing)
- .debug_str     0x0000000000000504      0x209 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
-                                        0x6b2 (size before relaxing)
- .debug_str     0x000000000000070d       0x83 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
-                                        0x122 (size before relaxing)
- .debug_str     0x0000000000000790       0xe2 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
-                                        0x113 (size before relaxing)
- .debug_str     0x0000000000000872       0x6e /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mlock.o)
-                                        0x4e4 (size before relaxing)
- .debug_str     0x00000000000008e0       0x90 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
-                                        0x4cc (size before relaxing)
- .debug_str     0x0000000000000970       0x51 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
-                                        0x12f (size before relaxing)
- .debug_str     0x00000000000009c1       0x3c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
-                                        0x604 (size before relaxing)
- .debug_str     0x00000000000009fd       0x5a /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-impure.o)
-                                        0x4db (size before relaxing)
- .debug_str     0x0000000000000a57       0x74 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
-                                        0x500 (size before relaxing)
+ .debug_str     0x0000000000000000      0x450 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+                                        0x4ce (size before relaxing)
+ .debug_str     0x0000000000000450      0x22c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+                                        0x6a3 (size before relaxing)
+ .debug_str     0x000000000000067c       0x91 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+                                        0x4d5 (size before relaxing)
+ .debug_str     0x000000000000070d       0x79 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+                                        0x4c3 (size before relaxing)
+ .debug_str     0x0000000000000786       0x71 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+                                        0x106 (size before relaxing)
+ .debug_str     0x00000000000007f7       0x3c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+                                        0x5f5 (size before relaxing)
+ .debug_str     0x0000000000000833       0x7d /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+                                        0x4cd (size before relaxing)
+ .debug_str     0x00000000000008b0       0x97 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+                                        0x4f2 (size before relaxing)
 
-.debug_loc      0x0000000000000000     0x13b1
+.debug_loc      0x0000000000000000     0x1337
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x3c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-malloc.o)
- .debug_loc     0x000000000000003c      0x7f4 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .debug_loc     0x0000000000000830      0x16c /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcmp.o)
- .debug_loc     0x000000000000099c      0x2c5 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .debug_loc     0x0000000000000c61       0x5b /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-sbrkr.o)
- .debug_loc     0x0000000000000cbc       0xf6 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-strcmp.o)
- .debug_loc     0x0000000000000db2      0x418 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-freer.o)
- .debug_loc     0x00000000000011ca      0x1e7 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-reent.o)
+ .debug_loc     0x0000000000000000       0x3c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_loc     0x000000000000003c      0xa5b /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_loc     0x0000000000000a97       0x5c /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_loc     0x0000000000000af3      0x16d /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_loc     0x0000000000000c60      0x4b7 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .debug_loc     0x0000000000001117      0x220 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1203,10 +1224,26 @@ LOAD /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/.
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(/home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/source/main32.elf elf32-littlemips)
+OUTPUT(/home/fred/workspace/pinguino32/source/main32.elf elf32-littlemips)
 
-.debug_ranges   0x0000000000000000       0xd8
- .debug_ranges  0x0000000000000000       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crti.o
- .debug_ranges  0x0000000000000020       0x80 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-mallocr.o)
- .debug_ranges  0x00000000000000a0       0x18 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/../../../../mips-elf/lib/libc.a(lib_a-memcpy.o)
- .debug_ranges  0x00000000000000b8       0x20 /home/regis/Hobbies/Electronique/Projets/Pinguino/svn/trunk/linux/p32/bin/../lib/gcc/mips-elf/4.5.2/soft-float/el/crtn.o
+.debug_pubtypes
+                0x0000000000000000      0x6bc
+ .debug_pubtypes
+                0x0000000000000000       0xe8 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_pubtypes
+                0x00000000000000e8      0x120 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_pubtypes
+                0x0000000000000208       0xdd /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_pubtypes
+                0x00000000000002e5       0xeb /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-sbrkr.o)
+ .debug_pubtypes
+                0x00000000000003d0       0x12 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_pubtypes
+                0x00000000000003e2      0x120 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-freer.o)
+ .debug_pubtypes
+                0x0000000000000502       0xdd /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-impure.o)
+ .debug_pubtypes
+                0x00000000000005df       0xdd /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-reent.o)
+
+.debug_ranges   0x0000000000000000       0x50
+ .debug_ranges  0x0000000000000000       0x50 /usr/lib/gcc/mipsel-elf/4.5.3/../../../../mipsel-elf/lib/libc.a(lib_a-mallocr.o)
