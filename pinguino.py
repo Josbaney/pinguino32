@@ -1316,7 +1316,7 @@ class Pinguino(wx.Frame):
 
 		# remove end line comment
 		if line.find("//")!=-1:
-			line = line[0:line.find("/")]
+			line = line[0:(line.find("//")-1)]
 			line = line + "\r\n"
 
 		# replace arduino/pinguino language and add #define or #include to define.h
