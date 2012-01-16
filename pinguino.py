@@ -921,6 +921,10 @@ class Pinguino(wx.Frame):
 										"write",
 										filename+".hex"],
 										stdout=fichier,stderr=STDOUT)
+							sortie.communicate()
+							fichier.seek(0)
+							self.displaymsg(fichier.read(),0)
+							fichier.close()							
 					else:
 						sortie=Popen([os.path.join(HOME_DIR, self.osdir, 'p32', 'bin', self.u32),
 									"-w",
