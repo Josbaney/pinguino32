@@ -53,7 +53,7 @@ Contact us at admin@embeddedadventures.com
 			#ifdef PIC32_PINGUINO_220
 				#define ZIGRESET	PORTBbits.RB8
 				#define ZIGCS		PORTAbits.RA7
-				#define ZIGRESETOUT	TRISFbits.TRISB8=0
+				#define ZIGRESETOUT	TRISBbits.TRISB8=0
 				#define ZIGCSOUT	TRISAbits.TRISA7=0
 			#else
 				#define ZIGRESET 	PORTFbits.RF5
@@ -919,13 +919,17 @@ void mrf24j40_setup_io() {
         	SPI_init();			// init SPI default (2 on PIC32-PINGUINO)
         						// only called here for test
         						// will be called later in main32.c
-        	pinmode(13,OUTPUT); // CLK
-        	pinmode(11,OUTPUT); // SDO
-        	pinmode(12,INPUT);	// SDI
-        	ZIGRESETOUT;		// macro for RESET
-        	ZIGCSOUT;			// macro for CS
-        	ZIGINTIN;			// interrupt (not yet implemented)
-        	
+        	#ifndef PIC32_PINGUINO_220
+				pinmode(13,OUTPUT); // CLK
+				pinmode(11,OUTPUT); // SDO
+				pinmode(12,INPUT);	// SDI				
+				ZIGRESETOUT;		// macro for RESET
+				ZIGCSOUT;			// macro for CS
+				ZIGINTIN;			// interrupt (not yet implemented)
+        	#else
+				ZIGRESETOUT;		// macro for RESET
+				ZIGCSOUT;			// macro for CS
+			#endif
         	ZIGRESET=0;
         	ZIGCS=1;
         	ZIGRESET=1;
