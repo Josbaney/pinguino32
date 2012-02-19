@@ -108,6 +108,34 @@ class PIC32_Pinguino_OTG:
 	shortarg='-O'
 	longarg='--olimex440OTG'
 
+class PIC32_Pinguino_Micro:
+	name='PIC32 Pinguino Micro'
+	id=wx.NewId()
+	arch=32
+	bldr='microchip'
+	proc='32MX440F256H'
+	board='PIC32_PINGUINO_MICRO'
+	vendor=MICROCHIP_ID
+	product=PIC32_ID
+	memstart=0x00000
+	memend=0x40000
+	shortarg='-M'
+	longarg='--olimex440Micro'
+
+class PIC32_Pinguino_220:
+	name='PIC32_Pinguino_220'
+	id=wx.NewId()
+	arch=32
+	bldr='microchip'
+	proc='32MX220F032D'
+	board='PIC32_PINGUINO_220'
+	vendor=MICROCHIP_ID
+	product=PIC32_ID
+	memstart=0x00000
+	memend=0x04000
+	shortarg='-m'
+	longarg='--olimex220'
+	
 class Emperor_460:
 	name='Emperor_460'
 	id=wx.NewId()
@@ -160,5 +188,5 @@ class UBW32_795:
 	shortarg='-U'
 	longarg='--ubw795'
 
-boardlist = [Generic_18F2550, Generic_18F4550, PICuno_Equo, FreeJALduino, PIC32_Pinguino, PIC32_Pinguino_OTG, Emperor_460, Emperor_795, UBW32_460, UBW32_795]
+boardlist = [Generic_18F2550, Generic_18F4550, PICuno_Equo, FreeJALduino, PIC32_Pinguino, PIC32_Pinguino_OTG, PIC32_Pinguino_Micro, PIC32_Pinguino_220, Emperor_460, Emperor_795, UBW32_460, UBW32_795]
 

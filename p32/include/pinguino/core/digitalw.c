@@ -1,10 +1,10 @@
 /*	----------------------------------------------------------------------------
 	FILE:			digitalw.c
-	PROJECT:		pinguinoX
+	PROJECT:		pinguino
 	PURPOSE:		
 	PROGRAMER:		jean-pierre mandon <jp.mandon@gmail.com>
 	FIRST RELEASE:	02 dec. 2010
-	LAST RELEASE:	20 mar. 2011
+	LAST RELEASE:	30 jan. 2012
 	----------------------------------------------------------------------------
 	CHANGELOG:
 	[02-12-10][jp.mandon@gmail.com][tested from 0 to 31 OK except PORTA pin]
@@ -15,6 +15,7 @@
 	[18-03-11][Marcus Fazzi][Added support for MX795]
 	[20-03-11][Marcus Fazzi][IO mapping for Emperor boards] 
 	[31-03-11][rblanchot@gmail.com][fixed conditional compilation for board support]
+	[30-01-12][rblanchot@gmail.com][added PIC32-PINGUINO-220 et PIC32-PINGUINO-MICRO]
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -32,10 +33,35 @@
 	--------------------------------------------------------------------------*/
 
 #ifndef __DIGITALW_C
-	#define __DIGITALW_C
+#define __DIGITALW_C
 	
-	#include <p32xxxx.h>
-	#include <typedef.h>
+#include <p32xxxx.h>
+#include <typedef.h>
+
+#define pA	0
+#define pB	1
+#define pC	2
+#define pD	3
+#define pE	4
+#define pF	5
+#define pG	6
+
+#define _0	1<<0
+#define _1	1<<1
+#define _2	1<<2
+#define _3	1<<3
+#define _4	1<<4
+#define _5	1<<5
+#define _6	1<<6
+#define _7	1<<7
+#define _8	1<<8
+#define _9	1<<9
+#define _10	1<<10
+#define _11	1<<11
+#define _12	1<<12
+#define _13	1<<13
+#define _14	1<<14
+#define _15	1<<15
 
 // #define for PIC32_PINGUINO
 
@@ -48,11 +74,11 @@ const u32 portmask[]=
 				  4,4,4,4,4,4,3,5,	// 24-31
 				  5};				// 32
 				  
-const u32 pinmask[]={0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800,	// 0-7
-				  0x4000,0x8000,0x200,0x100,0x80,0x40,0x02,0x04,		// 8-15
-				  0x08,0x10,0x200,0x400,0x800,0x400,0x01,0x02,			// 16-23
-				  0x04,0x08,0x10,0x20,0x40,0x80,0x02,0x02,				// 24-31
-				  0x01};												// 32
+const u32 pinmask[]={0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800,		// 0-7
+				  0x4000,0x8000,0x200,0x100,0x80,0x40,0x02,0x04,	// 8-15
+				  0x08,0x10,0x200,0x400,0x800,0x400,0x01,0x02,		// 16-23
+				  0x04,0x08,0x10,0x20,0x40,0x80,0x02,0x02,			// 24-31
+				  0x01};											// 32
 #endif
 
 #ifdef PIC32_PINGUINO_OTG
@@ -64,11 +90,38 @@ const u32 portmask[]=
 				  4,4,4,4,4,4,3,5,	// 24-31
 				  5};				// 32
 				  
-const u32 pinmask[]={0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800,	// 0-7
-				  0x2000,0x4000,0x200,0x100,0x80,0x40,0x02,0x04,		// 8-15
-				  0x08,0x10,0x200,0x400,0x800,0x400,0x01,0x02,			// 16-23
-				  0x04,0x08,0x10,0x20,0x40,0x80,0x02,0x02,				// 24-31
-				  0x01};												// 32
+const u32 pinmask[]={0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800,		// 0-7
+				  0x2000,0x4000,0x200,0x100,0x80,0x40,0x02,0x04,	// 8-15
+				  0x08,0x10,0x200,0x400,0x800,0x400,0x01,0x02,		// 16-23
+				  0x04,0x08,0x10,0x20,0x40,0x80,0x02,0x02,			// 24-31
+				  0x01};											// 32
+#endif
+
+#ifdef PIC32_PINGUINO_MICRO
+
+const u32 portmask[]=
+				 {3,3,3,3,3,3,3,3,	// 0-7
+				  1,1,6,6,6,6,1,1,	// 8-15
+				  1,1,3,3,1,1,4,4,	// 16-23
+				  4,4,4,4,4,4,3,5,	// 24-31
+				  5};				// 32
+				  
+const u32 pinmask[]={0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800,		// 0-7
+				  0x2000,0x4000,0x200,0x100,0x80,0x40,0x02,0x04,	// 8-15
+				  0x08,0x10,0x200,0x400,0x800,0x400,0x01,0x02,		// 16-23
+				  0x04,0x08,0x10,0x20,0x40,0x80,0x02,0x02,			// 24-31
+				  0x01};											// 32
+#endif
+
+#ifdef PIC32_PINGUINO_220
+
+u32 portmask[]={	pC,pC,pC,pC,pC,pC,pC,pC,	// D0-D7	: C8,C9,C2,C3,C4,C5,C6,C7 
+				  		pB,pA,pA,pB,pB,pB,			// D8-D13	: B7,A10,A1,B5,B13,B15
+						pC,pC,pB,pB,pB,pB	};		
+				  
+u32 pinmask[]={	_8,_9,_2,_3,_4,_5,_6,_7,	// D0-D7	: C8,C9,C2,C3,C4,C5,C6,C7
+						_7,_10,_1,_5,_13,_15,		// D8-D13	: B7,A10,A1,B5,B13,B15
+						_0,_1,_0,_1,_2,_3	};		// A0-A5	: C0,C1,B0,B1,B2,B3
 #endif
 
 //define for EMPEROR 460/795 boards
@@ -143,6 +196,7 @@ void pinmode(u8 pin,u8 state)
 		case 2: if (state) TRISCSET=pinmask[pin];
 				else TRISCCLR=pinmask[pin];
 				break;
+		#ifndef __32MX220F032D__
 		case 3: if (state) TRISDSET=pinmask[pin];
 				else TRISDCLR=pinmask[pin];
 				break;
@@ -155,10 +209,12 @@ void pinmode(u8 pin,u8 state)
 		case 6: if (state) TRISGSET=pinmask[pin];
 				else TRISGCLR=pinmask[pin];
 				break;
+		#endif
 	}
 }
 
 u8 pinread(u8 pin)
+
 {
 	u32 reg;
 
@@ -175,6 +231,7 @@ u8 pinread(u8 pin)
 		case 2:
 			reg = TRISC;
 			break;
+		#ifndef __32MX220F032D__
 		case 3:
 			reg = TRISD;
 			break;
@@ -187,13 +244,14 @@ u8 pinread(u8 pin)
 		case 6:
 			reg = TRISG;
 			break;
+		#endif
 	}
 	if ((reg & pinmask[pin])!=0)
 		return 1;
 	else
 		return 0;
 }
-		  
+	  
 void digitalwrite(u8 pin,u8 state)
 {
 	switch (portmask[pin])
@@ -209,6 +267,7 @@ void digitalwrite(u8 pin,u8 state)
 		case 2: if (state) PORTCSET=pinmask[pin];
 				else PORTCCLR=pinmask[pin];
 				break;
+		#ifndef __32MX220F032D__
 		case 3: if (state) PORTDSET=pinmask[pin];
 				else PORTDCLR=pinmask[pin];
 				break;
@@ -221,6 +280,7 @@ void digitalwrite(u8 pin,u8 state)
 		case 6: if (state) PORTGSET=pinmask[pin];
 				else PORTGCLR=pinmask[pin];
 				break;
+		#endif
 	}	
 }
 
@@ -236,6 +296,7 @@ u8 digitalread(u8 pin)
 				break;
 		case 2: return((PORTC&pinmask[pin])!=0);
 				break;
+		#ifndef __32MX220F032D__
 		case 3: return((PORTD&pinmask[pin])!=0);
 				break;
 		case 4: return((PORTE&pinmask[pin])!=0);
@@ -244,11 +305,12 @@ u8 digitalread(u8 pin)
 				break;
 		case 6: return((PORTG&pinmask[pin])!=0);
 				break;
+		#endif
 		default: return -1;
 	}
 	return -1;			
 }
-
+		  
 void toggle(u8 pin)
 {
 	digitalwrite(pin, digitalread(pin)^1);

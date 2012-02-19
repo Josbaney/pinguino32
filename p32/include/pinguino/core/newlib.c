@@ -24,8 +24,8 @@
 #ifndef __NEWLIB__
 #define __NEWLIB__
 
-#include <serial.c>
-#include <string.h>
+//#include <serial.c>
+//#include <string.h>
 //#include <string.c>
 
 // TODO include LCD lib, serial lib for UART2 etc.....
@@ -54,7 +54,8 @@ int *sbrk(int nbbytes)
 // else return -1
 
 int open(const char *name, int flags, int mode)
-{	
+{
+	/*	
 	if (!strcmp(name,"SERIAL1")) 
 	{
 		SerialConfigure(UART1, UART_ENABLE,	UART_RX_TX_ENABLED,	9600);
@@ -66,6 +67,7 @@ int open(const char *name, int flags, int mode)
 		SerialConfigure(UART2, UART_ENABLE,	UART_RX_TX_ENABLED,	9600);
 		return(2);
 	}
+	*/ 
 	
 // TODO LCD, SPI etc.....
 // TODO define a flag to know if the stream is opened
@@ -118,6 +120,7 @@ int lseek(int file, int ptr, int dir)
 
 int read(int file, char *ptr, int len)
 {
+	/*
 	int caractere=0;
 	int nbchar=0;
 	
@@ -139,6 +142,7 @@ int read(int file, char *ptr, int len)
 				return(-1);
 			break;
 	}
+	*/ 
 }
 
 // write
@@ -148,6 +152,7 @@ int read(int file, char *ptr, int len)
 
 int write(char file, char *ptr, int len)
 {
+	/*
 	int todo;
 	switch (file)
 	{
@@ -165,6 +170,7 @@ int write(char file, char *ptr, int len)
 			return(-1);
 			break;	
 	}
+	*/ 
 }
 
 #endif	/* __NEWLIB__ */

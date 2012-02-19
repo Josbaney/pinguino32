@@ -16,7 +16,7 @@ P32DIR		=	$(HOME)\p32
 P32CORE		=	$(HOME)\$(OSDIR)\p32
 BINDIR		=	$(P32CORE)\bin
 INCDIR		=	$(P32DIR)\include
-LKRDIR		=	$(P32DIR)\lkr
+LKRDIR		=	$(P32DIR)\lkr\$(BOARD)
 OBJDIR		=	$(P32DIR)\obj\non-free
 
 INCLUDEDIRS	=	-I$(INCDIR)\non-free \
@@ -59,9 +59,10 @@ CFLAGS		=	-fdollars-in-identifiers $(INCLUDEDIRS)
 
 LDFLAGS		=	$(LIBDIRS) $(LIBS)
 
-ELF_FLAGS	=	-O2 -EL -march=24kc \
+ELF_FLAGS	=	-EL -O3 -ffunction-sections -fdata-sections -Wl,--gc-sections -march=24kc \
 					-msoft-float \
-					-Wl,--defsym,_min_heap_size=8192 \
+					-Wl,-L$(OBJDIR) \
+					-Wl,--defsym,_min_heap_size=512 \
 					-Wl,-Map=$(SRCDIR)\output.map \
 					-D __PIC32MX__ -D __$(PROC)__ -D $(BOARD) \
 					-T$(LKRDIR)\procdefs.ld \

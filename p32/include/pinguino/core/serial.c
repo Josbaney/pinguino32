@@ -4,7 +4,7 @@
 	PURPOSE:		
 	PROGRAMER:		regis blanchot <rblanchot@gmail.com>
 	FIRST RELEASE:	10 nov. 2010
-	LAST RELEASE:	30 oct. 2011
+	LAST RELEASE:	18 feb. 2012
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -24,6 +24,7 @@
 	// 13 feb.2011 jp mandon added #define for RX/TX pin on 32mx440f256h
 	// 21 set.2011 Marcus Fazzi added support for UART3
 	// 23 set.2011 Marcus Fazzi added support for UART4,5 AND 6
+	// 18 feb.2012 jp mandon added support for PIC32-PIGUINO-220
 	
 #ifndef __SERIAL__
 #define __SERIAL__
@@ -310,6 +311,8 @@ void SerialSetDataRate(u8 port, u32 baudrate)
 	}
 }
 
+#ifndef __PIC32MX220F032D__
+
 /*	----------------------------------------------------------------------------
 	SerialGetDataRate
 	--------------------------------------------------------------------------*/
@@ -377,6 +380,8 @@ u32 SerialGetDataRate(u8 port)
 	}
 	return baudrate;
 }
+
+#endif
 
 /*	----------------------------------------------------------------------------
 	SerialEnable
@@ -491,11 +496,20 @@ void SerialPinConfigure(u8 port)
 #ifdef __32MX440F256H__
 			TRISDbits.TRISD3 = OUTPUT;	// RD3 / U1TX output
 			TRISDbits.TRISD2 = INPUT;	// RD2 / U1RX input
+#endif
+#ifdef PIC32_PINGUINO_220
+			TRISBbits.TRISB4 = OUTPUT;	// RB4 / U1TX output
+			TRISAbits.TRISA4 = INPUT;	// RA4 / U1RX input
 #endif			
 			break;
 		case UART2:
+#ifdef PIC32_PINGUINO_220
+			TRISCbits.TRISC9 = OUTPUT;	// RC9 / U2TX output
+			TRISCbits.TRISC8 = INPUT;	// RC8 / U2RX input				
+#else
 			TRISFbits.TRISF5 = OUTPUT;	// RF5 / U2TX output
 			TRISFbits.TRISF4 = INPUT;	// RF4 / U2RX input
+#endif
 			break;
 //32MX4xx not have UART3,4,5 AND 6
 #ifdef ENABLE_UART3
@@ -540,12 +554,24 @@ void SerialIntConfigure(u8 port, u8 priority, u8 subpriority)
 	switch (port)
 	{
 		case UART1:
+			#ifdef PIC32_PINGUINO_220
+				IPC8bits.U1IP = priority;
+				IPC8bits.U1IS = subpriority;
+				IEC1bits.U1RXIE=1;
+			#else		
 			IntSetVectorPriority(INT_UART1_VECTOR, priority, subpriority);
 			IntEnable(INT_UART1_RECEIVER);
+			#endif
 			break;
 		case UART2:
+			#ifdef PIC32_PINGUINO_220
+				IPC9bits.U2IP = priority;
+				IPC9bits.U2IS = subpriority;
+				IEC1bits.U2RXIE=1;
+			#else
 			IntSetVectorPriority(INT_UART2_VECTOR, priority, subpriority);
 			IntEnable(INT_UART2_RECEIVER);
+			#endif
 			break;
 #ifdef ENABLE_UART3
 		case UART3:
@@ -924,38 +950,96 @@ void SerialGetDataBuffer(u8 port)
 	TODO: move this to interrupt library and add it to main32.c
 	--------------------------------------------------------------------------*/
 
-// vector 24
+// vector 24 or 32 (PIC32_PINGUINO_220)
 void Serial1Interrupt(void)
 {
 	// Is this an RX interrupt from UART1 ?
+	#ifdef PIC32_PINGUINO_220
+	if (IFS1bits.U1RXIF)
+	#else	
 	if (IntGetFlag(INT_UART1_RECEIVER))
+	#endif
 	{
 		SerialGetDataBuffer(UART1);
-		//Toggle(REDLED);			// Toggle LED to indicate UART activity
+		#ifdef PIC32_PINGUINO_220
+		IFS1bits.U1RXIF=0;
+		#else	
 		IntClearFlag(INT_UART1_RECEIVER);
+		#endif
 	}
 	// Is this an TX interrupt from UART1 ?
+	#ifdef PIC32_PINGUINO_220
+	if (IFS1bits.U1TXIF)
+	#else		
 	if (IntGetFlag(INT_UART1_TRANSMITTER))
+	#endif
 	{
+		#ifdef PIC32_PINGUINO_220
+		IFS1bits.U1TXIF=0;
+		#else			
 		IntClearFlag(INT_UART1_TRANSMITTER);
+		#endif
 	}
+	// Is this an ERROR interrupt from UART1 ?
+	#ifdef PIC32_PINGUINO_220
+	if (IFS1bits.U1EIF)
+	#else	
+	if (IntGetFlag(INT_UART1_ERROR))
+	#endif
+	{
+		#ifdef PIC32_PINGUINO_220
+		IFS1bits.U1EIF=0;
+		#else	
+		IntClearFlag(INT_UART1_ERROR);
+		#endif
+	}		
 }
 
-// vector 32
+// vector 32 or 37 (PIC32_PINGUINO_220)
 void Serial2Interrupt(void)
 {
 	// Is this an RX interrupt from UART2 ?
+	#ifdef PIC32_PINGUINO_220
+	if (IFS1bits.U2RXIF)
+	#else
 	if (IntGetFlag(INT_UART2_RECEIVER))
+	#endif
+	
 	{
 		SerialGetDataBuffer(UART2);
 		//Toggle(REDLED);			// Toggle LED to indicate UART activity
+		#ifdef PIC32_PINGUINO_220
+		IFS1bits.U2RXIF=0;
+		#else		
 		IntClearFlag(INT_UART2_RECEIVER);
+		#endif
 	}
 	// Is this an TX interrupt from UART2 ?
+	#ifdef PIC32_PINGUINO_220
+	if (IFS1bits.U2TXIF)
+	#else	
 	if (IntGetFlag(INT_UART2_TRANSMITTER))
+	#endif
 	{
+		#ifdef PIC32_PINGUINO_220
+		IFS1bits.U2TXIF=0;
+		#else	
 		IntClearFlag(INT_UART2_TRANSMITTER);
+		#endif
 	}
+	// Is this an ERROR interrupt from UART2 ?
+	#ifdef PIC32_PINGUINO_220
+	if (IFS1bits.U2EIF)
+	#else	
+	if (IntGetFlag(INT_UART2_ERROR))
+	#endif
+	{
+		#ifdef PIC32_PINGUINO_220
+		IFS1bits.U2EIF=0;
+		#else	
+		IntClearFlag(INT_UART2_ERROR);
+		#endif
+	}	
 }
 
 #ifdef ENABLE_UART3

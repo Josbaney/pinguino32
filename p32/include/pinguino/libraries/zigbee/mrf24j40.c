@@ -50,13 +50,19 @@ Contact us at admin@embeddedadventures.com
         #include <digitalw.c>
         #include "ieee154.h"
         // define for Microchip ZigBee UEXT
-        #define ZIGRESET 	PORTFbits.RF5
-        #define ZIGINT		PORTDbits.RD10
-        #define ZIGCS		PORTFbits.RF0
-
-        #define ZIGRESETOUT	TRISFbits.TRISF5=0
-        #define ZIGINTIN	TRISDbits.TRISD10=1
-        #define ZIGCSOUT	TRISFbits.TRISF0=0
+			#ifdef PIC32_PINGUINO_220
+				#define ZIGRESET	PORTBbits.RB8
+				#define ZIGCS		PORTAbits.RA7
+				#define ZIGRESETOUT	TRISFbits.TRISB8=0
+				#define ZIGCSOUT	TRISAbits.TRISA7=0
+			#else
+				#define ZIGRESET 	PORTFbits.RF5
+				#define ZIGINT		PORTDbits.RD10
+				#define ZIGCS		PORTFbits.RF0
+				#define ZIGRESETOUT	TRISFbits.TRISF5=0
+				#define ZIGINTIN	TRISDbits.TRISD10=1
+				#define ZIGCSOUT	TRISFbits.TRISF0=0
+			#endif
         // define for macro compatibility
         #define set_bit BitSet
         #define test_bit BitTest

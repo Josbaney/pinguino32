@@ -1437,11 +1437,16 @@ class Pinguino(wx.Frame):
 						self.displaymsg(ligne, 0)
 			fichier.close()
 			if sys.platform=='win32':
+				if board.board=='PIC32_PINGUINO_220':
+					badrecord=":040000059D0040001A\n"
+				else:
+					badrecord=":040000059D006000FA\n"
+					
 				if os.path.exists(os.path.join(SOURCE_DIR,"main32tmp.hex")):
 					 fichiersource=open(os.path.join(SOURCE_DIR,"main32tmp.hex"),'r')
 					 fichierdest=open(os.path.join(SOURCE_DIR,"main32.hex"),'w+')
 					 for line in fichiersource:
-					 	if line!=":040000059D006000FA\n":
+					 	if line!=badrecord:
 					 		fichierdest.writelines(line)
 					 fichiersource.close()
 					 fichierdest.close()

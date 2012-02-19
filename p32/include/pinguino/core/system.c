@@ -110,6 +110,7 @@ void SystemLock()
 	assume the device is locked
 	--------------------------------------------------------------------------*/
 
+#ifndef __32MX220F032D__
 void Reset()
 {
 	u16 dummy;
@@ -122,6 +123,7 @@ void Reset()
 	// prevent any unwanted code execution until reset occurs
 	while(1);
 }
+#endif
 
 /*	----------------------------------------------------------------------------
 	GetSystemClock
@@ -154,7 +156,11 @@ u32 GetPeripheralClock()
 void SetFlashWaitStates()
 {
 	SystemUnlock();
+#if defined(PIC32_PINGUINO_220)
+	PMMODEbits.WAITB = 0b00;					// Data wait of 1 TPB
+#else	
 	CHECON = (GetSystemClock() / 20) - 1;		// FlashWaitStates
+#endif
 	SystemLock();
 }
 

@@ -1,10 +1,60 @@
 #ifndef _P32XXXX_H
 #define _P32XXXX_H
 
+#ifndef __C32__
+#define __C32__ 1
+#endif
+
 #if defined(__32M4KCORE__)
 #include <proc/p32m4kcore.h>
-#elif defined(__32MX310F032H__)
-#include <proc/p32mx310f032h.h>
+#elif defined(__32MX110F016B__)
+#include <proc/p32mx110f016b.h>
+#elif defined(__32MX110F016C__)
+#include <proc/p32mx110f016c.h>
+#elif defined(__32MX110F016D__)
+#include <proc/p32mx110f016d.h>
+#elif defined(__32MX120F032B__)
+#include <proc/p32mx120f032b.h>
+#elif defined(__32MX120F032C__)
+#include <proc/p32mx120f032c.h>
+#elif defined(__32MX120F032D__)
+#include <proc/p32mx120f032d.h>
+#elif defined(__32MX130F064B__)
+#include <proc/p32mx130f064b.h>
+#elif defined(__32MX130F064C__)
+#include <proc/p32mx130f064c.h>
+#elif defined(__32MX130F064D__)
+#include <proc/p32mx130f064d.h>
+#elif defined(__32MX150F128B__)
+#include <proc/p32mx150f128b.h>
+#elif defined(__32MX150F128C__)
+#include <proc/p32mx150f128c.h>
+#elif defined(__32MX150F128D__)
+#include <proc/p32mx150f128d.h>
+#elif defined(__32MX210F016B__)
+#include <proc/p32mx210f016b.h>
+#elif defined(__32MX210F016C__)
+#include <proc/p32mx210f016c.h>
+#elif defined(__32MX210F016D__)
+#include <proc/p32mx210f016d.h>
+#elif defined(__32MX220F032B__)
+#include <proc/p32mx220f032b.h>
+#elif defined(__32MX220F032C__)
+#include <proc/p32mx220f032c.h>
+#elif defined(__32MX220F032D__)
+#include <proc/p32mx220f032d.h>
+#elif defined(__32MX230F064B__)
+#include <proc/p32mx230f064b.h>
+#elif defined(__32MX230F064C__)
+#include <proc/p32mx230f064c.h>
+#elif defined(__32MX230F064D__)
+#include <proc/p32mx230f064d.h>
+#elif defined(__32MX250F128B__)
+#include <proc/p32mx250f128b.h>
+#elif defined(__32MX250F128C__)
+#include <proc/p32mx250f128c.h>
+#elif defined(__32MX250F128D__)
+#include <proc/p32mx250f128d.h>
 #elif defined(__32MX320F032H__)
 #include <proc/p32mx320f032h.h>
 #elif defined(__32MX320F064H__)
@@ -174,13 +224,20 @@
 #define ra                 $31
 #endif
 
-#if defined (__LANGUAGE_C__) || defined(__cplusplus)
+#if defined (__LANGUAGE_C__) || defined (__LANGUAGE_C_PLUS_PLUS__)
+
+/*
+ * __C32_UART selects the default UART port that read() and write() will use.  
+ * read() is called by fscanf and family, while write() is called by printf 
+ * and family.
+ */
+extern int __C32_UART;
+
 typedef unsigned long _reg_t;
 
 /*
  * Inline assembly macros
  */
-
 
 #ifndef _nop
 #ifdef __mips16
@@ -189,7 +246,6 @@ typedef unsigned long _reg_t;
 #define _nop()  __asm__ __volatile__ ("%(ssnop%)" : :) 
 #endif
 #endif
-
 
 #ifndef Nop
 /* Consider using _nop rather than Nop */
@@ -378,6 +434,7 @@ __extension__({ \
 
 /* MIPS32r2 set SRSCtl.PSS (previous shadow set), returning old value */
 extern unsigned int _xchsrspss (unsigned int);
+#include <sys/appio.h>
 
 #endif
 
@@ -393,6 +450,6 @@ extern unsigned int _xchsrspss (unsigned int);
 #endif
 
 #include <cp0defs.h>
-#include <sys/appio.h>
+
                  
 #endif

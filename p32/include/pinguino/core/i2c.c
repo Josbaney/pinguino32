@@ -30,6 +30,7 @@
 	#include <const.h>
 	#include <macro.h>
 	#include <system.c>
+	#include <interrupt.c>
 
 	// Mode I2C
 	#define I2C_WRITE					0
@@ -102,7 +103,7 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 					//I2C1BRG = (pbclk / (2 * 1000)) - 2	// 1000 kHz = 1MHz
 			}
 
-			//SetPriorityIntI2C1(I2C_INT_PRI_1|I2C_INT_SUB_PRI_0);
+			IntSetVectorPriority(INT_I2C1_VECTOR,2,2);
 	
 			IFS0bits.I2C1MIF = 0;
 			IFS0bits.I2C1SIF = 0;
@@ -142,7 +143,7 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 
 			}
 
-			//SetPriorityIntI2C1(I2C_INT_PRI_1|I2C_INT_SUB_PRI_0);
+			//IntSetVectorPriority(INT_I2C2_VECTOR,2,2);
 	
 			IFS1bits.I2C2MIF = 0;
 			IFS1bits.I2C2SIF = 0;

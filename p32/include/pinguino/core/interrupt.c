@@ -387,13 +387,34 @@ void IntSetVectorPriority(u8 vector, u8 pri, u8 sub)
 			break;  
 #endif
 		case INT_UART1_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			IFS1bits.U1TXIF = 0;
+			IFS1bits.U1RXIF = 0;
+			IFS1bits.U1EIF  = 0;
+			IPC8bits.U1IP = pri;
+			IPC8bits.U1IS = sub;
+#else
 			IFS0bits.U1TXIF = 0;
 			IFS0bits.U1RXIF = 0;
 			IFS0bits.U1EIF  = 0;
 			IPC6bits.U1IP = pri;
 			IPC6bits.U1IS = sub;
+#endif
 			break; 
 		case INT_I2C1_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			IFS1bits.I2C1MIF = 0;
+			IFS1bits.I2C1SIF = 0;
+			IFS1bits.I2C1BIF  = 0;
+			IPC8bits.I2C1IP = pri;
+			IPC8bits.I2C1IS = sub;
+#else
+			IFS0bits.I2C1MIF = 0;
+			IFS0bits.I2C1SIF = 0;
+			IFS0bits.I2C1BIF = 0;
+			IPC6bits.I2C1IP = pri;
+			IPC6bits.I2C1IS = sub;
+#endif					
 			break;
 		case INT_INPUT_CHANGE_VECTOR:
 			break;
@@ -418,25 +439,41 @@ void IntSetVectorPriority(u8 vector, u8 pri, u8 sub)
 			IFS1bits.SPI2EIF = 0;
 			IFS1bits.SPI2TXIF = 0;
 			IFS1bits.SPI2RXIF  = 0;
+#if defined(PIC32_PINGUINO_220)
+			IPC9bits.SPI2IP = pri;
+			IPC9bits.SPI2IS = sub;
+#else
 			IPC7bits.SPI2IP = pri;
 			IPC7bits.SPI2IS = sub;
+#endif
 			break;
 #endif
 		case INT_UART2_VECTOR:
 			IFS1bits.U2TXIF = 0;
 			IFS1bits.U2RXIF = 0;
 			IFS1bits.U2EIF  = 0;
+#if defined(PIC32_PINGUINO_220)
+			IPC9bits.U2IP = pri;
+			IPC9bits.U2IS = sub;
+#else
 			IPC8bits.U2IP = pri;
 			IPC8bits.U2IS = sub;
+#endif
 			break;
 		case INT_I2C2_VECTOR:
 			break;
 		case INT_FSCM_VECTOR:
 			break;
 		case INT_RTCC_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			IFS0bits.RTCCIF = 0;
+			IPC6bits.RTCCIP = pri;
+			IPC6bits.RTCCIS = sub;
+#else
 			IFS1bits.RTCCIF = 0;
 			IPC8bits.RTCCIP = pri;
 			IPC8bits.RTCCIS = sub;
+#endif
 			break;
 		case INT_DMA0_VECTOR:
 			break;
@@ -552,7 +589,11 @@ unsigned int IntGetVectorPriority(u8 vector)
 		case INT_SPI1_VECTOR:
 			break;  
 		case INT_UART1_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			pri = IPC8bits.U1IP;
+#else
 			pri = IPC6bits.U1IP;
+#endif
 			break; 
 		case INT_I2C1_VECTOR:
 			break;
@@ -575,14 +616,22 @@ unsigned int IntGetVectorPriority(u8 vector)
 			break;
 #endif
 		case INT_UART2_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			pri = IPC9bits.U2IP;
+#else
 			pri = IPC8bits.U2IP;
+#endif
 			break;
 		case INT_I2C2_VECTOR:
 			break;
 		case INT_FSCM_VECTOR:
 			break;
 		case INT_RTCC_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			pri = IPC6bits.RTCCIP;
+#else
 			pri = IPC8bits.RTCCIP;
+#endif
 			break;
 		case INT_DMA0_VECTOR:
 			break;
@@ -687,7 +736,11 @@ unsigned int IntGetVectorSubPriority(u8 vector)
 		case INT_SPI1_VECTOR:
 			break;  
 		case INT_UART1_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			sub = IPC8bits.U1IS;
+#else
 			sub = IPC6bits.U1IS;
+#endif
 			break; 
 		case INT_I2C1_VECTOR:
 			break;
@@ -710,14 +763,22 @@ unsigned int IntGetVectorSubPriority(u8 vector)
 			break;
 #endif
 		case INT_UART2_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			sub = IPC9bits.U2IS;
+#else
 			sub = IPC8bits.U2IS;
+#endif
 			break;
 		case INT_I2C2_VECTOR:
 			break;
 		case INT_FSCM_VECTOR:
 			break;
 		case INT_RTCC_VECTOR:
+#if defined(PIC32_PINGUINO_220)
+			sub = IPC6bits.RTCCIS;
+#else
 			sub = IPC8bits.RTCCIS;
+#endif
 			break;
 		case INT_DMA0_VECTOR:
 			break;
@@ -992,8 +1053,12 @@ void IntConfigureSystem(u8 mode)
 	asm("di"); // Disable all interrupts
 	temp = _CP0_GET_STATUS(); // Get Status
 	temp |= 0x00400000; // Set BEV bit
-	_CP0_SET_STATUS(temp); // Update Status	
+	_CP0_SET_STATUS(temp); // Update Status
+	#ifdef PIC32_PINGUINO_220
+	_CP0_SET_EBASE(0xBD003000); // Set an EBase value of 0xBD003000	
+	#else
 	_CP0_SET_EBASE(0xBD005000); // Set an EBase value of 0xBD005000	
+	#endif
 	_CP0_SET_INTCTL(0x00000020); // Set the Vector Spacing to non-zero value
 	temp = _CP0_GET_CAUSE(); // Get Cause
 	temp |= 0x00800000; // Set IV

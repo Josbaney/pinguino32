@@ -4,7 +4,7 @@
 	PURPOSE:		
 	PROGRAMER:		jean-pierre mandon <jp.mandon@gmail.com>
 	FIRST RELEASE:	01 jan. 2011
-	LAST RELEASE:	
+	LAST RELEASE:	18 feb. 2012
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -21,6 +21,8 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	--------------------------------------------------------------------------*/
 
+// 18 feb.2012 Jean-pierre Mandon Added support for PIC32-PINGUINO-220
+
 #ifndef __PINGUINOSERIAL1_C
 #define __PINGUINOSERIAL1_C
 
@@ -31,7 +33,11 @@
 
 void serial1init(u32 speed)
 {
-	SerialConfigure(UART1, UART_ENABLE,	UART_RX_TX_ENABLED,	speed);
+	#ifdef PIC32_PINGUINO_220
+		SerialConfigure(UART2, UART_ENABLE,	UART_RX_TX_ENABLED,	speed);
+	#else
+		SerialConfigure(UART1, UART_ENABLE,	UART_RX_TX_ENABLED,	speed);
+	#endif
 }
 
 void serial1printf(char *fmt, ...)		
@@ -39,7 +45,11 @@ void serial1printf(char *fmt, ...)
 	va_list args;
 
 	va_start(args, fmt);
-	pprintf(SerialUART1WriteChar, fmt, args);
+	#ifdef PIC32_PINGUINO_220
+		pprintf(SerialUART2WriteChar, fmt, args);
+	#else
+		pprintf(SerialUART1WriteChar, fmt, args);
+	#endif
 	va_end(args);
 }
 
@@ -83,37 +93,6 @@ void serial1print(char *fmt,...)
 	}
 }
 
-/*
-void serial1print(char *fmt,...)
-{
-	va_list args;
-	va_start(args, fmt);
-
-	switch (*args)
-	{
-		case DEC:
-			serial1printf("%d",(int)fmt);
-			break;
-		case HEX:
-			serial1printf("%x",(int)fmt);
-			break;
-		case BYTE:
-			serial1printf("%d",(unsigned char)fmt);
-			break;
-		case OCT:
-			serial1printf("%o",(int)fmt);
-			break;
-		case BIN:
-			serial1printf("%b",(int)fmt);
-			break;           
-		default:
-			serial1printf(fmt);
-			break;
-	}
-	va_end(args);
-}
-*/
-
 void serial1println(char *fmt,...)
 {
 	serial1printf(fmt);
@@ -122,32 +101,56 @@ void serial1println(char *fmt,...)
 
 void serial1write(char c)
 {
+#ifdef PIC32_PINGUINO_220
+	SerialUART2WriteChar(c);
+#else
 	SerialUART1WriteChar(c);
+#endif
 }
 
 char serial1getkey(void)
 {
+#ifdef PIC32_PINGUINO_220
+	return SerialGetKey(UART2);
+#else
 	return SerialGetKey(UART1);
+#endif
 }
 
 char * serial1getstring(void)
 {
+#ifdef PIC32_PINGUINO_220
+	return SerialGetString(UART2);
+#else
 	return SerialGetString(UART1);
+#endif
 }
 
 char serial1available(void)
 {
+#ifdef PIC32_PINGUINO_220
+	return SerialAvailable(UART2);
+#else
 	return SerialAvailable(UART1);
+#endif
 }
 
 char serial1read(void)
 {
+#ifdef PIC32_PINGUINO_220
+	return SerialRead(UART2);
+#else
 	return SerialRead(UART1);
+#endif
 }
 
 void serial1flush(void)
 {
+#ifdef PIC32_PINGUINO_220
+	SerialFlush(UART2);
+#else
 	SerialFlush(UART1);
+#endif
 }
 
 #endif /* __PINGUINOSERIAL1_C */

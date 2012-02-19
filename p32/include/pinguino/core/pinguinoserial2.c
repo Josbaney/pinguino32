@@ -4,7 +4,7 @@
 	PURPOSE:		
 	PROGRAMER:		jean-pierre mandon <jp.mandon@gmail.com>
 	FIRST RELEASE:	01 jan. 2011
-	LAST RELEASE:	
+	LAST RELEASE:	18 feb. 2012
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -21,6 +21,8 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	--------------------------------------------------------------------------*/
 
+	// 18 feb. 2012 jp mandon added support for PIC32-PINGUINO-220
+	
 #ifndef __PINGUINOSERIAL2_C
 #define __PINGUINOSERIAL2_C
 
@@ -31,7 +33,11 @@
 
 void serial2init(u32 speed)
 {
-	SerialConfigure(UART2, UART_ENABLE,	UART_RX_TX_ENABLED,	speed);
+	#ifdef PIC32_PINGUINO_220
+		SerialConfigure(UART1, UART_ENABLE,	UART_RX_TX_ENABLED,	speed);
+	#else
+		SerialConfigure(UART2, UART_ENABLE,	UART_RX_TX_ENABLED,	speed);
+	#endif
 }
 
 void serial2printf(char *fmt, ...)		
@@ -39,7 +45,11 @@ void serial2printf(char *fmt, ...)
 	va_list args;
 
 	va_start(args, fmt);
-	pprintf(SerialUART2WriteChar, fmt, args);
+	#ifdef PIC32_PINGUINO_220
+		pprintf(SerialUART1WriteChar, fmt, args);
+	#else
+		pprintf(SerialUART2WriteChar, fmt, args);
+	#endif
 	va_end(args);
 }
 
@@ -123,32 +133,56 @@ void serial2println(char *fmt,...)
 
 void serial2write(char c)
 {
+#ifdef PIC32_PINGUINO_220
+	SerialUART1WriteChar(c);
+#else
 	SerialUART2WriteChar(c);
+#endif
 }
 
 char serial2getkey(void)
 {
+#ifdef PIC32_PINGUINO_220
+	return SerialGetKey(UART1);
+#else
 	return SerialGetKey(UART2);
+#endif
 }
 
 char * serial2getstring(void)
 {
+#ifdef PIC32_PINGUINO_220
+	return SerialGetString(UART1);
+#else
 	return SerialGetString(UART2);
+#endif
 }
 
 char serial2available(void)
 {
+#ifdef PIC32_PINGUINO_220
+	return SerialAvailable(UART1);
+#else
 	return SerialAvailable(UART2);
+#endif
 }
 
 char serial2read(void)
 {
+#ifdef PIC32_PINGUINO_220
+	return SerialRead(UART1);
+#else
 	return SerialRead(UART2);
+#endif
 }
 
 void serial2flush(void)
 {
+#ifdef PIC32_PINGUINO_220
+	SerialFlush(UART1);
+#else
 	SerialFlush(UART2);
+#endif
 }
 
 #endif /* __PINGUINOSERIAL2_C */
