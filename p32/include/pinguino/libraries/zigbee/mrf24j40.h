@@ -75,8 +75,8 @@ Put the following into your config.h
 
 */
 
-#ifndef __mrf24j40_h
-#define __mrf24j40_h
+//#ifndef __mrf24j40_h
+//#define __mrf24j40_h
 
 #ifndef __PIC32MX__
         #include "pic_utils.h"
@@ -305,7 +305,7 @@ uns8 mrf24j40_scan_for_lowest_channel_ed();
 	\param channel Channel to change to.
 	
 */	
-void mrf24j40_set_channel(uns8 channel);
+void mrf24j40_set_channel(uns8);
 
 /**
 
@@ -346,7 +346,7 @@ void mrf24j40_transmit_callback(uns8 status,		// 0 = success
 								uns8 retries,	// retries to transmit
 								uns8 channel_busy);	// 1 if fail due to channel busy
 
-#endif
+//#endif
 
 
 

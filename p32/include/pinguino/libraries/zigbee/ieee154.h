@@ -25,7 +25,13 @@
 
 // frame type
 
+//#ifndef __IEEE154_H
+//#define __IEEE154_H
+
 #define FTBEACON 0
 #define FTDATA 1
 #define FTACK 2
 #define FTMAC 3
+
+///#endif
+

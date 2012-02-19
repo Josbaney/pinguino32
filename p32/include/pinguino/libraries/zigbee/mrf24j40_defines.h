@@ -37,6 +37,10 @@ Contact us at admin@embeddedadventures.com
     \brief Defines for MRF24J40 chip - generated from the datasheet
 	
 */
+
+//#ifndef __MRF24J40_DEFINES_H
+//#define __MRF24J40_DEFINES_H
+
 #define RXMCR			0x00
 
 	// RXMCR bits
@@ -895,3 +899,5 @@ Contact us at admin@embeddedadventures.com
 #define UPNONCE10		0x24A
 #define UPNONCE11		0x24B
 #define UPNONCE12		0x24C
+
+//#endif

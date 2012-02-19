@@ -88,13 +88,13 @@ void mrf24j40_flush_receive_buffer() {
 
 
 
-void mrf24j40_set_channel(uns8 channel) {
+void mrf24j40_set_channel(uns8 _channel) {
 
-	current_channel = channel;
-	channel = channel - 11;
-	channel = 0x02 + 0x10 * channel;
+	current_channel = _channel;
+	_channel = _channel - 11;
+	_channel = 0x02 + 0x10 * _channel;
 	
-	mrf24j40_long_addr_write(RFCON0, channel);	// Set channel
+	mrf24j40_long_addr_write(RFCON0, _channel);	// Set channel
 	mrf24j40_short_addr_write(RFCTL, 0x04);	// RFCTL (0x36) = 0x04 – Reset RF state machine.
 	mrf24j40_short_addr_write(RFCTL, 0x00);	// RFCTL (0x36) = 0x00
         
@@ -110,7 +110,7 @@ void mrf24j40_set_channel(uns8 channel) {
 uns8 mrf24j40_scan_for_lowest_channel_ed() {
 
 uns8 rssi;
-uns8 channel;
+uns8 _channel;
 uns16 scan_count;
 uns8 highest_on_channel;
 uns8 lowest_channel = MRF_LAST_CHANNEL;
@@ -126,10 +126,10 @@ uns8 bbreg6;
 	#endif
 
 	
-	for (channel = MRF_FIRST_CHANNEL; channel <= MRF_LAST_CHANNEL; channel++) {
+	for (_channel = MRF_FIRST_CHANNEL; _channel <= MRF_LAST_CHANNEL; _channel++) {
 		
 		// switch channel
-		mrf24j40_set_channel(channel);
+		mrf24j40_set_channel(_channel);
 		
 		highest_on_channel = 0;
 		for (scan_count = 0; scan_count < 1000; scan_count++) {
@@ -145,7 +145,7 @@ uns8 bbreg6;
 		
 		if (highest_on_channel < lowest_ed) {
 			lowest_ed = highest_on_channel;
-			lowest_channel = channel;
+			lowest_channel = _channel;
 		}	
 	}
 	mrf24j40_short_addr_write(BBREG6, 1 << BBREG6_RSSIMODE2);	// Back to mode 2 (rssi in pkt)
