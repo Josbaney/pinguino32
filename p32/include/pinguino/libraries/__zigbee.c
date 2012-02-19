@@ -24,6 +24,8 @@
 #ifndef __ZIGBEE
 #define __ZIGBEE
 
+#include <typedef.h>
+#include <macro.h>
 #include <zigbee/mrf24j40.c>
 
 unsigned char ZIGrx[128];               // this is the receive buffer
@@ -36,13 +38,13 @@ u16 ZIGsrcadd;							// src short address in received frame
 
 // init Zigbee MRF24J40 module
 
-void init_zigbee(u8 channel,u16 PAN_ID,u16 short_address)
+void init_zigbee(u8 _channel, u16 pan_id, u16 short_address)
 {
 	mrf24j40_setup_io();
 	mrf24j40_init();
-	mrf24j40_set_pan_id(PAN_ID);
+	mrf24j40_set_pan_id(pan_id);
 	mrf24j40_set_short_address(short_address);
-	mrf24j40_set_channel(20);
+	mrf24j40_set_channel(_channel);
 }
 
 // ISR routine for zigbee. todo
