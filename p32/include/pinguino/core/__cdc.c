@@ -20,8 +20,6 @@ extern void USBDeviceInit();
 extern void USBDeviceAttach();
 extern void putUSBUSART(char*, char);
 extern char getsUSBUSART(char*, char);
-//extern void putUSBUSART(char *data, char Length);
-//extern char getsUSBUSART(char *data, char Length);
 extern void CDCTxService();
 extern unsigned char cdc_trf_state;
 
@@ -88,6 +86,8 @@ void INTEnableInterrupts()
 	IntEnable(INT_USB);
 }
 
+#ifndef __32MX220F032D__
+
 // this is the Set Line coding CallBack function
  
 void mySetLineCodingHandler()
@@ -143,12 +143,16 @@ void USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event_usb)
 	}
 }
 
+#endif
+
 // this function is called by the main32.c file
 // CDC.init
 void CDC_init()
 {
 	USBDeviceInit();		// Initializes USB module SFRs and firmware
-	USBDeviceAttach();
+	#ifndef __32MX220F032D__
+		USBDeviceAttach();
+	#endif
 	Delayms(1500);
 }
 
@@ -156,28 +160,37 @@ void CDC_init()
 // 18-05-2011 modified by régis blanchot
 void CDCputs(char *buffer, char length)
 {
-	int i;
+	//#ifdef __32MX220F032D__
+	//	USB_Service_CDC_PutString( buffer, length );
+	//#else
+		int i;
 
-	for (i = 1000; i > 0; --i)
-	{
-		if (mUSBUSARTIsTxTrfReady())
-			break;
-		CDCTxService();
-	}
-	if (i > 0)
-	{
-		putUSBUSART(buffer,length);
-		CDCTxService();
-	}
+		for (i = 1000; i > 0; --i)
+		{
+			if (mUSBUSARTIsTxTrfReady())
+				break;
+			CDCTxService();
+		}
+		if (i > 0)
+		{
+			putUSBUSART(buffer,length);
+			CDCTxService();
+		}
+	//#endif
 }
 	
 // CDC.read
 char CDCgets(char *buffer)
 {
-	char numBytesRead;
 
-	numBytesRead = getsUSBUSART(buffer, 64);
-	return numBytesRead;
+		char numBytesRead;
+		
+	#ifdef __32MX220F032D__
+		numBytesRead = USB_Service_CDC_GetString( buffer );
+	#else
+		numBytesRead = getsUSBUSART(buffer, 64);
+	#endif
+		return numBytesRead;
 /*
 	if (mUSBUSARTIsTxTrfReady())
 	{

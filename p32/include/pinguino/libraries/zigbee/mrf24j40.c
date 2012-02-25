@@ -45,24 +45,33 @@ Contact us at admin@embeddedadventures.com
 
 #ifdef __PIC32MX__
         #include <spi.c>
+        #include <typedef.h>
         #include <delay.c>
         #include <macro.h>
         #include <digitalw.c>
         #include "ieee154.h"
         // define for Microchip ZigBee UEXT
 			#ifdef PIC32_PINGUINO_220
-				#define ZIGRESET	PORTBbits.RB8
-				#define ZIGCS		PORTAbits.RA7
-				#define ZIGRESETOUT	TRISBbits.TRISB8=0
-				#define ZIGCSOUT	TRISAbits.TRISA7=0
-			#else
-				#define ZIGRESET 	PORTFbits.RF5
-				#define ZIGINT		PORTDbits.RD10
-				#define ZIGCS		PORTFbits.RF0
-				#define ZIGRESETOUT	TRISFbits.TRISF5=0
-				#define ZIGINTIN	TRISDbits.TRISD10=1
-				#define ZIGCSOUT	TRISFbits.TRISF0=0
+				#define ZIGINT		PORTAbits.RA8			// SDI1
+				#define ZIGINTIN	TRISAbits.TRISA8=1		// Input
+				#define ZIGRESET	PORTAbits.RA9			// SDO1
+				#define ZIGRESETOUT	TRISAbits.TRISA9=0		// Output
+				#define ZIGCS		PORTAbits.RA7			// CS
+				#define ZIGCSOUT	TRISAbits.TRISA7=0		// Output
 			#endif
+			#if defined(PIC32_PINGUINO_OTG) || defined(PIC32_PINGUINO)
+				#define ZIGINT		PORTGbits.RG7			// SDI2
+				#define ZIGINTIN	TRISGbits.TRISG7=1		// Input
+				//#define ZIGINT		PORTDbits.RD10
+				//#define ZIGINTIN	TRISDbits.TRISD10=1
+				#define ZIGRESET	PORTGbits.RG8			// SDO2
+				#define ZIGRESETOUT	TRISGbits.TRISG8=0		// Output
+				//#define ZIGRESET 	PORTFbits.RF5
+				//#define ZIGRESETOUT	TRISFbits.TRISF5=0
+				#define ZIGCS		PORTFbits.RF0			// CS
+				#define ZIGCSOUT	TRISFbits.TRISF0=0		// Output
+			#endif
+
         // define for macro compatibility
         #define set_bit BitSet
         #define test_bit BitTest
@@ -120,7 +129,7 @@ uns8 bbreg6;
 	// We should really ignore all packets here (do to)
 	
 	#if defined(ENABLE_PA_LNA)
-		mrf24j40_long_addr_write(TESTMODE, 0x08);              // Disable automatic switch on PA/LNA
+		mrf24j40_long_addr_write(TESTMODE, 0x08);          // Disable automatic switch on PA/LNA
 		mrf24j40_short_addr_write(TRISGPIO, 0x0F);        // Set GPIO direction
 		mrf24j40_short_addr_write(GPIO, 0x0C);           // Enable LNA
 	#endif
@@ -296,18 +305,18 @@ void mrf24j40_set_extended_address(uns8 *_extended_address) {
 	uns8 mem_pos = EADR7;
 	#ifndef __PIC32MX__
         	serial_print_str("Setting EA to: ");
-        #endif        	
+    #endif        	
 	for (count = 0; count < 8; count++) {
 		extended_address[count] = _extended_address[count];
 		mrf24j40_short_addr_write(mem_pos--, extended_address[count]);
 		#ifndef __PIC32MX__
         		serial_print_int_hex(extended_address[count]);
 	        	serial_putc(' ');
-	        #endif	
+	    #endif	
 	}
 	#ifndef __PIC32MX__
         	serial_print_nl();
-        #endif        	
+    #endif        	
 }	
 
 void mrf24j40_set_short_address(uns16 _short_address) {
@@ -571,18 +580,19 @@ void mrf24j40_transmit(uns8 *data, uns8 bytes_to_transmit) {
 	uns8 txncon = mrf24j40_short_addr_read(TXNCON);
 	set_bit(txncon, TXNCON_TXNTRIG);
 	mrf24j40_short_addr_write(TXNCON, txncon);
-	
 
 }
 
 
-void mrf24j40_init() {
-	
-uns8 check;
+void mrf24j40_init()
+{
+	uns8 check;
 	
 	// Example steps to initialize the MRF24J40:
 	
-	// 1. SOFTRST (0x2A) = 0x07 – Perform a software Reset. The bits will be automatically cleared to ‘0’ by hardware.
+	// 1. SOFTRST (0x2A) = 0x07
+	// Perform a software Reset.
+	// The bits will be automatically cleared to 0 by hardware.
 	mrf24j40_short_addr_write(SOFTRST, 0x07);
 	
 	// Wait for soft reset to complete
@@ -596,9 +606,11 @@ uns8 check;
 		mrf24j40_long_addr_write(TESTMODE, 0x0f);
 	#endif	
 	
-	// 2. PACON2 (0x18) = 0x98 – Initialize FIFOEN = 1 and TXONTS = 0x6.
+	// 2. PACON2 (0x18) = 0x98
+	// Initialize FIFOEN = 1 and TXONTS = 0x6.
 	mrf24j40_short_addr_write(PACON2, 0x98);
-	// 3. TXSTBL (0x2E) = 0x95 – Initialize RFSTBL = 0x9.
+	// 3. TXSTBL (0x2E) = 0x95
+	// Initialize RFSTBL = 0x9.
 	mrf24j40_short_addr_write(TXSTBL, 0x95);
 	
 	// wait for mrf to be in receive mode
@@ -812,7 +824,8 @@ uns8 val;
 
 }
 
-uns8 mrf24j40_short_addr_read(uns8 addr) {
+uns8 mrf24j40_short_addr_read(uns8 addr)
+{
         #ifndef __PIC32MX__
 	        clear_pin(mrf24j40_cs_port, mrf24j40_cs_pin);
 	        addr = addr & 0b00111111;	// <5:0> bits
@@ -920,9 +933,9 @@ void mrf24j40_setup_io() {
         						// only called here for test
         						// will be called later in main32.c
         	#ifndef PIC32_PINGUINO_220
-				pinmode(13,OUTPUT); // CLK
-				pinmode(11,OUTPUT); // SDO
-				pinmode(12,INPUT);	// SDI				
+				//pinmode(13,OUTPUT); // CLK
+				//pinmode(11,OUTPUT); // SDO
+				//pinmode(12,INPUT);	// SDI				
 				ZIGRESETOUT;		// macro for RESET
 				ZIGCSOUT;			// macro for CS
 				ZIGINTIN;			// interrupt (not yet implemented)

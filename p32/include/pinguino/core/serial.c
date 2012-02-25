@@ -525,10 +525,12 @@ void SerialPinConfigure(u8 port)
 			break;
 #endif
 #ifdef ENABLE_UART5
+#ifndef __32MX220F032D__
 		case UART5:
 			TRISFbits.TRISF13 = OUTPUT;	// RF13 / U5TX output
 			TRISFbits.TRISF12 = INPUT;	// RF12 / U5RX input
 			break;
+#endif
 #endif
 #ifdef ENABLE_UART6
 		case UART6:
@@ -686,7 +688,7 @@ void SerialUART6WriteChar(char c)
 	--------------------------------------------------------------------------*/
 
 //void SerialPrintf(u8 port, const char *fmt, ...)
-void SerialPrintf(u8 port, char *fmt, ...)
+void SerialPrintf(u8 port, unsigned char *fmt, ...)
 {
 	va_list args;
 

@@ -3,14 +3,15 @@
 	PROJECT:		pinguino
 	PURPOSE:		Serial Peripheral Interface functions
 	PROGRAMER:		Régis Blanchot <rblanchot@gmail.com>
-						Marcus Fazzi <anunakin@gmail.com>
-						Jean-Pierre Mandon <jp.mandon@gmail.com>
+					Marcus Fazzi <anunakin@gmail.com>
+					Jean-Pierre Mandon <jp.mandon@gmail.com>
 	FIRST RELEASE:	16 mar. 2011
-	LAST RELEASE:	17 jun. 2011
+	LAST RELEASE:	20 feb. 2012
 	----------------------------------------------------------------------------
 	CHANGELOG : 
-		24 may. 2011 - jp.mandon - fixed a bug in SPI_write, RX int flag must be called even for write
-	----------------------------------------------------------------------------
+	24 may. 2011 - jp.mandon - fixed a bug in SPI_write, RX int flag must be called even for write
+	20 feb. 2012 - r.blanchot - added PIC32_PINGUINO_220 support
+ 	----------------------------------------------------------------------------
 	TODO : 
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
@@ -39,23 +40,28 @@
 #include <system.c>
 #include <interrupt.c>
 
-#ifndef SPIx  		// Use SPI port 1, see PIC32 Datasheet
-#define SPIx 2		// default SPI port is 2 ( 32MX440F256H has only one SPI port )
+#ifndef SPIx				// Use SPI port 1, see PIC32 Datasheet
+	#if defined(PIC32_PINGUINO_OTG) || defined(PIC32_PINGUINO)
+		#define SPIx 2		// default SPI port is 2 for 32MX440F256H which has only one SPI port
+	#else
+		#define SPIx 1		// default SPI port is 1
+	#endif
 #endif
 
-#if defined(UBW32_460) || defined(EMPEROR460)
-	#if (SPIx == 1)
-		#define BUFFER		SPI1BUF
-		#define STATUS		SPI1STATbits.SPIROV	// Receive Overflow Flag bit
-		#define STATRX  	SPI1STATbits.SPIRBF	// receive buffer full
-		#define STATTX		SPI1STATbits.SPITBF	// transmit buffer full
-		#define SPICONF	SPI1CON
-		#define CLKSPD		SPI1BRG
-		#define INTFAULT	INT_SPI1_FAULT
-		#define INTTXDONE INT_SPI1_TRANSFER_DONE
-		#define INTRXDONE INT_SPI1_RECEIVE_DONE
-		#define INTVECTOR INT_SPI1_VECTOR
-	#endif
+#if defined(UBW32_460) || defined(EMPEROR460) || defined(PIC32_PINGUINO_220)
+#if (SPIx == 1)
+	#define BUFFER		SPI1BUF
+	#define STATUS		SPI1STATbits.SPIROV	// Receive Overflow Flag bit
+	#define STATRX  	SPI1STATbits.SPIRBF	// receive buffer full
+	#define STATTX		SPI1STATbits.SPITBF	// transmit buffer full
+	#define SPICONF		SPI1CON
+	#define SPICONCLR	SPI1CONCLR
+	#define CLKSPD		SPI1BRG
+	#define INTFAULT	INT_SPI1_FAULT
+	#define INTTXDONE 	INT_SPI1_TRANSFER_DONE
+	#define INTRXDONE 	INT_SPI1_RECEIVE_DONE
+	#define INTVECTOR 	INT_SPI1_VECTOR
+#endif
 #endif
 
 #if (SPIx == 2)
@@ -63,15 +69,15 @@
 	#define STATUS		SPI2STATbits.SPIROV	// Receive Overflow Flag bit
 	#define STATRX  	SPI2STATbits.SPIRBF	// Receive buffer full
 	#define STATTX		SPI2STATbits.SPITBF	// Transmit buffer full
-	#define SPICONF	SPI2CON
+	#define SPICONF		SPI2CON
 	#define SPICONCLR	SPI2CONCLR
 	#define SPIENHBUF	SPI2CONbits.ENHBUF
 	#define CLKSPD		SPI2BRG
-	#define PULLUPS	0xF00 //Use CNPUE = PULLUPS for enable internal pullups 8,9,10,11
+	#define PULLUPS		0xF00 //Use CNPUE = PULLUPS for enable internal pullups 8,9,10,11
 	#define INTFAULT	INT_SPI2_FAULT
-	#define INTTXDONE INT_SPI2_TRANSFER_DONE
-	#define INTRXDONE INT_SPI2_RECEIVE_DONE
-	#define INTVECTOR INT_SPI2_VECTOR
+	#define INTTXDONE 	INT_SPI2_TRANSFER_DONE
+	#define INTRXDONE 	INT_SPI2_RECEIVE_DONE
+	#define INTVECTOR 	INT_SPI2_VECTOR
 #endif
 
 //Only 795 boards have SPI3 and SPI4
@@ -81,24 +87,24 @@
 		#define STATUS		SPI3STATbits.SPIROV	// Receive Overflow Flag bit
 		#define STATRX  	SPI3STATbits.SPIRBF	// receive buffer full
 		#define STATTX		SPI3STATbits.SPITBF	// transmit buffer full
-		#define SPICONF	SPI3CON
+		#define SPICONF		SPI3CON
 		#define CLKSPD		SPI3BRG
 		#define INTFAULT	INT_SPI3_FAULT
-		#define INTTXDONE INT_SPI3_TRANSFER_DONE
-		#define INTRXDONE INT_SPI3_RECEIVE_DONE
-		#define INTVECTOR INT_SPI3_VECTOR
+		#define INTTXDONE 	INT_SPI3_TRANSFER_DONE
+		#define INTRXDONE 	INT_SPI3_RECEIVE_DONE
+		#define INTVECTOR 	INT_SPI3_VECTOR
 	#endif
 	#if (SPIx == 4)
 		#define BUFFER		SPI4ABUF
 		#define STATUS		SPI4STATbits.SPIROV	// Receive Overflow Flag bit
 		#define STATRX  	SPI4STATbits.SPIRBF	// receive buffer full
 		#define STATTX		SPI4STATbits.SPITBF	// transmit buffer full
-		#define SPICONF	SPI4CON
+		#define SPICONF		SPI4CON
 		#define CLKSPD		SPI4BRG
 		#define INTFAULT	INT_SPI4_FAULT
-		#define INTTXDONE INT_SPI4_TRANSFER_DONE
-		#define INTRXDONE INT_SPI4_RECEIVE_DONE
-		#define INTVECTOR INT_SPI4_VECTOR
+		#define INTTXDONE 	INT_SPI4_TRANSFER_DONE
+		#define INTRXDONE 	INT_SPI4_RECEIVE_DONE
+		#define INTVECTOR 	INT_SPI4_VECTOR
 	#endif
 #endif
 
@@ -110,7 +116,7 @@
 
 // SPIxCON.MSTEN
 #define SPI_MASTER			1
-#define SPI_SLAVE				0
+#define SPI_SLAVE			0
 #define SPI_PBCLOCK_DIV2	2
 #define SPI_PBCLOCK_DIV4	4
 #define SPI_PBCLOCK_DIV8	8
@@ -122,6 +128,7 @@ void SPI_mode(u8 mode)
 {
 	// 7. Clear the SPIROV bit (SPIxSTAT<6>).
 	STATUS = 0;					// clear the Overflow
+
 	// 8. Write the desired settings to the SPIxCON register with MSTEN (SPIxCON<5>) = 1.
 	// 9. Enable SPI operation by setting the ON bit (SPIxCON<15>).
 	if (mode == SPI_MASTER)
@@ -132,7 +139,8 @@ void SPI_mode(u8 mode)
 
 // Fsck = Fpb / (2 * (SPIxBRG + 1)
 // SPIxBRG = (Fpb / (2 * Fsck)) - 1 
-void SPI_clock(u32 speed)	// speed is in bauds
+// speed must be in bauds
+void SPI_clock(u32 speed)
 {
 	u32 Fpb;
 	u32 Fsck;
@@ -140,12 +148,18 @@ void SPI_clock(u32 speed)	// speed is in bauds
 
 	Fpb = GetPeripheralClock();
 	if (speed > (Fpb / 2))
-		clk = 0;		// use the maximum baud rate possible
+	{
+		CLKSPD = 0;		// use the maximum baud rate possible
+		return;
+	}
 	else
+	{
 		clk = (Fpb / (2 * speed)) - 1;
-	if (clk > 511)
-		clk = 511;	// use the minimum baud rate possible
-	CLKSPD  = clk;
+		if (clk > 511)
+			CLKSPD = 511;	// use the minimum baud rate possible
+			return;
+		CLKSPD = clk;
+	}
 }
 
 void SPI_close() //(u8 num)
@@ -193,12 +207,17 @@ void SPI_init()
 	IntDisable(INTFAULT); 
 	IntDisable(INTTXDONE); 
 	IntDisable(INTRXDONE);
+
 	// 2.  Stop and reset the SPI module by clearing the ON bit.
 	SPICONCLR = 0x8000; // bit 15
+
 	// 3.  Clear the receive buffer.
 	rData = BUFFER;
+
 	// 4.  Clear the ENHBUF bit (SPIxCON<16>) if using Standard Buffer mode.
+	// This bit can only be written when the ON bit = 0
 	// SPIENHBUF = 0; // not available on all devices
+
 	// 5. If SPI interrupts are not going to be used, skip this step and
 	// continue to step 6. Otherwise the following additional steps are performed:
 	//	 a) Clear the SPIx interrupt flags/events in the respective IFS0/1 register.

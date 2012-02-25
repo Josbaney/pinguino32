@@ -933,6 +933,7 @@ class Pinguino(wx.Frame):
 									"-n"],
 									stdout=fichier, stderr=STDOUT)
 						sortie.communicate()
+						print
 						fichier.seek(0)
 						self.displaymsg(fichier.read(),0)
 						fichier.close()

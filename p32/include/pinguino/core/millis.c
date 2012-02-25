@@ -4,7 +4,7 @@
 	PURPOSE:		
 	PROGRAMER:		jean-pierre mandon <jp.mandon@gmail.com>
 	FIRST RELEASE:	19 feb. 2011
-	LAST RELEASE:	18 feb. 2012
+	LAST RELEASE:	19 feb. 2011
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -21,15 +21,17 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	--------------------------------------------------------------------------*/
 
-	// 18 feb. 2012 added support for PIC32_PINGUINO_220
-	// fixed bug in timer speed for other boards
-	// added volatile to _millis variable ( thanks to PINGOTG )
-	
+// 06 feb 2012 Z Added volatile for _millis variable
+
 #ifndef __MILLIS__
 #define __MILLIS__
 
 #include <interrupt.c>
 
+/**
+ * This variable is accessed both by the ISR and "normal" code. It
+ * must be declared as "volatile" to prevent caching.
+ */
 volatile u32 _millis;
 
 void millis_init(void)
@@ -61,6 +63,7 @@ u32 millis()
 	TMR2 interrupt
 	--------------------------------------------------------------------------*/
 
+//#pragma interrupt Tmr2Interrupt ipl3 vector 8
 void Tmr2Interrupt()
 {
 	// is this an TMR2 interrupt ?

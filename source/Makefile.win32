@@ -33,6 +33,26 @@ INCLUDEDIRS	=	-I$(INCDIR)\non-free \
 LIBDIRS		=	-L$(OBJDIR)\usb
 
 # ------------------------------------------------------------------------------
+# heap size / Regis Blanchot 2012
+# ------------------------------------------------------------------------------
+
+ifeq ($(BOARD),PIC32_PINGUINO_220)
+	HEAP_SIZE = 512
+else
+	HEAP_SIZE = 16384
+endif
+
+# ------------------------------------------------------------------------------
+# select the cdc library / Jean-pierre Mandon 2012
+# ------------------------------------------------------------------------------
+
+ifeq ($(BOARD),PIC32_PINGUINO_220)
+CDCLIBRARY = libcdc220.a
+else
+CDCLIBRARY = libcdc.a
+endif
+
+# ------------------------------------------------------------------------------
 # commands
 # ------------------------------------------------------------------------------
 
@@ -62,11 +82,21 @@ LDFLAGS		=	$(LIBDIRS) $(LIBS)
 ELF_FLAGS	=	-EL -O3 -ffunction-sections -fdata-sections -Wl,--gc-sections -march=24kc \
 					-msoft-float \
 					-Wl,-L$(OBJDIR) \
-					-Wl,--defsym,_min_heap_size=512 \
+					-Wl,--defsym,_min_heap_size=$(HEAP_SIZE) \
 					-Wl,-Map=$(SRCDIR)\output.map \
 					-D __PIC32MX__ -D __$(PROC)__ -D $(BOARD) \
 					-T$(LKRDIR)\procdefs.ld \
 					-T$(LKRDIR)\elf32pic32mx.x
+
+# ------------------------------------------------------------------------------
+# select the cdc library / Jean-pierre Mandon 2012
+# ------------------------------------------------------------------------------
+
+ifeq ($(BOARD),PIC32_PINGUINO_220)
+CDCLIBRARY = libcdc220.a
+else
+CDCLIBRARY = libcdc.a
+endif
 
 #-------------------------------------------------------------------------------
 #	rules   
@@ -87,7 +117,7 @@ link:
 	$(CC) $(ELF_FLAGS) $(LDFLAGS) $(CFLAGS) -o $(SRCDIR)\main32.elf $(SRCDIR)\main32.c \
 		$(OBJDIR)\crt0.S \
 		$(OBJDIR)\processor.o \
-		$(OBJDIR)\usb\libcdc.a \
+		$(OBJDIR)\usb\$(CDCLIBRARY) \
 		$(OBJDIR)\usb\libadb.a \
 		$(LKRDIR)\ISRwrapper.S \
 		$(INCDIR)\non-free\p32xxxx.h \
