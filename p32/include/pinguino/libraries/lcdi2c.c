@@ -41,31 +41,31 @@
 	---------- PCF8574P
 	----------------------------------------------------------------------------
 
-	+5V		A0		-|o|-		VDD	+5V
-	+5V		A1		-|	|-		SDA	pull-up 1K8 au +5V
+	+5V		A0		-|o |-		VDD		+5V
+	+5V		A1		-|	|-		SDA		pull-up 1K8 au +5V
 	+5V		A2		-|	|-		SCL 	pull-up 1K8 au +5V
 	LCD_BL	P0		-|	|-		INT
 	LCD_RS	P1		-|	|-		P7		LCD_D7
 	LCD_RW	P2		-|	|-		P6		LCD_D6
 	LCD_EN	P3		-|	|-		P5		LCD_D5
-	GRND		VSS	-|	|-		P4		LCD_D4
+	GRND	VSS		-|	|-		P4		LCD_D4
 
-	SYMBOL 	PIN	DESCRIPTION						NB
-	A0			1		address input 0				adress = 0 1 0 0 A2 A1 A0 0
-	A1			2		address input 1				A0, A1 et A2 relies au +5V
-	A2			3		address input 2				donc adress = 01001110 = 0x4E
-	P0			4		quasi-bidirectional I/O 0	LCD_BL
-	P1			5		quasi-bidirectional I/O 1	LCD_RS
-	P2			6		quasi-bidirectional I/O 2	LCD_RW
-	P3			7		quasi-bidirectional I/O 3	LCD_EN
+	SYMBOL 	PIN		DESCRIPTION					NB
+	A0		1		address input 0				adress = 0 1 0 0 A2 A1 A0 0
+	A1		2		address input 1				A0, A1 et A2 relies au +5V
+	A2		3		address input 2				donc adress = 01001110 = 0x4E
+	P0		4		quasi-bidirectional I/O 0	LCD_BL
+	P1		5		quasi-bidirectional I/O 1	LCD_RS
+	P2		6		quasi-bidirectional I/O 2	LCD_RW
+	P3		7		quasi-bidirectional I/O 3	LCD_EN
 	VSS		8		supply ground
-	P4			9		quasi-bidirectional I/O 4	LCD_D4
-	P5			10		quasi-bidirectional I/O 5	LCD_D5
-	P6			11		quasi-bidirectional I/O 6	LCD_D6
-	P7			12		quasi-bidirectional I/O 7	LCD_D7
+	P4		9		quasi-bidirectional I/O 4	LCD_D4
+	P5		10		quasi-bidirectional I/O 5	LCD_D5
+	P6		11		quasi-bidirectional I/O 6	LCD_D6
+	P7		12		quasi-bidirectional I/O 7	LCD_D7
 	INT		13		interrupt output (active LOW)
-	SCL		14		serial clock line				uC_SCL
-	SDA		15		serial data line				uC_SDA
+	SCL		14		serial clock line			uC_SCL
+	SDA		15		serial data line			uC_SDA
 	VDD		16		supply voltage
 	--------------------------------------------------------------------------*/
 
@@ -87,7 +87,7 @@
 	---------- 1/ réservation de l'emplacement 0 (max. 7) pour la lettre "é" : lcdi2c_newchar(car3, 0);
 	---------- 2/ écriture du nouveau caractère sur le LCD : lcdi2c_write(0);
 	--------------------------------------------------------------------------*/
-
+#ifndef __32MX220F032D__
 	const u8 car0[8]={
 	    0b00000100,      //â
 	    0b00001010,
@@ -218,6 +218,7 @@
 	    0b00001101,
 	    0b00000000
 	};
+#endif /* __32MX220F032D__ */
 
 /*	----------------------------------------------------------------------------
 	---------- global variables
@@ -570,7 +571,9 @@ void lcdi2c_init(u8 numcol, u8 numline, u8 i2c_address)
 	Delayms(2);					// le temps d'execution de Display Clear > 1.64ms
 	lcdi2c_send8(LCD_ENTRY_MODE_SET, LCD_CMD);   	// 0x06 - Increment + Display not shifted (Déplacement automatique du curseur)
 	Delayus(4);				// Wait more than 40 ns
+#ifndef __32MX220F032D__
 	lcdi2c_newpattern();				// Implante les nouveaux caracteres
+#endif
 }
 
 #endif

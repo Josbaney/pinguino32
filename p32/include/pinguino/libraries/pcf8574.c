@@ -25,14 +25,14 @@
 	---------- PCF8574P
 	----------------------------------------------------------------------------
 
-	+5V		A0		-|o|-		VDD	+5V
-	+5V		A1		-|	|-		SDA	pull-up 1K8 au +5V
+	+5V		A0		-|o |-		VDD		+5V
+	+5V		A1		-|	|-		SDA		pull-up 1K8 au +5V
 	+5V		A2		-|	|-		SCL 	pull-up 1K8 au +5V
 	LCD_BL	P0		-|	|-		INT
 	LCD_RS	P1		-|	|-		P7		LCD_D7
 	LCD_RW	P2		-|	|-		P6		LCD_D6
 	LCD_EN	P3		-|	|-		P5		LCD_D5
-	GRND		VSS	-|	|-		P4		LCD_D4
+	GRND	VSS		-|	|-		P4		LCD_D4
 
 	SYMBOL 	PIN	DESCRIPTION						NB
 	A0			1		address input 0				adress = 0 1 0 0 A2 A1 A0 0
