@@ -26,6 +26,7 @@
 #include <const.h>
 #include <macro.h>
 #include <system.c>
+#include <io.c>
 #include "define.h"
 #ifndef __32MX220F032D__
 	#include <newlib.c>
@@ -43,39 +44,14 @@ int main()
 	
 	#ifdef PIC32_PINGUINO_220
 	SystemConfig(40000000);
-	// configure port maping
-	SystemUnlock();
-	CFGCONbits.IOLOCK=0;		// unlock configuration
-	CFGCONbits.PMDLOCK=0;
-	#ifdef __SERIAL__
-		U2RXRbits.U2RXR=6;			// Define U2RX as RC8 ( D0 )
-		RPC9Rbits.RPC9R=2;			// Define U2TX as RC9 ( D1 )
-		U1RXRbits.U1RXR=2;			// Define U1RX as RA4 ( UEXT SERIAL )
-		RPB4Rbits.RPB4R=1;			// Define U1TX as RB4 ( UEXT SERIAL )
-	#endif
-	#ifdef __SPI__
-		SDI1Rbits.SDI1R=5;			// Define SDI1 as RA8 ( UEXT SPI )
-		RPA9Rbits.RPA9R=3;			// Define SDO1 as RA9 ( UEXT SPI )
-	#endif
-	CFGCONbits.IOLOCK=1;		// relock configuration
-	CFGCONbits.PMDLOCK=1;	
-	SystemLock();
-	TRISCbits.TRISC9 = OUTPUT;	// RC9 / U2TX output
-	TRISCbits.TRISC8 = INPUT;	// RC8 / U2RX input			
 	#else
 	SystemConfig(80000000);	// default clock frequency is 80Mhz
 							// default peripheral freq. is 40MHz (cf. system.c)
 	#endif
-
-	// All pins of PORTB as digital IOs
-#ifdef __32MX220F032D__
-	DDPCONbits.JTAGEN=0;
-	ANSELA = 0;
-	ANSELB = 0;
-	ANSELC = 0;
-#else
-	AD1PCFG = 0xFFFF;
-#endif
+	
+	IOsetSpecial();
+	IOsetDigital();
+	IOsetRemap();
 	
 	#ifdef __ANALOG__
 	analog_init();
@@ -102,7 +78,11 @@ int main()
 	while (1)
 	{
 		#ifdef __USBCDC
-		CDCTxService();
+			#ifdef __32MX220F032D__
+				USB_Service( );
+			#else
+				CDCTxService();
+			#endif
 		#endif    
 		loop();
 	}
