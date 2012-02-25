@@ -106,6 +106,15 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 			//SetPriorityIntI2C1(I2C_INT_PRI_1|I2C_INT_SUB_PRI_0);
 			IntSetVectorPriority(INT_I2C1_VECTOR,2,2);
 
+#ifdef __32MX220F032D__
+			IFS1bits.I2C1MIF = 0;
+			IFS1bits.I2C1SIF = 0;
+			IFS1bits.I2C1BIF = 0;
+	
+			IEC1bits.I2C1MIE = 1;
+			IEC1bits.I2C1SIE = 1;
+			IEC1bits.I2C1BIE = 1;
+#else
 			IFS0bits.I2C1MIF = 0;
 			IFS0bits.I2C1SIF = 0;
 			IFS0bits.I2C1BIF = 0;
@@ -113,6 +122,7 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 			IEC0bits.I2C1MIE = 1;
 			IEC0bits.I2C1SIE = 1;
 			IEC0bits.I2C1BIE = 1;
+#endif
 			break;
 
 		case I2C2:
@@ -305,10 +315,16 @@ void I2C_wait(u8 module)
 	switch(module)
 	{
 		case I2C1:
+#ifdef __32MX220F032D__
+			while (IFS1bits.I2C1MIF == 0);	// wait until interrupt request has a occurred
+			IFS1bits.I2C1MIF = 0;				// clear flag
+#else
 			while (IFS0bits.I2C1MIF == 0);	// wait until interrupt request has a occurred
 			IFS0bits.I2C1MIF = 0;				// clear flag
+#endif
 			break;
 		case I2C2:
+			// __32MX220F032D__ or not, it's the same for all processors
 			while (IFS1bits.I2C2MIF == 0);
 			IFS1bits.I2C2MIF = 0;
 			break;
@@ -316,7 +332,7 @@ void I2C_wait(u8 module)
 }
 
 /*	----------------------------------------------------------------------------
-	---------- I2C_ start bit
+	---------- I2C start bit
 	----------------------------------------------------------------------------
 	--------------------------------------------------------------------------*/
 
@@ -336,7 +352,7 @@ void I2C_start(u8 module)
 }
 
 /*	----------------------------------------------------------------------------
-	---------- Send stop bit
+	---------- I2C stop bit
 	----------------------------------------------------------------------------
 	--------------------------------------------------------------------------*/
 
@@ -356,7 +372,7 @@ void I2C_stop(u8 module)
 }
 
 /*	----------------------------------------------------------------------------
-	---------- Send stop bit
+	---------- I2C restart bit
 	----------------------------------------------------------------------------
 	--------------------------------------------------------------------------*/
 

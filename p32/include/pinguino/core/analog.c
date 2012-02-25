@@ -4,7 +4,7 @@
 	PURPOSE:		
 	PROGRAMER:		jean-pierre mandon <jp.mandon@gmail.com>
 	FIRST RELEASE:	19 feb. 2011
-	LAST RELEASE:	08 nov. 2011
+	LAST RELEASE:	25 feb. 2012
 	----------------------------------------------------------------------------
 	CHANGELOG:
 	[31-03-11][rblanchot@gamil.com][fixed conditional compilation for board support] 	----------------------------------------------------------------------------
@@ -25,6 +25,7 @@
 	--------------------------------------------------------------------------*/
 
 // 08 nov. 2011 fixed a bug in analogRead ( stop and restart analog converter before sampling )
+// 25 feb. 2012 added support for PIC32_PINGUINO_220
 
 #ifndef __ANALOG__
 #define __ANALOG__
@@ -47,6 +48,19 @@ u16 __analogmask[]={0x0002,0x0004,0x0008,0x0010,0x0100,0x0200,0x0800,0x0400,
 u16 __bufmask[]=   {0x0004,0x0008,0x000C,0x0010,0x0020,0x0024,0x002C,0x0028,
 		    		0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0004,0x0008,
 		    		0x000C,0x0010,0x0020,0x0024,0x002C,0x0028};
+#endif
+
+#if defined(PIC32_PINGUINO_220)
+
+u16 __portanalogmask[]=	{0x0002,0x0002,0x0001,0x0001,0x0001,0x0001,0x0000,0x0000,
+						0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0002,0x0002,
+						0x0001,0x0001,0x0001,0x0001,0x0000,0x0000};
+u16 __analogmask[]=    	{0x0001,0x0002,0x0001,0x0002,0x0004,0x0008,0x0000,0x0000,
+						0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0001,0x0002,
+						0x0004,0x0008,0x0000,0x0000,0x0000,0x0000};
+u16 __bufmask[]=		{0x0018,0x001C,0x0008,0x000C,0x0010,0x0014,0x0000,0x0000,
+						0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0018,0x001C,
+						0x0008,0x000C,0x0010,0x0014,0x0000,0x0000};
 #endif
 
 #if defined(EMPEROR460) || defined(EMPEROR795)
@@ -84,14 +98,38 @@ void SetAnalog(u8 pin)
 	if ((pin==4)||(pin==18)) TRISDbits.TRISD9=1;   // analog input 18 is shared with I2C
 	if ((pin==5)||(pin==19)) TRISDbits.TRISD10=1;  // analog input 19 is shared with I2C
 	#endif
+	#if defined(PIC32_PINGUINO_220)
+		switch (__portanalogmask[pin])
+			{
+			case 1:	ANSELBSET=__analogmask[pin];
+					TRISBSET=__analogmask[pin];
+					break;
+			case 2: ANSELCSET=__analogmask[pin];
+					TRISCSET=__analogmask[pin];
+					break;
+			}		
+	#else
 	TRISBSET=__analogmask[pin];
 	AD1PCFGCLR=__analogmask[pin];
+	#endif
 }
 
 u8 IsDigital(u8 pin)
 {
+	#if defined(PIC32_PINGUINO_220)
+		switch (__portanalogmask[pin])
+			{
+			case 1:	if (ANSELB&__analogmask[pin]) return 1;
+					else return 0;
+					break;
+			case 2: if (ANSELC&__analogmask[pin]) return 1;
+					else return 0;
+					break;
+			}		
+	#else	
 	if ((AD1PCFG&__analogmask[pin])!=0) return 1;
 	else return 0;
+	#endif
 }
 	
 void analog_init(void)

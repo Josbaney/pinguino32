@@ -152,8 +152,9 @@ void CDC_init()
 	USBDeviceInit();		// Initializes USB module SFRs and firmware
 	#ifndef __32MX220F032D__
 		USBDeviceAttach();
-	#endif
+	#else
 	Delayms(1500);
+	#endif
 }
 
 // CDC.puts
