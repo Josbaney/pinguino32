@@ -75,6 +75,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 			OC3CON=0x000E;
 			OC3CON|=0x8000;	// PWM On
 			return 1;
+			break;
 		case 3:
 			pinmode(3, OUTPUT);
 			OC4CON=0;		// PWM Off
@@ -83,6 +84,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 			OC4CON=0x000E;
 			OC4CON|=0x8000;	// PWM On
 			return 1;
+			break;
 		case 11:
 			pinmode(11, OUTPUT);
 			OC2CON=0;		// PWM Off
@@ -91,6 +93,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 			OC2CON=0x000E;
 			OC2CON|=0x8000;	// PWM On
 			return 1;
+			break;
 		case 12:
 			pinmode(12, OUTPUT);
 			OC5CON=0;		// PWM Off
@@ -99,6 +102,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 			OC5CON=0x000E;
 			OC5CON|=0x8000;	// PWM On
 			return 1;
+			break;
 		case 13:
 			pinmode(13, OUTPUT);
 			OC1CON=0;		// PWM Off
@@ -107,8 +111,10 @@ u8 analogwrite(u8 pin, u16 setpoint)
 			OC1CON=0x000E;
 			OC1CON|=0x8000;	// PWM On
 			return 1;
+			break;
 		default:
 			return 0;
+			break;
 	}
 #endif
 	
@@ -145,6 +151,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 			break;
 		default:
 			return 0;
+			break;
 	}		
 #endif
 #if defined(EMPEROR460) || defined(EMPEROR795)
@@ -196,6 +203,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 					 return 1;
 					 break;
 			default: return 0;
+					 break;
 		}		
 #endif
 #if defined(UBW32_460) || defined(UBW32_795)
@@ -247,6 +255,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 					 return 1;
 					 break;
 			default: return 0;
+					 break;
 		}		
 #endif
 }

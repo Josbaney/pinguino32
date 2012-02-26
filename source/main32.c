@@ -1,8 +1,8 @@
 /*-------------------------------------------------------------------------
   main32.c - Application main function for Pinguino 32
 
-             (c) 2010, 2011 Jean-Pierre Mandon <jp.mandon@gmail.com>
-             (c) 2010, 2011 Régis Blanchot <rblanchot@gmail.com> 
+             (c) 2010, 2011, 2112 Jean-Pierre Mandon <jp.mandon@gmail.com>
+             (c) 2010, 2011, 2012 Régis Blanchot <rblanchot@gmail.com> 
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -22,37 +22,42 @@
 -------------------------------------------------------------------------*/
 
 #include <p32xxxx.h>			// always in first place to avoid conflict with const.h ON
-#include <typedef.h>
-#include <const.h>
-#include <macro.h>
-#include <system.c>
-#include <io.c>
-#include "define.h"
+#include <typedef.h>			// Pinguino's types definitions
+#include <const.h>				// Pinguino's constants definitions
+#include <macro.h>				// Pinguino's macros definitions
+#include <system.c>				// PIC32 System Core Functions
+#include "define.h"				// Pinguino Sketch Constants
+#include <io.c>					// Pinguino Boards Peripheral Remappage and IOs configurations
 #ifndef __32MX220F032D__
 	#include <newlib.c>
 #endif	
-#include <cdc.h> 
+#include <cdc.h>
 
-#include "user.c"
+#include "user.c"				// Pinguino User's Sketch
 
 int main()
 {
 	#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
-	TRISDbits.TRISD9=1;			// because PORTB is shared with SDA on Olimex board
+	TRISDbits.TRISD9=1;		// because PORTB is shared with SDA on Olimex board
 	TRISDbits.TRISD10=1;		// because PORTB is shared with SCL on Olimex board
 	#endif	
 	
-	#ifdef PIC32_PINGUINO_220
+	#ifdef __32MX220F032D__
 	SystemConfig(40000000);
 	#else
+	// default peripheral freq. is CPUCoreFrequency / 2 (cf. system.c)
+	#ifdef __32MX220F032D__
+	SystemConfig(40000000);	// default clock frequency is 40Mhz
+	#else
 	SystemConfig(80000000);	// default clock frequency is 80Mhz
-							// default peripheral freq. is 40MHz (cf. system.c)
+				// default peripheral freq. is 40MHz (cf. system.c)
 	#endif
-	
+	#endif
+
 	IOsetSpecial();
 	IOsetDigital();
 	IOsetRemap();
-	
+
 	#ifdef __ANALOG__
 	analog_init();
 	#endif
@@ -83,7 +88,8 @@ int main()
 			#else
 				CDCTxService();
 			#endif
-		#endif    
+		#endif
+ 
 		loop();
 	}
 
