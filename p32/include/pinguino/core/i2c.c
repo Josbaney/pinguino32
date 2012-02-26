@@ -33,17 +33,17 @@
 	#include <interrupt.c>
 
 	// Mode I2C
-	#define I2C_WRITE					0
-	#define I2C_READ					1
+	#define I2C_WRITE				0
+	#define I2C_READ				1
 	#define I2C_MASTER_MODE			0
 	#define I2C_SLAVE_MODE			1
 	#define I2C_MULTIMASTER_MODE	2
-	#define I2C_SLEW_OFF				0
+	#define I2C_SLEW_OFF			0
 	#define I2C_SLEW_ON				1
 
 	// Module I2C
-	#define I2C1			1
-	#define I2C2			2
+	#define I2C1					1
+	#define I2C2					2
 
 	/// PROTOTYPES
 
@@ -67,6 +67,7 @@
 	The module software need not be concerned with the state of the port I/O of the pins,
 	the module overrides, the port state and direction.
 	At initialization, the pins are tri-state (released).
+	ex : I2C_init(I2C2, I2C_MASTER_MODE, I2C_SLEW_OFF);
 	--------------------------------------------------------------------------*/
 
 void I2C_init(u8 module, u8 mode, u8 speed)
@@ -79,7 +80,7 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 			// Enables the I2C module and configures the SDA and SCL pins as serial port pins
 			//I2C1CONbits.ON = 1;							// conflict with const.h definition
 			I2C1CON |= (1 << 15);							// Set bit 15
-/*
+			/*
 			switch (mode)
 			{
 				case I2C_SLAVE_MODE:
@@ -89,8 +90,8 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 				case I2C_MASTER_MODE:
 				default:
 			}
-*/
-			switch (mode)
+			*/
+			switch (speed)
 			{
 				case I2C_SLEW_ON:
 					I2C1CONbits.DISSLW = 0;						// 0 = Slew rate control enabled for High Speed mode (400 kHz)
@@ -106,7 +107,7 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 			//SetPriorityIntI2C1(I2C_INT_PRI_1|I2C_INT_SUB_PRI_0);
 			IntSetVectorPriority(INT_I2C1_VECTOR,2,2);
 
-#ifdef __32MX220F032D__
+			#ifdef __32MX220F032D__
 			IFS1bits.I2C1MIF = 0;
 			IFS1bits.I2C1SIF = 0;
 			IFS1bits.I2C1BIF = 0;
@@ -114,7 +115,7 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 			IEC1bits.I2C1MIE = 1;
 			IEC1bits.I2C1SIE = 1;
 			IEC1bits.I2C1BIE = 1;
-#else
+			#else
 			IFS0bits.I2C1MIF = 0;
 			IFS0bits.I2C1SIF = 0;
 			IFS0bits.I2C1BIF = 0;
@@ -122,14 +123,14 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 			IEC0bits.I2C1MIE = 1;
 			IEC0bits.I2C1SIE = 1;
 			IEC0bits.I2C1BIE = 1;
-#endif
+			#endif
 			break;
 
 		case I2C2:
 			// Enables the I2C module and configures the SDA and SCL pins as serial port pins
 			//I2C2CONbits.ON = 1;							// conflict with const.h definition
 			I2C2CON |= (1 << 15);							// Set bit 15
-/*
+			/*
 			switch (mode)
 			{
 				case I2C_SLAVE_MODE:
@@ -139,8 +140,8 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 				case I2C_MASTER_MODE:
 				default:
 			}
-*/
-			switch (mode)
+			*/
+			switch (speed)
 			{
 				case I2C_SLEW_ON:
 					I2C2CONbits.DISSLW = 0;		// 0 = Slew rate control enabled for High Speed mode (400 kHz)
@@ -151,7 +152,6 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 					I2C2CONbits.DISSLW = 1;		// 1 = Slew rate control disabled for Standard Speed mode (100 kHz); also disabled for 1 MHz mode
 					I2C2BRG = (pbclk / (2 * 100)) - 2;	// 100 kHz
 					//I2C2BRG = (pbclk / (2 * 1000)) - 2	// 1000 kHz = 1MHz
-
 			}
 
 			//SetPriorityIntI2C1(I2C_INT_PRI_1|I2C_INT_SUB_PRI_0);

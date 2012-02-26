@@ -9,6 +9,7 @@
 	----------------------------------------------------------------------------
 	CHANGELOG:
 	[20-02-12][Régis Blanchot][Exported in this file]
+	[25-02-12][Régis Blanchot][Added PWM remap. for PIC32 PINGUINO 220]
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -51,7 +52,7 @@ void IOsetSpecial()
 void IOsetDigital()
 {
 	#ifdef __32MX220F032D__
-	DDPCONbits.JTAGEN=0;
+	DDPCONbits.JTAGEN=0;		// check : already in system.c
 	ANSELA = 0;
 	ANSELB = 0;
 	ANSELC = 0;
@@ -63,9 +64,9 @@ void IOsetDigital()
 // PIC32 Peripheral Remappage
 void IOsetRemap()
 {
-	#if defined(PIC32_PINGUINO_220)
+#if defined(PIC32_PINGUINO_220)
 	SystemUnlock();
-	CFGCONbits.IOLOCK=0;		// unlock configuration
+	CFGCONbits.IOLOCK=0;			// unlock configuration
 	CFGCONbits.PMDLOCK=0;
 	#ifdef __SERIAL__
 		U2RXRbits.U2RXR=6;			// Define U2RX as RC8 ( D0 )
@@ -77,10 +78,17 @@ void IOsetRemap()
 		SDI1Rbits.SDI1R=5;			// Define SDI1 as RA8 ( UEXT SPI )
 		RPA9Rbits.RPA9R=3;			// Define SDO1 as RA9 ( UEXT SPI )
 	#endif
-	CFGCONbits.IOLOCK=1;		// relock configuration
+	#ifdef __PWM__
+		RPC2Rbits.RPC2R  =0b0101;	// PWM0 = OC3 as D2  = RC2
+		RPC3Rbits.RPC3R  =0b0101;	// PWM1 = OC4 as D3  = RC3
+		RPB5Rbits.RPB5R  =0b0101;	// PWM2 = OC2 as D11 = RB5
+		RPB13Rbits.RPB13R=0b0110;	// PWM3 = OC5 as D12 = RB13
+		RPB15Rbits.RPB15R=0b0101;	// PWM4 = OC1 as D13 = RB15
+	#endif
+	CFGCONbits.IOLOCK=1;			// relock configuration
 	CFGCONbits.PMDLOCK=1;	
 	SystemLock();
-	#endif
+#endif
 }
 
 #endif /* __REMAP_C */

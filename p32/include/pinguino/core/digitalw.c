@@ -99,27 +99,26 @@ const u32 pinmask[]={0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800,		// 0-7
 
 #ifdef PIC32_PINGUINO_MICRO
 
-const u32 portmask[]=
-				 {3,3,3,3,3,3,3,3,	// 0-7
-				  1,1,6,6,6,6,1,1,	// 8-15
-				  1,1,3,3,1,1,4,4,	// 16-23
-				  4,4,4,4,4,4,3,5,	// 24-31
-				  5};				// 32
-				  
-const u32 pinmask[]={0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800,		// 0-7
-				  0x2000,0x4000,0x200,0x100,0x80,0x40,0x02,0x04,	// 8-15
-				  0x08,0x10,0x200,0x400,0x800,0x400,0x01,0x02,		// 16-23
-				  0x04,0x08,0x10,0x20,0x40,0x80,0x02,0x02,			// 24-31
-				  0x01};											// 32
+const u32 portmask[]= {	 pB,  pB,  pB,  pB,  pB,  pB,  pB,  pB,	// 0-7
+				  		 pB,  pB,  pD,  pD,  pD,  pD,  pD,  pD,	// 8-15
+				  		 pB,  pD,  pD,  pD,  pG,  pF,  pE,  pE,	// 16-23
+				  		 pE,  pE,  pE,  pE,  pE,  pE,  pC,  pC,	// 24-31
+				  		 pG };									// 32
+
+const u32 pinmask[]=  {  _1,  _2,  _3,  _4,  _8,  _9, _10, _11,	// 0-7
+				  	    _12, _14,  _1,  _2,  _3,  _4,  _5,  _6,	// 8-15
+				  		 _0,  _7,  _8, _11,  _9,  _1,  _7,  _6,	// 16-23
+				  		 _5,  _4,  _3,  _2,  _1,  _0, _13, _14,	// 24-31
+				  		 _6 };									// 32
 #endif
 
 #ifdef PIC32_PINGUINO_220
 
-u32 portmask[]={	pC,pC,pC,pC,pC,pC,pC,pC,	// D0-D7	: C8,C9,C2,C3,C4,C5,C6,C7 
+const u32 portmask[]={	pC,pC,pC,pC,pC,pC,pC,pC,	// D0-D7	: C8,C9,C2,C3,C4,C5,C6,C7 
 				  		pB,pA,pA,pB,pB,pB,			// D8-D13	: B7,A10,A1,B5,B13,B15
 						pC,pC,pB,pB,pB,pB	};		
 				  
-u32 pinmask[]={	_8,_9,_2,_3,_4,_5,_6,_7,	// D0-D7	: C8,C9,C2,C3,C4,C5,C6,C7
+const u32 pinmask[]={	_8,_9,_2,_3,_4,_5,_6,_7,	// D0-D7	: C8,C9,C2,C3,C4,C5,C6,C7
 						_7,_10,_1,_5,_13,_15,		// D8-D13	: B7,A10,A1,B5,B13,B15
 						_0,_1,_0,_1,_2,_3	};		// A0-A5	: C0,C1,B0,B1,B2,B3
 #endif
@@ -214,7 +213,6 @@ void pinmode(u8 pin,u8 state)
 }
 
 u8 pinread(u8 pin)
-
 {
 	u32 reg;
 
@@ -251,7 +249,7 @@ u8 pinread(u8 pin)
 	else
 		return 0;
 }
-	  
+		  
 void digitalwrite(u8 pin,u8 state)
 {
 	switch (portmask[pin])
@@ -310,7 +308,7 @@ u8 digitalread(u8 pin)
 	}
 	return -1;			
 }
-		  
+
 void toggle(u8 pin)
 {
 	digitalwrite(pin, digitalread(pin)^1);

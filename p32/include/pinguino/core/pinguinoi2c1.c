@@ -1,10 +1,10 @@
 /*	----------------------------------------------------------------------------
-	FILE:				pinguinoi2c.c
-	PROJECT:			pinguino32
-	PURPOSE:			I2C functions
-	PROGRAMER:		regis blanchot <rblanchot@gmail.com>
-	FIRST RELEASE:	11 apr. 2011
-	LAST RELEASE:	11 apr. 2011
+	FILE:				pinguinoi2c1.c
+	PROJECT:			pinguino
+	PURPOSE:			I2C1 functions
+	PROGRAMER:			regis blanchot <rblanchot@gmail.com>
+	FIRST RELEASE:		11 apr. 2011
+	LAST RELEASE:		25 feb. 2012
 	----------------------------------------------------------------------------
 	TODO :
 	----------------------------------------------------------------------------
@@ -26,8 +26,8 @@
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 	--------------------------------------------------------------------------*/
 
-#ifndef __PINGUINOI2C_C
-#define __PINGUINOI2C_C
+#ifndef __PINGUINOI2C1_C
+#define __PINGUINOI2C1_C
 
 #include <typedef.h>
 #include <const.h>

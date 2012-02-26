@@ -1,9 +1,9 @@
 /*	----------------------------------------------------------------------------
-	FILE:				pwm.c
-	PROJECT:			pinguinoX
-	PURPOSE:			hardware PWM control functions
+	FILE:			pwm.c
+	PROJECT:		pinguinoX
+	PURPOSE:		hardware PWM control functions
 	PROGRAMER:		jean-pierre mandon <jp.mandon@gmail.com>
-						regis blanchot <rblanchot@gmail.com>
+					regis blanchot <rblanchot@gmail.com>
 	FIRST RELEASE:	20 feb. 2011
 	LAST RELEASE:	08 dec. 2011
 	----------------------------------------------------------------------------
@@ -27,6 +27,8 @@
 // added resolution output to set_frequency function
 // jp.mandon
 
+// 25 feb. 2012 added PIC32_PINGUINO_220 support - regis blanchot
+
 #ifndef __PWM__
 #define __PWM__
 
@@ -34,6 +36,7 @@
 #include <macro.h>
 #include <const.h>
 #include <system.c>
+#include <digitalw.c>
 
 /*	----------------------------------------------------------------------------
 	GLOBAL VARIABLES
@@ -46,7 +49,12 @@ u32 _t3con;							// shadow value of T3CON
 	init_pwm
 	PWM use Timer 3 with a fixed value of 20 khz
 	resolution is 10 bits.
-	--------------------------------------------------------------------------*/
+	----------------------------------------------------------------------------
+	OCxCON (1 <= x <= 5) Register Config :
+	- PWM mode with Fault pin disabled
+	- Timer3 is the clock source
+	- OCxR<15:0> and OCxRS<15:0> are used for comparisons to the 16-bit timer source
+ --------------------------------------------------------------------------*/
 	
 void PWM_init(void)
 {
@@ -56,6 +64,54 @@ void PWM_init(void)
 
 u8 analogwrite(u8 pin, u16 setpoint)
 {
+#if defined(PIC32_PINGUINO_220)
+	switch (pin)
+	{
+		case 2:
+			pinmode(2, OUTPUT);
+			OC3CON=0;		// PWM Off
+			OC3R=setpoint;	// Timer3 will be compared to this values
+			OC3RS=setpoint;
+			OC3CON=0x000E;
+			OC3CON|=0x8000;	// PWM On
+			return 1;
+		case 3:
+			pinmode(3, OUTPUT);
+			OC4CON=0;		// PWM Off
+			OC4R=setpoint;	// Timer3 will be compared to this values
+			OC4RS=setpoint;
+			OC4CON=0x000E;
+			OC4CON|=0x8000;	// PWM On
+			return 1;
+		case 11:
+			pinmode(11, OUTPUT);
+			OC2CON=0;		// PWM Off
+			OC2R=setpoint;	// Timer3 will be compared to this values
+			OC2RS=setpoint;
+			OC2CON=0x000E;
+			OC2CON|=0x8000;	// PWM On
+			return 1;
+		case 12:
+			pinmode(12, OUTPUT);
+			OC5CON=0;		// PWM Off
+			OC5R=setpoint;	// Timer3 will be compared to this values
+			OC5RS=setpoint;
+			OC5CON=0x000E;
+			OC5CON|=0x8000;	// PWM On
+			return 1;
+		case 13:
+			pinmode(13, OUTPUT);
+			OC1CON=0;		// PWM Off
+			OC1R=setpoint;	// Timer3 will be compared to this values
+			OC1RS=setpoint;
+			OC1CON=0x000E;
+			OC1CON|=0x8000;	// PWM On
+			return 1;
+		default:
+			return 0;
+	}
+#endif
+	
 #if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
 	switch (pin)
 	{
@@ -210,7 +266,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 	then	(PR + 1) = FPB / PWM Frequency / p
 	--------------------------------------------------------------------------*/
 
-u32  PWM_set_frequency(u32 freq)
+void PWM_set_frequency(u32 freq)
 {
 	// PR3+1 calculation
 	_pr3_plus1 = GetPeripheralClock() / freq;	// FOSC /  PWM Frequency
@@ -286,7 +342,7 @@ void PWM_set_dutycycle(u8 pin, u16 duty)
 	if (duty > 0xFFFF) duty = 0xFFFF;			// upper limit (16-bit)
 
 	// PWM period
-	PR3 = _pr3_plus1 - 1;							// set PR3 (max or PWM_set_frequency)
+	PR3 = _pr3_plus1 - 1;						// set PR3 (max or PWM_set_frequency)
 
 	analogwrite(pin, duty);
 
