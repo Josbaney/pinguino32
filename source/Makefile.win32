@@ -1,4 +1,4 @@
-#SHELL			=	cmd.exe
+SHELL			=	cmd.exe
 
 # ------------------------------------------------------------------------------
 # Makefile.win32 \ 32-bit Pinguino
@@ -87,16 +87,6 @@ ELF_FLAGS	=	-EL -O3 -ffunction-sections -fdata-sections -Wl,--gc-sections -march
 					-D __PIC32MX__ -D __$(PROC)__ -D $(BOARD) \
 					-T$(LKRDIR)\procdefs.ld \
 					-T$(LKRDIR)\elf32pic32mx.x
-
-# ------------------------------------------------------------------------------
-# select the cdc library / Jean-pierre Mandon 2012
-# ------------------------------------------------------------------------------
-
-ifeq ($(BOARD),PIC32_PINGUINO_220)
-CDCLIBRARY = libcdc220.a
-else
-CDCLIBRARY = libcdc.a
-endif
 
 #-------------------------------------------------------------------------------
 #	rules   
