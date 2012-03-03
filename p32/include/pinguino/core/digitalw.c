@@ -16,6 +16,7 @@
 	[20-03-11][Marcus Fazzi][IO mapping for Emperor boards] 
 	[31-03-11][rblanchot@gmail.com][fixed conditional compilation for board support]
 	[30-01-12][rblanchot@gmail.com][added PIC32-PINGUINO-220 et PIC32-PINGUINO-MICRO]
+	[03-03-12][jp.mandon@gmail.com][added UEXT pin for PIC32-PINGUINO-MX220]
 	----------------------------------------------------------------------------
 	This library is free software; you can redistribute it and/or
 	modify it under the terms of the GNU Lesser General Public
@@ -116,11 +117,13 @@ const u32 pinmask[]=  {  _1,  _2,  _3,  _4,  _8,  _9, _10, _11,	// 0-7
 
 const u32 portmask[]={	pC,pC,pC,pC,pC,pC,pC,pC,	// D0-D7	: C8,C9,C2,C3,C4,C5,C6,C7 
 				  		pB,pA,pA,pB,pB,pB,			// D8-D13	: B7,A10,A1,B5,B13,B15
-						pC,pC,pB,pB,pB,pB	};		
+						pC,pC,pB,pB,pB,pB,			// D14-D19
+						pA,pB,pB };					// D20 (UEXT_CS),D21 (SDA1 UEXT), D22 (SCL1 UEXT)
 				  
 const u32 pinmask[]={	_8,_9,_2,_3,_4,_5,_6,_7,	// D0-D7	: C8,C9,C2,C3,C4,C5,C6,C7
 						_7,_10,_1,_5,_13,_15,		// D8-D13	: B7,A10,A1,B5,B13,B15
-						_0,_1,_0,_1,_2,_3	};		// A0-A5	: C0,C1,B0,B1,B2,B3
+						_0,_1,_0,_1,_2,_3,			// A0-A5	: C0,C1,B0,B1,B2,B3
+						_7,_9,_8 };					// D20		: A7,B9,B8
 #endif
 
 //define for EMPEROR 460/795 boards

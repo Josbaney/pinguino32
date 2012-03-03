@@ -3,6 +3,9 @@
 // Based on the Microchip USB stack
 // printf, println, print, write, getKey, getString - Régis Blanchot 2011
 
+// 25 Feb. 2012 added support for 32MX220F032 jp.mandon
+// 03 Mar. 2012 fixed a bug in WINDOWS CDC jp.mandon
+
 #ifndef __USBCDC
 #define __USBCDC
 
@@ -170,12 +173,21 @@ void CDCputs(char *buffer, char length)
 		{
 			if (mUSBUSARTIsTxTrfReady())
 				break;
-			CDCTxService();
+			#ifdef __32MX220F032D__	
+				USB_Service();
+			#else
+				CDCTxService();
+			#endif
 		}
 		if (i > 0)
 		{
 			putUSBUSART(buffer,length);
-			CDCTxService();
+			#ifdef __32MX220F032D__	
+				USB_Service();
+			#else
+				CDCTxService();
+			#endif
+
 		}
 	//#endif
 }
