@@ -16,7 +16,11 @@ int ox, oy;
 
 void setup()
 {
-  myTouch(11,12,13,14,15);
+  //UBW32 and EMPEROR boards
+  //myTouch.setTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+  
+  //OLIMEX Pinguino32X board
+  myTouch.setTouch(15,10,14,9,8); //clk, cs, din, dout, irq
   
   myGLCD.InitLCD(PORTRAIT);
   myGLCD.clrScr();
@@ -157,10 +161,10 @@ void done()
   myGLCD.drawLine(0, 155, 239, 155);
   myGLCD.drawLine(0, 209, 239, 209);
 
-  myGLCD.printNumF(px, 2, 100, 158);
-  myGLCD.printNumI(ox, 100, 170);
-  myGLCD.printNumF(py, 2, 100, 182);
-  myGLCD.printNumI(oy, 100, 194);
+  myGLCD.printNumI((int)px, 100, 158);
+  myGLCD.printNumI((int)ox, 100, 170);
+  myGLCD.printNumI((int)py, 100, 182);
+  myGLCD.printNumI((int)oy, 100, 194);
   if (px>=0)
     myGLCD.print("2.4\"", 144, 250, 0);
   else

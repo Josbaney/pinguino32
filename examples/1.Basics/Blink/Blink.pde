@@ -4,16 +4,18 @@
  
   This example code is in the public domain.
  */
+ 
+// Pin 13 has an LED connected on most Arduino boards:
+#define PIN 13
 
 void setup() {                
-  // initialize the digital pin as an output.
-  // Pin 13 has an LED connected on most Arduino boards:
-  pinMode(13, OUTPUT);     
+  // initialize the digital pin as an output
+  pinMode(PIN, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(13, HIGH);   // set the LED on
-  delay(100);              // wait for a second
-  digitalWrite(13, LOW);    // set the LED off
-  delay(100);              // wait for a second
+  digitalWrite(PIN, HIGH);   // set the LED on
+  delay(500);              // wait for a second
+  digitalWrite(PIN, LOW);    // set the LED off
+  delay(500);              // wait for a second
 }

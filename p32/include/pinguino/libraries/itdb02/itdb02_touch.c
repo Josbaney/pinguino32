@@ -49,7 +49,7 @@
 #define PixOffsY	380
 
 //ITDB02 3.2" widescreen Display 400x240
-#elif defined ITDB02_32w
+#elif defined(ITDB02_32w)
 #define PixSizeX	-14 //-14.41
 #define PixOffsX	323
 #define PixSizeY	-9
@@ -57,10 +57,10 @@
 
 //ITDB02 2.4" Display 320x240
 #else
-#define PixSizeX	14 //14.44
-#define PixOffsX	302
+#define PixSizeX	15 //14.44
+#define PixOffsX	220
 #define PixSizeY	11 //11.07
-#define PixOffsY	360
+#define PixOffsY	358
 #endif
 
 #include <itdb02/itdb02_touch.h>

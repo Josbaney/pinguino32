@@ -97,7 +97,9 @@
 #define LCD_CS 			0x20
 #define LCD_REST 		0x40
 
-#else
+#endif
+
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
 //TODO: Test on OLIMEX boards <<<< NOT IMPLEMENTED >>>>
 #define LCD_DATA_DIR 	TRISA		//Data Direction Register for Data Port
 #define LCD_DATA_BUS 	PORTA		//Data Bus
@@ -160,6 +162,12 @@ struct _current_font
 	uint8_t offset;
 	uint8_t numchars;
 };
+
+//TODO: Finish it!
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+void pinguinoDATABUS(int data);
+void pinguinoDATADIR(int data);
+#endif
 
 void InitLCD(char orientation);
 void clrScr();

@@ -2,7 +2,7 @@
 // web: http://www.henningkarlsen.com/electronics
 //
 // Pinguino32X(PIC32) port by Marcus Fazzi
-// blog: http://vivaphp.net
+// blog: http://fazzi.eng.br
 //
 // This program is a demo of the included fonts.
 //
@@ -12,7 +12,7 @@
 void setup(){
   myGLCD16w.InitLCD(LANDSCAPE);
   myGLCD16w.clrScr();
-  pinMode(BLUELED, OUTPUT);
+  //pinMode(BLUELED, OUTPUT);
 }
 
 void loop(){
@@ -34,7 +34,7 @@ void loop(){
   myGLCD16w.print("`abcdefghijklmnopqrstuvwxyz{|}~ ", CENTER, 174,0);
 
   delay(500);
-  toggle(BLUELED);
+  //toggle(BLUELED);
   myGLCD16w.clrScr();
   //while(1) {};
 }

@@ -2,7 +2,7 @@
 // web: http://www.henningkarlsen.com/electronics
 //
 // Pinguino32X(PIC32) port by Marcus Fazzi
-// blog: http://vivaphp.net
+// blog: http://fazzi.eng.br
 //
 //
 // This program is a demo of how to use the library with the
@@ -11,7 +11,6 @@
 // This program requires the ITDB02_Graph (8bit mode).
 //
 //
-
 #include "pinguino32X.c"
 
 void setup(){
@@ -74,7 +73,7 @@ void loop()
   myGLCD.print("Sin", 5, 15, 0);
   for (i=1; i<318; i++)
   {
-    myGLCD.drawPixel(i,119+(sin(((i*1.13)*3.14)/180)*95));
+    myGLCD.drawPixel(i,119+(int)(sin(((i*1.13)*3.14)/180)*95));
   }
   
   myGLCD.setColor(255,0,0);
@@ -219,22 +218,22 @@ void loop()
   myGLCD.setColor (255,0,0);
   for (i=15; i<224; i+=5)
   {
-    myGLCD.drawLine(1, i, (i*1.44)-10, 224);
+    myGLCD.drawLine(1, i, i*2-10, 224);
   }
   myGLCD.setColor (255,0,0);
   for (i=224; i>15; i-=5)
   {
-    myGLCD.drawLine(318, i, (i*1.44)-11, 15);
+    myGLCD.drawLine(318, i, i*2-11, 15);
   }
   myGLCD.setColor (0,255,255);
   for (i=224; i>15; i-=5)
   {
-    myGLCD.drawLine(1, i, 331-(i*1.44), 15);
+    myGLCD.drawLine(1, i, 331-i*2, 15);
   }
   myGLCD.setColor (0,255,255);
   for (i=15; i<224; i+=5)
   {
-    myGLCD.drawLine(318, i, 330-(i*1.44), 224);
+    myGLCD.drawLine(318, i, 330-i*2, 224);
   }
   
   delay(2000);

@@ -38,12 +38,12 @@
 #ifndef ITDB02_Touch_h
 #define ITDB02_Touch_h
 
-#define PORTRAIT	0
-#define LANDSCAPE	1
+#define PORTRAIT		0
+#define LANDSCAPE		1
 
-#define PREC_LOW	1
-#define PREC_MEDIUM	2
-#define PREC_HI		3
+#define PREC_LOW		1
+#define PREC_MEDIUM		2
+#define PREC_HI			3
 #define PREC_EXTREME	4
 
 //	public:

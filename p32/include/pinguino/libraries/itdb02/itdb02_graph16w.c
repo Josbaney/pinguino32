@@ -72,6 +72,42 @@
 #include <itdb02/BigFont.c>
 #endif
 
+//TODO: Finish it!
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+void LCD_Writ_Bus(int data){
+  //LCD_DATA_BUS = data;
+  //LCD DB0 to DB7
+  //0x4000,0x8000,0x200,0x100,0x80,0x40,0x02,0x04 (pins 8 - 15)
+  //1,1,6,6,6,6,1,1,
+  if(data & 0x0001){ PORTBSET = 0x4000; } else { PORTBCLR = 0x4000; }
+  if(data & 0x0002){ PORTBSET = 0x8000; } else { PORTBCLR = 0x8000; }
+  if(data & 0x0004){ PORTGSET = 0x200; }  else { PORTGCLR = 0x200; }
+  if(data & 0x0008){ PORTGSET = 0x100; }  else { PORTGCLR = 0x100; }
+  if(data & 0x0010){ PORTGSET = 0x80; }   else { PORTGCLR = 0x80; }
+  if(data & 0x0020){ PORTGSET = 0x40; }   else { PORTGCLR = 0x40; }
+  if(data & 0x0040){ PORTBSET = 0x02; }   else { PORTBCLR = 0x02; }
+  if(data & 0x0080){ PORTBSET = 0x04; }   else { PORTBCLR = 0x04; }
+  
+  //LCD DB7 to DB15
+  //0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800 (pins 0 - 7)
+  if(data & 0x0100){ PORTDSET = 0x04; }  else { PORTDCLR = 0x04; }
+  if(data & 0x0200){ PORTDSET = 0x08; }  else { PORTDCLR = 0x08; }
+  if(data & 0x0400){ PORTDSET = 0x01; }  else { PORTDCLR = 0x01; }
+  if(data & 0x0800){ PORTDSET = 0x20; }  else { PORTDCLR = 0x20; }
+  if(data & 0x1000){ PORTDSET = 0x40; }  else { PORTDCLR = 0x40; }
+  if(data & 0x2000){ PORTDSET = 0x80; }  else { PORTDCLR = 0x80; }
+  if(data & 0x4000){ PORTDSET = 0x100; } else { PORTDCLR = 0x100; }
+  if(data & 0x8000){ PORTDSET = 0x800; } else { PORTDCLR = 0x800; }
+  
+  fastDelay();
+  fastWriteLow(LCD_WR);
+  fastDelay();
+  fastWriteHigh(LCD_WR);
+  fastDelay();
+  fastDelay();
+	
+}
+#else
 void LCD_Writ_Bus(int data){
   LCD_DATA_BUS = data;
   fastDelay();
@@ -84,6 +120,7 @@ void LCD_Writ_Bus(int data){
   fastWriteLow(LCD_WR);
   fastWriteHigh(LCD_WR);*/
 }
+#endif
 
 void LCD_Write_COM(int data){   
   fastWriteLow(LCD_RS);
@@ -104,13 +141,42 @@ void LCD_Write_DATA(int data){
 void InitLCD(char orientation){
   orient=orientation;
   
+//Pin Mode for Control Pins!
+//OLIMEX BOARDS (Arduino Like Boards, using SHIELDs)
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+  LCD_DATA_DIR = 0x00;  //Output for All pins on DATA BUS
+  LCD_DATA_BUS = 0x00;
+
+  //LCD DB0 to DB7
+  //0x4000,0x8000,0x200,0x100,0x80,0x40,0x02,0x04 (pins 8 - 15)
+  //1,1,6,6,6,6,1,1,
+  TRISBbits.TRISB14 = 0;
+  TRISBbits.TRISB15 = 0;
+  TRISGbits.TRISG9 = 0;
+  TRISGbits.TRISG8 = 0;
+  TRISGbits.TRISG7 = 0;
+  TRISGbits.TRISG6 = 0;
+  TRISBbits.TRISB1 = 0;
+  TRISBbits.TRISB2 = 0;
+
+  fastSetOutputMode(dLCD_RS);
+  fastSetOutputMode(dLCD_WR);
+  fastSetOutputMode(dLCD_CS);
+  fastSetOutputMode(dLCD_REST);
+  
+  TRISDbits.TRISD4 = 1;		//RD4 is connected to D2, don't know why! :-P
+  PORTDbits.RD4 = 0;
+#else
+  //TODO: Maybe it cause some wrong signal on SERIAL?
   LCD_DATA_DIR = 0x0000;  //Output for All pins on DATA BUS
+  LCD_DATA_BUS = 0x0000;
 
   //Pin Mode for Control Pins!
   fastSetOutputMode(LCD_RS);
   fastSetOutputMode(LCD_WR);
   fastSetOutputMode(LCD_CS);
   fastSetOutputMode(LCD_REST);
+#endif
 
   fastWriteHigh(LCD_REST);
   Delayms(5); 

@@ -14,7 +14,7 @@
 #include "integer_math.h"
 
 //Integer SIN
-long sini(unsigned int x){
+returntype sini(unsigned int x){
     x = x - 360*((int)(x/360));
     
 	if(x<=90){
@@ -31,7 +31,7 @@ long sini(unsigned int x){
 }
 
 //Integer COS
-long cosi(unsigned int x){
+returntype cosi(unsigned int x){
     x = x - 360*((int)(x/360));
     
 	if(x<=90){
@@ -47,11 +47,11 @@ long cosi(unsigned int x){
 	return(sins[x-270]);
 }
 
-long tani(unsigned int x){
+returntype tani(unsigned int x){
     return (sini(x)/cosi(x));
 }
 
-long powi(int base, int num){
+returntype powi(int base, int num){
     int i, to;
     float res = 1;
     

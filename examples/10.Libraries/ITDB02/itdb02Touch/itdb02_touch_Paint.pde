@@ -5,8 +5,8 @@
  * This program is a quick demo of how to use the library.
  *
  * This program requires the ITDB02_Graph library (8bit mode)
- * or ITDB02_Graph16 (16bit mode).
  * Tested with Emperor board
+ * Tested with OLIMEX Pinguino32 board
  */
 
 #include <hardware.c>
@@ -16,9 +16,6 @@
 
 //Pinguino
 #include "pinguino.c"
-
-//#define LED1 BLUELED
-//#define LED2 REDLED
 
 //#define USERBT USERBUTTON
 
@@ -175,14 +172,19 @@ void drawTool(int x, int y, u8 mode){
 
 void setup()
 {
-  myTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+  //UBW32 and EMPEROR boards
+  //myTouch.setTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+  
+  //OLIMEX Pinguino32X board
+  myTouch.setTouch(15,10,14,9,8); //clk, cs, din, dout, irq
+  
   myTouch.InitTouch(LANDSCAPE);
   myTouch.setPrecision(PREC_MEDIUM);
   
   myGLCD.InitLCD(LANDSCAPE);
 
-  pinMode(LED1, OUTPUT);  //white button
-  pinMode(LED2, OUTPUT);  //green button
+  //pinMode(LED1, OUTPUT);  //white button
+  //pinMode(LED2, OUTPUT);  //green button
 
   //Show pinguino logo! YEAH!
   myGLCD.fillScr(255, 255, 255);
@@ -327,7 +329,7 @@ void loop()
 					drawTool(x,y,0);
 					//touched LED!
 					//digitalWrite(LED1, LOW);
-					UBW32LedToggle(LED2);
+					//UBW32LedToggle(LED2);
 					
 					analogWrite(77,512);
 					
@@ -346,10 +348,10 @@ void loop()
 			}
 		}
     //run LED!
-    UBW32LedToggle(LED1);
+    //UBW32LedToggle(LED1);
     //delay(100);
     //UBW32LedToggle(LED1);
-    digitalWrite(LED2, LOW);
+    //digitalWrite(LED2, LOW);
     }
 }
 

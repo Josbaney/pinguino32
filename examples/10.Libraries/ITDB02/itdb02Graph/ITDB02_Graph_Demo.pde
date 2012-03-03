@@ -2,7 +2,7 @@
 // web: http://www.henningkarlsen.com/electronics
 //
 // Pinguino32X(PIC32) port by Marcus Fazzi
-// blog: http://vivaphp.net
+// blog: http://fazzi.eng.br
 //
 //
 // This program is a demo of how to use the library with the
@@ -69,7 +69,7 @@ void loop()
   myGLCD.print("Sin", 5, 15,0);
   for (i=1; i<238; i++)
   {
-    myGLCD.drawPixel(i,159+(sin(((i*1.51)*3.14)/180)*100));
+    myGLCD.drawPixel(i,159+20+(((int) sin(i*1.51*3.14*0.0055))*100));
   }
   
   myGLCD.setColor(255,0,0);
@@ -212,22 +212,22 @@ void loop()
   myGLCD.setColor (255,0,0);
   for (i=15; i<304; i+=5)
   {
-    myGLCD.drawLine(1, i, (i/1.22)-10, 304);
+    myGLCD.drawLine(1, i, i-14, 304);
   }
   myGLCD.setColor (255,0,0);
   for (i=304; i>15; i-=5)
   {
-    myGLCD.drawLine(238, i, (i/1.22)-11, 15);
+    myGLCD.drawLine(238, i, i-15, 15);
   }
   myGLCD.setColor (0,255,255);
   for (i=304; i>15; i-=5)
   {
-    myGLCD.drawLine(1, i, 251-(i/1.22), 15);
+    myGLCD.drawLine(1, i, 255-i, 15);
   }
   myGLCD.setColor (0,255,255);
   for (i=15; i<304; i+=5)
   {
-    myGLCD.drawLine(238, i, 250-(i/1.22), 304);
+    myGLCD.drawLine(238, i, 254-i, 304);
   }
   
   delay(2000);

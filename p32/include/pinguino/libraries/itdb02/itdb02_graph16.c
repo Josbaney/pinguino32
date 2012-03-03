@@ -71,6 +71,50 @@
 #include <itdb02/BigFont.c>
 #endif
 
+
+//TODO: Finish it!
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+void pinguinoDATABUS(int data){
+	if(data & 0b0000000000000001){ PORTDSET = pinmask[0]; } else { PORTDCLR = pinmask[0]; }
+	if(data & 0b0000000000000010){ PORTDSET = pinmask[1]; } else { PORTDCLR = pinmask[1]; }
+	if(data & 0b0000000000000100){ PORTDSET = pinmask[2]; } else { PORTDCLR = pinmask[2];}
+	if(data & 0b0000000000001000){ PORTDSET = pinmask[3]; } else { PORTDCLR = pinmask[3]; }
+	if(data & 0b0000000000010000){ PORTDSET = pinmask[4]; } else { PORTDCLR = pinmask[4]; }
+	if(data & 0b0000000000100000){ PORTDSET = pinmask[5]; } else { PORTDCLR = pinmask[5]; }
+	if(data & 0b0000000001000000){ PORTDSET = pinmask[6]; } else { PORTDCLR = pinmask[6]; }
+	if(data & 0b0000000010000000){ PORTDSET = pinmask[7]; } else { PORTDCLR = pinmask[7]; }
+	
+	if(data & 0b0000000100000000){ PORTBSET = pins[8]; }else{ PORTBCLR = pins[8]; }
+	if(data & 0b0000001000000000){ PORTBSET = pins[9]; }else{ PORTBCLR = pins[9]; }  
+	if(data & 0b0000010000000000){ PORTGSET = pins[10]; }else{ PORTGCLR = pins[10]; }
+	if(data & 0b0000100000000000){ PORTGSET = pins[11]; }else{ PORTGCLR = pins[11]; }
+	if(data & 0b0001000000000000){ PORTGSET = pins[12]; }else{ PORTGCLR = pins[12]; }
+	if(data & 0b0010000000000000){ PORTGSET = pins[13]; }else{ PORTGCLR = pins[13]; }
+	if(data & 0b0100000000000000){ PORTBSET = pins[14]; }else{ PORTBCLR = pins[14]; }
+	if(data & 0b1000000000000000){ PORTBSET = pins[15]; }else{ PORTBCLR = pins[15]; }
+}
+
+void pinguinoDATADIR(int data){
+	if(data & 0b0000000000000001){ PORTDSET = pinmask[0]; } else { PORTDCLR = pinmask[0]; }
+	if(data & 0b0000000000000010){ PORTDSET = pinmask[1]; } else { PORTDCLR = pinmask[1]; }
+	if(data & 0b0000000000000100){ PORTDSET = pinmask[2]; } else { PORTDCLR = pinmask[2];}
+	if(data & 0b0000000000001000){ PORTDSET = pinmask[3]; } else { PORTDCLR = pinmask[3]; }
+	if(data & 0b0000000000010000){ PORTDSET = pinmask[4]; } else { PORTDCLR = pinmask[4]; }
+	if(data & 0b0000000000100000){ PORTDSET = pinmask[5]; } else { PORTDCLR = pinmask[5]; }
+	if(data & 0b0000000001000000){ PORTDSET = pinmask[6]; } else { PORTDCLR = pinmask[6]; }
+	if(data & 0b0000000010000000){ PORTDSET = pinmask[7]; } else { PORTDCLR = pinmask[7]; }
+	
+	if(data & 0b0000000100000000){ PORTBSET = pins[8]; }else{ PORTBCLR = pins[8]; }
+	if(data & 0b0000001000000000){ PORTBSET = pins[9]; }else{ PORTBCLR = pins[9]; }  
+	if(data & 0b0000010000000000){ PORTGSET = pins[10]; }else{ PORTGCLR = pins[10]; }
+	if(data & 0b0000100000000000){ PORTGSET = pins[11]; }else{ PORTGCLR = pins[11]; }
+	if(data & 0b0001000000000000){ PORTGSET = pins[12]; }else{ PORTGCLR = pins[12]; }
+	if(data & 0b0010000000000000){ PORTGSET = pins[13]; }else{ PORTGCLR = pins[13]; }
+	if(data & 0b0100000000000000){ PORTBSET = pins[14]; }else{ PORTBCLR = pins[14]; }
+	if(data & 0b1000000000000000){ PORTBSET = pins[15]; }else{ PORTBCLR = pins[15]; }
+}
+#endif
+
 void LCD_Writ_Bus(int data)
 {
   LCD_DATA_BUS = data;

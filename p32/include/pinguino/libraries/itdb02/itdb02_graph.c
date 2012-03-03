@@ -50,6 +50,9 @@
 			 2.6  - Mar  08 2011  - Fixed a bug in printNumF when the number to be printed
 									was (-)0.something
 
+			 2.6.1 -Fev  29 2012  - Added support to OLIMEX Boards.
+									There is a problem with D2 pin (PIC32 pin52 ?). using A6.
+
 */
 
 #ifndef ITDB02_Graph_c
@@ -59,7 +62,10 @@
 #define ITDB02_24
 
 #include <itdb02/itdb02_graph.h>
-#include <integer_math.c>
+
+//Can't use sin/cos with that library, don't know why! :-(
+#include <integer_math.c> 
+//include <math.h>
 
 #include <string.h>
 #include <delay.c>
@@ -70,6 +76,46 @@
 #include <itdb02/BigFont.c>
 #endif
 
+//OLIMEX BOARDS (Arduino Like Boards, using SHIELDs)
+//You must remove capacitor C20 if you have a OLIMEX Pinguino32 rev. A, B or C
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+
+void LCD_Writ_Bus(int VH,int VL){
+  //LCD_DATA_BUS = VH;
+  //0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800 (pins 0 - 7)
+  if(VH & 0x01){ PORTDSET = 0x04; }  else { PORTDCLR = 0x04; }
+  if(VH & 0x02){ PORTDSET = 0x08; }  else { PORTDCLR = 0x08; }
+  if(VH & 0x04){ PORTDSET = 0x01; }  else { PORTDCLR = 0x01; }
+  if(VH & 0x08){ PORTDSET = 0x20; }  else { PORTDCLR = 0x20; }
+  if(VH & 0x10){ PORTDSET = 0x40; }  else { PORTDCLR = 0x40; }
+  if(VH & 0x20){ PORTDSET = 0x80; }  else { PORTDCLR = 0x80; }
+  if(VH & 0x40){ PORTDSET = 0x100; } else { PORTDCLR = 0x100; }
+  if(VH & 0x80){ PORTDSET = 0x800; } else { PORTDCLR = 0x800; }
+  fastDelay();
+  fastWriteLow(LCD_WR);
+  fastDelay();
+  fastWriteHigh(LCD_WR);
+  fastDelay();
+  //LCD_DATA_BUS = VL;
+  //0x04,0x08,0x01,0x20,0x40,0x80,0x100,0x800 (pins 0 - 7)
+  if(VL & 0x01){ PORTDSET = 0x04; }  else { PORTDCLR = 0x04; }
+  if(VL & 0x02){ PORTDSET = 0x08; }  else { PORTDCLR = 0x08; }
+  if(VL & 0x04){ PORTDSET = 0x01; }  else { PORTDCLR = 0x01; }
+  if(VL & 0x08){ PORTDSET = 0x20; }  else { PORTDCLR = 0x20; }
+  if(VL & 0x10){ PORTDSET = 0x40; }  else { PORTDCLR = 0x40; }
+  if(VL & 0x20){ PORTDSET = 0x80; }  else { PORTDCLR = 0x80; }
+  if(VL & 0x40){ PORTDSET = 0x100; } else { PORTDCLR = 0x100; }
+  if(VL & 0x80){ PORTDSET = 0x800; } else { PORTDCLR = 0x800; }
+  fastDelay();
+  fastWriteLow(LCD_WR);
+  fastDelay();
+  fastWriteHigh(LCD_WR);
+  fastDelay();
+  fastDelay();
+}
+
+#else
+
 void LCD_Writ_Bus(int VH,int VL){
   LCD_DATA_BUS = VH;
   fastWriteLow(LCD_WR);
@@ -78,6 +124,8 @@ void LCD_Writ_Bus(int VH,int VL){
   fastWriteLow(LCD_WR);
   fastWriteHigh(LCD_WR);
 }
+
+#endif
 
 void LCD_Write_COM(int VH,int VL) {   
   fastWriteLow(LCD_RS);
@@ -93,12 +141,24 @@ void InitLCD(char orientation){
   orient=orientation;
   
   LCD_DATA_DIR = 0x00;  //Output for All pins on DATA BUS
+  LCD_DATA_BUS = 0x0000;
 
-  //Pin Mode for Control Pins!
-  setMode(LCD_RS);
-  setMode(LCD_WR);
-  setMode(LCD_CS);
-  setMode(LCD_REST);
+//Pin Mode for Control Pins!
+//OLIMEX BOARDS (Arduino Like Boards, using SHIELDs)
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+  fastSetOutputMode(dLCD_RS);
+  fastSetOutputMode(dLCD_WR);
+  fastSetOutputMode(dLCD_CS);
+  fastSetOutputMode(dLCD_REST);
+  
+  TRISDbits.TRISD4 = 1;		//RD4 is connected to D2, don't know why! :-P
+  PORTDbits.RD4 = 0;
+#else
+  fastSetOutputMode(LCD_RS);
+  fastSetOutputMode(LCD_WR);
+  fastSetOutputMode(LCD_CS);
+  fastSetOutputMode(LCD_REST);
+#endif
 
   fastWriteHigh(LCD_REST);
   Delayms(5); 

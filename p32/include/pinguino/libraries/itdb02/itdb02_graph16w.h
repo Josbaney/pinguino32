@@ -97,21 +97,46 @@
 #define LCD_CS 			0x20
 #define LCD_REST 		0x40
 
-#else
-//TODO: Test on OLIMEX boards <<<< NOT IMPLEMENTED >>>>
-#define LCD_DATA_DIR 		TRISA		//Data Direction Register for Data Port
-#define LCD_DATA_BUS 		PORTA		//Data Bus
+#endif
+
+//OLIMEX boards
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+
+#define LCD_DATA_DIR 	TRISD		//Data Direction Register for Data Port
+#define LCD_DATA_BUS 	PORTD		//Data Bus
 #define LCD_CMD_SET		PORTDSET
 #define LCD_CMD_CLR		PORTDCLR
 
+//Using inline/defines is a bit more fast and use less RAM and Flash, then use digitalw.c pinMode/pinmask array
+#define LCD_RS 			PORTDbits.RD10	//pin 19
+#define LCD_WR 			PORTDbits.RD9	//pin 18
+#define LCD_CS 			PORTBbits.RB4	//pin 17
+#define LCD_REST 		PORTBbits.RB3	//pin 16
+
+#define dLCD_RS 		TRISDbits.TRISD10	//pin 19
+#define dLCD_WR 		TRISDbits.TRISD9	//pin 18
+#define dLCD_CS 		TRISBbits.TRISB4	//pin 17
+#define dLCD_REST 		TRISBbits.TRISB3	//pin 16
+//#define dD2JUMP		TRISBbits.TRISB11	//pin 20 / A6
+
 #endif
+
+//OLIMEX BOARDS (Arduino Like Boards, using SHIELDs)
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+
+//Many ports for use fastmode
+#define fastWriteHigh(_pin_) (_pin_ = HIGH)
+#define fastWriteLow(_pin_) (_pin_= LOW)
+#define fastSetOutputMode(_pin_) (_pin_ = OUTPUT)
+
+#else
 
 //Very fast digitalWrite/pinmode, similar to cbi/sbi functions, but more fast
 #define fastWriteHigh(_pin_) (LCD_CMD_SET = _pin_)
 #define fastWriteLow(_pin_) (LCD_CMD_CLR = _pin_)
-
-//Fast way on set a pin as OUTPUT
 #define fastSetOutputMode(_pin_) (LCD_SET_OUT = _pin_)
+
+#endif
 
 //Fast delay, new compiler is faster and we need it
 #define fastDelay(){ \
@@ -159,6 +184,12 @@ struct _current_font {
 	uint8_t offset;
 	uint8_t numchars;
 };
+
+//TODO: Finish it!
+#if defined(PIC32_PINGUINO) || defined(PIC32_PINGUINO_OTG)
+void pinguinoDATABUS(int data);
+void pinguinoDATADIR(int data);
+#endif
 
 void InitLCD(char orientation);
 void clrScr();

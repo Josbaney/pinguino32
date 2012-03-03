@@ -173,7 +173,7 @@ void drawTool(int x, int y, u8 mode){
 }
 
 void setup() {
-  myTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+  myTouch.setTouch(56,57,58,59,60); //clk, cs, din, dout, irq
   myTouch.InitTouch(LANDSCAPE);
   myTouch.setPrecision(PREC_MEDIUM);
   

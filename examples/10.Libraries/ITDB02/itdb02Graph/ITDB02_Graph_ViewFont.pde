@@ -2,8 +2,7 @@
 // web: http://www.henningkarlsen.com/electronics
 //
 // Pinguino32X(PIC32) port by Marcus Fazzi
-// blog: http://vivaphp.net
-//
+// blog: http://fazzi.eng.br
 // This program is a demo of the included fonts.
 //
 // This program requires the ITDB02_Graph (8bit mode).
@@ -14,7 +13,7 @@
 void setup()
 {
   myGLCD.InitLCD(LANDSCAPE);
-  myGLCD.clrScr();  
+  myGLCD.clrScr();
 }
 
 void loop()

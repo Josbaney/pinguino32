@@ -2,7 +2,7 @@
 // web: http://www.henningkarlsen.com/electronics
 //
 // Pinguino32X(PIC32) port by Marcus Fazzi
-// blog: http://vivaphp.net
+// blog: http://fazzi.eng.br
 //
 // This program is a quick demo of how create and use buttons.
 //
@@ -18,8 +18,11 @@ char stLast[20]="";
 
 void setup()
 {
-  //myTouch(11,12,13,14,15);
-  myTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+  //UBW32 and EMPEROR boards
+  //myTouch.setTouch(56,57,58,59,60); //clk, cs, din, dout, irq
+  
+  //OLIMEX Pinguino32X board
+  myTouch.setTouch(15,10,14,9,8); //clk, cs, din, dout, irq
   
 // Initial setup
   myGLCD.InitLCD(LANDSCAPE);
