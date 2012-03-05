@@ -1,4 +1,4 @@
-lcd _lcd_pins#include <lcdlib.c>
+lcd.pins _lcd_pins#include <lcdlib.c>
 lcd.init _lcd_init#include <lcdlib.c>
 lcd.begin _lcd_begin#include <lcdlib.c>
 lcd.noAutoscroll _lcd_noAutoscroll#include <lcdlib.c>
