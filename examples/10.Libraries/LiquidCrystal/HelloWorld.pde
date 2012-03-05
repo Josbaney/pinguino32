@@ -32,9 +32,10 @@
  
  This example code is in the public domain.
  http://www.arduino.cc/en/Tutorial/LiquidCrystal
+ 
+ Pinguino port by Marcus Fazzi <marcus@fazzi.eng.br>
+ http://fazzi.eng.br
  */
-
-#define LED 13
 
 void setup() {
   // initialize the library with the numbers of the interface pins
@@ -46,8 +47,6 @@ void setup() {
   lcd.begin(16, 2);
   // Print a message to the LCD.
   lcd.print("hello, world!");
-  
-  pinMode(LED, OUTPUT);
 }
 
 void loop() {
@@ -56,10 +55,5 @@ void loop() {
   lcd.setCursor(0, 1);
   // print the number of seconds since reset:
   lcd.printf("Pinguino: %d", millis()/1000);
-  
-  digitalWrite(LED, HIGH);
-  delay(50);
-  digitalWrite(LED, LOW);
-  delay(50);
 }
 

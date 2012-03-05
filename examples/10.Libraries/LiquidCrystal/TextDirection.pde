@@ -33,23 +33,21 @@
  This example code is in the public domain.
  
  http://www.arduino.cc/en/Tutorial/LiquidCrystal
- 
+ Pinguino port by Marcus Fazzi <marcus@fazzi.eng.br>
+ http://fazzi.eng.br
  */
-
-// include the library code:
-#include <LiquidCrystal.h>
-
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 int thisChar = 'a';
 
 void setup() {
+  // initialize the library with the numbers of the interface pins
+  //lcd.pins(RS, E, D4, D5, D6, D7, 0, 0, 0, 0); //4bits
+  //lcd.pins(RS, E, D0, D1, D2, D3, D4, D5, D6, D7); //8bits
+  lcd.pins(12, 11, 5, 4, 3, 2, 0, 0, 0, 0); // Use last 4 pins as zero for 4bits mode
   // set up the LCD's number of columns and rows: 
   lcd.begin(16, 2);
   // turn on the cursor:
   lcd.cursor();
-  Serial.begin(9600);
 }
 
 void loop() {
@@ -71,7 +69,7 @@ void loop() {
     thisChar = 'a';
   }
   // print the character
-  lcd.print(thisChar, BYTE);
+  lcd.printf("%c",thisChar);
   // wait a second:
   delay(1000);
   // increment the letter:

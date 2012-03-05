@@ -34,12 +34,13 @@
 
  http://www.arduino.cc/en/Tutorial/LiquidCrystal
  
+ Pinguino port by Marcus Fazzi <marcus@fazzi.eng.br>
+ http://fazzi.eng.br
  */
 
-// initialize the library with the numbers of the interface pins
-lcd(12, 11, 5, 4, 3, 2, 0, 0, 0, 0);
-
 void setup() {
+  // initialize the library with the numbers of the interface pins
+  lcd.pins(12, 11, 5, 4, 3, 2, 0, 0, 0, 0);
   // set up the LCD's number of columns and rows: 
   lcd.begin(16, 2);
   // Print a message to the LCD.

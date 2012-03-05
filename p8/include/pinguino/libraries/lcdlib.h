@@ -1,16 +1,5 @@
-//#include <stdio.h> // for size_t
+//#include <stdio.h>
 //#include <stdlib.h>
-
-//#pragma library c
-
-// already defined in const.h
-//#define DEC 10
-//#define HEX 16
-//#define OCT 8
-//#define BIN 2
-//#define BYTE 0
-// run led pin
-#define RUNLED PORTAbits.RA4
 
 // commands
 #define LCD_CLEARDISPLAY 0x01

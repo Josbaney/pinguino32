@@ -1,19 +1,22 @@
  /*
  * LCD routines for use with pinguino board, based on LiquidCrystal lib from Arduino project.
- * Port by Marcus Fazzi (anunakin@gmail.com)
+ * Port by Marcus Fazzi (marcus@fazzi.eng.br)
  * LiquidCrystal original Arduino site: 
  *      http://www.arduino.cc/en/Tutorial/LiquidCrystal by David A. Mellis
  * Pins, Schematics and more info: 
  * 		http://pinguino.koocotte.org/index.php/LCD_Example
  * 		http://anunakin.blogspot.com
  * 28/01/2011 : lcdprintf by RegisBlanchot (rblanchot@gmail.com)
+ * 03/03/2012 : Library updated, new function names
+ *            : lcdlib.pdl updated
+ *            : LiquiqCrystal examples updated
  */
 
 #ifndef __LCD_C
 #define __LCD_C
 
 #include <delay.c>		//Arduino like delays
-#include <digitalw.c>			//Arduino like DigitalWrite and Read
+#include <digitalw.c>	//Arduino like DigitalWrite and Read
 #include <lcdlib.h>
 #include <stdio.c>
 #include <stdarg.h>
