@@ -148,4 +148,5 @@ void loop()
 /*
 	OnRTCC(blink1);
 */
+	delay(500);
 }

@@ -6,5 +6,6 @@ void setup()
 
 void loop()
 {
-	CDC.printf("n = %03d \r\n", n++);
+	CDC.printf("n = %d \r\n", n++);
+	delay(100);
 }

@@ -34,15 +34,14 @@
  This example code is in the public domain.
  
  http://www.arduino.cc/en/Tutorial/LiquidCrystal
+ 
+ Pinguino port by Marcus Fazzi <marcus@fazzi.eng.br>
+ http://fazzi.eng.br
  */
 
-// include the library code:
-#include <LiquidCrystal.h>
-
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-
 void setup() {
+  // initialize the library with the numbers of the interface pins
+  lcd.pins(12, 11, 5, 4, 3, 2, 0, 0, 0, 0);
   // set up the LCD's number of columns and rows: 
   lcd.begin(16, 2);
   // Print a message to the LCD.
@@ -51,9 +50,10 @@ void setup() {
 }
 
 void loop() {
+  int positionCounter;
   // scroll 13 positions (string length) to the left 
   // to move it offscreen left:
-  for (int positionCounter = 0; positionCounter < 13; positionCounter++) {
+  for (positionCounter = 0; positionCounter < 13; positionCounter++) {
     // scroll one position left:
     lcd.scrollDisplayLeft(); 
     // wait a bit:
@@ -62,7 +62,7 @@ void loop() {
 
   // scroll 29 positions (string length + display length) to the right
   // to move it offscreen right:
-  for (int positionCounter = 0; positionCounter < 29; positionCounter++) {
+  for (positionCounter = 0; positionCounter < 29; positionCounter++) {
     // scroll one position right:
     lcd.scrollDisplayRight(); 
     // wait a bit:
@@ -71,7 +71,7 @@ void loop() {
   
     // scroll 16 positions (display length + string length) to the left
     // to move it back to center:
-  for (int positionCounter = 0; positionCounter < 16; positionCounter++) {
+  for (positionCounter = 0; positionCounter < 16; positionCounter++) {
     // scroll one position left:
     lcd.scrollDisplayLeft(); 
     // wait a bit:
