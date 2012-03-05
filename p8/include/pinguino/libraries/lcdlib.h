@@ -63,33 +63,35 @@ u8 _initialized;
 
 u8 _numlines,_currline;
 
-void lcd(u8 rs, u8 enable, u8 d0, u8 d1, u8 d2, u8 d3, 
+//4 Bits mode
+void _lcd_pins(u8 rs, u8 enable, u8 d0, u8 d1, u8 d2, u8 d3, 
 			u8 d4, u8 d5, u8 d6, u8 d7);
-void init(u8 fourbitmode, u8 rs, u8 rw, u8 enable, 
+void _lcd_init(u8 fourbitmode, u8 rs, u8 rw, u8 enable, 
 			u8 d0, u8 d1, u8 d2, u8 d3,
 			u8 d4, u8 d5, u8 d6, u8 d7);
-void begin(u8 lines, u8 dotsize);
-void noAutoscroll(void);
-void autoscroll(void);
-void rightToLeft(void);
-void leftToRight(void);
-void scrollDisplayRight(void);
-void scrollDisplayLeft(void);
-void blink();
-void noBlink();
-void cursor();
-void noCursor();
-void display();
-void noDisplay();
-void clear();
-void home();
-void printNumber(u16 n, u8 base);
-void printFloat(float number, u8 digits);
-void lcdPrint(char *string);
-void setCursor(u8 col, u8 row);
-void command(uchar value);
-void write(uchar value);
-void send(u8 value, u8 mode);
-void write8bits(u8 value);
-void write4bits(u8 value);
-void pulseEnable(void);
+void _lcd_begin(u8 lines, u8 dotsize);
+void _lcd_noAutoscroll(void);
+void _lcd_autoscroll(void);
+void _lcd_rightToLeft(void);
+void _lcd_leftToRight(void);
+void _lcd_scrollDisplayRight(void);
+void _lcd_scrollDisplayLeft(void);
+void _lcd_blink();
+void _lcd_noBlink();
+void _lcd_cursor();
+void _lcd_noCursor();
+void _lcd_display();
+void _lcd_noDisplay();
+void _lcd_clear();
+void _lcd_home();
+void _lcd_printNumber(u16 n, u8 base);
+void _lcd_printFloat(float number, u8 digits);
+void _lcd_print(char *string);
+void _lcd_printf(char *fmt, ...);
+void _lcd_setCursor(u8 col, u8 row);
+void _lcd_command(uchar value);
+void _lcd_write(uchar value);
+void _lcd_send(u8 value, u8 mode);
+void _lcd_write8bits(u8 value);
+void _lcd_write4bits(u8 value);
+void _lcd_pulseEnable(void);

@@ -31,21 +31,23 @@
  by Tom Igoe
  
  This example code is in the public domain.
-
  http://www.arduino.cc/en/Tutorial/LiquidCrystal
  */
 
-// include the library code:
-#include <LiquidCrystal.h>
-
-// initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+#define LED 13
 
 void setup() {
+  // initialize the library with the numbers of the interface pins
+  //lcd.pins(RS, E, D4, D5, D6, D7, 0, 0, 0, 0); //4bits
+  //lcd.pins(RS, E, D0, D1, D2, D3, D4, D5, D6, D7); //8bits
+  lcd.pins(12, 11, 5, 4, 3, 2, 0, 0, 0, 0); // Use last 4 pins as zero for 4bits mode
+	
   // set up the LCD's number of columns and rows: 
   lcd.begin(16, 2);
   // Print a message to the LCD.
   lcd.print("hello, world!");
+  
+  pinMode(LED, OUTPUT);
 }
 
 void loop() {
@@ -53,6 +55,11 @@ void loop() {
   // (note: line 1 is the second row, since counting begins with 0):
   lcd.setCursor(0, 1);
   // print the number of seconds since reset:
-  lcd.print(millis()/1000);
+  lcd.printf("Pinguino: %d", millis()/1000);
+  
+  digitalWrite(LED, HIGH);
+  delay(50);
+  digitalWrite(LED, LOW);
+  delay(50);
 }
 
