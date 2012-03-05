@@ -47,6 +47,8 @@ void setup(){
   lcd.begin(16, 2);
   // initialize the serial communications:
   Serial.begin(9600);
+  
+  pinMode(GREENLED, OUTPUT);
 }
 
 void loop()
@@ -64,4 +66,8 @@ void loop()
       lcd.write(Serial.read());
     }
   }
+  digitalWrite(GREENLED, HIGH);
+  delay(100);
+  digitalWrite(GREENLED, LOW);
+  delay(100);
 }

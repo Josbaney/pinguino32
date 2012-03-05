@@ -55,5 +55,7 @@ void loop() {
   lcd.setCursor(0, 1);
   // print the number of seconds since reset:
   lcd.printf("Pinguino: %d", millis()/1000);
+  
+  delay(100);
 }
 

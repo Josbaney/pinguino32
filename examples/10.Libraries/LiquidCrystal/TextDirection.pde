@@ -37,7 +37,7 @@
  http://fazzi.eng.br
  */
 
-int thisChar = 'a';
+char thisChar = 'a';
 
 void setup() {
   // initialize the library with the numbers of the interface pins
@@ -71,7 +71,7 @@ void loop() {
   // print the character
   lcd.printf("%c",thisChar);
   // wait a second:
-  delay(1000);
+  delay(500);
   // increment the letter:
   thisChar++;
 }
