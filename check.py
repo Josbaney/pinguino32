@@ -39,7 +39,7 @@ HOME_DIR	= os.getcwd()
 fichier = open(os.path.join(HOME_DIR, 'pinguino.log'), 'w+') # works with paths with spaces
 fichier.writelines('Pinguino started at ' + str(time.asctime(time.localtime(time.time())) + '\n\n' ))
 
-def perror(self):
+def perror():
 	print "fatal error, see pinguino.log for more details\n"
 	sys.exist()
 
