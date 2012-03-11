@@ -155,18 +155,14 @@ void CDC_init()
 	USBDeviceInit();		// Initializes USB module SFRs and firmware
 	#ifndef __32MX220F032D__
 		USBDeviceAttach();
-	#else
-	Delayms(1500);
 	#endif
+	Delayms(1500);
 }
 
 // CDC.puts
 // 18-05-2011 modified by régis blanchot
 void CDCputs(char *buffer, char length)
 {
-	//#ifdef __32MX220F032D__
-	//	USB_Service_CDC_PutString( buffer, length );
-	//#else
 		int i;
 
 		for (i = 1000; i > 0; --i)
@@ -189,7 +185,6 @@ void CDCputs(char *buffer, char length)
 			#endif
 
 		}
-	//#endif
 }
 	
 // CDC.read
@@ -199,20 +194,13 @@ char CDCgets(char *buffer)
 		char numBytesRead;
 		
 	#ifdef __32MX220F032D__
+		USB_Service();
 		numBytesRead = USB_Service_CDC_GetString( buffer );
 	#else
+		CDCTxService();
 		numBytesRead = getsUSBUSART(buffer, 64);
 	#endif
 		return numBytesRead;
-/*
-	if (mUSBUSARTIsTxTrfReady())
-	{
-		CDCTxService();
-		numBytesRead = getsUSBUSART(buffer, 64);
-		CDCTxService();
-		return numBytesRead;
-	}
-*/
 }
 
 // added by regis blanchot 29/05/2011
@@ -291,7 +279,7 @@ char CDCgetkey()
 }
 
 // CDC.getString
-char * CDCgetstring(void)
+char CDCgetstring(void)
 {
 	char i = 0;
 	char c;

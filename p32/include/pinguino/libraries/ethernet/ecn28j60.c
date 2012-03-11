@@ -14,8 +14,10 @@
  * Title: Microchip ENC28J60 Ethernet Interface Driver
  * Chip type           : ATMEGA88 with ENC28J60
  *********************************************/
+#ifndef ENC28J60_C
+#define ENC28J60_C
 
-#include <enc28j60.h>
+#include "enc28j60.h"
 #include <digitalw.c>
 #include <spi.c>
 #include <delay.c>
@@ -23,9 +25,6 @@
 static uint8_t Enc28j60Bank;
 static uint16_t NextPacketPtr;
 
-#ifndef ENC28J60_CONTROL_CS
-	#define ENC28J60_CONTROL_CS 32							// CS UEXT connector PIC32-Pinguino-OTG									
-#endif
 
 #define CSACTIVE digitalwrite(ENC28J60_CONTROL_CS, LOW)
 #define CSPASSIVE digitalwrite(ENC28J60_CONTROL_CS, HIGH) 
@@ -133,6 +132,25 @@ void enc28j60PhyWrite(uint8_t address, uint16_t data)
         }
 }
 
+// read upper 8 bits
+uint16_t enc28j60PhyReadH(uint8_t address)
+{
+
+	// Set the right address and start the register read operation
+	enc28j60Write(MIREGADR, address);
+	enc28j60Write(MICMD, MICMD_MIIRD);
+        //_delay_loop_1(40); // 10us
+        Delayus(15);
+
+	// wait until the PHY read completes
+	while(enc28j60Read(MISTAT) & MISTAT_BUSY);
+
+	// reset reading bit
+	enc28j60Write(MICMD, 0x00);
+	
+	return (enc28j60Read(MIRDH));
+}
+
 void enc28j60clkout(uint8_t clk)
 {
         //setup clkout: 2 is 12.5MHz:
@@ -153,7 +171,7 @@ void enc28j60Init(u8* macaddr)
 	Delayms(50);
 	// check CLKRDY bit to see if reset is complete
     // The CLKRDY does not work. See Rev. B4 Silicon Errata point. Just wait.
-	while(!(enc28j60Read(ESTAT) & ESTAT_CLKRDY));
+	//while(!(enc28j60Read(ESTAT) & ESTAT_CLKRDY));
 	// do bank 0 stuff
 	// initialize receive buffer
 	// 16-bit transfers, must write low byte first
@@ -184,7 +202,8 @@ void enc28j60Init(u8* macaddr)
         // 06 08 -- ff ff ff ff ff ff -> ip checksum for theses bytes=f7f9
         // in binary these poitions are:11 0000 0011 1111
         // This is hex 303F->EPMM0=0x3f,EPMM1=0x30
-	enc28j60Write(ERXFCON, ERXFCON_UCEN|ERXFCON_CRCEN|ERXFCON_PMEN);
+	//enc28j60Write(ERXFCON, ERXFCON_UCEN|ERXFCON_CRCEN|ERXFCON_PMEN);
+	enc28j60Write(ERXFCON, ERXFCON_CRCEN);
 	enc28j60Write(EPMM0, 0x3f);
 	enc28j60Write(EPMM1, 0x30);
 	enc28j60Write(EPMCSL, 0xf9);
@@ -221,9 +240,8 @@ void enc28j60Init(u8* macaddr)
 	// switch to bank 0
 	enc28j60SetBank(ECON1);
 	// enable interrutps
-	// disable interrupt pour les tests
-	//enc28j60WriteOp(ENC28J60_BIT_FIELD_SET, EIE, EIE_INTIE|EIE_PKTIE);
 	enc28j60WriteOp(ENC28J60_BIT_FIELD_SET, EIE, 0);
+	//enc28j60WriteOp(ENC28J60_BIT_FIELD_SET, EIE, EIE_INTIE|EIE_PKTIE);
 	// enable packet reception
 	enc28j60WriteOp(ENC28J60_BIT_FIELD_SET, ECON1, ECON1_RXEN);
 }
@@ -234,8 +252,26 @@ uint8_t enc28j60getrev(void)
 	return(enc28j60Read(EREVID));
 }
 
+// link status
+uint8_t enc28j60linkup(void)
+{
+        // bit 10 (= bit 3 in upper reg)
+	return(enc28j60PhyReadH(PHSTAT2) && 4);
+}
+
 void enc28j60PacketSend(uint16_t len, uint8_t* packet)
 {
+        // Check no transmit in progress
+        while (enc28j60ReadOp(ENC28J60_READ_CTRL_REG, ECON1) & ECON1_TXRTS)
+        {
+                // Reset the transmit logic problem. See Rev. B4 Silicon Errata point 12.
+                //if( (enc28j60Read(EIR) & EIR_TXERIF) ) 
+                {
+                        enc28j60WriteOp(ENC28J60_BIT_FIELD_SET, ECON1, ECON1_TXRST);
+                        enc28j60WriteOp(ENC28J60_BIT_FIELD_CLR, ECON1, ECON1_TXRST);
+                }
+        }
+
 	// Set the write pointer to start of transmit buffer area
 	enc28j60Write(EWRPTL, TXSTART_INIT&0xFF);
 	enc28j60Write(EWRPTH, TXSTART_INIT>>8);
@@ -248,10 +284,15 @@ void enc28j60PacketSend(uint16_t len, uint8_t* packet)
 	enc28j60WriteBuffer(len, packet);
 	// send the contents of the transmit buffer onto the network
 	enc28j60WriteOp(ENC28J60_BIT_FIELD_SET, ECON1, ECON1_TXRTS);
-        // Reset the transmit logic problem. See Rev. B4 Silicon Errata point 12.
-	if( (enc28j60Read(EIR) & EIR_TXERIF) ){
-                enc28j60WriteOp(ENC28J60_BIT_FIELD_CLR, ECON1, ECON1_TXRTS);
+}
+
+// just probe if there might be a packet
+uint8_t enc28j60hasRxPkt(void)
+{
+	if( enc28j60Read(EPKTCNT) ==0 ){
+		return(0);
         }
+        return(1);
 }
 
 // Gets a packet from the network receive buffer, if one is available.
@@ -265,13 +306,13 @@ uint16_t enc28j60PacketReceive(uint16_t maxlen, uint8_t* packet)
 	uint16_t len;
 	// check if a packet has been received and buffered
 	//if( !(enc28j60Read(EIR) & EIR_PKTIF) ){
-    // The above does not work. See Rev. B4 Silicon Errata point 6.
+        // The above does not work. See Rev. B4 Silicon Errata point 6.
 	if( enc28j60Read(EPKTCNT) ==0 ){
 		return(0);
         }
 
 	// Set the read pointer to the start of the received packet
-	enc28j60Write(ERDPTL, (NextPacketPtr));
+	enc28j60Write(ERDPTL, (NextPacketPtr &0xFF));
 	enc28j60Write(ERDPTH, (NextPacketPtr)>>8);
 	// read the next packet pointer
 	NextPacketPtr  = enc28j60ReadOp(ENC28J60_READ_BUF_MEM, 0);
@@ -282,7 +323,7 @@ uint16_t enc28j60PacketReceive(uint16_t maxlen, uint8_t* packet)
         len-=4; //remove the CRC count
 	// read the receive status (see datasheet page 43)
 	rxstat  = enc28j60ReadOp(ENC28J60_READ_BUF_MEM, 0);
-	rxstat |= enc28j60ReadOp(ENC28J60_READ_BUF_MEM, 0)<<8;
+	rxstat |= ((uint16_t)enc28j60ReadOp(ENC28J60_READ_BUF_MEM, 0))<<8;
 	// limit retrieve length
         if (len>maxlen-1){
                 len=maxlen-1;
@@ -299,9 +340,22 @@ uint16_t enc28j60PacketReceive(uint16_t maxlen, uint8_t* packet)
         }
 	// Move the RX read pointer to the start of the next received packet
 	// This frees the memory we just read out
-	enc28j60Write(ERXRDPTL, (NextPacketPtr));
+	enc28j60Write(ERXRDPTL, (NextPacketPtr &0xFF));
 	enc28j60Write(ERXRDPTH, (NextPacketPtr)>>8);
+        // Move the RX read pointer to the start of the next received packet
+        // This frees the memory we just read out.
+        // However, compensate for the errata point 13, rev B4: enver write an even address!
+        if ((NextPacketPtr - 1 < RXSTART_INIT)
+                || (NextPacketPtr -1 > RXSTOP_INIT)) {
+                enc28j60Write(ERXRDPTL, (RXSTOP_INIT)&0xFF);
+                enc28j60Write(ERXRDPTH, (RXSTOP_INIT)>>8);
+        } else {
+                enc28j60Write(ERXRDPTL, (NextPacketPtr-1)&0xFF);
+                enc28j60Write(ERXRDPTH, (NextPacketPtr-1)>>8);
+        }
 	// decrement the packet counter indicate we are done with this packet
 	enc28j60WriteOp(ENC28J60_BIT_FIELD_SET, ECON2, ECON2_PKTDEC);
 	return(len);
 }
+
+#endif

@@ -183,34 +183,34 @@
 #endif
 #endif
 
-char UART1SerialBuffer[SERIAL1_BUFFERLENGTH];	// UART1 buffer
-char UART2SerialBuffer[SERIAL2_BUFFERLENGTH];	// UART2 buffer
+volatile char UART1SerialBuffer[SERIAL1_BUFFERLENGTH];	// UART1 buffer
+volatile char UART2SerialBuffer[SERIAL2_BUFFERLENGTH];	// UART2 buffer
 #ifdef ENABLE_UART3
-char UART3SerialBuffer[SERIAL3_BUFFERLENGTH];	// UART3 buffer
+volatile char UART3SerialBuffer[SERIAL3_BUFFERLENGTH];	// UART3 buffer
 #endif
 #ifdef ENABLE_UART4
-char UART4SerialBuffer[SERIAL4_BUFFERLENGTH];	// UART4 buffer
+volatile char UART4SerialBuffer[SERIAL4_BUFFERLENGTH];	// UART4 buffer
 #endif
 #ifdef ENABLE_UART5
-char UART5SerialBuffer[SERIAL5_BUFFERLENGTH];	// UART5 buffer
+volatile char UART5SerialBuffer[SERIAL5_BUFFERLENGTH];	// UART5 buffer
 #endif
 #ifdef ENABLE_UART6
-char UART6SerialBuffer[SERIAL6_BUFFERLENGTH];	// UART6 buffer
+volatile char UART6SerialBuffer[SERIAL6_BUFFERLENGTH];	// UART6 buffer
 #endif
 
-long UART1wpointer, UART1rpointer;				// write and read pointer
-long UART2wpointer, UART2rpointer;				// write and read pointer
+volatile long UART1wpointer, UART1rpointer;				// write and read pointer
+volatile long UART2wpointer, UART2rpointer;				// write and read pointer
 #ifdef ENABLE_UART3
-long UART3wpointer, UART3rpointer;				// write and read pointer
+volatile long UART3wpointer, UART3rpointer;				// write and read pointer
 #endif
 #ifdef ENABLE_UART4
-long UART4wpointer, UART4rpointer;				// write and read pointer
+volatile long UART4wpointer, UART4rpointer;				// write and read pointer
 #endif
 #ifdef ENABLE_UART5
-long UART5wpointer, UART5rpointer;				// write and read pointer
+volatile long UART5wpointer, UART5rpointer;				// write and read pointer
 #endif
 #ifdef ENABLE_UART6
-long UART6wpointer, UART6rpointer;				// write and read pointer
+volatile long UART6wpointer, UART6rpointer;				// write and read pointer
 #endif
 /*	----------------------------------------------------------------------------
 	SerialSetDataRate()
