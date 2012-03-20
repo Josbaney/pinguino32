@@ -173,10 +173,10 @@ void I2C_init(u8 module, u8 mode, u8 speed)
 	----------------------------------------------------------------------------
 	--------------------------------------------------------------------------*/
 
-u8 I2C_send(u8 module, u16 adress, u8 byte)
+u8 I2C_send(u8 module, u16 adress, u8 _byte)
 {
 	I2C_sendID(module, adress, I2C_WRITE);
-	if (I2C_writechar(module, byte) == 0) return (0);
+	if (I2C_writechar(module, _byte) == 0) return (0);
 	I2C_stop(module);
 	return (1);
 }

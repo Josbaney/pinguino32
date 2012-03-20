@@ -41,7 +41,7 @@ fichier.writelines('Pinguino started at ' + str(time.asctime(time.localtime(time
 
 def perror():
 	print "fatal error, see pinguino.log for more details\n"
-	sys.exist()
+	sys.exit()
 
 # ------------------------------------------------------------------------------
 # check python's version 
@@ -57,7 +57,6 @@ else:
 # ------------------------------------------------------------------------------
 # check OS and compilers
 # ------------------------------------------------------------------------------
-
 if sys.platform == 'darwin':
 	fichier.writelines('System host is Mac OS X\n')
 	if os.path.exists(os.path.join(HOME_DIR, 'macosx', 'p8', 'bin')):

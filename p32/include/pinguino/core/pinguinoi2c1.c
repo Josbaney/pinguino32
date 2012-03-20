@@ -38,10 +38,10 @@
 	/// PROTOTYPES
 
 void I2C1_init();
-u8 I2C1_send1(u16, u8);
-u8 I2C1_get1(u16);
-void I2C1_sendID1(u16, u8);
-u8 I2C1_writechar1(u8);
+u8 I2C1_send(u16, u8);
+u8 I2C1_get(u16);
+void I2C1_sendID(u16, u8);
+u8 I2C1_writechar(u8);
 u8 I2C1_readchar();
 void I2C1_wait();
 void I2C1_start();

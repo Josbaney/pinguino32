@@ -212,22 +212,22 @@ void loop()
   myGLCD.setColor (255,0,0);
   for (i=15; i<304; i+=5)
   {
-    myGLCD.drawLine(1, i, i-14, 304);
+    myGLCD.drawLine(1, i, (i/1.22)-10, 304);
   }
   myGLCD.setColor (255,0,0);
   for (i=304; i>15; i-=5)
   {
-    myGLCD.drawLine(238, i, i-15, 15);
+    myGLCD.drawLine(238, i, (i/1.22)-11, 15);
   }
   myGLCD.setColor (0,255,255);
   for (i=304; i>15; i-=5)
   {
-    myGLCD.drawLine(1, i, 255-i, 15);
+    myGLCD.drawLine(1, i, 251-(i/1.22), 15);
   }
   myGLCD.setColor (0,255,255);
   for (i=15; i<304; i+=5)
   {
-    myGLCD.drawLine(238, i, 254-i, 304);
+    myGLCD.drawLine(238, i, 250-(i/1.22), 304);
   }
   
   delay(2000);
