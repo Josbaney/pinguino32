@@ -1,5 +1,5 @@
 gplink-0.13.7 beta
-Map File - Created 8-30-2011  22:15:46
+Map File - Created 4-6-2012  11:23:32
  
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -8,42 +8,75 @@ S_boot_iface__boot_goto_table       code   0x00001c    program   0x00005e
 S_application_iface__application_data       code   0x002000    program   0x00001a
 S_crt0ipinguino__application_main       code   0x00201a    program   0x000004
 S_usb_descriptors__null_function       code   0x00201e    program   0x000002
-S_main__high_priority_isr       code   0x002020    program   0x00004a
-                    .code       code   0x00206a    program   0x000340
-          S_main__pinmode       code   0x0023aa    program   0x0001f6
-     S_main__digitalwrite       code   0x0025a0    program   0x0001f6
-      S_main__digitalread       code   0x002796    program   0x000168
-         S_main__OnTimer0       code   0x0028fe    program   0x00012e
-  S_main__detachInterrupt       code   0x002a2c    program   0x000116
-    S_main__userinterrupt       code   0x002b42    program   0x00009c
-S_crt0ipinguino___do_cinit       code   0x002bde    program   0x000098
-           S_main__toggle       code   0x002c76    program   0x000058
-            S_main__setup       code   0x002cce    program   0x000034
-         S_main__int_init       code   0x002d02    program   0x000026
-    S_main__pinguino_main       code   0x002d28    program   0x00001c
-S_crt0ipinguino___startup       code   0x002d44    program   0x000018
-                   .cinit       code   0x002d5c    program   0x00000e
-           S_main__blink0       code   0x002d6a    program   0x00000c
-         S_main__int_stop       code   0x002d76    program   0x000004
-        S_main__int_start       code   0x002d7a    program   0x000004
-                 .idata_i       code   0x002d7e    program   0x000002
-             S_main__loop       code   0x002d80    program   0x000002
-     S_main__epapout_init       code   0x002d82    program   0x000002
-      S_main__epapin_init       code   0x002d84    program   0x000002
-         S_main__epap_out       code   0x002d86    program   0x000002
-          S_main__epap_in       code   0x002d88    program   0x000002
-S_main__userhighinterrupt       code   0x002d8a    program   0x000002
- S_main__low_priority_isr       code   0x004000    program   0x00004e
-                   .idata      idata   0x000268       data   0x000001
-               .registers      udata   00000000       data   0x000009
+S_main__high_priority_isr       code   0x002020    program   0x00004e
+ S_main__SortServoTimings       code   0x00206e    program   0x000462
+         S_fsadd____fsadd       code   0x0024d0    program   0x0003f4
+         S_fsmul____fsmul       code   0x0028c4    program   0x0003c8
+         S_fsdiv____fsdiv       code   0x002c8c    program   0x000390
+                    .code       code   0x00301c    program   0x00032e
+       S_main__ServoWrite       code   0x00334a    program   0x000216
+   S_ulong2fs____ulong2fs       code   0x003560    program   0x00017c
+           S_fsgt____fsgt       code   0x0036dc    program   0x000120
+      S_divsint___divsint       code   0x0037fc    program   0x0000f6
+   S_fs2ulong____fs2ulong       code   0x0038f2    program   0x0000f0
+      S_main__ServoAttach       code   0x0039e2    program   0x0000e0
+      S_main__ServoDetach       code   0x003ac2    program   0x0000d4
+  S_main__ServosPulseDown       code   0x003b96    program   0x0000ce
+      S_divuint___divuint       code   0x003c64    program   0x0000aa
+          S_main__Delayms       code   0x003d0e    program   0x00009c
+S_crt0ipinguino___do_cinit       code   0x003daa    program   0x000098
+S_main__ServoMaximumPulse       code   0x003e42    program   0x000092
+S_main__ServoMinimumPulse       code   0x003ed4    program   0x000092
+   S_fs2uchar____fs2uchar       code   0x003f66    program   0x00008a
+    S_main__ServosPulseUp       code   0x003ff0    program   0x00000e
+     S_main__epapout_init       code   0x003ffe    program   0x000002
+ S_main__low_priority_isr       code   0x004000    program   0x00004a
+   S_uchar2fs____uchar2fs       code   0x00404a    program   0x000062
+          S_main__Delayus       code   0x0040ac    program   0x000052
+      S_main__servos_init       code   0x0040fe    program   0x00004a
+ S_main__servos_interrupt       code   0x004148    program   0x000046
+        S_main__ServoRead       code   0x00418e    program   0x000046
+             S_main__loop       code   0x0041d4    program   0x000034
+            S_main__setup       code   0x004208    program   0x000034
+    S_main__pinguino_main       code   0x00423c    program   0x00001c
+S_crt0ipinguino___startup       code   0x004258    program   0x000018
+                   .cinit       code   0x004270    program   0x00000e
+                 .idata_i       code   0x00427e    program   0x000008
+      S_main__epapin_init       code   0x004286    program   0x000002
+         S_main__epap_out       code   0x004288    program   0x000002
+          S_main__epap_in       code   0x00428a    program   0x000002
+                   .idata      idata   0x00027e       data   0x000008
+               .registers      udata   00000000       data   0x00000c
       ustat_boot_iface_00      udata   0x00005d       data   0x000003
             stack_section      udata   0x000100       data   0x000100
-             udata_main_5      udata   0x000200       data   0x00003c
-             udata_main_0      udata   0x00023c       data   0x000014
-             udata_main_1      udata   0x000250       data   0x000008
-             udata_main_2      udata   0x000258       data   0x000008
-             udata_main_3      udata   0x000260       data   0x000004
-             udata_main_4      udata   0x000264       data   0x000004
+             udata_main_3      udata   0x000200       data   0x000048
+             udata_main_5      udata   0x000248       data   0x000024
+             udata_main_1      udata   0x00026c       data   0x000012
+             udata_fsgt_0      udata   0x000286       data   0x000004
+             udata_fsgt_1      udata   0x00028a       data   0x000004
+            udata_fsadd_0      udata   0x00028e       data   0x000004
+            udata_fsadd_1      udata   0x000292       data   0x000004
+            udata_fsadd_2      udata   0x000296       data   0x000004
+            udata_fsadd_5      udata   0x00029a       data   0x000004
+            udata_fsadd_6      udata   0x00029e       data   0x000004
+            udata_fsmul_0      udata   0x0002a2       data   0x000004
+            udata_fsmul_1      udata   0x0002a6       data   0x000004
+            udata_fsmul_3      udata   0x0002aa       data   0x000004
+            udata_fsdiv_1      udata   0x0002ae       data   0x000004
+            udata_fsdiv_2      udata   0x0002b2       data   0x000004
+            udata_fsdiv_3      udata   0x0002b6       data   0x000004
+            udata_fsdiv_4      udata   0x0002ba       data   0x000004
+            udata_fsdiv_5      udata   0x0002be       data   0x000004
+            udata_fsdiv_6      udata   0x0002c2       data   0x000004
+         udata_fs2ulong_0      udata   0x0002c6       data   0x000004
+         udata_ulong2fs_0      udata   0x0002ca       data   0x000004
+             udata_main_4      udata   0x0002ce       data   0x000003
+            udata_fsadd_3      udata   0x0002d1       data   0x000002
+            udata_fsadd_4      udata   0x0002d3       data   0x000002
+            udata_fsmul_2      udata   0x0002d5       data   0x000002
+            udata_fsdiv_0      udata   0x0002d7       data   0x000002
+             udata_main_0      udata   0x0002d9       data   0x000001
+             udata_main_2      udata   0x0002da       data   0x000001
       ustat_pic18f2550_00      udata   0x000f62       data   0x000023
       ustat_pic18f2550_01      udata   0x000f89       data   0x000005
       ustat_pic18f2550_02      udata   0x000f92       data   0x000005
@@ -59,176 +92,187 @@ S_main__userhighinterrupt       code   0x002d8a    program   0x000002
                            ---------   ---------
                             0x002000    0x002019
                             0x00201e    0x00201f
-                            0x00206a    0x0023a9
-                            0x002d7e    0x002d7f
-                            0x002bde    0x002c75
-                            0x002d44    0x002d5b
+                            0x00301c    0x003349
+                            0x00427e    0x004285
+                            0x003daa    0x003e41
+                            0x004258    0x00426f
                             0x00201a    0x00201d
-                            0x002020    0x002069
-                            0x004000    0x00404d
-                            0x002d28    0x002d43
-                            0x002d80    0x002d81
-                            0x002cce    0x002d01
-                            0x002d6a    0x002d75
-                            0x002d82    0x002d83
-                            0x002d84    0x002d85
-                            0x002d86    0x002d87
-                            0x002d88    0x002d89
-                            0x002b42    0x002bdd
-                            0x002d8a    0x002d8b
-                            0x0028fe    0x002a2b
-                            0x002d76    0x002d79
-                            0x002d7a    0x002d7d
-                            0x002d02    0x002d27
-                            0x002a2c    0x002b41
-                            0x002c76    0x002ccd
-                            0x0023aa    0x00259f
-                            0x002796    0x0028fd
-                            0x0025a0    0x002795
+                            0x002020    0x00206d
+                            0x004000    0x004049
+                            0x00423c    0x004257
+                            0x0041d4    0x004207
+                            0x004208    0x00423b
+                            0x003ffe    0x003fff
+                            0x004286    0x004287
+                            0x004288    0x004289
+                            0x00428a    0x00428b
+                            0x004148    0x00418d
+                            0x003e42    0x003ed3
+                            0x003ed4    0x003f65
+                            0x00418e    0x0041d3
+                            0x00334a    0x00355f
+                            0x003ac2    0x003b95
+                            0x0039e2    0x003ac1
+                            0x00206e    0x0024cf
+                            0x003ff0    0x003ffd
+                            0x003b96    0x003c63
+                            0x0040fe    0x004147
+                            0x0040ac    0x0040fd
+                            0x003d0e    0x003da9
                             0x00001c    0x000079
-                            0x002d5c    0x002d69
+                            0x003f66    0x003fef
+                            0x0036dc    0x0037fb
+                            0x0024d0    0x0028c3
+                            0x0028c4    0x002c8b
+                            0x00404a    0x0040ab
+                            0x0037fc    0x0038f1
+                            0x002c8c    0x00301b
+                            0x0038f2    0x0039e1
+                            0x003560    0x0036db
+                            0x003c64    0x003d0d
+                            0x004270    0x00427d
  
-                            1820 program addresses used
+                            4469 program addresses used
  
                               Symbols
                      Name    Address   Location    Storage File
                 ---------  ---------  ---------  --------- ---------
         _application_data   0x002000    program     extern application_iface.asm
            _null_function   0x00201e    program     extern usb_descriptors.asm
-       _device_descriptor   0x00206a    program     extern usb_descriptors.asm
-             _default_cfg   0x00207c    program     extern usb_descriptors.asm
-               _flash_cfg   0x00208e    program     extern usb_descriptors.asm
-         _application_cfg   0x0020ae    program     extern usb_descriptors.asm
-_configuration_descriptor   0x0020ce    program     extern usb_descriptors.asm
-                    _str0   0x0020d8    program     extern usb_descriptors.asm
-                    _str1   0x0020dc    program     extern usb_descriptors.asm
-                    _str2   0x002102    program     extern usb_descriptors.asm
-                    _str3   0x002124    program     extern usb_descriptors.asm
-                    _str4   0x002128    program     extern usb_descriptors.asm
-                    _str5   0x002138    program     extern usb_descriptors.asm
-                    _str6   0x002144    program     extern usb_descriptors.asm
-       _string_descriptor   0x002160    program     extern usb_descriptors.asm
-            _ep_init_cfg0   0x002176    program     static usb_descriptors.asm
-            _ep_init_cfg1   0x0021a6    program     static usb_descriptors.asm
-            _ep_init_cfg2   0x0021d6    program     static usb_descriptors.asm
-                 _ep_init   0x002206    program     extern usb_descriptors.asm
-              _ep_in_cfg0   0x002212    program     static usb_descriptors.asm
-              _ep_in_cfg1   0x002242    program     static usb_descriptors.asm
-              _ep_in_cfg2   0x002272    program     static usb_descriptors.asm
-                   _ep_in   0x0022a2    program     extern usb_descriptors.asm
-             _ep_out_cfg0   0x0022ae    program     static usb_descriptors.asm
-             _ep_out_cfg1   0x0022de    program     static usb_descriptors.asm
-             _ep_out_cfg2   0x00230e    program     static usb_descriptors.asm
-                  _ep_out   0x00233e    program     extern usb_descriptors.asm
-           _ep_setup_cfg0   0x00234a    program     static usb_descriptors.asm
-                _ep_setup   0x00237a    program     extern usb_descriptors.asm
-                ___uflags   0x000268       data     extern obj/Debug/crt0ipinguino.asm
-               __do_cinit   0x002bde    program     extern obj/Debug/crt0ipinguino.asm
-                     test   0x002bf8    program     static obj/Debug/crt0ipinguino.asm
-                    cont1   0x002bfe    program     static obj/Debug/crt0ipinguino.asm
-                copy_loop   0x002c4c    program     static obj/Debug/crt0ipinguino.asm
-            copy_one_byte   0x002c52    program     static obj/Debug/crt0ipinguino.asm
-             done_copying   0x002c60    program     static obj/Debug/crt0ipinguino.asm
-                     done   0x002c74    program     static obj/Debug/crt0ipinguino.asm
-                __startup   0x002d44    program     extern obj/Debug/crt0ipinguino.asm
-                   lockup   0x002d5a    program     static obj/Debug/crt0ipinguino.asm
+       _device_descriptor   0x00301c    program     extern usb_descriptors.asm
+             _default_cfg   0x00302e    program     extern usb_descriptors.asm
+               _flash_cfg   0x003040    program     extern usb_descriptors.asm
+         _application_cfg   0x003060    program     extern usb_descriptors.asm
+_configuration_descriptor   0x003080    program     extern usb_descriptors.asm
+                    _str0   0x00308a    program     extern usb_descriptors.asm
+                    _str1   0x00308e    program     extern usb_descriptors.asm
+                    _str2   0x0030b4    program     extern usb_descriptors.asm
+                    _str3   0x0030d6    program     extern usb_descriptors.asm
+                    _str4   0x0030da    program     extern usb_descriptors.asm
+                    _str5   0x0030ea    program     extern usb_descriptors.asm
+                    _str6   0x0030f6    program     extern usb_descriptors.asm
+       _string_descriptor   0x003112    program     extern usb_descriptors.asm
+            _ep_init_cfg0   0x003128    program     static usb_descriptors.asm
+            _ep_init_cfg1   0x003158    program     static usb_descriptors.asm
+            _ep_init_cfg2   0x003188    program     static usb_descriptors.asm
+                 _ep_init   0x0031b8    program     extern usb_descriptors.asm
+              _ep_in_cfg0   0x0031c4    program     static usb_descriptors.asm
+              _ep_in_cfg1   0x0031f4    program     static usb_descriptors.asm
+              _ep_in_cfg2   0x003224    program     static usb_descriptors.asm
+                   _ep_in   0x003254    program     extern usb_descriptors.asm
+             _ep_out_cfg0   0x003260    program     static usb_descriptors.asm
+             _ep_out_cfg1   0x003290    program     static usb_descriptors.asm
+             _ep_out_cfg2   0x0032c0    program     static usb_descriptors.asm
+                  _ep_out   0x0032f0    program     extern usb_descriptors.asm
+           _ep_setup_cfg0   0x0032fc    program     static usb_descriptors.asm
+                _ep_setup   0x00332c    program     extern usb_descriptors.asm
+                ___uflags   0x00027e       data     extern obj/Debug/crt0ipinguino.asm
+               __do_cinit   0x003daa    program     extern obj/Debug/crt0ipinguino.asm
+                     test   0x003dc4    program     static obj/Debug/crt0ipinguino.asm
+                    cont1   0x003dca    program     static obj/Debug/crt0ipinguino.asm
+                copy_loop   0x003e18    program     static obj/Debug/crt0ipinguino.asm
+            copy_one_byte   0x003e1e    program     static obj/Debug/crt0ipinguino.asm
+             done_copying   0x003e2c    program     static obj/Debug/crt0ipinguino.asm
+                     done   0x003e40    program     static obj/Debug/crt0ipinguino.asm
+                __startup   0x004258    program     extern obj/Debug/crt0ipinguino.asm
+                   lockup   0x00426e    program     static obj/Debug/crt0ipinguino.asm
         _application_main   0x00201a    program     extern obj/Debug/crt0ipinguino.asm
-                    r0x00   00000000       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    r0x01   0x000001       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    r0x02   0x000002       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    r0x03   0x000003       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    r0x04   0x000004       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    r0x05   0x000005       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    r0x06   0x000006       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    r0x07   0x000007       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    r0x08   0x000008       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                 _intUsed   0x00023c       data     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                _intCount   0x000250       data     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-           _intCountLimit   0x000258       data     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                _preloadH   0x000260       data     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                _preloadL   0x000264       data     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-             _intFunction   0x000200       data     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-       _high_priority_isr   0x002020    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-        _low_priority_isr   0x004000    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-           _pinguino_main   0x002d28    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00313_DS_   0x002d3c    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    _loop   0x002d80    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                   _setup   0x002cce    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                  _blink0   0x002d6a    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-            _epapout_init   0x002d82    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-             _epapin_init   0x002d84    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                _epap_out   0x002d86    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                 _epap_in   0x002d88    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-           _userinterrupt   0x002b42    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00271_DS_   0x002b90    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00272_DS_   0x002bc8    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00264_DS_   0x002bc8    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-       _userhighinterrupt   0x002d8a    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                _OnTimer0   0x0028fe    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00251_DS_   0x0029ba    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00238_DS_   0x0029c6    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00239_DS_   0x0029d6    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00240_DS_   0x0029e8    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00241_DS_   0x0029f8    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00244_DS_   0x002a0a    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                _int_stop   0x002d76    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _int_start   0x002d7a    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                _int_init   0x002d02    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00214_DS_   0x002d0e    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00218_DS_   0x002d22    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-         _detachInterrupt   0x002a2c    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00209_DS_   0x002a9a    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00185_DS_   0x002ae6    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00186_DS_   0x002aea    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00187_DS_   0x002aee    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00188_DS_   0x002af2    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00189_DS_   0x002af6    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00190_DS_   0x002afa    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00191_DS_   0x002afe    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00192_DS_   0x002b02    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00193_DS_   0x002b06    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00194_DS_   0x002b0a    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00195_DS_   0x002b0e    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00196_DS_   0x002b12    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00197_DS_   0x002b16    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00198_DS_   0x002b1a    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00199_DS_   0x002b1e    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00200_DS_   0x002b22    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00201_DS_   0x002b26    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00202_DS_   0x002b2a    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00203_DS_   0x002b2e    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00205_DS_   0x002b30    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                  _toggle   0x002c76    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                 _pinmode   0x0023aa    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00175_DS_   0x00244c    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00155_DS_   0x002458    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00157_DS_   0x00248c    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00159_DS_   0x0024bc    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00161_DS_   0x0024f0    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00163_DS_   0x002520    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00165_DS_   0x002554    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00168_DS_   0x00257e    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-             _digitalread   0x002796    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00150_DS_   0x002824    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00130_DS_   0x002830    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00132_DS_   0x002866    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00134_DS_   0x00286c    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00136_DS_   0x0028a2    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00138_DS_   0x0028a8    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00140_DS_   0x0028da    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00142_DS_   0x0028e0    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00143_DS_   0x0028e4    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-            _digitalwrite   0x0025a0    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00125_DS_   0x002642    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00105_DS_   0x00264e    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00107_DS_   0x002682    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00109_DS_   0x0026b2    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00111_DS_   0x0026e6    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00113_DS_   0x002716    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00115_DS_   0x00274a    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-               _00118_DS_   0x002774    program     static /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    _mask   0x002386    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
-                    _port   0x002398    program     extern /home/regis/Hobbies/Electronique/Projets/Pinguino/local/branches/x.2/source/main.asm
+                   _phase   0x00027f       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+          _needreordering   0x000280       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+            _timedivision   0x000281       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+         _activatedservos   0x000282       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                _position   0x000285       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x00   00000000       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x01   0x000001       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x02   0x000002       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x03   0x000003       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x04   0x000004       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x05   0x000005       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x06   0x000006       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x07   0x000007       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x08   0x000008       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    r0x09   0x000009       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                 _loopvar   0x0002d9       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+             _servovalues   0x00026c       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+             _timingindex   0x0002da       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                 _timings   0x000200       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+_SortServoTimings_mascaratotal_1_1   0x0002ce       data     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _maxminpos   0x000248       data     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+       _high_priority_isr   0x002020    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+        _low_priority_isr   0x004000    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+           _pinguino_main   0x00423c    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00406_DS_   0x004250    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    _loop   0x0041d4    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _10418_DS_   0x004206    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                   _setup   0x004208    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+            _epapout_init   0x003ffe    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+             _epapin_init   0x004286    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                _epap_out   0x004288    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                 _epap_in   0x00428a    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+        _servos_interrupt   0x004148    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00361_DS_   0x00416c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00365_DS_   0x00418c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+       _ServoMaximumPulse   0x003e42    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00352_DS_   0x003e7a    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00353_DS_   0x003e88    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00344_DS_   0x003e8a    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00345_DS_   0x003e8c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00347_DS_   0x003ec2    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+       _ServoMinimumPulse   0x003ed4    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00336_DS_   0x003f0c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00337_DS_   0x003f1a    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00328_DS_   0x003f1c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00329_DS_   0x003f1e    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00331_DS_   0x003f54    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _ServoRead   0x00418e    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00317_DS_   0x0041ae    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00318_DS_   0x0041c6    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+              _ServoWrite   0x00334a    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00302_DS_   0x003398    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00305_DS_   0x00349c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00306_DS_   0x0034ae    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00303_DS_   0x003532    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+             _ServoDetach   0x003ac2    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00284_DS_   0x003b1e    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00281_DS_   0x003b54    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00286_DS_   0x003b80    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+             _ServoAttach   0x0039e2    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00262_DS_   0x003a42    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00259_DS_   0x003a7c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00264_DS_   0x003aac    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+        _SortServoTimings   0x00206e    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00203_DS_   0x0020a0    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00206_DS_   0x002102    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00200_DS_   0x002106    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00207_DS_   0x002114    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00173_DS_   0x0021e8    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00240_DS_   0x0021fc    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00198_DS_   0x002228    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00181_DS_   0x0022f4    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00246_DS_   0x002308    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00195_DS_   0x002334    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00189_DS_   0x0023f8    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00209_DS_   0x002434    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00210_DS_   0x002438    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00202_DS_   0x0024a2    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+           _ServosPulseUp   0x003ff0    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+         _ServosPulseDown   0x003b96    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00149_DS_   0x003bae    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00148_DS_   0x003c36    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                    bucle   0x003c3a    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00153_DS_   0x003c56    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+             _servos_init   0x0040fe    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00133_DS_   0x00410c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00136_DS_   0x00412c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                 _Delayus   0x0040ac    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00119_DS_   0x0040d4    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00128_DS_   0x0040de    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00123_DS_   0x0040e8    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+                 _Delayms   0x003d0e    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00105_DS_   0x003d56    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00114_DS_   0x003d6c    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+               _00109_DS_   0x003d84    program     static /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
+              _servomasks   0x003338    program     extern /home/jesuscarlos/Programming_box/Pinguino/Pinguino32X_20120405/svn/trunk/source/main.asm
   _usb_active_alt_setting   0x00005d       data     extern boot_iface.asm
           _usb_active_cfg   0x00005e       data     extern boot_iface.asm
         _usb_device_state   0x00005f       data     extern boot_iface.asm
@@ -257,8 +301,225 @@ _configuration_descriptor   0x0020ce    program     extern usb_descriptors.asm
              _delay10ktcy   0x00006e    program     extern boot_iface.asm
               _delay1ktcy   0x000072    program     extern boot_iface.asm
               _delay10tcy   0x000076    program     extern boot_iface.asm
+                    r0x00   00000000       data     static fs2uchar.asm
+                    r0x01   0x000001       data     static fs2uchar.asm
+                    r0x02   0x000002       data     static fs2uchar.asm
+                    r0x03   0x000003       data     static fs2uchar.asm
+              ___fs2uchar   0x003f66    program     extern fs2uchar.asm
+               _00110_DS_   0x003fd2    program     static fs2uchar.asm
+               _00106_DS_   0x003fd8    program     static fs2uchar.asm
+               _00107_DS_   0x003fda    program     static fs2uchar.asm
                    _stack   0x000100       data     extern /home/sdcc-builder/build/sdcc-build/orig/sdcc/device/lib/pic16/libsdcc/stack/stack.S
                _stack_end   0x0001ff       data     extern /home/sdcc-builder/build/sdcc-build/orig/sdcc/device/lib/pic16/libsdcc/stack/stack.S
+                    r0x00   00000000       data     static fsgt.asm
+                    r0x01   0x000001       data     static fsgt.asm
+                    r0x02   0x000002       data     static fsgt.asm
+                    r0x03   0x000003       data     static fsgt.asm
+                    r0x04   0x000004       data     static fsgt.asm
+                    r0x05   0x000005       data     static fsgt.asm
+                    r0x06   0x000006       data     static fsgt.asm
+                    r0x07   0x000007       data     static fsgt.asm
+          ___fsgt_fl1_1_1   0x000286       data     static fsgt.asm
+          ___fsgt_fl2_1_1   0x00028a       data     static fsgt.asm
+                  ___fsgt   0x0036dc    program     extern fsgt.asm
+               _00118_DS_   0x003798    program     static fsgt.asm
+               _00106_DS_   0x00379e    program     static fsgt.asm
+               _00108_DS_   0x0037a2    program     static fsgt.asm
+               _00119_DS_   0x0037ce    program     static fsgt.asm
+               _00111_DS_   0x0037d4    program     static fsgt.asm
+               _00112_DS_   0x0037d6    program     static fsgt.asm
+                    r0x00   00000000       data     static fsadd.asm
+                    r0x01   0x000001       data     static fsadd.asm
+                    r0x02   0x000002       data     static fsadd.asm
+                    r0x03   0x000003       data     static fsadd.asm
+                    r0x04   0x000004       data     static fsadd.asm
+                    r0x05   0x000005       data     static fsadd.asm
+                    r0x06   0x000006       data     static fsadd.asm
+                    r0x07   0x000007       data     static fsadd.asm
+        ___fsadd_sign_1_1   0x00028e       data     static fsadd.asm
+         ___fsadd_fl1_1_1   0x000292       data     static fsadd.asm
+         ___fsadd_fl2_1_1   0x000296       data     static fsadd.asm
+        ___fsadd_exp1_1_1   0x0002d1       data     static fsadd.asm
+        ___fsadd_exp2_1_1   0x0002d3       data     static fsadd.asm
+       ___fsadd_mant1_1_1   0x00029a       data     static fsadd.asm
+       ___fsadd_mant2_1_1   0x00029e       data     static fsadd.asm
+                 ___fsadd   0x0024d0    program     extern fsadd.asm
+               _00106_DS_   0x002574    program     static fsadd.asm
+               _00108_DS_   0x002592    program     static fsadd.asm
+               _00151_DS_   0x0025da    program     static fsadd.asm
+               _00110_DS_   0x0025ee    program     static fsadd.asm
+               _00152_DS_   0x00260c    program     static fsadd.asm
+               _00112_DS_   0x002620    program     static fsadd.asm
+               _10105_DS_   0x002686    program     static fsadd.asm
+               _00114_DS_   0x002686    program     static fsadd.asm
+               _20106_DS_   0x0026a8    program     static fsadd.asm
+               _00116_DS_   0x0026a8    program     static fsadd.asm
+               _00161_DS_   0x0026c0    program     static fsadd.asm
+               _00163_DS_   0x0026de    program     static fsadd.asm
+               _00165_DS_   0x0026f2    program     static fsadd.asm
+               _00164_DS_   0x0026f4    program     static fsadd.asm
+               _00162_DS_   0x002702    program     static fsadd.asm
+               _00118_DS_   0x002704    program     static fsadd.asm
+               _00167_DS_   0x002720    program     static fsadd.asm
+               _00169_DS_   0x002734    program     static fsadd.asm
+               _00168_DS_   0x002736    program     static fsadd.asm
+               _00166_DS_   0x002744    program     static fsadd.asm
+               _00119_DS_   0x00274c    program     static fsadd.asm
+               _30107_DS_   0x002788    program     static fsadd.asm
+               _00170_DS_   0x002788    program     static fsadd.asm
+               _00123_DS_   0x002796    program     static fsadd.asm
+               _00125_DS_   0x0027ac    program     static fsadd.asm
+               _00171_DS_   0x0027d2    program     static fsadd.asm
+               _40108_DS_   0x0027ea    program     static fsadd.asm
+               _00130_DS_   0x0027ec    program     static fsadd.asm
+               _00129_DS_   0x002812    program     static fsadd.asm
+               _50109_DS_   0x002826    program     static fsadd.asm
+               _00132_DS_   0x002828    program     static fsadd.asm
+               _00133_DS_   0x00289e    program     static fsadd.asm
+                    r0x00   00000000       data     static fsmul.asm
+                    r0x01   0x000001       data     static fsmul.asm
+                    r0x02   0x000002       data     static fsmul.asm
+                    r0x03   0x000003       data     static fsmul.asm
+                    r0x04   0x000004       data     static fsmul.asm
+                    r0x05   0x000005       data     static fsmul.asm
+                    r0x06   0x000006       data     static fsmul.asm
+                    r0x07   0x000007       data     static fsmul.asm
+                    r0x08   0x000008       data     static fsmul.asm
+                    r0x0a   0x000009       data     static fsmul.asm
+                    r0x0b   0x00000a       data     static fsmul.asm
+         ___fsmul_fl1_1_1   0x0002a2       data     static fsmul.asm
+         ___fsmul_fl2_1_1   0x0002a6       data     static fsmul.asm
+         ___fsmul_exp_1_1   0x0002d5       data     static fsmul.asm
+      ___fsmul_result_1_1   0x0002aa       data     static fsmul.asm
+                 ___fsmul   0x0028c4    program     extern fsmul.asm
+               _00105_DS_   0x002964    program     static fsmul.asm
+               _00106_DS_   0x00296e    program     static fsmul.asm
+               _00109_DS_   0x002b5a    program     static fsmul.asm
+               _10105_DS_   0x002b8e    program     static fsmul.asm
+               _00110_DS_   0x002b8e    program     static fsmul.asm
+               _00142_DS_   0x002ba0    program     static fsmul.asm
+               _00119_DS_   0x002bb2    program     static fsmul.asm
+               _00120_DS_   0x002bba    program     static fsmul.asm
+               _00115_DS_   0x002bd4    program     static fsmul.asm
+               _00112_DS_   0x002bea    program     static fsmul.asm
+               _00121_DS_   0x002bfa    program     static fsmul.asm
+               _00122_DS_   0x002c02    program     static fsmul.asm
+               _00116_DS_   0x002c4a    program     static fsmul.asm
+               _00117_DS_   0x002c5a    program     static fsmul.asm
+                    r0x00   00000000       data     static uchar2fs.asm
+                    r0x01   0x000001       data     static uchar2fs.asm
+                    r0x02   0x000002       data     static uchar2fs.asm
+                    r0x03   0x000003       data     static uchar2fs.asm
+              ___uchar2fs   0x00404a    program     extern uchar2fs.asm
+                    r0x00   00000000       data     static divsint.asm
+                    r0x01   0x000001       data     static divsint.asm
+                    r0x02   0x000002       data     static divsint.asm
+                    r0x03   0x000003       data     static divsint.asm
+                    r0x04   0x000004       data     static divsint.asm
+                    r0x05   0x000005       data     static divsint.asm
+                    r0x06   0x000006       data     static divsint.asm
+                    r0x07   0x000007       data     static divsint.asm
+                __divsint   0x0037fc    program     extern divsint.asm
+               _00110_DS_   0x003858    program     static divsint.asm
+               _00111_DS_   0x003860    program     static divsint.asm
+               _00112_DS_   0x003884    program     static divsint.asm
+               _00113_DS_   0x00388c    program     static divsint.asm
+               _00106_DS_   0x0038c6    program     static divsint.asm
+               _00108_DS_   0x0038cc    program     static divsint.asm
+                    r0x00   00000000       data     static fsdiv.asm
+                    r0x01   0x000001       data     static fsdiv.asm
+                    r0x02   0x000002       data     static fsdiv.asm
+                    r0x03   0x000003       data     static fsdiv.asm
+                    r0x04   0x000004       data     static fsdiv.asm
+                    r0x05   0x000005       data     static fsdiv.asm
+                    r0x06   0x000006       data     static fsdiv.asm
+                    r0x07   0x000007       data     static fsdiv.asm
+                    r0x08   0x000008       data     static fsdiv.asm
+                    r0x0a   0x000009       data     static fsdiv.asm
+                    r0x0b   0x00000a       data     static fsdiv.asm
+         ___fsdiv_exp_1_1   0x0002d7       data     static fsdiv.asm
+         ___fsdiv_fl1_1_1   0x0002ae       data     static fsdiv.asm
+         ___fsdiv_fl2_1_1   0x0002b2       data     static fsdiv.asm
+       ___fsdiv_mant1_1_1   0x0002b6       data     static fsdiv.asm
+       ___fsdiv_mant2_1_1   0x0002ba       data     static fsdiv.asm
+        ___fsdiv_mask_1_1   0x0002be       data     static fsdiv.asm
+      ___fsdiv_result_1_1   0x0002c2       data     static fsdiv.asm
+                 ___fsdiv   0x002c8c    program     extern fsdiv.asm
+               _10105_DS_   0x002d5e    program     static fsdiv.asm
+               _00106_DS_   0x002da0    program     static fsdiv.asm
+               _00108_DS_   0x002db6    program     static fsdiv.asm
+               _00147_DS_   0x002e26    program     static fsdiv.asm
+               _20106_DS_   0x002e3e    program     static fsdiv.asm
+               _00110_DS_   0x002e3e    program     static fsdiv.asm
+               _00113_DS_   0x002e54    program     static fsdiv.asm
+               _00148_DS_   0x002e8e    program     static fsdiv.asm
+               _00112_DS_   0x002ed0    program     static fsdiv.asm
+               _00115_DS_   0x002eea    program     static fsdiv.asm
+               _30107_DS_   0x002ef2    program     static fsdiv.asm
+               _40108_DS_   0x002ef8    program     static fsdiv.asm
+               _50109_DS_   0x002efe    program     static fsdiv.asm
+               _60110_DS_   0x002f06    program     static fsdiv.asm
+               _00151_DS_   0x002f22    program     static fsdiv.asm
+               _00124_DS_   0x002f34    program     static fsdiv.asm
+               _00125_DS_   0x002f3c    program     static fsdiv.asm
+               _00120_DS_   0x002f56    program     static fsdiv.asm
+               _00117_DS_   0x002f6c    program     static fsdiv.asm
+               _00126_DS_   0x002f7c    program     static fsdiv.asm
+               _00127_DS_   0x002f84    program     static fsdiv.asm
+               _00121_DS_   0x002fda    program     static fsdiv.asm
+               _00122_DS_   0x002fea    program     static fsdiv.asm
+                    r0x00   00000000       data     static fs2ulong.asm
+                    r0x01   0x000001       data     static fs2ulong.asm
+                    r0x02   0x000002       data     static fs2ulong.asm
+                    r0x03   0x000003       data     static fs2ulong.asm
+                    r0x04   0x000004       data     static fs2ulong.asm
+                    r0x05   0x000005       data     static fs2ulong.asm
+      ___fs2ulong_fl1_1_1   0x0002c6       data     static fs2ulong.asm
+              ___fs2ulong   0x0038f2    program     extern fs2ulong.asm
+               _00105_DS_   0x003956    program     static fs2ulong.asm
+               _00106_DS_   0x003960    program     static fs2ulong.asm
+               _00117_DS_   0x003996    program     static fs2ulong.asm
+               _00119_DS_   0x0039a8    program     static fs2ulong.asm
+               _00118_DS_   0x0039aa    program     static fs2ulong.asm
+               _00116_DS_   0x0039b6    program     static fs2ulong.asm
+               _00108_DS_   0x0039c4    program     static fs2ulong.asm
+                    r0x00   00000000       data     static ulong2fs.asm
+                    r0x01   0x000001       data     static ulong2fs.asm
+                    r0x02   0x000002       data     static ulong2fs.asm
+                    r0x03   0x000003       data     static ulong2fs.asm
+                    r0x04   0x000004       data     static ulong2fs.asm
+                    r0x05   0x000005       data     static ulong2fs.asm
+                    r0x06   0x000006       data     static ulong2fs.asm
+                    r0x07   0x000007       data     static ulong2fs.asm
+                    r0x08   0x000008       data     static ulong2fs.asm
+                    r0x09   0x000009       data     static ulong2fs.asm
+                    r0x0a   0x00000a       data     static ulong2fs.asm
+                    r0x0b   0x00000b       data     static ulong2fs.asm
+       ___ulong2fs_fl_1_1   0x0002ca       data     static ulong2fs.asm
+              ___ulong2fs   0x003560    program     extern ulong2fs.asm
+               _00121_DS_   0x0035c4    program     static ulong2fs.asm
+               _00107_DS_   0x0035ca    program     static ulong2fs.asm
+               _00124_DS_   0x0035e0    program     static ulong2fs.asm
+               _00127_DS_   0x0035fe    program     static ulong2fs.asm
+               _00110_DS_   0x003600    program     static ulong2fs.asm
+               _00128_DS_   0x003628    program     static ulong2fs.asm
+               _00114_DS_   0x003632    program     static ulong2fs.asm
+               _00130_DS_   0x003658    program     static ulong2fs.asm
+               _00131_DS_   0x00365a    program     static ulong2fs.asm
+               _00116_DS_   0x003668    program     static ulong2fs.asm
+               _00117_DS_   0x0036a6    program     static ulong2fs.asm
+                    r0x00   00000000       data     static divuint.asm
+                    r0x01   0x000001       data     static divuint.asm
+                    r0x02   0x000002       data     static divuint.asm
+                    r0x03   0x000003       data     static divuint.asm
+                    r0x04   0x000004       data     static divuint.asm
+                    r0x05   0x000005       data     static divuint.asm
+                    r0x06   0x000006       data     static divuint.asm
+                    r0x07   0x000007       data     static divuint.asm
+                __divuint   0x003c64    program     extern divuint.asm
+               _00109_DS_   0x003cac    program     static divuint.asm
+               _00121_DS_   0x003cd2    program     static divuint.asm
+               _00110_DS_   0x003cde    program     static divuint.asm
                  _SPPDATA   0x000f62       data     extern libdev18f2550_a-pic18f2550.asm
              _SPPDATAbits   0x000f62       data     extern libdev18f2550_a-pic18f2550.asm
                   _SPPCFG   0x000f63       data     extern libdev18f2550_a-pic18f2550.asm
@@ -487,5 +748,5 @@ _configuration_descriptor   0x0020ce    program     extern usb_descriptors.asm
                     _TOSH   0x000ffe       data     extern libdev18f2550_a-pic18f2550.asm
                     _TOSU   0x000fff       data     extern libdev18f2550_a-pic18f2550.asm
                 _TOSUbits   0x000fff       data     extern libdev18f2550_a-pic18f2550.asm
-                   _cinit   0x002d5c    program     extern  
+                   _cinit   0x004270    program     extern  
  

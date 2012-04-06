@@ -9,64 +9,54 @@
 //   |     | 
 //   +-----+
 
-uchar position=1;
+// This routine will compile for 18F2550. 
+// It's also valid for 18F4550, but it needs you enable the following define: 
+// #define PIC18F4550
+
+uchar position=0; // it starts at 0 degrees position
+uchar position_inv=180;
+uchar s;
 
 void setup(void)
 {
 delay(500);
-servo.attach(0);
-servo.attach(1);
-servo.attach(2);
-servo.attach(3);
-servo.attach(4);
-servo.attach(5);
-servo.attach(6);
-servo.attach(7);
-servo.attach(8);
-servo.attach(9);
-servo.attach(10);
-servo.attach(11);
-servo.attach(12);
-servo.attach(13);
-servo.attach(14);
-servo.attach(15);
-servo.attach(16);
-servo.attach(17);
+for(s==0;s<18;s++){	 //Preset of all pins as servos
+	servo.attach(s);   // Attach it
+	servo.setMaximumPulse(s,2200);	//Setting microseconds for 180 degrees position (Maximum)
+	servo.setMinimumPulse(s,700);  // Setting microseconds for 0 degrees position (Minimum)
+	}
 }
 
 void loop(void)
 {                        
-servo.write(0,255-position);
-servo.write(1,255-position);
-servo.write(2,255-position);
-servo.write(8,255-position);
-servo.write(9,255-position);
+position++;
+if(position>180){
+	position = 0;
+	}
+// A set of servos moving from 0 to 180 degrees: 
 servo.write(10,position);
 servo.write(11,position);
 servo.write(12,position);
+servo.write(13,position);
+servo.write(14,position);
+servo.write(15,position);
 servo.write(16,position);
 servo.write(17,position);
-if(position>100){
-    servo.setMaximumPulse(3);
-    servo.setMaximumPulse(4);
-    servo.setMaximumPulse(5);
-    servo.setMaximumPulse(6);
-    servo.setMaximumPulse(7);
-    servo.setMaximumPulse(13);
-    servo.setMaximumPulse(14);
-    servo.setMaximumPulse(15);
-} else {
-    servo.setMinimumPulse(3); 
-    servo.setMinimumPulse(4); 
-    servo.setMinimumPulse(5); 
-    servo.setMinimumPulse(6); 
-    servo.setMinimumPulse(7); 
-    servo.setMinimumPulse(13);
-    servo.setMinimumPulse(14);
-    servo.setMinimumPulse(15);
-}
+servo.write(0,-position);
+
+// A set of servos moving from 180 degrees to 0:
+position_inv=180-position;
+servo.write(1,position_inv);
+servo.write(2,position_inv);
+servo.write(3,position_inv);
+servo.write(4,position_inv);
+servo.write(5,position_inv);
+servo.write(6,position_inv);
+servo.write(7,position_inv);
+servo.write(8,position_inv);
+servo.write(9,position_inv);
+
 delay(250);
-position++;
 }
 
 
