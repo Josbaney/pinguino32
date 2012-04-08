@@ -277,6 +277,7 @@ u8 analogwrite(u8 pin, u16 setpoint)
 
 void PWM_set_frequency(u32 freq)
 {
+	if (freq==0) freq=1;
 	// PR3+1 calculation
 	_pr3_plus1 = GetPeripheralClock() / freq;	// FOSC /  PWM Frequency
 
