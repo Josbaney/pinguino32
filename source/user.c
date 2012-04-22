@@ -1,34 +1,16 @@
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/*
+  AnalogReadSerial
+ Reads an analog input on pin 0, prints the result to the serial monitor 
+ 
+ This example code is in the public domain.
+ */
 
-
-//
-
-
-
-
-uchar position=1;
-
-void setup(void)
-{
-ServoAttach(13);
-ServoMaximumPulse(13,2500);  
-ServoMaximumPulse(13,500);   
+void setup() {
+  serial_begin(9600);
 }
 
-void loop(void)
-{
-ServoWrite(13,position);
-Delayms(500);
-position++;
-if(position>180) position=0;
+void loop() {
+  int sensorValue = analogread(A0);
+  serial_println(sensorValue, DEC);
 }
 
