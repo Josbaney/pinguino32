@@ -180,7 +180,7 @@ class Pinguino(wx.Frame):
 
 		framesize = (  self.config.ReadInt('Window/Width', -1),
 							self.config.ReadInt('Window/Height', -1))
-		if framesize == (0, 0): framesize = (400, 400)
+		if framesize == (-1, -1): framesize = (400, 400)
 
 		framepos = (   self.config.ReadInt('Window/Posx', -1),
 							self.config.ReadInt('Window/Posy', -1))
