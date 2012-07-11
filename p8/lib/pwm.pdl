@@ -1,3 +1,0 @@
-PWM.setfrequency PWM_set_frequency#include <pwm.c>
-PWM.setdutycycle PWM_set_dutycycle#include <pwm.c>
-PWM.setpercentdutycycle PWM_set_percent_dutycycle#include <pwm.c>
