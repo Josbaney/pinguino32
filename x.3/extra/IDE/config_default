@@ -1,0 +1,48 @@
+[IDE]
+window/width = 1000
+window/height = 500
+window/xpos = 97
+window/ypos = 16
+output/width = 998
+output/height = 84
+theme = PinguinoX
+board = Pinguino 2550
+maximized = False
+perspectiveoutput = 119
+perspectivelateral = 286
+
+[Open/Save]
+autosavetime = 10
+template = True
+autosave = False
+
+[Source]
+font = monospace
+size = 10
+fontdefault = True
+tabsize = 4
+
+[Completer]
+charscount = 2
+maxitemscount = 14
+enable = True
+insertparentheses = True
+
+[Insert]
+brackets = False
+doublecuotation = False
+singlecuotation = False
+keys = False
+parentheses = False
+
+[Recents]
+recents_count = 0
+
+[Last]
+last_count = 0
+
+[Highligh]
+searchreplace = [255, 250, 70]
+codenavigation = [120, 255, 152]
+selection = [241, 132, 88]
+

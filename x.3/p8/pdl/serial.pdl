@@ -1,0 +1,11 @@
+Serial.begin serial_begin#include <serial.c>
+Serial.init serial_begin#include <serial.c>
+Serial.print serial_print#include <serial.c>
+Serial.println serial_println#include <serial.c>
+Serial.printf serial_printf#include <serial.c>
+Serial.available serial_available#include <serial.c>
+Serial.read serial_read#include <serial.c>
+Serial.getKey serial_getkey#include <serial.c>
+Serial.getString serial_getstring#include <serial.c>
+Serial.flush serial_flush#include <serial.c>
+Serial.write serial_putchar#include <serial.c>

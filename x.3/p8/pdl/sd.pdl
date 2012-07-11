@@ -1,0 +1,22 @@
+Fatfs FATFS#include <sd/pff.c>#define __SPI2__
+Dir DIRTABLE#include <sd/pff.c>
+
+SD.readSector disk_readp#include <sd/diskio.c>
+SD.writeSector disk_writep#include <sd/diskio.c>
+SD.printSector disk_printp#include <sd/diskio.c>
+
+SD.readDir readDIR#include <sd/pff.c>
+SD.findDir findDIR#include <sd/pff.c>
+SD.mkdir newDIR#include <sd/pff.c>
+
+SD.begin pf_mount#include <sd/pff.c>
+SD.init pf_mount#include <sd/pff.c>
+SD.mount pf_mount#include <sd/pff.c>
+SD.unmount pf_unmount#include <sd/pff.c>
+SD.open pf_open#include <sd/pff.c>
+SD.read pf_read#include <sd/pff.c>
+SD.write pf_write#include <sd/pff.c>
+SD.print pf_print#include <sd/pff.c>
+SD.lseek pf_seek#include <sd/pff.c>
+SD.list scan_files#include <sd/pff.c>
+
