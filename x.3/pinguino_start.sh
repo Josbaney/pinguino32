@@ -20,5 +20,5 @@ case $ARCH in
 esac
 
 export LD_LIBRARY_PATH
-python ./pinguino.py
+python ./pinguino.py $@
 

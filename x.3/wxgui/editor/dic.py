@@ -7,7 +7,7 @@
     author:		Yeison Cardona
     contact:		yeison.eng@gmail.com 
     first release:	03/February/2012
-    last release:	02/May/2012
+    last release:	08/July/2012
     
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -48,17 +48,18 @@ Snippet = {}
 #Snippet[name {snippet}]=[[cursorline, cursor position],"to insert"]
 Snippet["void {snippet}"] = [[1, 5], "void (){\n\n\t}"]
 Snippet["while( ) {snippet}"] = [[1, 7], "while (){\n\n\t}"]
+Snippet["do {...} while  {snippet}"] = [[3, 8], "do {\n\t\n} while();"]
 Snippet["for {snippet}"] = [[1, 5], "for (){\n\n\t}"]
 Snippet["for (i=0;...{snippet}"] = [[1, 9], "for (i =  ;i< ;i++){\n\n\t}"]
 Snippet["if...else {snippet}"] = [[1, 4], "if (){\n\n\t}\nelse {\n\n\t}"]
 Snippet["if...else if...else {snippet}"] = [[1, 4], "if (){\n\n\t}\nelse if (){\n\n\t}\nelse {\n\n\t}"]
 Snippet["switch( ) {snippet}"] = [[1, 8], "switch (){\n\tcase:\n\n\t\tbreak;\n\tdefault:\n\n\t}"]
 Snippet[_("Bare Minimum")+" {snippet}"] = [[3, [1, 0]], "void setup() {\n\t//run once:\n\t\n\t}\n\nvoid loop() {\n\t//run repeatedly:\n\n\t}"]
-Snippet[_("Insert Date")+" {snippet}"] = [[2, 1 + len(_("Author:"))],
+Snippet[_("Insert Info")+" {snippet}"] = [[2, 1 + len(_("Author:"))],
 """/*----------------------------------------------------- 
 %s:  --<>
 %s: %s
 %s:
 
 -----------------------------------------------------*/
-""" %(_("Author"), _("Date"), date, _("Description"))]	
+""" %(_("Author"), _("Date"), date, _("Description"))]

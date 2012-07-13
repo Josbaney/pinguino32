@@ -7,7 +7,7 @@
     author:		Yeison Cardona
     contact:		yeison.eng@gmail.com 
     first release:	31/March/2012
-    last release:	03/June
+    last release:	03/July/2012
     
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -34,21 +34,22 @@ class Documents():
         self.lateralDir = self.lat.listCtrlDir
         self.lateralFiles = self.lat.listCtrlFiles
         self.recentPathsDir = []
-        self.currentLateralDir = os.path.join(os.getcwd(),"examples")
-        self.temporalItem = self.currentLateralDir
+        #self.currentLateralDir = os.path.join(os.getcwd(),"examples")
+        self.parentDir = self.currentLateralDir
+        #print self.parentDir
         
         self.lateralDir.InsertColumn(col=0, format=wx.LIST_FORMAT_LEFT, heading='Columns0', width=-1)  
         self.lateralFiles.InsertColumn(col=0, format=wx.LIST_FORMAT_LEFT, heading='Columns0', width=-1)
        
         self.icons()        
         
-        self.buildLateralDir(self.currentLateralDir)
+        #self.buildLateralDir(self.currentLateralDir)
         
         self.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.OnSelChanged, self.lateralDir)
         self.Bind(wx.EVT_LIST_ITEM_SELECTED, self.OnDirSelected, self.lateralDir)
         self.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.OnOpenFile, self.lateralFiles)
         self.Bind(wx.EVT_DIRPICKER_CHANGED, self.setDirPicker, self.lat.dirPicker)
-        self.Bind(wx.EVT_CHOICE, lambda x:self.buildLateralFiles(self.temporalItem), self.lat.choiceFile)
+        self.Bind(wx.EVT_CHOICE, lambda x:self.buildLateralFiles(self.parentDir), self.lat.choiceFile)
 
         
     #----------------------------------------------------------------------
@@ -73,14 +74,14 @@ class Documents():
         dirs = os.listdir(path)
         dirs.sort()
         self.lateralDir.DeleteAllItems()
-        self.addItem(self.lateralDir, "..", self.fldridx)
+        self.addItemDock(self.lateralDir, "..", self.fldridx)
         for dir in dirs:
             if os.path.isdir(os.path.join(path, dir)) and not dir.startswith("."):
-                self.addItem(self.lateralDir, dir, self.fldridx)
+                self.addItemDock(self.lateralDir, dir, self.fldridx)
         self.lateralDir.Select(0)       
                 
     #----------------------------------------------------------------------
-    def addItem(self, listDir, name, icon):   
+    def addItemDock(self, listDir, name, icon):   
         listDir.InsertImageStringItem(sys.maxint, name, icon)
         listDir.SetItemData(0, 0)
      
@@ -92,7 +93,7 @@ class Documents():
         
     #----------------------------------------------------------------------
     def buildLateralFiles(self, path):
-        self.temporalItem = path
+        self.parentDir = path
         self.fixSizeDock()
         files = os.listdir(path)
         files.sort()
@@ -101,7 +102,7 @@ class Documents():
         self.lateralFiles.DeleteAllItems()
         for file in files:
             if os.path.isfile(os.path.join(path, file)) and not file.startswith(".") and file.endswith(pattern):
-                self.addItem(self.lateralFiles, file, self.fileidx)
+                self.addItemDock(self.lateralFiles, file, self.fileidx)
             
     #--------------------------------------------------------------------------
     def OnSelChanged(self, event):
@@ -131,7 +132,7 @@ class Documents():
     #--------------------------------------------------------------------------
     def OnOpenFile(self, event):
         sel = event.GetLabel()
-        path = os.path.join(self.currentLateralDir, self.temporalItem, sel)
+        path = os.path.join(self.currentLateralDir, self.parentDir, sel)
         try: self.background.Hide()
         except: pass  #self.background not exist
         self.Open(path)

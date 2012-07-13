@@ -7,7 +7,7 @@
     author:		Yeison Cardona
     contact:		yeison.eng@gmail.com 
     first release:	31/March/2012
-    last release:	06/May/2012
+    last release:	09/July/2012
     
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -49,8 +49,9 @@ class Search():
         
     #----------------------------------------------------------------------
     def updateFinds(self, event):
+        print "buscandp..."
         word = self.FindText.GetValue()
-        self.findWord(word)
+        if word != "": self.highLine(word, 0, False)
         
     #---------------------------------------------------------------------- 
     def OnFind(self,event=None):
@@ -76,11 +77,7 @@ class Search():
         textEdit = self.stcpage[self.notebookEditor.GetSelection()]
         self.findIndex -= 1
         if self.findIndex < 0: self.findIndex = result["count"] - 1
-        line = textEdit.LineFromPosition(result["finds"][self.findIndex])
-        color = self.getColorConfig("Highligh", "searchreplace", [255, 250, 70])        
-        self.highlightline(line, color)
-        self.focus()
-        textEdit.SetSelection(result["finds"][self.findIndex], result["finds"][self.findIndex]+len(word))
+        self.highLine(word, self.findIndex)
         
         self.lat.buttonReplace.Enable()
         self.lat.buttonReplaceAll.Enable()
@@ -98,11 +95,7 @@ class Search():
         textEdit = self.stcpage[self.notebookEditor.GetSelection()]
         self.findIndex += 1
         if self.findIndex >= result["count"]: self.findIndex = -1
-        line = textEdit.LineFromPosition(result["finds"][self.findIndex])
-        color = self.getColorConfig("Highligh", "searchreplace", [255, 250, 70])   
-        self.highlightline(line, color)
-        self.focus()
-        textEdit.SetSelection(result["finds"][self.findIndex], result["finds"][self.findIndex]+len(word))
+        self.highLine(word, self.findIndex)
         
         self.lat.buttonReplace.Enable()
         self.lat.buttonReplaceAll.Enable()
@@ -132,7 +125,7 @@ class Search():
         textEdit = self.stcpage[self.notebookEditor.GetSelection()]
         textEdit.Clear()
         textEdit.InsertText(textEdit.CurrentPos, wordReplace)
-        self.findIndex -= 1
+        #self.findIndex -= 1
         self.findnext(event)
         if not self.findnext(event):
             self.lat.buttonReplace.Disable()
@@ -162,21 +155,38 @@ class Search():
 
     #----------------------------------------------------------------------
     def findWord(self, word):
-        if word == "": return
+        if word == "": return 
         
         textEdit = self.stcpage[self.notebookEditor.GetSelection()]
-        plain = str(textEdit.GetTextUTF8())
-        word = str(word)
-        
+        if self.lat.checkBox_sensitive.IsChecked():
+            plain = str(textEdit.GetTextUTF8())
+            word = str(word)
+        else:
+            plain = str(textEdit.GetTextUTF8()).lower()
+            word = str(word).lower()
+    
         count = plain.count(word)
         finds = [plain.find(word)]
         while finds[-1] != -1: finds.append(plain.find(word, finds[-1]+1))
         finds.pop(-1)
         
+        
         result = {"word": word,
-                  "count": count,
+                  "count": len(finds),
                   "finds": finds,}
         
-        self.lat.searchReplaceInfo.SetLabel(_("Finded %d matches in the file.") %count)
+        self.lat.searchReplaceInfo.SetLabel(_("Finded %d matches in the file.") %len(finds))
         
         return result
+    
+    
+    #----------------------------------------------------------------------
+    def highLine(self, word, findIndex, focus=True):
+        textEdit = self.stcpage[self.notebookEditor.GetSelection()]
+        result = self.findWord(word)
+        if result["count"] > 0:
+            line = textEdit.LineFromPosition(result["finds"][findIndex])
+            color = self.getColorConfig("Highligh", "searchreplace", [255, 250, 70])   
+            self.highlightline(line, color)
+            if focus: self.focus()
+            textEdit.SetSelection(result["finds"][findIndex], result["finds"][findIndex]+len(word))

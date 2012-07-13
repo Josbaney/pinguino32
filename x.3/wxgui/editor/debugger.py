@@ -7,7 +7,7 @@
     author:		Yeison Cardona
     contact:		yeison.eng@gmail.com 
     first release:	03/March/2012
-    last release:	03/June/2012
+    last release:	03/July/2012
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -27,33 +27,10 @@
 import wx, serial, threading, sys, time
 from wxgui._trad import _
 
-EVT_RESULT_DEBUG_ID = wx.NewId()
-
-def EVT_RESULT_DEBUG(win, func):
-    win.Connect(-1, -1, EVT_RESULT_DEBUG_ID, func)
-
-class ResultEventDebug(wx.PyEvent):
-    def __init__(self, data):
-        wx.PyEvent.__init__(self)
-        self.SetEventType(EVT_RESULT_DEBUG_ID)
-        self.data = data
-
-EVT_LIST_PORTS_ID = wx.NewId()
-
-def EVT_LIST_PORTS(win, func):
-    win.Connect(-1, -1, EVT_RESULT_DEBUG_ID, func)
-
-class ResultListPorts(wx.PyEvent):
-    def __init__(self, data):
-        wx.PyEvent.__init__(self)
-        self.SetEventType(EVT_LIST_PORTS_ID)
-        self.data = data
-
 ########################################################################
 class Debugger:
     #----------------------------------------------------------------------
     def __initDebugger__(self):
-        EVT_RESULT_DEBUG(self, self.updateDebgging)
 
         self.history = []
         self.historyIndex = 0
@@ -66,7 +43,7 @@ class Debugger:
             self.CDC_NAME_PORT = "COM%d"
         else:
             self.CDC_NAME_PORT = "/dev/ttyACM%d"
-
+            
 
     #----------------------------------------------------------------------
     def updateCDCPorts(self, max_ports=20):
@@ -77,6 +54,17 @@ class Debugger:
                 port.close()
                 list_ports.append(self.CDC_NAME_PORT %i)
             except: pass
+            
+        self.choicePort.Enable()
+        self.choicePort.Clear()
+        self.choicePort.AppendItems(list_ports)
+        self.choicePort.SetSelection(len(list_ports))
+        
+        if len(list_ports) == 0: self.choicePort.AppendItems([_("No ports")])
+
+        if len(list_ports) <= 1:
+            self.choicePort.SetSelection(0)
+            self.choicePort.Disable()
             
         return list_ports
 
@@ -105,38 +93,26 @@ class Debugger:
         self.debuggingLine.SetSelection(3, 3)
         self.updateIDE()        
 
-
-        self.currentCDCPorts = self.updateCDCPorts()
-
         try: self.pinguinoCDC.close()
         except: pass
 
-        self.choicePort.Enable()
-        self.choicePort.Clear()
-        self.choicePort.AppendItems(self.currentCDCPorts + [_("Select port...")])
-        self.choicePort.SetSelection(len(self.currentCDCPorts))
-
-        if len(self.currentCDCPorts) == 1:
-            self.choicePort.SetSelection(0)
-            self.choicePort.Disable()
-
-        debug = threading.Thread(target=self.debuggingThread, args=(mode, ))
-        debug.start()
+        self.debuggingTimer(mode)
 
 
     #----------------------------------------------------------------------
-    def debuggingThread(self, mode):
+    def debuggingTimer(self, mode):
+        self.updateDebggingLog(_("Debugging!")+"\n")
         if mode == "CDC": self.debugCDC()
 
     #----------------------------------------------------------------------
-    def updateDebgging(self, event):
-        if event.data == None:
+    def updateDebggingLog(self, message):
+        if message == None:
             self.setDebugger(mode=None)
             return 
-        if len(event.data) > 0:
+        if len(message) > 0:
             self.logwindow.SetInsertionPoint(len(self.logwindow.Value))
             if self.logwindow.GetLineText(self.logwindow.NumberOfLines) != "": self.logwindow.WriteText("\n")
-            self.logwindow.WriteText("   "+event.data)
+            self.logwindow.WriteText("   "+message)
 
 
     #----------------------------------------------------------------------
@@ -189,43 +165,39 @@ class Debugger:
 
     #----------------------------------------------------------------------
     def debugCDC(self):
-        ports = self.currentCDCPorts
-        wx.PostEvent(self, ResultEventDebug(_("Debugging!")+"\n"))
-
-        if len(ports) == 1:
-            self.pinguinoCDC = serial.Serial(ports[0], timeout=1)
-            wx.PostEvent(self, ResultEventDebug(_("Connected")+": "+ports[0]+"\n"))
-
-        elif len(ports) == 0:
-            self.logwindow.WriteText(_("No device connected")+"!")
-            self.menu.menuItemDebugNone.Check()
-            wx.PostEvent(self, ResultEventDebug(None))
+        ports = self.updateCDCPorts()
+        
+        if len(ports) > 0:
+            self.pinguinoCDC = serial.Serial(ports[0], timeout=0.01)
+            self.updateDebggingLog(_("Connected")+": "+ports[0]+"\n")
 
         if len(ports) > 0:
-            while not self.menu.menuItemDebugNone.IsChecked():
-                time.sleep(0.05)
+            self.timer_CDC = wx.CallLater(10, self.CDCTimer)  
+            
+        elif not self.menu.menuItemDebugNone.IsChecked():
+            wx.CallLater(250, self.debugCDC)
+                           
+    #----------------------------------------------------------------------
+    def CDCTimer(self, event=None):
+        try:
+            if self.debugOutMessage != None:
+                self.pinguinoCDC.write(self.debugOutMessage)
+                self.debugOutMessage = None
+            else:
+                line = self.pinguinoCDC.readline()
+                self.updateDebggingLog(line)
 
-                try:
-                    if self.debugOutMessage != None:
-                        self.pinguinoCDC.write(self.debugOutMessage)
-                        self.debugOutMessage = None
-                    else:
-                        line = self.pinguinoCDC.readline()
-                        wx.PostEvent(self, ResultEventDebug(line)) 
+        except UnboundLocalError:
+            self.logwindow.WriteText(_("No device connected")+"!")
+            self.menu.menuItemDebugNone.Check()
+            self.updateDebggingLog(None)      
 
-                except UnboundLocalError:
-                    self.logwindow.WriteText(_("No device connected")+"!")
-                    self.menu.menuItemDebugNone.Check()
-                    wx.PostEvent(self, ResultEventDebug(None)) 
+        except serial.serialutil.SerialException:
+            self.logwindow.WriteText("\n"+_("device disconnected")+"!")
+            self.debugCDC()          
+            return
+        except:
+            pass
 
-                except serial.serialutil.SerialException:
-                    self.logwindow.WriteText("\n"+_("device disconnected")+"!")
-                    self.menu.menuItemDebugNone.Check()
-                    wx.PostEvent(self, ResultEventDebug(None))
-                    
-                except:
-                    pass
-
-                if self.closing:
-                    self.pinguinoCDC.close()
-                    break
+        if self.closing or self.menu.menuItemDebugNone.IsChecked(): self.pinguinoCDC.close()
+        else:  self.timer_CDC.Restart(10)

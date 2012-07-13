@@ -7,7 +7,7 @@
     author:		Yeison Cardona
     contact:		yeison.eng@gmail.com 
     first release:	31/March/2012
-    last release:	06/May/2012
+    last release:	08/July/2012
     
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -43,7 +43,7 @@ class File:
     
         self.lateralVars.InsertColumn(col=0, format=wx.LIST_FORMAT_LEFT, heading=_("Name"), width=-1)
         self.lateralVars.InsertColumn(col=1, format=wx.LIST_FORMAT_LEFT, heading=_("Type"), width=-1)
-        self.lateralVars.InsertColumn(col=2, format=wx.LIST_FORMAT_LEFT, heading=_("Line"), width=40)
+        self.lateralVars.InsertColumn(col=2, format=wx.LIST_FORMAT_LEFT, heading=_("Line"), width=1000)
     
         self.lateralFunc.InsertColumn(col=0, format=wx.LIST_FORMAT_LEFT, heading=_("Name"), width=-1) 
         self.lateralFunc.InsertColumn(col=1, format=wx.LIST_FORMAT_LEFT, heading=_("Return"), width=-1) 
@@ -116,34 +116,67 @@ class File:
             if event: event.Skip()
             return 
             
-        textEdit = self.stcpage[self.notebookEditor.GetSelection()]
-        text = textEdit.GetText().split("\n")
+        try:
+            textEdit = self.stcpage[self.notebookEditor.GetSelection()]
+            text = textEdit.GetText().split("\n")
+            dirname = self.filename[self.notebookEditor.GetSelection()]
+            self.otherWords = os.listdir(os.path.dirname(dirname))      
+        except:
+            return
         
-        tipos="int|float|char|BOOL|short|long|double|"\
-            "byte|word|struct|union|enum|u8|u16|u32|u64"        
         
-        ReFunction = "[\s]*(unsigned|volatile)*[\s]*(" + tipos + "|void" ")[*]*[\s]*([\w]+)[\s]*\(([^)]*)\)"
-        ReVariable = "[\s]*(unsigned|volatile)*[\s]*(" + tipos + ")[\s]*(.*);"
-        ReDefines = "[\s]*#(define|ifndef|endif)[ ]+([\S]*)[ ]+([\S]*)"
-        ReInclude = "[\s]*#include[ ]+<[\s]*([\S]*)[\s]*>"
+        
+        self.tiposDatos = "int|float|char|double|"\
+                          "u8|u16|u32|u64|"\
+                          "BOOL|byte|word|void"
+        
+        def updateRegex():
+            
+            ReFunction = "[\s]*(unsigned)*[\s]*(" + self.tiposDatos + ")[\s]*[*]*[\s]*([*\w]*)[\s]*\(([\w ,*.]*)\)[\s]*"
+            
+            ReVariable = "[\s]*(volatile|register|static|extern)*[\s]*(unsigned|signed)*[\s]*(short|long)*[\s]*(" + self.tiposDatos + ")[\s]*(.+);"
+            ReStructs  = "[\s]*(struct|union|enum)[\s]*([*\w]*)[\s]*(.+);"
+            
+            ReTypeDef  = "[\s]*(typedef)[ ]*([\w]*)[ ]*([\w]*)[\s]*([{,;])*"
+            
+            ReTypeStru = "[\s]*}[\s]*([\w]+)[\s]*;"
+            
+            ReDefines = "[\s]*#(define|ifndef|endif)[ ]+([\S]*)[ ]+([\S]*)"
+            ReInclude = "[\s]*#include[ ]+<[\s]*([\S]*)[\s]*>"
+        
+            return ReFunction, ReVariable, ReStructs, ReTypeDef, ReDefines, ReInclude, ReTypeStru
+  
 
-        self.allVars = []
+        self.allVars = [] 
         self.allFunc = []
         self.allDefi = []
-        currentFunction = "None"
+        self.autoCompleteWords = []
+        #currentFunction = "None"
+        
+        ReFunction, ReVariable, ReStructs, ReTypeDef, ReDefines, ReInclude, ReTypeStru = updateRegex()
+        
         
         def getVar(var, tipo):
             if "=" in var: var = var[:var.find("=")]
             if "[" in var:
                 var = var[:var.find("[")]
                 if tipo != "char": tipo = "vect"
-            return var.replace(" ", ""), tipo
+            return var, tipo
         
         def getParam(param):
             param = param.split(",")
             ret = []
             for par in param:
                 reg = re.match(ReVariable, par)
+                
+        def getOutTo(a, b, cont):
+            if a in cont:
+                x = cont.find(a)
+                cont = cont[:x]
+            if b in cont:
+                y = cont.find(b)
+                cont = cont+ cont[y:]
+            return cont
                 
         count = 1
         for linea in text:
@@ -152,26 +185,33 @@ class File:
             
             reg1 = re.match(ReFunction, linea)
             if reg1 != None:
-                currentFunction = reg1.group(3)
-                self.allFunc.append([currentFunction,
+                self.allFunc.append([reg1.group(3),
                                     reg1.group(2),
                                     str(count),
                                     reg1.group(4)])
                 
                                     
-            reg2 = re.match(ReVariable, linea)
-            if reg2 != None:
-                tipo = reg2.group(2)
-                cont = reg2.group(3)
-                if "{" in cont:
-                    a = cont.find("{")
-                    cont = cont[:a]
-                if "}" in cont:
-                    b = cont.find("}")
-                    cont = cont+ cont[b:]
+            reg2a = re.match(ReVariable, linea)
+            reg2b = re.match(ReStructs, linea)
+            
+            if reg2a != None or reg2b != None:                
+                if reg2b != None: #Struct
+                    reg2 = reg2b
+                    tipo = reg2.group(1)
+                    cont = reg2.group(2)
+                elif reg2a != None: #Variable
+                    reg2 = reg2a
+                    t = [reg2.group(1), reg2.group(2), reg2.group(3), reg2.group(4)]
+                    for i in range(t.count(None)): t.remove(None)
+                    tipo = " ".join(t)
+                    cont = reg2.group(5)
+                    
+                cont = getOutTo("{", "}", cont)
+                if "=" in cont: cont = getOutTo("(", ")", cont)
+                    
                 cont = cont.split(",")
-                self.allVars.extend([[getVar(var, reg2.group(2))[0],
-                                    getVar(var, reg2.group(2))[1],
+                self.allVars.extend([[getVar(var, tipo)[0],
+                                    getVar(var, tipo)[1],
                                     str(count)] for var in cont])
                 
                 
@@ -189,28 +229,59 @@ class File:
                                      "",
                                      str(count)])
                 
-            count += 1
                 
-        count = 0
-        self.allVars.reverse()
-        self.lateralVars.DeleteAllItems()
-        for var in self.allVars:
-            self.addVarInListCtrl(count, var)
+            reg5 = re.match(ReTypeDef, linea)
+            if reg5 != None:
+                self.tiposDatos += "|%s" %reg5.group(3)
+                self.autoCompleteWords.append(reg5.group(3))
+                ReFunction, ReVariable, ReStructs, ReTypeDef, ReDefines, ReInclude, ReTypeStru = updateRegex()
+                
+            reg6 = re.match(ReTypeStru, linea)
+            if reg6 != None:
+                self.tiposDatos += "|%s" %reg6.group(1)
+                self.autoCompleteWords.append(reg6.group(1))
+                ReFunction, ReVariable, ReStructs, ReTypeDef, ReDefines, ReInclude, ReTypeStru = updateRegex()        
+                
             count += 1
             
-        count = 0
-        self.allFunc.reverse()
-        self.lateralFunc.DeleteAllItems()
-        for var in self.allFunc:
-            self.addFuncInListCtrl(count, var)
-            count += 1
+        self.allDefi.sort()
+        self.allDefi_back.sort()
+        self.allFunc.sort()
+        self.allFunc_back.sort()
+        self.allVars.sort()
+        self.allVars_back.sort()
+              
+        if self.allVars_back != self.allVars:        
+            count = 0
+            #self.allVars.reverse()
+            self.lateralVars.DeleteAllItems()
+            for var in self.allVars:
+                self.addVarInListCtrl(count, var)
+                count += 1
+            self.allVars_back = self.allVars[:]
+        
+        if self.allFunc_back != self.allFunc:
+            count = 0
+            #self.allFunc.reverse()
+            self.lateralFunc.DeleteAllItems()
+            for var in self.allFunc:
+                self.addFuncInListCtrl(count, var)
+                count += 1
+            self.allFunc_back = self.allFunc[:]
+        
+        
+        if self.allDefi_back != self.allDefi:
+            count = 0
+            #self.allDefi.reverse()
+            self.lateralDefi.DeleteAllItems()
+            for var in self.allDefi:
+                self.addDefiInListCtrl(count, var)
+                count += 1
+            self.allDefi_back = self.allDefi[:]
             
-        count = 0
-        self.allDefi.reverse()
-        self.lateralDefi.DeleteAllItems()
-        for var in self.allDefi:
-            self.addDefiInListCtrl(count, var)
-            count += 1 
             
-        if event: event.Skip()       
+
+            
+                
+        #if event: event.Skip()       
     

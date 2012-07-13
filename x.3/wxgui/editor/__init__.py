@@ -5,7 +5,7 @@
 from debugger import Debugger
 from editeur import editor
 from lateral_tool_area import File, Documents, Search
-#from experimental import Testing
+from experimental import Testing
 from menubar import Menubar
 from general import General
 
@@ -16,7 +16,7 @@ from autocompleter import AutoCompleter
 import locale, sys
 
 ########################################################################
-class Editor(Documents, Debugger, File, Search, editor, Menubar, General):
+class Editor(Documents, Debugger, File, Search, editor, Menubar, General, Testing):
 
     #----------------------------------------------------------------------
     def __initIDE__(self):
@@ -24,10 +24,12 @@ class Editor(Documents, Debugger, File, Search, editor, Menubar, General):
 
         self.updateIDE()
         self.__initEditor__()
-        self.__initDocuments__()
+        #self.__initDocuments__()
         self.__initDebugger__()
         self.__initDockFile__()
-        self.__initSearch__()  
+        self.__initSearch__()
+        self.__initTesting__()
+        self.initTimers()
         
         self.lat.notebookLateral.SetSelection(0)   
 
@@ -36,3 +38,5 @@ class Editor(Documents, Debugger, File, Search, editor, Menubar, General):
         else: self.wikiDoc = "http://wiki.pinguino.cc/index.php/"
         
         self.saveConfig()
+             
+      

@@ -7,7 +7,7 @@
     author:		Yeison Cardona
     contact:		yeison.eng@gmail.com
     first release:	02/April/2012
-    last release:	09/May/2012
+    last release:	09/July/2012
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -56,8 +56,11 @@ class Menubar:
     #----------------------------------------------------------------------
     def OnOpen(self, event):
         self.background.Hide()
-        self.OpenDialog("Pde Files",
-                        "pde")
+        wildcard = "Pde files (*.pde)|*.pde|"     \
+                   "C files (*.c)|*.c|" \
+                   "C Header files (*.h)|*.h|"    \
+                   "All files (*.*)|*.*"
+        self.OpenDialog(wildcard)
         self.updatenotebook()
         self.update_dockFiles()
 
@@ -109,7 +112,11 @@ class Menubar:
 
     #----------------------------------------------------------------------
     def OnSaveAs(self, event):
-        self.Save("Pde Files","pde")
+        wildcard = "Pde files (*.pde)|*.pde|"     
+                   #"C files (*.c)|*.c|" \
+                   #"C Header files (*.h)|*.h|"    \
+                   #"All files (*.*)|*.*"        
+        self.Save(wildcard)
 
     #----------------------------------------------------------------------
     def OnClose(self, event):
@@ -159,8 +166,36 @@ class Menubar:
         posLineStart, posLineEnd = map(textEdit.PositionFromLine, [lineStart, lineEnd+1])
         textEdit.SetSelection(posLineStart, posLineEnd)
         selected = textEdit.GetSelectedText()
-        if selected.startswith("//"): comented = selected.replace("//","")
-        else: comented = "//" + selected.replace("\n","\n//", countLines)
+        selected = selected.split("\n")
+        
+        def getCharPos(cadena):
+            pos = 0
+            for i in cadena:
+                if i.isspace(): pos += 1
+                else: break
+            return pos
+        
+        forComent = False
+        for linea in selected:
+            if not linea.isspace() and linea != "":
+                pos = getCharPos(linea)
+                if linea[pos:pos+2] != "//": forComent = True
+            
+        comented = []
+        if forComent:
+            for linea in selected:
+                if not linea.isspace() and linea != "":
+                    pos = getCharPos(linea)
+                    comented.append(linea[:pos]+"//"+linea[pos:])
+                else: comented.append(linea)
+        else:    
+            for linea in selected:
+                if not linea.isspace() and linea != "":
+                    pos = getCharPos(linea)
+                    comented.append(linea[:pos]+linea[pos+2:])
+                else: comented.append(linea)
+                    
+        comented = "\n".join(comented)
         textEdit.Clear()
         textEdit.InsertText(textEdit.CurrentPos, comented)
         textEdit.SetSelection(*map(textEdit.PositionFromLine, [lineStart, lineEnd]))
@@ -198,7 +233,7 @@ class Menubar:
 
     #----------------------------------------------------------------------
     def OnExit(self, event):
-
+        self.stopTimers()
         self.closing = True  #Signal for Threads
 
         try:
@@ -236,8 +271,13 @@ class Menubar:
             except: pass          
             self.setConfig("Last", "Last_%d" %i, file)
             i += 1
+        if self.filename != []:
+            name = self.filename[self.notebookEditor.GetSelection()]
+            self.setConfig("Last", "Last_Focus", name)
+            
         
         self.setConfig("IDE", "Theme", self.theme)
+        
         
         self.setConfig("IDE","Board", self.curBoard.name)
         
@@ -248,6 +288,9 @@ class Menubar:
         except: self.setConfig("IDE", "PerspectiveOutput", "119")
         try: self.setConfig("IDE", "PerspectiveLateral", re.match(panelLateral, perspectiva).group(1))
         except: self.setConfig("IDE", "PerspectiveLateral", "286")
+        
+        dir = unicode(self.parentDir).encode("utf-8")
+        self.setConfig("IDE", "LateralPath", dir)
             
         self.saveConfig()
 

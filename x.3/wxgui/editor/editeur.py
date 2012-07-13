@@ -136,7 +136,6 @@ class editor:
 
     #----------------------------------------------------------------------
     def buildSheet(self, name):
-        #ImageClose = os.path.join(os.getcwd(), "wxgui", "resources", "close.png")
         p = wx.Panel(self.notebookEditor,-1, style = wx.NO_FULL_REPAINT_ON_RESIZE)
         self.onglet.append(p)
 
@@ -234,14 +233,17 @@ class editor:
         self.editeur=self.stcpage[newIdx]
         self.editeur.Bind(wx.EVT_CONTEXT_MENU, self.contexMenuTools)
         self.editeur.Bind(wx.EVT_KEY_UP, self.keyEvent)
-        self.editeur.Bind(wx.stc.EVT_STC_CHARADDED, self.InsertChar)
+        #self.editeur.Bind(wx.stc.EVT_STC_CHARADDED, self.InsertChar)
+        self.editeur.Bind(wx.EVT_CHAR, self.InsertChar)
+        self.editeur.Bind(stc.EVT_STC_UPDATEUI, self.OnUpdateUI)
+        self.editeur.Bind(stc.EVT_STC_UPDATEUI, self.updateStatusBar)
         #self.editeur.Bind(wx.stc.EVT_STC_MODIFIED, self.keyEvent)        
         #self.editeur.Bind(wx.stc.EVT_STC_AUTOCOMP_SELECTION, self.inserted)
-        self.editeur.Bind(wx.stc.EVT_STC_MODIFIED, self.updateStatusBar)
-        self.editeur.Bind(wx.stc.EVT_STC_MODIFIED, self.update_dockFiles)
-        self.editeur.Bind(wx.EVT_LEFT_UP, self.updateStatusBar)
+        #self.editeur.Bind(wx.stc.EVT_STC_MODIFIED, self.updateStatusBar)
+        #self.editeur.Bind(wx.stc.EVT_STC_MODIFIED, self.update_dockFiles)
+        #self.editeur.Bind(wx.EVT_LEFT_UP, self.updateStatusBar)
         self.editeur.Bind(wx.EVT_LEFT_UP, self.OnLeftCklick)
-        self.editeur.Bind(wx.EVT_KEY_UP, self.updateStatusBar)
+        #self.editeur.Bind(wx.EVT_KEY_UP, self.updateStatusBar)
         self.editeur.Bind(wx.stc.EVT_STC_MARGINCLICK, self.OnMarginClick)
         #self.editeur.Bind(wx.stc.EVT_STC_DO_DROP, self.OnDrop)  
         #self.editeur.Bind(wx.stc.EVT_STC_dr, self.OnDrag)        
@@ -256,7 +258,7 @@ class editor:
 
         
         if self.getElse("Open/Save", "template", "True") == "True":
-            self.insertSnippet("Insert Date {snippet}")
+            self.insertSnippet("Insert Info {snippet}")
             self.editeur.GotoLine(self.editeur.LineCount)
             self.editeur.AppendText("\n\n")
             self.editeur.GotoLine(self.editeur.LineCount)
@@ -281,7 +283,7 @@ class editor:
 
 # modified by r.blanchot 31/10/2010, 01/06/2011
 
-    def OpenDialog(self,type,extension):
+    def OpenDialog(self,wildcard):
         """ Open Dialog and load file in a new editor """
 
         try: defaultDir=os.path.split(self.filename[self.notebookEditor.GetSelection()])[0]
@@ -292,7 +294,7 @@ class editor:
                                 #defaultDir=os.getcwd(),
                                 defaultDir=defaultDir, 
                                 defaultFile="",
-                                wildcard=type+" (*"+extension+")|*"+extension,
+                                wildcard=wildcard,
                                 style=wx.OPEN  | wx.CHANGE_DIR)
 
         if opendlg.ShowModal() == wx.ID_OK:
@@ -348,7 +350,7 @@ class editor:
 
 
 
-    def Save(self,type,extensionSave):
+    def Save(self,wildcard):
         """save the content of the editor to filename""" 
         if len(self.onglet)>0: 
             pageIdx = self.notebookEditor.GetSelection()
@@ -360,8 +362,9 @@ class editor:
                 self, 
                 message=_("Save file as")+" ...", 
                 defaultDir=directory, 
-                defaultFile=file, 
-                wildcard=type+" (*"+extensionSave+")|*"+extensionSave,
+                defaultFile=file,
+                wildcard=wildcard, 
+                #wildcard=type+" (*"+extensionSave+")|*"+extensionSave,
                 style=wx.SAVE)
             filedlg.SetFilterIndex(2)
             if filedlg.ShowModal() == wx.ID_OK:
@@ -544,7 +547,11 @@ class editor:
         kw.extend(Autocompleter["reserved"])
 
         font = self.getFontPreferences()     
-        self.stcpage[self.notebookEditor.GetSelection()].SetKeyWords(0, " ".join(kw))                 
+        self.stcpage[self.notebookEditor.GetSelection()].SetKeyWords(0, " ".join(kw))
+        
+        self.stcpage[self.notebookEditor.GetSelection()].StyleSetSpec(stc.STC_STYLE_BRACELIGHT,  "face:%s,size:%d,fore:#008000,back:#87deaa,bold" %(font.GetFaceName(), font.GetPointSize()))
+        self.stcpage[self.notebookEditor.GetSelection()].StyleSetSpec(stc.STC_STYLE_BRACEBAD,    "face:%s,size:%d,fore:#ff0000,back:#ffaaaa,bold" %(font.GetFaceName(), font.GetPointSize()))         
+
         self.stcpage[self.notebookEditor.GetSelection()].StyleSetSpec(stc.STC_C_PREPROCESSOR, "face:%s,size:%d,fore:#d36820" %(font.GetFaceName(), font.GetPointSize()))                
         self.stcpage[self.notebookEditor.GetSelection()].StyleSetSpec(stc.STC_C_DEFAULT, "face:%s,size:%d,fore:#000000" %(font.GetFaceName(), font.GetPointSize()))
         self.stcpage[self.notebookEditor.GetSelection()].StyleSetSpec(stc.STC_C_COMMENT, "face:%s,size:%d,fore:#c81818" %(font.GetFaceName(), font.GetPointSize()))
@@ -560,6 +567,9 @@ class editor:
         self.stcpage[self.notebookEditor.GetSelection()].StyleSetSpec(stc.STC_C_COMMENTLINEDOC,  "fore:#007F00,size:%d" % font.GetPointSize())
         self.stcpage[self.notebookEditor.GetSelection()].StyleSetSpec(stc.STC_C_GLOBALCLASS, "fore:#7F7F7F,size:%d" % font.GetPointSize())
         self.stcpage[self.notebookEditor.GetSelection()].SetCaretForeground("BLACK")
+        
+       
+        
         self.stcpage[self.notebookEditor.GetSelection()].SetCaretWidth(1)
         #self.stcpage[self.notebookEditor.GetSelection()].SetBackSpaceUnIndents(True)
         #self.stcpage[self.notebookEditor.GetSelection()].SetMarginWidth(0, 30)

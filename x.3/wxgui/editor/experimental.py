@@ -9,17 +9,46 @@
 #from debugger import Debugger
 #from lateral_dock import File, Documents, Search
 
-import sys, os, zipfile, re, wx
+#import sys, os, re, wx
 
-import  wx.lib.mixins.listctrl  as  listmix
-from ConfigParser import RawConfigParser
+#import  wx.lib.mixins.listctrl  as  listmix
+#from ConfigParser import RawConfigParser
 
 
 
 ########################################################################
 class Testing():
     """"""
-
+    
+    #----------------------------------------------------------------------
+    def __initTesting__(self):
+        """"""
+    
+    #----------------------------------------------------------------------
+    def addArguments(self, funcionName):
+        for func in self.allFunc:
+            if func[0] in [funcionName, "*"+funcionName]:
+                arg = func[3]
+                self.HideNextAutoComplete()
+                textEdit = self.stcpage[self.notebookEditor.GetSelection()]
+                textEdit.InsertText(textEdit.CurrentPos, "("+arg+")")
+                textEdit.SetSelection(textEdit.CurrentPos+1, textEdit.CurrentPos+len(arg)+1)
+                return True
+                break
+        return False
+        
+    #----------------------------------------------------------------------
+    def HideNextAutoComplete(self):
+        self.autocompleteHide = True
+        
+    #----------------------------------------------------------------------
+    def OnShowCompleter(self, event=None):
+        word = self.wordUnderCursor(True)
+        if word == " ": word = None
+        self.AutoCompleter.ShowCompleter(word, -1)     
+        
+        
+        
 
    
     

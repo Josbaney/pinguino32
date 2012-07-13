@@ -38,19 +38,6 @@ class ResultEventRevision(wx.PyEvent):
         self.SetEventType(EVT_RESULT_REVISION_ID)
         self.data = data
 	
-	
-EVT_AUTO_SAVE_FILES_ID = wx.NewId()
-
-def EVT_AUTO_SAVE_FILES(win, func):
-    win.Connect(-1, -1, EVT_AUTO_SAVE_FILES_ID, func)
-
-class AutoSaveFiles(wx.PyEvent):
-    def __init__(self, data):
-	wx.PyEvent.__init__(self)
-	self.SetEventType(EVT_AUTO_SAVE_FILES_ID)
-	self.data = data
-
-
 # ------------------------------------------------------------------------------
 # current version
 # ------------------------------------------------------------------------------
@@ -103,7 +90,6 @@ class Pinguino(framePinguinoX, Editor):
     debug_flag=False
     in_verify=0
 
-
     noname=0
     keywordList=[]
     reservedword=[]
@@ -123,15 +109,19 @@ class Pinguino(framePinguinoX, Editor):
 	self.boardlist = boardlist
 	self.debugOutMessage = None
 	self.closing = False
+	self.currentLateralDir = os.path.join(os.getcwd(),"examples")
+	self.autoCompleteWords = []
 	self.recentsFiles = []
+	self.otherWords = []
 	self.GetTheme()
 	
         if os.path.isdir(TEMP_DIR) == False: os.mkdir(TEMP_DIR)
 
         self._mgr = wx.aui.AuiManager(self)
-
+	
 	self.setOSvariables()
 	self.buildOutput()
+	self.autocompleteHide = False
 	self.buildLateralPanel()	
 	self.buildEditor()
 	self.buildMenu()
@@ -139,15 +129,15 @@ class Pinguino(framePinguinoX, Editor):
 	self.DrawToolbar()	
 	self.ConnectAll()
 	self.trees = []
+	
+        self.allVars_back = [] 
+        self.allFunc_back = []
+        self.allDefi_back = []	
 
         #Threads
         EVT_RESULT_REVISION(self, self.setRevision)
         threadRevision = threading.Thread(target=self.getRevision, args=( ))
         threadRevision.start()
-	
-	EVT_AUTO_SAVE_FILES(self, self.autoSaveFiles)	
-	threadAutoSave = threading.Thread(target=self.AutoSave, args=())
-	threadAutoSave.start()
 
         self.SetTitle('Pinguino IDE ' + pinguino_version + " rev. ["+_("loading...")+"]")
         self.displaymsg(_("Welcome to Pinguino IDE")+" (rev. ["+_("loading...")+"])\n", 0)
@@ -156,6 +146,15 @@ class Pinguino(framePinguinoX, Editor):
         self.__initIDE__()
 
         self.openLast()
+	
+	########################################
+	#Auto-complete frame build 
+	CharsCount = self.getElse("Completer", "charscount", 1)
+	MaxItemsCount = self.getElse("Completer", "MaxItemsCount", 10)
+	self.AutoCompleter = AutocompleterIDE(self)
+	self.AutoCompleter.__initCompleter__(self, CharsCount, MaxItemsCount)
+	self.AutoCompleter.Hide()   	
+	
 
 
 # ------------------------------------------------------------------------------
@@ -240,8 +239,8 @@ class Pinguino(framePinguinoX, Editor):
 	self.Bind(wx.EVT_MENU, self.OnComment, self.menu.menuItemComment_Uncomment)
 	self.Bind(wx.EVT_MENU, self.OnIndent, self.menu.menuItemIndent)
 	self.Bind(wx.EVT_MENU, self.OnUnIndent, self.menu.menuItemUnIndent)
-	
 	self.Bind(wx.EVT_MENU, self.OnPreferences, self.menu.menuItemPreferences)
+	self.Bind(wx.EVT_MENU, self.OnShowCompleter, self.menu.menuItemforzecompleter)
 
 	#view menu
 	self.Bind(wx.EVT_MENU, self.OnViewTools, self.menu.menuItemTools)
@@ -263,6 +262,7 @@ class Pinguino(framePinguinoX, Editor):
 	    
 	self.Bind(wx.EVT_MENU, self.OnVerify, self.menu.menuItemCompile)
 	self.Bind(wx.EVT_MENU, self.OnUpload, self.menu.menuItemUpload)
+	self.Bind(wx.EVT_MENU, self.OnVerifyUpload, self.menu.menuItemCompileUpload)
 
 
 	##plugin
@@ -400,6 +400,11 @@ class Pinguino(framePinguinoX, Editor):
 	except:
 	    print "No perspective"
 	    
+	lateralPath = self.getElse("IDE", "LateralPath", os.path.join(os.getcwd(),"examples"))
+	self.__initDocuments__()
+	if os.path.isdir(lateralPath):
+	    self.buildLateralDir(lateralPath)
+	    
 
 # ----------------------------------------------------------------------
 # get OS name and define some OS dependant variable
@@ -434,15 +439,37 @@ class Pinguino(framePinguinoX, Editor):
         wx.PostEvent(self, ResultEventRevision(sw))
 
 
+# ------------------------------------------------------------------------------
+# Timer Functions
+# ------------------------------------------------------------------------------
+
     #----------------------------------------------------------------------
-    def AutoSave(self):
-	while not self.closing:
-	    timeSave = self.getElse("Open/Save", "autosavetime", 10)
-	    for i in range(timeSave):
-		time.sleep(timeSave/timeSave)
-		if self.closing: return
-	    wx.PostEvent(self, AutoSaveFiles(None))
+    def initTimers(self):
+	#Auto=save
+	save = self.getElse("Open/Save", "autosave", "False")
+	timeSave = self.getElse("Open/Save", "autosavetime", 10) * 1000
+	if save == "True":
+	    self.timer_autosave = wx.CallLater(timeSave, self.autoSaveFiles)
+	#Updates
+	self.timer_updates = wx.CallLater(1000, self.updates)
+	
+    #----------------------------------------------------------------------
+    def stopTimers(self):
+	self.timer_updates.Stop()
+	
+    #----------------------------------------------------------------------
+    def autoSaveFiles(self):
+	if self.getElse("Open/Save", "autosave", "False") == "True":
+	    self.OnSaveAll()
+	timeSave = self.getElse("Open/Save", "autosavetime", 10) * 1000	
+	self.timer_autosave.Restart(timeSave)
+	
+    #----------------------------------------------------------------------
+    def updates(self):
+	self.update_dockFiles()
+	self.updateStatusBar()
 	    
+	self.timer_updates.Restart(1000)
 	    
 # ------------------------------------------------------------------------------
 # Event Threads
@@ -452,13 +479,7 @@ class Pinguino(framePinguinoX, Editor):
         self.SetTitle('Pinguino IDE ' + pinguino_version + ' rev. ' + self.localRev)
         self.displaymsg(_("Welcome to Pinguino IDE")+" (rev. " + self.localRev + ")\n", 1)
         self.statusBarEditor.SetStatusText(number=2, text="Rev. %s" %self.localRev)
-	
-    #----------------------------------------------------------------------
-    def autoSaveFiles(self, event):
-	if self.in_verify==0:
-	    if self.getElse("Open/Save", "autosave", "False") == "True":
-		self.OnSaveAll()
-	    
+
 	    
 # ------------------------------------------------------------------------------
 # Update
@@ -466,7 +487,6 @@ class Pinguino(framePinguinoX, Editor):
     def updateIDE(self):
         self.lat.search.Fit()
         self._mgr.Update()
-
 
 
 # ------------------------------------------------------------------------------
@@ -564,21 +584,21 @@ class Pinguino(framePinguinoX, Editor):
 	
     #----------------------------------------------------------------------
     def setBoard(self, name):
-		# clear all the lists before rebuild them
-		del self.rw[:]
-		del self.regobject[:]
-		del self.keywordList[:]
-		del self.reservedword[:]
-		del self.libinstructions[:]
-		
-		for board in boardlist:
-			if name == board.name:
-				self.curBoard = board
-				break
-		
-		self.readlib(self.curBoard) #So slow	
-		#t = threading.Thread(target=self.readlib, args=(self.curBoard, ))
-		#t.start()
+	# clear all the lists before rebuild them
+	del self.rw[:]
+	del self.regobject[:]
+	del self.keywordList[:]
+	del self.reservedword[:]
+	del self.libinstructions[:]
+	
+	for board in boardlist:
+	    if name == board.name:
+		self.curBoard = board
+		break
+	
+	self.readlib(self.curBoard) #So slow	
+	#t = threading.Thread(target=self.readlib, args=(self.curBoard, ))
+	#t.start()
 
 # ------------------------------------------------------------------------------
 # OnPaneClose: wx.aui managed window is about to be closed
@@ -610,6 +630,15 @@ class Pinguino(framePinguinoX, Editor):
 		file = self.getConfig("Last", "Last_%d"%i)
 		if os.path.isfile(file):
 		    self.Open(file)
+		    
+	    name = self.getConfig("Last", "Last_Focus")
+	    c = 0
+	    for i in self.filename:
+		if i == name: break
+		c += 1
+	    
+	    self.notebookEditor.SetSelection(c)
+		    
 	except: pass
 
 # ------------------------------------------------------------------------------
@@ -680,7 +709,7 @@ class Pinguino(framePinguinoX, Editor):
 # OnVerify:
 # ------------------------------------------------------------------------------
 
-    def OnVerify(self, event):
+    def OnVerify(self, event=None):
         global lang
         self.in_verify=1
         t0 = time.time()
@@ -691,7 +720,7 @@ class Pinguino(framePinguinoX, Editor):
                                    wx.OK | wx.ICON_WARNING)
             result=dlg.ShowModal()
             dlg.Destroy()
-            return
+            return False
         self.displaymsg(_("Board:")+"\t" + self.curBoard.name + "\n", 1)
         self.displaymsg(_("Proc:")+"\t" + self.curBoard.proc + "\n", 0)
         self.displaymsg(_("File:")+"\t" + self.GetPath() + "\n", 0)
@@ -704,7 +733,7 @@ class Pinguino(framePinguinoX, Editor):
             os.remove(os.path.join(SOURCE_DIR, "user.c"))
         retour=self.preprocess(filename, self.curBoard)
         if retour=="error":
-            return
+            return False
         # compilation
         if self.curBoard.arch == 8:
             MAIN_FILE="main.hex"
@@ -717,6 +746,7 @@ class Pinguino(framePinguinoX, Editor):
             retour=self.link(filename, self.curBoard)
             if os.path.exists(os.path.join(SOURCE_DIR, MAIN_FILE))!=True:
                 self.displaymsg(_("error while linking")+" "+filename+".o",0)
+		return False
             else:
                 shutil.copy(os.path.join(SOURCE_DIR, MAIN_FILE), filename+".hex")
                 self.displaymsg(_("compilation done")+"\n",0)
@@ -724,13 +754,15 @@ class Pinguino(framePinguinoX, Editor):
                 self.displaymsg(str(time.time() - t0) + " "+_("seconds process time")+"\n",0)
                 os.remove(os.path.join(SOURCE_DIR, MAIN_FILE))
                 #os.remove(filename+".c")
+		return True
         self.in_verify=0
+	
         
 # ------------------------------------------------------------------------------
 # OnUpload:
 # ------------------------------------------------------------------------------
 
-    def OnUpload(self, event):
+    def OnUpload(self, event=None):
         if self.GetPath() != -1:
             filename = self.GetPath()
             filename, extension = os.path.splitext(filename)
@@ -763,8 +795,13 @@ class Pinguino(framePinguinoX, Editor):
                                    wx.OK | wx.ICON_WARNING)
             result=dlg.ShowModal()
             dlg.Destroy()
-        event.Skip()
+        if event != None: event.Skip()
 
+
+    #----------------------------------------------------------------------
+    def OnVerifyUpload(self, even=None):
+	if self.OnVerify(): self.OnUpload()
+	
 
 
 
@@ -1297,52 +1334,36 @@ class Pinguino(framePinguinoX, Editor):
 
     #----------------------------------------------------------------------
     def OnPreferences(self, event=None):
-        app = wx.PySimpleApp(0)
+        #app = wx.PySimpleApp(0)
         wx.InitAllImageHandlers()
         frame_1 = PreferencesIDE(self)
         frame_1.__initPreferences__(self)
-        app.SetTopWindow(frame_1)
+        #app.SetTopWindow(frame_1)
         frame_1.CenterOnParent()
         frame_1.Show()
-        app.MainLoop()
+        #app.MainLoop()
 
 
     #----------------------------------------------------------------------
     def OnKeyword(self, event=None, keyword=None):
-        app = wx.PySimpleApp(0)
+        #app = wx.PySimpleApp(0)
         wx.InitAllImageHandlers()
         frame_1 = FunctionsIDE(None)
         frame_1.__initfunctionsHelp__(None, self.keywordList, keyword)
-        app.SetTopWindow(frame_1)
+        #app.SetTopWindow(frame_1)
         frame_1.CenterOnParent()
         frame_1.Show()
-        app.MainLoop()
-        self.setNormalCursor()
+        #app.MainLoop()
+        #self.setNormalCursor()
 
     #----------------------------------------------------------------------
     def OnAutoCompleter(self):
-	
-	CharsCount = 1
-	try: CharsCount = self.getConfig("Completer", "charscount") - 1
-	except: self.setConfig("Completer", "charscount", str(CharsCount+1))
-		
-	MaxItemsCount = 10
-	try: MaxItemsCount = self.getConfig("Completer", "MaxItemsCount")
-	except: self.setConfig("Completer", "MaxItemsCount", str(MaxItemsCount))
-	
-	if self.wordUnderCursor(True) == None: return
+	CharsCount = self.getElse("Completer", "charscount", 1)
+	word = self.wordUnderCursor(True)
+	if  word == "": return
 	if len(self.wordUnderCursor(True)) > CharsCount:
-	    try: self.AutoCompleter.Close()
-	    except: pass
+	    self.AutoCompleter.ShowCompleter(word, CharsCount)
 	    
-	    textEdit = self.stcpage[self.notebookEditor.GetSelection()]
-	    app = wx.PySimpleApp(0)
-	    wx.InitAllImageHandlers()
-	    self.AutoCompleter = AutocompleterIDE(self)
-	    self.AutoCompleter.__initCompleter__(self, self.wordUnderCursor(True), CharsCount, MaxItemsCount)
-	    app.SetTopWindow(self.AutoCompleter)
-	    self.AutoCompleter.Show()
-	    app.MainLoop()
 
     #----------------------------------------------------------------------
     def OnDrop(self, event):
@@ -1368,10 +1389,8 @@ class Pinguino(framePinguinoX, Editor):
 	self.OnCloseAll()
 	self.openLast()
 	self.Show()
+    
 	
-	print self._mgr.SavePerspective()
-	
-
 
 ########################################################################
 class PreferencesIDE(framePreferences, Preferences):

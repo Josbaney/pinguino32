@@ -68,6 +68,11 @@ class menubarPinguino ( wx.MenuBar ):
 		
 		self.menuEdit.AppendSeparator()
 		
+		self.menuItemforzecompleter = wx.MenuItem( self.menuEdit, wx.ID_ANY, _("Show Auto-completer")+ u"\t" + u"CTRL+Space", wx.EmptyString, wx.ITEM_NORMAL )
+		self.menuEdit.AppendItem( self.menuItemforzecompleter )
+		
+		self.menuEdit.AppendSeparator()
+		
 		self.menuItemComment_Uncomment = wx.MenuItem( self.menuEdit, wx.ID_ANY, _("Comment/Uncomment")+ u"\t" + u"CTRL+L", wx.EmptyString, wx.ITEM_NORMAL )
 		self.menuEdit.AppendItem( self.menuItemComment_Uncomment )
 		
@@ -155,6 +160,9 @@ class menubarPinguino ( wx.MenuBar ):
 		
 		self.menuItemUpload = wx.MenuItem( self.menuPinguino, wx.ID_ANY, _("Upload")+ u"\t" + u"F6", wx.EmptyString, wx.ITEM_NORMAL )
 		self.menuPinguino.AppendItem( self.menuItemUpload )
+		
+		self.menuItemCompileUpload = wx.MenuItem( self.menuPinguino, wx.ID_ANY, _("If Compile then Upload")+ u"\t" + u"F7", wx.EmptyString, wx.ITEM_NORMAL )
+		self.menuPinguino.AppendItem( self.menuItemCompileUpload )
 		
 		self.Append( self.menuPinguino, _("Pinguino") ) 
 		
@@ -409,7 +417,7 @@ class framePreferences ( wx.Frame ):
 		self.spinCtrlItemsCompleterCount = wx.SpinCtrl( self.auto_completion, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.SP_ARROW_KEYS, 5, 30, 15 )
 		fgSizer5.Add( self.spinCtrlItemsCompleterCount, 0, wx.ALL|wx.EXPAND, 5 )
 		
-		self.checkBoxInsertParenthesis = wx.CheckBox( self.auto_completion, wx.ID_ANY, _("Insert \"()\" in the functions."), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.checkBoxInsertParenthesis = wx.CheckBox( self.auto_completion, wx.ID_ANY, _("Insert argumentets with \"(\""), wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.checkBoxInsertParenthesis.SetValue(True) 
 		fgSizer5.Add( self.checkBoxInsertParenthesis, 0, wx.ALL, 5 )
 		
@@ -785,7 +793,7 @@ class panelLateral ( wx.Panel ):
 		self.file.SetSizer( bSizer7 )
 		self.file.Layout()
 		bSizer7.Fit( self.file )
-		self.notebookLateral.AddPage( self.file, _("File"), True )
+		self.notebookLateral.AddPage( self.file, _("File"), False )
 		self.documents = wx.Panel( self.notebookLateral, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer4 = wx.BoxSizer( wx.VERTICAL )
 		
@@ -822,7 +830,7 @@ class panelLateral ( wx.Panel ):
 		self.listCtrlFiles = wx.ListCtrl( self.m_panel6, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LC_NO_HEADER|wx.LC_REPORT|wx.RAISED_BORDER )
 		bSizer6.Add( self.listCtrlFiles, 1, wx.EXPAND, 5 )
 		
-		choiceFileChoices = [ _("*.*"), _("*.pde") ]
+		choiceFileChoices = [ _("*.*"), _("*.pde"), _("*.c"), _("*.h") ]
 		self.choiceFile = wx.Choice( self.m_panel6, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, choiceFileChoices, 0 )
 		self.choiceFile.SetSelection( 1 )
 		bSizer6.Add( self.choiceFile, 0, wx.EXPAND, 5 )
@@ -864,6 +872,16 @@ class panelLateral ( wx.Panel ):
 		self.searchCtrlReplace.ShowSearchButton( False )
 		self.searchCtrlReplace.ShowCancelButton( False )
 		fgSizer1.Add( self.searchCtrlReplace, 0, wx.EXPAND|wx.ALL, 5 )
+		
+		
+		fgSizer1.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
+		
+		bSizer27 = wx.BoxSizer( wx.HORIZONTAL )
+		
+		self.checkBox_sensitive = wx.CheckBox( self.search, wx.ID_ANY, _("Case sensitive"), wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer27.Add( self.checkBox_sensitive, 0, wx.ALL, 5 )
+		
+		fgSizer1.Add( bSizer27, 1, wx.EXPAND, 5 )
 		
 		
 		fgSizer1.AddSpacer( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -911,7 +929,7 @@ class panelLateral ( wx.Panel ):
 		self.search.SetSizer( fgSizer1 )
 		self.search.Layout()
 		fgSizer1.Fit( self.search )
-		self.notebookLateral.AddPage( self.search, _("Search"), False )
+		self.notebookLateral.AddPage( self.search, _("Search"), True )
 		
 		bSizer3.Add( self.notebookLateral, 1, wx.EXPAND, 5 )
 		

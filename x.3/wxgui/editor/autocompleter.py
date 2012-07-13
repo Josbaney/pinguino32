@@ -7,7 +7,7 @@
     author:		Yeison Cardona
     contact:		yeison.eng@gmail.com 
     first release:	03/April/2012
-    last release:	03/June/2012
+    last release:	11/July/2012
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -28,31 +28,32 @@ import wx, sys, os
 from dic import Snippet
 
 ICONS_COMPLETER_DIR = os.path.join(os.getcwd(), "theme", "icons_autocompleter")
+AVAILABLE_ICONS = os.listdir(ICONS_COMPLETER_DIR)
 
 ########################################################################
 class AutoCompleter():
 
     #----------------------------------------------------------------------
-    def __initCompleter__(self, parent, index, CharsCount, MaxItemsCount):
+    def __initCompleter__(self, parent, CharsCount, MaxItemsCount):
         self.IDE = parent
-        self.index = index
 
         self.CharsCount = CharsCount
         self.MaxItemsCount = MaxItemsCount
-
-
-        if not len(self.index) > self.CharsCount: self.Close()
 
         self.listCtrlAutocompleter.InsertColumn(col=0, format=wx.LIST_FORMAT_LEFT, heading='Completers', width=-1)
         self.listCtrlAutocompleter.SetColumnWidth(0, self.Size[0])
         self.il = wx.ImageList(14, 14)
         self.listCtrlAutocompleter.SetImageList(self.il, wx.IMAGE_LIST_SMALL)
         self.listCtrlAutocompleter.SetFocus()
-
-
         self.Bind(wx.EVT_LIST_ITEM_ACTIVATED, self.activated, self.listCtrlAutocompleter)
         self.listCtrlAutocompleter.Bind(wx.EVT_CHAR, self.onCharEvent)
-        self.Bind(wx.EVT_KEY_UP, self.onKeyEvent)
+        #self.Bind(wx.EVT_KEY_UP, self.onKeyEvent)
+        self.listCtrlAutocompleter.Bind(wx.EVT_KEY_UP, self.onKeyEvent)
+        
+    #----------------------------------------------------------------------
+    def ShowCompleter(self, index, CharsCount):
+        self.index = index
+        self.CharsCount = CharsCount
         self.setItems()
         
     #----------------------------------------------------------------------
@@ -60,7 +61,7 @@ class AutoCompleter():
         textEdit = self.IDE.stcpage[self.IDE.notebookEditor.GetSelection()]
         
         if event.GetKeyCode() in [wx.WXK_ESCAPE]:
-            self.Close()
+            self.Hide()
             return
 
         if event.GetKeyCode() in [wx.WXK_BACK, wx.WXK_DELETE, ]:
@@ -73,11 +74,19 @@ class AutoCompleter():
             if code >= 32 and code <= 126:  #Caracter imprimible
                 key = chr(event.GetKeyCode())
             #elif code < 32:
-                #self.Close()
+                #self.Hide()
                 #return
             else:
                 event.Skip()
                 return 
+            
+            #Windows use space key to insert :/
+            if key.isspace() and os.name == "nt":
+                textEdit.Undo()
+                textEdit.Undo()
+                textEdit.AddText(key)
+                self.Hide()
+                return
             
             textEdit.AddText(key)
             
@@ -104,54 +113,55 @@ class AutoCompleter():
     def onKeyEvent(self, event):
         textEdit = self.IDE.stcpage[self.IDE.notebookEditor.GetSelection()]        
 
-        if event.GetKeyCode() in [wx.WXK_DOWN,
-                                  wx.WXK_UP]:
+        if event.GetKeyCode() in [wx.WXK_DOWN, wx.WXK_UP]:
             event.Skip()
+            return
+        
+        if event.GetModifiers() in [wx.MOD_CONTROL] and not event.GetKeyCode() in [wx.WXK_SPACE, wx.WXK_CONTROL]:
+            #print event.GetKeyCode(), wx.WXK_CONTROL
+            self.Hide()
             return
         
         if event.GetKeyCode() in [wx.WXK_ESCAPE, wx.WXK_DELETE]:
-            self.Close()
+            self.Hide()
             return
-        
+
+        if event.GetKeyCode() in [wx.WXK_BACK]:
+            textEdit.DeleteBack()
+            self.Hide()
+            event.Skip()
+            return        
+
         if event.GetKeyCode() in [wx.WXK_TAB]:
             self.activated()
-            self.Close()
-            event.Skip()
+            self.Hide()
+            #event.Skip()
             return
         
         if event.GetKeyCode() in [wx.WXK_RIGHT]:
             textEdit.CharRight()
-            self.Close()
+            self.Hide()
             event.Skip()
             return
         
         if event.GetKeyCode() in [wx.WXK_LEFT]:
             textEdit.CharLeft()
-            self.Close()
+            self.Hide()
             event.Skip()
             return
-
-        if event.KeyCode == wx.WXK_BACK:
-            textEdit.DeleteBack()
-            self.index = self.index[:-1]
-            if len(self.index) > self.CharsCount:
-                self.setItems()
-            else: self.Close()
-            event.Skip()
-            return
-
+        
         self.index = self.IDE.wordUnderCursor(True)
 
-        if len(self.index) > self.CharsCount:
-            self.setItems()
-        else: self.Close()
-
+        if len(self.index) > self.CharsCount: self.setItems()
+        else: self.Hide()
+        
         event.Skip()
 
 
     #----------------------------------------------------------------------
     def addItem(self, name, icon):
         if icon in ["u8", "u16", "u32", "u64"]: icon = "ux"
+        if not icon + ".png" in AVAILABLE_ICONS: icon = "none"
         self.listCtrlAutocompleter.InsertImageStringItem(0, name, self.GetIconCompleter(icon))
         self.listCtrlAutocompleter.SetItemData(0, 1)  
 
@@ -163,15 +173,18 @@ class AutoCompleter():
 
 
     #----------------------------------------------------------------------
-    def activated(self, event=None): 
+    def activated(self, event=None):
         index = self.index
         textEdit = self.IDE.stcpage[self.IDE.notebookEditor.GetSelection()]
         for i in index: textEdit.DeleteBack()
         
-        current = self.listCtrlAutocompleter.GetItemText(self.listCtrlAutocompleter.GetFocusedItem())
+        itemCount = self.listCtrlAutocompleter.GetFocusedItem()
+        if itemCount == -1: itemCount = 0
+            
+        current = self.listCtrlAutocompleter.GetItemText(itemCount)
         if current in Snippet:
             self.IDE.insertSnippet(current)
-            self.Close()
+            self.Hide()
             return
 
         textEdit.InsertText(textEdit.CurrentPos, current)
@@ -179,33 +192,20 @@ class AutoCompleter():
         #Set cursor position at the last word (dot is a word)
         words = 1
         if "." in current: words = 3
-        for i in range(words): textEdit.WordRightEnd()
+        for i in range(words): textEdit.WordRightEnd()  
 
-        #Add "()" to funtions
-        enable = "True"
-        try: enable = self.IDE.getConfig("Completer", "insertParentheses")
-        except: self.IDE.setConfig("Completer", "insertParentheses", enable)           
-
-        if current in self.IDE.keywordList and enable == "True":
-            textEdit.InsertText(textEdit.CurrentPos, "()")
-            textEdit.CharRight()
-            self.Close()
-            return 
-            
-        #Ugly space :)
-        #textEdit.InsertText(textEdit.CurrentPos, " ")
-        #textEdit.CharRight()    
-
-        self.Close()
+        self.Hide()   
 
     #----------------------------------------------------------------------
-    def setItems(self):  
+    def setItems(self):
         index = self.index
         completers, icons = self.IDE.getCompleters()
         items = []
         completers.reverse()
-        for word in completers:
-            if word.lower().startswith(index.lower()): items.append(word)
+        if index == None: items = completers[:]
+        else:
+            for word in completers:
+                if word.lower().startswith(index.lower()): items.append(word)
 
         self.SetPosition(self.getPositionCompleter())
         self.listCtrlAutocompleter.DeleteAllItems()
@@ -215,9 +215,15 @@ class AutoCompleter():
                 except KeyError: icon = "none"
                 self.addItem(item, icon)
             self.listCtrlAutocompleter.Select(0)
+            self.listCtrlAutocompleter.PageUp()
             self.setMinimunSize()
+            self.listCtrlAutocompleter.UpdateWindowUI()
             self.Show()
-        else: self.Close()
+        else: self.Hide()
+            
+        if len(items) == 1:
+            if items[0].lower() == index.lower(): self.Hide()
+        
 
     #----------------------------------------------------------------------
     def getPositionCompleter(self):
@@ -247,5 +253,3 @@ class AutoCompleter():
         h = (h / 2) + 1   
         if count > self.MaxItemsCount: self.SetSizeWH(-1, self.MaxItemsCount*h)
         else: self.SetSizeWH(-1, count*h + scrollH)
-
-
