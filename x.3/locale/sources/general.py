@@ -7,7 +7,7 @@
     author:		Yeison Cardona
     contact:		yeison.eng@gmail.com 
     first release:	02/April/2012
-    last release:	03/April/2012
+    last release:	09/July/2012
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -24,39 +24,28 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 -------------------------------------------------------------------------"""
 
-import wx, re, os, sys
+import wx, re, os, sys, string
+import wx.stc as stc
 from ConfigParser import RawConfigParser
 from dic import Snippet, Autocompleter
 from wxgui._trad import _
 
-HOME_DIR    = sys.path[0]
+HOME_DIR    = os.getcwd()
 APP_CONFIG    = os.path.join(HOME_DIR, '.config')
 
 ########################################################################
 class General:
 
-
-    #----------------------------------------------------------------------
-    def insertSnippet(self, key):
-        textEdit = self.stcpage[self.notebookEditor.GetSelection()]
-        index = self.wordUnderCursor()
-        for i in index: textEdit.DeleteBack()
-        textEdit.InsertText(textEdit.CurrentPos, Snippet[key][1])
-        for i in range(Snippet[key][0]): textEdit.CharRight()        
-        self.recent = True
-
     #----------------------------------------------------------------------
     def updateStatusBar(self, event=None):
-        self.findIndex = -1
-        textEdit = self.stcpage[self.notebookEditor.GetSelection()]
-        fila = str(textEdit.CurrentLine).rjust(3, "0")
-        columna = str(textEdit.GetColumn(textEdit.CurrentPos)).rjust(3, "0")
-        self.statusBarEditor.SetStatusText(number=1, text="Line %s - Col %s" %(fila, columna))
-        event.Skip()
-        #color = self.getColorConfig("Highligh", "currentline", [255, 250, 70])   
-        ##self.highlightline(int(columna), color)
-        #self.stcpage[self.notebookEditor.GetSelection()].SetCaretLineBack(color)
-        #self.Refresh()
+        #self.findIndex = -1
+        if len(self.stcpage) > 0:
+            textEdit = self.stcpage[self.notebookEditor.GetSelection()]
+            fila = str(textEdit.CurrentLine+1).rjust(3, "0")
+            columna = str(textEdit.GetColumn(textEdit.CurrentPos)).rjust(3, "0")
+            self.statusBarEditor.SetStatusText(number=1, text="Line %s - Col %s" %(fila, columna))
+            if event != None:
+                event.Skip()
         
 
     #----------------------------------------------------------------------
@@ -135,7 +124,7 @@ class General:
         self.Bind(wx.EVT_MENU, lambda x:textEdit.Paste(), id=self.popupID5)
         self.Bind(wx.EVT_MENU, lambda x:textEdit.Clear(), id=self.popupID6)
         self.Bind(wx.EVT_MENU, lambda x:textEdit.ClearAll(), id=self.popupID7)
-        self.Bind(wx.EVT_MENU, lambda x:self.comentar(), id=self.popupID8)
+        self.Bind(wx.EVT_MENU, lambda x:self.OnComment(), id=self.popupID8)
         self.Bind(wx.EVT_MENU, lambda x:self.OnIndent(), id=self.popupID9)
         self.Bind(wx.EVT_MENU, lambda x:self.OnUnIndent(), id=self.popupID10)
 
@@ -215,7 +204,7 @@ class General:
 
     #----------------------------------------------------------------------
     def OnLeftCklick(self, event):
-        try: self.AutoCompleter.Close()
+        try: self.AutoCompleter.Hide()
         except: pass
         event.Skip()
 
@@ -224,8 +213,15 @@ class General:
     def insertSnippet(self, key):
         textEdit = self.stcpage[self.notebookEditor.GetSelection()]
         index = self.wordUnderCursor()
-        for i in index: textEdit.DeleteBack()
-        rep = Snippet[key][1].replace("\t", self.getIndent())
+        
+        line = textEdit.GetCurLineUTF8()[0]
+        
+        s = 0
+        for i in line:
+            if i.isspace(): s += 1
+            else: break
+        rep = Snippet[key][1].replace("\n", "\n"+" "*s).replace("\t", self.getIndent())
+        
         textEdit.InsertText(textEdit.CurrentPos, rep)
         for i in range(Snippet[key][0][0]-1):
             textEdit.LineDown()
@@ -235,76 +231,71 @@ class General:
         elif  type(Snippet[key][0][1]) == type([]):
             s = len(self.getIndent() * Snippet[key][0][1][0])
             for i in range(Snippet[key][0][1][1]+s):
-                textEdit.CharRight()        
-
+                textEdit.CharRight()
 
     #----------------------------------------------------------------------
     def keyEvent(self, event):
-        #List of key to ignore
-        if event.GetKeyCode() in [wx.WXK_UP,
-                                  wx.WXK_DOWN,
-                                  #wx.WXK_SHIFT,
-                                  wx.WXK_ALT,
-                                  wx.WXK_RIGHT,
-                                  wx.WXK_LEFT,
-                                  wx.WXK_ESCAPE, 
-                                  wx.WXK_INSERT,
-                                  wx.WXK_NUMPAD_INSERT,
-                                  wx.WXK_SPACE, 
-                                  wx.WXK_BACK,
-                                  wx.WXK_RETURN]:
-            return
-
-        if event.GetModifiers() in [wx.MOD_CONTROL,
-                                    wx.MOD_ALT,
-                                    wx.MOD_ALTGR,
-                                    wx.MOD_CMD,
-                                    wx.MOD_META,
-                                    #wx.MOD_SHIFT,
-                                    wx.MOD_WIN,
-                                    wx.MOD_CONTROL+wx.MOD_SHIFT]:
+        if event.KeyCode in [wx.WXK_ESCAPE,
+                             wx.WXK_TAB,
+                             wx.WXK_RETURN,
+                             wx.WXK_NUMPAD_ENTER,
+                             wx.WXK_BACK,
+                             wx.WXK_CONTROL, ]:
+            event.Skip()
             return
         
-        self.loadConfig()
+        if event.GetModifiers() in [wx.MOD_CONTROL]:
+            return
+    
+        try: chr(event.KeyCode)
+        except: return        
         
-
-        enable = self.getElse("Completer", "Enable", "True")
-        
-
-        if enable == "True":
-            try:
+        if not self.autocompleteHide:
+            enable = self.getElse("Completer", "Enable", "True")
+            if enable == "True":
                 self.OnAutoCompleter()
                 self.recent = False
-            except RuntimeError:
-                pass
+            self.autocompleteHide = False
+        else: self.autocompleteHide = False
             
-    
     #----------------------------------------------------------------------
-    def InsertChar(self, event=None):
-        textEdit = self.stcpage[self.notebookEditor.GetSelection()]
-        
-        try: key = chr(event.Key)
+    def InsertChar(self, event=None):            
+        try: key = chr(event.GetKeyCode())
         except: key = None
         
-        print key
+        enable = self.getElse("Completer", "insertParentheses", "False")     
+        if key == "(" and enable == "True":
+            word = self.wordUnderCursor(True)
+            textEdit = self.stcpage[self.notebookEditor.GetSelection()]
+            if self.addArguments(word): return
+        
+        if key in ["[", "\"", "'", "{", "("]:
+            textEdit = self.stcpage[self.notebookEditor.GetSelection()]
+            cadena = textEdit.GetSelectedText()
+            if len(cadena) > 0: textEdit.Clear()              
+            
+            if key == "[" and self.getElse("Insert", "brackets", "False") == "True":
+                textEdit.InsertText(textEdit.CurrentPos, "["+cadena+"]")
+            elif key == '"' and self.getElse("Insert", "doublecuotation", "False") == "True":
+                textEdit.InsertText(textEdit.CurrentPos, '"'+cadena+'"')
+            elif key == "'" and self.getElse("Insert", "singlecuotation", "False") == "True":
+                textEdit.InsertText(textEdit.CurrentPos, "'"+cadena+"'")
+            elif key == "{" and self.getElse("Insert", "keys", "False") == "True":
+                textEdit.InsertText(textEdit.CurrentPos, "{"+cadena+"}")
+            elif key == "(" and self.getElse("Insert", "parentheses", "False") == "True":
+                textEdit.InsertText(textEdit.CurrentPos, "("+cadena+")")
+            else:
+                textEdit.InsertText(textEdit.CurrentPos, key)
+                aj = len(cadena)
+                if len(cadena) > 0: aj += 1
+                textEdit.GotoPos(textEdit.CurrentPos-aj)
+                
+            if cadena == "": textEdit.CharRight()
+            else:
+                for i in cadena + "12": textEdit.CharRight()           
 
-        if self.getElse("Insert", "brackets", "False") == "True" and key == "[":
-            textEdit.InsertText(textEdit.CurrentPos, "]")
+        else: event.Skip()
         
-        elif self.getElse("Insert", "doublecuotation", "False") == "True" and key == '"':
-            textEdit.InsertText(textEdit.CurrentPos, '"')
-        
-        elif self.getElse("Insert", "singlecuotation", "False") == "True" and key == "'":
-            textEdit.InsertText(textEdit.CurrentPos, "'")
-        
-        elif self.getElse("Insert", "keys", "False") == "True" and key == "{":
-            textEdit.InsertText(textEdit.CurrentPos, "}")
-        
-        elif self.getElse("Insert", "parentheses", "False") == "True" and key == "(":
-            textEdit.InsertText(textEdit.CurrentPos, ")")
-        
-             
-
 
     #----------------------------------------------------------------------
     def getCompleters(self):
@@ -316,22 +307,22 @@ class General:
         varbls = []
 
         for i in self.allVars:
-            icons[i[0][:]] = i[1][:]
-            varbls.append(i[0][:])
-
+            icons[i[0][:].replace("*", "")] = i[1][:]
+            varbls.append(i[0][:].replace("*", ""))
 
         for i in self.allFunc:
-            icons[i[0][:]] = "function"
-            varbls.append(i[0][:])
+            icons[i[0][:].replace("*", "")] = "function"
+            #varbls.append(i[0][:].replace("*", ""))
+            self.keywordList.append(i[0][:].replace("*", ""))
 
         for i in self.allDefi:
-            icons[i[0][:]] = "directive"
-            varbls.append(i[0][:])
+            icons[i[1][:].replace("*", "")] = "directive"
+            varbls.append(i[1][:].replace("*", ""))
 
         autoComp = []
         for key in Autocompleter.keys(): autoComp.extend(Autocompleter[key][:])
 
-        completer = self.keywordList + self.reservedword + Snippet.keys() + varbls[:] + autoComp
+        completer = self.keywordList + self.reservedword + Snippet.keys() + varbls[:] + autoComp + self.autoCompleteWords
 
         completersFilter = []
         for i in completer:
@@ -346,19 +337,53 @@ class General:
         addInDict("reserved", Autocompleter["reserved"])
         addInDict("directive", Autocompleter["directive"])
 
-        return completersFilter, icons
+        return completersFilter + self.otherWords, icons
+    
+    
 
+    #----------------------------------------------------------------------
+    def OnMarginClick(self, evt):
+        if evt.GetMargin() == 3:
+            if evt.GetShift() and evt.GetControl():
+                self.stcpage[self.notebookEditor.GetSelection()].FoldAll()
+            else:
+                lineClicked = self.stcpage[self.notebookEditor.GetSelection()].LineFromPosition(evt.GetPosition())
+                if self.stcpage[self.notebookEditor.GetSelection()].GetFoldLevel(lineClicked) & wx.stc.STC_FOLDLEVELHEADERFLAG:
+                    self.stcpage[self.notebookEditor.GetSelection()].ToggleFold(lineClicked)
+                
 
-    ##----------------------------------------------------------------------
-    #def setWaitCursor(self, event=None):
-        #self.toolbar.SetCursor(wx.StockCursor(wx.CURSOR_WAIT))
-        ##self.listBoxKeywords.SetCursor(wx.StockCursor(wx.CURSOR_WAIT))
-        ##self.richTextKeywords.SetCursor(wx.StockCursor(wx.CURSOR_WAIT))
-        #self.Update()
+    
+    #----------------------------------------------------------------------
+    def OnUpdateUI(self, evt):
+        textEdit = self.stcpage[self.notebookEditor.GetSelection()]
+        braceAtCaret = -1
+        braceOpposite = -1
+        charBefore = None
+        caretPos = textEdit.GetCurrentPos()
 
-    ##----------------------------------------------------------------------
-    #def setNormalCursor(self):
-        #self.toolbar.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
-        ##self.listBoxKeywords.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
-        ##self.richTextKeywords.SetCursor(wx.StockCursor(wx.CURSOR_HAND))
-        #self.Update()
+        if caretPos > 0:
+            charBefore = textEdit.GetCharAt(caretPos - 1)
+            styleBefore = textEdit.GetStyleAt(caretPos - 1)
+
+        if charBefore and chr(charBefore) in "[]{}()" and styleBefore == stc.STC_P_OPERATOR:
+            braceAtCaret = caretPos - 1
+
+        if braceAtCaret < 0:
+            charAfter = textEdit.GetCharAt(caretPos)
+            styleAfter = textEdit.GetStyleAt(caretPos)
+
+            if charAfter and chr(charAfter) in "[]{}()" and styleAfter == stc.STC_P_OPERATOR:
+                braceAtCaret = caretPos
+
+        if braceAtCaret >= 0:
+            braceOpposite = textEdit.BraceMatch(braceAtCaret)
+
+        if braceAtCaret != -1  and braceOpposite == -1:
+            textEdit.BraceBadLight(braceAtCaret)
+        else:
+            textEdit.BraceHighlight(braceAtCaret, braceOpposite)
+            #pt = self.PointFromPosition(braceOpposite)
+            #self.Refresh(True, wxRect(pt.x, pt.y, 5,5))
+            #print pt
+            #self.Refresh(False)
+        evt.Skip()

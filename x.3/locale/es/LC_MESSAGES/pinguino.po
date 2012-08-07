@@ -4,15 +4,15 @@
 # Alexis Sánchez <aasanchez@gmail.com>, 2012.
 #
 # Wiki page: http://wiki.pinguino.cc/index.php/Locale_for_Spanish
-# Last ID: 2532
+# Last ID: 4186
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinguino x.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 13:58-0400\n"
-"PO-Revision-Date: 2012-05-17 13:58-0400\n"
-"Last-Translator: Alexis Sánchez <aasanchez@gmail.com>\n"
+"POT-Creation-Date: 2012-08-07 18:34-0400\n"
+"PO-Revision-Date: 2012-08-07 18:34-0400\n"
+"Last-Translator: Alexis A. Sánchez O. <aasanchez@gmail.com>\n"
 "Language-Team: Pinguino <pinguinocard@googlegroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -24,673 +24,737 @@ msgstr ""
 "X-Poedit-Country: VENEZUELA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /home/alexis/Pinguino/x3/locale/sources\n"
+"X-Poedit-SearchPath-0: /home/alexis/Pinguino/IDE/x3/locale/sources\n"
 
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:150
-msgid "Open wiki page in the web browser"
-msgstr "Abrir la Wiki en el Navegador"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:151
-msgid "Read description"
-msgstr "Lee la descripción"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:156
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:71
-msgid "Comment/Uncomment"
-msgstr "Comentar / Descomentar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:157
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:74
-msgid "Increase Indent"
-msgstr "Incrementar Identado"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:158
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:77
-msgid "Decrease Indent"
-msgstr "Reducir Indentado"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:162
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:63
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:808
-msgid "Undo"
-msgstr "Deshacer"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:163
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:66
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:809
-msgid "Redo"
-msgstr "Rehacer"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:165
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:90
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:811
-msgid "Cut"
-msgstr "Cortar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:166
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:93
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:812
-msgid "Copy"
-msgstr "Copiar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:167
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:96
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:813
-msgid "Paste"
-msgstr "Pegar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:168
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:99
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:814
-msgid "Clear"
-msgstr "Limpiar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/general.py:170
-msgid "Clear All"
-msgstr "Limpiar Todo"
-
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:27
+#: framesX3.py:27
 msgid "New"
 msgstr "Nuevo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:30
+#: framesX3.py:30
 msgid "Open"
 msgstr "Abrir"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:33
+#: framesX3.py:33
 msgid "Save"
 msgstr "Guardar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:36
+#: framesX3.py:36
 msgid "Save as"
-msgstr "Guardar Como"
+msgstr "Guardar Como..."
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:39
+#: framesX3.py:39
 msgid "Close"
 msgstr "Cerrar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:44
+#: framesX3.py:44
 msgid "Save all"
 msgstr "Guardar todo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:47
+#: framesX3.py:47
 msgid "Close all"
 msgstr "Cerrar todo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:53
+#: framesX3.py:53
 msgid "Recents"
 msgstr "Recientes"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:57
+#: framesX3.py:57
 msgid "Exit"
 msgstr "Salir"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:60
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:840
+#: framesX3.py:60
+#: framesX3.py:796
 msgid "File"
 msgstr "Archivo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:82
+#: framesX3.py:63
+#: general.py:161
+#: pinguino.py:855
+msgid "Undo"
+msgstr "Deshacer"
+
+#: framesX3.py:66
+#: general.py:162
+#: pinguino.py:856
+msgid "Redo"
+msgstr "Rehacer"
+
+#: framesX3.py:71
+msgid "Show Auto-completer"
+msgstr "Mostrar auto-completado"
+
+#: framesX3.py:76
+#: general.py:155
+msgid "Comment/Uncomment"
+msgstr "Comentar/Descomentar"
+
+#: framesX3.py:79
+#: general.py:156
+msgid "Increase Indent"
+msgstr "Incrementar Identación"
+
+#: framesX3.py:82
+#: general.py:157
+msgid "Decrease Indent"
+msgstr "Reducir Indentación"
+
+#: framesX3.py:87
 msgid "Find"
 msgstr "Buscar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:85
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:888
+#: framesX3.py:90
+#: framesX3.py:905
 msgid "Replace"
 msgstr "Reemplazar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:102
+#: framesX3.py:95
+#: general.py:164
+#: pinguino.py:858
+msgid "Cut"
+msgstr "Cortar"
+
+#: framesX3.py:98
+#: general.py:165
+#: pinguino.py:859
+msgid "Copy"
+msgstr "Copiar"
+
+#: framesX3.py:101
+#: general.py:166
+#: pinguino.py:860
+msgid "Paste"
+msgstr "Pegar"
+
+#: framesX3.py:104
+#: general.py:167
+#: pinguino.py:861
+msgid "Clear"
+msgstr "Limpiar"
+
+#: framesX3.py:107
 msgid "Select all"
 msgstr "Seleccionar Todo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:107
+#: framesX3.py:112
 msgid "Preferences..."
 msgstr "Preferencias..."
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:110
+#: framesX3.py:115
 msgid "Edit"
 msgstr "Editar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:113
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:208
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:583
+#: framesX3.py:118
+#: pinguino.py:207
+#: pinguino.py:611
 msgid "Tools"
 msgstr "Herramientas"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:117
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:314
+#: framesX3.py:122
+#: pinguino.py:311
 msgid "Output"
 msgstr "Salida"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:121
+#: framesX3.py:126
 msgid "Toolbar"
 msgstr "Barra de Herramientas"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:125
+#: framesX3.py:130
 msgid "View"
 msgstr "Ver"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:129
+#: framesX3.py:134
 msgid "None"
 msgstr "Vacio"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:133
+#: framesX3.py:138
 msgid "USB CDC (serial emulation)"
 msgstr "USB CDC (Emulación Serial)"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:136
+#: framesX3.py:141
 msgid "UART (serial)"
 msgstr "UART (Serial 1)"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:139
+#: framesX3.py:144
 msgid "Debug mode"
-msgstr "Depurar"
+msgstr "Depuración"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:142
+#: framesX3.py:147
 msgid "Check last revision"
 msgstr "Verificar última versión"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:145
+#: framesX3.py:150
 msgid "Upgrade"
 msgstr "Actualización"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:149
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:496
+#: framesX3.py:154
+#: pinguino.py:521
 msgid "Revision"
-msgstr "Revision"
+msgstr "Revisión"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:153
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:821
+#: framesX3.py:158
+#: pinguino.py:868
 msgid "Compile"
 msgstr "Compilar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:156
+#: framesX3.py:161
 msgid "Upload"
 msgstr "Cargar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:159
+#: framesX3.py:164
+msgid "If Compile then Upload"
+msgstr "Si es compilado entonces Cargar"
+
+#: framesX3.py:167
 msgid "Pinguino"
 msgstr "Pinguino"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:162
+#: framesX3.py:170
 msgid "Keywords"
 msgstr "Funciones"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:166
+#: framesX3.py:174
 msgid "Website"
 msgstr "Sito web"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:169
+#: framesX3.py:177
 msgid "Wiki"
 msgstr "Wiki"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:172
+#: framesX3.py:180
 msgid "Forum"
 msgstr "Foro"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:175
+#: framesX3.py:183
 msgid "Blog"
 msgstr "Blog"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:178
+#: framesX3.py:186
 msgid "Group"
 msgstr "Grupo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:181
+#: framesX3.py:189
 msgid "Shop"
 msgstr "Tienda"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:184
+#: framesX3.py:192
 msgid "Links"
 msgstr "Enlaces"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:188
+#: framesX3.py:196
 msgid "About..."
 msgstr "Acerca de..."
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:191
+#: framesX3.py:199
 msgid "Help"
 msgstr "Ayuda"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:205
+#: framesX3.py:213
 msgid "Pinguino Functions"
 msgstr "Funciones Pinguino"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:217
+#: framesX3.py:225
 msgid " "
 msgstr " "
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:282
+#: framesX3.py:290
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:294
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:304
+#: framesX3.py:302
+#: framesX3.py:312
 msgid "Appearance"
 msgstr "Apariencia"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:294
+#: framesX3.py:302
 msgid "Source Code Font/Size"
 msgstr "Formato codigo fuente"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:294
+#: framesX3.py:302
 msgid "Auto-completion"
 msgstr "Auto-completado"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:294
+#: framesX3.py:302
 msgid "Auto-insert"
 msgstr "Auto-insertar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:294
+#: framesX3.py:302
 msgid "Open/Save files"
 msgstr "Abrir/Guardar archivos"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:294
+#: framesX3.py:302
 msgid "Highlight"
 msgstr "Destacado"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:318
+#: framesX3.py:326
 msgid "Theme"
 msgstr "Tema"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:333
+#: framesX3.py:341
 msgid "appearance"
 msgstr "apariencia"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:342
+#: framesX3.py:350
 msgid "Use default"
 msgstr "Utilizar valor por defecto"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:348
+#: framesX3.py:356
 msgid "Use selected"
 msgstr "Usar seleccionada"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:361
+#: framesX3.py:369
 msgid "Tab size"
 msgstr "Tamaño del tabulador"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:377
+#: framesX3.py:385
 msgid "souce_code_font_size"
 msgstr "Tamaño de Fuente"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:384
+#: framesX3.py:392
 msgid "Source completion"
 msgstr "Completado de código"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:393
+#: framesX3.py:401
 msgid "After characters"
 msgstr "Caracteres despues"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:399
+#: framesX3.py:407
 msgid "Disable auto-completer"
 msgstr "Deshabilitar autocompletado"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:405
+#: framesX3.py:413
 msgid "Items count"
 msgstr "Conteo de items"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:412
-msgid "Insert \"()\" in the functions."
-msgstr "Insertar \"()\" en las funciones"
+#: framesX3.py:420
+msgid "Insert arguments with \"(\""
+msgstr "Introduzca los argumentos con \"(\""
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:419
+#: framesX3.py:427
 msgid "autocompletion"
 msgstr "autocompletado"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:426
+#: framesX3.py:434
 msgid "Auto-close"
 msgstr "Auto-cerrar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:432
+#: framesX3.py:440
 msgid "Brackets: []"
 msgstr "Corchetes"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:438
+#: framesX3.py:446
 msgid "Double quotes: \"\""
 msgstr "Doble Comillas \"\""
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:444
+#: framesX3.py:452
 msgid "Keys: {}"
 msgstr "Llavez: {}"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:450
+#: framesX3.py:458
 msgid "Parentheses: ()"
 msgstr "Paréntesis: ()"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:456
+#: framesX3.py:464
 msgid "Single quotes: ''"
 msgstr "Comillas simples:''"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:462
+#: framesX3.py:470
 msgid "auto_insert"
 msgstr "auto_insertar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:466
+#: framesX3.py:474
 msgid "New file"
 msgstr "Nuevo Archivo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:471
+#: framesX3.py:479
 msgid "With template"
 msgstr "Con Plantilla"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:474
+#: framesX3.py:482
 msgid "Empty"
 msgstr "Vacio"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:484
+#: framesX3.py:492
 msgid "Auto-save"
 msgstr "Auto Guardar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:491
+#: framesX3.py:499
 msgid "Each (sec)"
 msgstr "Cada (seg)"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:497
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:515
+#: framesX3.py:505
+#: framesX3.py:523
 msgid "Never"
 msgstr "Nunca"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:507
+#: framesX3.py:515
 msgid "Open last files"
 msgstr "Abrir archivos recientes"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:512
+#: framesX3.py:520
 msgid "All existing files"
 msgstr "Todos los archivos existentes"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:528
+#: framesX3.py:536
 msgid "open_save_files"
 msgstr "abir_guardar_archivos"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:535
+#: framesX3.py:543
 msgid "Search and Replace"
 msgstr "Buscar y reemplazar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:543
+#: framesX3.py:551
 msgid "Code Navigation"
 msgstr "Codigo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:551
+#: framesX3.py:559
 msgid "Selection"
 msgstr "Selección"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:562
+#: framesX3.py:570
 msgid "highligh"
 msgstr "Destacado"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:578
+#: framesX3.py:586
 msgid "Restore Defaults"
 msgstr "Restaurar valores predeterminados"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:584
+#: framesX3.py:592
 msgid "Apply"
 msgstr "Aplicar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:587
-msgid "Ok"
-msgstr "Ok"
+#: framesX3.py:595
+msgid "Cancel"
+msgstr "Cancelar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:615
+#: framesX3.py:623
 msgid "Pinguino IDE x.3"
 msgstr "Pinguino IDE x.3"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:641
+#: framesX3.py:649
 msgid "Editor"
 msgstr "Editor"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:689
+#: framesX3.py:697
 msgid ">>>"
 msgstr ">>>"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:695
+#: framesX3.py:703
 msgid "Send"
 msgstr "Enviar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:728
-msgid "Directories"
-msgstr "Directorios"
-
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:747
-msgid "Files"
-msgstr "Archivo"
-
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:756
-msgid "*.*"
-msgstr "*.*"
-
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:756
-msgid "*.pde"
-msgstr "*.pde"
-
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:770
-msgid "Documents"
-msgstr "Documentos"
-
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:780
+#: framesX3.py:736
 msgid "Functions"
 msgstr "Funciones"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:801
+#: framesX3.py:757
 msgid "Variables"
 msgstr "Variables"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:816
+#: framesX3.py:772
 msgid "Directives"
-msgstr "Directivas:"
+msgstr "Directivas"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:847
+#: framesX3.py:806
+msgid "Directories"
+msgstr "Directorios"
+
+#: framesX3.py:812
+msgid "Select a folder"
+msgstr "Seleccionar Carpeta"
+
+#: framesX3.py:824
+msgid "Files"
+msgstr "Archivo"
+
+#: framesX3.py:833
+msgid "*.*"
+msgstr "*.*"
+
+#: framesX3.py:833
+msgid "*.pde"
+msgstr "*.pde"
+
+#: framesX3.py:833
+msgid "*.c"
+msgstr "*.c"
+
+#: framesX3.py:833
+msgid "*.h"
+msgstr "*.h"
+
+#: framesX3.py:847
+msgid "Documents"
+msgstr "Directorio"
+
+#: framesX3.py:854
 msgid "Search:"
 msgstr "Buscar:"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:858
+#: framesX3.py:865
 msgid "Replace:"
 msgstr "Reemplazar:"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:874
+#: framesX3.py:881
+msgid "Case sensitive"
+msgstr "Sensible a mayúsculas"
+
+#: framesX3.py:891
 msgid "Previous"
 msgstr "Anterior"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:877
+#: framesX3.py:894
 msgid "Next"
 msgstr "Siguiente"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:891
+#: framesX3.py:908
 msgid "Replace all"
 msgstr "Reemplazar todo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:915
+#: framesX3.py:932
 msgid "Search"
 msgstr "Buscar"
 
-#: /home/alexis/Pinguino/x3/locale/sources/framesX3.py:945
+#: framesX3.py:962
 msgid "Auto-completer"
 msgstr "Auto-completado"
 
-#: /home/alexis/Pinguino/x3/locale/sources/editeur.py:289
-msgid "Choose a file"
-msgstr "Elija un archivo"
+#: general.py:149
+msgid "Open wiki page in the web browser"
+msgstr "Abrir la Wiki en el Navegador"
 
-#: /home/alexis/Pinguino/x3/locale/sources/editeur.py:322
-msgid "File is already opened, reload it ?"
-msgstr "El archivo ya está abierto, vuelver a cargar?"
+#: general.py:150
+msgid "Read description"
+msgstr "Leer la descripción"
 
-#: /home/alexis/Pinguino/x3/locale/sources/editeur.py:322
-#: /home/alexis/Pinguino/x3/locale/sources/editeur.py:387
-#: /home/alexis/Pinguino/x3/locale/sources/editeur.py:436
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:681
-msgid "Warning"
-msgstr "Advertencia"
+#: general.py:169
+msgid "Clear All"
+msgstr "Limpiar Todo"
 
-#: /home/alexis/Pinguino/x3/locale/sources/editeur.py:374
-msgid "Save file as"
-msgstr "Guardar Como"
+#: debugger.py:63
+msgid "No ports"
+msgstr "No se encontraron puertos"
 
-#: /home/alexis/Pinguino/x3/locale/sources/editeur.py:387
-msgid "File already exist, Overwrite it ?"
-msgstr "Archivo ya existe, sobreescribirlo?"
-
-#: /home/alexis/Pinguino/x3/locale/sources/editeur.py:436
-msgid "Save file ?"
-msgstr "Guardar Archivo ?"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:151
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:152
-msgid "loading..."
-msgstr "cargando..."
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:152
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:449
-msgid "Welcome to Pinguino IDE"
-msgstr "Bienvenido a Pinguino IDE"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:429
-msgid "unknown"
-msgstr "desconocido"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:472
-msgid "Upgrading ..."
-msgstr "Actualizando ..."
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:475
-msgid "Local version is not under revision control."
-msgstr "Versión local no está bajo control de revisiones."
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:477
-msgid "Done"
-msgstr "Completado"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:485
-msgid "Checking repository revision number"
-msgstr "Verificando la última versión en el Repositorio"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:488
-msgid "Server temporarily unavailable."
-msgstr "Servidor temporalmente no disponible."
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:493
-msgid "You have the latest version."
-msgstr "Usted tiene la última versión."
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:496
-msgid "is available."
-msgstr "está disponible."
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:544
-msgid "Changing board"
-msgstr "Reconfigurando"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:680
-msgid "Open file first !!"
-msgstr "Abra el archivo en primer lugar!!"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:686
-msgid "Board:"
-msgstr "Pinguino:"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:687
-msgid "Proc:"
-msgstr "Proc:"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:688
-msgid "File:"
-msgstr "Archivo:"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:706
-msgid "error while compiling file "
-msgstr "error mientras compila archivo"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:710
-msgid "error while linking"
-msgstr "error de enlace"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:713
-msgid "compilation done"
-msgstr "compilación Completada"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:715
-msgid "seconds process time"
-msgstr "segundos (Tiempo de proceso)"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:744
-msgid "File must be verified/compiled before upload"
-msgstr "El archivo debe ser verificado/compilado antes de cargar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:745
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:752
-msgid "Warning!"
-msgstr "Advertencia"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:751
-msgid "File must be saved before upload"
-msgstr "El Archivo debe ser guardado antes de intentar cargarlo"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:803
-msgid "New File"
-msgstr "Nuevo"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:804
-msgid "Open File"
-msgstr "Abrir"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:805
-msgid "Save File"
-msgstr "Guardar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:806
-msgid "Close File"
-msgstr "Cerrar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:815
-msgid "Select"
-msgstr "Seleccionar"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:817
-msgid "Search in File"
-msgstr "Buscar en el Archivo"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:818
-msgid "Replace in File"
-msgstr "Reemplazar en el Archivo"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:822
-msgid "Upload to Pinguino Board"
-msgstr "Cargar a Pinguino"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:824
-msgid "set preferences of Pinguino IDE"
-msgstr "Preferencias"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:826
-msgid "Exit Pinguino IDE"
-msgstr "Salir"
-
-#: /home/alexis/Pinguino/x3/locale/sources/pinguino.py:898
-msgid "Board config"
-msgstr "Configurando Pinguino"
-
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:120
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:229
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:247
+#: debugger.py:76
+#: debugger.py:161
+#: debugger.py:172
 msgid "Connected"
 msgstr "Conectado"
 
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:152
-msgid "Select port..."
-msgstr "Seleccione el puerto ..."
-
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:231
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:250
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:269
-msgid "No device connected"
-msgstr "No hay ningún dispositivo conectado"
-
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:242
+#: debugger.py:104
 msgid "Debugging!"
 msgstr "Debugeando"
 
-#: /home/alexis/Pinguino/x3/locale/sources/debugger.py:274
+#: debugger.py:163
+#: debugger.py:191
+msgid "No device connected"
+msgstr "No hay ningún dispositivo conectado"
+
+#: debugger.py:196
 msgid "device disconnected"
 msgstr "dispositivo desconectado"
+
+#: pinguino.py:142
+#: pinguino.py:143
+msgid "loading..."
+msgstr "cargando..."
+
+#: pinguino.py:143
+#: pinguino.py:480
+msgid "Welcome to Pinguino IDE"
+msgstr "Bienvenido a Pinguino IDE"
+
+#: pinguino.py:438
+msgid "unknown"
+msgstr "desconocido"
+
+#: pinguino.py:497
+msgid "Upgrading ..."
+msgstr "Actualizando ..."
+
+#: pinguino.py:500
+msgid "Local version is not under revision control."
+msgstr "Versión local no está bajo control de revisiones."
+
+#: pinguino.py:502
+msgid "Done"
+msgstr "Completado"
+
+#: pinguino.py:510
+msgid "Checking repository revision number"
+msgstr "Verificando la última versión en el Repositorio"
+
+#: pinguino.py:513
+msgid "Server temporarily unavailable."
+msgstr "Servidor temporalmente no disponible."
+
+#: pinguino.py:518
+msgid "You have the latest version."
+msgstr "Usted tiene la última versión."
+
+#: pinguino.py:521
+msgid "is available."
+msgstr "está disponible."
+
+#: pinguino.py:569
+msgid "Changing board"
+msgstr "Reconfigurando"
+
+#: pinguino.py:718
+msgid "Open file first !!"
+msgstr "¡Primero debe abrir el archivo!"
+
+#: pinguino.py:719
+#: editeur.py:315
+#: editeur.py:377
+#: editeur.py:426
+msgid "Warning"
+msgstr "Peligro"
+
+#: pinguino.py:724
+msgid "Board:"
+msgstr "Pinguino:"
+
+#: pinguino.py:725
+msgid "Proc:"
+msgstr "Proc:"
+
+#: pinguino.py:726
+msgid "File:"
+msgstr "Archivo:"
+
+#: pinguino.py:744
+msgid "error while compiling file "
+msgstr "error mientras compila archivo"
+
+#: pinguino.py:748
+msgid "error while linking"
+msgstr "error de enlace"
+
+#: pinguino.py:752
+msgid "compilation done"
+msgstr "compilación Completada"
+
+#: pinguino.py:754
+msgid "seconds process time"
+msgstr "segundos (Tiempo de proceso)"
+
+#: pinguino.py:786
+msgid "File must be verified/compiled before upload"
+msgstr "El archivo debe ser verificado/compilado antes de cargar"
+
+#: pinguino.py:787
+#: pinguino.py:794
+msgid "Warning!"
+msgstr "Advertencia"
+
+#: pinguino.py:793
+msgid "File must be saved before upload"
+msgstr "El Archivo debe ser guardado antes de intentar cargarlo"
+
+#: pinguino.py:850
+msgid "New File"
+msgstr "Nuevo"
+
+#: pinguino.py:851
+msgid "Open File"
+msgstr "Abrir"
+
+#: pinguino.py:852
+msgid "Save File"
+msgstr "Guardar"
+
+#: pinguino.py:853
+msgid "Close File"
+msgstr "Cerrar"
+
+#: pinguino.py:862
+msgid "Select"
+msgstr "Seleccionar"
+
+#: pinguino.py:864
+msgid "Search in File"
+msgstr "Buscar en el Archivo"
+
+#: pinguino.py:865
+msgid "Replace in File"
+msgstr "Reemplazar en el Archivo"
+
+#: pinguino.py:869
+msgid "Upload to Pinguino Board"
+msgstr "Cargar a Pinguino"
+
+#: pinguino.py:871
+msgid "set preferences of Pinguino IDE"
+msgstr "Preferencias"
+
+#: pinguino.py:873
+msgid "Exit Pinguino IDE"
+msgstr "Salir"
+
+#: pinguino.py:945
+msgid "Board config"
+msgstr "Configurando Pinguino"
+
+#: dock_files.py:44
+#: dock_files.py:48
+#: dock_files.py:54
+msgid "Name"
+msgstr "Nombre"
+
+#: dock_files.py:45
+msgid "Type"
+msgstr "Tipo"
+
+#: dock_files.py:46
+#: dock_files.py:50
+#: dock_files.py:56
+msgid "Line"
+msgstr "Linea"
+
+#: dock_files.py:49
+msgid "Return"
+msgstr "Retorna"
+
+#: dock_files.py:51
+msgid "Parameters"
+msgstr "Parametros"
+
+#: dock_files.py:53
+msgid "Directive"
+msgstr "Directiva"
+
+#: dock_files.py:55
+msgid "Value"
+msgstr "Valor"
+
+#: editeur.py:293
+msgid "Choose a file"
+msgstr "Seleccione un archivo"
+
+#: editeur.py:315
+msgid "File is already opened, reload it ?"
+msgstr "El archivo ya está abierto, ¿Desea volver a abrirlo?"
+
+#: editeur.py:363
+msgid "Save file as"
+msgstr "Guardar Como"
+
+#: editeur.py:377
+msgid "File already exist, Overwrite it ?"
+msgstr "¿Archivo ya existe, sobrescribirlo?"
+
+#: editeur.py:426
+msgid "Save file ?"
+msgstr "¿Guardar Archivo?"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Insert \"()\" in the functions."
+#~ msgstr "Insertar \"()\" en las funciones"
+
+#~ msgid "Select port..."
+#~ msgstr "Seleccione el puerto ..."
 
 #~ msgid "Revision "
 #~ msgstr "Revisión"

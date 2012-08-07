@@ -417,7 +417,7 @@ class framePreferences ( wx.Frame ):
 		self.spinCtrlItemsCompleterCount = wx.SpinCtrl( self.auto_completion, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.SP_ARROW_KEYS, 5, 30, 15 )
 		fgSizer5.Add( self.spinCtrlItemsCompleterCount, 0, wx.ALL|wx.EXPAND, 5 )
 		
-		self.checkBoxInsertParenthesis = wx.CheckBox( self.auto_completion, wx.ID_ANY, _("Insert argumentets with \"(\""), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.checkBoxInsertParenthesis = wx.CheckBox( self.auto_completion, wx.ID_ANY, _("Insert arguments with \"(\""), wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.checkBoxInsertParenthesis.SetValue(True) 
 		fgSizer5.Add( self.checkBoxInsertParenthesis, 0, wx.ALL, 5 )
 		
@@ -592,7 +592,7 @@ class framePreferences ( wx.Frame ):
 		self.buttonApply = wx.Button( self.m_panel29, wx.ID_ANY, _("Apply"), wx.DefaultPosition, wx.DefaultSize, 0 )
 		fgSizer2.Add( self.buttonApply, 0, wx.ALL, 5 )
 		
-		self.buttonCancel = wx.Button( self.m_panel29, wx.ID_ANY, _("Ok"), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.buttonCancel = wx.Button( self.m_panel29, wx.ID_ANY, _("Cancel"), wx.DefaultPosition, wx.DefaultSize, 0 )
 		fgSizer2.Add( self.buttonCancel, 0, wx.ALL, 5 )
 		
 		self.m_panel29.SetSizer( fgSizer2 )

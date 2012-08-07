@@ -33,11 +33,12 @@ for f in files:
 print "Done!!"
 print "\033[1;32mCopy files to translate\033[0m"
 src = os.getcwd()
-shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/pinguino.py'), 		'sources/pinguino.py')
-shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/editor/debugger.py'), 	'sources/debugger.py')
-shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/editor/editeur.py'), 	'sources/editeur.py')
-shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/editor/general.py'), 	'sources/general.py')
-shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/frames/framesX3.py'), 	'sources/framesX3.py')
+shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/pinguino.py'), 					'sources/pinguino.py')
+shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/editor/debugger.py'), 				'sources/debugger.py')
+shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/editor/editeur.py'), 				'sources/editeur.py')
+shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/editor/general.py'), 				'sources/general.py')
+shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/editor/lateral_tool_area/dock_files.py'), 	'sources/dock_files.py')
+shutil.copy2(os.path.join(src.rstrip('locale'), 'wxgui/frames/framesX3.py'), 				'sources/framesX3.py')
 print "Done!!"
 print "\033[1;32mSelect the language to translate\033[0m"
 print "1.- Deutsch"
