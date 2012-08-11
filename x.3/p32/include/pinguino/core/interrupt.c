@@ -1057,7 +1057,7 @@ void IntConfigureSystem(u8 mode)
 	temp = _CP0_GET_STATUS(); // Get Status
 	temp |= 0x00400000; // Set BEV bit
 	_CP0_SET_STATUS(temp); // Update Status
-	#if defined(PIC32_PINGUINO_220) || defined(GENERIC32MX250F128) || defined(GENERIC32MX220​​F032)
+	#if defined(PIC32_PINGUINO_220) || defined(GENERIC32MX250F128) || defined(GENERIC32MX220F032)
 	_CP0_SET_EBASE(0xBD003000); // Set an EBase value of 0xBD003000	
 	#else
 	_CP0_SET_EBASE(0xBD005000); // Set an EBase value of 0xBD005000	
